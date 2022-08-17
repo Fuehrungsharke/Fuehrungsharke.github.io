@@ -1,5 +1,5 @@
 # Führungsharke
-Unter [fuehrungsharke.github.io](https://fuehrungsharke.github.io/) kann eine eigene Führungsharke erstellt werden.
+Unter [fuehrungsharke.github.io](https://fuehrungsharke.github.io/) kann eine eigene Führungsharke erstellt werden. Diese kann als Vektorgrafik (`*.svg`) heruntergeladen werden.
 
 ## Konfiguration
 Die Struktur der Führungsharke kann als `*.json`-Datei gespeichert und auch wieder geladen werden. In diesem Abschnitt ist der Aufbau der `*.json`-Datei dokumentiert.
