@@ -393,8 +393,8 @@ function getSign(sign, txt, spez, org, attrTxt, color) {
     attrTxt.split(',').forEach(attr => {
         var attrFormatted = attr.trim().toUpperCase();
         if(attrFormatted != '')
-            svg = svg.replace(`{{${attrFormatted}`)
-                .replace(`${attrFormatted}}}`);
+            svg = svg.replace(`{{${attrFormatted}`, '')
+                .replace(`${attrFormatted}}}`, '');
     });
     return svg.replace(/{{\w+\s/g, '<!--')
         .replace(/\s\w+}}/g, '-->');
