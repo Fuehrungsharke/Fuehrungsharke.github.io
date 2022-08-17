@@ -54,7 +54,7 @@ Die Grundform kann durch weitere Parameter angepasst werden.
 | `Bike` | ![Fahrrad](./signs/Bike.svg) |
 | `Person` | ![Person](./signs/Person.svg) |
 | `Flag` | ![Führungsstelle](./signs/Flag.svg) |
-| `Empty` | ![Platzhalter](./signs/Empty.svg) \[Platzhalter\] |
+| `Empty` | ![Platzhalter](./signs/Empty.svg)<br>\[Platzhalter\] |
 
 ### `txt`
 Gibt den Text in dem taktischen Zeichen an.
@@ -86,4 +86,4 @@ Liste von untergeordneten taktischen Zeichen (Objekte). Untergeordnete Objekte, 
 Alle untergeordneten Objekte, denen selbst keine weiteren Objekte untergeordnet sind, werden ohne Line zum übergeordnetem Objekt angezeigt.
 
 ### `with`
-Weitere taktische Zeichen, die neben dem taktische Zeichen angezeigt werden sollen, aber nicht untergeordnet sind. Zum Beispiel taktisches Zeichen der Einheit mit (`with`) dem taktischen Zeichen der Führungsperson und/oder dem Fahrzeug bzw. Fahrzeuge.
+Weitere taktische Zeichen, die neben dem taktische Zeichen angezeigt werden sollen, aber nicht untergeordnet sind. Zum Beispiel taktisches Zeichen der Einheit mit (`with`) dem taktischen Zeichen der Führungsperson und/oder dem Fahrzeug bzw. den Fahrzeugen.
