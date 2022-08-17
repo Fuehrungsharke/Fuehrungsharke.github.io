@@ -87,3 +87,6 @@ Alle untergeordneten Objekte, denen selbst keine weiteren Objekte untergeordnet 
 
 ### `with`
 Weitere taktische Zeichen, die neben dem taktische Zeichen angezeigt werden sollen, aber nicht untergeordnet sind. Zum Beispiel taktisches Zeichen der Einheit mit (`with`) dem taktischen Zeichen der Führungsperson und/oder dem Fahrzeug bzw. den Fahrzeugen.
+
+### `color`
+Ersetzt das THW-Blau durch eine andere Farbe.
