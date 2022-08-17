@@ -63,7 +63,8 @@ Gibt den Text in dem taktischen Zeichen an.
 Gibt die Organisation in oder am taktischen Zeichen an.
 
 ### `name`
-Freitext unterhalb des taktischen Zeichens.
+Freitext unterhalb des taktischen Zeichens.<br>
+Durch Verwendung von Kommata (`,`) können mehre Zeilen angegeben werden.
 
 ### `attr`
 Bietet je nach Grundform weitere Optionen an.
