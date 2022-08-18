@@ -75,7 +75,7 @@ Mehrere Attribute können durch Komma getrennt angegeben werden.
 | formation | Verband | `Unit`, `Person` |
 | platoon | Zug | `Unit`, `Person` |
 | ofplatoon | Zugtrupp | `Unit`, `Person` |
-| echelon | Staffel | `Unit` |
+| echelon | Staffel | `Unit`, `Person` |
 | group | Gruppe | `Unit`, `Person` |
 | troop | Trupp | `Unit`, `Person` |
 | leading | Führungsfunktion | `Unit`, `Person` |
