@@ -54,6 +54,7 @@ Die Grundform kann durch weitere Parameter angepasst werden.
 | `Bike` | ![Fahrrad](./signs/Bike.svg) |
 | `Person` | ![Person](./signs/Person.svg) |
 | `Flag` | ![Führungsstelle](./signs/Flag.svg) |
+| `Building` | ![Gebäude](./signs/Building.svg) |
 | `Empty` | ![Platzhalter](./signs/Empty.svg)<br>\[Platzhalter\] |
 
 ### `txt`
