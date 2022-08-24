@@ -47,5 +47,5 @@
 
 	<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="2" stroke="#000000" fill="none" />
 	<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="#FFFFFF">{{TXT}}</text>
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="208">{{ORG}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">{{ORG}}</text>
 </svg>
