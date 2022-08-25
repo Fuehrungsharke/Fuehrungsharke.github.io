@@ -503,7 +503,7 @@ function drawRecursive(canvas, root, layer, x, y) {
             for(let subTree in subTrees) {
                 canvas.appendChild(getLine(x + GAP + colWith * signWidth, y + rowSub * signHeight + signHeight / 2, x + 2 * GAP + colWith * signWidth, y + rowSub * signHeight + signHeight / 2));
                 rowLineEnd = rowSub;
-                var subRows, subCols = drawRecursive(canvas, subTrees[subTree], layer + 1, x + 2 * GAP + colWith * signWidth, y + rowSub * signHeight);
+                subRows, subCols = drawRecursive(canvas, subTrees[subTree], layer + 1, x + 2 * GAP + colWith * signWidth, y + rowSub * signHeight);
                 rowSub += subRows;
                 colAll = Math.max(colAll, subCols);
             }
@@ -515,7 +515,7 @@ function drawRecursive(canvas, root, layer, x, y) {
 
 function draw() {
     var canvas = document.createElement('svg');
-    var rows, columns = drawRecursive(canvas, config, 0, 0, 0);
+    rows, columns = drawRecursive(canvas, config, 0, 0, 0);
 
     // Draw Border
     canvas.appendChild(getLine(0, 0, columns * signWidth, 0));
