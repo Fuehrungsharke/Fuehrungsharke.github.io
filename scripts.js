@@ -510,7 +510,7 @@ function drawRecursive(canvas, root, layer, x, y) {
             canvas.appendChild(getLine(x + GAP + colWith * signWidth, y + signHeight / 2, x + GAP + colWith * signWidth, y + rowLineEnd * signHeight + signHeight / 2));
         }
     }
-    return (Math.max(1, rowSub), colWith - 1  + colAll);
+    return Math.max(1, rowSub), colWith - 1  + colAll;
 }
 
 function draw() {
