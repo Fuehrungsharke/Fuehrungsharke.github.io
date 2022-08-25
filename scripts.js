@@ -493,7 +493,7 @@ function drawRecursive(canvas, root, layer, x, y) {
                 colLeaf = 1;
                 rowSub += 1;
             }
-            (_, _) = drawRecursive(canvas, leafs[leaf], layer + 1, x + 2 * leafGap + (colWith - 1 + colLeaf) * signWidth, y + rowSub * signHeight);
+            drawRecursive(canvas, leafs[leaf], layer + 1, x + 2 * leafGap + (colWith - 1 + colLeaf) * signWidth, y + rowSub * signHeight);
         }
         if(leafs.length > 0)
             rowSub += 1;
