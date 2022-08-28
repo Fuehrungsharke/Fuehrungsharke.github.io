@@ -514,7 +514,7 @@ function drawRecursive(canvas, root, x, y) {
             canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2));
             usedWidth += GAP;
             for(let subTree in subTrees) {
-                canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + rowSub * signHeight + signHeight / 2));
+                canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2));
                 subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
                 subTotalWidth = Math.max(subTotalWidth, subSize[0]);
                 usedHeight += subSize[1];
