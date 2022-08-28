@@ -494,7 +494,7 @@ function drawRecursive(canvas, root, x, y) {
         var leafRowWidth = 0;
         var leafGap = 0;
         if (subTrees.length > 0)
-        leafGap = 2 * GAP;
+            leafGap = 2 * GAP;
         if(leafs.length > 0) {
             for(let leaf in leafs){
                     drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
@@ -515,7 +515,7 @@ function drawRecursive(canvas, root, x, y) {
             usedWidth += GAP;
             for(let subTree in subTrees) {
                 canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2));
-                subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
+                var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
                 subTotalWidth = Math.max(subTotalWidth, subSize[0]);
                 usedHeight += subSize[1];
             }
