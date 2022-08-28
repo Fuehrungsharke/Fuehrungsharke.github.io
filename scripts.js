@@ -502,7 +502,7 @@ function drawRecursive(canvas, root, x, y) {
                 drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
                 leafRowWidth += signWidth;
                 leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
-                if(leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs) {
+                if(leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs + 1) {
                     leafRowWidth = 0;
                     usedHeight += signHeight;
                 }
