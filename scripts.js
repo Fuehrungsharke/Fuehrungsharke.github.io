@@ -496,11 +496,13 @@ function drawRecursive(canvas, root, x, y) {
         if (subTrees.length > 0)
             leafGap = 2 * GAP;
         if(leafs.length > 0) {
+            var cntLeafs = 0;
             for(let leaf in leafs){
-                    drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
+                cntLeafs += 1;
+                drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
                 leafRowWidth += signWidth;
                 leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
-                if(leafRowWidth % (signWidth * 5) == 0) {
+                if(leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs) {
                     leafRowWidth = 0;
                     usedHeight += signHeight;
                 }
