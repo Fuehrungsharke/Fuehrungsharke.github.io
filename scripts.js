@@ -5,6 +5,9 @@ const signHeight = 256
 const GAP = 50
 const LINESIZE = 26
 
+const WITH = 'with';
+const SUB = 'sub';
+
 var draggingElement = null;
 var hoveringUuid = null;
 
@@ -319,11 +322,11 @@ function drop(evt) {
 }
 
 function isAncestorOf(item, presumedDescendant) {
-    if(presumedDescendant.hasOwnProperty('sub') && Array.isArray(presumedDescendant['sub'])){
-        for(let idx in presumedDescendant['sub']) {
-            if (presumedDescendant['sub'][idx] == item)
+    if(presumedDescendant.hasOwnProperty(SUB) && Array.isArray(presumedDescendant[SUB])){
+        for(let idx in presumedDescendant[SUB]) {
+            if (presumedDescendant[SUB][idx] == item)
                 return true;
-            var subResult = isAncestorOf(item, presumedDescendant['sub'][idx]);
+            var subResult = isAncestorOf(item, presumedDescendant[SUB][idx]);
             if(subResult)
                 return subResult;
         }
@@ -335,9 +338,9 @@ function getConfigElementByUuid(root, uuid) {
     if (root.hasOwnProperty('uuid') && root['uuid'] == uuid){
         return root;
     }
-    if(root.hasOwnProperty('sub') && Array.isArray(root['sub'])){
-        for(let idx in root['sub']) {
-            var subResult = getConfigElementByUuid(root['sub'][idx], uuid);
+    if(root.hasOwnProperty(SUB) && Array.isArray(root[SUB])){
+        for(let idx in root[SUB]) {
+            var subResult = getConfigElementByUuid(root[SUB][idx], uuid);
             if(subResult != undefined)
                 return subResult;
         }
@@ -346,12 +349,12 @@ function getConfigElementByUuid(root, uuid) {
 }
 
 function getConfigElementParentByUuid(root, uuid) {
-    if(root.hasOwnProperty('sub') && Array.isArray(root['sub'])){
-        for(let idx in root['sub']) {
-            if (root['sub'][idx].hasOwnProperty('uuid') && root['sub'][idx]['uuid'] == uuid){
+    if(root.hasOwnProperty(SUB) && Array.isArray(root[SUB])){
+        for(let idx in root[SUB]) {
+            if (root[SUB][idx].hasOwnProperty('uuid') && root[SUB][idx]['uuid'] == uuid){
                 return root;
             }
-            var subResult = getConfigElementParentByUuid(root['sub'][idx], uuid);
+            var subResult = getConfigElementParentByUuid(root[SUB][idx], uuid);
             if(subResult != null)
                 return subResult;
         }
@@ -468,67 +471,76 @@ function drawSign(canvas, root, x, y) {
     }
 }
 
-function drawRecursive(canvas, root, layer, x, y) {
-    var rowSub = 0;
-    var colWith = 1;
-    var colAll = 0;
+function drawRecursive(canvas, root, x, y) {
+    var usedWidth = 0;
+    var usedHeight = 0;
+
     drawSign(canvas, root, x, y);
-    if(root.hasOwnProperty('with') && Array.isArray(root['with'])){
-        root['with'].forEach(item => {
-            drawSign(canvas, item, x + colWith * signWidth, y);
-            colWith += 1;
+    usedWidth += signWidth;
+
+    if(root.hasOwnProperty(WITH) && Array.isArray(root[WITH])){
+        root[WITH].forEach(item => {
+            drawSign(canvas, item, x + usedWidth, y);
+            usedWidth += signWidth;
         });
     }
-    if(root.hasOwnProperty('sub') && Array.isArray(root['sub'])){
-        var leafs = root['sub'].filter(item => !item.hasOwnProperty('sub') || !Array.isArray(item["sub"]) || !item["sub"].length);
-        var subTrees = root["sub"].filter(item => item.hasOwnProperty('sub') && Array.isArray(item["sub"]) && item["sub"].length > 0);
-        leafGap = 0;
+
+    if(root.hasOwnProperty(SUB) && Array.isArray(root[SUB])){
+        var leafs = root[SUB].filter(item => !item.hasOwnProperty(SUB) || !Array.isArray(item[SUB]) || !item[SUB].length);
+        var subTrees = root[SUB].filter(item => item.hasOwnProperty(SUB) && Array.isArray(item[SUB]) && item[SUB].length > 0);
+
+        // Leafs
+        var leafsTotalWidth = 0;
+        var leafRowWidth = 0;
+        var leafGap = 0;
         if (subTrees.length > 0)
-        leafGap = GAP;
-        var colLeaf = 0;
-        for(let leaf in leafs){
-            colLeaf += 1;
-            colAll = Math.max(colAll, colLeaf);
-            if((colLeaf % subColumns == 0) || ((colLeaf + colWith + layer) % maxColumns == 0)) {
-                colLeaf = 1;
-                rowSub += 1;
+        leafGap = 2 * GAP;
+        if(leafs.length > 0) {
+            for(let leaf in leafs){
+                    drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
+                leafRowWidth += signWidth;
+                leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
+                if(leafRowWidth % (signWidth * 5) == 0) {
+                    leafRowWidth = 0;
+                    usedHeight += signHeight;
+                }
             }
-            drawRecursive(canvas, leafs[leaf], layer + 1, x + 2 * leafGap + (colWith - 1 + colLeaf) * signWidth, y + rowSub * signHeight);
+            usedHeight += signHeight;
         }
-        if(leafs.length > 0)
-            rowSub += 1;
+
+        // SubTrees
         if(subTrees.length > 0) {
-            canvas.appendChild(getLine(x + colWith * signWidth, y + signHeight / 2, x + GAP + colWith * signWidth, y + signHeight / 2));
-            var rowLineEnd = rowSub;
+            var subTotalWidth = 0;
+            canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2));
+            usedWidth += GAP;
             for(let subTree in subTrees) {
-                canvas.appendChild(getLine(x + GAP + colWith * signWidth, y + rowSub * signHeight + signHeight / 2, x + 2 * GAP + colWith * signWidth, y + rowSub * signHeight + signHeight / 2));
-                rowLineEnd = rowSub;
-                subRowsCols = drawRecursive(canvas, subTrees[subTree], layer + 1, x + 2 * GAP + colWith * signWidth, y + rowSub * signHeight);
-                rowSub += subRowsCols[0];
-                colAll = Math.max(colAll, subRowsCols[1]);
+                canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + rowSub * signHeight + signHeight / 2));
+                subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
+                subTotalWidth = Math.max(subTotalWidth, subSize[0]);
+                usedHeight += subSize[1];
             }
-            canvas.appendChild(getLine(x + GAP + colWith * signWidth, y + signHeight / 2, x + GAP + colWith * signWidth, y + rowLineEnd * signHeight + signHeight / 2));
+            canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + usedHeight - signHeight / 2));
         }
+
+        usedWidth += Math.max(leafsTotalWidth, subTotalWidth);
     }
-    return [Math.max(1, rowSub), colWith - 1  + colAll];
+    return [usedWidth, usedHeight];
 }
 
 function draw() {
     var canvas = document.createElement('svg');
-    rowsAndCols = drawRecursive(canvas, config, 0, 0, 0);
-    rows = rowsAndCols[0];
-    columns = rowsAndCols[1];
-
+    size = drawRecursive(canvas, config, 0, 0, 0);
+    
     // Draw Border
-    canvas.appendChild(getLine(0, 0, columns * signWidth, 0));
-    canvas.appendChild(getLine(columns * signWidth, 0, columns * signWidth, rows * signHeight + LINESIZE));
-    canvas.appendChild(getLine(columns * signWidth, rows * signHeight + LINESIZE, 0, rows * signHeight + LINESIZE));
-    canvas.appendChild(getLine(0, rows * signHeight + LINESIZE, 0, 0));
+    canvas.appendChild(getLine(0, 0, size[0], 0));
+    canvas.appendChild(getLine(size[0], 0, size[0], size[1] + LINESIZE));
+    canvas.appendChild(getLine(size[0], size[1] + LINESIZE, 0, size[1] + LINESIZE));
+    canvas.appendChild(getLine(0, size[1] + LINESIZE, 0, 0));
 
     // Output
     outputSvg.innerHTML = canvas.innerHTML;
-    outputSvg.setAttribute('width', columns * signWidth);
-    outputSvg.setAttribute('height', rows * signHeight + LINESIZE);
+    outputSvg.setAttribute('width', size[0]);
+    outputSvg.setAttribute('height', size[1] + LINESIZE);
 }
 
 draw();
