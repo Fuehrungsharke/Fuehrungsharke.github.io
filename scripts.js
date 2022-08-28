@@ -524,6 +524,8 @@ function drawRecursive(canvas, root, x, y) {
 
         usedWidth += Math.max(leafsTotalWidth, subTotalWidth);
     }
+    else
+        usedHeight += signHeight;
     return [usedWidth, usedHeight];
 }
 
