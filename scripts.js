@@ -513,13 +513,15 @@ function drawRecursive(canvas, root, x, y) {
         if(subTrees.length > 0) {
             canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2));
             usedWidth += GAP;
+            var lastSubY = usedHeight;
             for(let subTree in subTrees) {
+                lastSubY = usedHeight;
                 canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2));
                 var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
                 subTotalWidth = Math.max(subTotalWidth, subSize[0]);
                 usedHeight += subSize[1];
             }
-            canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + usedHeight - signHeight / 2));
+            canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2));
         }
 
         usedWidth += Math.max(leafsTotalWidth, subTotalWidth);
