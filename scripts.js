@@ -509,8 +509,8 @@ function drawRecursive(canvas, root, x, y) {
         }
 
         // SubTrees
+        var subTotalWidth = 0;
         if(subTrees.length > 0) {
-            var subTotalWidth = 0;
             canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2));
             usedWidth += GAP;
             for(let subTree in subTrees) {
