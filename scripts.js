@@ -345,6 +345,13 @@ function getConfigElementByUuid(root, uuid) {
                 return subResult;
         }
     }
+    if(root.hasOwnProperty(WITH) && Array.isArray(root[WITH])){
+        for(let idx in root[WITH]) {
+            var subResult = getConfigElementByUuid(root[WITH][idx], uuid);
+            if(subResult != undefined)
+                return subResult;
+        }
+    }
     return null;
 }
 
@@ -478,6 +485,7 @@ function drawRecursive(canvas, root, x, y) {
     drawSign(canvas, root, x, y);
     usedWidth += signWidth;
 
+    // With
     if(root.hasOwnProperty(WITH) && Array.isArray(root[WITH])){
         root[WITH].forEach(item => {
             drawSign(canvas, item, x + usedWidth, y);
