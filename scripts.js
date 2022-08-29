@@ -524,6 +524,7 @@ function drawRecursive(canvas, root, x, y) {
                 usedHeight += subSize[1];
             }
             canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2));
+            usedWidth += GAP;
         }
 
         usedWidth += Math.max(leafsTotalWidth, subTotalWidth);
