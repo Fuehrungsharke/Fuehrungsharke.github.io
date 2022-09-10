@@ -396,10 +396,10 @@ function getSign(sign, txt, spez, org, attrTxt, fillcolor) {
     req.open('GET', `/signs/${sign}.svg`, false);
     req.send();
     var svg = req.responseText
-        .replace('{{TXT}}', txt)
-        .replace('{{SPEZ}}', spez)
-        .replace('{{ORG}}', org)
-        .replace('{{FILLCOLOR}}', fillcolor);
+        .replaceAll('{{TXT}}', txt)
+        .replaceAll('{{SPEZ}}', spez)
+        .replaceAll('{{ORG}}', org)
+        .replaceAll('{{FILLCOLOR}}', fillcolor);
     attrTxt.split(',').forEach(attr => {
         var attrFormatted = attr.trim().toUpperCase();
         if(attrFormatted != '')
