@@ -1,13 +1,35 @@
-<label for="iptConfig">Select a config:</label>
-<input type="file" id="iptConfig" name="iptConfig" accept="Config/json"><br/>
-<svg id="outputSvg"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="1.1"
-    width="512"
-    height="256">
-</svg><br/>
-<br/>
-<button id="btnDownloadConfig">Download Config</button>
-<button id="btnDownloadSvg">Download Vector Image (*.svg)</button>
-<script src="scripts.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <label for="iptConfig">Select a config:</label>
+    <input type="file" id="iptConfig" name="iptConfig" accept="Config/json"><br />
+    <svg id="outputSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+        width="512" height="256">
+    </svg>
+    <nav class="context-menu">
+        <ul class="context-menu-items">
+            <li class="context-menu-item">
+                A
+            </li>
+            <li class="context-menu-item">
+                B
+            </li>
+            <li class="context-menu-item">
+                C
+            </li>
+        </ul>
+    </nav>
+    <br />
+    <br />
+    <button id="btnDownloadConfig">Download Config</button>
+    <button id="btnDownloadSvg">Download Vector Image (*.svg)</button>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
