@@ -15,13 +15,16 @@ var ZTr = {
     "func": "Unit",
     "txt": "TZ",
     "org": "THW",
-    "attr": "troop,ofplatoon",
+    "troop": true,
+    "ofplatoon": true,
     "with": [
         {
             "name": "Der Zugtruppführer",
             "func": "Person",
             "txt": "TZ",
-            "attr": "troop,ofplatoon,leading",
+            "leading": true,
+            "troop": true,
+            "ofplatoon": true,
         }
     ],
     "sub": [
@@ -52,13 +55,14 @@ var BGr = {
     "func": "Unit",
     "txt": "B",
     "org": "THW",
-    "attr": "group",
+    "group": true,
     "with": [
         {
             "txt": "B",
             "name": "Der Gruppenführer, der Bergung",
             "func": "Person",
-            "attr": "group,leading",
+            "leading": true,
+            "group": true,
         }
     ],
     "sub": [
@@ -66,7 +70,8 @@ var BGr = {
             "name": "Der Truppführer, der Bergung",
             "func": "Person",
             "txt": "B",
-            "attr": "troop,leading",
+            "leading": true,
+            "troop": true,
             "sub": null,
         },
         {
@@ -398,15 +403,11 @@ function getSign(root) {
 
     var svg = req.responseText;
     for(var key in root)
-        svg = svg.replaceAll(`{{${key.toUpperCase()}}}`, root[key]);
+        svg = svg
+            .replaceAll(`{{${key.toUpperCase()}}}`, root[key])
+            .replace(`{{${key}`, '')
+            .replace(`${key}}}`, '');
 
-    if(root.hasOwnProperty('attr'))
-        root['attr'].split(',').forEach(attr => {
-            var attrFormatted = attr.trim().toUpperCase();
-            if(attrFormatted != '')
-                svg = svg.replace(`{{${attrFormatted}`, '')
-                    .replace(`${attrFormatted}}}`, '');
-        });
     return svg
         .replace(/\{\{\w+\}\}/g, '')
         .replace(/{{\w+\s/g, '<!--')
