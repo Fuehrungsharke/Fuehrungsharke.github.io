@@ -209,7 +209,26 @@ function getEvtPos(evt) {
     return touchpos;
 }
 
-function closeContextMenu() {
+function getClickedElement(evt, className) {
+    var evtElement = evt.srcElement || evt.target;
+    if (evtElement.classList.contains(className))
+        return evtElement;
+    else
+        while (evtElement = evtElement.parentNode)
+            if (evtElement.classList && evtElement.classList.contains(className))
+                return evtElement;
+    return false;
+}
+
+function openSignContextMenu() {
+    var touchpos = getEvtPos(evt);
+    var menu = document.querySelector('.context-menu');
+    menu.style.left = touchpos.clientX + "px";
+    menu.style.top = touchpos.clientY + "px";
+    menu.classList.add('context-menu-active');
+}
+
+function closeSignContextMenu() {
     var menu = document.querySelector('.context-menu');
     menu.classList.remove('context-menu-active');
 }
@@ -220,22 +239,6 @@ function onDomContentLoaded() {
     outputSvg.addEventListener('pointermove', dragging);
     outputSvg.addEventListener('pointerup', drop);
     outputSvg.addEventListener('pointercancel', drop);
-    outputSvg.addEventListener('contextmenu', function (evt) {
-        evt.preventDefault();
-    });
-
-    var editableItems = document.querySelectorAll('.editable');
-    for (var i = 0, len = editableItems.length; i < len; i++) {
-        var editableItem = editableItems[i];
-        editableItem.addEventListener('contextmenu', function (evt) {
-            evt.preventDefault();
-            var touchpos = getEvtPos(evt);
-            var menu = document.querySelector('.context-menu');
-            menu.style.left = touchpos.clientX + "px";
-            menu.style.top = touchpos.clientY + "px";
-            menu.classList.add('context-menu-active');
-        });
-    }
 }
 
 function createUUID() {
@@ -595,12 +598,20 @@ function draw() {
 
 document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
-    closeContextMenu();
+    closeSignContextMenu();
+});
+document.addEventListener('contextmenu', function (evt) {
+    if (getClickedElement(evt, 'editable')) {
+        evt.preventDefault();
+        openSignContextMenu();
+    }
+    else if (getClickedElement(evt, 'noContextMenu'))
+        evt.preventDefault();
 });
 
 window.onkeyup = function (e) {
     if (e.keyCode === KeyCode.ESC)
-        closeContextMenu();
+        closeSignContextMenu();
 }
 
 draw();
