@@ -401,12 +401,13 @@ function getSign(root) {
         svg = svg.replaceAll(`{{${key.toUpperCase()}}}`, root[key]);
     }
 
-    attrTxt.split(',').forEach(attr => {
-        var attrFormatted = attr.trim().toUpperCase();
-        if(attrFormatted != '')
-            svg = svg.replace(`{{${attrFormatted}`, '')
-                .replace(`${attrFormatted}}}`, '');
-    });
+    if(root.hasOwnProperty('attr'))
+        root['attr'].split(',').forEach(attr => {
+            var attrFormatted = attr.trim().toUpperCase();
+            if(attrFormatted != '')
+                svg = svg.replace(`{{${attrFormatted}`, '')
+                    .replace(`${attrFormatted}}}`, '');
+        });
     return svg.replace(/{{\w+\s/g, '<!--')
         .replace(/\s\w+}}/g, '-->');
 }
