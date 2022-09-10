@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var editableItem = editableItems[i];
         editableItem.addEventListener('contextmenu', function(e) {
             console.log(`contextmenu: ${e}, ${editableItem}`);
-            var menu = document.querySelector('#context-menu');
+            var menu = document.querySelector('.context-menu');
             menu.classList.add('active');
         });
     }
