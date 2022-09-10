@@ -600,6 +600,7 @@ document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
     var menuItem = getClickedElement(evt, 'context-menu-item');
     if (menuItem != null) {
+        evt.preventDefault();
         console.log(menuItem);
     }
     closeSignContextMenu();
