@@ -198,7 +198,6 @@ var config = TZ;
 iptConfig = document.getElementById('iptConfig');
 outputSvg = document.getElementById("outputSvg");
 
-var menu = document.querySelector('#context-menu');
 
 document.addEventListener('DOMContentLoaded', function() {
     iptConfig.addEventListener('change', configSelected, false);
@@ -206,7 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
     outputSvg.addEventListener('pointermove', dragging);
     outputSvg.addEventListener('pointerup', drop);
     outputSvg.addEventListener('pointercancel', drop);
-
+    
+    var menu = document.querySelector('#context-menu');
     var editableItems = document.querySelectorAll('.editable');
     for ( var i = 0, len = editableItems.length; i < len; i++ ) {
         var editableItem = editableItems[i];
