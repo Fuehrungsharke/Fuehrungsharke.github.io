@@ -116,13 +116,14 @@ var FGrN = {
     "func": "Unit",
     "txt": "N",
     "org": "THW",
-    "attr": "group",
+    "group": true,
     "with": [
         {
             "name": "Der Gruppenführer, der Notversorgung, und Notinstandsetzung",
             "func": "Person",
             "txt": "N",
-            "attr": "group,leading",
+            "leading": true,
+            "group": true,
         }
     ],
     "sub": [
@@ -130,7 +131,8 @@ var FGrN = {
             "name": "Der Truppführer, der Notversorgung, und Notinstandsetzung",
             "func": "Person",
             "txt": "N",
-            "attr": "troop,leading",
+            "leading": true,
+            "troop": true,
         },
         {
             "name": "N-Helfer 1",
@@ -174,13 +176,14 @@ var TZ = {
     "func": "Unit",
     "txt": "TZ",
     "org": "THW",
-    "attr": "platoon",
+    "platoon": true,
     "with": [
         {
             "func": "Person",
             "name": "Der Zugführer",
             "txt": "TZ",
-            "attr": "platoon,leading",
+            "leading": true,
+            "platoon": true,
         }
     ],
     "sub": [
