@@ -3,6 +3,6 @@
     position: absolute;
 }
 
-.context-menu .active {
+.context-menu-active {
     display: block;
 }

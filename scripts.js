@@ -198,8 +198,14 @@ var config = TZ;
 iptConfig = document.getElementById('iptConfig');
 outputSvg = document.getElementById("outputSvg");
 
+function getEvtPos(evt) {
+    var touchpos = evt;
+    if(touchpos.clientX == undefined)
+        touchpos = evt.targetTouches[0];
+    return touchpos;
+}
 
-document.addEventListener('DOMContentLoaded', function() {
+function onDomContentLoaded() {
     iptConfig.addEventListener('change', configSelected, false);
     outputSvg.addEventListener('pointerdown', drag);
     outputSvg.addEventListener('pointermove', dragging);
@@ -209,13 +215,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var editableItems = document.querySelectorAll('.editable');
     for ( var i = 0, len = editableItems.length; i < len; i++ ) {
         var editableItem = editableItems[i];
-        editableItem.addEventListener('contextmenu', function(e) {
-            console.log(`contextmenu: ${e}, ${editableItem}`);
+        editableItem.addEventListener('contextmenu', function(evt) {
+            var touchpos = getEvtPos(evt);
             var menu = document.querySelector('.context-menu');
-            menu.classList.add('active');
+            menu.style.left = touchpos.clientX + "px";
+            menu.style.top = touchpos.clientY + "px";
+            menu.classList.add('context-menu-active');
         });
     }
-});
+}
 
 function createUUID(){
     var dt = new Date().getTime();
@@ -302,10 +310,7 @@ function drag(evt) {
     canvasChildren.unshift(draggingElement);
     canvas.childNodes = canvasChildren;
 
-    var touchpos = evt;
-    if(touchpos.clientX == undefined)
-        touchpos = evt.targetTouches[0];
-
+    var touchpos = getEvtPos(evt);
     var transform = draggingElement.getAttributeNS(null, 'transform');
     var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
     if(match == null) {
@@ -324,9 +329,7 @@ function drag(evt) {
 function dragging(evt) {
     if (draggingElement) {
         evt.preventDefault();
-        var touchpos = evt;
-        if(touchpos.clientX == undefined)
-            touchpos = evt.targetTouches[0];
+        var touchpos = getEvtPos(evt);
         draggingElement.setAttributeNS(null, 'transform', `translate(${touchpos.clientX + draggingElement.draggingInfo.offsetX}, ${touchpos.clientY + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
     }
 }
@@ -577,5 +580,7 @@ function draw() {
     outputSvg.setAttribute('width', size[0]);
     outputSvg.setAttribute('height', size[1] + LINESIZE);
 }
+
+document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 
 draw();
