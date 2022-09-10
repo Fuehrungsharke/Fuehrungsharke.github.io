@@ -197,6 +197,7 @@ var config = TZ;
 
 iptConfig = document.getElementById('iptConfig');
 outputSvg = document.getElementById("outputSvg");
+var editableItems = document.querySelectorAll(".editable");
 
 document.addEventListener('DOMContentLoaded', function() {
     iptConfig.addEventListener('change', configSelected, false);
@@ -204,6 +205,13 @@ document.addEventListener('DOMContentLoaded', function() {
     outputSvg.addEventListener('pointermove', dragging);
     outputSvg.addEventListener('pointerup', drop);
     outputSvg.addEventListener('pointercancel', drop);
+
+    for ( var i = 0, len = editableItems.length; i < len; i++ ) {
+        var editableItem = editableItems[i];
+        editableItem.addEventListener('contextmenu', function(e) {
+            console.log(e, editableItem);
+        });
+    }
 });
 
 function createUUID(){
@@ -436,6 +444,7 @@ function getSignSvg(root, uuid, x, y) {
     signSvg.setAttribute('transform', `translate(${x}, ${y}) scale(1 1)`)
     signSvg.setAttribute('uuid', uuid);
     signSvg.classList.add('draggable');
+    signSvg.classList.add('editable');
 
     if (!root.hasOwnProperty('fillcolor'))
         root['fillcolor'] = '#003399';
