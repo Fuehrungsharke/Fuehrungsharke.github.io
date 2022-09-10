@@ -216,6 +216,7 @@ function onDomContentLoaded() {
     for ( var i = 0, len = editableItems.length; i < len; i++ ) {
         var editableItem = editableItems[i];
         editableItem.addEventListener('contextmenu', function(evt) {
+            evt.preventDefault();
             var touchpos = getEvtPos(evt);
             var menu = document.querySelector('.context-menu');
             menu.style.left = touchpos.clientX + "px";
