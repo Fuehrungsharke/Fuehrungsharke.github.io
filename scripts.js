@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for ( var i = 0, len = editableItems.length; i < len; i++ ) {
         var editableItem = editableItems[i];
         editableItem.addEventListener('contextmenu', function(e) {
-            console.log(e, editableItem);
+            console.log(`contextmenu: ${e}, ${editableItem}`);
         });
     }
 });
