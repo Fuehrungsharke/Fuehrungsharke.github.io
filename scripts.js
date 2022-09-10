@@ -224,9 +224,8 @@ function openSignContextMenu(evt, sign) {
     var root = getConfigElementByUuid(config, sign.getAttributeNS(null, 'uuid'));
     var svg = getResource(`/signs/${root['sign']}.svg`);
     var menu = document.querySelector('.context-menu');
-    var matches = svg.matchAll(/\{\{(\w+)/g);
     var menuItems = [];
-    for (var match in matches) {
+    while (match = /\{\{(\w+)/g.exec(svg)) {
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
         menuItem.innerHTML = match[1].substring(2);
