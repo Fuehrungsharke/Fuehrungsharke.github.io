@@ -221,6 +221,12 @@ function getClickedElement(evt, className) {
 }
 
 function openSignContextMenu(evt, sign) {
+    var root = getConfigElementByUuid(config, sign.getAttributeNS(null, 'uuid'));
+    var defaultSign = getSign({
+        'sign': root['sign'],
+    });
+    
+
     var touchpos = getEvtPos(evt);
     var menu = document.querySelector('.context-menu');
     menu.style.left = touchpos.clientX + "px";
