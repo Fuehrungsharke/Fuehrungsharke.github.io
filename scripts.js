@@ -220,7 +220,7 @@ function getClickedElement(evt, className) {
     return false;
 }
 
-function openSignContextMenu() {
+function openSignContextMenu(evt) {
     var touchpos = getEvtPos(evt);
     var menu = document.querySelector('.context-menu');
     menu.style.left = touchpos.clientX + "px";
@@ -603,7 +603,7 @@ document.addEventListener('click', function (evt) {
 document.addEventListener('contextmenu', function (evt) {
     if (getClickedElement(evt, 'editable')) {
         evt.preventDefault();
-        openSignContextMenu();
+        openSignContextMenu(evt);
     }
     else if (getClickedElement(evt, 'noContextMenu'))
         evt.preventDefault();
