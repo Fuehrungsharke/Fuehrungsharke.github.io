@@ -391,15 +391,16 @@ function pointerOutSvg(uuid) {
     }
 }
 
-function getSign(sign, txt, spez, org, attrTxt, fillcolor) {
+function getSign(root) {
     var req = new XMLHttpRequest();
-    req.open('GET', `/signs/${sign}.svg`, false);
+    req.open('GET', `/signs/${root['func']}.svg`, false);
     req.send();
-    var svg = req.responseText
-        .replaceAll('{{TXT}}', txt)
-        .replaceAll('{{SPEZ}}', spez)
-        .replaceAll('{{ORG}}', org)
-        .replaceAll('{{FILLCOLOR}}', fillcolor);
+
+    var svg = req.responseText;
+    for(var key in root) {
+        svg = svg.replaceAll(`{{${key.toUpperCase()}}}`, root[key]);
+    }
+
     attrTxt.split(',').forEach(attr => {
         var attrFormatted = attr.trim().toUpperCase();
         if(attrFormatted != '')
@@ -416,23 +417,10 @@ function getSignSvg(root, uuid, x, y) {
     signSvg.setAttribute('uuid', uuid);
     signSvg.classList.add('draggable');
 
-    var txt = '';
-    if (root.hasOwnProperty('txt'))
-        txt = root['txt'];
-    var spez = '';
-    if (root.hasOwnProperty('spez'))
-        spez = root['spez'];
-    var org = '';
-    if (root.hasOwnProperty('org'))
-        org = root['org'];
-    var attr = '';
-    if (root.hasOwnProperty('attr'))
-        attr = root['attr'];
-    var fillcolor = '#003399';
-    if (root.hasOwnProperty('fillcolor'))
-        fillcolor = root['fillcolor'];
+    if (!root.hasOwnProperty('fillcolor'))
+        root['fillcolor'] = '#003399';
 
-    signSvg.innerHTML = getSign(root['func'], txt, spez, org, attr, fillcolor);
+    signSvg.innerHTML = getSign(root);
     signSvg.childNodes[0].setAttribute('touch-action', 'none');
     signSvg.childNodes[0].setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
     signSvg.childNodes[0].setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
