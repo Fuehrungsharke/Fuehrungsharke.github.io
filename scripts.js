@@ -253,8 +253,20 @@ function download(content, type, filename) {
     downloadJsonAnchorNode.remove();
 }
 
+function removeUuid(root) {
+    if(typeof root != 'object')
+        return root;
+    var newObj = {};
+    for(var key in root) {
+        if(key == 'uuid')
+            continue;
+        newObj[key] = removeUuid(root[key]);
+    }
+    return newObj;
+}
+
 document.getElementById('btnDownloadConfig').onclick = function () {
-    download(JSON.stringify(config, null, 2), 'text/json', 'FüHarke.json');
+    download(JSON.stringify(removeUuid(config), null, 2), 'text/json', 'FüHarke.json');
 }
 
 document.getElementById('btnDownloadSvg').onclick = function () {
