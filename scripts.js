@@ -598,6 +598,10 @@ function draw() {
 
 document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
+    var menuItem = getClickedElement(evt, 'context-menu-item');
+    if (menuItem != null) {
+        console.log(menuItem);
+    }
     closeSignContextMenu();
 });
 document.addEventListener('contextmenu', function (evt) {
