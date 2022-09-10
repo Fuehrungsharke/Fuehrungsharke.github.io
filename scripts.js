@@ -397,9 +397,8 @@ function getSign(root) {
     req.send();
 
     var svg = req.responseText;
-    for(var key in root) {
+    for(var key in root)
         svg = svg.replaceAll(`{{${key.toUpperCase()}}}`, root[key]);
-    }
 
     if(root.hasOwnProperty('attr'))
         root['attr'].split(',').forEach(attr => {
@@ -408,7 +407,9 @@ function getSign(root) {
                 svg = svg.replace(`{{${attrFormatted}`, '')
                     .replace(`${attrFormatted}}}`, '');
         });
-    return svg.replace(/{{\w+\s/g, '<!--')
+    return svg
+        .replace(/\{\{\w+\}\}/g, '')
+        .replace(/{{\w+\s/g, '<!--')
         .replace(/\s\w+}}/g, '-->');
 }
 
