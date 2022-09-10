@@ -222,9 +222,7 @@ function getClickedElement(evt, className) {
 
 function openSignContextMenu(evt, sign) {
     var root = getConfigElementByUuid(config, sign.getAttributeNS(null, 'uuid'));
-    var svg = getSign({
-        'sign': root['sign'],
-    });
+    var svg = getResource(`/signs/${root['sign']}.svg`);
     var menu = document.querySelector('.context-menu');
     menu.innerHTML = '';
     
@@ -458,12 +456,15 @@ function pointerOutSvg(uuid) {
     }
 }
 
-function getSign(root) {
+function getResource(path) {
     var req = new XMLHttpRequest();
-    req.open('GET', `/signs/${root['sign']}.svg`, false);
+    req.open('GET', path, false);
     req.send();
+    return req.responseText;
+}
 
-    var svg = req.responseText;
+function getSign(root) {
+    var svg = getResource(`/signs/${root['sign']}.svg`);
     for (var key in root)
         svg = svg
             .replaceAll(`{{${key.toUpperCase()}}}`, root[key])
