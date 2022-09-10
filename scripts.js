@@ -11,6 +11,10 @@ const SUB = 'sub';
 var draggingElement = null;
 var hoveringUuid = null;
 
+var KeyCode = {
+    ESC: 27,
+}
+
 var ZTr = {
     "sign": "Unit",
     "txt": "TZ",
@@ -595,5 +599,10 @@ document.addEventListener('click', function (evt) {
         closeContextMenu();
     }
 });
+
+window.onkeyup = function (e) {
+    if (e.keyCode === KeyCode.ESC)
+        closeContextMenu();
+}
 
 draw();
