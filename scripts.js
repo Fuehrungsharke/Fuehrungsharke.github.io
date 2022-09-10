@@ -408,8 +408,8 @@ function getSign(root) {
     for(var key in root)
         svg = svg
             .replaceAll(`{{${key.toUpperCase()}}}`, root[key])
-            .replace(`{{${key}`, '')
-            .replace(`${key}}}`, '');
+            .replaceAll(`{{${key.toUpperCase()}`, '')
+            .replaceAll(`${key.toUpperCase()}}}`, '');
 
     return svg
         .replace(/\{\{\w+\}\}/g, '')
