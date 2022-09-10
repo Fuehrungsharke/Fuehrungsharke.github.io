@@ -256,6 +256,8 @@ function download(content, type, filename) {
 function removeUuid(root) {
     if(typeof root != 'object')
         return root;
+    if(Array.isArray(root))
+        return root.map(item => removeUuid(item));
     var newObj = {};
     for(var key in root) {
         if(key == 'uuid')
