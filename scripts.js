@@ -206,12 +206,12 @@ document.addEventListener('DOMContentLoaded', function() {
     outputSvg.addEventListener('pointerup', drop);
     outputSvg.addEventListener('pointercancel', drop);
     
-    var menu = document.querySelector('#context-menu');
     var editableItems = document.querySelectorAll('.editable');
     for ( var i = 0, len = editableItems.length; i < len; i++ ) {
         var editableItem = editableItems[i];
         editableItem.addEventListener('contextmenu', function(e) {
             console.log(`contextmenu: ${e}, ${editableItem}`);
+            var menu = document.querySelector('#context-menu');
             menu.classList.add('active');
         });
     }
