@@ -12,7 +12,7 @@ var draggingElement = null;
 var hoveringUuid = null;
 
 var ZTr = {
-    "func": "Unit",
+    "sign": "Unit",
     "txt": "TZ",
     "org": "THW",
     "troop": true,
@@ -20,7 +20,7 @@ var ZTr = {
     "with": [
         {
             "name": "Der Zugtruppführer",
-            "func": "Person",
+            "sign": "Person",
             "txt": "TZ",
             "leading": true,
             "troop": true,
@@ -30,29 +30,29 @@ var ZTr = {
     "sub": [
         {
             "name": "ZTr-Helfer 1",
-            "func": "Person",
+            "sign": "Person",
             "txt": "ZTr",
         },
         {
             "name": "ZTr-Helfer 2",
-            "func": "Person",
+            "sign": "Person",
             "txt": "ZTr",
         },
         {
             "name": "ZTr-Helfer 3",
-            "func": "Person",
+            "sign": "Person",
             "txt": "ZTr",
         },
         {
             "name": "ZTr-Helfer 4",
-            "func": "Person",
+            "sign": "Person",
             "txt": "ZTr",
         }
     ]
 };
 
 var BGr = {
-    "func": "Unit",
+    "sign": "Unit",
     "txt": "B",
     "org": "THW",
     "group": true,
@@ -60,7 +60,7 @@ var BGr = {
         {
             "txt": "B",
             "name": "Der Gruppenführer, der Bergung",
-            "func": "Person",
+            "sign": "Person",
             "leading": true,
             "group": true,
         }
@@ -68,7 +68,7 @@ var BGr = {
     "sub": [
         {
             "name": "Der Truppführer, der Bergung",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
             "leading": true,
             "troop": true,
@@ -76,51 +76,51 @@ var BGr = {
         },
         {
             "name": "B-Helfer 1",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
         },
         {
             "name": "B-Helfer 2",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
         },
         {
             "name": "B-Helfer 3",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
         },
         {
             "name": "B-Helfer 4",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
         },
         {
             "name": "B-Helfer 5",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
         },
         {
             "name": "B-Helfer 6",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
         },
         {
             "name": "B-Helfer 7",
-            "func": "Person",
+            "sign": "Person",
             "txt": "B",
         },
     ]
 };
 
 var FGrN = {
-    "func": "Unit",
+    "sign": "Unit",
     "txt": "N",
     "org": "THW",
     "group": true,
     "with": [
         {
             "name": "Der Gruppenführer, der Notversorgung, und Notinstandsetzung",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
             "leading": true,
             "group": true,
@@ -129,57 +129,57 @@ var FGrN = {
     "sub": [
         {
             "name": "Der Truppführer, der Notversorgung, und Notinstandsetzung",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
             "leading": true,
             "troop": true,
         },
         {
             "name": "N-Helfer 1",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
         },
         {
             "name": "N-Helfer 2",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
         },
         {
             "name": "N-Helfer 3",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
         },
         {
             "name": "N-Helfer 4",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
         },
         {
             "name": "N-Helfer 5",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
         },
         {
             "name": "N-Helfer 6",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
         },
         {
             "name": "N-Helfer 7",
-            "func": "Person",
+            "sign": "Person",
             "txt": "N",
         },
     ]
 };
 
 var TZ = {
-    "func": "Unit",
+    "sign": "Unit",
     "txt": "TZ",
     "org": "THW",
     "platoon": true,
     "with": [
         {
-            "func": "Person",
+            "sign": "Person",
             "name": "Der Zugführer",
             "txt": "TZ",
             "leading": true,
@@ -415,7 +415,7 @@ function pointerOutSvg(uuid) {
 
 function getSign(root) {
     var req = new XMLHttpRequest();
-    req.open('GET', `/signs/${root['func']}.svg`, false);
+    req.open('GET', `/signs/${root['sign']}.svg`, false);
     req.send();
 
     var svg = req.responseText;
@@ -472,7 +472,7 @@ function getText(uuid, text, x, y) {
 function drawSign(canvas, root, x, y) {
     var uuid = createUUID();
     root['uuid'] = uuid;
-    if (root.hasOwnProperty('func')) {
+    if (root.hasOwnProperty('sign')) {
         var itemBox = getSignSvg(root, uuid, x, y);
         if(root.hasOwnProperty('name')) {
             var offset = -32;
