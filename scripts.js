@@ -220,7 +220,7 @@ function getClickedElement(evt, className) {
     return false;
 }
 
-function openSignContextMenu(evt) {
+function openSignContextMenu(evt, sign) {
     var touchpos = getEvtPos(evt);
     var menu = document.querySelector('.context-menu');
     menu.style.left = touchpos.clientX + "px";
@@ -599,16 +599,17 @@ function draw() {
 document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
     var menuItem = getClickedElement(evt, 'context-menu-item');
-    if (menuItem != null) {
+    if (menuItem) {
         evt.preventDefault();
         console.log(menuItem);
     }
     closeSignContextMenu();
 });
 document.addEventListener('contextmenu', function (evt) {
-    if (getClickedElement(evt, 'editable')) {
+    var sign = getClickedElement(evt, 'editable');
+    if (sign) {
         evt.preventDefault();
-        openSignContextMenu(evt);
+        openSignContextMenu(evt, sign);
     }
     else if (getClickedElement(evt, 'noContextMenu'))
         evt.preventDefault();
