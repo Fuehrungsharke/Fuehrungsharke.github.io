@@ -210,6 +210,7 @@ function getEvtPos(evt) {
 }
 
 function closeContextMenu() {
+    var menu = document.querySelector('.context-menu');
     menu.classList.remove('context-menu-active');
 }
 
@@ -594,10 +595,7 @@ function draw() {
 
 document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
-    var button = evt.button;
-    if (button === 1) {
-        closeContextMenu();
-    }
+    closeContextMenu();
 });
 
 window.onkeyup = function (e) {
