@@ -229,12 +229,14 @@ function openSignContextMenu(evt, sign) {
     menu.innerHTML = '';
     
     var matches = svg.matchAll(/\{\{(\w+)/g);
+    var menuItems = [];
     for (var match in matches) {
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
         menuItem.innerHTML = match[1].substring(2);
-        menu.appendChild(menuItem);
+        menuItems.push(menuItem);
     }
+    menu.replaceChildren(menuItems);
 
     var touchpos = getEvtPos(evt);
     menu.style.left = touchpos.clientX + "px";
