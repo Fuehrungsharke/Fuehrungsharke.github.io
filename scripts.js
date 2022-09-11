@@ -229,7 +229,7 @@ function openSignContextMenu(evt, sign) {
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
         menuItem.appendChild(document.createTextNode(`${match[1]}`));
-        newMenuItems.push(menuItem.outerHTML);
+        newMenuItems.push(menuItem);
     }
     var menuItems = document.querySelector('.context-menu-items');
     menuItems.replaceChildren(...newMenuItems);
