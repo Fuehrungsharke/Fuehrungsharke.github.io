@@ -226,9 +226,13 @@ function openSignContextMenu(evt, sign) {
     var re = /\{\{(\w+)/g;
     var newMenuItems = [];
     while (re.global && (match = re.exec(svg))) {
+        var key = match[1];
+        var prefix = 'X'
+        if(root[key])
+            prefix = 'OK';
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
-        menuItem.appendChild(document.createTextNode(`${match[1]}`));
+        menuItem.appendChild(document.createTextNode(`${prefix}\t${key}`));
         newMenuItems.push(menuItem);
     }
     var menuItems = document.querySelector('.context-menu-items');
