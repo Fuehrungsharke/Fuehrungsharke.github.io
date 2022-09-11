@@ -232,7 +232,7 @@ function openSignContextMenu(evt, sign) {
         newMenuItems.push(menuItem.outerHTML);
     }
     var menuItems = document.querySelector('.context-menu-items');
-    menuItems.replaceChildren(newMenuItems);
+    menuItems.replaceChildren(...newMenuItems);
     
     var touchpos = getEvtPos(evt);
     var menu = document.querySelector('.context-menu');
