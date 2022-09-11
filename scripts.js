@@ -223,18 +223,19 @@ function getClickedElement(evt, className) {
 function openSignContextMenu(evt, sign) {
     var root = getConfigElementByUuid(config, sign.getAttributeNS(null, 'uuid'));
     var svg = getResource(`/signs/${root['sign']}.svg`);
-    var menuItems = [];
     var re = /\{\{(\w+)/g;
+    var newMenuItems = [];
     while (re.global && (match = re.exec(svg))) {
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
         menuItem.innerHTML = `${match[1]}`;
-        menuItems.push(menuItem);
+        newMenuItems.push(menuItem);
     }
-    var menu = document.querySelector('.context-menu');
-    menu.replaceChildren(menuItems);
-
+    var menuItems = document.querySelector('.context-menu-items');
+    menuItems.replaceChildren(newMenuItems);
+    
     var touchpos = getEvtPos(evt);
+    var menu = document.querySelector('.context-menu');
     menu.style.left = touchpos.clientX + "px";
     menu.style.top = touchpos.clientY + "px";
     menu.classList.add('context-menu-active');
