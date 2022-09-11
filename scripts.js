@@ -228,8 +228,8 @@ function openSignContextMenu(evt, sign) {
     while (re.global && (match = re.exec(svg))) {
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
-        menuItem.innerHTML = `${match[1]}`;
-        newMenuItems.push(menuItem);
+        menuItem.appendChild(document.createTextNode(`${match[1]}`));
+        newMenuItems.push(menuItem.outerHTML);
     }
     var menuItems = document.querySelector('.context-menu-items');
     menuItems.replaceChildren(newMenuItems);
