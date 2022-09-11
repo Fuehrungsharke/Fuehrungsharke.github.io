@@ -228,7 +228,7 @@ function openSignContextMenu(evt, sign) {
     while (re.global && (match = re.exec(svg))) {
         var key = match[1];
         var prefix = 'X'
-        if(root[key])
+        if(root[key.toLocaleLowerCase()])
             prefix = 'OK';
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
