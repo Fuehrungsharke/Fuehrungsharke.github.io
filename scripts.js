@@ -254,7 +254,7 @@ function closeSignContextMenu() {
 }
 
 function clickContextMenuItem(menuItem) {
-    var key = menuItem.getAttributeNS(null, 'key');
+    var key = menuItem.getAttributeNS(null, 'key').toLowerCase();
     var uuid = menuItem.parentElement.getAttributeNS(null, 'uuid');
     var root = getConfigElementByUuid(config, uuid);
     if(root[key])
