@@ -260,7 +260,7 @@ function clickContextMenuItem(menuItem) {
     if(root[key])
     {
         if(typeof root[key] === 'boolean')
-            root[key] = false;
+            delete root[key];
     }
     else
         root[key] = true;
