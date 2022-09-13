@@ -4,48 +4,48 @@
 			<rect x="10" y="64" width="236" height="128" />
 		</clipPath>
 	</defs>
-	<rect x="10" y="64" width="236" height="128" fill="{{FILLCOLOR}}" stroke="#FFFFFF" stroke-width="10" clip-path="url(#symbol)" />
+	<rect x="10" y="64" width="236" height="128" fill="{{fillcolor}}" stroke="#FFFFFF" stroke-width="10" clip-path="url(#symbol)" />
 	<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1" />
 
-	{{FORMATION
+	{{formation
 	<line x1="128" y1="64" x2="128" y2="28" stroke="#000000" stroke-width="10" />
-	FORMATION}}
+	formation}}
 
-	{{PLATOON
+	{{platoon
 	<ellipse cx="64"  cy="48" rx="10" ry="10" fill="#000000" />
 	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
 	<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000" />
-	PLATOON}}
+	platoon}}
 
-	{{OFPLATOON
+	{{ofplatoon
 	<ellipse cx="64"  cy="86" rx="10" ry="10" fill="#FFFFFF" />
 	<ellipse cx="128" cy="86" rx="10" ry="10" fill="#FFFFFF" />
 	<ellipse cx="192" cy="86" rx="10" ry="10" fill="#FFFFFF" />
-	OFPLATOON}}
+	ofplatoon}}
 
-	{{GROUP
+	{{group
 	<ellipse cx="64"  cy="48" rx="10" ry="10" fill="#000000" />
 	<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000" />
-	GROUP}}
+	group}}
 
-	{{ECHELON
+	{{echelon
 	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
 	<ellipse cx="128" cy="24" rx="10" ry="10" fill="#000000" />
-	ECHELON}}
+	echelon}}
 
-	{{TROOP
+	{{troop
 	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
-	TROOP}}
+	troop}}
 
-	{{LEADING
+	{{leading
 	<rect x="11" y="65" width="234" height="25" fill="#FFFFFF" />
-	LEADING}}
+	leading}}
 
-	{{SUPPORT
+	{{support
 	<rect x="11" y="166" width="234" height="25" fill="#FFFFFF" />
-	SUPPORT}}
+	support}}
 
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="#FFFFFF" x="128" y="145">{{TXT}}</text>
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFFFFF" x="20" y="180">{{SPEZ}}</text>
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFFFFF" x="236" y="180">{{ORG}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="#FFFFFF" x="128" y="145">{{txt}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFFFFF" x="20" y="180">{{spez}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFFFFF" x="236" y="180">{{org}}</text>
 </svg>

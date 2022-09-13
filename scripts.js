@@ -229,7 +229,7 @@ function openSignContextMenu(evt, sign) {
     while (re.global && (match = re.exec(svg))) {
         var key = match[1];
         var prefix = 'X'
-        if(root[key.toLocaleLowerCase()])
+        if(root[key])
             prefix = 'OK';
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
@@ -254,7 +254,7 @@ function closeSignContextMenu() {
 }
 
 function clickContextMenuItem(menuItem) {
-    var key = menuItem.getAttributeNS(null, 'key').toLowerCase();
+    var key = menuItem.getAttributeNS(null, 'key');
     var uuid = menuItem.parentElement.getAttributeNS(null, 'uuid');
     var root = getConfigElementByUuid(config, uuid);
     if(root[key])
@@ -487,9 +487,9 @@ function getSign(root) {
     var svg = getResource(`/signs/${root['sign']}.svg`);
     for (var key in root)
         svg = svg
-            .replaceAll(`{{${key.toUpperCase()}}}`, root[key])
-            .replaceAll(`{{${key.toUpperCase()}`, '')
-            .replaceAll(`${key.toUpperCase()}}}`, '');
+            .replaceAll(`{{${key}}}`, root[key])
+            .replaceAll(`{{${key}`, '')
+            .replaceAll(`${key}}}`, '');
 
     return svg
         .replace(/\{\{\w+\}\}/g, '')

@@ -1,4 +1,4 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewbox="0 0 256 256">
 	<path d="M128,54 l0,148 M64,118 A64,64 90 0 1 192,118" stroke="#000000" stroke-width="5" fill="none" />
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="220">{{ORG}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="220">{{org}}</text>
 </svg>
