@@ -1,0 +1,45 @@
+{
+    "name": "Taktische Einheit",
+    "values": [
+        {
+            "name": "Verband",
+            "type": "bool",
+            "value": "formation"
+        },
+        {
+            "name": "Zug",
+            "type": "bool",
+            "value": "platoon"
+        },
+        {
+            "name": "Zugtrupp",
+            "type": "bool",
+            "value": "ofplatoon"
+        },
+        {
+            "name": "Gruppe",
+            "type": "bool",
+            "value": "group"
+        },
+        {
+            "name": "Staffel",
+            "type": "bool",
+            "value": "echelon"
+        },
+        {
+            "name": "Trupp",
+            "type": "bool",
+            "value": "troop"
+        },
+        {
+            "name": "Führungsfunktion",
+            "type": "bool",
+            "value": "leading"
+        },
+        {
+            "name": "Versorungsfunktion",
+            "type": "bool",
+            "value": "support"
+        }
+    ]
+}

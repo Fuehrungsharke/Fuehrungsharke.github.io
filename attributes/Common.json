@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Text",
+        "type": "string",
+        "value": "txt"
+    },
+    {
+        "name": "Organisation",
+        "type": "string",
+        "value": "org"
+    },
+    {
+        "name": "Spezialisierung",
+        "type": "string",
+        "value": "spez"
+    },
+    {
+        "name": "Füllfarbe",
+        "type": "color",
+        "value": "fillcolor"
+    }
+]
