@@ -6,10 +6,14 @@ const COLOR = 'color';
 function buildMenu(root, attrMenu) {
     var menuItems = [];
     for (let idx in attrMenu) {
+        var key = attrMenu[idx]['key'];
+        var content = root[key];
+        if (content == null)
+            content = '';
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
         if (attrMenu[idx]['type'] != SUBMENU)
-            menuItem.setAttribute('key', attrMenu[idx]['key']);
+            menuItem.setAttribute('key', key);
         switch (attrMenu[idx]['type']) {
             case SUBMENU:
                 menuItem.classList.add('with-submenu');
@@ -21,13 +25,13 @@ function buildMenu(root, attrMenu) {
                 menuItem.appendChild(subMenu);
                 break;
             case BOOL:
-                menuItem.appendChild(document.createTextNode(`${root[attrMenu[idx]['key']] == true ? '>\t' : '\t'} \t${attrMenu[idx]['name']}`));
+                menuItem.appendChild(document.createTextNode(`${content == true ? '>\t' : '\t'} \t${attrMenu[idx]['name']}`));
                 break;
             case STRING:
-                menuItem.appendChild(document.createTextNode(`\t${attrMenu[idx]['name']}: ${root[attrMenu[idx]['key']]}`));
+                menuItem.appendChild(document.createTextNode(`\t${attrMenu[idx]['name']}: ${content}`));
                 break;
             case COLOR:
-                menuItem.appendChild(document.createTextNode(`\t${attrMenu[idx]['name']}: ${root[attrMenu[idx]['key']]}`));
+                menuItem.appendChild(document.createTextNode(`\t${attrMenu[idx]['name']}: ${content}`));
                 break;
         }
         menuItems.push(menuItem);
