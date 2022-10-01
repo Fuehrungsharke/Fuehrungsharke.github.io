@@ -1,0 +1,13 @@
+{
+    "Bike": [
+        "Common"
+    ],
+    "Unit": [
+        "Common",
+        "TacticalUnit"
+    ],
+    "Person": [
+        "Common",
+        "TacticalUnit"
+    ]
+}
