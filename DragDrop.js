@@ -1,3 +1,15 @@
+function pointerOverSvg(uuid) {
+    hoveringUuid = uuid;
+    console.log('over: ' + hoveringUuid);
+}
+
+function pointerOutSvg(uuid) {
+    if (hoveringUuid == uuid) {
+        hoveringUuid = null;
+        console.log('out: ' + uuid);
+    }
+}
+
 function drag(evt) {
     var element = evt.target;
     if (element.nodeName == 'text' && element.getAttributeNS(null, 'uuid') != null)

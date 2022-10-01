@@ -35,6 +35,13 @@ function removeUuid(root) {
     return newObj;
 }
 
+function getResource(path) {
+    var req = new XMLHttpRequest();
+    req.open('GET', path, false);
+    req.send();
+    return req.responseText;
+}
+
 function download(content, type, filename) {
     var dataStr = `data:${type};charset=utf-8,` + encodeURIComponent(content);
     var downloadJsonAnchorNode = document.createElement('a');
@@ -43,4 +50,17 @@ function download(content, type, filename) {
     document.body.appendChild(downloadJsonAnchorNode);
     downloadJsonAnchorNode.click();
     downloadJsonAnchorNode.remove();
+}
+
+function isAncestorOf(item, presumedDescendant) {
+    if (presumedDescendant.hasOwnProperty(SUB) && Array.isArray(presumedDescendant[SUB])) {
+        for (let idx in presumedDescendant[SUB]) {
+            if (presumedDescendant[SUB][idx] == item)
+                return true;
+            var subResult = isAncestorOf(item, presumedDescendant[SUB][idx]);
+            if (subResult)
+                return subResult;
+        }
+    }
+    return false;
 }
