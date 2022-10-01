@@ -15,7 +15,7 @@
     padding: 10px 12px;
 }
 
-.context-menu .item {
+.context-menu .context-menu-item {
     list-style: none;
     font-size: 22px;
     height: 50px;
@@ -28,16 +28,11 @@
     padding: 0 5px 0 10px;
 }
 
-.context-menu .item:hover {
+.context-menu .context-menu-item:hover {
     background: #f2f2f2;
 }
 
-.context-menu .item span {
-    margin-left: 8px;
-    font-size: 19px;
-}
-
-.context-menu .item .with-submenu {
+.context-menu .context-menu-item .with-submenu {
     position: relative;
 }
 
