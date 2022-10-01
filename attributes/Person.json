@@ -48,6 +48,11 @@
                 "name": "Führungsfunktion",
                 "type": "bool",
                 "key": "leading"
+            },
+            {
+                "name": "Spezialist",
+                "type": "bool",
+                "key": "specialist"
             }
         ]
     },
