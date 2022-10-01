@@ -1,24 +1,54 @@
+const SUBMENU = 'submenu';
+const BOOL = 'bool';
+const STRING = 'string';
+const COLOR = 'color';
+
+function buildMenu(root, attrMenu) {
+    var menuItems = [];
+    for (let idx in attrMenu) {
+        var menuItem = document.createElement('li');
+        menuItem.classList.add('item');
+        if (attrMenu[idx]['type'] != SUBMENU)
+            menuItem.setAttribute('key', attrMenu[idx]['key']);
+        switch (attrMenu[idx]['type']) {
+            case SUBMENU:
+                menuItem.classList.add('with-submenu');
+                menuItem.appendChild(document.createTextNode(`${attrMenu[idx]['name']}`));
+
+                var subMenu = document.createElement('ul');
+                subMenu.classList.add('sub-menu');
+
+                var subMenuItems = buildMenu(root, attrMenu[idx]['values']);
+                subMenu.replaceChildren(...subMenuItems);
+
+                menuItem.appendChild(subMenu);
+                break;
+            case BOOL:
+                menuItem.appendChild(document.createTextNode(`?\t${attrMenu[idx]['name']}`));
+                break;
+            case STRING:
+                menuItem.appendChild(document.createTextNode(`\t${attrMenu[idx]['name']}: ${root[attrMenu[idx]['key']]}`));
+                break;
+            case COLOR:
+                menuItem.appendChild(document.createTextNode(`\t${attrMenu[idx]['name']}: ${root[attrMenu[idx]['key']]}`));
+                break;
+        }
+        menuItems.push(menuItem);
+    }
+    return menuItems;
+}
+
 function openSignContextMenu(evt, sign) {
     var uuid = sign.getAttributeNS(null, 'uuid');
     var root = getConfigElementByUuid(config, uuid);
-    var svg = getResource(`/signs/${root['sign']}.svg`);
-    var re = /\{\{(\w+)/g;
-    var newMenuItems = [];
-    while (re.global && (match = re.exec(svg))) {
-        var key = match[1];
-        var prefix = 'X'
-        if(root[key])
-            prefix = 'OK';
-        var menuItem = document.createElement('li');
-        menuItem.classList.add('context-menu-item');
-        menuItem.setAttribute('key', key);
-        menuItem.appendChild(document.createTextNode(`${prefix}\t${key}`));
-        newMenuItems.push(menuItem);
-    }
-    var menuItems = document.querySelector('.context-menu-items');
+
+    var attrMenu = JSON.parse(getResource(`/attributes/${root['sign']}.json`));
+    var newMenuItems = buildMenu(root, attrMenu);
+
+    var menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
     menuItems.replaceChildren(...newMenuItems);
-    
+
     var touchpos = getEvtPos(evt);
     var menu = document.querySelector('.context-menu');
     menu.style.left = touchpos.clientX + "px";
@@ -35,9 +65,8 @@ function clickContextMenuItem(menuItem) {
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = menuItem.parentElement.getAttributeNS(null, 'uuid');
     var root = getConfigElementByUuid(config, uuid);
-    if(root[key])
-    {
-        if(typeof root[key] === 'boolean')
+    if (root[key]) {
+        if (typeof root[key] === 'boolean')
             delete root[key];
     }
     else
