@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Text",
+        "type": "string",
+        "value": "txt"
+    },
+    {
+        "name": "Taktische Größe",
+        "values": [
+            {
+                "name": "Verband",
+                "type": "bool",
+                "value": "formation"
+            },
+            {
+                "name": "Zug",
+                "type": "bool",
+                "value": "platoon"
+            },
+            {
+                "name": "Zugtrupp",
+                "type": "bool",
+                "value": "ofplatoon"
+            },
+            {
+                "name": "Gruppe",
+                "type": "bool",
+                "value": "group"
+            },
+            {
+                "name": "Staffel",
+                "type": "bool",
+                "value": "echelon"
+            },
+            {
+                "name": "Trupp",
+                "type": "bool",
+                "value": "troop"
+            }
+        ]
+    },
+    {
+        "name": "Funktionen",
+        "values": [
+            {
+                "name": "Führungsfunktion",
+                "type": "bool",
+                "value": "leading"
+            }
+        ]
+    },
+    {
+        "name": "Organisation",
+        "type": "string",
+        "value": "org"
+    },
+    {
+        "name": "Spezialisierung",
+        "type": "string",
+        "value": "spez"
+    },
+    {
+        "name": "Füllfarbe",
+        "type": "color",
+        "value": "fillcolor"
+    }
+]
