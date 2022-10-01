@@ -34,3 +34,13 @@ function removeUuid(root) {
     }
     return newObj;
 }
+
+function download(content, type, filename) {
+    var dataStr = `data:${type};charset=utf-8,` + encodeURIComponent(content);
+    var downloadJsonAnchorNode = document.createElement('a');
+    downloadJsonAnchorNode.setAttribute("href", dataStr);
+    downloadJsonAnchorNode.setAttribute("download", filename);
+    document.body.appendChild(downloadJsonAnchorNode);
+    downloadJsonAnchorNode.click();
+    downloadJsonAnchorNode.remove();
+}
