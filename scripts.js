@@ -91,29 +91,6 @@ function onDomContentLoaded() {
     outputSvg.addEventListener('pointercancel', drop);
 }
 
-function createUUID() {
-    var dt = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = (dt + Math.random() * 16) % 16 | 0;
-        dt = Math.floor(dt / 16);
-        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-    return uuid;
-}
-
-function b64EncodeUnicode(str) {
-    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
-        function toSolidBytes(match, p1) {
-            return String.fromCharCode('0x' + p1);
-        }));
-}
-
-function b64DecodeUnicode(str) {
-    return decodeURIComponent(atob(str).split('').map(function (c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-}
-
 function configSelected(evt) {
     var reader = new FileReader();
     reader.onload = function (e) {
@@ -138,89 +115,12 @@ function download(content, type, filename) {
     downloadJsonAnchorNode.remove();
 }
 
-function removeUuid(root) {
-    if (typeof root != 'object')
-        return root;
-    if (Array.isArray(root))
-        return root.map(item => removeUuid(item));
-    var newObj = {};
-    for (var key in root) {
-        if (key == 'uuid')
-            continue;
-        newObj[key] = removeUuid(root[key]);
-    }
-    return newObj;
-}
-
 document.getElementById('btnDownloadConfig').onclick = function () {
     download(JSON.stringify(removeUuid(config), null, 2), 'text/json', 'FüHarke.json');
 }
 
 document.getElementById('btnDownloadSvg').onclick = function () {
     download(outputSvg.outerHTML, 'image/svg', 'FüHarke.svg');
-}
-
-function drag(evt) {
-    var element = evt.target;
-    if (element.nodeName == 'text' && element.getAttributeNS(null, 'uuid') != null)
-        return;
-    while (element != null && !element.classList.contains('draggable') && element.id != 'outputSvg') {
-        element = element.parentElement;
-    }
-    if (element == null || !element.classList.contains('draggable'))
-        return;
-    draggingElement = element;
-
-    var canvas = draggingElement.parentElement;
-    var canvasChildren = Array.from(canvas.childNodes).filter(item => item != draggingElement);
-    canvasChildren.unshift(draggingElement);
-    canvas.childNodes = canvasChildren;
-
-    var touchpos = getEvtPos(evt);
-    var transform = draggingElement.getAttributeNS(null, 'transform');
-    var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
-    if (match == null) {
-        draggingElement = null;
-        return;
-    }
-    draggingElement.draggingInfo = {
-        offsetX: match[1] - touchpos.clientX,
-        offsetY: match[2] - touchpos.clientY,
-        scaleX: match[3],
-        scaleY: match[4],
-        uuid: draggingElement.getAttributeNS(null, 'uuid'),
-    };
-}
-
-function dragging(evt) {
-    if (draggingElement) {
-        evt.preventDefault();
-        var touchpos = getEvtPos(evt);
-        draggingElement.setAttributeNS(null, 'transform', `translate(${touchpos.clientX + draggingElement.draggingInfo.offsetX}, ${touchpos.clientY + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
-    }
-}
-
-function drop(evt) {
-    var draggedElement = draggingElement;
-    draggingElement = null;
-    if (hoveringUuid != null) {
-        var source = getConfigElementParentByUuid(config, draggedElement.draggingInfo.uuid);
-        var subject = getConfigElementByUuid(config, draggedElement.draggingInfo.uuid);
-        var target = getConfigElementByUuid(config, hoveringUuid);
-
-        if (subject == target || isAncestorOf(target, subject))
-            return;
-
-        if (target != null && source != null) {
-            source.sub = source.sub.filter(item => item != subject);
-            if (target.sub == null)
-                target.sub = [subject];
-            else
-                target.sub.push(subject);
-        }
-    }
-    if (draggedElement)
-        draw();
 }
 
 function isAncestorOf(item, presumedDescendant) {
