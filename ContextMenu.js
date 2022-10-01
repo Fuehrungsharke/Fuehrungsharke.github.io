@@ -59,20 +59,43 @@ function closeSignContextMenu() {
 }
 
 function getUuidOfContextMenu(menuItem) {
-    if(menuItem.parentElement.classList.contains('sub-menu'))
+    if (menuItem.parentElement.classList.contains('sub-menu'))
         return getUuidOfContextMenu(menuItem.parentElement.parentElement);
     return menuItem.parentElement.getAttributeNS(null, 'uuid');
+}
+
+function getAttribute(attrMenu, key) {
+    for (let idx in attrMenu) {
+        if (attrMenu[idx]['type'] == SUBMENU) {
+            var subResult = getAttribute(attrMenu[idx]['values'], key);
+            if (subResult != null)
+                return subResult;
+        }
+        else if (attrMenu[idx]['key'] == key)
+            return attrMenu[idx];
+    }
+    return null;
 }
 
 function clickContextMenuItem(menuItem) {
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getConfigElementByUuid(config, uuid);
-    if (root[key]) {
-        if (typeof root[key] === 'boolean')
-            delete root[key];
+    var attrMenu = JSON.parse(getResource(`/attributes/${root['sign']}.json`));
+    var attr = getAttribute(attrMenu, key);
+    switch (attr['type']) {
+        case BOOL:
+            if (root[key])
+                delete root[key];
+            else
+                root[key] = true;
+            break;
+        case STRING:
+            let newValue = prompt(attr['name'], root[key]);
+            if (newValue == undefined)
+                return;
+            root[key] = newValue;
+            break;
     }
-    else
-        root[key] = true;
     draw();
 }
