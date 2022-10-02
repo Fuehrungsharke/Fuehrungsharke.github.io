@@ -5,52 +5,20 @@
         "key": "txt"
     },
     {
-        "name": "Taktische Größe",
-        "type": "submenu",
-        "values": [
-            {
-                "name": "Verband",
-                "type": "radio",
-                "key": "formation"
-            },
-            {
-                "name": "Zug",
-                "type": "radio",
-                "key": "platoon"
-            },
-            {
-                "name": "Zugtrupp",
-                "type": "radio",
-                "key": "platoontroop"
-            },
-            {
-                "name": "Gruppe",
-                "type": "radio",
-                "key": "group"
-            },
-            {
-                "name": "Staffel",
-                "type": "radio",
-                "key": "echelon"
-            },
-            {
-                "name": "Trupp",
-                "type": "radio",
-                "key": "troop"
-            }
-        ]
+        "name": "TacticalSize",
+        "type": "placeholder"
     },
     {
         "name": "Funktionen",
         "type": "submenu",
         "values": [
             {
-                "name": "Führungsfunktion",
+                "name": "Führung",
                 "type": "bool",
                 "key": "leading"
             },
             {
-                "name": "Versorungsfunktion",
+                "name": "Versorung",
                 "type": "bool",
                 "key": "support"
             }
