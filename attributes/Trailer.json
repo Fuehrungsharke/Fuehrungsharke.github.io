@@ -5,6 +5,11 @@
         "key": "txt"
     },
     {
+        "name": "Name",
+        "type": "string",
+        "key": "name"
+    },
+    {
         "name": "Organisation",
         "type": "placeholder"
     }

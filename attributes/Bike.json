@@ -1,5 +1,10 @@
 [
     {
+        "name": "Name",
+        "type": "string",
+        "key": "name"
+    },
+    {
         "name": "Selbstfahrend",
         "type": "bool",
         "key": "automotive"
