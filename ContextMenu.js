@@ -5,6 +5,7 @@ const RADIO = 'radio';
 const SETTER = 'setter';
 const STRING = 'string';
 const COLOR = 'color';
+const CMD_REMOVE = 'CMD_REMOVE';
 
 function buildMenu(root, parentMenuItem, attrMenu) {
     var menuItems = [];
@@ -55,6 +56,12 @@ function openSignContextMenu(evt, sign) {
 
     var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
     var newMenuItems = buildMenu(root, null, attrMenu);
+
+    var menuItemRemove = document.createElement('li');
+    menuItemRemove.classList.add('context-menu-item');
+    menuItemRemove.setAttribute('key', CMD_REMOVE);
+    menuItemRemove.appendChild(document.createTextNode('Entfernen'));
+    newMenuItems.push(menuItemRemove);
 
     var menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
@@ -114,36 +121,46 @@ function clickContextMenuItem(menuItem) {
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getConfigElementByUuid(config, uuid);
-    var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
-    var attr = getAttribute(attrMenu, key);
-    switch (attr.type) {
-        case BOOL:
-            if (root[key])
-                delete root[key];
-            else
-                root[key] = true;
-            break;
-        case RADIO:
-            var parentAttr = getParentAttribute(attrMenu, null, attr);
-            if (parentAttr.key != null)
-                root[parentAttr.key] = attr.key;
-            else
-                for (let idx in parentAttr.values)
-                    if (parentAttr.values[idx].key == attr.key)
-                        root[parentAttr.values[idx].key] = true;
-                    else
-                        delete root[parentAttr.values[idx].key];
-            break;
-        case STRING:
-            let newValue = prompt(attr['name'], root[key]);
-            if (newValue == undefined)
-                return;
-            root[key] = newValue;
-            break;
+    if (key == CMD_REMOVE) {
+        var source = getConfigElementParentByUuid(config, uuid);
+        if (source != null) {
+            if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB]))
+                source.sub = source.sub.filter(item => item != root);
+            if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH]))
+                source.with = source.with.filter(item => item != root);
+        }
     }
-    if (attr.implicitAttritbues != null) {
-        for (let idx in attr.implicitAttritbues) {
-            root[idx] = attr.implicitAttritbues[idx];
+    else {
+        var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
+        var attr = getAttribute(attrMenu, key);
+        switch (attr.type) {
+            case BOOL:
+                if (root[key])
+                    delete root[key];
+                else
+                    root[key] = true;
+                break;
+            case RADIO:
+                var parentAttr = getParentAttribute(attrMenu, null, attr);
+                if (parentAttr.key != null)
+                    root[parentAttr.key] = attr.key;
+                else
+                    for (let idx in parentAttr.values)
+                        if (parentAttr.values[idx].key == attr.key)
+                            root[parentAttr.values[idx].key] = true;
+                        else
+                            delete root[parentAttr.values[idx].key];
+                break;
+            case STRING:
+                let newValue = prompt(attr['name'], root[key]);
+                if (newValue == undefined)
+                    return;
+                root[key] = newValue;
+                break;
+        }
+        if (attr.implicitAttritbues != null) {
+            for (let idx in attr.implicitAttritbues)
+                root[idx] = attr.implicitAttritbues[idx];
         }
     }
     draw();

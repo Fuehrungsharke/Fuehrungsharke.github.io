@@ -64,3 +64,48 @@ function isAncestorOf(item, presumedDescendant) {
     }
     return false;
 }
+
+function getConfigElementByUuid(root, uuid) {
+    if (root.hasOwnProperty('uuid') && root.uuid == uuid) {
+        return root;
+    }
+    if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB])) {
+        for (let idx in root[SUB]) {
+            var subResult = getConfigElementByUuid(root[SUB][idx], uuid);
+            if (subResult != undefined)
+                return subResult;
+        }
+    }
+    if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH])) {
+        for (let idx in root[WITH]) {
+            var subResult = getConfigElementByUuid(root[WITH][idx], uuid);
+            if (subResult != undefined)
+                return subResult;
+        }
+    }
+    return null;
+}
+
+function getConfigElementParentByUuid(root, uuid) {
+    if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB])) {
+        for (let idx in root[SUB]) {
+            if (root[SUB][idx].hasOwnProperty('uuid') && root[SUB][idx].uuid == uuid) {
+                return root;
+            }
+            var subResult = getConfigElementParentByUuid(root[SUB][idx], uuid);
+            if (subResult != null)
+                return subResult;
+        }
+    }
+    if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH])) {
+        for (let idx in root[WITH]) {
+            if (root[WITH][idx].hasOwnProperty('uuid') && root[WITH][idx].uuid == uuid) {
+                return root;
+            }
+            var subResult = getConfigElementParentByUuid(root[WITH][idx], uuid);
+            if (subResult != null)
+                return subResult;
+        }
+    }
+    return null;
+}
