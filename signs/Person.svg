@@ -17,11 +17,13 @@
 	<ellipse cx="156" cy="44" rx="10" ry="10" fill="#000000" />
 	platoon}}
 
-	{{ofplatoon
+	{{platoontroop
+	<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000" />
+	
 	<ellipse cx="114" cy="100" rx="5" ry="5" fill="#FFFFFF" />
 	<ellipse cx="128" cy="100" rx="5" ry="5" fill="#FFFFFF" />
 	<ellipse cx="142" cy="100" rx="5" ry="5" fill="#FFFFFF" />
-	ofplatoon}}
+	platoontroop}}
 
 	{{group
 	<ellipse cx="100" cy="44" rx="10" ry="10" fill="#000000" />

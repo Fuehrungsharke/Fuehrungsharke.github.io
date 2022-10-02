@@ -10,32 +10,32 @@
         "values": [
             {
                 "name": "Verband",
-                "type": "bool",
+                "type": "radio",
                 "key": "formation"
             },
             {
                 "name": "Zug",
-                "type": "bool",
+                "type": "radio",
                 "key": "platoon"
             },
             {
                 "name": "Zugtrupp",
-                "type": "bool",
-                "key": "ofplatoon"
+                "type": "radio",
+                "key": "platoontroop"
             },
             {
                 "name": "Gruppe",
-                "type": "bool",
+                "type": "radio",
                 "key": "group"
             },
             {
                 "name": "Staffel",
-                "type": "bool",
+                "type": "radio",
                 "key": "echelon"
             },
             {
                 "name": "Trupp",
-                "type": "bool",
+                "type": "radio",
                 "key": "troop"
             }
         ]

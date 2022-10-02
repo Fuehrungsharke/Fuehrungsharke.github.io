@@ -1,5 +1,6 @@
 const SUBMENU = 'submenu';
 const BOOL = 'bool';
+const RADIO = 'radio';
 const STRING = 'string';
 const COLOR = 'color';
 
@@ -25,6 +26,7 @@ function buildMenu(root, attrMenu) {
                 menuItem.appendChild(subMenu);
                 break;
             case BOOL:
+            case RADIO:
                 menuItem.appendChild(document.createTextNode(`${content == true ? '>\t' : '\t'} \t${attrMenu[idx]['name']}`));
                 break;
             case STRING:
@@ -81,6 +83,19 @@ function getAttribute(attrMenu, key) {
     return null;
 }
 
+function getParentAttribute(attrMenu, parent, child) {
+    for (let idx in attrMenu) {
+        if (attrMenu[idx]['type'] == SUBMENU) {
+            var subResult = getParentAttribute(attrMenu[idx]['values'], attrMenu[idx], child);
+            if (subResult != null)
+                return subResult;
+        }
+        else if (attrMenu[idx] == child)
+            return parent;
+    }
+    return null;
+}
+
 function clickContextMenuItem(menuItem) {
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
@@ -93,6 +108,14 @@ function clickContextMenuItem(menuItem) {
                 delete root[key];
             else
                 root[key] = true;
+            break;
+        case RADIO:
+            var parentAttr = getParentAttribute(attrMenu, null, attr);
+            for (let idx in parentAttr.values)
+                if (parentAttr.values[idx] == attr)
+                    root[parentAttr.values[idx].key] = true;
+                else
+                    delete root[parentAttr.values[idx].key];
             break;
         case STRING:
             let newValue = prompt(attr['name'], root[key]);

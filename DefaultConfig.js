@@ -2,16 +2,14 @@ var ZTr = {
     "sign": "Unit",
     "txt": "TZ",
     "org": "THW",
-    "troop": true,
-    "ofplatoon": true,
+    "platoontroop": true,
     "with": [
         {
             "name": "Der Zugtruppführer",
             "sign": "Person",
             "txt": "TZ",
             "leading": true,
-            "troop": true,
-            "ofplatoon": true,
+            "platoontroop": true,
         }
     ],
     "sub": [

@@ -1,10 +1,11 @@
 function getSign(root) {
     var svg = getResource(`/signs/${root['sign']}.svg`);
-    for (var key in root)
+    for (var key in root) {
+        var re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
         svg = svg
             .replaceAll(`{{${key}}}`, root[key])
-            .replaceAll(`{{${key}`, '')
-            .replaceAll(`${key}}}`, '');
+            .replaceAll(re, '');
+    }
 
     return svg
         .replace(/\{\{\w+\}\}/g, '')
