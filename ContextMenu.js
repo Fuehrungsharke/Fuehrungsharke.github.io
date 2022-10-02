@@ -4,7 +4,7 @@ const BOOL = 'bool';
 const RADIO = 'radio';
 const SETTER = 'setter';
 const STRING = 'string';
-const COLOR = 'color';
+const HEADER = 'header';
 const CMD_REMOVE = 'CMD_REMOVE';
 
 function buildMenu(root, parentMenuItem, attrMenu) {
@@ -41,8 +41,10 @@ function buildMenu(root, parentMenuItem, attrMenu) {
             case STRING:
                 menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
                 break;
-            case COLOR:
-                menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
+            case HEADER:
+                var menuItem = document.createElement('li');
+                menuItem.classList.add('context-menu-header');
+                menuItem.appendChild(document.createTextNode(attrItem.name));
                 break;
         }
         menuItems.push(menuItem);
@@ -56,6 +58,10 @@ function openSignContextMenu(evt, sign) {
 
     var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
     var newMenuItems = buildMenu(root, null, attrMenu);
+
+    var menuHeaderItem = document.createElement('li');
+    menuHeaderItem.classList.add('context-menu-header');
+    newMenuItems.push(menuHeaderItem);
 
     var menuItemRemove = document.createElement('li');
     menuItemRemove.classList.add('context-menu-item');
@@ -133,6 +139,8 @@ function clickContextMenuItem(menuItem) {
     else {
         var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
         var attr = getAttribute(attrMenu, key);
+        if (attr == null)
+            return;
         switch (attr.type) {
             case BOOL:
                 if (root[key])
