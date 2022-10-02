@@ -133,8 +133,8 @@
         },
         {
             "name": "Zurücksetzen",
-            "type": "setter",
-            "key": "resetOrg",
+            "type": "cmd",
+            "cmd": "resetOrg",
             "implicitAttritbues": {
                 "org": ""
             }

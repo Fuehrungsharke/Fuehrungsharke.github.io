@@ -11,8 +11,8 @@
     },
     {
         "name": "Führungsfarbe verwenden",
-        "type": "setter",
-        "key": "resetColor",
+        "type": "cmd",
+        "cmd": "resetColor",
         "implicitAttritbues": {
             "colorPrimary": "#FFFF00",
             "colorAccent": "#000000"

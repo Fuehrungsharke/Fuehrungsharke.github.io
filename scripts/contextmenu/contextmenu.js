@@ -2,10 +2,13 @@ const SUBMENU = 'submenu';
 const PLACEHOLDER = 'placeholder';
 const BOOL = 'bool';
 const RADIO = 'radio';
-const SETTER = 'setter';
+const CMD = 'cmd';
 const STRING = 'string';
 const HEADER = 'header';
-const CMD_REMOVE = 'CMD_REMOVE';
+const CMD_ADD = 'add';
+const CMD_ADD_SUB = 'add_sub';
+const CMD_ADD_WITH = 'add_with';
+const CMD_REMOVE = 'remove';
 
 function buildMenu(root, parentMenuItem, attrMenu) {
     var menuItems = [];
@@ -16,6 +19,8 @@ function buildMenu(root, parentMenuItem, attrMenu) {
         var key = attrItem.key;
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
+        if (attrItem.cmd != null)
+            menuItem.setAttribute('cmd', attrItem.cmd);
         menuItem.setAttribute('key', key);
         if (parentMenuItem != null && parentMenuItem.key != null)
             key = parentMenuItem.key;
@@ -34,7 +39,7 @@ function buildMenu(root, parentMenuItem, attrMenu) {
                 break;
             case BOOL:
             case RADIO:
-            case SETTER:
+            case CMD:
                 var isSelected = content == true || content == attrItem.key;
                 menuItem.appendChild(document.createTextNode(`${isSelected ? '>\t' : '\t'} \t${attrItem.name}`));
                 break;
@@ -63,9 +68,33 @@ function openSignContextMenu(evt, sign) {
     menuHeaderItem.classList.add('context-menu-header');
     newMenuItems.push(menuHeaderItem);
 
+    var menuItemsSign = buildMenu(null, null, JSON.parse(getResource('/scripts/contextmenu/menu_signs.json')));
+    var menuItemSubList = document.createElement('ul');
+    menuItemSubList.classList.add('sub-menu')
+    menuItemSubList.replaceChildren(...menuItemsSign);
+    var menuItemAddSub = document.createElement('li');
+    menuItemAddSub.classList.add('context-menu-item');
+    menuItemAddSub.classList.add('with-submenu')
+    menuItemAddSub.setAttribute('cmd', CMD_ADD_SUB);
+    menuItemAddSub.appendChild(document.createTextNode('Neu, untergeordnet'));
+    menuItemAddSub.appendChild(menuItemSubList);
+    newMenuItems.push(menuItemAddSub);
+
+    var menuItemsSign = buildMenu(null, null, JSON.parse(getResource('/scripts/contextmenu/menu_signs.json')));
+    var menuItemSubList = document.createElement('ul');
+    menuItemSubList.classList.add('sub-menu')
+    menuItemSubList.replaceChildren(...menuItemsSign);
+    var menuItemAddSub = document.createElement('li');
+    menuItemAddSub.classList.add('context-menu-item');
+    menuItemAddSub.classList.add('with-submenu')
+    menuItemAddSub.setAttribute('cmd', CMD_ADD_WITH);
+    menuItemAddSub.appendChild(document.createTextNode('Neu, nebenstehend'));
+    menuItemAddSub.appendChild(menuItemSubList);
+    newMenuItems.push(menuItemAddSub);
+
     var menuItemRemove = document.createElement('li');
     menuItemRemove.classList.add('context-menu-item');
-    menuItemRemove.setAttribute('key', CMD_REMOVE);
+    menuItemRemove.setAttribute('cmd', CMD_REMOVE);
     menuItemRemove.appendChild(document.createTextNode('Entfernen'));
     newMenuItems.push(menuItemRemove);
 
@@ -103,6 +132,8 @@ function getAttribute(attrMenu, key) {
         }
         else if (attrItem.key == key)
             return attrMenu[idx];
+        else if (attrItem.cmd == key)
+            return attrMenu[idx];
     }
     return null;
 }
@@ -124,52 +155,84 @@ function getParentAttribute(attrMenu, parent, child) {
 }
 
 function clickContextMenuItem(menuItem) {
+    var cmd = menuItem.getAttributeNS(null, 'cmd');
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getConfigElementByUuid(config, uuid);
-    if (key == CMD_REMOVE) {
-        var source = getConfigElementParentByUuid(config, uuid);
-        if (source != null) {
-            if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB]))
-                source.sub = source.sub.filter(item => item != root);
-            if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH]))
-                source.with = source.with.filter(item => item != root);
-        }
-    }
-    else {
-        var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
-        var attr = getAttribute(attrMenu, key);
-        if (attr == null)
-            return;
-        switch (attr.type) {
-            case BOOL:
-                if (root[key])
-                    delete root[key];
-                else
-                    root[key] = true;
-                break;
-            case RADIO:
-                var parentAttr = getParentAttribute(attrMenu, null, attr);
-                if (parentAttr.key != null)
-                    root[parentAttr.key] = attr.key;
-                else
-                    for (let idx in parentAttr.values)
-                        if (parentAttr.values[idx].key == attr.key)
-                            root[parentAttr.values[idx].key] = true;
-                        else
-                            delete root[parentAttr.values[idx].key];
-                break;
-            case STRING:
-                let newValue = prompt(attr['name'], root[key]);
-                if (newValue == undefined)
-                    return;
-                root[key] = newValue;
-                break;
-        }
-        if (attr.implicitAttritbues != null) {
-            for (let idx in attr.implicitAttritbues)
-                root[idx] = attr.implicitAttritbues[idx];
-        }
+    switch (cmd) {
+        case CMD_ADD:
+            var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
+            switch (subCmd) {
+                case CMD_ADD_SUB:
+                    if (root[SUB] == null)
+                        root[SUB] = [];
+                    root[SUB].push({
+                        'sign': key,
+                    });
+                    break;
+                case CMD_ADD_WITH:
+                    if (root[WITH] == null)
+                        root[WITH] = [];
+                    root[WITH].push({
+                        'sign': key,
+                    });
+                    break;
+            }
+            break;
+        case CMD_REMOVE:
+            var source = getConfigElementParentByUuid(config, uuid);
+            if (source != null) {
+                if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
+                    source.sub = source.sub.filter(item => item != root);
+                    if (source.sub.length == 0)
+                        delete source.sub;
+                }
+                if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
+                    source.with = source.with.filter(item => item != root);
+                    if (source.with.length == 0)
+                        delete source.with;
+                }
+            }
+            break;
+        default:
+            var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
+            var attr = null;
+            if (key != "undefined")
+                attr = getAttribute(attrMenu, key);
+            else
+                attr = getAttribute(attrMenu, cmd);
+            if (attr == null)
+                return;
+            switch (attr.type) {
+                case BOOL:
+                    if (root[key])
+                        delete root[key];
+                    else
+                        root[key] = true;
+                    break;
+                case RADIO:
+                    var parentAttr = getParentAttribute(attrMenu, null, attr);
+                    if (parentAttr.key != null)
+                        root[parentAttr.key] = attr.key;
+                    else
+                        for (let idx in parentAttr.values)
+                            if (parentAttr.values[idx].key == attr.key)
+                                root[parentAttr.values[idx].key] = true;
+                            else
+                                delete root[parentAttr.values[idx].key];
+                    break;
+                case STRING:
+                    let newValue = prompt(attr['name'], root[key]);
+                    if (newValue == undefined)
+                        return;
+                    root[key] = newValue;
+                    break;
+            }
+            if (attr.implicitAttritbues != null) {
+                for (let idx in attr.implicitAttritbues)
+                    root[idx] = attr.implicitAttritbues[idx];
+            }
+            break;
     }
     draw();
 }

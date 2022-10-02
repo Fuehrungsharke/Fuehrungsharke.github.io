@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Einheit",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Unit"
+    },
+    {
+        "name": "Person",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Person"
+    },
+    {
+        "name": "Fahrzeug",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Vehicle"
+    },
+    {
+        "name": "Anhänger",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Trailer"
+    },
+    {
+        "name": "Befehlsstelle",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Flag"
+    }
+]
