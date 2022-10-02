@@ -10,6 +10,11 @@
         "key": "name"
     },
     {
+        "name": "Geländegängig",
+        "type": "bool",
+        "key": "offroad"
+    },
+    {
         "name": "Organisation",
         "type": "placeholder"
     }
