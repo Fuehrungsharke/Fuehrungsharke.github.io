@@ -20,12 +20,14 @@
             {
                 "name": "Führung",
                 "type": "bool",
-                "key": "leading"
+                "key": "leading",
+                "icon": "function_leading_person"
             },
             {
-                "name": "Spezialist",
+                "name": "Sonderfunktion",
                 "type": "bool",
-                "key": "specialist"
+                "key": "specialist",
+                "icon": "function_specialist"
             }
         ]
     },

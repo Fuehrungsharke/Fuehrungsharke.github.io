@@ -20,12 +20,14 @@
             {
                 "name": "Führung",
                 "type": "bool",
-                "key": "leading"
+                "key": "leading",
+                "icon": "function_leading_unit"
             },
             {
                 "name": "Versorung",
                 "type": "bool",
-                "key": "support"
+                "key": "support",
+                "icon": "function_support"
             }
         ]
     },

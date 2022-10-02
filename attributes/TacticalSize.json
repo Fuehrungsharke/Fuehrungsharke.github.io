@@ -5,32 +5,38 @@
         {
             "name": "Verband",
             "type": "radio",
-            "key": "formation"
+            "key": "formation",
+            "icon": "size_formation"
         },
         {
             "name": "Zug",
             "type": "radio",
-            "key": "platoon"
+            "key": "platoon",
+            "icon": "size_platoon"
         },
         {
             "name": "Zugtrupp",
             "type": "radio",
-            "key": "platoontroop"
+            "key": "platoontroop",
+            "icon": "size_platoontroop"
         },
         {
             "name": "Gruppe",
             "type": "radio",
-            "key": "group"
+            "key": "group",
+            "icon": "size_group"
         },
         {
             "name": "Staffel",
             "type": "radio",
-            "key": "echelon"
+            "key": "echelon",
+            "icon": "size_echelon"
         },
         {
             "name": "Trupp",
             "type": "radio",
-            "key": "troop"
+            "key": "troop",
+            "icon": "size_troop"
         }
     ]
 }

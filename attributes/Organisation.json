@@ -147,7 +147,7 @@
             "name": "Führungsfarbe verwenden",
             "type": "cmd",
             "cmd": "resetColor",
-            "icon": "leading",
+            "icon": "leadingcolor",
             "implicitAttritbues": {
                 "colorPrimary": "#FFFF00",
                 "colorAccent": "#000000"
