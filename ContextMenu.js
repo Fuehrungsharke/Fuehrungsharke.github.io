@@ -2,6 +2,7 @@ const SUBMENU = 'submenu';
 const PLACEHOLDER = 'placeholder';
 const BOOL = 'bool';
 const RADIO = 'radio';
+const SETTER = 'setter';
 const STRING = 'string';
 const COLOR = 'color';
 
@@ -32,6 +33,7 @@ function buildMenu(root, parentMenuItem, attrMenu) {
                 break;
             case BOOL:
             case RADIO:
+            case SETTER:
                 var isSelected = content == true || content == attrItem.key;
                 menuItem.appendChild(document.createTextNode(`${isSelected ? '>\t' : '\t'} \t${attrItem.name}`));
                 break;

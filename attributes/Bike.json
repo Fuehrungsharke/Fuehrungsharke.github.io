@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Selbstfahrend",
+        "type": "bool",
+        "key": "automotive"
+    },
+    {
+        "name": "Organisation",
+        "type": "placeholder"
+    }
+]

@@ -110,6 +110,14 @@
                 "colorPrimary": "#FFFFFF",
                 "colorAccent": "#000000"
             }
+        },
+        {
+            "name": "Zurücksetzen",
+            "type": "setter",
+            "key": "resetOrg",
+            "implicitAttritbues": {
+                "org": ""
+            }
         }
     ]
 }

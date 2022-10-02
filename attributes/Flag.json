@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Text",
+        "type": "string",
+        "key": "txt"
+    },
+    {
+        "name": "Führungsfarbe verwenden",
+        "type": "setter",
+        "key": "resetColor",
+        "implicitAttritbues": {
+            "colorPrimary": "#FFFF00",
+            "colorAccent": "#000000"
+        }
+    },
+    {
+        "name": "Organisation",
+        "type": "placeholder"
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Text",
+        "type": "string",
+        "key": "txt"
+    },
+    {
+        "name": "Organisation",
+        "type": "placeholder"
+    }
+]
