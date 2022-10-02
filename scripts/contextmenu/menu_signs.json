@@ -28,5 +28,17 @@
         "type": "cmd",
         "cmd": "add",
         "key": "Flag"
+    },
+    {
+        "name": "Gebäude",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Building"
+    },
+    {
+        "name": "Zweirad",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Bike"
     }
 ]
