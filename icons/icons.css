@@ -1,0 +1,51 @@
+i {
+    width: 24px;
+    height: 24px;
+    margin: 0px 5px 0px 0px;
+}
+
+.leading {
+    background-color: #FFFF00;
+    border-radius: 12px;
+    min-width: 24px;
+}
+
+.Feuerwehr {
+    content: url('/icons/Feuerwehr.svg');
+}
+
+.Polizei {
+    content: url('/icons/Polizei.svg');
+}
+
+.Bundespolizei {
+    content: url('/icons/Bundespolizei.svg');
+}
+
+.DeutschesRotesKreuz {
+    content: url('/icons/DeutschesRotesKreuz.png');
+}
+
+.JohanniterUnfallHilfe {
+    content: url('/icons/JohanniterUnfallHilfe.svg');
+}
+
+.ArbeiterSamariterBund {
+    content: url('/icons/ArbeiterSamariterBund.svg');
+}
+
+.MalteserHilfsdienst {
+    content: url('/icons/MalteserHilfsdienst.svg');
+}
+
+.Bundeswehr {
+    content: url('/icons/Bundeswehr.svg');
+}
+
+.THW {
+    content: url('/icons/THW.svg');
+}
+
+.Zivilschutz {
+    content: url('/icons/Zivilschutz.svg');
+}

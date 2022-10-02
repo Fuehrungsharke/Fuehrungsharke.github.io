@@ -19,6 +19,13 @@ function buildMenu(root, parentMenuItem, attrMenu) {
         var key = attrItem.key;
         var menuItem = document.createElement('li');
         menuItem.classList.add('context-menu-item');
+
+        if (attrItem.icon != null) {
+            var icon = document.createElement('i');
+            icon.classList.add(attrItem.icon);
+            menuItem.appendChild(icon);
+        }
+
         if (attrItem.cmd != null)
             menuItem.setAttribute('cmd', attrItem.cmd);
         menuItem.setAttribute('key', key);

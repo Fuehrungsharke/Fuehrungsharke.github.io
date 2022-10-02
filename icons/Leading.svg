@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="700"
+     height="700"
+     viewBox="-350 -350 700 700">
+	<circle fill="#FFFF00"
+	        r="350"/>
+</svg>
