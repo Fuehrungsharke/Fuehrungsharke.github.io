@@ -4,6 +4,7 @@ var ZTr = {
     "org": "THW",
     "platoontroop": true,
     "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
     "with": [
         {
             "name": "Der Zugtruppführer",
@@ -12,6 +13,7 @@ var ZTr = {
             "leading": true,
             "platoontroop": true,
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         }
     ],
     "sub": [
@@ -20,24 +22,28 @@ var ZTr = {
             "sign": "Person",
             "txt": "ZTr",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "ZTr-Helfer 2",
             "sign": "Person",
             "txt": "ZTr",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "ZTr-Helfer 3",
             "sign": "Person",
             "txt": "ZTr",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "ZTr-Helfer 4",
             "sign": "Person",
             "txt": "ZTr",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         }
     ]
 };
@@ -48,6 +54,7 @@ var BGr = {
     "org": "THW",
     "group": true,
     "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
     "with": [
         {
             "txt": "B",
@@ -56,6 +63,7 @@ var BGr = {
             "leading": true,
             "group": true,
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         }
     ],
     "sub": [
@@ -67,48 +75,56 @@ var BGr = {
             "troop": true,
             "sub": null,
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "B-Helfer 1",
             "sign": "Person",
             "txt": "B",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "B-Helfer 2",
             "sign": "Person",
             "txt": "B",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "B-Helfer 3",
             "sign": "Person",
             "txt": "B",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "B-Helfer 4",
             "sign": "Person",
             "txt": "B",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "B-Helfer 5",
             "sign": "Person",
             "txt": "B",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "B-Helfer 6",
             "sign": "Person",
             "txt": "B",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "B-Helfer 7",
             "sign": "Person",
             "txt": "B",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
     ]
 };
@@ -119,6 +135,7 @@ var FGrN = {
     "org": "THW",
     "group": true,
     "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
     "with": [
         {
             "name": "Der Gruppenführer, der Notversorgung, und Notinstandsetzung",
@@ -127,6 +144,7 @@ var FGrN = {
             "leading": true,
             "group": true,
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         }
     ],
     "sub": [
@@ -137,48 +155,56 @@ var FGrN = {
             "leading": true,
             "troop": true,
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "N-Helfer 1",
             "sign": "Person",
             "txt": "N",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "N-Helfer 2",
             "sign": "Person",
             "txt": "N",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "N-Helfer 3",
             "sign": "Person",
             "txt": "N",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "N-Helfer 4",
             "sign": "Person",
             "txt": "N",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "N-Helfer 5",
             "sign": "Person",
             "txt": "N",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "N-Helfer 6",
             "sign": "Person",
             "txt": "N",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "N-Helfer 7",
             "sign": "Person",
             "txt": "N",
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
     ]
 };
@@ -189,6 +215,7 @@ var TZ = {
     "org": "THW",
     "platoon": true,
     "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
     "with": [
         {
             "sign": "Person",
@@ -197,6 +224,7 @@ var TZ = {
             "leading": true,
             "platoon": true,
             "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         }
     ],
     "sub": [
