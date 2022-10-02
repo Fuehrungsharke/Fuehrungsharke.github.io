@@ -10,15 +10,6 @@
         "key": "name"
     },
     {
-        "name": "Führungsfarbe verwenden",
-        "type": "cmd",
-        "cmd": "resetColor",
-        "implicitAttritbues": {
-            "colorPrimary": "#FFFF00",
-            "colorAccent": "#000000"
-        }
-    },
-    {
         "name": "Organisation",
         "type": "placeholder"
     }

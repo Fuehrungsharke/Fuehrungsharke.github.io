@@ -132,6 +132,15 @@
             "type": "header"
         },
         {
+            "name": "Führungsfarbe verwenden",
+            "type": "cmd",
+            "cmd": "resetColor",
+            "implicitAttritbues": {
+                "colorPrimary": "#FFFF00",
+                "colorAccent": "#000000"
+            }
+        },
+        {
             "name": "Zurücksetzen",
             "type": "cmd",
             "cmd": "resetOrg",
