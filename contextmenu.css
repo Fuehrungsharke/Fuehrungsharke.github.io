@@ -1,7 +1,7 @@
 .context-menu {
     visibility: hidden;
     position: absolute;
-    width: 300px;
+    width: auto;
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
@@ -12,20 +12,22 @@
 }
 
 .context-menu .menu {
-    padding: 10px 12px;
+    padding: 0px;
+    margin: 5px 0px;
 }
 
 .context-menu .context-menu-item {
     list-style: none;
-    font-size: 22px;
-    height: 50px;
+    font-size: 16px;
+    font-family: 'Lubalin Graph', 'Roboto Slab';
+    height: auto;
     display: flex;
-    width: 100%;
+    width: 200px;
     cursor: pointer;
     align-items: center;
     border-radius: 5px;
     margin-bottom: 2px;
-    padding: 0 5px 0 10px;
+    padding: 5px 10px;
 }
 
 .context-menu .context-menu-item:hover {
@@ -39,13 +41,13 @@
 .context-menu .sub-menu {
     position: absolute;
     background: #fff;
-    width: 200px;
-    right: -200px;
-    padding: 13px;
+    width: 220px;
+    right: -220px;
+    padding: 5px 0px;
     opacity: 0;
     pointer-events: none;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
     transition: 0.2s ease;
 }
 
