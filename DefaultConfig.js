@@ -3,6 +3,7 @@ var ZTr = {
     "txt": "TZ",
     "org": "THW",
     "platoontroop": true,
+    "colorPrimary": "#003399",
     "with": [
         {
             "name": "Der Zugtruppführer",
@@ -10,6 +11,7 @@ var ZTr = {
             "txt": "TZ",
             "leading": true,
             "platoontroop": true,
+            "colorPrimary": "#003399",
         }
     ],
     "sub": [
@@ -17,21 +19,25 @@ var ZTr = {
             "name": "ZTr-Helfer 1",
             "sign": "Person",
             "txt": "ZTr",
+            "colorPrimary": "#003399",
         },
         {
             "name": "ZTr-Helfer 2",
             "sign": "Person",
             "txt": "ZTr",
+            "colorPrimary": "#003399",
         },
         {
             "name": "ZTr-Helfer 3",
             "sign": "Person",
             "txt": "ZTr",
+            "colorPrimary": "#003399",
         },
         {
             "name": "ZTr-Helfer 4",
             "sign": "Person",
             "txt": "ZTr",
+            "colorPrimary": "#003399",
         }
     ]
 };
@@ -41,6 +47,7 @@ var BGr = {
     "txt": "B",
     "org": "THW",
     "group": true,
+    "colorPrimary": "#003399",
     "with": [
         {
             "txt": "B",
@@ -48,6 +55,7 @@ var BGr = {
             "sign": "Person",
             "leading": true,
             "group": true,
+            "colorPrimary": "#003399",
         }
     ],
     "sub": [
@@ -58,41 +66,49 @@ var BGr = {
             "leading": true,
             "troop": true,
             "sub": null,
+            "colorPrimary": "#003399",
         },
         {
             "name": "B-Helfer 1",
             "sign": "Person",
             "txt": "B",
+            "colorPrimary": "#003399",
         },
         {
             "name": "B-Helfer 2",
             "sign": "Person",
             "txt": "B",
+            "colorPrimary": "#003399",
         },
         {
             "name": "B-Helfer 3",
             "sign": "Person",
             "txt": "B",
+            "colorPrimary": "#003399",
         },
         {
             "name": "B-Helfer 4",
             "sign": "Person",
             "txt": "B",
+            "colorPrimary": "#003399",
         },
         {
             "name": "B-Helfer 5",
             "sign": "Person",
             "txt": "B",
+            "colorPrimary": "#003399",
         },
         {
             "name": "B-Helfer 6",
             "sign": "Person",
             "txt": "B",
+            "colorPrimary": "#003399",
         },
         {
             "name": "B-Helfer 7",
             "sign": "Person",
             "txt": "B",
+            "colorPrimary": "#003399",
         },
     ]
 };
@@ -102,6 +118,7 @@ var FGrN = {
     "txt": "N",
     "org": "THW",
     "group": true,
+    "colorPrimary": "#003399",
     "with": [
         {
             "name": "Der Gruppenführer, der Notversorgung, und Notinstandsetzung",
@@ -109,6 +126,7 @@ var FGrN = {
             "txt": "N",
             "leading": true,
             "group": true,
+            "colorPrimary": "#003399",
         }
     ],
     "sub": [
@@ -118,41 +136,49 @@ var FGrN = {
             "txt": "N",
             "leading": true,
             "troop": true,
+            "colorPrimary": "#003399",
         },
         {
             "name": "N-Helfer 1",
             "sign": "Person",
             "txt": "N",
+            "colorPrimary": "#003399",
         },
         {
             "name": "N-Helfer 2",
             "sign": "Person",
             "txt": "N",
+            "colorPrimary": "#003399",
         },
         {
             "name": "N-Helfer 3",
             "sign": "Person",
             "txt": "N",
+            "colorPrimary": "#003399",
         },
         {
             "name": "N-Helfer 4",
             "sign": "Person",
             "txt": "N",
+            "colorPrimary": "#003399",
         },
         {
             "name": "N-Helfer 5",
             "sign": "Person",
             "txt": "N",
+            "colorPrimary": "#003399",
         },
         {
             "name": "N-Helfer 6",
             "sign": "Person",
             "txt": "N",
+            "colorPrimary": "#003399",
         },
         {
             "name": "N-Helfer 7",
             "sign": "Person",
             "txt": "N",
+            "colorPrimary": "#003399",
         },
     ]
 };
@@ -162,6 +188,7 @@ var TZ = {
     "txt": "TZ",
     "org": "THW",
     "platoon": true,
+    "colorPrimary": "#003399",
     "with": [
         {
             "sign": "Person",
@@ -169,6 +196,7 @@ var TZ = {
             "txt": "TZ",
             "leading": true,
             "platoon": true,
+            "colorPrimary": "#003399",
         }
     ],
     "sub": [

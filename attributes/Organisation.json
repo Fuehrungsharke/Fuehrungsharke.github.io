@@ -4,34 +4,112 @@
     "key": "org",
     "values": [
         {
-            "name": "THW - Technisches Hilfswerk",
+            "name": "Technisches Hilfswerk",
             "type": "radio",
-            "key": "THW"
+            "key": "THW",
+            "implicitAttritbues": {
+                "colorPrimary": "#003399",
+                "colorAccent": "#FFFFFF"
+            }
         },
         {
-            "name": "BF - Berufsfeuerwehr",
+            "name": "Berufsfeuerwehr",
             "type": "radio",
-            "key": "BF"
+            "key": "BF",
+            "implicitAttritbues": {
+                "colorPrimary": "#cc0000",
+                "colorAccent": "#FFFFFF"
+            }
         },
         {
-            "name": "FF - Freiwillige Feuerwehr",
+            "name": "Freiwillige Feuerwehr",
             "type": "radio",
-            "key": "FF"
+            "key": "FF",
+            "implicitAttritbues": {
+                "colorPrimary": "#cc0000",
+                "colorAccent": "#FFFFFF"
+            }
         },
         {
-            "name": "WF - Werkfeuerwehr",
+            "name": "Werkfeuerwehr",
             "type": "radio",
-            "key": "WF"
+            "key": "WF",
+            "implicitAttritbues": {
+                "colorPrimary": "#cc0000",
+                "colorAccent": "#FFFFFF"
+            }
         },
         {
-            "name": "POL - Polizei",
+            "name": "Polizei",
             "type": "radio",
-            "key": "POL"
+            "key": "POL",
+            "implicitAttritbues": {
+                "colorPrimary": "#009900",
+                "colorAccent": "#FFFFFF"
+            }
         },
         {
-            "name": "BPOL - Bundespolizei",
+            "name": "Bundespolizei",
             "type": "radio",
-            "key": "BPOL"
+            "key": "BPOL",
+            "implicitAttritbues": {
+                "colorPrimary": "#009900",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
+            "name": "Bundeswehr",
+            "type": "radio",
+            "key": "BW",
+            "implicitAttritbues": {
+                "colorPrimary": "#764A2F",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
+            "name": "Katastrophenschutz",
+            "type": "radio",
+            "key": "KatS",
+            "implicitAttritbues": {
+                "colorPrimary": "#FF9900",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
+            "name": "Deutsches Rotes Kreuz",
+            "type": "radio",
+            "key": "DRK",
+            "implicitAttritbues": {
+                "colorPrimary": "#FFFFFF",
+                "colorAccent": "#000000"
+            }
+        },
+        {
+            "name": "Johanniter-Unfall-Hilfe",
+            "type": "radio",
+            "key": "JUH",
+            "implicitAttritbues": {
+                "colorPrimary": "#FFFFFF",
+                "colorAccent": "#000000"
+            }
+        },
+        {
+            "name": "Arbeiter-Samariter-Bund",
+            "type": "radio",
+            "key": "ASB",
+            "implicitAttritbues": {
+                "colorPrimary": "#FFFFFF",
+                "colorAccent": "#000000"
+            }
+        },
+        {
+            "name": "Malteser Hilfsdienst",
+            "type": "radio",
+            "key": "MHD",
+            "implicitAttritbues": {
+                "colorPrimary": "#FFFFFF",
+                "colorAccent": "#000000"
+            }
         }
     ]
 }

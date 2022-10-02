@@ -139,5 +139,10 @@ function clickContextMenuItem(menuItem) {
             root[key] = newValue;
             break;
     }
+    if (attr.implicitAttritbues != null) {
+        for (let idx in attr.implicitAttritbues) {
+            root[idx] = attr.implicitAttritbues[idx];
+        }
+    }
     draw();
 }

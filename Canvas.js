@@ -20,9 +20,6 @@ function getSignSvg(root, uuid, x, y) {
     signSvg.classList.add('draggable');
     signSvg.classList.add('editable');
 
-    if (!root.hasOwnProperty('fillcolor'))
-        root['fillcolor'] = '#003399';
-
     signSvg.innerHTML = getSign(root);
     signSvg.childNodes[0].setAttribute('touch-action', 'none');
     signSvg.childNodes[0].setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
