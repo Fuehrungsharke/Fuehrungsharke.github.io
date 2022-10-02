@@ -19,9 +19,9 @@ function buildMenu(root, parentMenuItem, attrMenu) {
         menuItem.setAttribute('key', key);
         if (parentMenuItem != null && parentMenuItem.key != null)
             key = parentMenuItem.key;
-        var content = root[key];
-        if (content == null)
-            content = '';
+        var content = '';
+        if (root != null && root[key] != null)
+            content = root[key];
         switch (attrItem.type) {
             case SUBMENU:
                 menuItem.classList.add('with-submenu');
