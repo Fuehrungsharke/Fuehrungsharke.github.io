@@ -1,0 +1,37 @@
+{
+    "name": "Organisation",
+    "type": "submenu",
+    "key": "org",
+    "values": [
+        {
+            "name": "THW - Technisches Hilfswerk",
+            "type": "radio",
+            "key": "THW"
+        },
+        {
+            "name": "BF - Berufsfeuerwehr",
+            "type": "radio",
+            "key": "BF"
+        },
+        {
+            "name": "FF - Freiwillige Feuerwehr",
+            "type": "radio",
+            "key": "FF"
+        },
+        {
+            "name": "WF - Werkfeuerwehr",
+            "type": "radio",
+            "key": "WF"
+        },
+        {
+            "name": "POL - Polizei",
+            "type": "radio",
+            "key": "POL"
+        },
+        {
+            "name": "BPOL - Bundespolizei",
+            "type": "radio",
+            "key": "BPOL"
+        }
+    ]
+}

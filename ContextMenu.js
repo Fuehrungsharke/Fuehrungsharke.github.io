@@ -5,33 +5,35 @@ const RADIO = 'radio';
 const STRING = 'string';
 const COLOR = 'color';
 
-function buildMenu(root, attrMenu) {
+function buildMenu(root, parentMenuItem, attrMenu) {
     var menuItems = [];
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
-        if(attrItem.type == PLACEHOLDER)
+        if (attrItem.type == PLACEHOLDER)
             attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
         var key = attrItem.key;
+        var menuItem = document.createElement('li');
+        menuItem.classList.add('context-menu-item');
+        menuItem.setAttribute('key', key);
+        if (parentMenuItem != null && parentMenuItem.key != null)
+            key = parentMenuItem.key;
         var content = root[key];
         if (content == null)
             content = '';
-        var menuItem = document.createElement('li');
-        menuItem.classList.add('context-menu-item');
-        if (attrItem.type != SUBMENU)
-            menuItem.setAttribute('key', key);
         switch (attrItem.type) {
             case SUBMENU:
                 menuItem.classList.add('with-submenu');
                 menuItem.appendChild(document.createTextNode(`${attrItem.name}`));
                 var subMenu = document.createElement('ul');
                 subMenu.classList.add('sub-menu');
-                var subMenuItems = buildMenu(root, attrItem.values);
+                var subMenuItems = buildMenu(root, attrItem, attrItem.values);
                 subMenu.replaceChildren(...subMenuItems);
                 menuItem.appendChild(subMenu);
                 break;
             case BOOL:
             case RADIO:
-                menuItem.appendChild(document.createTextNode(`${content == true ? '>\t' : '\t'} \t${attrItem.name}`));
+                var isSelected = content == true || content == attrItem.key;
+                menuItem.appendChild(document.createTextNode(`${isSelected ? '>\t' : '\t'} \t${attrItem.name}`));
                 break;
             case STRING:
                 menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
@@ -50,7 +52,7 @@ function openSignContextMenu(evt, sign) {
     var root = getConfigElementByUuid(config, uuid);
 
     var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
-    var newMenuItems = buildMenu(root, attrMenu);
+    var newMenuItems = buildMenu(root, null, attrMenu);
 
     var menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
@@ -77,7 +79,7 @@ function getUuidOfContextMenu(menuItem) {
 function getAttribute(attrMenu, key) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
-        if(attrItem.type == PLACEHOLDER)
+        if (attrItem.type == PLACEHOLDER)
             attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
         if (attrItem.type == SUBMENU) {
             var subResult = getAttribute(attrItem.values, key);
@@ -93,7 +95,7 @@ function getAttribute(attrMenu, key) {
 function getParentAttribute(attrMenu, parent, child) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
-        if(attrItem.type == PLACEHOLDER)
+        if (attrItem.type == PLACEHOLDER)
             attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
         if (attrItem.type == SUBMENU) {
             var subResult = getParentAttribute(attrItem.values, attrItem, child);
@@ -121,11 +123,14 @@ function clickContextMenuItem(menuItem) {
             break;
         case RADIO:
             var parentAttr = getParentAttribute(attrMenu, null, attr);
-            for (let idx in parentAttr.values)
-                if (parentAttr.values[idx].key == attr.key)
-                    root[parentAttr.values[idx].key] = true;
-                else
-                    delete root[parentAttr.values[idx].key];
+            if (parentAttr.key != null)
+                root[parentAttr.key] = attr.key;
+            else
+                for (let idx in parentAttr.values)
+                    if (parentAttr.values[idx].key == attr.key)
+                        root[parentAttr.values[idx].key] = true;
+                    else
+                        delete root[parentAttr.values[idx].key];
             break;
         case STRING:
             let newValue = prompt(attr['name'], root[key]);
