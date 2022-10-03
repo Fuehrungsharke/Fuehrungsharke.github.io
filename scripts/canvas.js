@@ -82,8 +82,16 @@ function drawRecursive(canvas, root, x, y) {
     }
 
     if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root[SUB].length > 0) {
-        var leafs = root[SUB].filter(item => !item.hasOwnProperty(SUB) || !Array.isArray(item[SUB]) || !item[SUB].length);
-        var subTrees = root[SUB].filter(item => item.hasOwnProperty(SUB) && Array.isArray(item[SUB]) && item[SUB].length > 0);
+        var leafs = root[SUB].filter(item =>
+            (!item.hasOwnProperty(SUB) || !Array.isArray(item[SUB]) || !item[SUB].length)
+            && (!item.hasOwnProperty(WITH) || !Array.isArray(item[WITH]) || !item[WITH].length)
+        );
+        var subTrees = root[SUB].filter(item =>
+            (item.hasOwnProperty(SUB) && Array.isArray(item[SUB]) && item[SUB].length > 0)
+            || (item.hasOwnProperty(WITH) && Array.isArray(item[WITH]) && item[WITH].length > 0)
+        );
+        // var leafs = root[SUB].filter(item => !item.hasOwnProperty(SUB) || !Array.isArray(item[SUB]) || !item[SUB].length);
+        // var subTrees = root[SUB].filter(item => item.hasOwnProperty(SUB) && Array.isArray(item[SUB]) && item[SUB].length > 0);
 
         // Leafs
         var leafsTotalWidth = 0;
