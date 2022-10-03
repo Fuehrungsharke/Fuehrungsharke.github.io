@@ -111,8 +111,8 @@ function openSignContextMenu(evt, sign) {
 
     var touchpos = getEvtPos(evt);
     var menu = document.querySelector('.context-menu');
-    menu.style.left = touchpos.clientX + "px";
-    menu.style.top = touchpos.clientY + "px";
+    menu.style.left = touchpos.pageX + "px";
+    menu.style.top = touchpos.pageY + "px";
     menu.classList.add('context-menu-active');
 }
 
