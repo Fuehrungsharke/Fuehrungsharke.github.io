@@ -77,12 +77,16 @@ function editName(uuid) {
 
 document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
+    var close = false;
     var menuItem = getClickedElement(evt, 'context-menu-item');
     if (menuItem) {
         evt.preventDefault();
-        clickContextMenuItem(menuItem);
+        close = clickContextMenuItem(menuItem);
     }
-    closeSignContextMenu();
+    else
+        close = true;
+    if (close)
+        closeSignContextMenu();
 });
 document.addEventListener('contextmenu', function (evt) {
     var sign = getClickedElement(evt, 'editable');

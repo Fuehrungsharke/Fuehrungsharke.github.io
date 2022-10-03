@@ -162,6 +162,7 @@ function getParentAttribute(attrMenu, parent, child) {
 }
 
 function clickContextMenuItem(menuItem) {
+    var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
@@ -187,6 +188,7 @@ function clickContextMenuItem(menuItem) {
                             root[SUB] = [];
                         root[SUB].push(newObj);
                     }
+                    close = true;
                     break;
                 case CMD_ADD_WITH:
                     if (parent != null && parent[WITH] != null && parent[WITH].indexOf(root) >= 0)
@@ -196,6 +198,7 @@ function clickContextMenuItem(menuItem) {
                             root[WITH] = [];
                         root[WITH].push(newObj);
                     }
+                    close = true;
                     break;
             }
             break;
@@ -212,47 +215,55 @@ function clickContextMenuItem(menuItem) {
                     if (source.with.length == 0)
                         delete source.with;
                 }
+                close = true;
             }
             break;
         default:
             var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
             var attr = null;
-            if (key != "undefined")
+            if (key != null && key != "undefined")
                 attr = getAttribute(attrMenu, key);
             else
                 attr = getAttribute(attrMenu, cmd);
             if (attr == null)
-                return;
-            switch (attr.type) {
-                case BOOL:
-                    if (root[key])
-                        delete root[key];
-                    else
-                        root[key] = true;
-                    break;
-                case RADIO:
-                    var parentAttr = getParentAttribute(attrMenu, null, attr);
-                    if (parentAttr.key != null)
-                        root[parentAttr.key] = attr.key;
-                    else
-                        for (let idx in parentAttr.values)
-                            if (parentAttr.values[idx].key == attr.key)
-                                root[parentAttr.values[idx].key] = true;
-                            else
-                                delete root[parentAttr.values[idx].key];
-                    break;
-                case STRING:
-                    let newValue = prompt(attr['name'], root[key]);
-                    if (newValue == undefined)
-                        return;
-                    root[key] = newValue;
-                    break;
-            }
+                return false;
+            if (key != null && key != "undefined")
+                switch (attr.type) {
+                    case BOOL:
+                        if (root[key])
+                            delete root[key];
+                        else
+                            root[key] = true;
+                        close = true;
+                        break;
+                    case RADIO:
+                        var parentAttr = getParentAttribute(attrMenu, null, attr);
+                        if (parentAttr.key != null)
+                            root[parentAttr.key] = attr.key;
+                        else
+                            for (let idx in parentAttr.values)
+                                if (parentAttr.values[idx].key == attr.key)
+                                    root[parentAttr.values[idx].key] = true;
+                                else
+                                    delete root[parentAttr.values[idx].key];
+                        close = true;
+                        break;
+                    case STRING:
+                        let newValue = prompt(attr['name'], root[key]);
+                        if (newValue == undefined)
+                            return;
+                        root[key] = newValue;
+                        close = true;
+                        break;
+                }
             if (attr.implicitAttritbues != null) {
                 for (let idx in attr.implicitAttritbues)
                     root[idx] = attr.implicitAttritbues[idx];
+                close = true;
             }
             break;
     }
-    draw();
+    if (close)
+        draw();
+    return close;
 }
