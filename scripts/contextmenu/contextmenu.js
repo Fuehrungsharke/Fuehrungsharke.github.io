@@ -168,21 +168,32 @@ function clickContextMenuItem(menuItem) {
     var root = getConfigElementByUuid(config, uuid);
     switch (cmd) {
         case CMD_ADD:
+            var newObj = {
+                'sign': key,
+            };
+            var parent = getConfigElementParentByUuid(config, uuid);
             var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
             switch (subCmd) {
                 case CMD_ADD_SUB:
-                    if (root[SUB] == null)
-                        root[SUB] = [];
-                    root[SUB].push({
-                        'sign': key,
-                    });
+                    if (parent != null && parent[WITH] != null && parent[WITH].indexOf(root) >= 0) {
+                        if (parent[SUB] == null)
+                            parent[SUB] = [];
+                        parent[SUB].push(newObj);
+                    }
+                    else {
+                        if (root[SUB] == null)
+                            root[SUB] = [];
+                        root[SUB].push(newObj);
+                    }
                     break;
                 case CMD_ADD_WITH:
-                    if (root[WITH] == null)
-                        root[WITH] = [];
-                    root[WITH].push({
-                        'sign': key,
-                    });
+                    if (parent != null && parent[WITH] != null && parent[WITH].indexOf(root) >= 0)
+                        parent[WITH].push(newObj);
+                    else {
+                        if (root[WITH] == null)
+                            root[WITH] = [];
+                        root[WITH].push(newObj);
+                    }
                     break;
             }
             break;
