@@ -170,6 +170,8 @@ function clickContextMenuItem(menuItem) {
         case CMD_ADD:
             var newObj = {
                 'sign': key,
+                'colorPrimary': '#FFFFFF',
+                'colorAccent': '#000000'
             };
             var parent = getConfigElementParentByUuid(config, uuid);
             var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
