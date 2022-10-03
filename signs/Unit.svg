@@ -40,11 +40,11 @@
 	troop}}
 
 	{{leading
-	<rect x="11" y="65" width="234" height="25" fill="#FFFFFF" />
+	<rect x="11" y="65" width="234" height="25" fill="{{colorAccent}}" />
 	leading}}
 
 	{{support
-	<rect x="11" y="166" width="234" height="25" fill="#FFFFFF" />
+	<rect x="11" y="166" width="234" height="25" fill="{{colorAccent}}" />
 	support}}
 
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145">{{txt}}</text>
