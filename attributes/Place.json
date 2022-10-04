@@ -10,8 +10,9 @@
         "key": "name"
     },
     {
-        "name": "TacticalSize",
-        "type": "placeholder"
+        "name": "Ortsgebunden",
+        "type": "bool",
+        "key": "stationary"
     },
     {
         "name": "Funktionen",
@@ -34,10 +35,5 @@
     {
         "name": "Organisation",
         "type": "placeholder"
-    },
-    {
-        "name": "Spezialisierung",
-        "type": "string",
-        "key": "spez"
     }
 ]

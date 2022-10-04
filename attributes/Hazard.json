@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Text",
+        "type": "string",
+        "key": "txt"
+    },
+    {
+        "name": "Name",
+        "type": "string",
+        "key": "name"
+    },
+    {
+        "name": "Ausprägung",
+        "type": "submenu",
+        "values": [
+            {
+                "name": "Akut",
+                "type": "radio",
+                "key": "acute"
+            },
+            {
+                "name": "Vermutet",
+                "type": "radio",
+                "key": "guessed"
+            }
+        ]
+    }
+]

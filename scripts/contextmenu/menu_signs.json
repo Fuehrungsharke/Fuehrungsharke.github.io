@@ -36,6 +36,24 @@
         "key": "Building"
     },
     {
+        "name": "Gefahr",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Hazard"
+    },
+    {
+        "name": "Maßnahme",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Measure"
+    },
+    {
+        "name": "Stelle",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Place"
+    },
+    {
         "name": "Zweirad",
         "type": "cmd",
         "cmd": "add",
