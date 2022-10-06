@@ -258,7 +258,10 @@ function clickContextMenuItem(menuItem) {
                 }
             if (attr.implicitAttritbues != null) {
                 for (let idx in attr.implicitAttritbues)
-                    root[idx] = attr.implicitAttritbues[idx];
+                    if (!attr.implicitAttritbues[idx])
+                        delete root[idx];
+                    else
+                        root[idx] = attr.implicitAttritbues[idx];
                 close = true;
             }
             break;

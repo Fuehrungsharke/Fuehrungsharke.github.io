@@ -37,6 +37,23 @@
             "type": "radio",
             "key": "troop",
             "icon": "size_troop"
+        },
+        {
+            "name": "",
+            "type": "header"
+        },
+        {
+            "name": "Zurücksetzen",
+            "type": "cmd",
+            "cmd": "resetTacticalSize",
+            "implicitAttritbues": {
+                "formation": false,
+                "platoon": false,
+                "platoontroop": false,
+                "group": false,
+                "echelon": false,
+                "troop": false
+            }
         }
     ]
 }
