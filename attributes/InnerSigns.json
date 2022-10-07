@@ -5,7 +5,8 @@
         {
             "name": "Löschen",
             "type": "radio",
-            "key": "extinguish"
+            "key": "extinguish",
+            "icon": "/icons/symbols/extinguish.svg"
         },
         {
             "name": "Transport",
