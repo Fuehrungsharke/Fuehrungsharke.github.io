@@ -1,0 +1,11 @@
+{
+    "name": "Symbole",
+    "type": "submenu",
+    "values": [
+        {
+            "name": "Löschen",
+            "type": "bool",
+            "key": "extinguish"
+        }
+    ]
+}

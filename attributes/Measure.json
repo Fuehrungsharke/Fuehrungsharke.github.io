@@ -8,5 +8,9 @@
         "name": "Name",
         "type": "string",
         "key": "name"
+    },
+    {
+        "name": "InnerSigns",
+        "type": "placeholder"
     }
 ]

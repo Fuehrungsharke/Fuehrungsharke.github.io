@@ -38,6 +38,10 @@
 	<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000" />
 	troop}}
 
+	{{extinguish
+	<path d="M67,128 l123,0 M144,128 l23,-23 M144,128 l23,23" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	extinguish}}
+
 	{{leading
 	<rect x="64" y="64" width="128" height="24" fill="{{colorAccent}}" clip-path="url(#person)" />
 	leading}}
