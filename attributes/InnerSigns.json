@@ -13,6 +13,19 @@
             "type": "radio",
             "key": "transport",
             "icon": "/icons/symbols/transport.svg"
+        },
+        {
+            "name": "",
+            "type": "header"
+        },
+        {
+            "name": "Zurücksetzen",
+            "type": "cmd",
+            "cmd": "resetSymbol",
+            "implicitAttritbues": {
+                "extinguish": false,
+                "transport": false
+            }
         }
     ]
 }
