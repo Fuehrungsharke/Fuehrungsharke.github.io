@@ -9,6 +9,12 @@
             "icon": "/icons/symbols/extinguish.svg"
         },
         {
+            "name": "Sanitätswesen",
+            "type": "radio",
+            "key": "medical",
+            "icon": "/icons/symbols/medical.svg"
+        },
+        {
             "name": "Transport",
             "type": "radio",
             "key": "transport",

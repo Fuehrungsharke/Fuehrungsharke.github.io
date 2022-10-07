@@ -43,6 +43,10 @@
 	<path d="M67,128 l123,0 M144,128 l23,-23 M144,128 l23,23" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
 	extinguish}}
 
+	{{medical
+	<path d="M64,128 l128,0 M128,64 l0,128" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
+	medical}}
+
 	{{transport
 	<g transform="translate(32, 32) scale(0.75 0.75)">
 		<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="6.25" stroke="{{colorAccent}}" />
