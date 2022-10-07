@@ -25,13 +25,14 @@
                 "name": "Führung",
                 "type": "bool",
                 "key": "leading",
-                "icon": "function_leading_person"
+                "icon": "/icons/functions/leading_person.svg"
             },
             {
                 "name": "Sonderfunktion",
                 "type": "bool",
                 "key": "specialist",
-                "icon": "function_specialist"
+                "icon": "/icons/functions/specialist.svg",
+                "css": [ "large" ]
             }
         ]
     },

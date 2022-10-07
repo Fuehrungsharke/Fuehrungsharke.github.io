@@ -4,8 +4,14 @@
     "values": [
         {
             "name": "Löschen",
-            "type": "bool",
+            "type": "radio",
             "key": "extinguish"
+        },
+        {
+            "name": "Transport",
+            "type": "radio",
+            "key": "transport",
+            "icon": "/icons/symbols/transport.svg"
         }
     ]
 }

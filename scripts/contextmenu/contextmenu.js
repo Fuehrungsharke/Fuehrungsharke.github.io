@@ -21,8 +21,8 @@ function buildMenu(root, parentMenuItem, attrMenu) {
         menuItem.classList.add('context-menu-item');
 
         if (attrItem.icon != null) {
-            var icon = document.createElement('i');
-            icon.classList.add(attrItem.icon);
+            var icon = document.createElement('img');
+            icon.setAttribute('src', attrItem.icon);
             menuItem.appendChild(icon);
         }
 

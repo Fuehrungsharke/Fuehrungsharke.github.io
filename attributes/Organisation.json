@@ -11,7 +11,7 @@
             "name": "Berufsfeuerwehr",
             "type": "radio",
             "key": "BF",
-            "icon": "Feuerwehr",
+            "icon": "/icons/organisations/Feuerwehr.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#cc0000",
                 "colorAccent": "#FFFFFF"
@@ -21,7 +21,7 @@
             "name": "Freiwillige Feuerwehr",
             "type": "radio",
             "key": "FF",
-            "icon": "Feuerwehr",
+            "icon": "/icons/organisations/Feuerwehr.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#cc0000",
                 "colorAccent": "#FFFFFF"
@@ -31,7 +31,7 @@
             "name": "Werkfeuerwehr",
             "type": "radio",
             "key": "WF",
-            "icon": "Feuerwehr",
+            "icon": "/icons/organisations/Feuerwehr.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#cc0000",
                 "colorAccent": "#FFFFFF"
@@ -45,7 +45,7 @@
             "name": "Polizei",
             "type": "radio",
             "key": "POL",
-            "icon": "Polizei",
+            "icon": "/icons/organisations/Polizei.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#009900",
                 "colorAccent": "#FFFFFF"
@@ -55,7 +55,7 @@
             "name": "Bundespolizei",
             "type": "radio",
             "key": "BPOL",
-            "icon": "Bundespolizei",
+            "icon": "/icons/organisations/Bundespolizei.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#009900",
                 "colorAccent": "#FFFFFF"
@@ -69,7 +69,7 @@
             "name": "Deutsches Rotes Kreuz",
             "type": "radio",
             "key": "DRK",
-            "icon": "DeutschesRotesKreuz",
+            "icon": "/icons/organisations/DeutschesRotesKreuz.png",
             "implicitAttritbues": {
                 "colorPrimary": "#FFFFFF",
                 "colorAccent": "#000000"
@@ -79,7 +79,7 @@
             "name": "Johanniter-Unfall-Hilfe",
             "type": "radio",
             "key": "JUH",
-            "icon": "JohanniterUnfallHilfe",
+            "icon": "/icons/organisations/JohanniterUnfallHilfe.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#FFFFFF",
                 "colorAccent": "#000000"
@@ -89,7 +89,7 @@
             "name": "Arbeiter-Samariter-Bund",
             "type": "radio",
             "key": "ASB",
-            "icon": "ArbeiterSamariterBund",
+            "icon": "/icons/organisations/ArbeiterSamariterBund.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#FFFFFF",
                 "colorAccent": "#000000"
@@ -99,7 +99,7 @@
             "name": "Malteser Hilfsdienst",
             "type": "radio",
             "key": "MHD",
-            "icon": "MalteserHilfsdienst",
+            "icon": "/icons/organisations/MalteserHilfsdienst.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#FFFFFF",
                 "colorAccent": "#000000"
@@ -113,7 +113,7 @@
             "name": "Bundeswehr",
             "type": "radio",
             "key": "BW",
-            "icon": "Bundeswehr",
+            "icon": "/icons/organisations/Bundeswehr.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#764A2F",
                 "colorAccent": "#FFFFFF"
@@ -123,7 +123,7 @@
             "name": "Technisches Hilfswerk",
             "type": "radio",
             "key": "THW",
-            "icon": "THW",
+            "icon": "/icons/organisations/THW.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#003399",
                 "colorAccent": "#FFFFFF"
@@ -133,7 +133,7 @@
             "name": "Katastrophenschutz",
             "type": "radio",
             "key": "KatS",
-            "icon": "Zivilschutz",
+            "icon": "/icons/organisations/Zivilschutz.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#FF9900",
                 "colorAccent": "#FFFFFF"
@@ -147,7 +147,7 @@
             "name": "Führungsfarbe verwenden",
             "type": "cmd",
             "cmd": "resetColor",
-            "icon": "leadingcolor",
+            "icon": "/icons/organisations/Leading.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#FFFF00",
                 "colorAccent": "#000000"

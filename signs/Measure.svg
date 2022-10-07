@@ -7,5 +7,10 @@
 	</g>
 	extinguish}}
 
+	{{transport
+	<ellipse cx="128" cy="150" rx="30" ry="30" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	<path d="M128,150 l-30,0 l60,0 m-30,0 l0,-30 l0,60 m0,-30 l21,21 M128,150 l-21,-21 M128,150 l21,-21 M128,150 l-21,21" stroke-width="5" stroke="{{colorAccent}}" />
+	transport}}
+
 	<text x="128" y="144" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="#000000">{{txt}}</text>
 </svg>

@@ -1,4 +1,5 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+<svg version="1.1"
+	xmlns="http://www.w3.org/2000/svg" width="256" height="256">
 	<defs>
 		<clipPath id="person">
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" />
@@ -18,7 +19,7 @@
 
 	{{platoontroop
 	<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000" />
-	
+
 	<ellipse cx="114" cy="100" rx="5" ry="5" fill="{{colorAccent}}" />
 	<ellipse cx="128" cy="100" rx="5" ry="5" fill="{{colorAccent}}" />
 	<ellipse cx="142" cy="100" rx="5" ry="5" fill="{{colorAccent}}" />
@@ -41,6 +42,14 @@
 	{{extinguish
 	<path d="M67,128 l123,0 M144,128 l23,-23 M144,128 l23,23" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
 	extinguish}}
+
+	{{transport
+	<g transform="translate(32, 32) scale(0.75 0.75)">
+		<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="6.25" stroke="{{colorAccent}}" />
+		<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="6.25" stroke="{{colorAccent}}" />
+		<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="6.25" stroke="{{colorAccent}}" transform="rotate(45,128,128)" />
+	</g>
+	transport}}
 
 	{{leading
 	<rect x="64" y="64" width="128" height="24" fill="{{colorAccent}}" clip-path="url(#person)" />
