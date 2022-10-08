@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256">
+    <defs>
+		<clipPath id="Place">
+			<ellipse cx="128" cy="128" rx="64" ry="64" />
+		</clipPath>
+	</defs>
+
+    <circle fill="#FFF" stroke="#000" stroke-width="5" cx="128" cy="128" r="64"/>
+</svg>

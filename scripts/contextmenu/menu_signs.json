@@ -3,54 +3,63 @@
         "name": "Einheit",
         "type": "cmd",
         "cmd": "add",
-        "key": "Unit"
+        "key": "Unit",
+        "icon": "/icons/signs/unit.svg"
     },
     {
         "name": "Person",
         "type": "cmd",
         "cmd": "add",
-        "key": "Person"
+        "key": "Person",
+        "icon": "/icons/signs/person.svg"
     },
     {
         "name": "Fahrzeug",
         "type": "cmd",
         "cmd": "add",
-        "key": "Vehicle"
+        "key": "Vehicle",
+        "icon": "/icons/signs/vehicle.svg"
     },
     {
         "name": "Befehlsstelle",
         "type": "cmd",
         "cmd": "add",
-        "key": "Flag"
+        "key": "Flag",
+        "icon": "/icons/signs/flag.svg"
     },
     {
         "name": "Gebäude",
         "type": "cmd",
         "cmd": "add",
-        "key": "Building"
+        "key": "Building",
+        "icon": "/icons/signs/building.svg"
     },
     {
         "name": "Gefahr",
         "type": "cmd",
         "cmd": "add",
-        "key": "Hazard"
+        "key": "Hazard",
+        "icon": "/icons/signs/hazard.svg"
     },
     {
         "name": "Maßnahme",
         "type": "cmd",
         "cmd": "add",
-        "key": "Measure"
+        "key": "Measure",
+        "icon": "/icons/signs/measure.svg"
     },
     {
         "name": "Stelle",
         "type": "cmd",
         "cmd": "add",
-        "key": "Place"
+        "key": "Place",
+        "icon": "/icons/signs/place.svg"
     },
     {
         "name": "Zweirad",
         "type": "cmd",
         "cmd": "add",
-        "key": "Bike"
+        "key": "Bike",
+        "icon": "/icons/signs/bike.svg"
     }
 ]
