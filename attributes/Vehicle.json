@@ -10,9 +10,28 @@
         "key": "name"
     },
     {
-        "name": "Geländegängig",
-        "type": "bool",
-        "key": "offroad"
+        "name": "Antrieb",
+        "type": "submenu",
+        "values": [
+            {
+                "name": "Selbstfahrend",
+                "type": "radio",
+                "key": "automotive"
+            },
+            {
+                "name": "Geländegängig",
+                "type": "radio",
+                "key": "offroad",
+                "implicitAttritbues": {
+                    "automotive": true
+                }
+            },
+            {
+                "name": "Anhänger",
+                "type": "radio",
+                "key": "trailer"
+            }
+        ]
     },
     {
         "name": "Symbols",
