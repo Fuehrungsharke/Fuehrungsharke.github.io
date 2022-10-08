@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256">
+    <g transform="translate(-288, -352) scale(3 3)">
+        <path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="#000000" fill="none" />
+    </g>
+</svg>

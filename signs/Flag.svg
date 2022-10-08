@@ -2,6 +2,12 @@
 	xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewbox="0 0 256 256">
 	<rect fill="{{colorPrimary}}" stroke="#000" stroke-width="5" x="10" y="64" width="236" height="128" />
 	<line stroke="#000" stroke-width="5" x1="10" y1="194" x2="10" y2="225" />
+
+	{{clear
+	<g transform="translate(-118, -175) scale(1.85 1.85)">
+        <path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+    </g>
+	clear}}
 	
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; font-size: 56px; text-anchor: middle;" fill="{{colorAccent}}" x="128" y="150">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="236" y="180">{{org}}</text>

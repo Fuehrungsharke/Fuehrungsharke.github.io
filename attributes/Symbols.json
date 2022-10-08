@@ -15,6 +15,12 @@
             "icon": "/icons/symbols/medical.svg"
         },
         {
+            "name": "Räumen",
+            "type": "radio",
+            "key": "clear",
+            "icon": "/icons/symbols/clear.svg"
+        },
+        {
             "name": "Transport",
             "type": "radio",
             "key": "transport",

@@ -17,6 +17,10 @@
 	<path d="M64,140 l128,0 M128,64 l0,128" stroke="{{colorAccent}}" stroke-width="5" fill="none" clip-path="url(#Measure)" />
 	medical}}
 
+	{{clear
+	<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="#000000" fill="none" />
+	clear}}
+
 	{{transport
 	<ellipse cx="128" cy="150" rx="30" ry="30" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
 	<path d="M128,150 l-30,0 l60,0 m-30,0 l0,-30 l0,60 m0,-30 l21,21 M128,150 l-21,-21 M128,150 l21,-21 M128,150 l-21,21" stroke-width="5" stroke="{{colorAccent}}" />

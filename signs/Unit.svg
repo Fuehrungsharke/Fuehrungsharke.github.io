@@ -47,6 +47,12 @@
 	<path d="M128,65 l0,126 M11,128 l234,0" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
 	medical}}
 
+	{{clear
+	<g transform="translate(-118, -175) scale(1.85 1.85)">
+        <path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+    </g>
+	clear}}
+
 	{{transport
 	<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="5" stroke="{{colorAccent}}" />
 	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" />

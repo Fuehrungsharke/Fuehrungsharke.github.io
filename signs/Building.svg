@@ -1,4 +1,5 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewbox="0 0 256 256">
+<svg version="1.1"
+	xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewbox="0 0 256 256">
 	<defs>
 		<clipPath id="Building">
 			<path d="M10 64 L10 192 L246 192 L246 64 L128 16 L10 64 Z" />
@@ -15,6 +16,12 @@
 	{{medical
 	<path d="M128,65 l0,126 M11,128 l234,0" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
 	medical}}
+
+	{{clear
+	<g transform="translate(-118, -175) scale(1.85 1.85)">
+		<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	</g>
+	clear}}
 
 	{{transport
 	<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="5" stroke="{{colorAccent}}" />

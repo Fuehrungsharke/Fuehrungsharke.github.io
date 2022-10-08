@@ -9,5 +9,11 @@
 	<text style="font-family: 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 56px;" fill="#FF0000" x="64" y="180">?</text>
 	guessed}}
 
+	{{clear
+	<g transform="translate(-10, -64) scale(1 1)">
+        <path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="#F00" fill="none" />
+    </g>
+	clear}}
+
 	<text x="128" y="112" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="#FF0000">{{txt}}</text>
 </svg>
