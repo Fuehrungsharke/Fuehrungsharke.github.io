@@ -29,6 +29,12 @@
                 }
             },
             {
+                "name": "Kettenfahrzeug",
+                "type": "radio",
+                "key": "chain",
+                "icon": "/icons/engine/chain.svg"
+            },
+            {
                 "name": "Anhänger",
                 "type": "radio",
                 "key": "trailer",
