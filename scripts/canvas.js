@@ -82,54 +82,52 @@ function drawItem(canvas, root, x, y) {
     }
 
     if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root[SUB].length > 0) {
-        var leafs = root[SUB].filter(item =>
-            (!item.hasOwnProperty(SUB) || !Array.isArray(item[SUB]) || !item[SUB].length)
-            && (!item.hasOwnProperty(WITH) || !Array.isArray(item[WITH]) || !item[WITH].length)
-        );
-        var subTrees = root[SUB].filter(item =>
+        var hasSubTrees = root[SUB].some(item =>
             (item.hasOwnProperty(SUB) && Array.isArray(item[SUB]) && item[SUB].length > 0)
             || (item.hasOwnProperty(WITH) && Array.isArray(item[WITH]) && item[WITH].length > 0)
         );
-
-        // Leafs
-        var leafsTotalWidth = 0;
-        var leafRowWidth = 0;
-        var leafGap = 0;
-        if (subTrees.length > 0)
-            leafGap = 2 * GAP;
-        if (leafs.length > 0) {
-            var cntLeafs = 0;
-            for (let leaf in leafs) {
-                cntLeafs += 1;
-                drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
-                leafRowWidth += signWidth;
-                leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
-                if (leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs + 1) {
-                    leafRowWidth = 0;
-                    usedHeight += signHeight;
+        if(!hasSubTrees) {
+            // Leafs
+            var leafs = root[SUB];
+            var leafsTotalWidth = 0;
+            var leafRowWidth = 0;
+            var leafGap = 0;
+            if (leafs.length > 0) {
+                var cntLeafs = 0;
+                for (let leaf in leafs) {
+                    cntLeafs += 1;
+                    drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
+                    leafRowWidth += signWidth;
+                    leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
+                    if (leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs + 1) {
+                        leafRowWidth = 0;
+                        usedHeight += signHeight;
+                    }
                 }
+                usedHeight += signHeight;
             }
-            usedHeight += signHeight;
+            usedWidth += leafsTotalWidth;
         }
-
-        // SubTrees
-        var subTotalWidth = 0;
-        if (subTrees.length > 0) {
-            canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2));
-            usedWidth += GAP;
-            var lastSubY = usedHeight;
-            for (let subTree in subTrees) {
-                lastSubY = usedHeight;
-                canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2));
-                var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
-                subTotalWidth = Math.max(subTotalWidth, subSize[0]);
-                usedHeight += subSize[1];
+        else {
+            // SubTrees
+            var subTrees = root[SUB];
+            var subTotalWidth = 0;
+            if (subTrees.length > 0) {
+                canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2));
+                usedWidth += GAP;
+                var lastSubY = usedHeight;
+                for (let subTree in subTrees) {
+                    lastSubY = usedHeight;
+                    canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2));
+                    var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
+                    subTotalWidth = Math.max(subTotalWidth, subSize[0]);
+                    usedHeight += subSize[1];
+                }
+                canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2));
+                usedWidth += GAP;
             }
-            canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2));
-            usedWidth += GAP;
+            usedWidth += subTotalWidth;
         }
-
-        usedWidth += Math.max(leafsTotalWidth, subTotalWidth);
     }
     else
         usedHeight += signHeight;
