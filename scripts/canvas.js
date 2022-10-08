@@ -66,7 +66,7 @@ function drawSign(canvas, root, x, y) {
     }
 }
 
-function drawRecursive(canvas, root, x, y) {
+function drawItem(canvas, root, x, y) {
     var usedWidth = 0;
     var usedHeight = 0;
 
@@ -134,6 +134,22 @@ function drawRecursive(canvas, root, x, y) {
     else
         usedHeight += signHeight;
     return [usedWidth, usedHeight];
+}
+
+function drawRecursive(canvas, root, x, y) {
+    var usedWidth = 0;
+    var usedHeight = 0;
+
+    if (Array.isArray(root) && root.length > 0) {
+        for (let idx in root) {
+            var itemSize = drawItem(canvas, root[idx], x, y + usedHeight);
+            usedWidth = Math.max(usedWidth, itemSize[0]);
+            usedHeight += itemSize[1];
+        }
+        return [usedWidth, usedHeight];
+    }
+    else
+        return drawItem(canvas, root, x, y);
 }
 
 function draw() {
