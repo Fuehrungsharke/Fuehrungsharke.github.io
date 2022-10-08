@@ -16,12 +16,14 @@
             {
                 "name": "Selbstfahrend",
                 "type": "radio",
-                "key": "automotive"
+                "key": "automotive",
+                "icon": "/icons/engine/automotive_vehicle.svg"
             },
             {
                 "name": "Geländegängig",
                 "type": "radio",
                 "key": "offroad",
+                "icon": "/icons/engine/offroad.svg",
                 "implicitAttritbues": {
                     "automotive": true
                 }
@@ -29,7 +31,22 @@
             {
                 "name": "Anhänger",
                 "type": "radio",
-                "key": "trailer"
+                "key": "trailer",
+                "icon": "/icons/engine/trailer.svg"
+            },
+            {
+                "name": "",
+                "type": "header"
+            },
+            {
+                "name": "Zurücksetzen",
+                "type": "cmd",
+                "cmd": "resetEngine",
+                "implicitAttritbues": {
+                    "automotive": false,
+                    "offroad": false,
+                    "trailer": false
+                }
             }
         ]
     },
