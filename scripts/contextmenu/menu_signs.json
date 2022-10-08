@@ -18,12 +18,6 @@
         "key": "Vehicle"
     },
     {
-        "name": "Anhänger",
-        "type": "cmd",
-        "cmd": "add",
-        "key": "Trailer"
-    },
-    {
         "name": "Befehlsstelle",
         "type": "cmd",
         "cmd": "add",
