@@ -5,7 +5,8 @@
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" />
 		</clipPath>
 	</defs>
-	<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="12" stroke="{{colorAccent}}" fill="{{colorPrimary}}" clip-path="url(#Person)" />
+	<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="{{colorAccent}}" fill="{{colorPrimary}}" clip-path="url(#Person)" />
+	<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none" />
 
 	{{formation
 	<line x1="128" y1="54" x2="128" y2="18" stroke="#000000" stroke-width="10" />
@@ -49,8 +50,8 @@
 
 	{{clear
 	<g transform="translate(-10, -32) scale(1 1)">
-        <path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
-    </g>
+		<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	</g>
 	clear}}
 
 	{{transport
@@ -69,7 +70,6 @@
 	<path d="M147,88 L108,88" stroke-width="5" stroke="{{colorAccent}}" />
 	specialist}}
 
-	<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="2" stroke="#000000" fill="none" />
 	<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="{{colorAccent}}">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">{{org}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200">{{spez}}</text>
