@@ -44,7 +44,7 @@
 	extinguish}}
 
 	{{medical
-	<path d="M64,128 l128,0 M128,64 l0,128" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
+	<path d="M64,128 l128,0 M128,64 l0,128" stroke="{{colorAccent}}" stroke-width="5" fill="none" clip-path="url(#Person)" />
 	medical}}
 
 	{{transport
