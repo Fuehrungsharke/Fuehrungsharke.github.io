@@ -67,7 +67,7 @@ document.getElementById('btnDownloadSvg').onclick = function () {
 }
 
 function editName(uuid) {
-    var item = getConfigElementByUuid(config, uuid);
+    var item = getByUuid(config, uuid);
     let newName = prompt('Edit Name:', item['name']);
     if (newName == undefined)
         return;

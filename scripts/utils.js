@@ -65,10 +65,10 @@ function isAncestorOf(item, presumedDescendant) {
     return false;
 }
 
-function getConfigElementByUuid(root, uuid) {
+function getByUuid(root, uuid) {
     if (Array.isArray(root) && root.length > 0)
         for (let idx in root) {
-            var subResult = getConfigElementByUuid(root[idx], uuid);
+            var subResult = getByUuid(root[idx], uuid);
             if (subResult != undefined)
                 return subResult;
         }
@@ -76,25 +76,25 @@ function getConfigElementByUuid(root, uuid) {
         return root;
     if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]))
         for (let idx in root[SUB]) {
-            var subResult = getConfigElementByUuid(root[SUB][idx], uuid);
+            var subResult = getByUuid(root[SUB][idx], uuid);
             if (subResult != undefined)
                 return subResult;
         }
     if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]))
         for (let idx in root[WITH]) {
-            var subResult = getConfigElementByUuid(root[WITH][idx], uuid);
+            var subResult = getByUuid(root[WITH][idx], uuid);
             if (subResult != undefined)
                 return subResult;
         }
     return null;
 }
 
-function getConfigElementParentByUuid(root, uuid) {
+function getParentByUuid(root, uuid) {
     if (Array.isArray(root) && root.length > 0)
         for (let idx in root) {
             if (root[idx].hasOwnProperty('uuid') && root[idx].uuid == uuid)
                 return root;
-            var subResult = getConfigElementParentByUuid(root[idx], uuid);
+            var subResult = getParentByUuid(root[idx], uuid);
             if (subResult != null)
                 return subResult;
         }
@@ -102,7 +102,7 @@ function getConfigElementParentByUuid(root, uuid) {
         for (let idx in root[SUB]) {
             if (root[SUB][idx].hasOwnProperty('uuid') && root[SUB][idx].uuid == uuid)
                 return root;
-            var subResult = getConfigElementParentByUuid(root[SUB][idx], uuid);
+            var subResult = getParentByUuid(root[SUB][idx], uuid);
             if (subResult != null)
                 return subResult;
         }
@@ -110,7 +110,7 @@ function getConfigElementParentByUuid(root, uuid) {
         for (let idx in root[WITH]) {
             if (root[WITH][idx].hasOwnProperty('uuid') && root[WITH][idx].uuid == uuid)
                 return root;
-            var subResult = getConfigElementParentByUuid(root[WITH][idx], uuid);
+            var subResult = getParentByUuid(root[WITH][idx], uuid);
             if (subResult != null)
                 return subResult;
         }

@@ -54,9 +54,9 @@ function drop(evt) {
     var draggedElement = draggingElement;
     draggingElement = null;
     if (hoveringUuid != null) {
-        var source = getConfigElementParentByUuid(config, draggedElement.draggingInfo.uuid);
-        var subject = getConfigElementByUuid(config, draggedElement.draggingInfo.uuid);
-        var target = getConfigElementByUuid(config, hoveringUuid);
+        var source = getParentByUuid(config, draggedElement.draggingInfo.uuid);
+        var subject = getByUuid(config, draggedElement.draggingInfo.uuid);
+        var target = getByUuid(config, hoveringUuid);
 
         if (subject == target || isAncestorOf(target, subject))
             return;

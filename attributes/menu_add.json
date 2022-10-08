@@ -1,0 +1,60 @@
+[
+    {
+        "name": "Hinzufügen",
+        "type": "submenu",
+        "values": [
+            {
+                "name": "Nebenstehend",
+                "type": "submenu",
+                "cmd": "add_with",
+                "icon": "/icons/relations/with.svg",
+                "styles": [
+                    "relationsIcon868"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            },
+            {
+                "name": "Auf gleicher Ebene",
+                "type": "submenu",
+                "cmd": "add_sibling",
+                "icon": "/icons/relations/sibling.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            },
+            {
+                "name": "Übergeordnet",
+                "type": "submenu",
+                "cmd": "add_parent",
+                "icon": "/icons/relations/parent.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            },
+            {
+                "name": "Untergeordnet",
+                "type": "submenu",
+                "cmd": "add_sub",
+                "icon": "/icons/relations/sub.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            }
+        ]
+    }
+]

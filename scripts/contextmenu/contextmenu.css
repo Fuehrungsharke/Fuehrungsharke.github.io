@@ -64,3 +64,21 @@
     opacity: 1;
     pointer-events: auto;
 }
+
+.context-menu .sub-sub-menu {
+    position: absolute;
+    background: #fff;
+    width: 220px;
+    right: -220px;
+    padding: 5px 0px;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
+}
+
+.sub-menu .with-submenu:hover .sub-sub-menu {
+    opacity: 1;
+    pointer-events: auto;
+}
