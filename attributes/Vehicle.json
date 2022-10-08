@@ -35,6 +35,12 @@
                 "icon": "/icons/engine/chain.svg"
             },
             {
+                "name": "Schienengebunden",
+                "type": "radio",
+                "key": "rail",
+                "icon": "/icons/engine/rail.svg"
+            },
+            {
                 "name": "Anhänger",
                 "type": "radio",
                 "key": "trailer",

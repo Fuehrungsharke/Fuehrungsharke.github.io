@@ -25,6 +25,13 @@
 	<path d="M24,200 l208,0 a10,10 180 0 1 0,20 l-208,0 a10,10 180 0 1 0,-20 Z" stroke="#000" fill="none" stroke-width="5" />
 	chain}}
 
+	{{rail
+	<ellipse cx="24" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5" />
+	<ellipse cx="50" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5" />
+	<ellipse cx="206" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5" />
+	<ellipse cx="232" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5" />
+	rail}}
+
 	{{extinguish
 	<path d="M11 128 L245 128 M156 128 L241 69 M156 128 L241 187" stroke="{{colorAccent}}" stroke-width="10" clip-path="url(#Vehicle)" />
 	extinguish}}
