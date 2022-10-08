@@ -8,9 +8,19 @@
 	<path d="M10 64 L128 16 L246 64" stroke="{{colorAccent}}" stroke-width="10" fill="{{colorPrimary}}" clip-path="url(#Building)" />
 	<path d="M10 64 L10 192 L246 192 L246 64 L128 16 L10 64" stroke="#000000" stroke-width="1" fill="none" />
 
+	{{extinguish
+	<path d="M11 128 L245 128 M156 128 L241 69 M156 128 L241 187" stroke="{{colorAccent}}" stroke-width="10" />
+	extinguish}}
+
 	{{medical
 	<path d="M128,65 l0,126 M11,128 l234,0" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
 	medical}}
+
+	{{transport
+	<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="5" stroke="{{colorAccent}}" />
+	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" />
+	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" transform="rotate(45,128,128)" />
+	transport}}
 
 	<text style="font-family: 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 72px;" fill="{{colorAccent}}" x="128" y="155">{{txt}}</text>
 	<text style="font-family: 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="236" y="180">{{org}}</text>

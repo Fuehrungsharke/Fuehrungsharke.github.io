@@ -14,6 +14,20 @@
 	<ellipse cx="128" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5" />
 	offroad}}
 
+	{{extinguish
+	<path d="M11 128 L245 128 M156 128 L241 69 M156 128 L241 187" stroke="{{colorAccent}}" stroke-width="10" clip-path="url(#Vehicle)" />
+	extinguish}}
+
+	{{medical
+	<path d="M128,65 l0,126 M11,128 l234,0" stroke="{{colorAccent}}" stroke-width="5" fill="none" clip-path="url(#Vehicle)" />
+	medical}}
+
+	{{transport
+	<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="5" stroke="{{colorAccent}}" />
+	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" />
+	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" transform="rotate(45,128,128)" />
+	transport}}
+
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="236" y="180">{{org}}</text>
 </svg>

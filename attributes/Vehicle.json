@@ -15,6 +15,10 @@
         "key": "offroad"
     },
     {
+        "name": "Symbols",
+        "type": "placeholder"
+    },
+    {
         "name": "Organisation",
         "type": "placeholder"
     }
