@@ -140,6 +140,10 @@
             }
         },
         {
+            "name": "CustomOrgs",
+            "type": "placeholder"
+        },
+        {
             "name": "Führungsfarbe verwenden",
             "type": "cmd",
             "cmd": "resetColor",
@@ -152,6 +156,11 @@
         {
             "name": "",
             "type": "header"
+        },
+        {
+            "name": "Neue Organisation",
+            "type": "cmd",
+            "cmd": "new_org"
         },
         {
             "name": "Zurücksetzen",

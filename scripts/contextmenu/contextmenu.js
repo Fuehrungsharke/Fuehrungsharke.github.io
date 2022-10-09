@@ -19,14 +19,26 @@ const CMD_PASTE_SIBLING = 'paste_sibling';
 const CMD_PASTE_PARENT = 'paste_parent';
 const CMD_DELETE_SINGLE = 'delete_single';
 const CMD_DELETE_TREE = 'delete_tree';
+const CMD_NEW_ORG = 'new_org';
 
 var cachedElement = null;
+var customOrgs = [];
+
+function getPlaceholder(name) {
+    if (name == 'CustomOrgs')
+        return customOrgs;
+    else
+        return JSON.parse(getResource(`/menus/${name}.json`))
+}
 
 function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
-        attrItem = JSON.parse(getResource(`/menus/${attrItem.name}.json`));
-        if (Array.isArray(attrItem) && attrItem.length > 0)
-            return buildMenu(root, parentMenuItem, attrItem);
+        attrItem = getPlaceholder(attrItem.name);
+        if (Array.isArray(attrItem))
+            if (attrItem.length > 0)
+                return buildMenu(root, parentMenuItem, attrItem);
+            else
+                return null;
     }
     var key = attrItem.key;
     var menuItem = document.createElement('li');
@@ -90,7 +102,7 @@ function buildMenu(root, parentMenuItem, attrMenu) {
             var menuItem = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
             if (Array.isArray(menuItem) && menuItem.length > 0)
                 menuItems = menuItems.concat(menuItem);
-            else
+            else if (menuItem != null)
                 menuItems.push(menuItem);
         }
     else {
@@ -140,7 +152,7 @@ function getAttribute(attrMenu, key) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
         if (attrItem.type == PLACEHOLDER)
-            attrItem = JSON.parse(getResource(`/menus/${attrItem.name}.json`));
+            attrItem = getPlaceholder(attrItem.name);
         if (attrItem.type == SUBMENU) {
             var subResult = getAttribute(attrItem.values, key);
             if (subResult != null)
@@ -158,7 +170,7 @@ function getParentAttribute(attrMenu, parent, child) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
         if (attrItem.type == PLACEHOLDER)
-            attrItem = JSON.parse(getResource(`/menus/${attrItem.name}.json`));
+            attrItem = getPlaceholder(attrItem.name);
         if (attrItem.type == SUBMENU) {
             var subResult = getParentAttribute(attrItem.values, attrItem, child);
             if (subResult != null)
@@ -354,11 +366,51 @@ function clickContextMenuItem(menuItem) {
             removeTree(root, uuid);
             close = true;
             break;
+        case CMD_NEW_ORG:
+            var newOrgName = prompt('Name', 'Benutzerdefiniert');
+            var newOrgKey = prompt('Kürzel', 'XXX');
+            var newOrgColorPrimary = prompt('Farbe', 'purple');
+            var newOrgColorAccent = prompt('Kontrastfarbe', 'white');
+            var newOrg = {
+                "name": newOrgName,
+                "type": "radio",
+                "key": newOrgKey,
+                "icon": `data:image/svg+xml;utf8,
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256">
+                    <ellipse cx="128" cy="128" rx="128" ry="128" fill="${newOrgColorPrimary}" stroke-width="5" stroke="black" />
+                    <ellipse cx="128" cy="128" rx="43" ry="43" fill="${newOrgColorAccent}" />
+                </svg>`,
+                "implicitAttritbues": {
+                    "colorPrimary": newOrgColorPrimary,
+                    "colorAccent": newOrgColorAccent
+                }
+            };
+            customOrgs.push(newOrg);
+            root.org = newOrgKey;
+            root.colorPrimary = newOrgColorPrimary;
+            root.colorAccent = newOrgColorAccent;
+            close = true;
+            break;
         default:
             var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
             var attr = null;
-            if (key != null && key != "undefined")
+            if (key != null && key != "undefined") {
                 attr = getAttribute(attrMenu, key);
+                if (attr == null) {
+                    attr = customOrgs.find(item => item.key == key);
+                    if (attr != null) {
+                        attrMenu = [
+                            {
+                                "name": "Organisationen",
+                                "type": "submenu",
+                                "key": "org",
+                                "values": customOrgs
+                            }
+                        ];
+                    }
+                }
+            }
             else
                 attr = getAttribute(attrMenu, cmd);
             if (attr == null)
