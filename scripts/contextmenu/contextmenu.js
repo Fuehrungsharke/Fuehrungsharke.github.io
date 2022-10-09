@@ -30,8 +30,6 @@ var presets = {
         "colorAccent": "#000"
     },
     "Vehicle": {
-        "colorPrimary": "#FFF",
-        "colorAccent": "#000",
         "automotive": true
     }
 }
@@ -316,13 +314,18 @@ function clickContextMenuItem(menuItem) {
         case CMD_ADD:
             var newObj = {
                 'sign': key,
-                'colorPrimary': '#FFFFFF',
-                'colorAccent': '#000000'
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000'
             };
-            if (key in presets) {
-                newObj = { ...presets[key] };
-                newObj.sign = key;
-            }
+            if (root.org != null)
+                newObj.org = root.org;
+            if (root.colorPrimary != null)
+                newObj.colorPrimary = root.colorPrimary;
+            if (root.colorAccent != null)
+                newObj.colorAccent = root.colorAccent;
+            if (key in presets)
+                for (let idx in presets[key])
+                    newObj[idx] = presets[key][idx];
             var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
             switch (subCmd) {
                 case CMD_ADD_WITH:
