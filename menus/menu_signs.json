@@ -61,5 +61,12 @@
         "cmd": "add",
         "key": "Bike",
         "icon": "/icons/signs/bike.svg"
+    },
+    {
+        "name": "Platzhalter",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Empty",
+        "icon": "/signs/Empty.svg"
     }
 ]
