@@ -10,7 +10,8 @@ const CMD_ADD_SUB = 'add_sub';
 const CMD_ADD_WITH = 'add_with';
 const CMD_ADD_SIBLING = 'add_sibling';
 const CMD_ADD_PARENT = 'add_parent';
-const CMD_REMOVE = 'remove';
+const CMD_DELETE_SINGLE = 'delete_single';
+const CMD_DELETE_TREE = 'delete_tree';
 
 function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
@@ -106,11 +107,8 @@ function openSignContextMenu(evt, sign) {
     var menuItemsAdd = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_add.json')));
     newMenuItems.push(menuItemsAdd[0]);
 
-    var menuItemRemove = document.createElement('li');
-    menuItemRemove.classList.add('context-menu-item');
-    menuItemRemove.setAttribute('cmd', CMD_REMOVE);
-    menuItemRemove.appendChild(document.createTextNode('Entfernen'));
-    newMenuItems.push(menuItemRemove);
+    var menuItemsAdd = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_delete.json')));
+    newMenuItems.push(menuItemsAdd[0]);
 
     var menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
@@ -251,7 +249,37 @@ function clickContextMenuItem(menuItem) {
                     break;
             }
             break;
-        case CMD_REMOVE:
+        case CMD_DELETE_SINGLE:
+            var source = getParentByUuid(config, uuid);
+            if (source != null) {
+                if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
+                    var idx = source.sub.indexOf(root);
+                    if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]) && root.with.length > 0) {
+                        var firstWith = root.with[0];
+                        firstWith.sub = root.sub;
+                        firstWith.with = root.with.filter(item => item != firstWith);
+                        if (firstWith.sub.length == 0)
+                            delete firstWith.sub;
+                        if (firstWith.with.length == 0)
+                            delete firstWith.with;
+                        source.sub[idx] = firstWith;
+                    }
+                    else if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root.sub.length > 0)
+                        source.sub = source.sub.slice(0, idx).concat(root.sub).concat(source.sub.slice(idx + 1, source.sub.length));
+                    else
+                        source.sub = source.sub.filter(item => item != root);
+                    if (source.sub.length == 0)
+                        delete source.sub;
+                }
+                if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
+                    source.with = source.with.filter(item => item != root);
+                    if (source.with.length == 0)
+                        delete source.with;
+                }
+                close = true;
+            }
+            break;
+        case CMD_DELETE_TREE:
             var source = getParentByUuid(config, uuid);
             if (source != null) {
                 if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {

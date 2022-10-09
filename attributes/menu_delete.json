@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Entfernen",
+        "type": "submenu",
+        "values": [
+            {
+                "name": "Ohne untergeordnete Elemente",
+                "type": "cmd",
+                "cmd": "delete_single",
+                "icon": "/icons/relations/delete_single.svg",
+                "iconAttr": {
+                    "child1": "red"
+                },
+                "styles": [
+                    "relationsIcon612"
+                ]
+            },
+            {
+                "name": "Mit untergeordnete Elemente",
+                "type": "cmd",
+                "cmd": "delete_tree",
+                "icon": "/icons/relations/delete_tree.svg",
+                "iconAttr": {
+                    "child1": "red"
+                },
+                "styles": [
+                    "relationsIcon612"
+                ]
+            }
+        ]
+    }
+]

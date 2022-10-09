@@ -1,5 +1,11 @@
 function getSign(root) {
-    var svg = getResource(`/signs/${root['sign']}.svg`);
+    var svg = null;
+    if (root.sign == null)
+        return null;
+    if (root.sign.includes('/'))
+        svg = getResource(root.sign);
+    else
+        svg = getResource(`/signs/${root.sign}.svg`);
     for (var key in root) {
         var re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
         svg = svg
@@ -86,7 +92,7 @@ function drawItem(canvas, root, x, y) {
             (item.hasOwnProperty(SUB) && Array.isArray(item[SUB]) && item[SUB].length > 0)
             || (item.hasOwnProperty(WITH) && Array.isArray(item[WITH]) && item[WITH].length > 0)
         );
-        if(!hasSubTrees) {
+        if (!hasSubTrees) {
             // Leafs
             var leafs = root[SUB];
             var leafsTotalWidth = 0;
