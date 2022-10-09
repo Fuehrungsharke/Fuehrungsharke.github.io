@@ -297,6 +297,21 @@ function removeSingle(root, uuid) {
 }
 
 function removeTree(root, uuid) {
+    if (Array.isArray(config)) {
+        config = config.filter(item => item != root);
+        if (config.length == 0)
+            config = null;
+    }
+    else if (root == config)
+        config = null;
+    if (config == null) {
+        config = {
+            'sign': "Unit",
+            'colorPrimary': '#FFF',
+            'colorAccent': '#000'
+        };
+        return;
+    }
     var source = getParentByUuid(config, uuid);
     if (source != null) {
         if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
