@@ -36,6 +36,8 @@
             "cmd": "resetSymbol",
             "implicitAttritbues": {
                 "extinguish": false,
+                "medical": false,
+                "clear": false,
                 "transport": false
             }
         }

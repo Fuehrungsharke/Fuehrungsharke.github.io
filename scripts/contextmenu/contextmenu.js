@@ -67,8 +67,9 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         case BOOL:
         case RADIO:
         case CMD:
-            var isSelected = content == true || content == attrItem.key;
-            menuItem.appendChild(document.createTextNode(`${isSelected ? '>\t' : '\t'} \t${attrItem.name}`));
+            if (content == true || content == attrItem.key)
+                menuItem.classList.add('selected');
+            menuItem.appendChild(document.createTextNode(attrItem.name));
             break;
         case STRING:
             menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
