@@ -22,13 +22,13 @@
                 "name": "Führung",
                 "type": "bool",
                 "key": "leading",
-                "icon": "function_leading_unit"
+                "icon": "/icons/functions/leading_unit.svg"
             },
             {
                 "name": "Logistik",
                 "type": "bool",
                 "key": "support",
-                "icon": "function_support"
+                "icon": "/icons/functions/support.svg"
             }
         ]
     },
