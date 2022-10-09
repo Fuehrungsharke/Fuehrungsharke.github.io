@@ -24,6 +24,18 @@ const CMD_NEW_ORG = 'new_org';
 var cachedElement = null;
 var customOrgs = [];
 
+var presets = {
+    "Flag": {
+        "colorPrimary": "#FF0",
+        "colorAccent": "#000"
+    },
+    "Vehicle": {
+        "colorPrimary": "#FFF",
+        "colorAccent": "#000",
+        "automotive": true
+    }
+}
+
 function getPlaceholder(name) {
     if (name == 'CustomOrgs')
         return customOrgs;
@@ -307,6 +319,10 @@ function clickContextMenuItem(menuItem) {
                 'colorPrimary': '#FFFFFF',
                 'colorAccent': '#000000'
             };
+            if (key in presets) {
+                newObj = { ...presets[key] };
+                newObj.sign = key;
+            }
             var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
             switch (subCmd) {
                 case CMD_ADD_WITH:
