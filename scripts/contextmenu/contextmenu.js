@@ -254,6 +254,19 @@ function insertSibling(parentLayer, newObj) {
 }
 
 function removeSingle(root, uuid) {
+    if (root == config) {
+        if (root.with != null && Array.isArray(root.with) && root.with.length > 0) {
+            var firstWith = root.with[0];
+            firstWith.sub = root.sub;
+            firstWith.with = root.with.filter(item => item != firstWith);
+            if (firstWith.with.length == 0)
+                delete firstWith.with;
+            config = firstWith;
+        }
+        else if (root.sub != null && Array.isArray(root.sub))
+            config = root.sub;
+        return;
+    }
     var source = getParentByUuid(config, uuid);
     if (source != null) {
         if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
