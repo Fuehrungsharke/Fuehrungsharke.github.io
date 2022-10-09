@@ -11,6 +11,8 @@ const CMD_ADD_WITH = 'add_with';
 const CMD_ADD_SIBLING = 'add_sibling';
 const CMD_ADD_PARENT = 'add_parent';
 const CMD_COPY = 'copy';
+const CMD_CUT_SINGLE = 'cut_single';
+const CMD_CUT_TREE = 'cut_tree';
 const CMD_PASTE_SUB = 'paste_sub';
 const CMD_PASTE_WITH = 'paste_with';
 const CMD_PASTE_SIBLING = 'paste_sibling';
@@ -18,7 +20,7 @@ const CMD_PASTE_PARENT = 'paste_parent';
 const CMD_DELETE_SINGLE = 'delete_single';
 const CMD_DELETE_TREE = 'delete_tree';
 
-var copiedElement = null;
+var cachedElement = null;
 
 function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
@@ -223,6 +225,52 @@ function insertSibling(parentLayer, newObj) {
         config = [config, newObj];
 }
 
+function removeSingle(root, uuid) {
+    var source = getParentByUuid(config, uuid);
+    if (source != null) {
+        if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
+            var idx = source.sub.indexOf(root);
+            if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]) && root.with.length > 0) {
+                var firstWith = root.with[0];
+                firstWith.sub = root.sub;
+                firstWith.with = root.with.filter(item => item != firstWith);
+                if (firstWith.sub.length == 0)
+                    delete firstWith.sub;
+                if (firstWith.with.length == 0)
+                    delete firstWith.with;
+                source.sub[idx] = firstWith;
+            }
+            else if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root.sub.length > 0)
+                source.sub = source.sub.slice(0, idx).concat(root.sub).concat(source.sub.slice(idx + 1, source.sub.length));
+            else
+                source.sub = source.sub.filter(item => item != root);
+            if (source.sub.length == 0)
+                delete source.sub;
+        }
+        if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
+            source.with = source.with.filter(item => item != root);
+            if (source.with.length == 0)
+                delete source.with;
+        }
+    }
+}
+
+function removeTree(root, uuid) {
+    var source = getParentByUuid(config, uuid);
+    if (source != null) {
+        if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
+            source.sub = source.sub.filter(item => item != root);
+            if (source.sub.length == 0)
+                delete source.sub;
+        }
+        if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
+            source.with = source.with.filter(item => item != root);
+            if (source.with.length == 0)
+                delete source.with;
+        }
+    }
+}
+
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
@@ -238,7 +286,7 @@ function clickContextMenuItem(menuItem) {
                 break;
             }
     }
-    var clone = JSON.parse(JSON.stringify(copiedElement));
+    var clone = JSON.parse(JSON.stringify(cachedElement));
     switch (cmd) {
         case CMD_ADD:
             var newObj = {
@@ -264,7 +312,7 @@ function clickContextMenuItem(menuItem) {
             close = true;
             break;
         case CMD_COPY:
-            copiedElement = root;
+            cachedElement = root;
             close = true;
             break;
         case CMD_PASTE_SUB:
@@ -287,51 +335,23 @@ function clickContextMenuItem(menuItem) {
             insertParent(root, parentLocical, parentLayer, clone);
             close = true;
             break;
+        case CMD_CUT_SINGLE:
+            cachedElement = root;
+            removeSingle(root, uuid);
+            close = true;
+            break;
+        case CMD_CUT_TREE:
+            cachedElement = root;
+            removeTree(root, uuid);
+            close = true;
+            break;
         case CMD_DELETE_SINGLE:
-            var source = getParentByUuid(config, uuid);
-            if (source != null) {
-                if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
-                    var idx = source.sub.indexOf(root);
-                    if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]) && root.with.length > 0) {
-                        var firstWith = root.with[0];
-                        firstWith.sub = root.sub;
-                        firstWith.with = root.with.filter(item => item != firstWith);
-                        if (firstWith.sub.length == 0)
-                            delete firstWith.sub;
-                        if (firstWith.with.length == 0)
-                            delete firstWith.with;
-                        source.sub[idx] = firstWith;
-                    }
-                    else if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root.sub.length > 0)
-                        source.sub = source.sub.slice(0, idx).concat(root.sub).concat(source.sub.slice(idx + 1, source.sub.length));
-                    else
-                        source.sub = source.sub.filter(item => item != root);
-                    if (source.sub.length == 0)
-                        delete source.sub;
-                }
-                if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
-                    source.with = source.with.filter(item => item != root);
-                    if (source.with.length == 0)
-                        delete source.with;
-                }
-                close = true;
-            }
+            removeSingle(root, uuid);
+            close = true;
             break;
         case CMD_DELETE_TREE:
-            var source = getParentByUuid(config, uuid);
-            if (source != null) {
-                if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
-                    source.sub = source.sub.filter(item => item != root);
-                    if (source.sub.length == 0)
-                        delete source.sub;
-                }
-                if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
-                    source.with = source.with.filter(item => item != root);
-                    if (source.with.length == 0)
-                        delete source.with;
-                }
-                close = true;
-            }
+            removeTree(root, uuid);
+            close = true;
             break;
         default:
             var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
