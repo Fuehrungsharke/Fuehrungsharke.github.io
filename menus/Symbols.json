@@ -6,25 +6,37 @@
             "name": "Löschen",
             "type": "radio",
             "key": "extinguish",
-            "icon": "/icons/symbols/extinguish.svg"
+            "icon": "/icons/symbols/extinguish.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
         },
         {
             "name": "Sanitätswesen",
             "type": "radio",
             "key": "medical",
-            "icon": "/icons/symbols/medical.svg"
+            "icon": "/icons/symbols/medical.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
         },
         {
             "name": "Räumen",
             "type": "radio",
             "key": "clear",
-            "icon": "/icons/symbols/clear.svg"
+            "icon": "/icons/symbols/clear.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
         },
         {
             "name": "Transport",
             "type": "radio",
             "key": "transport",
-            "icon": "/icons/symbols/transport.svg"
+            "icon": "/icons/symbols/transport.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
         },
         {
             "name": "",
