@@ -10,8 +10,15 @@ const CMD_ADD_SUB = 'add_sub';
 const CMD_ADD_WITH = 'add_with';
 const CMD_ADD_SIBLING = 'add_sibling';
 const CMD_ADD_PARENT = 'add_parent';
+const CMD_COPY = 'copy';
+const CMD_PASTE_SUB = 'paste_sub';
+const CMD_PASTE_WITH = 'paste_with';
+const CMD_PASTE_SIBLING = 'paste_sibling';
+const CMD_PASTE_PARENT = 'paste_parent';
 const CMD_DELETE_SINGLE = 'delete_single';
 const CMD_DELETE_TREE = 'delete_tree';
+
+var copiedElement = null;
 
 function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
@@ -100,15 +107,8 @@ function openSignContextMenu(evt, sign) {
     var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
     var newMenuItems = buildMenu(root, null, attrMenu);
 
-    var menuHeaderItem = document.createElement('li');
-    menuHeaderItem.classList.add('context-menu-header');
-    newMenuItems.push(menuHeaderItem);
-
-    var menuItemsAdd = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_add.json')));
-    newMenuItems.push(menuItemsAdd[0]);
-
-    var menuItemsAdd = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_delete.json')));
-    newMenuItems.push(menuItemsAdd[0]);
+    var menuDefault = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_default.json')));
+    newMenuItems = newMenuItems.concat(menuDefault);
 
     var menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
@@ -167,12 +167,78 @@ function getParentAttribute(attrMenu, parent, child) {
     return null;
 }
 
+function insertSub(root, parentLocical, newObj) {
+    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0) {
+        if (parentLocical[SUB] == null)
+            parentLocical[SUB] = [];
+        parentLocical[SUB].push(newObj);
+    }
+    else {
+        if (root[SUB] == null)
+            root[SUB] = [];
+        root[SUB].push(newObj);
+    }
+}
+
+function insertWith(root, parentLocical, newObj) {
+    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0)
+        parentLocical[WITH].push(newObj);
+    else {
+        if (root[WITH] == null)
+            root[WITH] = [];
+        root[WITH].push(newObj);
+    }
+}
+
+function insertParent(root, parentLocical, parentLayer, newObj) {
+    if (parentLayer != null) {
+        if (Array.isArray(parentLayer) && parentLayer.length > 0) {
+            newObj[SUB] = parentLayer;
+            config = newObj;
+        }
+        else if (parentLayer[SUB] != null) {
+            if (parentLayer == parentLocical) {
+                parentLayer[SUB] = parentLayer[SUB].filter(item => item != root);
+                newObj[SUB] = [root];
+            } else {
+                parentLayer[SUB] = parentLayer[SUB].filter(item => item != parentLocical);
+                newObj[SUB] = [parentLocical];
+            }
+            parentLayer[SUB].push(newObj);
+        }
+    }
+    else {
+        newObj[SUB] = [config];
+        config = newObj;
+    }
+}
+
+function insertSibling(parentLayer, newObj) {
+    if (parentLayer != null) {
+        if (Array.isArray(parentLayer) && parentLayer.length > 0)
+            parentLayer.push(newObj);
+        else if (parentLayer[SUB] != null)
+            parentLayer[SUB].push(newObj);
+    } else
+        config = [config, newObj];
+}
+
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getByUuid(config, uuid);
+    var parentLocical = getParentByUuid(config, uuid);
+    var parentLayer = parentLocical;
+    if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
+        for (let idx in parentLayer[WITH])
+            if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == uuid) {
+                parentLayer = getParentByUuid(config, parentLayer.uuid);
+                break;
+            }
+    }
+    var clone = JSON.parse(JSON.stringify(copiedElement));
     switch (cmd) {
         case CMD_ADD:
             var newObj = {
@@ -180,74 +246,46 @@ function clickContextMenuItem(menuItem) {
                 'colorPrimary': '#FFFFFF',
                 'colorAccent': '#000000'
             };
-            var parentLocical = getParentByUuid(config, uuid);
-            var parentLayer = parentLocical;
-            if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
-                for (let idx in parentLayer[WITH])
-                    if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == uuid) {
-                        parentLayer = getParentByUuid(config, parentLayer.uuid);
-                        break;
-                    }
-            }
             var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
             switch (subCmd) {
                 case CMD_ADD_WITH:
-                    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0)
-                        parentLocical[WITH].push(newObj);
-                    else {
-                        if (root[WITH] == null)
-                            root[WITH] = [];
-                        root[WITH].push(newObj);
-                    }
-                    close = true;
+                    insertWith(root, parentLocical, newObj);
                     break;
                 case CMD_ADD_SIBLING:
-                    if (parentLayer != null) {
-                        if (Array.isArray(parentLayer) && parentLayer.length > 0)
-                            parentLayer.push(newObj);
-                        else if (parentLayer[SUB] != null)
-                            parentLayer[SUB].push(newObj);
-                    } else
-                        config = [config, newObj];
-                    close = true;
+                    insertSibling(parentLayer, newObj);
                     break;
                 case CMD_ADD_PARENT:
-                    if (parentLayer != null) {
-                        if (Array.isArray(parentLayer) && parentLayer.length > 0) {
-                            newObj[SUB] = parentLayer;
-                            config = newObj;
-                        }
-                        else if (parentLayer[SUB] != null) {
-                            if (parentLayer == parentLocical) {
-                                parentLayer[SUB] = parentLayer[SUB].filter(item => item != root);
-                                newObj[SUB] = [root];
-                            } else {
-                                parentLayer[SUB] = parentLayer[SUB].filter(item => item != parentLocical);
-                                newObj[SUB] = [parentLocical];
-                            }
-                            parentLayer[SUB].push(newObj);
-                        }
-                    }
-                    else {
-                        newObj[SUB] = [config];
-                        config = newObj;
-                    }
-                    close = true;
+                    insertParent(root, parentLocical, parentLayer, newObj);
                     break;
                 case CMD_ADD_SUB:
-                    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0) {
-                        if (parentLocical[SUB] == null)
-                            parentLocical[SUB] = [];
-                        parentLocical[SUB].push(newObj);
-                    }
-                    else {
-                        if (root[SUB] == null)
-                            root[SUB] = [];
-                        root[SUB].push(newObj);
-                    }
-                    close = true;
+                    insertSub(root, parentLocical, newObj);
                     break;
             }
+            close = true;
+            break;
+        case CMD_COPY:
+            copiedElement = root;
+            close = true;
+            break;
+        case CMD_PASTE_SUB:
+            insertSub(root, parentLocical, clone);
+            close = true;
+            break;
+        case CMD_PASTE_WITH:
+            delete clone.sub;
+            delete clone.with;
+            insertWith(root, parentLocical, clone);
+            close = true;
+            break;
+        case CMD_PASTE_SIBLING:
+            insertSibling(parentLayer, clone);
+            close = true;
+            break;
+        case CMD_PASTE_PARENT:
+            delete clone.sub;
+            delete clone.with;
+            insertParent(root, parentLocical, parentLayer, clone);
+            close = true;
             break;
         case CMD_DELETE_SINGLE:
             var source = getParentByUuid(config, uuid);
