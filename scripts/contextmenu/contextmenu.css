@@ -39,6 +39,10 @@
     padding: 5px 10px;
 }
 
+.context-menu .context-menu-item .selected {
+    font-weight: bold;
+}
+
 .context-menu .context-menu-item:hover {
     background: #f2f2f2;
 }

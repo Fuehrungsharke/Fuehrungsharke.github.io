@@ -3,10 +3,22 @@
     "type": "submenu",
     "values": [
         {
-            "name": "Verband",
+            "name": "Großverband",
             "type": "radio",
             "key": "formation",
             "icon": "/icons/tactical_sizes/formation.svg"
+        },
+        {
+            "name": "Abteilung",
+            "type": "radio",
+            "key": "brigade",
+            "icon": "/icons/tactical_sizes/brigade.svg"
+        },
+        {
+            "name": "Bereitschaft",
+            "type": "radio",
+            "key": "association",
+            "icon": "/icons/tactical_sizes/association.svg"
         },
         {
             "name": "Zug",

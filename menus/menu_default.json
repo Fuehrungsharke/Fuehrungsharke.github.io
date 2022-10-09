@@ -1,0 +1,200 @@
+[
+    {
+        "name": "",
+        "type": "header"
+    },
+    {
+        "name": "Hinzufügen",
+        "type": "submenu",
+        "values": [
+            {
+                "name": "Nebenstehend",
+                "type": "submenu",
+                "cmd": "add_with",
+                "icon": "/icons/relations/with.svg",
+                "styles": [
+                    "relationsIcon868"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            },
+            {
+                "name": "Auf gleicher Ebene",
+                "type": "submenu",
+                "cmd": "add_sibling",
+                "icon": "/icons/relations/sibling.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            },
+            {
+                "name": "Übergeordnet",
+                "type": "submenu",
+                "cmd": "add_parent",
+                "icon": "/icons/relations/parent.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            },
+            {
+                "name": "Untergeordnet",
+                "type": "submenu",
+                "cmd": "add_sub",
+                "icon": "/icons/relations/sub.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": {
+                    "name": "menu_signs",
+                    "type": "placeholder"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Ausschneiden",
+        "type": "submenu",
+        "cmd": "cut",
+        "values": [
+            {
+                "name": "Untergeordnete Elemente behalten",
+                "type": "cmd",
+                "cmd": "cut_single",
+                "icon": "/icons/relations/delete_single.svg",
+                "styles": [
+                    "relationsIcon612"
+                ]
+            },
+            {
+                "name": "Auch untergeordnete Elemente",
+                "type": "cmd",
+                "cmd": "cut_tree",
+                "icon": "/icons/relations/delete_tree.svg",
+                "styles": [
+                    "relationsIcon612"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kopieren",
+        "type": "cmd",
+        "cmd": "copy"
+    },
+    {
+        "name": "Einfügen",
+        "type": "submenu",
+        "values": [
+            {
+                "name": "Ohne untergeordnete Elemente",
+                "type": "submenu",
+                "cmd": "paste_single",
+                "icon": "/icons/relations/paste_single.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": [
+                    {
+                        "name": "Nebenstehend",
+                        "type": "cmd",
+                        "cmd": "paste_with",
+                        "icon": "/icons/relations/with.svg",
+                        "styles": [
+                            "relationsIcon868"
+                        ]
+                    },
+                    {
+                        "name": "Auf gleicher Ebene",
+                        "type": "cmd",
+                        "cmd": "paste_sibling",
+                        "icon": "/icons/relations/sibling.svg",
+                        "styles": [
+                            "relationsIcon612"
+                        ]
+                    },
+                    {
+                        "name": "Übergeordnet",
+                        "type": "cmd",
+                        "cmd": "paste_parent",
+                        "icon": "/icons/relations/parent.svg",
+                        "styles": [
+                            "relationsIcon612"
+                        ]
+                    },
+                    {
+                        "name": "Untergeordnet",
+                        "type": "cmd",
+                        "cmd": "paste_sub",
+                        "icon": "/icons/relations/sub.svg",
+                        "styles": [
+                            "relationsIcon612"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Mit untergeordnete Elemente",
+                "type": "submenu",
+                "cmd": "paste_tree",
+                "icon": "/icons/relations/paste_tree.svg",
+                "styles": [
+                    "relationsIcon612"
+                ],
+                "values": [
+                    {
+                        "name": "Auf gleicher Ebene",
+                        "type": "cmd",
+                        "cmd": "paste_sibling",
+                        "icon": "/icons/relations/sibling.svg",
+                        "styles": [
+                            "relationsIcon612"
+                        ]
+                    },
+                    {
+                        "name": "Untergeordnet",
+                        "type": "cmd",
+                        "cmd": "paste_sub",
+                        "icon": "/icons/relations/sub.svg",
+                        "styles": [
+                            "relationsIcon612"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Entfernen",
+        "type": "submenu",
+        "values": [
+            {
+                "name": "Untergeordnete Elemente behalten",
+                "type": "cmd",
+                "cmd": "delete_single",
+                "icon": "/icons/relations/delete_single.svg",
+                "styles": [
+                    "relationsIcon612"
+                ]
+            },
+            {
+                "name": "Auch untergeordnete Elemente",
+                "type": "cmd",
+                "cmd": "delete_tree",
+                "icon": "/icons/relations/delete_tree.svg",
+                "styles": [
+                    "relationsIcon612"
+                ]
+            }
+        ]
+    }
+]

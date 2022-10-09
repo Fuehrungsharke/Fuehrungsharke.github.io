@@ -136,12 +136,12 @@
             "icon": "/icons/organisations/Zivilschutz.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#FF9900",
-                "colorAccent": "#FFFFFF"
+                "colorAccent": "#000"
             }
         },
         {
-            "name": "",
-            "type": "header"
+            "name": "CustomOrgs",
+            "type": "placeholder"
         },
         {
             "name": "Führungsfarbe verwenden",
@@ -152,6 +152,15 @@
                 "colorPrimary": "#FFFF00",
                 "colorAccent": "#000000"
             }
+        },
+        {
+            "name": "",
+            "type": "header"
+        },
+        {
+            "name": "Neue Organisation",
+            "type": "cmd",
+            "cmd": "new_org"
         },
         {
             "name": "Zurücksetzen",

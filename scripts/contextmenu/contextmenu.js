@@ -10,14 +10,45 @@ const CMD_ADD_SUB = 'add_sub';
 const CMD_ADD_WITH = 'add_with';
 const CMD_ADD_SIBLING = 'add_sibling';
 const CMD_ADD_PARENT = 'add_parent';
+const CMD_COPY = 'copy';
+const CMD_CUT_SINGLE = 'cut_single';
+const CMD_CUT_TREE = 'cut_tree';
+const CMD_PASTE_SUB = 'paste_sub';
+const CMD_PASTE_WITH = 'paste_with';
+const CMD_PASTE_SIBLING = 'paste_sibling';
+const CMD_PASTE_PARENT = 'paste_parent';
 const CMD_DELETE_SINGLE = 'delete_single';
 const CMD_DELETE_TREE = 'delete_tree';
+const CMD_NEW_ORG = 'new_org';
+
+var cachedElement = null;
+var customOrgs = [];
+
+var presets = {
+    "Flag": {
+        "colorPrimary": "#FF0",
+        "colorAccent": "#000"
+    },
+    "Vehicle": {
+        "automotive": true
+    }
+}
+
+function getPlaceholder(name) {
+    if (name == 'CustomOrgs')
+        return customOrgs;
+    else
+        return JSON.parse(getResource(`/menus/${name}.json`))
+}
 
 function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
-        attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
-        if (Array.isArray(attrItem) && attrItem.length > 0)
-            return buildMenu(root, parentMenuItem, attrItem);
+        attrItem = getPlaceholder(attrItem.name);
+        if (Array.isArray(attrItem))
+            if (attrItem.length > 0)
+                return buildMenu(root, parentMenuItem, attrItem);
+            else
+                return null;
     }
     var key = attrItem.key;
     var menuItem = document.createElement('li');
@@ -58,8 +89,9 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         case BOOL:
         case RADIO:
         case CMD:
-            var isSelected = content == true || content == attrItem.key;
-            menuItem.appendChild(document.createTextNode(`${isSelected ? '>\t' : '\t'} \t${attrItem.name}`));
+            if (content == true || content == attrItem.key)
+                menuItem.classList.add('selected');
+            menuItem.appendChild(document.createTextNode(attrItem.name));
             break;
         case STRING:
             menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
@@ -80,7 +112,7 @@ function buildMenu(root, parentMenuItem, attrMenu) {
             var menuItem = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
             if (Array.isArray(menuItem) && menuItem.length > 0)
                 menuItems = menuItems.concat(menuItem);
-            else
+            else if (menuItem != null)
                 menuItems.push(menuItem);
         }
     else {
@@ -97,18 +129,11 @@ function openSignContextMenu(evt, sign) {
     var uuid = sign.getAttributeNS(null, 'uuid');
     var root = getByUuid(config, uuid);
 
-    var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
+    var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
     var newMenuItems = buildMenu(root, null, attrMenu);
 
-    var menuHeaderItem = document.createElement('li');
-    menuHeaderItem.classList.add('context-menu-header');
-    newMenuItems.push(menuHeaderItem);
-
-    var menuItemsAdd = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_add.json')));
-    newMenuItems.push(menuItemsAdd[0]);
-
-    var menuItemsAdd = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_delete.json')));
-    newMenuItems.push(menuItemsAdd[0]);
+    var menuDefault = buildMenu(root, null, JSON.parse(getResource('/menus/menu_default.json')));
+    newMenuItems = newMenuItems.concat(menuDefault);
 
     var menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
@@ -137,7 +162,7 @@ function getAttribute(attrMenu, key) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
         if (attrItem.type == PLACEHOLDER)
-            attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
+            attrItem = getPlaceholder(attrItem.name);
         if (attrItem.type == SUBMENU) {
             var subResult = getAttribute(attrItem.values, key);
             if (subResult != null)
@@ -155,7 +180,7 @@ function getParentAttribute(attrMenu, parent, child) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
         if (attrItem.type == PLACEHOLDER)
-            attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
+            attrItem = getPlaceholder(attrItem.name);
         if (attrItem.type == SUBMENU) {
             var subResult = getParentAttribute(attrItem.values, attrItem, child);
             if (subResult != null)
@@ -167,139 +192,244 @@ function getParentAttribute(attrMenu, parent, child) {
     return null;
 }
 
+function insertSub(root, parentLocical, newObj) {
+    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0) {
+        if (parentLocical[SUB] == null)
+            parentLocical[SUB] = [];
+        parentLocical[SUB].push(newObj);
+    }
+    else {
+        if (root[SUB] == null)
+            root[SUB] = [];
+        root[SUB].push(newObj);
+    }
+}
+
+function insertWith(root, parentLocical, newObj) {
+    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0)
+        parentLocical[WITH].push(newObj);
+    else {
+        if (root[WITH] == null)
+            root[WITH] = [];
+        root[WITH].push(newObj);
+    }
+}
+
+function insertParent(root, parentLocical, parentLayer, newObj) {
+    if (parentLayer != null) {
+        if (Array.isArray(parentLayer) && parentLayer.length > 0) {
+            newObj[SUB] = parentLayer;
+            config = newObj;
+        }
+        else if (parentLayer[SUB] != null) {
+            if (parentLayer == parentLocical) {
+                parentLayer[SUB] = parentLayer[SUB].filter(item => item != root);
+                newObj[SUB] = [root];
+            } else {
+                parentLayer[SUB] = parentLayer[SUB].filter(item => item != parentLocical);
+                newObj[SUB] = [parentLocical];
+            }
+            parentLayer[SUB].push(newObj);
+        }
+    }
+    else {
+        newObj[SUB] = [config];
+        config = newObj;
+    }
+}
+
+function insertSibling(parentLayer, newObj) {
+    if (parentLayer != null) {
+        if (Array.isArray(parentLayer) && parentLayer.length > 0)
+            parentLayer.push(newObj);
+        else if (parentLayer[SUB] != null)
+            parentLayer[SUB].push(newObj);
+    } else
+        config = [config, newObj];
+}
+
+function removeSingle(root, uuid) {
+    var source = getParentByUuid(config, uuid);
+    if (source != null) {
+        if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
+            var idx = source.sub.indexOf(root);
+            if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]) && root.with.length > 0) {
+                var firstWith = root.with[0];
+                firstWith.sub = root.sub;
+                firstWith.with = root.with.filter(item => item != firstWith);
+                if (firstWith.sub.length == 0)
+                    delete firstWith.sub;
+                if (firstWith.with.length == 0)
+                    delete firstWith.with;
+                source.sub[idx] = firstWith;
+            }
+            else if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root.sub.length > 0)
+                source.sub = source.sub.slice(0, idx).concat(root.sub).concat(source.sub.slice(idx + 1, source.sub.length));
+            else
+                source.sub = source.sub.filter(item => item != root);
+            if (source.sub.length == 0)
+                delete source.sub;
+        }
+        if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
+            source.with = source.with.filter(item => item != root);
+            if (source.with.length == 0)
+                delete source.with;
+        }
+    }
+}
+
+function removeTree(root, uuid) {
+    var source = getParentByUuid(config, uuid);
+    if (source != null) {
+        if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
+            source.sub = source.sub.filter(item => item != root);
+            if (source.sub.length == 0)
+                delete source.sub;
+        }
+        if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
+            source.with = source.with.filter(item => item != root);
+            if (source.with.length == 0)
+                delete source.with;
+        }
+    }
+}
+
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getByUuid(config, uuid);
+    var parentLocical = getParentByUuid(config, uuid);
+    var parentLayer = parentLocical;
+    if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
+        for (let idx in parentLayer[WITH])
+            if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == uuid) {
+                parentLayer = getParentByUuid(config, parentLayer.uuid);
+                break;
+            }
+    }
+    var clone = JSON.parse(JSON.stringify(cachedElement));
     switch (cmd) {
         case CMD_ADD:
             var newObj = {
                 'sign': key,
-                'colorPrimary': '#FFFFFF',
-                'colorAccent': '#000000'
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000'
             };
-            var parentLocical = getParentByUuid(config, uuid);
-            var parentLayer = parentLocical;
-            if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
-                for (let idx in parentLayer[WITH])
-                    if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == uuid) {
-                        parentLayer = getParentByUuid(config, parentLayer.uuid);
-                        break;
-                    }
-            }
+            if (root.org != null)
+                newObj.org = root.org;
+            if (root.colorPrimary != null)
+                newObj.colorPrimary = root.colorPrimary;
+            if (root.colorAccent != null)
+                newObj.colorAccent = root.colorAccent;
+            if (key in presets)
+                for (let idx in presets[key])
+                    newObj[idx] = presets[key][idx];
             var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
             switch (subCmd) {
                 case CMD_ADD_WITH:
-                    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0)
-                        parentLocical[WITH].push(newObj);
-                    else {
-                        if (root[WITH] == null)
-                            root[WITH] = [];
-                        root[WITH].push(newObj);
-                    }
-                    close = true;
+                    insertWith(root, parentLocical, newObj);
                     break;
                 case CMD_ADD_SIBLING:
-                    if (parentLayer != null) {
-                        if (Array.isArray(parentLayer) && parentLayer.length > 0)
-                            parentLayer.push(newObj);
-                        else if (parentLayer[SUB] != null)
-                            parentLayer[SUB].push(newObj);
-                    } else
-                        config = [config, newObj];
-                    close = true;
+                    insertSibling(parentLayer, newObj);
                     break;
                 case CMD_ADD_PARENT:
-                    if (parentLayer != null) {
-                        if (Array.isArray(parentLayer) && parentLayer.length > 0) {
-                            newObj[SUB] = parentLayer;
-                            config = newObj;
-                        }
-                        else if (parentLayer[SUB] != null) {
-                            if (parentLayer == parentLocical) {
-                                parentLayer[SUB] = parentLayer[SUB].filter(item => item != root);
-                                newObj[SUB] = [root];
-                            } else {
-                                parentLayer[SUB] = parentLayer[SUB].filter(item => item != parentLocical);
-                                newObj[SUB] = [parentLocical];
-                            }
-                            parentLayer[SUB].push(newObj);
-                        }
-                    }
-                    else {
-                        newObj[SUB] = [config];
-                        config = newObj;
-                    }
-                    close = true;
+                    insertParent(root, parentLocical, parentLayer, newObj);
                     break;
                 case CMD_ADD_SUB:
-                    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0) {
-                        if (parentLocical[SUB] == null)
-                            parentLocical[SUB] = [];
-                        parentLocical[SUB].push(newObj);
-                    }
-                    else {
-                        if (root[SUB] == null)
-                            root[SUB] = [];
-                        root[SUB].push(newObj);
-                    }
-                    close = true;
+                    insertSub(root, parentLocical, newObj);
                     break;
             }
+            close = true;
+            break;
+        case CMD_COPY:
+            cachedElement = root;
+            close = true;
+            break;
+        case CMD_PASTE_SUB:
+            insertSub(root, parentLocical, clone);
+            close = true;
+            break;
+        case CMD_PASTE_WITH:
+            delete clone.sub;
+            delete clone.with;
+            insertWith(root, parentLocical, clone);
+            close = true;
+            break;
+        case CMD_PASTE_SIBLING:
+            insertSibling(parentLayer, clone);
+            close = true;
+            break;
+        case CMD_PASTE_PARENT:
+            delete clone.sub;
+            delete clone.with;
+            insertParent(root, parentLocical, parentLayer, clone);
+            close = true;
+            break;
+        case CMD_CUT_SINGLE:
+            cachedElement = root;
+            removeSingle(root, uuid);
+            close = true;
+            break;
+        case CMD_CUT_TREE:
+            cachedElement = root;
+            removeTree(root, uuid);
+            close = true;
             break;
         case CMD_DELETE_SINGLE:
-            var source = getParentByUuid(config, uuid);
-            if (source != null) {
-                if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
-                    var idx = source.sub.indexOf(root);
-                    if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]) && root.with.length > 0) {
-                        var firstWith = root.with[0];
-                        firstWith.sub = root.sub;
-                        firstWith.with = root.with.filter(item => item != firstWith);
-                        if (firstWith.sub.length == 0)
-                            delete firstWith.sub;
-                        if (firstWith.with.length == 0)
-                            delete firstWith.with;
-                        source.sub[idx] = firstWith;
-                    }
-                    else if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root.sub.length > 0)
-                        source.sub = source.sub.slice(0, idx).concat(root.sub).concat(source.sub.slice(idx + 1, source.sub.length));
-                    else
-                        source.sub = source.sub.filter(item => item != root);
-                    if (source.sub.length == 0)
-                        delete source.sub;
-                }
-                if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
-                    source.with = source.with.filter(item => item != root);
-                    if (source.with.length == 0)
-                        delete source.with;
-                }
-                close = true;
-            }
+            removeSingle(root, uuid);
+            close = true;
             break;
         case CMD_DELETE_TREE:
-            var source = getParentByUuid(config, uuid);
-            if (source != null) {
-                if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
-                    source.sub = source.sub.filter(item => item != root);
-                    if (source.sub.length == 0)
-                        delete source.sub;
+            removeTree(root, uuid);
+            close = true;
+            break;
+        case CMD_NEW_ORG:
+            var newOrgName = prompt('Name', 'Benutzerdefiniert');
+            var newOrgKey = prompt('Kürzel', 'XXX');
+            var newOrgColorPrimary = prompt('Farbe', 'purple');
+            var newOrgColorAccent = prompt('Kontrastfarbe', 'white');
+            var newOrg = {
+                "name": newOrgName,
+                "type": "radio",
+                "key": newOrgKey,
+                "icon": `data:image/svg+xml;utf8,
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256">
+                    <ellipse cx="128" cy="128" rx="128" ry="128" fill="${newOrgColorPrimary}" stroke-width="5" stroke="black" />
+                    <ellipse cx="128" cy="128" rx="43" ry="43" fill="${newOrgColorAccent}" />
+                </svg>`,
+                "implicitAttritbues": {
+                    "colorPrimary": newOrgColorPrimary,
+                    "colorAccent": newOrgColorAccent
                 }
-                if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
-                    source.with = source.with.filter(item => item != root);
-                    if (source.with.length == 0)
-                        delete source.with;
-                }
-                close = true;
-            }
+            };
+            customOrgs.push(newOrg);
+            root.org = newOrgKey;
+            root.colorPrimary = newOrgColorPrimary;
+            root.colorAccent = newOrgColorAccent;
+            close = true;
             break;
         default:
-            var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
+            var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
             var attr = null;
-            if (key != null && key != "undefined")
+            if (key != null && key != "undefined") {
                 attr = getAttribute(attrMenu, key);
+                if (attr == null) {
+                    attr = customOrgs.find(item => item.key == key);
+                    if (attr != null) {
+                        attrMenu = [
+                            {
+                                "name": "Organisationen",
+                                "type": "submenu",
+                                "key": "org",
+                                "values": customOrgs
+                            }
+                        ];
+                    }
+                }
+            }
             else
                 attr = getAttribute(attrMenu, cmd);
             if (attr == null)
