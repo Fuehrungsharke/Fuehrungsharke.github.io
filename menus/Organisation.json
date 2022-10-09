@@ -136,7 +136,7 @@
             "icon": "/icons/organisations/Zivilschutz.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#FF9900",
-                "colorAccent": "#FFFFFF"
+                "colorAccent": "#000"
             }
         },
         {
