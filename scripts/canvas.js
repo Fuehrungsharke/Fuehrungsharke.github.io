@@ -68,6 +68,19 @@ function drawSign(canvas, root, x, y) {
                 offset += 24;
             }
         }
+        if ((Array.isArray(root.sub) && root.sub.length > 0)
+            || (Array.isArray(root.with) && root.with.length > 0)) {
+            var staff = getStaff(root);
+            var staffText = document.createElement('text');
+            staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan>${staff[3]}</tspan>`;
+            staffText.classList.add('staff');
+            staffText.setAttribute('x', signWidth / 2);
+            staffText.setAttribute('y', signHeight - 32);
+            staffText.setAttribute('font-size', 22);
+            staffText.setAttribute('font-family', 'Verdana');
+            staffText.setAttribute('text-anchor', 'middle');
+            itemBox.appendChild(staffText);
+        }
         canvas.appendChild(itemBox);
     }
 }
