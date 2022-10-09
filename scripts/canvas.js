@@ -68,8 +68,7 @@ function drawSign(canvas, root, x, y) {
                 offset += 24;
             }
         }
-        if ((Array.isArray(root.sub) && root.sub.length > 0)
-            || (Array.isArray(root.with) && root.with.length > 0)) {
+        if (root.staff) {
             var staff = getStaff(root);
             var staffText = document.createElement('text');
             staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan>${staff[3]}</tspan>`;

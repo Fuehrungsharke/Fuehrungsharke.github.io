@@ -25,6 +25,9 @@ var cachedElement = null;
 var customOrgs = [];
 
 var presets = {
+    "Unit": {
+        "staff": true
+    },
     "Flag": {
         "colorPrimary": "#FF0",
         "colorAccent": "#000"

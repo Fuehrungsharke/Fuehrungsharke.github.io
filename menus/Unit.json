@@ -43,5 +43,10 @@
         "name": "Spezialisierung",
         "type": "string",
         "key": "spez"
+    },
+    {
+        "name": "Stärke anzeigen",
+        "type": "bool",
+        "key": "staff"
     }
 ]
