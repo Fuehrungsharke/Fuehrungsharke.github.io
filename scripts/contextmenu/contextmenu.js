@@ -20,13 +20,15 @@ const CMD_PASTE_PARENT = 'paste_parent';
 const CMD_DELETE_SINGLE = 'delete_single';
 const CMD_DELETE_TREE = 'delete_tree';
 const CMD_NEW_ORG = 'new_org';
+const CMD_SET_STAFF = 'set_staff';
+const CMD_RESET_STAFF = 'reset_staff';
 
 var cachedElement = null;
 var customOrgs = [];
 
 var presets = {
     "Unit": {
-        "staff": true
+        "show_staff": true
     },
     "Flag": {
         "colorPrimary": "#FF0",
@@ -414,22 +416,45 @@ function clickContextMenuItem(menuItem) {
             root.colorAccent = newOrgColorAccent;
             close = true;
             break;
+        case CMD_SET_STAFF:
+            var newStaffTxt = prompt('Stärke', toText(getStaff(root)));
+            var newStaff = toStaff(newStaffTxt);
+            if (newStaff == null || newStaff.length != 4) {
+                alert('Ungültiges Format');
+                close = true;
+                break;
+            }
+            if (newStaff[0] + newStaff[1] + newStaff[2] != newStaff[3])
+                alert(`Validierung fehlgeschlagen!\n${newStaff[0]} + ${newStaff[1]} + ${newStaff[2]} != ${newStaff[3]}`);
+            else
+                root.staff = newStaff;
+            root.show_staff = true;
+            close = true;
+            break;
+        case CMD_RESET_STAFF:
+            delete root.staff;
+            close = true;
+            break;
         default:
             var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
             var attr = null;
             if (key != null && key != "undefined") {
                 attr = getAttribute(attrMenu, key);
                 if (attr == null) {
-                    attr = customOrgs.find(item => item.key == key);
-                    if (attr != null) {
-                        attrMenu = [
-                            {
-                                "name": "Organisationen",
-                                "type": "submenu",
-                                "key": "org",
-                                "values": customOrgs
-                            }
-                        ];
+                    var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
+                    attr = getAttribute(staffMenu.values, key);
+                    if (attr == null) {
+                        attr = customOrgs.find(item => item.key == key);
+                        if (attr != null) {
+                            attrMenu = [
+                                {
+                                    "name": "Organisationen",
+                                    "type": "submenu",
+                                    "key": "org",
+                                    "values": customOrgs
+                                }
+                            ];
+                        }
                     }
                 }
             }

@@ -1,5 +1,9 @@
 [
     {
+        "name": "menu_staff",
+        "type": "placeholder"
+    },
+    {
         "name": "",
         "type": "header"
     },

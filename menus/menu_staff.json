@@ -1,0 +1,21 @@
+{
+    "name": "Stärke",
+    "type": "submenu",
+    "values": [
+        {
+            "name": "Anzeigen",
+            "type": "bool",
+            "key": "show_staff"
+        },
+        {
+            "name": "Manuell festlegen",
+            "type": "cmd",
+            "cmd": "set_staff"
+        },
+        {
+            "name": "Automatisch ermitteln",
+            "type": "cmd",
+            "cmd": "reset_staff"
+        }
+    ]
+}

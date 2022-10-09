@@ -3,6 +3,7 @@ var ZTr = {
     "txt": "TZ",
     "org": "THW",
     "platoontroop": true,
+    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "with": [
@@ -53,6 +54,7 @@ var BGr = {
     "txt": "B",
     "org": "THW",
     "group": true,
+    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "with": [
@@ -134,6 +136,7 @@ var FGrN = {
     "txt": "N",
     "org": "THW",
     "group": true,
+    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "with": [
@@ -214,6 +217,7 @@ var TZ = {
     "txt": "TZ",
     "org": "THW",
     "platoon": true,
+    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "with": [
