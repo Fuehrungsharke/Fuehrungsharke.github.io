@@ -22,7 +22,7 @@ var copiedElement = null;
 
 function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
-        attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
+        attrItem = JSON.parse(getResource(`/menus/${attrItem.name}.json`));
         if (Array.isArray(attrItem) && attrItem.length > 0)
             return buildMenu(root, parentMenuItem, attrItem);
     }
@@ -104,10 +104,10 @@ function openSignContextMenu(evt, sign) {
     var uuid = sign.getAttributeNS(null, 'uuid');
     var root = getByUuid(config, uuid);
 
-    var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
+    var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
     var newMenuItems = buildMenu(root, null, attrMenu);
 
-    var menuDefault = buildMenu(root, null, JSON.parse(getResource('/attributes/menu_default.json')));
+    var menuDefault = buildMenu(root, null, JSON.parse(getResource('/menus/menu_default.json')));
     newMenuItems = newMenuItems.concat(menuDefault);
 
     var menuItems = document.querySelector('.context-menu .menu');
@@ -137,7 +137,7 @@ function getAttribute(attrMenu, key) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
         if (attrItem.type == PLACEHOLDER)
-            attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
+            attrItem = JSON.parse(getResource(`/menus/${attrItem.name}.json`));
         if (attrItem.type == SUBMENU) {
             var subResult = getAttribute(attrItem.values, key);
             if (subResult != null)
@@ -155,7 +155,7 @@ function getParentAttribute(attrMenu, parent, child) {
     for (let idx in attrMenu) {
         var attrItem = attrMenu[idx];
         if (attrItem.type == PLACEHOLDER)
-            attrItem = JSON.parse(getResource(`/attributes/${attrItem.name}.json`));
+            attrItem = JSON.parse(getResource(`/menus/${attrItem.name}.json`));
         if (attrItem.type == SUBMENU) {
             var subResult = getParentAttribute(attrItem.values, attrItem, child);
             if (subResult != null)
@@ -334,7 +334,7 @@ function clickContextMenuItem(menuItem) {
             }
             break;
         default:
-            var attrMenu = JSON.parse(getResource(`/attributes/${root.sign}.json`));
+            var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
             var attr = null;
             if (key != null && key != "undefined")
                 attr = getAttribute(attrMenu, key);
