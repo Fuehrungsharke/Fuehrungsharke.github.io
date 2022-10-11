@@ -8,16 +8,25 @@ var ZTr = {
     "colorAccent": "#FFFFFF",
     "with": [
         {
-            "name": "Der Zugtruppführer",
-            "sign": "Person",
-            "txt": "TZ",
-            "leading": true,
-            "platoontroop": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-        }
+           "sign": "Person",
+           "name": "Der Zugführer",
+           "txt": "TZ",
+           "leading": true,
+           "platoon": true,
+           "colorPrimary": "#003399",
+           "colorAccent": "#FFFFFF",
+         }
     ],
     "sub": [
+        {
+          "name": "Der Zugtruppführer",
+          "sign": "Person",
+          "txt": "TZ",
+          "leading": true,
+          "platoontroop": true,
+          "colorPrimary": "#003399",
+          "colorAccent": "#FFFFFF",
+        },
         {
             "name": "ZTr-Helfer 1",
             "sign": "Person",
@@ -27,20 +36,6 @@ var ZTr = {
         },
         {
             "name": "ZTr-Helfer 2",
-            "sign": "Person",
-            "txt": "ZTr",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-        },
-        {
-            "name": "ZTr-Helfer 3",
-            "sign": "Person",
-            "txt": "ZTr",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-        },
-        {
-            "name": "ZTr-Helfer 4",
             "sign": "Person",
             "txt": "ZTr",
             "colorPrimary": "#003399",
@@ -220,17 +215,6 @@ var TZ = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "with": [
-        {
-            "sign": "Person",
-            "name": "Der Zugführer",
-            "txt": "TZ",
-            "leading": true,
-            "platoon": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-        }
-    ],
     "sub": [
         ZTr,
         BGr,
