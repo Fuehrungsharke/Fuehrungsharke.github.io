@@ -8,24 +8,24 @@ var ZTr = {
     "colorAccent": "#FFFFFF",
     "with": [
         {
-           "sign": "Person",
-           "name": "Der Zugführer",
-           "txt": "TZ",
-           "leading": true,
-           "platoon": true,
-           "colorPrimary": "#003399",
-           "colorAccent": "#FFFFFF",
-         }
+            "sign": "Person",
+            "name": "Der Zugführer",
+            "txt": "TZ",
+            "leading": true,
+            "platoon": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+        }
     ],
     "sub": [
         {
-          "name": "Der Zugtruppführer",
-          "sign": "Person",
-          "txt": "TZ",
-          "leading": true,
-          "platoontroop": true,
-          "colorPrimary": "#003399",
-          "colorAccent": "#FFFFFF",
+            "name": "Der Zugtruppführer",
+            "sign": "Person",
+            "txt": "TZ",
+            "leading": true,
+            "platoontroop": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
         },
         {
             "name": "ZTr-Helfer 1",
@@ -126,9 +126,9 @@ var BGr = {
     ]
 };
 
-var FGrN = {
+var FGrR = {
     "sign": "Unit",
-    "txt": "N",
+    "txt": "R",
     "org": "THW",
     "group": true,
     "show_staff": true,
@@ -136,9 +136,9 @@ var FGrN = {
     "colorAccent": "#FFFFFF",
     "with": [
         {
-            "name": "Der Gruppenführer, der Notversorgung, und Notinstandsetzung",
+            "name": "Der Gruppenführer, der Fachgruppe, Räumen",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "leading": true,
             "group": true,
             "colorPrimary": "#003399",
@@ -147,60 +147,60 @@ var FGrN = {
     ],
     "sub": [
         {
-            "name": "Der Truppführer, der Notversorgung, und Notinstandsetzung",
+            "name": "Der Truppführer, der Fachgruppe, Räumen",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "leading": true,
             "troop": true,
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
         {
-            "name": "N-Helfer 1",
+            "name": "R-Helfer 1",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
         {
-            "name": "N-Helfer 2",
+            "name": "R-Helfer 2",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
         {
-            "name": "N-Helfer 3",
+            "name": "R-Helfer 3",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
         {
-            "name": "N-Helfer 4",
+            "name": "R-Helfer 4",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
         {
-            "name": "N-Helfer 5",
+            "name": "R-Helfer 5",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
         {
-            "name": "N-Helfer 6",
+            "name": "R-Helfer 6",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
         {
-            "name": "N-Helfer 7",
+            "name": "R-Helfer 7",
             "sign": "Person",
-            "txt": "N",
+            "txt": "R",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
@@ -218,8 +218,163 @@ var TZ = {
     "sub": [
         ZTr,
         BGr,
-        FGrN,
+        FGrR,
     ],
 };
 
-var config = TZ;
+var EAL_West = {
+    "sign": "Flag",
+    "colorPrimary": "#FF0",
+    "colorAccent": "#000",
+    "txt": "EAL",
+    "name": "West",
+    "with": [
+        {
+            "sign": "Measure",
+            "extinguish": true
+        }
+    ],
+    "sub": [
+        {
+            "sign": "Unit",
+            "colorPrimary": "#F00",
+            "colorAccent": "#FFF",
+            "extinguish": true,
+            "platoon": true
+        }
+    ]
+}
+
+var EAL_East = {
+    "sign": "Flag",
+    "colorPrimary": "#FF0",
+    "colorAccent": "#000",
+    "txt": "EAL",
+    "name": "Ost",
+    "with": [
+        {
+            "sign": "Measure",
+            "clear": true
+        }
+    ],
+    "sub": [
+        TZ
+    ]
+}
+
+var BR_ZTr = {
+    "sign": "Unit",
+    "txt": "TZ",
+    "org": "THW",
+    "platoontroop": true,
+    "show_staff": true,
+    "staff": [1, 1, 2, 4],
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF"
+};
+
+var BR_Log = {
+    "sign": "Place",
+    "colorPrimary": "#FF0",
+    "colorAccent": "#000",
+    "support": true,
+    "sub": [
+        {
+            "sign": "Unit",
+            "txt": "Log-VG",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "troop": true,
+            "support": true,
+            "show_staff": true,
+            "staff": [0, 1, 5, 6]
+        }
+    ]
+}
+
+var BR_FGrN = {
+    "sign": "Unit",
+    "txt": "N",
+    "org": "THW",
+    "group": true,
+    "show_staff": true,
+    "staff": [0, 2, 7, 9],
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF"
+};
+
+var BR_FGrE = {
+    "sign": "Unit",
+    "txt": "E",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
+    "group": true,
+    "org": "THW",
+    "with": [
+        {
+            "sign": "Vehicle",
+            "txt": "Lbw",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "automotive": true
+        },
+        {
+            "sign": "Vehicle",
+            "txt": "NEA",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "trailer": true
+        }
+    ]
+};
+
+var EAL_BR = {
+    "sign": "Flag",
+    "colorPrimary": "#FF0",
+    "colorAccent": "#000",
+    "txt": "EAL",
+    "name": "BR",
+    "with": [
+        {
+            "sign": "Place",
+            "colorPrimary": "#FF0",
+            "colorAccent": "#000",
+            "support": true
+        },
+        BR_ZTr
+    ],
+    "sub": [
+        BR_Log,
+        BR_FGrN,
+        BR_FGrE
+    ]
+}
+
+var EL = {
+    "sign": "Flag",
+    "colorPrimary": "#FF0",
+    "colorAccent": "#000",
+    "txt": "EL",
+    "sub": [
+        EAL_West,
+        EAL_East,
+        EAL_BR
+    ],
+    "with": [
+        {
+            "sign": "Place",
+            "txt": "LSt",
+            "name": "Musterstadt",
+            "colorPrimary": "#F00",
+            "colorAccent": "#FFF",
+            "stationary": true,
+            "leading": true
+        }
+    ]
+}
+
+var config = [
+    EL
+];
