@@ -30,6 +30,15 @@
             }
         },
         {
+            "name": "Brücke",
+            "type": "radio",
+            "key": "bridge",
+            "icon": "/icons/symbols/bridge.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Transport",
             "type": "radio",
             "key": "transport",

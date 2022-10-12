@@ -65,6 +65,10 @@
 	</g>
 	clear}}
 
+	{{bridge
+	<path d="M88,113 l10,10 l60,0 l10,-10 M88,143 l10,-10 l60,0 l10,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	bridge}}
+
 	{{transport
 	<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="5" stroke="{{colorAccent}}" />
 	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" />
