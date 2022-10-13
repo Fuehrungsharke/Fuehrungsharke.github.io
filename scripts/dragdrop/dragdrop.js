@@ -64,10 +64,13 @@ function drop(evt) {
             && !isAncestorOf(target, subject)) {
             if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
                 target = targetParent;
-            if (source.sub != null)
+            if (!evt.ctrlKey && source.sub != null)
                 source.sub = source.sub.filter(item => item != subject);
-            if (source.with != null)
+            if (!evt.ctrlKey && source.with != null)
                 source.with = source.with.filter(item => item != subject);
+
+            if (evt.ctrlKey)
+                subject = JSON.parse(JSON.stringify(subject));
             if (target.sub == null)
                 target.sub = [subject];
             else
