@@ -71,10 +71,17 @@ function drop(evt) {
 
             if (evt.ctrlKey)
                 subject = JSON.parse(JSON.stringify(subject));
-            if (target.sub == null)
-                target.sub = [subject];
-            else
-                target.sub.push(subject);
+            if (evt.shiftKey) {
+                if (target.with == null)
+                    target.with = [subject];
+                else
+                    target.with.push(subject);
+            } else {
+                if (target.sub == null)
+                    target.sub = [subject];
+                else
+                    target.sub.push(subject);
+            }
         }
     }
     if (draggedElement) {
