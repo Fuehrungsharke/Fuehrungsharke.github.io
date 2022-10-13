@@ -63,6 +63,7 @@ function drop(evt) {
 
         if (target != null && source != null) {
             source.sub = source.sub.filter(item => item != subject);
+            source.with = source.with.filter(item => item != subject);
             if (target.sub == null)
                 target.sub = [subject];
             else
