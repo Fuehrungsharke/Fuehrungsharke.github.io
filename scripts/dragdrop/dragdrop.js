@@ -51,17 +51,19 @@ function dragging(evt) {
 
 function drop(evt) {
     var draggedElement = draggingElement;
-    draggedElement.classList.remove('draggedElement');
     draggingElement = null;
     if (hoveringUuid != null) {
         var source = getParentByUuid(config, draggedElement.draggingInfo.uuid);
         var subject = getByUuid(config, draggedElement.draggingInfo.uuid);
         var target = getByUuid(config, hoveringUuid);
+        var targetParent = getParentByUuid(config, hoveringUuid);
 
-        if (subject == target || isAncestorOf(target, subject))
-            return;
-
-        if (target != null && source != null) {
+        if (target != null
+            && source != null
+            && subject != target
+            && !isAncestorOf(target, subject)) {
+            if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
+                target = targetParent;
             if (source.sub != null)
                 source.sub = source.sub.filter(item => item != subject);
             if (source.with != null)
@@ -72,6 +74,8 @@ function drop(evt) {
                 target.sub.push(subject);
         }
     }
-    if (draggedElement)
+    if (draggedElement) {
+        draggedElement.classList.remove('draggedElement');
         draw();
+    }
 }
