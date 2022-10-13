@@ -1,12 +1,10 @@
 function pointerOverSvg(uuid) {
     hoveringUuid = uuid;
-    console.log('over: ' + hoveringUuid);
 }
 
 function pointerOutSvg(uuid) {
     if (hoveringUuid == uuid) {
         hoveringUuid = null;
-        console.log('out: ' + uuid);
     }
 }
 
@@ -20,6 +18,7 @@ function drag(evt) {
     if (element == null || !element.classList.contains('draggable'))
         return;
     draggingElement = element;
+    draggingElement.classList.add('draggedElement');
 
     var canvas = draggingElement.parentElement;
     var canvasChildren = Array.from(canvas.childNodes).filter(item => item != draggingElement);
@@ -52,6 +51,7 @@ function dragging(evt) {
 
 function drop(evt) {
     var draggedElement = draggingElement;
+    draggedElement.classList.remove('draggedElement');
     draggingElement = null;
     if (hoveringUuid != null) {
         var source = getParentByUuid(config, draggedElement.draggingInfo.uuid);
@@ -62,8 +62,10 @@ function drop(evt) {
             return;
 
         if (target != null && source != null) {
-            source.sub = source.sub.filter(item => item != subject);
-            source.with = source.with.filter(item => item != subject);
+            if (source.sub != null)
+                source.sub = source.sub.filter(item => item != subject);
+            if (source.with != null)
+                source.with = source.with.filter(item => item != subject);
             if (target.sub == null)
                 target.sub = [subject];
             else
