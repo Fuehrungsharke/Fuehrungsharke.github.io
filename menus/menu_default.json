@@ -4,6 +4,11 @@
         "type": "placeholder"
     },
     {
+        "name": "Inaktiv",
+        "type": "bool",
+        "key": "inactive"
+    },
+    {
         "name": "",
         "type": "header"
     },

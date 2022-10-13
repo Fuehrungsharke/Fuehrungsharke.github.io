@@ -23,6 +23,8 @@ function getSignSvg(root, uuid, x, y) {
     var signSvg = document.createElement('g');
     signSvg.setAttribute('transform', `translate(${x}, ${y}) scale(1 1)`)
     signSvg.setAttribute('uuid', uuid);
+    if (root.inactive)
+        signSvg.setAttribute('opacity', 0.25);
     signSvg.classList.add('draggable');
     signSvg.classList.add('editable');
 

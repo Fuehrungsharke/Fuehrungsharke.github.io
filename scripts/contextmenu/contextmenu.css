@@ -39,7 +39,7 @@
     padding: 5px 10px;
 }
 
-.context-menu .context-menu-item .selected {
+.menu-item-selected {
     font-weight: bold;
 }
 

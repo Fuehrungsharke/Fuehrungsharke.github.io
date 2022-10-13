@@ -2,13 +2,11 @@ function getStaff(root) {
     if (root.staff != null)
         return root.staff;
     var staff = [0, 0, 0, 0];
-    if (root.sign != null && root.sign == 'Person') {
-        if (root.leading) {
-            if (root.platoon)
-                staff[0]++;
-            else if (root.platoontroop || root.group || root.troop)
-                staff[1]++;
-        }
+    if (root.sign != null && root.sign == 'Person' && !root.inactive) {
+        if (root.formation || root.brigade || root.association || root.platoon)
+            staff[0]++;
+        else if (root.platoontroop || root.group || root.echelon || root.troop)
+            staff[1]++;
         else
             staff[2]++;
         staff[3]++;

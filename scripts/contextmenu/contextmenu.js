@@ -95,7 +95,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         case RADIO:
         case CMD:
             if (content == true || content == attrItem.key)
-                menuItem.classList.add('selected');
+                menuItem.classList.add('menu-item-selected');
             menuItem.appendChild(document.createTextNode(attrItem.name));
             break;
         case STRING:
@@ -469,19 +469,23 @@ function clickContextMenuItem(menuItem) {
             if (key != null && key != "undefined") {
                 attr = getAttribute(attrMenu, key);
                 if (attr == null) {
-                    var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
-                    attr = getAttribute(staffMenu.values, key);
+                    var defaultMenu = JSON.parse(getResource('/menus/menu_default.json'));
+                    attr = getAttribute(defaultMenu, key);
                     if (attr == null) {
-                        attr = customOrgs.find(item => item.key == key);
-                        if (attr != null) {
-                            attrMenu = [
-                                {
-                                    "name": "Organisationen",
-                                    "type": "submenu",
-                                    "key": "org",
-                                    "values": customOrgs
-                                }
-                            ];
+                        var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
+                        attr = getAttribute(staffMenu.values, key);
+                        if (attr == null) {
+                            attr = customOrgs.find(item => item.key == key);
+                            if (attr != null) {
+                                attrMenu = [
+                                    {
+                                        "name": "Organisationen",
+                                        "type": "submenu",
+                                        "key": "org",
+                                        "values": customOrgs
+                                    }
+                                ];
+                            }
                         }
                     }
                 }
