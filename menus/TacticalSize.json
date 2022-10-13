@@ -7,8 +7,13 @@
             "type": "radio",
             "key": "formation",
             "icon": "/icons/tactical_sizes/formation.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {
@@ -16,8 +21,13 @@
             "type": "radio",
             "key": "brigade",
             "icon": "/icons/tactical_sizes/brigade.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {
@@ -25,8 +35,13 @@
             "type": "radio",
             "key": "association",
             "icon": "/icons/tactical_sizes/association.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {
@@ -34,8 +49,13 @@
             "type": "radio",
             "key": "platoon",
             "icon": "/icons/tactical_sizes/platoon.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {
@@ -43,8 +63,13 @@
             "type": "radio",
             "key": "platoontroop",
             "icon": "/icons/tactical_sizes/platoontroop.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {
@@ -52,8 +77,13 @@
             "type": "radio",
             "key": "group",
             "icon": "/icons/tactical_sizes/group.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {
@@ -61,8 +91,13 @@
             "type": "radio",
             "key": "echelon",
             "icon": "/icons/tactical_sizes/echelon.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {
@@ -70,8 +105,13 @@
             "type": "radio",
             "key": "troop",
             "icon": "/icons/tactical_sizes/troop.svg",
-            "implicitAttritbues": {
-                "leading": true
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
             }
         },
         {

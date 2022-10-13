@@ -531,6 +531,18 @@ function clickContextMenuItem(menuItem) {
                         root[idx] = attr.implicitAttritbues[idx];
                 close = true;
             }
+            if (attr.conditionalAttritbues != null) {
+                var match = true;
+                for (let idx in attr.conditionalAttritbues.condition)
+                    match &= root[idx] == attr.conditionalAttritbues.condition[idx];
+                if (match)
+                    for (let idx in attr.conditionalAttritbues.values)
+                        if (!attr.conditionalAttritbues.values[idx])
+                            delete root[idx];
+                        else
+                            root[idx] = attr.conditionalAttritbues.values[idx];
+                close = true;
+            }
             break;
     }
     if (close)
