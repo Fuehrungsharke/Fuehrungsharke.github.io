@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="scripts/staff/staff.css">
     <link rel="stylesheet" href="scripts/dragdrop/dragdrop.css">
     <link rel="stylesheet" href="scripts/contextmenu/contextmenu.css">
@@ -9,7 +10,14 @@
 </head>
 
 <body>
-    <label for="iptConfig">Select a config:</label>
+    <button id="btnDownloadSvg">
+        <img></img>
+        Grafik (*.svg)
+    </button>
+    <button id="btnDownloadConfig">
+        <img></img>
+        Konfiguration
+    </button>
     <input type="file" id="iptConfig" name="iptConfig" accept="Config/json"><br />
     <svg id="outputSvg" class="noContextMenu" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="512" height="256">
@@ -18,10 +26,6 @@
         <ul class="menu">
         </ul>
     </div>
-    <br />
-    <br />
-    <button id="btnDownloadConfig">Download Config</button>
-    <button id="btnDownloadSvg">Download Vector Image (*.svg)</button>
     <script src="scripts/defaultconfig.js"></script>
     <script src="scripts/utils.js"></script>
     <script src="scripts/staff/staff.js"></script>
