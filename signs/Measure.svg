@@ -21,6 +21,10 @@
 	<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="#000" fill="none" />
 	clear}}
 
+	{{bridge
+	<path d="M88,150 l10,10 l60,0 l10,-10 M88,180 l10,-10 l60,0 l10,10" stroke-width="5" stroke="#000" fill="none" />
+	bridge}}
+
 	{{transport
 	<ellipse cx="128" cy="150" rx="30" ry="30" stroke-width="5" stroke="#000" fill="none" />
 	<path d="M128,150 l-30,0 l60,0 m-30,0 l0,-30 l0,60 m0,-30 l21,21 M128,150 l-21,-21 M128,150 l21,-21 M128,150 l-21,21" stroke-width="5" stroke="#000" />

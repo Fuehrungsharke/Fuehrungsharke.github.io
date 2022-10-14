@@ -51,11 +51,20 @@ function download(content, type, filename) {
 }
 
 function isAncestorOf(item, presumedDescendant) {
-    if (presumedDescendant.hasOwnProperty(SUB) && Array.isArray(presumedDescendant[SUB])) {
-        for (let idx in presumedDescendant[SUB]) {
-            if (presumedDescendant[SUB][idx] == item)
+    if (presumedDescendant.sub != null && Array.isArray(presumedDescendant.sub)) {
+        for (let idx in presumedDescendant.sub) {
+            if (presumedDescendant.sub[idx] == item)
                 return true;
-            var subResult = isAncestorOf(item, presumedDescendant[SUB][idx]);
+            var subResult = isAncestorOf(item, presumedDescendant.sub[idx]);
+            if (subResult)
+                return subResult;
+        }
+    }
+    if (presumedDescendant.with != null && Array.isArray(presumedDescendant.with)) {
+        for (let idx in presumedDescendant.with) {
+            if (presumedDescendant.with[idx] == item)
+                return true;
+            var subResult = isAncestorOf(item, presumedDescendant.with[idx]);
             if (subResult)
                 return subResult;
         }

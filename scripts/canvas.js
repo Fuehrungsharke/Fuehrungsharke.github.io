@@ -19,10 +19,12 @@ function getSign(root) {
         .replace(/\s\w+}}/g, '-->');
 }
 
-function getSignSvg(root, uuid, x, y) {
+function getSignSvg(root, uuid, x, y, inactiveInherited) {
     var signSvg = document.createElement('g');
     signSvg.setAttribute('transform', `translate(${x}, ${y}) scale(1 1)`)
     signSvg.setAttribute('uuid', uuid);
+    if (root.inactive || inactiveInherited)
+        signSvg.setAttribute('opacity', 0.25);
     signSvg.classList.add('draggable');
     signSvg.classList.add('editable');
 
@@ -55,11 +57,11 @@ function getText(uuid, text, x, y) {
     return txt;
 }
 
-function drawSign(canvas, root, x, y) {
+function drawSign(canvas, root, x, y, inactiveInherited) {
     var uuid = createUUID();
     root['uuid'] = uuid;
     if (root.hasOwnProperty('sign')) {
-        var itemBox = getSignSvg(root, uuid, x, y);
+        var itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
         if (root.hasOwnProperty('name')) {
             var offset = -32;
             var nameParts = root['name'].split(', ');
@@ -84,17 +86,17 @@ function drawSign(canvas, root, x, y) {
     }
 }
 
-function drawItem(canvas, root, x, y) {
+function drawItem(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
 
-    drawSign(canvas, root, x, y);
+    drawSign(canvas, root, x, y, inactiveInherited);
     usedWidth += signWidth;
 
     // With
     if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH])) {
         root[WITH].forEach(item => {
-            drawSign(canvas, item, x + usedWidth, y);
+            drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
             usedWidth += signWidth;
         });
     }
@@ -114,7 +116,7 @@ function drawItem(canvas, root, x, y) {
                 var cntLeafs = 0;
                 for (let leaf in leafs) {
                     cntLeafs += 1;
-                    drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight);
+                    drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight, root.inactive || inactiveInherited);
                     leafRowWidth += signWidth;
                     leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
                     if (leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs + 1) {
@@ -131,17 +133,26 @@ function drawItem(canvas, root, x, y) {
             var subTrees = root[SUB];
             var subTotalWidth = 0;
             if (subTrees.length > 0) {
-                canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2));
+                var line = getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2);
+                if (root.inactive || inactiveInherited)
+                    line.setAttribute('opacity', 0.25);
+                canvas.appendChild(line);
                 usedWidth += GAP;
                 var lastSubY = usedHeight;
                 for (let subTree in subTrees) {
                     lastSubY = usedHeight;
-                    canvas.appendChild(getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2));
-                    var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight);
+                    line = getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2);
+                    if (root.inactive || inactiveInherited)
+                        line.setAttribute('opacity', 0.25);
+                    canvas.appendChild(line);
+                    var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
                     subTotalWidth = Math.max(subTotalWidth, subSize[0]);
                     usedHeight += subSize[1];
                 }
-                canvas.appendChild(getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2));
+                line = getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2);
+                if (root.inactive || inactiveInherited)
+                    line.setAttribute('opacity', 0.25);
+                canvas.appendChild(line);
                 usedWidth += GAP;
             }
             usedWidth += subTotalWidth;
@@ -152,25 +163,25 @@ function drawItem(canvas, root, x, y) {
     return [usedWidth, usedHeight];
 }
 
-function drawRecursive(canvas, root, x, y) {
+function drawRecursive(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
 
     if (Array.isArray(root) && root.length > 0) {
         for (let idx in root) {
-            var itemSize = drawItem(canvas, root[idx], x, y + usedHeight);
+            var itemSize = drawItem(canvas, root[idx], x, y + usedHeight, inactiveInherited);
             usedWidth = Math.max(usedWidth, itemSize[0]);
             usedHeight += itemSize[1];
         }
         return [usedWidth, usedHeight];
     }
     else
-        return drawItem(canvas, root, x, y);
+        return drawItem(canvas, root, x, y, inactiveInherited);
 }
 
 function draw() {
     var canvas = document.createElement('svg');
-    size = drawRecursive(canvas, config, 0, 0, 0);
+    size = drawRecursive(canvas, config, 0, 0, false);
 
     // Draw Border
     canvas.appendChild(getLine(0, 0, size[0], 0));

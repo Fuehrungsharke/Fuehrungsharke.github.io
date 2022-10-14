@@ -1,12 +1,10 @@
 function pointerOverSvg(uuid) {
     hoveringUuid = uuid;
-    console.log('over: ' + hoveringUuid);
 }
 
 function pointerOutSvg(uuid) {
     if (hoveringUuid == uuid) {
         hoveringUuid = null;
-        console.log('out: ' + uuid);
     }
 }
 
@@ -20,6 +18,7 @@ function drag(evt) {
     if (element == null || !element.classList.contains('draggable'))
         return;
     draggingElement = element;
+    draggingElement.classList.add('draggedElement');
 
     var canvas = draggingElement.parentElement;
     var canvasChildren = Array.from(canvas.childNodes).filter(item => item != draggingElement);
@@ -57,18 +56,36 @@ function drop(evt) {
         var source = getParentByUuid(config, draggedElement.draggingInfo.uuid);
         var subject = getByUuid(config, draggedElement.draggingInfo.uuid);
         var target = getByUuid(config, hoveringUuid);
+        var targetParent = getParentByUuid(config, hoveringUuid);
 
-        if (subject == target || isAncestorOf(target, subject))
-            return;
+        if (target != null
+            && source != null
+            && subject != target
+            && !isAncestorOf(target, subject)) {
+            if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
+                target = targetParent;
+            if (!evt.ctrlKey && source.sub != null)
+                source.sub = source.sub.filter(item => item != subject);
+            if (!evt.ctrlKey && source.with != null)
+                source.with = source.with.filter(item => item != subject);
 
-        if (target != null && source != null) {
-            source.sub = source.sub.filter(item => item != subject);
-            if (target.sub == null)
-                target.sub = [subject];
-            else
-                target.sub.push(subject);
+            if (evt.ctrlKey)
+                subject = JSON.parse(JSON.stringify(subject));
+            if (evt.shiftKey) {
+                if (target.with == null)
+                    target.with = [subject];
+                else
+                    target.with.push(subject);
+            } else {
+                if (target.sub == null)
+                    target.sub = [subject];
+                else
+                    target.sub.push(subject);
+            }
         }
     }
-    if (draggedElement)
+    if (draggedElement) {
+        draggedElement.classList.remove('draggedElement');
         draw();
+    }
 }

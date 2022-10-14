@@ -6,49 +6,113 @@
             "name": "Großverband",
             "type": "radio",
             "key": "formation",
-            "icon": "/icons/tactical_sizes/formation.svg"
+            "icon": "/icons/tactical_sizes/formation.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "Abteilung",
             "type": "radio",
             "key": "brigade",
-            "icon": "/icons/tactical_sizes/brigade.svg"
+            "icon": "/icons/tactical_sizes/brigade.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "Bereitschaft",
             "type": "radio",
             "key": "association",
-            "icon": "/icons/tactical_sizes/association.svg"
+            "icon": "/icons/tactical_sizes/association.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "Zug",
             "type": "radio",
             "key": "platoon",
-            "icon": "/icons/tactical_sizes/platoon.svg"
+            "icon": "/icons/tactical_sizes/platoon.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "Zugtrupp",
             "type": "radio",
             "key": "platoontroop",
-            "icon": "/icons/tactical_sizes/platoontroop.svg"
+            "icon": "/icons/tactical_sizes/platoontroop.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "Gruppe",
             "type": "radio",
             "key": "group",
-            "icon": "/icons/tactical_sizes/group.svg"
+            "icon": "/icons/tactical_sizes/group.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "Staffel",
             "type": "radio",
             "key": "echelon",
-            "icon": "/icons/tactical_sizes/echelon.svg"
+            "icon": "/icons/tactical_sizes/echelon.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "Trupp",
             "type": "radio",
             "key": "troop",
-            "icon": "/icons/tactical_sizes/troop.svg"
+            "icon": "/icons/tactical_sizes/troop.svg",
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": true
+                }
+            }
         },
         {
             "name": "",
@@ -64,7 +128,8 @@
                 "platoontroop": false,
                 "group": false,
                 "echelon": false,
-                "troop": false
+                "troop": false,
+                "leading": false
             }
         }
     ]

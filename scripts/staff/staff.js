@@ -3,18 +3,18 @@ function getStaff(root) {
         return root.staff;
     var staff = [0, 0, 0, 0];
     if (root.sign != null && root.sign == 'Person') {
-        if (root.leading) {
-            if (root.platoon)
-                staff[0]++;
-            else if (root.platoontroop || root.group || root.troop)
-                staff[1]++;
-        }
+        if (root.formation || root.brigade || root.association || root.platoon)
+            staff[0]++;
+        else if (root.platoontroop || root.group || root.echelon || root.troop)
+            staff[1]++;
         else
             staff[2]++;
         staff[3]++;
     }
     if (Array.isArray(root.sub) && root.sub.length > 0)
         for (let idx in root.sub) {
+            if (root.sub[idx].inactive)
+                continue;
             var subStaff = getStaff(root.sub[idx]);
             staff[0] += subStaff[0];
             staff[1] += subStaff[1];
@@ -23,6 +23,8 @@ function getStaff(root) {
         }
     if (Array.isArray(root.with) && root.with.length > 0)
         for (let idx in root.with) {
+            if (root.with[idx].inactive)
+                continue;
             var subStaff = getStaff(root.with[idx]);
             staff[0] += subStaff[0];
             staff[1] += subStaff[1];
