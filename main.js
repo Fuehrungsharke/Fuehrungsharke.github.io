@@ -48,11 +48,7 @@ function configSelected(evt) {
     var reader = new FileReader();
     reader.onload = function (e) {
         var data = e.target.result;
-        var preamble = 'data:application/json;base64,';
-        if (data.startsWith(preamble))
-            data = data.substring(preamble.length);
-        var ab = b64DecodeUnicode(data);
-        config = JSON.parse(ab);
+        config = parseConfig(data);
         draw();
     }
     reader.readAsDataURL(evt.target.files[0]);
