@@ -81,7 +81,7 @@ function parseUnits(unitNames) {
         if (matches[10] != null)
             unit.short = matches[10];
         if (matches[12] != null)
-            unit.spez = matches[10];
+            unit.spez = matches[12];
 
         if (parent.sub == null)
             parent.sub = []
