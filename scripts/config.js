@@ -59,7 +59,7 @@ function parseUnits(unitNames) {
                     parent.short = 'Stab';
                 if (matches[3] != null)
                     parent.ordinal = matches[3];
-                if (matches[4] == 'TZ')
+                if (matches[4] == 'TZ' || matches[4].startsWith('FZ'))
                     parent.platoon = true;
                 units.push(parent);
             }
@@ -76,6 +76,8 @@ function parseUnits(unitNames) {
             unit.platoontroop = true;
         else if (matches[6] == 'FGr' || matches[6] == 'B')
             unit.group = true;
+        else if (matches[6].endsWith('Tr'))
+            unit.troop = true;
         if (matches[10] != null)
             unit.short = matches[10];
         if (matches[12] != null)
@@ -94,7 +96,7 @@ function parsePerson(columns, units) {
     var isQualified = columns[3] == 'J'
     var func = null;
     if (columns[5] != null)
-        columns[5].split('/')[0]
+        func = columns[5].split('/')[0]
     var unit = units.find(u => u.fullName == columns[4]);
     var person = {
         'sign': 'Person',
@@ -105,15 +107,41 @@ function parsePerson(columns, units) {
         'name': `${columns[0]}, ${columns[1]}`,
         'inactive': !isQualified
     };
-    if (func == 'Zugführer') {
+    if (func == 'Ortsbeauftragte') {
+        person.leading = true;
+        person.txt = 'OB';
+    }
+    else if (func == 'stv. Ortsbeauftragte') {
+        person.specialist = true;
+        person.txt = 'stv. OB';
+    }
+    else if (func == 'Ausbildungsbeauftragte') {
+        person.specialist = true;
+        person.txt = 'AB';
+    }
+    else if (func == 'Fachberater') {
+        person.specialist = true;
+        person.txt = 'FaBe';
+    }
+    else if (func == 'Schirrmeister') {
+        person.specialist = true;
+        person.txt = 'SM';
+    }
+    else if (func == 'Ortsjugendbeauftragte') {
+        person.specialist = true;
+        person.txt = 'OJB';
+    }
+    else if (func == 'Koch') {
+        person.specialist = true;
+        person.txt = 'Koch';
+    }
+    else if (func == 'Zugführer') {
         person.leading = true;
         person.platoon = true;
-        person.unit = 'TZ';
     }
     else if (func == 'Zugtruppführer') {
         person.leading = true;
         person.platoontroop = true;
-        person.unit = 'TZ';
     }
     else if (func == 'Gruppenführer') {
         person.leading = true;
@@ -122,6 +150,9 @@ function parsePerson(columns, units) {
     else if (func == 'Truppführer') {
         person.leading = true;
         person.troop = true;
+    }
+    else if (func == 'Helferanwärter') {
+        person.txt = 'HeAnw';
     }
     return person;
 }
@@ -160,9 +191,20 @@ function parseConfig(data) {
         for (let idx in rows) {
             var userUnit = units.find(u => u.fullName == rows[idx][4]);
             if (userUnit != null && Array.isArray(rows[idx]) && rows[idx].length > 5) {
-                if (userUnit.sub == null)
-                    userUnit.sub = [];
-                userUnit.sub.push(parsePerson(rows[idx], units));
+                var person = parsePerson(rows[idx], units);
+                if (person.platoon || person.group) {
+                    if (userUnit.with == null)
+                        userUnit.with = [];
+                    userUnit.with.push(person);
+                }
+                else {
+                    if (userUnit.sub == null)
+                        userUnit.sub = [];
+                    if (person.platoontroop || person.troop)
+                        userUnit.sub.splice(0, 0, person);
+                    else
+                        userUnit.sub.push(person);
+                }
             }
         }
         return ov;
