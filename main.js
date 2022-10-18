@@ -38,6 +38,7 @@ function getClickedElement(evt, className) {
 
 function onDomContentLoaded() {
     iptConfig.addEventListener('change', configSelected, false);
+    outputSvg.addEventListener('click', clickSign);
     outputSvg.addEventListener('pointerdown', drag);
     outputSvg.addEventListener('pointermove', dragging);
     outputSvg.addEventListener('pointerup', drop);

@@ -33,6 +33,8 @@ function drag(evt) {
         return;
     }
     draggingElement.draggingInfo = {
+        originX: touchpos.clientX,
+        originY: touchpos.clientY,
         offsetX: match[1] - touchpos.clientX,
         offsetY: match[2] - touchpos.clientY,
         scaleX: match[3],
@@ -86,6 +88,11 @@ function drop(evt) {
     }
     if (draggedElement) {
         draggedElement.classList.remove('draggedElement');
-        draw();
+        var droppos = getEvtPos(evt);
+        if (Math.abs(draggedElement.draggingInfo.originX - droppos.clientX) > 20
+            || Math.abs(draggedElement.draggingInfo.originY - droppos.clientY) > 20) {
+            console.log(hoveringUuid);
+            draw();
+        }
     }
 }
