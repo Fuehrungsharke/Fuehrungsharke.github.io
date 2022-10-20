@@ -17,3 +17,10 @@ Folgende Grundzeichen können in der Führungsharke konfiguriert und über das K
 | Stelle | ![Gebäude](./icons/signs/place.svg) |
 | Zweirad | ![Fahrrad](./icons/signs/bike.svg) |
 | Platzhalter | ![Platzhalter](./signs/Empty.svg)<br>\[Platzhalter\] |
+
+## Bildnachweise
+| Bild | Quelle | Lizenz |
+| --- | --- | --- |
+| <img src="./icons/orgs/Bundespolizei.svg" alt="BPOL" width="35"/> | https://de.wikipedia.org/wiki/Datei:Bundespolizei-Logos.svg | Gemeinfrei |
+| <img src="./icons/orgs/Bundeswehr.svg" alt="BW" width="35"/> | https://de.wikipedia.org/wiki/Datei:Logo_of_the_Bundeswehr.svg | Gemeinfrei |
+| <img src="./icons/orgs/THW.svg" alt="THW" width="35"/> | https://de.wikipedia.org/wiki/Datei:THW.svg | Gemeinfrei |
