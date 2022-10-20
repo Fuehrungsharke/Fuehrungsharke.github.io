@@ -6,6 +6,16 @@ function getSign(root) {
         svg = getResource(root.sign);
     else
         svg = getResource(`/signs/${root.sign}.svg`);
+
+    var matches = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+    while (matches != null && matches.length == 4) {
+        if (matches[1] in root)
+            svg = svg.replace(matches[0], matches[2]);
+        else
+            svg = svg.replace(matches[0], matches[3]);
+        matches = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+    }
+
     for (var key in root) {
         var re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
         svg = svg

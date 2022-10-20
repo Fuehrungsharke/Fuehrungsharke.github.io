@@ -69,5 +69,10 @@
     {
         "name": "Organisation",
         "type": "placeholder"
+    },
+    {
+        "name": "Spezialisierung",
+        "type": "string",
+        "key": "spez"
     }
 ]

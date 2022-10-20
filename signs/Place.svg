@@ -47,4 +47,5 @@
 
 	<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="{{colorAccent}}">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">{{org}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200">{{spez}}</text>
 </svg>

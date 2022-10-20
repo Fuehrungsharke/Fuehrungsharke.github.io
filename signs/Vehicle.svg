@@ -57,5 +57,6 @@
 	transport}}
 
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145">{{txt}}</text>
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="236" y="180">{{org}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="{{colorAccent}}" x="20" y="{{support?155:180}}">{{spez}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="{{extinguish?200:236}}" y="{{support?155:180}}">{{org}}</text>
 </svg>
