@@ -4,9 +4,8 @@
         "type": "placeholder"
     },
     {
-        "name": "Inaktiv",
-        "type": "bool",
-        "key": "inactive"
+        "name": "menu_visibility",
+        "type": "placeholder"
     },
     {
         "name": "",

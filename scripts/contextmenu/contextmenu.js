@@ -22,6 +22,8 @@ const CMD_DELETE_TREE = 'delete_tree';
 const CMD_NEW_ORG = 'new_org';
 const CMD_SET_STAFF = 'set_staff';
 const CMD_RESET_STAFF = 'reset_staff';
+const CMD_COLLAPSE = 'collapse';
+const CMD_DECOLLAPSE = 'decollapse';
 
 var cachedElement = null;
 var customOrgs = [];
@@ -461,6 +463,38 @@ function clickContextMenuItem(menuItem) {
             break;
         case CMD_RESET_STAFF:
             delete root.staff;
+            close = true;
+            break;
+        case CMD_COLLAPSE:
+            if (root.sub == null)
+                break;
+            var collapseSign = root.sub.find(item => item.sign == 'Collapsed');
+            if (root.sign == 'Collapsed' || collapseSign != null)
+                break;
+            collapseSign = {
+                "sign": "Collapsed",
+                "txt": "[...]",
+                "sub": root.sub
+            };
+            var staff = getStaff(collapseSign);
+            if (staff[0] > 0 || staff[1] > 0 || staff[2] > 0 || staff[3] > 0)
+                collapseSign.show_staff = true;
+            root.sub = [collapseSign];
+            close = true;
+            break;
+        case CMD_DECOLLAPSE:
+            if (root.sign == 'Collapsed') {
+                var parent = getParentByUuid(config, root.uuid);
+                if (parent == null)
+                    break;
+                parent.sub = root.sub;
+            }
+            else if (root.sub != null) {
+                var collapseSign = root.sub.find(item => item.sign == 'Collapsed');
+                if (collapseSign == null)
+                    break;
+                root.sub = collapseSign.sub;
+            }
             close = true;
             break;
         default:

@@ -1,3 +1,16 @@
+function sumStaff(staffA, staffB) {
+    var staff = [0, 0, 0, 0];
+    staff[0] += staffA[0];
+    staff[1] += staffA[1];
+    staff[2] += staffA[2];
+    staff[3] += staffA[3];
+    staff[0] += staffB[0];
+    staff[1] += staffB[1];
+    staff[2] += staffB[2];
+    staff[3] += staffB[3];
+    return staff;
+}
+
 function getStaff(root) {
     if (root.staff != null)
         return root.staff;
@@ -11,25 +24,26 @@ function getStaff(root) {
             staff[2]++;
         staff[3]++;
     }
-    if (Array.isArray(root.sub) && root.sub.length > 0)
-        for (let idx in root.sub) {
-            if (root.sub[idx].inactive)
-                continue;
-            var subStaff = getStaff(root.sub[idx]);
-            staff[0] += subStaff[0];
-            staff[1] += subStaff[1];
-            staff[2] += subStaff[2];
-            staff[3] += subStaff[3];
+    if (Array.isArray(root.sub) && root.sub.length > 0) {
+        var collapsedIndicator = root.sub.find(item => item.sign == 'Collapsed')
+        if (collapsedIndicator != null && Array.isArray(collapsedIndicator.staff) && collapsedIndicator.staff.length == 4) {
+            staff = collapsedIndicator.staff;
         }
+        else {
+            for (let idx in root.sub) {
+                if (root.sub[idx].inactive)
+                    continue;
+                var subStaff = getStaff(root.sub[idx]);
+                staff = sumStaff(staff, subStaff);
+            }
+        }
+    }
     if (Array.isArray(root.with) && root.with.length > 0)
         for (let idx in root.with) {
             if (root.with[idx].inactive)
                 continue;
             var subStaff = getStaff(root.with[idx]);
-            staff[0] += subStaff[0];
-            staff[1] += subStaff[1];
-            staff[2] += subStaff[2];
-            staff[3] += subStaff[3];
+            staff = sumStaff(staff, subStaff);
         }
     return staff;
 }

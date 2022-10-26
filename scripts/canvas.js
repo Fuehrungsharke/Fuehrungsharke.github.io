@@ -103,6 +103,11 @@ function drawItem(canvas, root, x, y, inactiveInherited) {
     drawSign(canvas, root, x, y, inactiveInherited);
     usedWidth += signWidth;
 
+    if (root.sign == 'Collapsed') {
+        usedHeight += signHeight;
+        return [usedWidth, usedHeight];
+    }
+
     // With
     if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH])) {
         root[WITH].forEach(item => {
