@@ -16,6 +16,7 @@ Folgende Grundzeichen können in der Führungsharke konfiguriert und über das K
 | Maßnahme | ![Gebäude](./icons/signs/measure.svg) |
 | Stelle | ![Gebäude](./icons/signs/place.svg) |
 | Zweirad | ![Fahrrad](./icons/signs/bike.svg) |
+| Boot | ![Boot](./icons/signs/boat.svg) |
 | Platzhalter | ![Platzhalter](./signs/Empty.svg)<br>\[Platzhalter\] |
 
 ## Bildnachweise
