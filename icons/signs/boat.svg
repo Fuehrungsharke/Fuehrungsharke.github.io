@@ -1,4 +1,3 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
 	<defs>
 		<clipPath id="WaterVehicle">
@@ -7,7 +6,4 @@
 	</defs>
 	<path d="M10,64 l236,0 A118,118 180 0 1 10,64 Z" stroke="#000000" fill="#FFFFFF" stroke-width="10" clip-path="url(#WaterVehicle)" />
 	<path d="M10,64 l236,0 A118,118 180 0 1 10,64 Z" stroke="#000000" fill="none" stroke-width="1" clip-path="url(#WaterVehicle)" />
-
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145">{{txt}}</text>
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="{{extinguish?200:236}}" y="{{support?155:180}}">{{org}}</text>
 </svg>

@@ -66,8 +66,8 @@
         "name": "Boot",
         "type": "cmd",
         "cmd": "add",
-        "key": "WaterVehicle",
-        "icon": "/icons/signs/water_vehicle.svg"
+        "key": "Boat",
+        "icon": "/icons/signs/boat.svg"
     },
     {
         "name": "Platzhalter",
