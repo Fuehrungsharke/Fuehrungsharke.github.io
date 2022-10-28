@@ -38,10 +38,11 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
     signSvg.classList.add('draggable');
     signSvg.classList.add('editable');
 
-    signSvg.innerHTML = getSign(root);
-    signSvg.childNodes[0].setAttribute('touch-action', 'none');
-    signSvg.childNodes[0].setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
-    signSvg.childNodes[0].setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
+    var sign = new DOMParser().parseFromString(getSign(root),"text/xml").getElementsByTagName("svg")[0];
+    sign.setAttribute('touch-action', 'none');
+    sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
+    sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
+    signSvg.innerHTML = sign.outerHTML;
     return signSvg;
 }
 
