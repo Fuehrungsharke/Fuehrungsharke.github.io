@@ -33,11 +33,16 @@ function removeUuid(root) {
     return newObj;
 }
 
+var resCache = {};
 function getResource(path) {
+    if (path in resCache)
+        return resCache[path];
+
     var req = new XMLHttpRequest();
     req.open('GET', path, false);
     req.send();
-    return req.responseText;
+    resCache[path] = req.responseText;
+    return resCache[path];
 }
 
 function download(content, type, filename) {
