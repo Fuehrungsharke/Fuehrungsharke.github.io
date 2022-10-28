@@ -35,8 +35,8 @@ function drag(evt) {
     draggingElement.draggingInfo = {
         originX: touchpos.clientX,
         originY: touchpos.clientY,
-        offsetX: match[1] - touchpos.clientX,
-        offsetY: match[2] - touchpos.clientY,
+        offsetX: match[1] - touchpos.clientX * (1 / zoomFactor),
+        offsetY: match[2] - touchpos.clientY * (1 / zoomFactor),
         scaleX: match[3],
         scaleY: match[4],
         uuid: draggingElement.getAttributeNS(null, 'uuid'),
@@ -47,7 +47,7 @@ function dragging(evt) {
     if (draggingElement) {
         evt.preventDefault();
         var touchpos = getEvtPos(evt);
-        draggingElement.setAttributeNS(null, 'transform', `translate(${touchpos.clientX + draggingElement.draggingInfo.offsetX}, ${touchpos.clientY + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
+        draggingElement.setAttributeNS(null, 'transform', `translate(${(touchpos.clientX * (1 / zoomFactor) + draggingElement.draggingInfo.offsetX)}, ${touchpos.clientY * (1 / zoomFactor) + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
     }
 }
 
