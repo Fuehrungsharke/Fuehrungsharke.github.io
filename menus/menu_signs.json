@@ -63,6 +63,13 @@
         "icon": "/icons/signs/bike.svg"
     },
     {
+        "name": "Boot",
+        "type": "cmd",
+        "cmd": "add",
+        "key": "Boat",
+        "icon": "/icons/signs/boat.svg"
+    },
+    {
         "name": "Platzhalter",
         "type": "cmd",
         "cmd": "add",
