@@ -38,7 +38,7 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
     signSvg.classList.add('draggable');
     signSvg.classList.add('editable');
 
-    var sign = new DOMParser().parseFromString(getSign(root),"text/xml").getElementsByTagName("svg")[0];
+    var sign = new DOMParser().parseFromString(getSign(root), "text/xml").getElementsByTagName("svg")[0];
     sign.setAttribute('touch-action', 'none');
     sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
     sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
@@ -205,8 +205,17 @@ function draw() {
     canvas.appendChild(getLine(size[0], size[1] + LINESIZE, 0, size[1] + LINESIZE));
     canvas.appendChild(getLine(0, size[1] + LINESIZE, 0, 0));
 
+    canvasWidth = size[0];
+    canvasHeight = size[1];
+
     // Output
     outputSvg.innerHTML = canvas.innerHTML;
-    outputSvg.setAttribute('width', size[0]);
-    outputSvg.setAttribute('height', size[1] + LINESIZE);
+    outputSvg.setAttribute('width', canvasWidth);
+    outputSvg.setAttribute('height', canvasHeight + LINESIZE);
+
+    zoomcontainer.setAttribute('transform', `scale(${zoomFactor} ${zoomFactor})`)
+
+    // Display
+    displaySvg.setAttribute('width', canvasWidth * zoomFactor);
+    displaySvg.setAttribute('height', canvasHeight * zoomFactor + LINESIZE);
 }

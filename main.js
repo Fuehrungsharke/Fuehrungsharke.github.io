@@ -15,8 +15,10 @@ var KeyCode = {
     ESC: 27,
 }
 
-iptConfig = document.getElementById('iptConfig');
-outputSvg = document.getElementById("outputSvg");
+var iptConfig = document.getElementById('iptConfig');
+var zoomcontainer = document.getElementById('zoomcontainer');
+var displaySvg = document.getElementById("displaySvg");
+var outputSvg = document.getElementById("outputSvg");
 
 function getEvtPos(evt) {
     var touchpos = evt;
@@ -38,11 +40,11 @@ function getClickedElement(evt, className) {
 
 function onDomContentLoaded() {
     iptConfig.addEventListener('change', configSelected, false);
-    outputSvg.addEventListener('click', clickSign);
-    outputSvg.addEventListener('pointerdown', drag);
-    outputSvg.addEventListener('pointermove', dragging);
-    outputSvg.addEventListener('pointerup', drop);
-    outputSvg.addEventListener('pointercancel', drop);
+    displaySvg.addEventListener('click', clickSign);
+    displaySvg.addEventListener('pointerdown', drag);
+    displaySvg.addEventListener('pointermove', dragging);
+    displaySvg.addEventListener('pointerup', drop);
+    displaySvg.addEventListener('pointercancel', drop);
 }
 
 function configSelected(evt) {
