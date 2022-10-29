@@ -90,9 +90,7 @@ function drop(evt) {
         draggedElement.classList.remove('draggedElement');
         var droppos = getEvtPos(evt);
         if (Math.abs(draggedElement.draggingInfo.originX - droppos.clientX) > 20
-            || Math.abs(draggedElement.draggingInfo.originY - droppos.clientY) > 20) {
-            console.log(hoveringUuid);
+            || Math.abs(draggedElement.draggingInfo.originY - droppos.clientY) > 20)
             draw();
-        }
     }
 }
