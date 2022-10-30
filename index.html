@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <button id="btnUndo">&lt;</button>
+    <button id="btnRedo">&gt;</button>
     <label for="iptConfig">Select a config:</label>
     <input type="file" id="iptConfig" name="iptConfig" accept="Config/json"><br />
     <div class="slidercontainer">
@@ -30,6 +32,7 @@
     <button id="btnDownloadSvg">Download Vector Image (*.svg)</button>
     <script src="scripts/defaultconfig.js"></script>
     <script src="scripts/utils.js"></script>
+    <script src="scripts/history.js"></script>
     <script src="scripts/events.js"></script>
     <script src="scripts/staff/staff.js"></script>
     <script src="scripts/dragdrop/dragdrop.js"></script>
