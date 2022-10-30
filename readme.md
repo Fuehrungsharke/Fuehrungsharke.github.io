@@ -23,8 +23,12 @@ Folgende Grundzeichen können in der Führungsharke konfiguriert und über das K
 | Bild | Quelle | Lizenz |
 | --- | --- | --- |
 | <img src="./icons/orgs/Bundespolizei.svg" alt="BPOL" width="35"/> | https://de.wikipedia.org/wiki/Datei:Bundespolizei-Logos.svg | Gemeinfrei |
+| <img src="./icons/orgs/JohanniterUnfallHilfe.svg" alt="JUH" width="35"/> | https://de.wikipedia.org/wiki/Datei:Johanniter-Unfall-Hilfe_logo.svg | Gemeinfrei |
+| <img src="./icons/orgs/ArbeiterSamariterBund.svg" alt="ASB" width="35"/> | https://de.wikipedia.org/wiki/Datei:Arbeiter-Samariter-Bund_Deutschland_logo.svg | Gemeinfrei |
+| <img src="./icons/orgs/MalteserHilfsDienst.svg" alt="MHD" width="35"/> | https://de.wikipedia.org/wiki/Datei:Malteser_Logo.svg | Gemeinfrei |
 | <img src="./icons/orgs/Bundeswehr.svg" alt="BW" width="35"/> | https://de.wikipedia.org/wiki/Datei:Logo_of_the_Bundeswehr.svg | Gemeinfrei |
 | <img src="./icons/orgs/THW.svg" alt="THW" width="35"/> | https://de.wikipedia.org/wiki/Datei:THW.svg | Gemeinfrei |
+<!-- | <img src="./icons/orgs/DeutschesRotesKreuz.png" alt="JUH" width="35"/> | https://de.wikipedia.org/wiki/Datei:DRK_Logo2.svg | Gemeinfrei | -->
 
 # How to run
 Für die lokale Entwicklung kann auf Docker zurückgegriffen werden. Dazu muss Docker auf dem System installiert sein (siehe [Offizielle Dokumentation](https://docs.docker.com/engine/install/))
