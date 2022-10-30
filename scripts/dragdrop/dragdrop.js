@@ -133,10 +133,10 @@ function updateSelection(markedArea) {
         var transform = selectables[i].getAttributeNS(null, 'transform');
         var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
 
-        if (match[1] >= markedArea.minX * (1 / zoomFactor)
-            && match[2] >= markedArea.minY * (1 / zoomFactor)
-            && parseInt(match[1]) + signWidth <= markedArea.maxX * (1 / zoomFactor)
-            && parseInt(match[2]) + signHeight <= markedArea.maxY * (1 / zoomFactor))
+        if (parseInt(match[1]) + 0.2 * signWidth >= markedArea.minX * (1 / zoomFactor)
+            && parseInt(match[2]) + 0.2 * signWidth >= markedArea.minY * (1 / zoomFactor)
+            && parseInt(match[1]) + 0.8 * signWidth <= markedArea.maxX * (1 / zoomFactor)
+            && parseInt(match[2]) + 0.8 * signHeight <= markedArea.maxY * (1 / zoomFactor))
             selectables[i].classList.add('selected');
         else if (selectables[i].classList.contains('selected'))
             selectables[i].classList.remove('selected');
