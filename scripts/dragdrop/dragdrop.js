@@ -111,6 +111,8 @@ function drop(evt) {
 
 function clearSelectionRect() {
     selectionRect.setAttributeNS(null, 'opacity', 0);
+    selectionRect.setAttributeNS(null, 'width', 0);
+    selectionRect.setAttributeNS(null, 'height', 0);
 }
 
 function clearSelection() {
