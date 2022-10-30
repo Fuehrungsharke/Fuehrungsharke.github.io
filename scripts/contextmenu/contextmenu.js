@@ -229,14 +229,14 @@ function insertParent(root, parentLocical, parentLayer, newObj) {
             config = newObj;
         }
         else if (parentLayer[SUB] != null) {
-            if (parentLayer == parentLocical) {
-                parentLayer[SUB] = parentLayer[SUB].filter(item => item != root);
-                newObj[SUB] = [root];
-            } else {
-                parentLayer[SUB] = parentLayer[SUB].filter(item => item != parentLocical);
-                newObj[SUB] = [parentLocical];
-            }
-            parentLayer[SUB].push(newObj);
+            var oldObj = null;
+            if (parentLayer == parentLocical)
+                oldObj = root;
+            else
+                oldObj = parentLocical;
+            var idx = parentLayer[SUB].indexOf(root);
+            newObj[SUB] = [oldObj];
+            parentLayer[SUB][idx] = newObj;
         }
     }
     else {
