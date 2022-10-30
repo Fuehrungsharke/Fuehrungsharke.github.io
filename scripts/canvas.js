@@ -37,6 +37,7 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
         signSvg.setAttribute('opacity', 0.25);
     signSvg.classList.add('draggable');
     signSvg.classList.add('editable');
+    signSvg.classList.add('selectable');
 
     var sign = new DOMParser().parseFromString(getSign(root), "text/xml").getElementsByTagName("svg")[0];
     sign.setAttribute('touch-action', 'none');

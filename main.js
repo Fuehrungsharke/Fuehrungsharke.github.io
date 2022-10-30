@@ -98,8 +98,10 @@ document.addEventListener('contextmenu', function (evt) {
 });
 
 window.onkeyup = function (e) {
-    if (e.keyCode === KeyCode.ESC)
+    if (e.keyCode === KeyCode.ESC) {
         closeSignContextMenu();
+        clearSelection();
+    }
 }
 
 draw();

@@ -53,17 +53,13 @@ function dragging(evt) {
     if (draggingElement) {
         evt.preventDefault();
         draggingElement.setAttributeNS(null, 'transform', `translate(${(touchpos.clientX * (1 / zoomFactor) + draggingElement.draggingInfo.offsetX)}, ${touchpos.clientY * (1 / zoomFactor) + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
-    } else if (selectionStartPos != null) {
-        var rectX = Math.min(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x;
-        var rectY = Math.min(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y;
-        var rectWidth = Math.abs(selectionStartPos.clientX - touchpos.clientX);
-        var rectHeight = Math.abs(selectionStartPos.clientY - touchpos.clientY);
-        selectionRect.setAttributeNS(null, 'x', rectX);
-        selectionRect.setAttributeNS(null, 'y', rectY);
-        selectionRect.setAttributeNS(null, 'width', rectWidth);
-        selectionRect.setAttributeNS(null, 'height', rectHeight);
-        selectionRect.setAttributeNS(null, 'opacity', 1);
-    }
+    } else if (selectionStartPos != null)
+        updateSelection({
+            minX: Math.min(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x,
+            minY: Math.min(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y,
+            maxX: Math.max(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x,
+            maxY: Math.max(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y
+        })
 }
 
 function drop(evt) {
@@ -108,7 +104,41 @@ function drop(evt) {
             || Math.abs(draggedElement.draggingInfo.originY - droppos.clientY) > 20)
             draw();
     } else if (selectionStartPos != null) {
-        selectionRect.setAttributeNS(null, 'opacity', 0);
         selectionStartPos = null;
+        clearSelectionRect();
+    }
+}
+
+function clearSelectionRect() {
+    selectionRect.setAttributeNS(null, 'opacity', 0);
+}
+
+function clearSelection() {
+    clearSelectionRect();
+    var selectables = outputSvg.getElementsByClassName('selectable');
+    for (let idx in selectables)
+        if (selectables[idx].classList != null)
+            selectables[idx].classList.remove('selected');
+}
+
+function updateSelection(markedArea) {
+    selectionRect.setAttributeNS(null, 'x', markedArea.minX);
+    selectionRect.setAttributeNS(null, 'y', markedArea.minY);
+    selectionRect.setAttributeNS(null, 'width', markedArea.maxX - markedArea.minX);
+    selectionRect.setAttributeNS(null, 'height', markedArea.maxY - markedArea.minY);
+    selectionRect.setAttributeNS(null, 'opacity', 1);
+
+    var selectables = outputSvg.getElementsByClassName('selectable');
+    for (let i = 0; i < selectables.length; i++) {
+        var transform = selectables[i].getAttributeNS(null, 'transform');
+        var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
+
+        if (match[1] >= markedArea.minX * (1 / zoomFactor)
+            && match[2] >= markedArea.minY * (1 / zoomFactor)
+            && parseInt(match[1]) + signWidth <= markedArea.maxX * (1 / zoomFactor)
+            && parseInt(match[2]) + signHeight <= markedArea.maxY * (1 / zoomFactor))
+            selectables[i].classList.add('selected');
+        else if (selectables[i].classList.contains('selected'))
+            selectables[i].classList.remove('selected');
     }
 }
