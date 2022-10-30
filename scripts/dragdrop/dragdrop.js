@@ -1,3 +1,6 @@
+var selectionStartPos = null;
+var selectionRect = document.getElementById("selectionRect");
+
 function pointerOverSvg(uuid) {
     hoveringUuid = uuid;
 }
@@ -15,8 +18,11 @@ function drag(evt) {
     while (element != null && !element.classList.contains('draggable') && element.id != 'outputSvg') {
         element = element.parentElement;
     }
-    if (element == null || !element.classList.contains('draggable'))
+    var touchpos = getEvtPos(evt);
+    if (element == null || !element.classList.contains('draggable')) {
+        selectionStartPos = touchpos;
         return;
+    }
     draggingElement = element;
     draggingElement.classList.add('draggedElement');
 
@@ -25,7 +31,6 @@ function drag(evt) {
     canvasChildren.unshift(draggingElement);
     canvas.childNodes = canvasChildren;
 
-    var touchpos = getEvtPos(evt);
     var transform = draggingElement.getAttributeNS(null, 'transform');
     var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
     if (match == null) {
@@ -44,10 +49,20 @@ function drag(evt) {
 }
 
 function dragging(evt) {
+    var touchpos = getEvtPos(evt);
     if (draggingElement) {
         evt.preventDefault();
-        var touchpos = getEvtPos(evt);
         draggingElement.setAttributeNS(null, 'transform', `translate(${(touchpos.clientX * (1 / zoomFactor) + draggingElement.draggingInfo.offsetX)}, ${touchpos.clientY * (1 / zoomFactor) + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
+    } else if (selectionStartPos != null) {
+        var rectX = Math.min(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x;
+        var rectY = Math.min(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y;
+        var rectWidth = Math.abs(selectionStartPos.clientX - touchpos.clientX);
+        var rectHeight = Math.abs(selectionStartPos.clientY - touchpos.clientY);
+        selectionRect.setAttributeNS(null, 'x', rectX);
+        selectionRect.setAttributeNS(null, 'y', rectY);
+        selectionRect.setAttributeNS(null, 'width', rectWidth);
+        selectionRect.setAttributeNS(null, 'height', rectHeight);
+        selectionRect.setAttributeNS(null, 'opacity', 1);
     }
 }
 
@@ -92,5 +107,8 @@ function drop(evt) {
         if (Math.abs(draggedElement.draggingInfo.originX - droppos.clientX) > 20
             || Math.abs(draggedElement.draggingInfo.originY - droppos.clientY) > 20)
             draw();
+    } else if (selectionStartPos != null) {
+        selectionRect.setAttributeNS(null, 'opacity', 0);
+        selectionStartPos = null;
     }
 }
