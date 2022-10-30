@@ -13,6 +13,8 @@ var hoveringUuid = null;
 
 var KeyCode = {
     ESC: 27,
+    Y: 89,
+    Z: 90,
 }
 
 var iptConfig = document.getElementById('iptConfig');
@@ -104,6 +106,10 @@ document.addEventListener('contextmenu', function (evt) {
 window.onkeyup = function (e) {
     if (e.keyCode === KeyCode.ESC)
         closeSignContextMenu();
+    else if (e.keyCode === KeyCode.Z && e.ctrlKey)
+        undo();
+    else if (e.keyCode === KeyCode.Y && e.ctrlKey)
+        redo();
 }
 
 draw();
