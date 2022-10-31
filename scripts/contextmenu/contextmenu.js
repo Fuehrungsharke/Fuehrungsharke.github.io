@@ -5,7 +5,6 @@ const RADIO = 'radio';
 const CMD = 'cmd';
 const STRING = 'string';
 const HEADER = 'header';
-const CMD_SET_STAFF = 'set_staff';
 const CMD_RESET_STAFF = 'reset_staff';
 const CMD_COLLAPSE = 'collapse';
 const CMD_DECOLLAPSE = 'decollapse';
@@ -34,6 +33,7 @@ var commmands = {
     },
     'paste_with': new PasteWithCmd(),
     'new_org': new NewOrgCmd(),
+    'set_staff': new SetStaffCmd(),
 };
 
 function getPlaceholder(name) {
@@ -236,21 +236,6 @@ function clickContextMenuItem(menuItem) {
     }
     else
         switch (cmd) {
-            case CMD_SET_STAFF:
-                var newStaffTxt = prompt('Stärke', toText(getStaff(root)));
-                var newStaff = toStaff(newStaffTxt);
-                if (newStaff == null || newStaff.length != 4) {
-                    alert('Ungültiges Format');
-                    close = true;
-                    break;
-                }
-                if (newStaff[0] + newStaff[1] + newStaff[2] != newStaff[3])
-                    alert(`Validierung fehlgeschlagen!\n${newStaff[0]} + ${newStaff[1]} + ${newStaff[2]} != ${newStaff[3]}`);
-                else
-                    root.staff = newStaff;
-                root.show_staff = true;
-                close = true;
-                break;
             case CMD_RESET_STAFF:
                 delete root.staff;
                 close = true;
