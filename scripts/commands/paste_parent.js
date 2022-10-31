@@ -2,6 +2,18 @@ function PasteParentCmd() { }
 
 PasteParentCmd.prototype.__proto__ = new AddCmd();
 
+PasteParentCmd.prototype.hide = false;
+
+PasteParentCmd.prototype.isExecuteable = function () {
+    if (!Array.isArray(this.selectedElements) || this.selectedElements.length <= 0)
+        return false;
+    if (cachedElements == null)
+        return false;
+    if (Array.isArray(cachedElements) && cachedElements.length > 1)
+        return false;
+    return true;
+}
+
 PasteParentCmd.prototype.execute = function () {
     for (let i = 0; i < this.selectedElements.length; i++) {
         var clonedElements = this.cloneCachedElements();
