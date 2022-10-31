@@ -29,6 +29,8 @@ var commmands = {
     },
     'cut_single': new CutSingleCmd(),
     'cut_tree': new CutTreeCmd(),
+    'delete_single': new DeleteSingleCmd(),
+    'delete_tree': new DeleteTreeCmd(),
 };
 
 function getPlaceholder(name) {
@@ -249,14 +251,6 @@ function clickContextMenuItem(menuItem) {
                 delete clone.sub;
                 delete clone.with;
                 insertParent(root, parentLogical, parentLayer, clone);
-                close = true;
-                break;
-            case CMD_DELETE_SINGLE:
-                removeSingle(root, uuid);
-                close = true;
-                break;
-            case CMD_DELETE_TREE:
-                removeTree(root, uuid);
                 close = true;
                 break;
             case CMD_NEW_ORG:
