@@ -66,8 +66,20 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         for (let idx in attrItem.styles)
             menuItem.classList.add(attrItem.styles[idx]);
 
-    if (attrItem.cmd != null)
+    if (attrItem.cmd != null) {
         menuItem.setAttribute('cmd', attrItem.cmd);
+        if (attrItem.cmd in commmands) {
+            var cmdObj = commmands[attrItem.cmd];
+            cmdObj = Object.create(cmdObj);
+            cmdObj.key = key;
+            cmdObj.selectedElements = [root];
+            if (cmdObj.isExecuteable != null && !cmdObj.isExecuteable()) {
+                if (cmdObj.hide)
+                    return null;
+                menuItem.classList.add('menu-item-inactive');
+            }
+        }
+    }
     if (key != null)
         menuItem.setAttribute('key', key);
     if (parentMenuItem != null && parentMenuItem.key != null)

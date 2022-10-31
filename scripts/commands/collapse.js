@@ -2,6 +2,16 @@ function CollapseCmd() { }
 
 CollapseCmd.prototype.__proto__ = new CmdBase();
 
+CollapseCmd.prototype.isExecuteable = function () {
+    if (Array.isArray(this.selectedElements) && this.selectedElements.length > 0)
+        return this.selectedElements.some(item => {
+            if (!Array.isArray(item.sub) || item.sub.length <= 0)
+                return false;
+            return !item.sub.every(subItem => subItem.sign == 'Collapsed');
+        });
+    return false;
+}
+
 CollapseCmd.prototype.execute = function () {
     for (let i = 0; i < this.selectedElements.length; i++) {
         var root = this.selectedElements[i];

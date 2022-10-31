@@ -2,6 +2,12 @@ function DecollapseCmd() { }
 
 DecollapseCmd.prototype.__proto__ = new CmdBase();
 
+DecollapseCmd.prototype.isExecuteable = function () {
+    if (Array.isArray(this.selectedElements) && this.selectedElements.length > 0)
+        return this.selectedElements.some(item => item.sub.some(item => item.sign == 'Collapsed'));
+    return false;
+}
+
 DecollapseCmd.prototype.execute = function () {
     for (let i = 0; i < this.selectedElements.length; i++) {
         var root = this.selectedElements[i];
