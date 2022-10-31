@@ -13,12 +13,16 @@ var hoveringUuid = null;
 
 var KeyCode = {
     ESC: 27,
+    Y: 89,
+    Z: 90,
 }
 
 var iptConfig = document.getElementById('iptConfig');
 var zoomcontainer = document.getElementById('zoomcontainer');
 var displaySvg = document.getElementById("displaySvg");
 var outputSvg = document.getElementById("outputSvg");
+var btnUndo = document.getElementById("btnUndo");
+var btnRedo = document.getElementById("btnRedo");
 
 function getEvtPos(evt) {
     var touchpos = evt;
@@ -45,6 +49,8 @@ function onDomContentLoaded() {
     displaySvg.addEventListener('pointermove', dragging);
     displaySvg.addEventListener('pointerup', drop);
     displaySvg.addEventListener('pointercancel', drop);
+    btnUndo.addEventListener('click', undo);
+    btnRedo.addEventListener('click', redo);
 }
 
 function configSelected(evt) {
@@ -100,6 +106,10 @@ document.addEventListener('contextmenu', function (evt) {
 window.onkeyup = function (e) {
     if (e.keyCode === KeyCode.ESC)
         closeSignContextMenu();
+    else if (e.keyCode === KeyCode.Z && e.ctrlKey)
+        undo();
+    else if (e.keyCode === KeyCode.Y && e.ctrlKey)
+        redo();
 }
 
 draw();
