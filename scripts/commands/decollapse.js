@@ -4,7 +4,7 @@ DecollapseCmd.prototype.__proto__ = new CmdBase();
 
 DecollapseCmd.prototype.isExecuteable = function () {
     if (Array.isArray(this.selectedElements) && this.selectedElements.length > 0)
-        return this.selectedElements.some(item => item.sub.some(item => item.sign == 'Collapsed'));
+        return this.selectedElements.some(item => item.sub != null && item.sub.some(item => item.sign == 'Collapsed'));
     return false;
 }
 
