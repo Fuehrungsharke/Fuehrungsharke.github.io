@@ -61,7 +61,7 @@ function dragging(evt) {
             minY: Math.min(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y,
             maxX: Math.max(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x,
             maxY: Math.max(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y
-        })
+        }, evt.ctrlKey)
 }
 
 function drop(evt) {
@@ -125,7 +125,7 @@ function clearSelection() {
             selectables[idx].classList.remove('selected');
 }
 
-function updateSelection(markedArea) {
+function updateSelection(markedArea, adding) {
     selectionRect.setAttributeNS(null, 'x', markedArea.minX);
     selectionRect.setAttributeNS(null, 'y', markedArea.minY);
     selectionRect.setAttributeNS(null, 'width', markedArea.maxX - markedArea.minX);
@@ -142,7 +142,7 @@ function updateSelection(markedArea) {
             && parseInt(match[1]) + 0.8 * signWidth <= markedArea.maxX * (1 / zoomFactor)
             && parseInt(match[2]) + 0.8 * signHeight <= markedArea.maxY * (1 / zoomFactor))
             selectables[i].classList.add('selected');
-        else if (selectables[i].classList.contains('selected'))
+        else if (!adding && selectables[i].classList.contains('selected'))
             selectables[i].classList.remove('selected');
     }
 }
