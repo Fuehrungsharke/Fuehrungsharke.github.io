@@ -8,12 +8,14 @@ PasteSibCmd.prototype.single = true;
 
 PasteSibCmd.prototype.execute = function () {
     for (let i = 0; i < this.selectedElements.length; i++) {
-        var clone = this.cloneCachedElements();
-        if (this.single) {
-            delete clone.sub;
-            delete clone.with;
+        var clonedElements = this.cloneCachedElements();
+        for (let idx in clonedElements) {
+            if (this.single) {
+                delete clonedElements[idx].sub;
+                delete clonedElements[idx].with;
+            }
+            this.insertSibling(this.selectedElements[i], clonedElements[idx]);
         }
-        this.insertSibling(this.selectedElements[i], clone);
     }
     return true;
 }

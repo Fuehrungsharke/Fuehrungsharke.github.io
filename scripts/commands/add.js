@@ -37,18 +37,33 @@ AddCmd.prototype.cloneCachedElements = function () {
     return JSON.parse(JSON.stringify(cachedElements));
 }
 
+AddCmd.prototype.getParentLayer = function (root) {
+    var parentLogical = getParentByUuid(config, root.uuid);
+    var parentLayer = parentLogical;
+    if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
+        for (let idx in parentLayer[WITH])
+            if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == root.uuid) {
+                parentLayer = getParentByUuid(config, parentLayer.uuid);
+                break;
+            }
+    }
+    return parentLayer;
+}
+
 AddCmd.prototype.insertParent = function (root, newObj) {
-    if (this.parentLayer != null) {
-        if (Array.isArray(this.parentLayer) && this.parentLayer.length > 0) {
-            newObj[SUB] = this.parentLayer;
+    var parentLogical = getParentByUuid(config, root.uuid);
+    var parentLayer = this.getParentLayer(root);
+    if (parentLayer != null) {
+        if (Array.isArray(parentLayer) && parentLayer.length > 0) {
+            newObj[SUB] = parentLayer;
             config = newObj;
         }
         else if (parentLayer[SUB] != null) {
             var oldObj = null;
-            if (parentLayer == parentLocical)
+            if (parentLayer == parentLogical)
                 oldObj = root;
             else
-                oldObj = parentLocical;
+                oldObj = parentLogical;
             var idx = parentLayer[SUB].indexOf(root);
             newObj[SUB] = [oldObj];
             parentLayer[SUB][idx] = newObj;
@@ -60,12 +75,13 @@ AddCmd.prototype.insertParent = function (root, newObj) {
     }
 }
 
-AddCmd.prototype.insertSibling = function (newObj) {
-    if (this.parentLayer != null) {
-        if (Array.isArray(this.parentLayer) && this.parentLayer.length > 0)
-            this.parentLayer.push(newObj);
-        else if (this.parentLayer[SUB] != null)
-            this.parentLayer[SUB].push(newObj);
+AddCmd.prototype.insertSibling = function (root, newObj) {
+    var parentLayer = this.getParentLayer(root);
+    if (parentLayer != null) {
+        if (Array.isArray(parentLayer) && parentLayer.length > 0)
+            parentLayer.push(newObj);
+        else if (parentLayer.sub != null)
+            parentLayer.sub.push(newObj);
     } else
         config = [config, newObj];
 }

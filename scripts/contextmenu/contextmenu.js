@@ -19,7 +19,9 @@ var commmands = {
     'cut_tree': new CutTreeCmd(),
     'delete_single': new DeleteSingleCmd(),
     'delete_tree': new DeleteTreeCmd(),
-    'paste_parent': new PasteParentCmd(),
+    'paste_parent': {
+        'paste_single': new PasteParentCmd(),
+    },
     'paste_sibling': {
         'paste_single': new PasteSibCmd(true),
         'paste_tree': new PasteSibCmd(false),
@@ -28,7 +30,9 @@ var commmands = {
         'paste_single': new PasteSubCmd(true),
         'paste_tree': new PasteSubCmd(false),
     },
-    'paste_with': new PasteWithCmd(),
+    'paste_with': {
+        'paste_single': new PasteWithCmd(),
+    },
     'new_org': new NewOrgCmd(),
     'set_staff': new SetStaffCmd(),
     'reset_staff': new ResetStaffCmd(),
@@ -213,15 +217,6 @@ function clickContextMenuItem(menuItem) {
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getByUuid(config, uuid);
-    var parentLogical = getParentByUuid(config, uuid);
-    var parentLayer = parentLogical;
-    if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
-        for (let idx in parentLayer[WITH])
-            if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == uuid) {
-                parentLayer = getParentByUuid(config, parentLayer.uuid);
-                break;
-            }
-    }
     var selectedElements = [];
     var selectedSigns = outputSvg.getElementsByClassName('selected');
     for (let i = 0; i < selectedSigns.length; i++)
@@ -236,8 +231,6 @@ function clickContextMenuItem(menuItem) {
         cmdObj = Object.create(cmdObj);
         cmdObj.key = key;
         cmdObj.selectedElements = selectedElements;
-        cmdObj.parentLogical = parentLogical;
-        cmdObj.parentLayer = parentLayer;
         if (cmdObj.isExecuteable())
             close = cmdObj.execute();
     }
