@@ -5,12 +5,6 @@ const RADIO = 'radio';
 const CMD = 'cmd';
 const STRING = 'string';
 const HEADER = 'header';
-const CMD_PASTE_SUB = 'paste_sub';
-const CMD_PASTE_WITH = 'paste_with';
-const CMD_PASTE_SIBLING = 'paste_sibling';
-const CMD_PASTE_PARENT = 'paste_parent';
-const CMD_DELETE_SINGLE = 'delete_single';
-const CMD_DELETE_TREE = 'delete_tree';
 const CMD_NEW_ORG = 'new_org';
 const CMD_SET_STAFF = 'set_staff';
 const CMD_RESET_STAFF = 'reset_staff';
@@ -31,6 +25,16 @@ var commmands = {
     'cut_tree': new CutTreeCmd(),
     'delete_single': new DeleteSingleCmd(),
     'delete_tree': new DeleteTreeCmd(),
+    'paste_parent': new PasteParentCmd(),
+    'paste_sibling': {
+        'paste_single': new PasteSibCmd(true),
+        'paste_tree': new PasteSibCmd(false),
+    },
+    'paste_sub': {
+        'paste_single': new PasteSubCmd(true),
+        'paste_tree': new PasteSubCmd(false),
+    },
+    'paste_with': new PasteWithCmd(),
 };
 
 function getPlaceholder(name) {
@@ -233,26 +237,6 @@ function clickContextMenuItem(menuItem) {
     }
     else
         switch (cmd) {
-            case CMD_PASTE_SUB:
-                insertSub(root, parentLogical, clone);
-                close = true;
-                break;
-            case CMD_PASTE_WITH:
-                delete clone.sub;
-                delete clone.with;
-                insertWith(root, parentLogical, clone);
-                close = true;
-                break;
-            case CMD_PASTE_SIBLING:
-                insertSibling(parentLayer, clone);
-                close = true;
-                break;
-            case CMD_PASTE_PARENT:
-                delete clone.sub;
-                delete clone.with;
-                insertParent(root, parentLogical, parentLayer, clone);
-                close = true;
-                break;
             case CMD_NEW_ORG:
                 var newOrgName = prompt('Name', 'Benutzerdefiniert');
                 var newOrgKey = prompt('Kürzel', 'XXX');

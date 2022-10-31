@@ -33,6 +33,10 @@ AddCmd.prototype.getNewSign = function (sourceSign, key) {
     return newObj;
 }
 
+AddCmd.prototype.cloneCachedElements = function () {
+    return JSON.parse(JSON.stringify(cachedElements));
+}
+
 AddCmd.prototype.insertParent = function (root, newObj) {
     if (this.parentLayer != null) {
         if (Array.isArray(this.parentLayer) && this.parentLayer.length > 0) {
