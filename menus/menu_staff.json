@@ -4,6 +4,7 @@
     "values": [
         {
             "name": "Anzeigen",
+            "nameInverted": "Ausblenden",
             "type": "bool",
             "key": "show_staff"
         },

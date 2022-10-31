@@ -3,7 +3,8 @@
     "type": "submenu",
     "values": [
         {
-            "name": "Inaktiv",
+            "name": "Deaktivieren",
+            "nameInverted": "Aktivieren",
             "type": "bool",
             "key": "inactive"
         },

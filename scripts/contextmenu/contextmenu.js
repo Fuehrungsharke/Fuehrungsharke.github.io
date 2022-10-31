@@ -97,9 +97,16 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         case BOOL:
         case RADIO:
         case CMD:
-            if (content == true || content == attrItem.key)
-                menuItem.classList.add('menu-item-selected');
-            menuItem.appendChild(document.createTextNode(attrItem.name));
+            if (content == true || content == attrItem.key) {
+                if (attrItem.nameInverted == null) {
+                    menuItem.classList.add('menu-item-selected');
+                    menuItem.appendChild(document.createTextNode(attrItem.name));
+                }
+                else
+                    menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
+            }
+            else
+                menuItem.appendChild(document.createTextNode(attrItem.name));
             break;
         case STRING:
             menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
@@ -203,7 +210,7 @@ function getParentAttribute(attrMenu, parent, child) {
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
-    if(cmd == null)
+    if (cmd == null)
         cmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
