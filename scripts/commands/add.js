@@ -2,10 +2,6 @@ function AddCmd() { }
 
 AddCmd.prototype.__proto__ = new CmdBase();
 
-AddCmd.prototype.isExecuteable = function () {
-    return Array.isArray(this.selectedElements) && this.selectedElements.length > 0;
-}
-
 AddCmd.prototype.presets = {
     "Unit": {
         "show_staff": true

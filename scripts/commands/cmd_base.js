@@ -6,5 +6,5 @@ CmdBase.prototype.parentLogical = null;
 CmdBase.prototype.parentLayer = null;
 
 CmdBase.prototype.isExecuteable = function () {
-    return false;
+    return Array.isArray(this.selectedElements) && this.selectedElements.length > 0;
 }

@@ -5,14 +5,6 @@ const RADIO = 'radio';
 const CMD = 'cmd';
 const STRING = 'string';
 const HEADER = 'header';
-const CMD_ADD = 'add';
-const CMD_ADD_SUB = 'add_sub';
-const CMD_ADD_WITH = 'add_with';
-const CMD_ADD_SIBLING = 'add_sibling';
-const CMD_ADD_PARENT = 'add_parent';
-const CMD_COPY = 'copy';
-const CMD_CUT_SINGLE = 'cut_single';
-const CMD_CUT_TREE = 'cut_tree';
 const CMD_PASTE_SUB = 'paste_sub';
 const CMD_PASTE_WITH = 'paste_with';
 const CMD_PASTE_SIBLING = 'paste_sibling';
@@ -35,6 +27,8 @@ var commmands = {
         'add_sub': new AddSubCmd(),
         'add_with': new AddWithCmd(),
     },
+    'cut_single': new CutSingleCmd(),
+    'cut_tree': new CutTreeCmd(),
 };
 
 function getPlaceholder(name) {
@@ -195,80 +189,6 @@ function getParentAttribute(attrMenu, parent, child) {
     return null;
 }
 
-function removeSingle(root, uuid) {
-    if (root == config) {
-        if (root.with != null && Array.isArray(root.with) && root.with.length > 0) {
-            var firstWith = root.with[0];
-            firstWith.sub = root.sub;
-            firstWith.with = root.with.filter(item => item != firstWith);
-            if (firstWith.with.length == 0)
-                delete firstWith.with;
-            config = firstWith;
-        }
-        else if (root.sub != null && Array.isArray(root.sub))
-            config = root.sub;
-        return;
-    }
-    var source = getParentByUuid(config, uuid);
-    if (source != null) {
-        if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
-            var idx = source.sub.indexOf(root);
-            if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]) && root.with.length > 0) {
-                var firstWith = root.with[0];
-                firstWith.sub = root.sub;
-                firstWith.with = root.with.filter(item => item != firstWith);
-                if (firstWith.sub.length == 0)
-                    delete firstWith.sub;
-                if (firstWith.with.length == 0)
-                    delete firstWith.with;
-                source.sub[idx] = firstWith;
-            }
-            else if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root.sub.length > 0)
-                source.sub = source.sub.slice(0, idx).concat(root.sub).concat(source.sub.slice(idx + 1, source.sub.length));
-            else
-                source.sub = source.sub.filter(item => item != root);
-            if (source.sub.length == 0)
-                delete source.sub;
-        }
-        if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
-            source.with = source.with.filter(item => item != root);
-            if (source.with.length == 0)
-                delete source.with;
-        }
-    }
-}
-
-function removeTree(root, uuid) {
-    if (Array.isArray(config)) {
-        config = config.filter(item => item != root);
-        if (config.length == 0)
-            config = null;
-    }
-    else if (root == config)
-        config = null;
-    if (config == null) {
-        config = {
-            'sign': "Unit",
-            'colorPrimary': '#FFF',
-            'colorAccent': '#000'
-        };
-        return;
-    }
-    var source = getParentByUuid(config, uuid);
-    if (source != null) {
-        if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
-            source.sub = source.sub.filter(item => item != root);
-            if (source.sub.length == 0)
-                delete source.sub;
-        }
-        if (source.hasOwnProperty(WITH) && Array.isArray(source[WITH])) {
-            source.with = source.with.filter(item => item != root);
-            if (source.with.length == 0)
-                delete source.with;
-        }
-    }
-}
-
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
@@ -329,16 +249,6 @@ function clickContextMenuItem(menuItem) {
                 delete clone.sub;
                 delete clone.with;
                 insertParent(root, parentLogical, parentLayer, clone);
-                close = true;
-                break;
-            case CMD_CUT_SINGLE:
-                cachedElement = root;
-                removeSingle(root, uuid);
-                close = true;
-                break;
-            case CMD_CUT_TREE:
-                cachedElement = root;
-                removeTree(root, uuid);
                 close = true;
                 break;
             case CMD_DELETE_SINGLE:

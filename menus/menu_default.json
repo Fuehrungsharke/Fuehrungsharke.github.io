@@ -72,7 +72,6 @@
     {
         "name": "Ausschneiden",
         "type": "submenu",
-        "cmd": "cut",
         "values": [
             {
                 "name": "Untergeordnete Elemente behalten",
