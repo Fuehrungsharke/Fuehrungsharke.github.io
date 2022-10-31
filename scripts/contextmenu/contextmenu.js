@@ -9,30 +9,20 @@ const HEADER = 'header';
 var cachedElement = null;
 var commmands = {
     'copy': new CopyCmd(),
-    'add': {
-        'add_parent': new AddParentCmd(),
-        'add_sibling': new AddSibCmd(),
-        'add_sub': new AddSubCmd(),
-        'add_with': new AddWithCmd(),
-    },
+    'add_parent': new AddParentCmd(),
+    'add_sibling': new AddSibCmd(),
+    'add_sub': new AddSubCmd(),
+    'add_with': new AddWithCmd(),
     'cut_single': new CutSingleCmd(),
     'cut_tree': new CutTreeCmd(),
     'delete_single': new DeleteSingleCmd(),
     'delete_tree': new DeleteTreeCmd(),
-    'paste_parent': {
-        'paste_single': new PasteParentCmd(),
-    },
-    'paste_sibling': {
-        'paste_single': new PasteSibCmd(true),
-        'paste_tree': new PasteSibCmd(false),
-    },
-    'paste_sub': {
-        'paste_single': new PasteSubCmd(true),
-        'paste_tree': new PasteSubCmd(false),
-    },
-    'paste_with': {
-        'paste_single': new PasteWithCmd(),
-    },
+    'paste_parent': new PasteParentCmd(),
+    'paste_sibling_single': new PasteSibCmd(true),
+    'paste_sibling_tree': new PasteSibCmd(false),
+    'paste_sub_single': new PasteSubCmd(true),
+    'paste_sub_tree': new PasteSubCmd(false),
+    'paste_single_with': new PasteWithCmd(),
     'new_org': new NewOrgCmd(),
     'set_staff': new SetStaffCmd(),
     'reset_staff': new ResetStaffCmd(),
@@ -213,7 +203,8 @@ function getParentAttribute(attrMenu, parent, child) {
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
-    var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
+    if(cmd == null)
+        cmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getByUuid(config, uuid);
@@ -226,8 +217,6 @@ function clickContextMenuItem(menuItem) {
 
     if (cmd in commmands) {
         var cmdObj = commmands[cmd];
-        if (subCmd != null)
-            cmdObj = cmdObj[subCmd];
         cmdObj = Object.create(cmdObj);
         cmdObj.key = key;
         cmdObj.selectedElements = selectedElements;
