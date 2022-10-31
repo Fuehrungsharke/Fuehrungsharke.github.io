@@ -5,7 +5,6 @@ const RADIO = 'radio';
 const CMD = 'cmd';
 const STRING = 'string';
 const HEADER = 'header';
-const CMD_COLLAPSE = 'collapse';
 const CMD_DECOLLAPSE = 'decollapse';
 
 var cachedElement = null;
@@ -34,6 +33,7 @@ var commmands = {
     'new_org': new NewOrgCmd(),
     'set_staff': new SetStaffCmd(),
     'reset_staff': new ResetStaffCmd(),
+    'collapse': new CollapseCmd(),
 };
 
 function getPlaceholder(name) {
@@ -236,23 +236,6 @@ function clickContextMenuItem(menuItem) {
     }
     else
         switch (cmd) {
-            case CMD_COLLAPSE:
-                if (root.sub == null)
-                    break;
-                var collapseSign = root.sub.find(item => item.sign == 'Collapsed');
-                if (root.sign == 'Collapsed' || collapseSign != null)
-                    break;
-                collapseSign = {
-                    "sign": "Collapsed",
-                    "txt": "[...]",
-                    "sub": root.sub
-                };
-                var staff = getStaff(collapseSign);
-                if (staff[0] > 0 || staff[1] > 0 || staff[2] > 0 || staff[3] > 0)
-                    collapseSign.show_staff = true;
-                root.sub = [collapseSign];
-                close = true;
-                break;
             case CMD_DECOLLAPSE:
                 if (root.sign == 'Collapsed') {
                     var parent = getParentByUuid(config, root.uuid);
