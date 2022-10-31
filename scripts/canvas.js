@@ -197,6 +197,10 @@ function drawRecursive(canvas, root, x, y, inactiveInherited) {
 }
 
 function draw() {
+    configHistory.push({
+        "config": JSON.parse(JSON.stringify(config))
+    });
+
     var canvas = document.createElement('svg');
     size = drawRecursive(canvas, config, 0, 0, false);
 

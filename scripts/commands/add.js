@@ -43,15 +43,15 @@ AddCmd.prototype.insertParent = function (root, newObj) {
             newObj[SUB] = this.parentLayer;
             config = newObj;
         }
-        else if (this.parentLayer[SUB] != null) {
-            if (this.parentLayer == this.parentLogical) {
-                this.parentLayer[SUB] = this.parentLayer[SUB].filter(item => item != root);
-                newObj[SUB] = [root];
-            } else {
-                this.parentLayer[SUB] = this.parentLayer[SUB].filter(item => item != this.parentLogical);
-                newObj[SUB] = [this.parentLogical];
-            }
-            this.parentLayer[SUB].push(newObj);
+        else if (parentLayer[SUB] != null) {
+            var oldObj = null;
+            if (parentLayer == parentLocical)
+                oldObj = root;
+            else
+                oldObj = parentLocical;
+            var idx = parentLayer[SUB].indexOf(root);
+            newObj[SUB] = [oldObj];
+            parentLayer[SUB][idx] = newObj;
         }
     }
     else {
