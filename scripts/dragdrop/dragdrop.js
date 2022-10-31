@@ -12,6 +12,8 @@ function pointerOutSvg(uuid) {
 }
 
 function drag(evt) {
+    if (evt.pointerType == 'mouse' && evt.button != 0)
+        return;
     var element = evt.target;
     if (element.nodeName == 'text' && element.getAttributeNS(null, 'uuid') != null)
         return;
