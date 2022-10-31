@@ -5,7 +5,6 @@ const RADIO = 'radio';
 const CMD = 'cmd';
 const STRING = 'string';
 const HEADER = 'header';
-const CMD_RESET_STAFF = 'reset_staff';
 const CMD_COLLAPSE = 'collapse';
 const CMD_DECOLLAPSE = 'decollapse';
 
@@ -34,6 +33,7 @@ var commmands = {
     'paste_with': new PasteWithCmd(),
     'new_org': new NewOrgCmd(),
     'set_staff': new SetStaffCmd(),
+    'reset_staff': new ResetStaffCmd(),
 };
 
 function getPlaceholder(name) {
@@ -236,10 +236,6 @@ function clickContextMenuItem(menuItem) {
     }
     else
         switch (cmd) {
-            case CMD_RESET_STAFF:
-                delete root.staff;
-                close = true;
-                break;
             case CMD_COLLAPSE:
                 if (root.sub == null)
                     break;
