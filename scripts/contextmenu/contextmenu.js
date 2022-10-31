@@ -27,19 +27,15 @@ const CMD_DECOLLAPSE = 'decollapse';
 
 var cachedElement = null;
 var customOrgs = [];
-
-var presets = {
-    "Unit": {
-        "show_staff": true
+var commmands = {
+    'copy': new CopyCmd(),
+    'add': {
+        'add_parent': new AddParentCmd(),
+        'add_sibling': new AddSibCmd(),
+        'add_sub': new AddSubCmd(),
+        'add_with': new AddWithCmd(),
     },
-    "Flag": {
-        "colorPrimary": "#FF0",
-        "colorAccent": "#000"
-    },
-    "Vehicle": {
-        "automotive": true
-    }
-}
+};
 
 function getPlaceholder(name) {
     if (name == 'CustomOrgs')
@@ -199,62 +195,6 @@ function getParentAttribute(attrMenu, parent, child) {
     return null;
 }
 
-function insertSub(root, parentLocical, newObj) {
-    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0) {
-        if (parentLocical[SUB] == null)
-            parentLocical[SUB] = [];
-        parentLocical[SUB].push(newObj);
-    }
-    else {
-        if (root[SUB] == null)
-            root[SUB] = [];
-        root[SUB].push(newObj);
-    }
-}
-
-function insertWith(root, parentLocical, newObj) {
-    if (parentLocical != null && parentLocical[WITH] != null && parentLocical[WITH].indexOf(root) >= 0)
-        parentLocical[WITH].push(newObj);
-    else {
-        if (root[WITH] == null)
-            root[WITH] = [];
-        root[WITH].push(newObj);
-    }
-}
-
-function insertParent(root, parentLocical, parentLayer, newObj) {
-    if (parentLayer != null) {
-        if (Array.isArray(parentLayer) && parentLayer.length > 0) {
-            newObj[SUB] = parentLayer;
-            config = newObj;
-        }
-        else if (parentLayer[SUB] != null) {
-            if (parentLayer == parentLocical) {
-                parentLayer[SUB] = parentLayer[SUB].filter(item => item != root);
-                newObj[SUB] = [root];
-            } else {
-                parentLayer[SUB] = parentLayer[SUB].filter(item => item != parentLocical);
-                newObj[SUB] = [parentLocical];
-            }
-            parentLayer[SUB].push(newObj);
-        }
-    }
-    else {
-        newObj[SUB] = [config];
-        config = newObj;
-    }
-}
-
-function insertSibling(parentLayer, newObj) {
-    if (parentLayer != null) {
-        if (Array.isArray(parentLayer) && parentLayer.length > 0)
-            parentLayer.push(newObj);
-        else if (parentLayer[SUB] != null)
-            parentLayer[SUB].push(newObj);
-    } else
-        config = [config, newObj];
-}
-
 function removeSingle(root, uuid) {
     if (root == config) {
         if (root.with != null && Array.isArray(root.with) && root.with.length > 0) {
@@ -332,11 +272,12 @@ function removeTree(root, uuid) {
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
+    var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getByUuid(config, uuid);
-    var parentLocical = getParentByUuid(config, uuid);
-    var parentLayer = parentLocical;
+    var parentLogical = getParentByUuid(config, uuid);
+    var parentLayer = parentLogical;
     if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
         for (let idx in parentLayer[WITH])
             if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == uuid) {
@@ -345,240 +286,228 @@ function clickContextMenuItem(menuItem) {
             }
     }
     var clone = JSON.parse(JSON.stringify(cachedElement));
-    switch (cmd) {
-        case CMD_ADD:
-            var newObj = {
-                'sign': key,
-                'colorPrimary': '#FFF',
-                'colorAccent': '#000'
-            };
-            if (root.org != null)
-                newObj.org = root.org;
-            if (root.colorPrimary != null)
-                newObj.colorPrimary = root.colorPrimary;
-            if (root.colorAccent != null)
-                newObj.colorAccent = root.colorAccent;
-            if (key in presets)
-                for (let idx in presets[key])
-                    newObj[idx] = presets[key][idx];
-            var subCmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
-            switch (subCmd) {
-                case CMD_ADD_WITH:
-                    insertWith(root, parentLocical, newObj);
-                    break;
-                case CMD_ADD_SIBLING:
-                    insertSibling(parentLayer, newObj);
-                    break;
-                case CMD_ADD_PARENT:
-                    insertParent(root, parentLocical, parentLayer, newObj);
-                    break;
-                case CMD_ADD_SUB:
-                    insertSub(root, parentLocical, newObj);
-                    break;
-            }
-            close = true;
-            break;
-        case CMD_COPY:
-            cachedElement = root;
-            close = true;
-            break;
-        case CMD_PASTE_SUB:
-            insertSub(root, parentLocical, clone);
-            close = true;
-            break;
-        case CMD_PASTE_WITH:
-            delete clone.sub;
-            delete clone.with;
-            insertWith(root, parentLocical, clone);
-            close = true;
-            break;
-        case CMD_PASTE_SIBLING:
-            insertSibling(parentLayer, clone);
-            close = true;
-            break;
-        case CMD_PASTE_PARENT:
-            delete clone.sub;
-            delete clone.with;
-            insertParent(root, parentLocical, parentLayer, clone);
-            close = true;
-            break;
-        case CMD_CUT_SINGLE:
-            cachedElement = root;
-            removeSingle(root, uuid);
-            close = true;
-            break;
-        case CMD_CUT_TREE:
-            cachedElement = root;
-            removeTree(root, uuid);
-            close = true;
-            break;
-        case CMD_DELETE_SINGLE:
-            removeSingle(root, uuid);
-            close = true;
-            break;
-        case CMD_DELETE_TREE:
-            removeTree(root, uuid);
-            close = true;
-            break;
-        case CMD_NEW_ORG:
-            var newOrgName = prompt('Name', 'Benutzerdefiniert');
-            var newOrgKey = prompt('Kürzel', 'XXX');
-            var newOrgColorPrimary = prompt('Farbe', 'purple');
-            var newOrgColorAccent = prompt('Kontrastfarbe', 'white');
-            var newOrg = {
-                "name": newOrgName,
-                "type": "radio",
-                "key": newOrgKey,
-                "icon": `data:image/svg+xml;utf8,
+
+    var selectedElements = [];
+    var selectedSigns = outputSvg.getElementsByClassName('selected');
+    for (let i = 0; i < selectedSigns.length; i++) {
+        var uuid = selectedSigns[i].getAttributeNS(null, 'uuid');
+        var root = getByUuid(config, uuid);
+        selectedElements.push(root);
+    }
+    if (selectedElements.length <= 0)
+        selectedElements = [root];
+
+    if (cmd in commmands) {
+        var cmdObj = commmands[cmd];
+        if (subCmd != null)
+            cmdObj = cmdObj[subCmd];
+        cmdObj = Object.create(cmdObj);
+        cmdObj.key = key;
+        cmdObj.selectedElements = selectedElements;
+        cmdObj.parentLogical = parentLogical;
+        cmdObj.parentLayer = parentLayer;
+        if (cmdObj.isExecuteable())
+            close = cmdObj.execute();
+    }
+    else
+        switch (cmd) {
+            case CMD_PASTE_SUB:
+                insertSub(root, parentLogical, clone);
+                close = true;
+                break;
+            case CMD_PASTE_WITH:
+                delete clone.sub;
+                delete clone.with;
+                insertWith(root, parentLogical, clone);
+                close = true;
+                break;
+            case CMD_PASTE_SIBLING:
+                insertSibling(parentLayer, clone);
+                close = true;
+                break;
+            case CMD_PASTE_PARENT:
+                delete clone.sub;
+                delete clone.with;
+                insertParent(root, parentLogical, parentLayer, clone);
+                close = true;
+                break;
+            case CMD_CUT_SINGLE:
+                cachedElement = root;
+                removeSingle(root, uuid);
+                close = true;
+                break;
+            case CMD_CUT_TREE:
+                cachedElement = root;
+                removeTree(root, uuid);
+                close = true;
+                break;
+            case CMD_DELETE_SINGLE:
+                removeSingle(root, uuid);
+                close = true;
+                break;
+            case CMD_DELETE_TREE:
+                removeTree(root, uuid);
+                close = true;
+                break;
+            case CMD_NEW_ORG:
+                var newOrgName = prompt('Name', 'Benutzerdefiniert');
+                var newOrgKey = prompt('Kürzel', 'XXX');
+                var newOrgColorPrimary = prompt('Farbe', 'purple');
+                var newOrgColorAccent = prompt('Kontrastfarbe', 'white');
+                var newOrg = {
+                    "name": newOrgName,
+                    "type": "radio",
+                    "key": newOrgKey,
+                    "icon": `data:image/svg+xml;utf8,
                 <svg xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256">
                     <ellipse cx="128" cy="128" rx="128" ry="128" fill="${newOrgColorPrimary}" stroke-width="5" stroke="black" />
                     <ellipse cx="128" cy="128" rx="43" ry="43" fill="${newOrgColorAccent}" />
                 </svg>`,
-                "implicitAttritbues": {
-                    "colorPrimary": newOrgColorPrimary,
-                    "colorAccent": newOrgColorAccent
-                }
-            };
-            customOrgs.push(newOrg);
-            root.org = newOrgKey;
-            root.colorPrimary = newOrgColorPrimary;
-            root.colorAccent = newOrgColorAccent;
-            close = true;
-            break;
-        case CMD_SET_STAFF:
-            var newStaffTxt = prompt('Stärke', toText(getStaff(root)));
-            var newStaff = toStaff(newStaffTxt);
-            if (newStaff == null || newStaff.length != 4) {
-                alert('Ungültiges Format');
+                    "implicitAttritbues": {
+                        "colorPrimary": newOrgColorPrimary,
+                        "colorAccent": newOrgColorAccent
+                    }
+                };
+                customOrgs.push(newOrg);
+                root.org = newOrgKey;
+                root.colorPrimary = newOrgColorPrimary;
+                root.colorAccent = newOrgColorAccent;
                 close = true;
                 break;
-            }
-            if (newStaff[0] + newStaff[1] + newStaff[2] != newStaff[3])
-                alert(`Validierung fehlgeschlagen!\n${newStaff[0]} + ${newStaff[1]} + ${newStaff[2]} != ${newStaff[3]}`);
-            else
-                root.staff = newStaff;
-            root.show_staff = true;
-            close = true;
-            break;
-        case CMD_RESET_STAFF:
-            delete root.staff;
-            close = true;
-            break;
-        case CMD_COLLAPSE:
-            if (root.sub == null)
-                break;
-            var collapseSign = root.sub.find(item => item.sign == 'Collapsed');
-            if (root.sign == 'Collapsed' || collapseSign != null)
-                break;
-            collapseSign = {
-                "sign": "Collapsed",
-                "txt": "[...]",
-                "sub": root.sub
-            };
-            var staff = getStaff(collapseSign);
-            if (staff[0] > 0 || staff[1] > 0 || staff[2] > 0 || staff[3] > 0)
-                collapseSign.show_staff = true;
-            root.sub = [collapseSign];
-            close = true;
-            break;
-        case CMD_DECOLLAPSE:
-            if (root.sign == 'Collapsed') {
-                var parent = getParentByUuid(config, root.uuid);
-                if (parent == null)
+            case CMD_SET_STAFF:
+                var newStaffTxt = prompt('Stärke', toText(getStaff(root)));
+                var newStaff = toStaff(newStaffTxt);
+                if (newStaff == null || newStaff.length != 4) {
+                    alert('Ungültiges Format');
+                    close = true;
                     break;
-                parent.sub = root.sub;
-            }
-            else if (root.sub != null) {
+                }
+                if (newStaff[0] + newStaff[1] + newStaff[2] != newStaff[3])
+                    alert(`Validierung fehlgeschlagen!\n${newStaff[0]} + ${newStaff[1]} + ${newStaff[2]} != ${newStaff[3]}`);
+                else
+                    root.staff = newStaff;
+                root.show_staff = true;
+                close = true;
+                break;
+            case CMD_RESET_STAFF:
+                delete root.staff;
+                close = true;
+                break;
+            case CMD_COLLAPSE:
+                if (root.sub == null)
+                    break;
                 var collapseSign = root.sub.find(item => item.sign == 'Collapsed');
-                if (collapseSign == null)
+                if (root.sign == 'Collapsed' || collapseSign != null)
                     break;
-                root.sub = collapseSign.sub;
-            }
-            close = true;
-            break;
-        default:
-            var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
-            var attr = null;
-            if (key != null && key != "undefined") {
-                attr = getAttribute(attrMenu, key);
-                if (attr == null) {
-                    var defaultMenu = JSON.parse(getResource('/menus/menu_default.json'));
-                    attr = getAttribute(defaultMenu, key);
+                collapseSign = {
+                    "sign": "Collapsed",
+                    "txt": "[...]",
+                    "sub": root.sub
+                };
+                var staff = getStaff(collapseSign);
+                if (staff[0] > 0 || staff[1] > 0 || staff[2] > 0 || staff[3] > 0)
+                    collapseSign.show_staff = true;
+                root.sub = [collapseSign];
+                close = true;
+                break;
+            case CMD_DECOLLAPSE:
+                if (root.sign == 'Collapsed') {
+                    var parent = getParentByUuid(config, root.uuid);
+                    if (parent == null)
+                        break;
+                    parent.sub = root.sub;
+                }
+                else if (root.sub != null) {
+                    var collapseSign = root.sub.find(item => item.sign == 'Collapsed');
+                    if (collapseSign == null)
+                        break;
+                    root.sub = collapseSign.sub;
+                }
+                close = true;
+                break;
+            default:
+                var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
+                var attr = null;
+                if (key != null && key != "undefined") {
+                    attr = getAttribute(attrMenu, key);
                     if (attr == null) {
-                        var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
-                        attr = getAttribute(staffMenu.values, key);
+                        var defaultMenu = JSON.parse(getResource('/menus/menu_default.json'));
+                        attr = getAttribute(defaultMenu, key);
                         if (attr == null) {
-                            attr = customOrgs.find(item => item.key == key);
-                            if (attr != null) {
-                                attrMenu = [
-                                    {
-                                        "name": "Organisationen",
-                                        "type": "submenu",
-                                        "key": "org",
-                                        "values": customOrgs
-                                    }
-                                ];
+                            var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
+                            attr = getAttribute(staffMenu.values, key);
+                            if (attr == null) {
+                                attr = customOrgs.find(item => item.key == key);
+                                if (attr != null) {
+                                    attrMenu = [
+                                        {
+                                            "name": "Organisationen",
+                                            "type": "submenu",
+                                            "key": "org",
+                                            "values": customOrgs
+                                        }
+                                    ];
+                                }
                             }
                         }
                     }
                 }
-            }
-            else
-                attr = getAttribute(attrMenu, cmd);
-            if (attr == null)
-                return false;
-            if (key != null && key != "undefined")
-                switch (attr.type) {
-                    case BOOL:
-                        if (root[key])
-                            delete root[key];
-                        else
-                            root[key] = true;
-                        close = true;
-                        break;
-                    case RADIO:
-                        var parentAttr = getParentAttribute(attrMenu, null, attr);
-                        if (parentAttr.key != null)
-                            root[parentAttr.key] = attr.key;
-                        else
-                            for (let idx in parentAttr.values)
-                                if (parentAttr.values[idx].key == attr.key)
-                                    root[parentAttr.values[idx].key] = true;
-                                else
-                                    delete root[parentAttr.values[idx].key];
-                        close = true;
-                        break;
-                    case STRING:
-                        let newValue = prompt(attr['name'], root[key]);
-                        if (newValue == undefined)
-                            return;
-                        root[key] = newValue;
-                        close = true;
-                        break;
-                }
-            if (attr.implicitAttritbues != null) {
-                for (let idx in attr.implicitAttritbues)
-                    if (!attr.implicitAttritbues[idx])
-                        delete root[idx];
-                    else
-                        root[idx] = attr.implicitAttritbues[idx];
-                close = true;
-            }
-            if (attr.conditionalAttritbues != null) {
-                var match = true;
-                for (let idx in attr.conditionalAttritbues.condition)
-                    match &= root[idx] == attr.conditionalAttritbues.condition[idx];
-                if (match)
-                    for (let idx in attr.conditionalAttritbues.values)
-                        if (!attr.conditionalAttritbues.values[idx])
+                else
+                    attr = getAttribute(attrMenu, cmd);
+                if (attr == null)
+                    return false;
+                if (key != null && key != "undefined")
+                    switch (attr.type) {
+                        case BOOL:
+                            if (root[key])
+                                delete root[key];
+                            else
+                                root[key] = true;
+                            close = true;
+                            break;
+                        case RADIO:
+                            var parentAttr = getParentAttribute(attrMenu, null, attr);
+                            if (parentAttr.key != null)
+                                root[parentAttr.key] = attr.key;
+                            else
+                                for (let idx in parentAttr.values)
+                                    if (parentAttr.values[idx].key == attr.key)
+                                        root[parentAttr.values[idx].key] = true;
+                                    else
+                                        delete root[parentAttr.values[idx].key];
+                            close = true;
+                            break;
+                        case STRING:
+                            let newValue = prompt(attr['name'], root[key]);
+                            if (newValue == undefined)
+                                return;
+                            root[key] = newValue;
+                            close = true;
+                            break;
+                    }
+                if (attr.implicitAttritbues != null) {
+                    for (let idx in attr.implicitAttritbues)
+                        if (!attr.implicitAttritbues[idx])
                             delete root[idx];
                         else
-                            root[idx] = attr.conditionalAttritbues.values[idx];
-                close = true;
-            }
-            break;
-    }
+                            root[idx] = attr.implicitAttritbues[idx];
+                    close = true;
+                }
+                if (attr.conditionalAttritbues != null) {
+                    var match = true;
+                    for (let idx in attr.conditionalAttritbues.condition)
+                        match &= root[idx] == attr.conditionalAttritbues.condition[idx];
+                    if (match)
+                        for (let idx in attr.conditionalAttritbues.values)
+                            if (!attr.conditionalAttritbues.values[idx])
+                                delete root[idx];
+                            else
+                                root[idx] = attr.conditionalAttritbues.values[idx];
+                    close = true;
+                }
+                break;
+        }
     if (close)
         draw();
     return close;
