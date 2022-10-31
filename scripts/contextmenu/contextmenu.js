@@ -229,7 +229,7 @@ function clickContextMenuItem(menuItem) {
         if (cmdObj.isExecuteable())
             close = cmdObj.execute();
     }
-    else {
+    else
         for (let i = 0; i < selectedElements.length; i++) {
             root = selectedElements[i];
             var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
@@ -312,7 +312,6 @@ function clickContextMenuItem(menuItem) {
                 close = true;
             }
         }
-    }
     if (close)
         draw();
     return close;
