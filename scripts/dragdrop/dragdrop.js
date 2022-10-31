@@ -55,13 +55,19 @@ function dragging(evt) {
     if (draggingElement) {
         evt.preventDefault();
         draggingElement.setAttributeNS(null, 'transform', `translate(${(touchpos.clientX * (1 / zoomFactor) + draggingElement.draggingInfo.offsetX)}, ${touchpos.clientY * (1 / zoomFactor) + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
-    } else if (selectionStartPos != null)
+    } else if (selectionStartPos != null) {
+        var mode = 'normal';
+        if (evt.ctrlKey)
+            mode = 'add';
+        else if (evt.shiftKey)
+            mode = 'remove';
         updateSelection({
             minX: Math.min(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x,
             minY: Math.min(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y,
             maxX: Math.max(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x,
             maxY: Math.max(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y
-        }, evt.ctrlKey)
+        }, mode);
+    }
 }
 
 function drop(evt) {
@@ -125,7 +131,7 @@ function clearSelection() {
             selectables[idx].classList.remove('selected');
 }
 
-function updateSelection(markedArea, adding) {
+function updateSelection(markedArea, mode) {
     selectionRect.setAttributeNS(null, 'x', markedArea.minX);
     selectionRect.setAttributeNS(null, 'y', markedArea.minY);
     selectionRect.setAttributeNS(null, 'width', markedArea.maxX - markedArea.minX);
@@ -140,9 +146,13 @@ function updateSelection(markedArea, adding) {
         if (parseInt(match[1]) + 0.2 * signWidth >= markedArea.minX * (1 / zoomFactor)
             && parseInt(match[2]) + 0.2 * signWidth >= markedArea.minY * (1 / zoomFactor)
             && parseInt(match[1]) + 0.8 * signWidth <= markedArea.maxX * (1 / zoomFactor)
-            && parseInt(match[2]) + 0.8 * signHeight <= markedArea.maxY * (1 / zoomFactor))
-            selectables[i].classList.add('selected');
-        else if (!adding && selectables[i].classList.contains('selected'))
+            && parseInt(match[2]) + 0.8 * signHeight <= markedArea.maxY * (1 / zoomFactor)) {
+            if (mode == 'remove')
+                selectables[i].classList.remove('selected');
+            else
+                selectables[i].classList.add('selected');
+        }
+        else if (mode == 'normal' && selectables[i].classList.contains('selected'))
             selectables[i].classList.remove('selected');
     }
 }
