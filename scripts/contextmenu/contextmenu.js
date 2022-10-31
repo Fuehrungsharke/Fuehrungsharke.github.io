@@ -210,15 +210,10 @@ function clickContextMenuItem(menuItem) {
                 break;
             }
     }
-    var clone = JSON.parse(JSON.stringify(cachedElement));
-
     var selectedElements = [];
     var selectedSigns = outputSvg.getElementsByClassName('selected');
-    for (let i = 0; i < selectedSigns.length; i++) {
-        var uuid = selectedSigns[i].getAttributeNS(null, 'uuid');
-        var root = getByUuid(config, uuid);
-        selectedElements.push(root);
-    }
+    for (let i = 0; i < selectedSigns.length; i++)
+        selectedElements.push(getByUuid(config, selectedSigns[i].getAttributeNS(null, 'uuid')));
     if (selectedElements.length <= 0)
         selectedElements = [root];
 
@@ -235,84 +230,87 @@ function clickContextMenuItem(menuItem) {
             close = cmdObj.execute();
     }
     else {
-        var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
-        var attr = null;
-        if (key != null && key != "undefined") {
-            attr = getAttribute(attrMenu, key);
-            if (attr == null) {
-                var defaultMenu = JSON.parse(getResource('/menus/menu_default.json'));
-                attr = getAttribute(defaultMenu, key);
+        for (let i = 0; i < selectedElements.length; i++) {
+            root = selectedElements[i];
+            var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
+            var attr = null;
+            if (key != null && key != "undefined") {
+                attr = getAttribute(attrMenu, key);
                 if (attr == null) {
-                    var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
-                    attr = getAttribute(staffMenu.values, key);
+                    var defaultMenu = JSON.parse(getResource('/menus/menu_default.json'));
+                    attr = getAttribute(defaultMenu, key);
                     if (attr == null) {
-                        attr = customOrgs.find(item => item.key == key);
-                        if (attr != null) {
-                            attrMenu = [
-                                {
-                                    "name": "Organisationen",
-                                    "type": "submenu",
-                                    "key": "org",
-                                    "values": customOrgs
-                                }
-                            ];
+                        var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
+                        attr = getAttribute(staffMenu.values, key);
+                        if (attr == null) {
+                            attr = customOrgs.find(item => item.key == key);
+                            if (attr != null) {
+                                attrMenu = [
+                                    {
+                                        "name": "Organisationen",
+                                        "type": "submenu",
+                                        "key": "org",
+                                        "values": customOrgs
+                                    }
+                                ];
+                            }
                         }
                     }
                 }
             }
-        }
-        else
-            attr = getAttribute(attrMenu, cmd);
-        if (attr == null)
-            return false;
-        if (key != null && key != "undefined")
-            switch (attr.type) {
-                case BOOL:
-                    if (root[key])
-                        delete root[key];
-                    else
-                        root[key] = true;
-                    close = true;
-                    break;
-                case RADIO:
-                    var parentAttr = getParentAttribute(attrMenu, null, attr);
-                    if (parentAttr.key != null)
-                        root[parentAttr.key] = attr.key;
-                    else
-                        for (let idx in parentAttr.values)
-                            if (parentAttr.values[idx].key == attr.key)
-                                root[parentAttr.values[idx].key] = true;
-                            else
-                                delete root[parentAttr.values[idx].key];
-                    close = true;
-                    break;
-                case STRING:
-                    let newValue = prompt(attr['name'], root[key]);
-                    if (newValue == undefined)
-                        return;
-                    root[key] = newValue;
-                    close = true;
-                    break;
-            }
-        if (attr.implicitAttritbues != null) {
-            for (let idx in attr.implicitAttritbues)
-                if (!attr.implicitAttritbues[idx])
-                    delete root[idx];
-                else
-                    root[idx] = attr.implicitAttritbues[idx];
-            close = true;
-        }
-        if (attr.conditionalAttritbues != null) {
-            var match = true;
-            for (let idx in attr.conditionalAttritbues.condition)
-                match &= root[idx] == attr.conditionalAttritbues.condition[idx];
-            if (match)
-                for (let idx in attr.conditionalAttritbues.values)
-                    if (!attr.conditionalAttritbues.values[idx])
+            else
+                attr = getAttribute(attrMenu, cmd);
+            if (attr == null)
+                return false;
+            if (key != null && key != "undefined")
+                switch (attr.type) {
+                    case BOOL:
+                        if (root[key])
+                            delete root[key];
+                        else
+                            root[key] = true;
+                        close = true;
+                        break;
+                    case RADIO:
+                        var parentAttr = getParentAttribute(attrMenu, null, attr);
+                        if (parentAttr.key != null)
+                            root[parentAttr.key] = attr.key;
+                        else
+                            for (let idx in parentAttr.values)
+                                if (parentAttr.values[idx].key == attr.key)
+                                    root[parentAttr.values[idx].key] = true;
+                                else
+                                    delete root[parentAttr.values[idx].key];
+                        close = true;
+                        break;
+                    case STRING:
+                        let newValue = prompt(attr['name'], root[key]);
+                        if (newValue == undefined)
+                            return;
+                        root[key] = newValue;
+                        close = true;
+                        break;
+                }
+            if (attr.implicitAttritbues != null) {
+                for (let idx in attr.implicitAttritbues)
+                    if (!attr.implicitAttritbues[idx])
                         delete root[idx];
                     else
-                        root[idx] = attr.conditionalAttritbues.values[idx];
-            close = true;
+                        root[idx] = attr.implicitAttritbues[idx];
+                close = true;
+            }
+            if (attr.conditionalAttritbues != null) {
+                var match = true;
+                for (let idx in attr.conditionalAttritbues.condition)
+                    match &= root[idx] == attr.conditionalAttritbues.condition[idx];
+                if (match)
+                    for (let idx in attr.conditionalAttritbues.values)
+                        if (!attr.conditionalAttritbues.values[idx])
+                            delete root[idx];
+                        else
+                            root[idx] = attr.conditionalAttritbues.values[idx];
+                close = true;
+            }
         }
     }
     if (close)
