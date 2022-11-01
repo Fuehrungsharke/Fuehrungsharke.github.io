@@ -93,35 +93,37 @@ function drop(evt) {
     dragButton = null;
     if (hoveringUuid != null && draggedElements != null) {
         var target = getByUuid(config, hoveringUuid);
-        var targetParent = getParentByUuid(config, hoveringUuid);
+        var selectedElements = getSelectedElements();
+        if (!selectedElements.some(selectedElement => selectedElement.uuid == target.uuid)) {
+            var targetParent = getParentByUuid(config, hoveringUuid);
+            for (let i = 0; i < draggedElements.length; i++) {
+                var source = getParentByUuid(config, draggedElements[i].draggingInfo.uuid);
+                var subject = getByUuid(config, draggedElements[i].draggingInfo.uuid);
 
-        for (let i = 0; i < draggedElements.length; i++) {
-            var source = getParentByUuid(config, draggedElements[i].draggingInfo.uuid);
-            var subject = getByUuid(config, draggedElements[i].draggingInfo.uuid);
+                if (target != null
+                    && source != null
+                    && subject != target
+                    && !isAncestorOf(target, subject)) {
+                    if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
+                        target = targetParent;
+                    if (!evt.ctrlKey && source.sub != null)
+                        source.sub = source.sub.filter(item => item != subject);
+                    if (!evt.ctrlKey && source.with != null)
+                        source.with = source.with.filter(item => item != subject);
 
-            if (target != null
-                && source != null
-                && subject != target
-                && !isAncestorOf(target, subject)) {
-                if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
-                    target = targetParent;
-                if (!evt.ctrlKey && source.sub != null)
-                    source.sub = source.sub.filter(item => item != subject);
-                if (!evt.ctrlKey && source.with != null)
-                    source.with = source.with.filter(item => item != subject);
-
-                if (evt.ctrlKey)
-                    subject = JSON.parse(JSON.stringify(subject));
-                if (evt.shiftKey) {
-                    if (target.with == null)
-                        target.with = [subject];
-                    else
-                        target.with.push(subject);
-                } else {
-                    if (target.sub == null)
-                        target.sub = [subject];
-                    else
-                        target.sub.push(subject);
+                    if (evt.ctrlKey)
+                        subject = JSON.parse(JSON.stringify(subject));
+                    if (evt.shiftKey) {
+                        if (target.with == null)
+                            target.with = [subject];
+                        else
+                            target.with.push(subject);
+                    } else {
+                        if (target.sub == null)
+                            target.sub = [subject];
+                        else
+                            target.sub.push(subject);
+                    }
                 }
             }
         }
