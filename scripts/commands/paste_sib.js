@@ -4,7 +4,17 @@ function PasteSibCmd(single) {
 
 PasteSibCmd.prototype.__proto__ = new AddCmd();
 
+PasteSibCmd.prototype.hide = false;
+
 PasteSibCmd.prototype.single = true;
+
+PasteSibCmd.prototype.isExecuteable = function () {
+    if (!Array.isArray(this.selectedElements) || this.selectedElements.length <= 0)
+        return false;
+    if (cachedElements == null || (Array.isArray(cachedElements) && cachedElements.length <= 0))
+        return false;
+    return true;
+}
 
 PasteSibCmd.prototype.execute = function () {
     for (let i = 0; i < this.selectedElements.length; i++) {

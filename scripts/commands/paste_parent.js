@@ -7,7 +7,7 @@ PasteParentCmd.prototype.hide = false;
 PasteParentCmd.prototype.isExecuteable = function () {
     if (!Array.isArray(this.selectedElements) || this.selectedElements.length <= 0)
         return false;
-    if (cachedElements == null)
+    if (cachedElements == null || (Array.isArray(cachedElements) && cachedElements.length <= 0))
         return false;
     if (Array.isArray(cachedElements) && cachedElements.length > 1)
         return false;
