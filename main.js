@@ -10,6 +10,7 @@ const SUB = 'sub';
 
 var KeyCode = {
     ESC: 27,
+    DEL: 46,
     C: 67,
     V: 86,
     X: 88,

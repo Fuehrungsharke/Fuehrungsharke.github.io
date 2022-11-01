@@ -29,6 +29,16 @@ function onKeyUp(evt) {
         if (cutCmd.execute())
             draw();
     }
+    else if (evt.keyCode == KeyCode.DEL) {
+        var delCmd = null;
+        if (evt.shiftKey)
+            delCmd = new DeleteSingleCmd();
+        else
+            delCmd = new DeleteTreeCmd();
+        delCmd.selectedElements = getSelectedElements();
+        if (delCmd.execute())
+            draw();
+    }
 }
 
 function clickSign(evt) {
