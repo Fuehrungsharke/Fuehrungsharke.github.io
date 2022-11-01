@@ -107,16 +107,18 @@ function drop(evt) {
                         target.sub.push(subject);
                 }
             }
-            else if (subject == target && !draggedElement.classList.contains('selected')) {
-                var transform = getTransform(draggedElement);
+            else if (subject == target) {
                 var mode = getEventMode(evt);
-                updateSelection({
-                    'minX': fromCanvasCoords(transform.x),
-                    'minY': fromCanvasCoords(transform.y),
-                    'maxX': fromCanvasCoords(transform.x + signWidth),
-                    'maxY': fromCanvasCoords(transform.y + signHeight),
-                }, mode);
-                clearSelectionRect();
+                if (!draggedElement.classList.contains('selected') || mode == 'remove') {
+                    var transform = getTransform(draggedElement);
+                    updateSelection({
+                        'minX': fromCanvasCoords(transform.x),
+                        'minY': fromCanvasCoords(transform.y),
+                        'maxX': fromCanvasCoords(transform.x + signWidth),
+                        'maxY': fromCanvasCoords(transform.y + signHeight),
+                    }, mode);
+                    clearSelectionRect();
+                }
             }
         }
     }
