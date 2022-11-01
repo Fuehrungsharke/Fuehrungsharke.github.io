@@ -30,6 +30,8 @@ var commmands = {
     'decollapse': new DecollapseCmd(),
 };
 
+var currentSignMenu = null;
+
 function getPlaceholder(name) {
     if (name == 'CustomOrgs')
         return customOrgs;
@@ -49,6 +51,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     var key = attrItem.key;
     var menuItem = document.createElement('li');
     menuItem.classList.add('context-menu-item');
+    var attrItems = [];
 
     if (attrItem.icon != null) {
         var icon = document.createElement('img');
@@ -90,9 +93,13 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 subMenu.classList.add('sub-sub-menu');
             else
                 subMenu.classList.add('sub-menu');
-            var subMenuItems = buildMenu(root, attrItem, attrItem.values);
+            var subMenuResult = buildMenu(root, attrItem, attrItem.values);
+            var subMenuItems = subMenuResult.menuItems;
             subMenu.replaceChildren(...subMenuItems);
             menuItem.appendChild(subMenu);
+            var clonedAttrItem = JSON.parse(JSON.stringify(attrItem));
+            clonedAttrItem.attrItems = subMenuResult.attrItems;
+            attrItems.push(clonedAttrItem);
             break;
         case BOOL:
         case RADIO:
@@ -107,52 +114,70 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             }
             else
                 menuItem.appendChild(document.createTextNode(attrItem.name));
+            attrItems.push(attrItem);
             break;
         case STRING:
             menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
+            attrItems.push(attrItem);
             break;
         case HEADER:
             var menuItem = document.createElement('li');
             menuItem.classList.add('context-menu-header');
             menuItem.appendChild(document.createTextNode(attrItem.name));
+            attrItems.push(attrItem);
             break;
     }
-    return menuItem;
+    return {
+        'menuItems': menuItem,
+        'attrItems': attrItems,
+    };
 }
 
 function buildMenu(root, parentMenuItem, attrMenu) {
     var menuItems = [];
+    var attrItems = [];
     if (Array.isArray(attrMenu) && attrMenu.length > 0)
         for (let idx in attrMenu) {
-            var menuItem = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
+            var menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
+            if (menuItemResult == null)
+                continue;
+            var menuItem = menuItemResult.menuItems;
             if (Array.isArray(menuItem) && menuItem.length > 0)
                 menuItems = menuItems.concat(menuItem);
             else if (menuItem != null)
                 menuItems.push(menuItem);
+            attrItems = attrItems.concat(menuItemResult.attrItems);
         }
     else {
-        var menuItem = buildMenuItem(root, parentMenuItem, attrMenu);
-        if (Array.isArray(menuItem) && menuItem.length > 0)
-            menuItems = menuItems.concat(menuItem);
-        else
-            menuItems.push(menuItem);
+        var menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu);
+        if (menuItemResult != null) {
+            var menuItem = menuItemResult.menuItems;
+            if (Array.isArray(menuItem) && menuItem.length > 0)
+                menuItems = menuItems.concat(menuItem);
+            else
+                menuItems.push(menuItem);
+            attrItems = attrItems.concat(menuItemResult.attrItems);
+        }
     }
-    return menuItems;
+    return {
+        'menuItems': menuItems,
+        'attrItems': attrItems,
+    };
 }
 
 function openSignContextMenu(evt, sign) {
     var uuid = sign.getAttributeNS(null, 'uuid');
     var root = getByUuid(config, uuid);
 
-    var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
-    var newMenuItems = buildMenu(root, null, attrMenu);
+    var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`))
+        .concat(JSON.parse(getResource('/menus/menu_default.json')));
+    var menuResult = buildMenu(root, null, attrMenu);
 
-    var menuDefault = buildMenu(root, null, JSON.parse(getResource('/menus/menu_default.json')));
-    newMenuItems = newMenuItems.concat(menuDefault);
+    currentSignMenu = menuResult.attrItems;
 
     var menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
-    menuItems.replaceChildren(...newMenuItems);
+    menuItems.replaceChildren(...menuResult.menuItems);
 
     var touchpos = getEvtPos(evt);
     var menu = document.querySelector('.context-menu');
@@ -164,6 +189,7 @@ function openSignContextMenu(evt, sign) {
 function closeSignContextMenu() {
     var menu = document.querySelector('.context-menu');
     menu.classList.remove('context-menu-active');
+    currentSignMenu = null;
 }
 
 function getUuidOfContextMenu(menuItem) {
@@ -173,36 +199,31 @@ function getUuidOfContextMenu(menuItem) {
     return menuItem.parentElement.getAttributeNS(null, 'uuid');
 }
 
-function getAttribute(attrMenu, key) {
+function getAttribute(attrMenu, key, value) {
+    var attrItem = attrMenu.find(item => item[key] == value);
+    if (attrItem != null)
+        return attrItem;
+
     for (let idx in attrMenu) {
-        var attrItem = attrMenu[idx];
-        if (attrItem.type == PLACEHOLDER)
-            attrItem = getPlaceholder(attrItem.name);
-        if (attrItem.type == SUBMENU) {
-            var subResult = getAttribute(attrItem.values, key);
-            if (subResult != null)
-                return subResult;
-        }
-        else if (attrItem.key == key)
-            return attrMenu[idx];
-        else if (attrItem.cmd == key)
-            return attrMenu[idx];
+        if (attrMenu[idx].attrItems == null)
+            continue;
+        var subResult = getAttribute(attrMenu[idx].attrItems, key, value);
+        if (subResult != null)
+            return subResult;
     }
     return null;
 }
 
 function getParentAttribute(attrMenu, parent, child) {
     for (let idx in attrMenu) {
-        var attrItem = attrMenu[idx];
-        if (attrItem.type == PLACEHOLDER)
-            attrItem = getPlaceholder(attrItem.name);
-        if (attrItem.type == SUBMENU) {
-            var subResult = getParentAttribute(attrItem.values, attrItem, child);
-            if (subResult != null)
-                return subResult;
-        }
-        else if (attrItem.key == child.key)
+        if (attrMenu[idx] == child)
             return parent;
+
+        if (attrMenu[idx].attrItems == null)
+            continue;
+        var subResult = getParentAttribute(attrMenu[idx].attrItems, attrMenu[idx], child);
+        if (subResult != null)
+            return subResult;
     }
     return null;
 }
@@ -230,39 +251,18 @@ function clickContextMenuItem(menuItem) {
         if (cmdObj.isExecuteable())
             close = cmdObj.execute();
     }
-    else
+    else if (currentSignMenu != null)
         for (let i = 0; i < selectedElements.length; i++) {
             root = selectedElements[i];
-            var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`));
             var attr = null;
-            if (key != null && key != "undefined") {
-                attr = getAttribute(attrMenu, key);
-                if (attr == null) {
-                    var defaultMenu = JSON.parse(getResource('/menus/menu_default.json'));
-                    attr = getAttribute(defaultMenu, key);
-                    if (attr == null) {
-                        var staffMenu = JSON.parse(getResource('/menus/menu_staff.json'));
-                        attr = getAttribute(staffMenu.values, key);
-                        if (attr == null) {
-                            attr = customOrgs.find(item => item.key == key);
-                            if (attr != null) {
-                                attrMenu = [
-                                    {
-                                        "name": "Organisationen",
-                                        "type": "submenu",
-                                        "key": "org",
-                                        "values": customOrgs
-                                    }
-                                ];
-                            }
-                        }
-                    }
-                }
-            }
+            if (key != null && key != "undefined")
+                attr = getAttribute(currentSignMenu, 'key', key);
             else
-                attr = getAttribute(attrMenu, cmd);
+                attr = getAttribute(currentSignMenu, 'cmd', cmd);
+
             if (attr == null)
                 return false;
+
             if (key != null && key != "undefined")
                 switch (attr.type) {
                     case BOOL:
@@ -273,7 +273,7 @@ function clickContextMenuItem(menuItem) {
                         close = true;
                         break;
                     case RADIO:
-                        var parentAttr = getParentAttribute(attrMenu, null, attr);
+                        var parentAttr = getParentAttribute(currentSignMenu, null, attr);
                         if (parentAttr.key != null)
                             root[parentAttr.key] = attr.key;
                         else
