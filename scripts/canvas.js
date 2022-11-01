@@ -73,25 +73,27 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
     root['uuid'] = uuid;
     if (root.hasOwnProperty('sign')) {
         var itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
-        if (root.hasOwnProperty('name')) {
-            var offset = -32;
-            var nameParts = root['name'].split(', ');
-            for (let namePart in nameParts) {
-                itemBox.appendChild(getText(uuid, nameParts[namePart], signWidth / 2, signHeight + offset));
-                offset += 24;
-            }
-        }
+        var additionalHeight = 0;
         if (root.show_staff) {
             var staff = getStaff(root);
             var staffText = document.createElement('text');
             staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan>${staff[3]}</tspan>`;
             staffText.classList.add('staff');
             staffText.setAttribute('x', signWidth / 2);
-            staffText.setAttribute('y', signHeight - 32);
+            staffText.setAttribute('y', signHeight);
             staffText.setAttribute('font-size', 22);
             staffText.setAttribute('font-family', 'Verdana');
             staffText.setAttribute('text-anchor', 'middle');
             itemBox.appendChild(staffText);
+            additionalHeight += 32;
+        }
+        if (root.name != null) {
+            var offset = additionalHeight;
+            var nameParts = root['name'].split(', ');
+            for (let namePart in nameParts) {
+                itemBox.appendChild(getText(uuid, nameParts[namePart], signWidth / 2, signHeight + offset));
+                offset += 24;
+            }
         }
         canvas.appendChild(itemBox);
     }
