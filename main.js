@@ -13,6 +13,9 @@ var hoveringUuid = null;
 
 var KeyCode = {
     ESC: 27,
+    C: 67,
+    V: 86,
+    X: 88,
     Y: 89,
     Z: 90,
 }

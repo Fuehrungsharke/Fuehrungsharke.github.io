@@ -236,10 +236,7 @@ function clickContextMenuItem(menuItem) {
     var key = menuItem.getAttributeNS(null, 'key');
     var uuid = getUuidOfContextMenu(menuItem);
     var root = getByUuid(config, uuid);
-    var selectedElements = [];
-    var selectedSigns = outputSvg.getElementsByClassName('selected');
-    for (let i = 0; i < selectedSigns.length; i++)
-        selectedElements.push(getByUuid(config, selectedSigns[i].getAttributeNS(null, 'uuid')));
+    var selectedElements = getSelectedElements();
     if (selectedElements.length <= 0)
         selectedElements = [root];
 

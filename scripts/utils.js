@@ -147,3 +147,11 @@ function getTransform(element) {
         'scaleY': parseInt(match[4]),
     };
 }
+
+function getSelectedElements() {
+    var selectedElements = [];
+    var selectedSigns = outputSvg.getElementsByClassName('selected');
+    for (let i = 0; i < selectedSigns.length; i++)
+        selectedElements.push(getByUuid(config, selectedSigns[i].getAttributeNS(null, 'uuid')));
+    return selectedElements;
+}

@@ -3,10 +3,32 @@ function onKeyUp(evt) {
         closeSignContextMenu();
         clearSelection();
     }
-    else if (evt.keyCode === KeyCode.Z && evt.ctrlKey)
+    else if (evt.keyCode == KeyCode.Z && evt.ctrlKey)
         undo();
-    else if (evt.keyCode === KeyCode.Y && evt.ctrlKey)
+    else if (evt.keyCode == KeyCode.Y && evt.ctrlKey)
         redo();
+    else if (evt.keyCode == KeyCode.C && evt.ctrlKey) {
+        var cutCmd = new CopyCmd();
+        cutCmd.selectedElements = getSelectedElements();
+        cutCmd.execute();
+    }
+    else if (evt.keyCode == KeyCode.X && evt.ctrlKey) {
+        var cutCmd = null;
+        if (evt.shiftKey)
+            cutCmd = new CutSingleCmd();
+        else
+            cutCmd = new CutTreeCmd();
+        cutCmd.selectedElements = getSelectedElements();
+        if (cutCmd.execute())
+            draw();
+    }
+    else if (evt.keyCode == KeyCode.V && evt.ctrlKey) {
+        var cutCmd = new PasteSubCmd();
+        cutCmd.single = evt.shiftKey;
+        cutCmd.selectedElements = getSelectedElements();
+        if (cutCmd.execute())
+            draw();
+    }
 }
 
 function clickSign(evt) {
