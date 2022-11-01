@@ -53,12 +53,12 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     var attrItems = [];
 
-    var icon = null;
-    if (attrItem.icon != null) {
-        icon = document.createElement('img');
+    var icon = document.createElement('img');;
+    menuItem.appendChild(icon);
+    if (attrItem.icon != null)
         icon.setAttribute('src', attrItem.icon);
-        menuItem.appendChild(icon);
-    }
+    else
+        icon.setAttribute('src', '/signs/Empty.svg');
 
     if (attrItem.styles != null)
         for (let idx in attrItem.styles)
