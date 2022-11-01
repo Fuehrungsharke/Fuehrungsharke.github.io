@@ -128,3 +128,22 @@ function getParentByUuid(root, uuid) {
         }
     return null;
 }
+
+function toCanvasCoords(value) {
+    return value * (1 / zoomFactor);
+}
+
+function fromCanvasCoords(value) {
+    return value * zoomFactor;
+}
+
+function getTransform(element) {
+    var transform = element.getAttributeNS(null, 'transform');
+    var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
+    return {
+        'x': parseInt(match[1]),
+        'y': parseInt(match[2]),
+        'scaleX': parseInt(match[3]),
+        'scaleY': parseInt(match[4]),
+    };
+}

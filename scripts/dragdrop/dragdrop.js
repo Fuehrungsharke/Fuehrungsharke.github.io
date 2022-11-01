@@ -56,11 +56,7 @@ function dragging(evt) {
         evt.preventDefault();
         draggingElement.setAttributeNS(null, 'transform', `translate(${(touchpos.clientX * (1 / zoomFactor) + draggingElement.draggingInfo.offsetX)}, ${touchpos.clientY * (1 / zoomFactor) + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
     } else if (selectionStartPos != null) {
-        var mode = 'normal';
-        if (evt.ctrlKey)
-            mode = 'add';
-        else if (evt.shiftKey)
-            mode = 'remove';
+        var mode = getEventMode(evt);
         updateSelection({
             minX: Math.min(selectionStartPos.clientX, touchpos.clientX) - displaySvg.getBoundingClientRect().x,
             minY: Math.min(selectionStartPos.clientY, touchpos.clientY) - displaySvg.getBoundingClientRect().y,
@@ -80,28 +76,40 @@ function drop(evt) {
         var targetParent = getParentByUuid(config, hoveringUuid);
 
         if (target != null
-            && source != null
-            && subject != target
-            && !isAncestorOf(target, subject)) {
-            if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
-                target = targetParent;
-            if (!evt.ctrlKey && source.sub != null)
-                source.sub = source.sub.filter(item => item != subject);
-            if (!evt.ctrlKey && source.with != null)
-                source.with = source.with.filter(item => item != subject);
+            && source != null) {
+            if (subject != target
+                && !isAncestorOf(target, subject)) {
+                if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
+                    target = targetParent;
+                if (!evt.ctrlKey && source.sub != null)
+                    source.sub = source.sub.filter(item => item != subject);
+                if (!evt.ctrlKey && source.with != null)
+                    source.with = source.with.filter(item => item != subject);
 
-            if (evt.ctrlKey)
-                subject = JSON.parse(JSON.stringify(subject));
-            if (evt.shiftKey) {
-                if (target.with == null)
-                    target.with = [subject];
-                else
-                    target.with.push(subject);
-            } else {
-                if (target.sub == null)
-                    target.sub = [subject];
-                else
-                    target.sub.push(subject);
+                if (evt.ctrlKey)
+                    subject = JSON.parse(JSON.stringify(subject));
+                if (evt.shiftKey) {
+                    if (target.with == null)
+                        target.with = [subject];
+                    else
+                        target.with.push(subject);
+                } else {
+                    if (target.sub == null)
+                        target.sub = [subject];
+                    else
+                        target.sub.push(subject);
+                }
+            }
+            else if (subject == target) {
+                var transform = getTransform(draggedElement);
+                var mode = getEventMode(evt);
+                updateSelection({
+                    'minX': fromCanvasCoords(transform.x),
+                    'minY': fromCanvasCoords(transform.y),
+                    'maxX': fromCanvasCoords(transform.x + signWidth),
+                    'maxY': fromCanvasCoords(transform.y + signHeight),
+                }, mode);
+                clearSelectionRect();
             }
         }
     }
@@ -140,13 +148,11 @@ function updateSelection(markedArea, mode) {
 
     var selectables = outputSvg.getElementsByClassName('selectable');
     for (let i = 0; i < selectables.length; i++) {
-        var transform = selectables[i].getAttributeNS(null, 'transform');
-        var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
-
-        if (parseInt(match[1]) + 0.2 * signWidth >= markedArea.minX * (1 / zoomFactor)
-            && parseInt(match[2]) + 0.2 * signWidth >= markedArea.minY * (1 / zoomFactor)
-            && parseInt(match[1]) + 0.8 * signWidth <= markedArea.maxX * (1 / zoomFactor)
-            && parseInt(match[2]) + 0.8 * signHeight <= markedArea.maxY * (1 / zoomFactor)) {
+        var transform = getTransform(selectables[i]);
+        if (parseInt(transform.x) + 0.2 * signWidth >= toCanvasCoords(markedArea.minX)
+            && parseInt(transform.y) + 0.2 * signHeight >= toCanvasCoords(markedArea.minY)
+            && parseInt(transform.x) + 0.8 * signWidth <= toCanvasCoords(markedArea.maxX)
+            && parseInt(transform.y) + 0.8 * signHeight <= toCanvasCoords(markedArea.maxY)) {
             if (mode == 'remove')
                 selectables[i].classList.remove('selected');
             else
@@ -155,4 +161,13 @@ function updateSelection(markedArea, mode) {
         else if (mode == 'normal' && selectables[i].classList.contains('selected'))
             selectables[i].classList.remove('selected');
     }
+}
+
+function getEventMode(evt) {
+    var mode = 'normal';
+    if (evt.ctrlKey)
+        mode = 'add';
+    else if (evt.shiftKey)
+        mode = 'remove';
+    return mode;
 }
