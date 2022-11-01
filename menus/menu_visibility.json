@@ -1,22 +1,27 @@
 {
     "name": "Sichtbarkeit",
     "type": "submenu",
+    "icon": "/icons/ui/eye.svg",
     "values": [
         {
             "name": "Deaktivieren",
             "nameInverted": "Aktivieren",
             "type": "bool",
-            "key": "inactive"
+            "key": "inactive",
+            "icon": "/icons/ui/toggle_off.svg",
+            "iconInverted": "/icons/ui/toggle_on.svg"
         },
         {
             "name": "Einklappen",
             "type": "cmd",
-            "cmd": "collapse"
+            "cmd": "collapse",
+            "icon": "/icons/ui/collapse.svg"
         },
         {
             "name": "Ausklappen",
             "type": "cmd",
-            "cmd": "decollapse"
+            "cmd": "decollapse",
+            "icon": "/icons/ui/decollapse.svg"
         }
     ]
 }

@@ -14,6 +14,7 @@
     {
         "name": "Hinzufügen",
         "type": "submenu",
+        "icon": "/icons/ui/add.svg",
         "values": [
             {
                 "name": "Nebenstehend",
@@ -72,6 +73,7 @@
     {
         "name": "Ausschneiden",
         "type": "submenu",
+        "icon": "/icons/ui/cut.svg",
         "values": [
             {
                 "name": "Untergeordnete Elemente behalten",
@@ -96,11 +98,13 @@
     {
         "name": "Kopieren",
         "type": "cmd",
-        "cmd": "copy"
+        "cmd": "copy",
+        "icon": "/icons/ui/copy.svg"
     },
     {
         "name": "Einfügen",
         "type": "submenu",
+        "icon": "/icons/ui/paste.svg",
         "values": [
             {
                 "name": "Ohne untergeordnete Elemente",
@@ -181,6 +185,7 @@
     {
         "name": "Entfernen",
         "type": "submenu",
+        "icon": "/icons/ui/delete.svg",
         "values": [
             {
                 "name": "Untergeordnete Elemente behalten",

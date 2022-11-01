@@ -53,8 +53,9 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     var attrItems = [];
 
+    var icon = null;
     if (attrItem.icon != null) {
-        var icon = document.createElement('img');
+        icon = document.createElement('img');
         icon.setAttribute('src', attrItem.icon);
         menuItem.appendChild(icon);
     }
@@ -111,8 +112,11 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                     menuItem.classList.add('menu-item-selected');
                     menuItem.appendChild(document.createTextNode(attrItem.name));
                 }
-                else
+                else {
                     menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
+                    if (attrItem.iconInverted != null)
+                        icon.setAttribute('src', attrItem.iconInverted);
+                }
             }
             else
                 menuItem.appendChild(document.createTextNode(attrItem.name));
