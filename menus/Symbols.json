@@ -1,6 +1,7 @@
 {
     "name": "Symbole",
     "type": "submenu",
+    "icon": "/icons/ui/stars.svg",
     "values": [
         {
             "name": "Löschen",
@@ -55,6 +56,7 @@
             "name": "Zurücksetzen",
             "type": "cmd",
             "cmd": "resetSymbol",
+            "icon": "/icons/ui/reset.svg",
             "implicitAttritbues": {
                 "extinguish": false,
                 "medical": false,

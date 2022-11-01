@@ -54,6 +54,7 @@
                 "name": "Zurücksetzen",
                 "type": "cmd",
                 "cmd": "resetEngine",
+                "icon": "/icons/ui/reset.svg",
                 "implicitAttritbues": {
                     "automotive": false,
                     "offroad": false,

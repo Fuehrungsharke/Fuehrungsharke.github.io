@@ -1,22 +1,27 @@
 {
     "name": "Stärke",
     "type": "submenu",
+    "icon": "/icons/ui/sum.svg",
     "values": [
         {
             "name": "Anzeigen",
             "nameInverted": "Ausblenden",
             "type": "bool",
-            "key": "show_staff"
+            "key": "show_staff",
+            "icon": "/icons/ui/eye.svg",
+            "iconInverted": "/icons/ui/eye_disabled.svg"
         },
         {
             "name": "Manuell festlegen",
             "type": "cmd",
-            "cmd": "set_staff"
+            "cmd": "set_staff",
+            "icon": "/icons/ui/edit.svg"
         },
         {
             "name": "Automatisch ermitteln",
             "type": "cmd",
-            "cmd": "reset_staff"
+            "cmd": "reset_staff",
+            "icon": "/icons/ui/calc.svg"
         }
     ]
 }

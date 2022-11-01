@@ -4,8 +4,24 @@
         "type": "placeholder"
     },
     {
-        "name": "menu_visibility",
-        "type": "placeholder"
+        "name": "Deaktivieren",
+        "nameInverted": "Aktivieren",
+        "type": "bool",
+        "key": "inactive",
+        "icon": "/icons/ui/toggle_off.svg",
+        "iconInverted": "/icons/ui/toggle_on.svg"
+    },
+    {
+        "name": "Einklappen",
+        "type": "cmd",
+        "cmd": "collapse",
+        "icon": "/icons/ui/collapse.svg"
+    },
+    {
+        "name": "Ausklappen",
+        "type": "cmd",
+        "cmd": "decollapse",
+        "icon": "/icons/ui/decollapse.svg"
     },
     {
         "name": "",
