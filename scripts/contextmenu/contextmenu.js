@@ -259,18 +259,17 @@ function clickContextMenuItem(menuItem) {
         if (cmdObj.isExecuteable())
             close = cmdObj.execute();
     }
-    else if (currentSignMenu != null)
+    else if (currentSignMenu != null) {
+        var attr = null;
+        if (key != null && key != "undefined")
+            attr = getAttribute(currentSignMenu, 'key', key);
+        else
+            attr = getAttribute(currentSignMenu, 'cmd', cmd);
+        if (attr == null)
+            return false;
+            
         for (let i = 0; i < selectedElements.length; i++) {
             root = selectedElements[i];
-            var attr = null;
-            if (key != null && key != "undefined")
-                attr = getAttribute(currentSignMenu, 'key', key);
-            else
-                attr = getAttribute(currentSignMenu, 'cmd', cmd);
-
-            if (attr == null)
-                return false;
-
             if (key != null && key != "undefined")
                 switch (attr.type) {
                     case BOOL:
@@ -321,6 +320,7 @@ function clickContextMenuItem(menuItem) {
                 close = true;
             }
         }
+    }
     if (close)
         draw();
     return close;
