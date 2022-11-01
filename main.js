@@ -8,9 +8,6 @@ const LINESIZE = 26
 const WITH = 'with';
 const SUB = 'sub';
 
-var draggingElement = null;
-var hoveringUuid = null;
-
 var KeyCode = {
     ESC: 27,
     C: 67,

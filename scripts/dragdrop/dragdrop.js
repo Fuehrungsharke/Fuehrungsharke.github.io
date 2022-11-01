@@ -1,15 +1,16 @@
-var selectionStartPos = null;
 var selectionRect = document.getElementById("selectionRect");
+var selectionStartPos = null;
 var dragButton = null;
+var draggingElements = null;
+var hoveringUuid = null;
 
 function pointerOverSvg(uuid) {
     hoveringUuid = uuid;
 }
 
 function pointerOutSvg(uuid) {
-    if (hoveringUuid == uuid) {
+    if (hoveringUuid == uuid)
         hoveringUuid = null;
-    }
 }
 
 function drag(evt) {
@@ -18,49 +19,63 @@ function drag(evt) {
             return;
         dragButton = evt.button;
     }
+
     var element = evt.target;
     if (element.nodeName == 'text' && element.getAttributeNS(null, 'uuid') != null)
         return;
-    while (element != null && !element.classList.contains('draggable') && element.id != 'outputSvg') {
+
+    while (element != null && !element.classList.contains('draggable') && element.id != 'outputSvg')
         element = element.parentElement;
-    }
+
     var touchpos = getEvtPos(evt);
     if (element == null || !element.classList.contains('draggable')) {
         selectionStartPos = touchpos;
         return;
     }
-    draggingElement = element;
-    draggingElement.classList.add('draggedElement');
 
-    var canvas = draggingElement.parentElement;
-    var canvasChildren = Array.from(canvas.childNodes).filter(item => item != draggingElement);
-    canvasChildren.unshift(draggingElement);
-    canvas.childNodes = canvasChildren;
-
-    var transform = draggingElement.getAttributeNS(null, 'transform');
-    var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
-    if (match == null) {
-        draggingElement = null;
-        return;
+    var mode = getEventMode(evt);
+    if (!element.classList.contains('selected') || mode == 'remove') {
+        var transform = getTransform(element);
+        updateSelection({
+            'minX': fromCanvasCoords(transform.x),
+            'minY': fromCanvasCoords(transform.y),
+            'maxX': fromCanvasCoords(transform.x + signWidth),
+            'maxY': fromCanvasCoords(transform.y + signHeight),
+        }, mode);
+        clearSelectionRect();
     }
-    draggingElement.draggingInfo = {
-        originX: touchpos.clientX,
-        originY: touchpos.clientY,
-        offsetX: match[1] - touchpos.clientX * (1 / zoomFactor),
-        offsetY: match[2] - touchpos.clientY * (1 / zoomFactor),
-        scaleX: match[3],
-        scaleY: match[4],
-        uuid: draggingElement.getAttributeNS(null, 'uuid'),
-    };
+
+    draggingElements = outputSvg.getElementsByClassName('selected');
+    for (let i = 0; i < draggingElements.length; i++)
+        draggingElements[i].classList.add('draggedElement');
+
+    var canvasChildren = Array.from(outputSvg.childNodes).filter(item => !(item in draggingElements));
+    canvasChildren.unshift(draggingElements);
+    outputSvg.childNodes = canvasChildren;
+
+    for (let i = 0; i < draggingElements.length; i++) {
+        var transform = draggingElements[i].getAttributeNS(null, 'transform');
+        var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
+        draggingElements[i].draggingInfo = {
+            originX: touchpos.clientX,
+            originY: touchpos.clientY,
+            offsetX: match[1] - touchpos.clientX * (1 / zoomFactor),
+            offsetY: match[2] - touchpos.clientY * (1 / zoomFactor),
+            scaleX: match[3],
+            scaleY: match[4],
+            uuid: draggingElements[i].getAttributeNS(null, 'uuid'),
+        };
+    }
 }
 
 function dragging(evt) {
     if (evt.pointerType == 'mouse' && dragButton != 0)
         return;
     var touchpos = getEvtPos(evt);
-    if (draggingElement) {
+    if (draggingElements != null) {
         evt.preventDefault();
-        draggingElement.setAttributeNS(null, 'transform', `translate(${(touchpos.clientX * (1 / zoomFactor) + draggingElement.draggingInfo.offsetX)}, ${touchpos.clientY * (1 / zoomFactor) + draggingElement.draggingInfo.offsetY}) scale(${draggingElement.draggingInfo.scaleX} ${draggingElement.draggingInfo.scaleY})`);
+        for (let i = 0; i < draggingElements.length; i++)
+            draggingElements[i].setAttributeNS(null, 'transform', `translate(${(touchpos.clientX * (1 / zoomFactor) + draggingElements[i].draggingInfo.offsetX)}, ${touchpos.clientY * (1 / zoomFactor) + draggingElements[i].draggingInfo.offsetY}) scale(${draggingElements[i].draggingInfo.scaleX} ${draggingElements[i].draggingInfo.scaleY})`);
     } else if (selectionStartPos != null) {
         var mode = getEventMode(evt);
         updateSelection({
@@ -73,18 +88,20 @@ function dragging(evt) {
 }
 
 function drop(evt) {
-    var draggedElement = draggingElement;
-    draggingElement = null;
+    var draggedElements = draggingElements;
+    draggingElements = null;
     dragButton = null;
-    if (hoveringUuid != null && draggedElement != null) {
-        var source = getParentByUuid(config, draggedElement.draggingInfo.uuid);
-        var subject = getByUuid(config, draggedElement.draggingInfo.uuid);
+    if (hoveringUuid != null && draggedElements != null) {
         var target = getByUuid(config, hoveringUuid);
         var targetParent = getParentByUuid(config, hoveringUuid);
 
-        if (target != null
-            && source != null) {
-            if (subject != target
+        for (let i = 0; i < draggedElements.length; i++) {
+            var source = getParentByUuid(config, draggedElements[i].draggingInfo.uuid);
+            var subject = getByUuid(config, draggedElements[i].draggingInfo.uuid);
+
+            if (target != null
+                && source != null
+                && subject != target
                 && !isAncestorOf(target, subject)) {
                 if (targetParent != null && targetParent.with != null && targetParent.with.includes(target))
                     target = targetParent;
@@ -107,26 +124,15 @@ function drop(evt) {
                         target.sub.push(subject);
                 }
             }
-            else if (subject == target) {
-                var mode = getEventMode(evt);
-                if (!draggedElement.classList.contains('selected') || mode == 'remove') {
-                    var transform = getTransform(draggedElement);
-                    updateSelection({
-                        'minX': fromCanvasCoords(transform.x),
-                        'minY': fromCanvasCoords(transform.y),
-                        'maxX': fromCanvasCoords(transform.x + signWidth),
-                        'maxY': fromCanvasCoords(transform.y + signHeight),
-                    }, mode);
-                    clearSelectionRect();
-                }
-            }
         }
     }
-    if (draggedElement) {
-        draggedElement.classList.remove('draggedElement');
+    if (draggedElements != null) {
         var droppos = getEvtPos(evt);
-        if (Math.abs(draggedElement.draggingInfo.originX - droppos.clientX) > 20
-            || Math.abs(draggedElement.draggingInfo.originY - droppos.clientY) > 20)
+        for (let i = 0; i < draggedElements.length; i++) {
+            draggedElements[i].classList.remove('draggedElement');
+        }
+        if (Math.abs(draggedElements[0].draggingInfo.originX - droppos.clientX) > 20
+            || Math.abs(draggedElements[0].draggingInfo.originY - droppos.clientY) > 20)
             draw();
     } else if (selectionStartPos != null) {
         selectionStartPos = null;
