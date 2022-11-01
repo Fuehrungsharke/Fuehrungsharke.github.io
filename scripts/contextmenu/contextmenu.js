@@ -98,8 +98,8 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             var subMenuItems = subMenuResult.menuItems;
             if (subMenuItems.every(item => item.classList.contains('menu-item-inactive')))
                 menuItem.classList.add('menu-item-inactive');
-            if (Array.isArray(attrItem.values) && attrItem.values.every(item => item.type == 'radio' || item.type == 'header' || item.type == 'cmd')) {
-                var selectedItem = attrItem.values.find(item => root[item.key]);
+            if (Array.isArray(attrItem.values)) {
+                var selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
                 if (selectedItem != null)
                     icon.setAttribute('src', selectedItem.icon);
             }
