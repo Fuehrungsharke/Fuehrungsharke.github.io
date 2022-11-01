@@ -69,10 +69,10 @@ function getText(uuid, text, x, y) {
 }
 
 function drawSign(canvas, root, x, y, inactiveInherited) {
-    var additionalHeight = 0;
+    var signDimensions = [signWidth, signHeight];
     var uuid = createUUID();
-    root['uuid'] = uuid;
-    if (root.hasOwnProperty('sign')) {
+    root.uuid = uuid;
+    if (root.sign != null) {
         var itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
         if (root.show_staff) {
             var staff = getStaff(root);
@@ -85,64 +85,66 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
             staffText.setAttribute('font-family', 'Verdana');
             staffText.setAttribute('text-anchor', 'middle');
             itemBox.appendChild(staffText);
-            additionalHeight += 32;
+            signDimensions[1] += 32;
         }
         if (root.name != null) {
             var nameParts = root['name'].split(', ');
             for (let namePart in nameParts) {
-                itemBox.appendChild(getText(uuid, nameParts[namePart], signWidth / 2, signHeight + additionalHeight));
-                additionalHeight += 24;
+                itemBox.appendChild(getText(uuid, nameParts[namePart], signWidth / 2, signDimensions[1]));
+                signDimensions[1] += 24;
             }
         }
         canvas.appendChild(itemBox);
     }
-    return additionalHeight;
+    return signDimensions;
 }
 
 function drawItem(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
+    var maxWithHeight = 0;
 
-    var additionalHeight = drawSign(canvas, root, x, y, inactiveInherited);
-    usedWidth += signWidth;
-
-    if (root.sign == 'Collapsed') {
-        usedHeight += signHeight;
-        return [usedWidth, usedHeight];
-    }
+    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += signDimensions[0];
+    if (root.sign == 'Collapsed')
+        return signDimensions;
 
     // With
-    if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH])) {
-        root[WITH].forEach(item => {
-            drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
-            usedWidth += signWidth;
+    if (root.with != null && Array.isArray(root.with)) {
+        root.with.forEach(item => {
+            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
+            usedWidth += withDimensions[0];
+            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
         });
     }
 
-    if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]) && root[SUB].length > 0) {
-        var hasSubTrees = root[SUB].some(item =>
-            (item.hasOwnProperty(SUB) && Array.isArray(item[SUB]) && item[SUB].length > 0)
-            || (item.hasOwnProperty(WITH) && Array.isArray(item[WITH]) && item[WITH].length > 0)
+    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
+        var hasSubTrees = root.sub.some(item =>
+            (item.sub != null && Array.isArray(item.sub) && item.sub.length > 0)
+            || (item.with != null && Array.isArray(item.with) && item.with.length > 0)
         );
         if (!hasSubTrees) {
             // Leafs
-            var leafs = root[SUB];
+            var leafs = root.sub;
             var leafsTotalWidth = 0;
+            var leafsTotalRowHeight = signDimensions[1];
             var leafRowWidth = 0;
             var leafGap = 0;
             if (leafs.length > 0) {
                 var cntLeafs = 0;
                 for (let leaf in leafs) {
                     cntLeafs += 1;
-                    drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight, root.inactive || inactiveInherited);
-                    leafRowWidth += signWidth;
+                    var leafDimensions = drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight, root.inactive || inactiveInherited);
+                    leafRowWidth += leafDimensions[0];
                     leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
+                    leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions[1]);
                     if (leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs + 1) {
+                        usedHeight += leafsTotalRowHeight;
                         leafRowWidth = 0;
-                        usedHeight += signHeight;
+                        leafsTotalRowHeight = 0;
                     }
                 }
-                usedHeight += signHeight;
+                usedHeight += leafsTotalRowHeight;
             }
             usedWidth += leafsTotalWidth;
         }
@@ -177,8 +179,7 @@ function drawItem(canvas, root, x, y, inactiveInherited) {
         }
     }
     else
-        usedHeight += signHeight;
-    usedHeight += additionalHeight;
+        usedHeight += Math.max(signDimensions[1], maxWithHeight);
     return [usedWidth, usedHeight];
 }
 
