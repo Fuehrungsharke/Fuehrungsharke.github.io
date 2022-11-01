@@ -69,11 +69,11 @@ function getText(uuid, text, x, y) {
 }
 
 function drawSign(canvas, root, x, y, inactiveInherited) {
+    var additionalHeight = 0;
     var uuid = createUUID();
     root['uuid'] = uuid;
     if (root.hasOwnProperty('sign')) {
         var itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
-        var additionalHeight = 0;
         if (root.show_staff) {
             var staff = getStaff(root);
             var staffText = document.createElement('text');
@@ -88,22 +88,22 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
             additionalHeight += 32;
         }
         if (root.name != null) {
-            var offset = additionalHeight;
             var nameParts = root['name'].split(', ');
             for (let namePart in nameParts) {
-                itemBox.appendChild(getText(uuid, nameParts[namePart], signWidth / 2, signHeight + offset));
-                offset += 24;
+                itemBox.appendChild(getText(uuid, nameParts[namePart], signWidth / 2, signHeight + additionalHeight));
+                additionalHeight += 24;
             }
         }
         canvas.appendChild(itemBox);
     }
+    return additionalHeight;
 }
 
 function drawItem(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
 
-    drawSign(canvas, root, x, y, inactiveInherited);
+    var additionalHeight = drawSign(canvas, root, x, y, inactiveInherited);
     usedWidth += signWidth;
 
     if (root.sign == 'Collapsed') {
@@ -178,6 +178,7 @@ function drawItem(canvas, root, x, y, inactiveInherited) {
     }
     else
         usedHeight += signHeight;
+    usedHeight += additionalHeight;
     return [usedWidth, usedHeight];
 }
 
