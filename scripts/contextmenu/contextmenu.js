@@ -267,7 +267,14 @@ function clickContextMenuItem(menuItem) {
             attr = getAttribute(currentSignMenu, 'cmd', cmd);
         if (attr == null)
             return false;
-            
+
+        var newString = null;
+        if (attr.type == STRING) {
+            newString = prompt(attr['name'], root[key]);
+            if (newString == undefined)
+                return true;
+        }
+
         for (let i = 0; i < selectedElements.length; i++) {
             root = selectedElements[i];
             if (key != null && key != "undefined")
@@ -292,10 +299,7 @@ function clickContextMenuItem(menuItem) {
                         close = true;
                         break;
                     case STRING:
-                        let newValue = prompt(attr['name'], root[key]);
-                        if (newValue == undefined)
-                            return;
-                        root[key] = newValue;
+                        root[key] = newString;
                         close = true;
                         break;
                 }
