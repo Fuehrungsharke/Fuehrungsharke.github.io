@@ -98,6 +98,11 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             var subMenuItems = subMenuResult.menuItems;
             if (subMenuItems.every(item => item.classList.contains('menu-item-inactive')))
                 menuItem.classList.add('menu-item-inactive');
+            if (Array.isArray(attrItem.values) && attrItem.values.every(item => item.type == 'radio' || item.type == 'header' || item.type == 'cmd')) {
+                var selectedItem = attrItem.values.find(item => root[item.key]);
+                if (selectedItem != null)
+                    icon.setAttribute('src', selectedItem.icon);
+            }
             subMenu.replaceChildren(...subMenuItems);
             menuItem.appendChild(subMenu);
             var clonedAttrItem = JSON.parse(JSON.stringify(attrItem));

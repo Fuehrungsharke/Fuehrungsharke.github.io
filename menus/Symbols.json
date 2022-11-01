@@ -1,7 +1,6 @@
 {
-    "name": "Symbole",
+    "name": "Symbol",
     "type": "submenu",
-    "icon": "/icons/ui/stars.svg",
     "values": [
         {
             "name": "Löschen",
@@ -61,6 +60,7 @@
                 "extinguish": false,
                 "medical": false,
                 "clear": false,
+                "bridge": false,
                 "transport": false
             }
         }
