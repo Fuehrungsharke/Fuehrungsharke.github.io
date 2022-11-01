@@ -103,15 +103,6 @@ document.addEventListener('contextmenu', function (evt) {
         evt.preventDefault();
 });
 
-window.onkeyup = function (e) {
-    if (e.keyCode === KeyCode.ESC) {
-        closeSignContextMenu();
-        clearSelection();
-    }
-    else if (e.keyCode === KeyCode.Z && e.ctrlKey)
-        undo();
-    else if (e.keyCode === KeyCode.Y && e.ctrlKey)
-        redo();
-}
+window.onkeyup = onKeyUp;
 
 draw();
