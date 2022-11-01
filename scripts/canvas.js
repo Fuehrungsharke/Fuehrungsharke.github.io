@@ -69,18 +69,19 @@ function getText(uuid, text, x, y) {
 }
 
 function drawSign(canvas, root, x, y, inactiveInherited) {
-    var signDimensions = [signWidth, signHeight];
+    var signDimensions = [0, 0];
     var uuid = createUUID();
     root.uuid = uuid;
     if (root.sign != null) {
         var itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
+        signDimensions = [256, 256];
         if (root.show_staff) {
             var staff = getStaff(root);
             var staffText = document.createElement('text');
             staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan>${staff[3]}</tspan>`;
             staffText.classList.add('staff');
-            staffText.setAttribute('x', signWidth / 2);
-            staffText.setAttribute('y', signHeight);
+            staffText.setAttribute('x', signDimensions[0] / 2);
+            staffText.setAttribute('y', signDimensions[1]);
             staffText.setAttribute('font-size', 22);
             staffText.setAttribute('font-family', 'Verdana');
             staffText.setAttribute('text-anchor', 'middle');
@@ -90,7 +91,7 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
         if (root.name != null) {
             var nameParts = root['name'].split(', ');
             for (let namePart in nameParts) {
-                itemBox.appendChild(getText(uuid, nameParts[namePart], signWidth / 2, signDimensions[1]));
+                itemBox.appendChild(getText(uuid, nameParts[namePart], signDimensions[0] / 2, signDimensions[1]));
                 signDimensions[1] += 24;
             }
         }
@@ -138,7 +139,7 @@ function drawItem(canvas, root, x, y, inactiveInherited) {
                     leafRowWidth += leafDimensions[0];
                     leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
                     leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions[1]);
-                    if (leafRowWidth % (signWidth * 4) == 0 && leafs.length > cntLeafs + 1) {
+                    if (cntLeafs % 4 == 0 && leafs.length > cntLeafs + 1) {
                         usedHeight += leafsTotalRowHeight;
                         leafRowWidth = 0;
                         leafsTotalRowHeight = 0;
@@ -153,6 +154,7 @@ function drawItem(canvas, root, x, y, inactiveInherited) {
             var subTrees = root[SUB];
             var subTotalWidth = 0;
             if (subTrees.length > 0) {
+                var signHeight = 256
                 var line = getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2);
                 if (root.inactive || inactiveInherited)
                     line.setAttribute('opacity', 0.25);
