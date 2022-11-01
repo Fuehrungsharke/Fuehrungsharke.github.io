@@ -1,5 +1,6 @@
 var selectionStartPos = null;
 var selectionRect = document.getElementById("selectionRect");
+var dragButton = null;
 
 function pointerOverSvg(uuid) {
     hoveringUuid = uuid;
@@ -12,8 +13,11 @@ function pointerOutSvg(uuid) {
 }
 
 function drag(evt) {
-    if (evt.pointerType == 'mouse' && evt.button != 0)
-        return;
+    if (evt.pointerType == 'mouse') {
+        if (evt.button != 0 && evt.button != 2)
+            return;
+        dragButton = evt.button;
+    }
     var element = evt.target;
     if (element.nodeName == 'text' && element.getAttributeNS(null, 'uuid') != null)
         return;
@@ -51,6 +55,8 @@ function drag(evt) {
 }
 
 function dragging(evt) {
+    if (evt.pointerType == 'mouse' && dragButton != 0)
+        return;
     var touchpos = getEvtPos(evt);
     if (draggingElement) {
         evt.preventDefault();
@@ -69,6 +75,7 @@ function dragging(evt) {
 function drop(evt) {
     var draggedElement = draggingElement;
     draggingElement = null;
+    dragButton = null;
     if (hoveringUuid != null && draggedElement != null) {
         var source = getParentByUuid(config, draggedElement.draggingInfo.uuid);
         var subject = getByUuid(config, draggedElement.draggingInfo.uuid);
@@ -100,7 +107,7 @@ function drop(evt) {
                         target.sub.push(subject);
                 }
             }
-            else if (subject == target) {
+            else if (subject == target && !draggedElement.classList.contains('selected')) {
                 var transform = getTransform(draggedElement);
                 var mode = getEventMode(evt);
                 updateSelection({
