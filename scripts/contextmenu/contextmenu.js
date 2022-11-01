@@ -95,6 +95,8 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 subMenu.classList.add('sub-menu');
             var subMenuResult = buildMenu(root, attrItem, attrItem.values);
             var subMenuItems = subMenuResult.menuItems;
+            if (subMenuItems.every(item => item.classList.contains('menu-item-inactive')))
+                menuItem.classList.add('menu-item-inactive');
             subMenu.replaceChildren(...subMenuItems);
             menuItem.appendChild(subMenu);
             var clonedAttrItem = JSON.parse(JSON.stringify(attrItem));

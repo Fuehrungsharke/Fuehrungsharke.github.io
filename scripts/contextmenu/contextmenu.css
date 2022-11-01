@@ -43,12 +43,16 @@
     font-weight: bold;
 }
 
-.context-menu .context-menu-item:hover {
-    background: #f2f2f2;
+.menu-item-inactive {
+    color: #ccc;
 }
 
-.menu-item-inactive {
-    opacity: 0.5;
+.menu-item-inactive img {
+    opacity: 0.2;
+}
+
+.context-menu .context-menu-item:hover {
+    background: #f2f2f2;
 }
 
 .context-menu .context-menu-item .with-submenu {
@@ -71,6 +75,11 @@
 .with-submenu:hover .sub-menu {
     opacity: 1;
     pointer-events: auto;
+}
+
+.menu-item-inactive:hover .sub-menu {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .context-menu .sub-sub-menu {
