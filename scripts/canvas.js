@@ -222,7 +222,6 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = Math.max(dimSign[1], dimWith[1]);
         var leafRowWidth = 0;
-        var leafFirstRowWidth = 0;
         var leafGap = 0;
         var cntLeafs = 0;
         var leafs = root.sub;
@@ -263,7 +262,6 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = dimSign[1];
         var leafRowWidth = 0;
-        var leafFirstRowWidth = 0;
         var leafGap = 0;
         var cntLeafs = 0;
 
