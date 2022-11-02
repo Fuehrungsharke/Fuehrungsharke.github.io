@@ -115,24 +115,29 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
     return signDimensions;
 }
 
+function drawWithHorizontally(canvas, root, x, y, inactiveInherited) {
+    var dim = [0, 0];
+    if (root.with == null || !Array.isArray(root.with) || root.with.length <= 0)
+        return dim;
+    root.with.forEach(item => {
+        var signDim = drawSign(canvas, item, x + dim[0], y, root.inactive || inactiveInherited);
+        dim[0] += signDim[0];
+        dim[1] = Math.max(dim[1], signDim[1]);
+    });
+    return dim;
+}
+
 function drawListRight(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var maxWithHeight = 0;
-
     var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
     usedWidth += signDimensions[0];
     if (root.sign == 'Collapsed')
         return signDimensions;
 
-    // With
-    if (root.with != null && Array.isArray(root.with)) {
-        root.with.forEach(item => {
-            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
-            usedWidth += withDimensions[0];
-            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
-        });
-    }
+    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    usedWidth += dimWith[0];
+    var maxWithHeight = dimWith[1];
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var subTrees = root.sub;
@@ -165,23 +170,14 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
 function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var maxWithHeight = 0;
-
     var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
     usedWidth += signDimensions[0];
     if (root.sign == 'Collapsed')
         return signDimensions;
 
-    // With
-    if (root.with != null && Array.isArray(root.with)) {
-        root.with.forEach(item => {
-            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
-            usedWidth += withDimensions[0];
-            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
-        });
-    }
-
-    usedHeight += Math.max(signDimensions[1], maxWithHeight);
+    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    usedWidth += dimWith[0];
+    usedHeight += Math.max(signDimensions[1], dimWith[1]);
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var subTrees = root.sub;
@@ -207,22 +203,14 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
 function drawRowRight(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var maxWithHeight = 0;
-
     var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
     usedWidth += signDimensions[0];
     if (root.sign == 'Collapsed')
         return signDimensions;
 
-    // With
-    if (root.with != null && Array.isArray(root.with)) {
-        root.with.forEach(item => {
-            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
-            usedWidth += withDimensions[0];
-            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
-        });
-    }
-
+    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    usedWidth += dimWith[0];
+    
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var signHeight = 256
 
@@ -255,30 +243,21 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         usedWidth += leafsTotalWidth;
     }
     else
-        usedHeight += Math.max(signDimensions[1], maxWithHeight);
+        usedHeight += Math.max(signDimensions[1], dimWith[1]);
     return [usedWidth, usedHeight];
 }
 
 function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var maxWithHeight = 0;
-
     var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
     usedWidth += signDimensions[0];
     if (root.sign == 'Collapsed')
         return signDimensions;
 
-    // With
-    if (root.with != null && Array.isArray(root.with)) {
-        root.with.forEach(item => {
-            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
-            usedWidth += withDimensions[0];
-            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
-        });
-    }
-
-    usedHeight += Math.max(signDimensions[1], maxWithHeight);
+    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    usedWidth += dimWith[0];
+    usedHeight += Math.max(signDimensions[1], dimWith[1]);
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var signHeight = 256
@@ -290,8 +269,8 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
         var leafGap = 0;
         var cntLeafs = 0;
 
-        appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + signDimensions[1], x + signDimensions[0] / 2, y + signDimensions[1] + signHeight / 2);
-        appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + signDimensions[1] + signHeight / 2, x + usedWidth, y + signDimensions[1] + signHeight / 2);
+        appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + signDimensions[1], x + signDimensions[0] / 2, y + usedHeight + signHeight / 2);
+        appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
 
         var leafs = root.sub;
         for (let leaf in leafs) {
