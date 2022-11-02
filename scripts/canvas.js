@@ -126,54 +126,6 @@ function drawLayoutA(canvas, root, x, y, inactiveInherited) {
         });
     }
 
-    usedHeight += Math.max(signDimensions[1], maxWithHeight);
-
-    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        var subTrees = root.sub;
-        var subTotalWidth = 0;
-        if (subTrees.length > 0) {
-            var signHeight = 256
-            var lastSubY = usedHeight;
-            for (let subTree in subTrees) {
-                lastSubY = usedHeight;
-                line = getLine(x + signDimensions[0] / 2, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
-                if (root.inactive || inactiveInherited)
-                    line.setAttribute('opacity', 0.25);
-                canvas.appendChild(line);
-                var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
-                subTotalWidth = Math.max(subTotalWidth, subSize[0]);
-                usedHeight += subSize[1];
-            }
-            line = getLine(x + signDimensions[0] / 2, y + signDimensions[1], x + signDimensions[0] / 2, y + lastSubY + signHeight / 2);
-            if (root.inactive || inactiveInherited)
-                line.setAttribute('opacity', 0.25);
-            canvas.appendChild(line);
-            usedWidth += GAP;
-        }
-        usedWidth += subTotalWidth;
-    }
-    return [usedWidth, usedHeight];
-}
-
-function drawLayoutB(canvas, root, x, y, inactiveInherited) {
-    var usedWidth = 0;
-    var usedHeight = 0;
-    var maxWithHeight = 0;
-
-    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
-    usedWidth += signDimensions[0];
-    if (root.sign == 'Collapsed')
-        return signDimensions;
-
-    // With
-    if (root.with != null && Array.isArray(root.with)) {
-        root.with.forEach(item => {
-            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
-            usedWidth += withDimensions[0];
-            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
-        });
-    }
-
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         // SubTrees
         var subTrees = root[SUB];
@@ -206,6 +158,54 @@ function drawLayoutB(canvas, root, x, y, inactiveInherited) {
     }
     else
         usedHeight += Math.max(signDimensions[1], maxWithHeight);
+    return [usedWidth, usedHeight];
+}
+
+function drawLayoutB(canvas, root, x, y, inactiveInherited) {
+    var usedWidth = 0;
+    var usedHeight = 0;
+    var maxWithHeight = 0;
+
+    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += signDimensions[0];
+    if (root.sign == 'Collapsed')
+        return signDimensions;
+
+    // With
+    if (root.with != null && Array.isArray(root.with)) {
+        root.with.forEach(item => {
+            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
+            usedWidth += withDimensions[0];
+            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
+        });
+    }
+
+    usedHeight += Math.max(signDimensions[1], maxWithHeight);
+
+    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
+        var subTrees = root.sub;
+        var subTotalWidth = 0;
+        if (subTrees.length > 0) {
+            var signHeight = 256
+            var lastSubY = usedHeight;
+            for (let subTree in subTrees) {
+                lastSubY = usedHeight;
+                line = getLine(x + signDimensions[0] / 2, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
+                if (root.inactive || inactiveInherited)
+                    line.setAttribute('opacity', 0.25);
+                canvas.appendChild(line);
+                var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
+                subTotalWidth = Math.max(subTotalWidth, subSize[0]);
+                usedHeight += subSize[1];
+            }
+            line = getLine(x + signDimensions[0] / 2, y + signDimensions[1], x + signDimensions[0] / 2, y + lastSubY + signHeight / 2);
+            if (root.inactive || inactiveInherited)
+                line.setAttribute('opacity', 0.25);
+            canvas.appendChild(line);
+            usedWidth += GAP;
+        }
+        usedWidth += subTotalWidth;
+    }
     return [usedWidth, usedHeight];
 }
 

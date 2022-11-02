@@ -4,7 +4,7 @@
     "key": "layout",
     "values": [
         {
-            "name": "Layout A",
+            "name": "Liste, rechts",
             "type": "radio",
             "key": "A",
             "icon": "/icons/layouts/LayoutA.svg",
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "name": "Layout B",
+            "name": "Liste, rechts, unterhalb",
             "type": "radio",
             "key": "B",
             "icon": "/icons/layouts/LayoutB.svg",
@@ -22,10 +22,10 @@
             ]
         },
         {
-            "name": "Layout C",
+            "name": "Reihe, rechts",
             "type": "radio",
             "key": "C",
-            "icon": "/icons/layouts/LayoutB.svg",
+            "icon": "/icons/layouts/LayoutC.svg",
             "styles": [
                 "layoutsIcon612"
             ]
