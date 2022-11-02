@@ -232,12 +232,9 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
             leafRowWidth += leafDimensions[0];
             leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
             leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions[1]);
-            var breakAt = 4
-            if (cntLeafs % breakAt == 0 && leafs.length > cntLeafs + 1) {
+            if (cntLeafs % 4 == 0 && leafs.length > cntLeafs + 1) {
                 usedHeight += leafsTotalRowHeight;
-                if (leafFirstRowWidth == 0)
-                    leafFirstRowWidth = leafRowWidth
-                leafRowWidth = leafFirstRowWidth / (2 * breakAt);
+                leafRowWidth = 0;
                 leafsTotalRowHeight = 0;
             }
         }
@@ -280,12 +277,9 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
             leafRowWidth += leafDimensions[0];
             leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
             leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions[1]);
-            var breakAt = 4
-            if (cntLeafs % breakAt == 0 && leafs.length > cntLeafs + 1) {
+            if (cntLeafs % 4 == 0 && leafs.length > cntLeafs + 1) {
                 usedHeight += leafsTotalRowHeight;
-                if (leafFirstRowWidth == 0)
-                    leafFirstRowWidth = leafRowWidth
-                leafRowWidth = leafFirstRowWidth / (2 * breakAt);
+                leafRowWidth = 0;
                 leafsTotalRowHeight = 0;
             }
         }

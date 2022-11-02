@@ -340,6 +340,7 @@ var EAL_BR = {
     "colorAccent": "#000",
     "txt": "EAL",
     "name": "BR",
+    "layout": "list-right-below",
     "with": [
         {
             "sign": "Place",
