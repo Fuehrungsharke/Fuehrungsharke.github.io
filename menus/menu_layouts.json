@@ -46,6 +46,11 @@
             "styles": [
                 "layoutRowRightBelow"
             ]
+        },
+        {
+            "name": "Zentriert",
+            "type": "radio",
+            "key": "row-center-below"
         }
     ]
 }

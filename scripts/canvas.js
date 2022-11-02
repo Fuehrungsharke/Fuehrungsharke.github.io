@@ -3,6 +3,7 @@ var Layout = {
     ListRightBelow: "list-right-below",
     RowRight: "row-right",
     RowRightBelow: "row-right-below",
+    CenteredBelow: "row-center-below",
 }
 
 function getSign(root) {
@@ -84,35 +85,38 @@ function getText(uuid, text, x, y) {
 }
 
 function drawSign(canvas, root, x, y, inactiveInherited) {
-    var signDimensions = [0, 0];
+    var dimSign = [0, 0];
+    if (root == null)
+        return dimSign;
     var uuid = createUUID();
     root.uuid = uuid;
     if (root.sign != null) {
         var itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
-        signDimensions = [256, 256];
+        dimSign = [256, 256];
         if (root.show_staff) {
             var staff = getStaff(root);
             var staffText = document.createElement('text');
             staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan>${staff[3]}</tspan>`;
             staffText.classList.add('staff');
-            staffText.setAttribute('x', signDimensions[0] / 2);
-            staffText.setAttribute('y', signDimensions[1]);
+            staffText.setAttribute('x', dimSign[0] / 2);
+            staffText.setAttribute('y', dimSign[1]);
             staffText.setAttribute('font-size', 22);
             staffText.setAttribute('font-family', 'Verdana');
             staffText.setAttribute('text-anchor', 'middle');
             itemBox.appendChild(staffText);
-            signDimensions[1] += 32;
+            dimSign[1] += 32;
         }
         if (root.name != null) {
             var nameParts = root['name'].split(', ');
             for (let namePart in nameParts) {
-                itemBox.appendChild(getText(uuid, nameParts[namePart], signDimensions[0] / 2, signDimensions[1]));
-                signDimensions[1] += 24;
+                itemBox.appendChild(getText(uuid, nameParts[namePart], dimSign[0] / 2, dimSign[1]));
+                dimSign[1] += 24;
             }
         }
-        canvas.appendChild(itemBox);
+        if (canvas != null)
+            canvas.appendChild(itemBox);
     }
-    return signDimensions;
+    return dimSign;
 }
 
 function drawWithHorizontally(canvas, root, x, y, inactiveInherited) {
@@ -150,7 +154,7 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
         for (let subTree in subTrees) {
             lastSubY = usedHeight;
             appendLine(canvas, root, inactiveInherited, x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2);
-            var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + 2*GAP, y + usedHeight, root.inactive || inactiveInherited);
+            var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + 2 * GAP, y + usedHeight, root.inactive || inactiveInherited);
             subTotalWidth = Math.max(subTotalWidth, subSize[0] + GAP);
             if (prevSubHeight == null)
                 usedHeight += Math.max(dimSign[1], dimWith[1], subSize[1]);
@@ -289,6 +293,36 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
     return [usedWidth, usedHeight];
 }
 
+function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
+    var dim = [0, 0];
+    var signWidth = 256;
+    var dimSign = drawSign(null, root, 0, 0, false); // just measure dimensions
+    var dimWith = drawWithHorizontally(null, root, 0, 0, false);
+    dim[1] = Math.max(dimSign[1], dimWith[1]) + GAP;
+    var subY = dim[1];
+    var lastX = 0;
+    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
+        root.sub.forEach(subItem => {
+            appendLine(canvas, root, inactiveInherited, x + dim[0] + signWidth / 2, y + subY, x + dim[0] + signWidth / 2, y + subY + GAP);
+            var dimSubItem = drawRecursive(canvas, subItem, x + dim[0], y + subY + GAP, root.inactive || inactiveInherited);
+            lastX = x + dim[0];
+            dim[0] += dimSubItem[0];
+            dim[1] = Math.max(dim[1], subY + dimSubItem[1]);
+        });
+        appendLine(canvas, root, inactiveInherited, x + signWidth / 2, y + subY, lastX + signWidth / 2, y + subY);
+    }
+
+
+    var tmpX = x + (lastX - x) / 2;
+    appendLine(canvas, root, inactiveInherited, tmpX + signWidth / 2, y + subY - GAP, tmpX + signWidth / 2, y + subY);
+    drawSign(canvas, root, tmpX, y, inactiveInherited);
+    drawWithHorizontally(canvas, root, tmpX + dimSign[0], y, inactiveInherited);
+
+    dim[0] = Math.max(dim[0], tmpX - x + dimSign[0] + dimWith[0]);
+
+    return dim;
+}
+
 function drawLayout(canvas, root, x, y, inactiveInherited) {
     switch (root.layout) {
         case Layout.ListRightBelow:
@@ -297,6 +331,8 @@ function drawLayout(canvas, root, x, y, inactiveInherited) {
             return drawRowRight(canvas, root, x, y, inactiveInherited);
         case Layout.RowRightBelow:
             return drawRowRightBelow(canvas, root, x, y, inactiveInherited);
+        case Layout.CenteredBelow:
+            return drawCenteredBelow(canvas, root, x, y, inactiveInherited);
         case Layout.ListRight:
         default:
             return drawListRight(canvas, root, x, y, inactiveInherited);

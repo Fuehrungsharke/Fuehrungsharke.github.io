@@ -6,7 +6,7 @@ var ZTr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "row-right",
+    "layout": "list-right-below",
     "with": [
         {
             "sign": "Person",
@@ -53,7 +53,7 @@ var BGr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "row-right",
+    "layout": "row-right-below",
     "with": [
         {
             "txt": "B",
@@ -136,7 +136,7 @@ var FGrR = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "row-right",
+    "layout": "list-right-below",
     "with": [
         {
             "name": "Der Gruppenführer, der Fachgruppe, Räumen",
@@ -218,7 +218,7 @@ var TZ = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "list-right",
+    "layout": "row-center-below",
     "sub": [
         ZTr,
         BGr,
