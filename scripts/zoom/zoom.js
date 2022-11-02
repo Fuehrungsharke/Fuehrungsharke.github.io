@@ -1,8 +1,8 @@
-var zoomFactor = 0.5;
 var canvasWidth = 512;
 var canvasHeight = 256;
 
 var slider = document.getElementById("zoomslider");
+var zoomFactor = slider.value / 100;
 
 slider.oninput = function () {
     zoomFactor = this.value / 100;

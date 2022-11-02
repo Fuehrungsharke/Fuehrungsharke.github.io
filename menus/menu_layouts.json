@@ -20,6 +20,15 @@
             "styles": [
                 "layoutsIcon612"
             ]
+        },
+        {
+            "name": "Layout C",
+            "type": "radio",
+            "key": "C",
+            "icon": "/icons/layouts/LayoutB.svg",
+            "styles": [
+                "layoutsIcon612"
+            ]
         }
     ]
 }

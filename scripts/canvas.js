@@ -1,6 +1,7 @@
 var Layout = {
     A: "A",
     B: "B",
+    C: "C",
 }
 
 function getSign(root) {
@@ -174,6 +175,60 @@ function drawLayoutB(canvas, root, x, y, inactiveInherited) {
     }
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
+        // SubTrees
+        var subTrees = root[SUB];
+        var subTotalWidth = 0;
+        if (subTrees.length > 0) {
+            var signHeight = 256
+            var line = getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2);
+            if (root.inactive || inactiveInherited)
+                line.setAttribute('opacity', 0.25);
+            canvas.appendChild(line);
+            usedWidth += GAP;
+            var lastSubY = usedHeight;
+            for (let subTree in subTrees) {
+                lastSubY = usedHeight;
+                line = getLine(x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2);
+                if (root.inactive || inactiveInherited)
+                    line.setAttribute('opacity', 0.25);
+                canvas.appendChild(line);
+                var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
+                subTotalWidth = Math.max(subTotalWidth, subSize[0]);
+                usedHeight += subSize[1];
+            }
+            line = getLine(x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2);
+            if (root.inactive || inactiveInherited)
+                line.setAttribute('opacity', 0.25);
+            canvas.appendChild(line);
+            usedWidth += GAP;
+        }
+        usedWidth += subTotalWidth;
+    }
+    else
+        usedHeight += Math.max(signDimensions[1], maxWithHeight);
+    return [usedWidth, usedHeight];
+}
+
+function drawLayoutC(canvas, root, x, y, inactiveInherited) {
+    var usedWidth = 0;
+    var usedHeight = 0;
+    var maxWithHeight = 0;
+
+    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += signDimensions[0];
+    if (root.sign == 'Collapsed')
+        return signDimensions;
+
+    // With
+    if (root.with != null && Array.isArray(root.with)) {
+        root.with.forEach(item => {
+            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
+            usedWidth += withDimensions[0];
+            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
+        });
+    }
+
+    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var hasSubTrees = root.sub.some(item =>
             (item.sub != null && Array.isArray(item.sub) && item.sub.length > 0)
             || (item.with != null && Array.isArray(item.with) && item.with.length > 0)
@@ -239,12 +294,13 @@ function drawLayoutB(canvas, root, x, y, inactiveInherited) {
     return [usedWidth, usedHeight];
 }
 
-function drawItem(canvas, root, x, y, inactiveInherited) {
+function drawLayout(canvas, root, x, y, inactiveInherited) {
     switch (root.layout) {
         case Layout.B:
             return drawLayoutB(canvas, root, x, y, inactiveInherited);
+        case Layout.C:
+            return drawLayoutC(canvas, root, x, y, inactiveInherited);
         case Layout.A:
-            return drawLayoutA(canvas, root, x, y, inactiveInherited);
         default:
             return drawLayoutA(canvas, root, x, y, inactiveInherited);
     }
@@ -256,14 +312,14 @@ function drawRecursive(canvas, root, x, y, inactiveInherited) {
 
     if (Array.isArray(root) && root.length > 0) {
         for (let idx in root) {
-            var itemSize = drawItem(canvas, root[idx], x, y + usedHeight, inactiveInherited);
+            var itemSize = drawLayout(canvas, root[idx], x, y + usedHeight, inactiveInherited);
             usedWidth = Math.max(usedWidth, itemSize[0]);
             usedHeight += itemSize[1];
         }
         return [usedWidth, usedHeight];
     }
     else
-        return drawItem(canvas, root, x, y, inactiveInherited);
+        return drawLayout(canvas, root, x, y, inactiveInherited);
 }
 
 function draw() {
