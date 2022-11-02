@@ -135,24 +135,26 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
     }
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        // SubTrees
-        var subTrees = root[SUB];
+        var subTrees = root.sub;
         var subTotalWidth = 0;
-        if (subTrees.length > 0) {
-            var signHeight = 256
-            appendLine(canvas, root, inactiveInherited, x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2);
-            usedWidth += GAP;
-            var lastSubY = usedHeight;
-            for (let subTree in subTrees) {
-                lastSubY = usedHeight;
-                appendLine(canvas, root, inactiveInherited, x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2);
-                var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
-                subTotalWidth = Math.max(subTotalWidth, subSize[0]);
+        var signHeight = 256
+        appendLine(canvas, root, inactiveInherited, x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2);
+        usedWidth += GAP;
+        var prevSubHeight = null;
+        var lastSubY = usedHeight;
+        for (let subTree in subTrees) {
+            lastSubY = usedHeight;
+            appendLine(canvas, root, inactiveInherited, x + usedWidth, y + usedHeight + signHeight / 2, x + usedWidth + GAP, y + usedHeight + signHeight / 2);
+            var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
+            subTotalWidth = Math.max(subTotalWidth, subSize[0]);
+            if (prevSubHeight == null)
+                usedHeight += Math.max(signDimensions[1], subSize[1]);
+            else
                 usedHeight += subSize[1];
-            }
-            appendLine(canvas, root, inactiveInherited, x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2);
-            usedWidth += GAP;
+            prevSubHeight = subSize[1];
         }
+        appendLine(canvas, root, inactiveInherited, x + usedWidth, y + signHeight / 2, x + usedWidth, y + lastSubY + signHeight / 2);
+        usedWidth += GAP;
         usedWidth += subTotalWidth;
     }
     else
@@ -224,8 +226,8 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var signHeight = 256
 
-        appendLine(canvas, root, inactiveInherited, x + usedWidth, y + signHeight / 2, x + usedWidth + 2*GAP, y + signHeight / 2);
-        usedWidth += 2*GAP;
+        appendLine(canvas, root, inactiveInherited, x + usedWidth, y + signHeight / 2, x + usedWidth + 2 * GAP, y + signHeight / 2);
+        usedWidth += 2 * GAP;
 
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = signDimensions[1];
