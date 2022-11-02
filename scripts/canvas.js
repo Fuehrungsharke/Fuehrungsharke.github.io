@@ -306,9 +306,10 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
             appendLine(canvas, root, inactiveInherited, x + dim[0] + signWidth / 2, y + subY, x + dim[0] + signWidth / 2, y + subY + GAP);
             var dimSubItem = drawRecursive(canvas, subItem, x + dim[0], y + subY + GAP, root.inactive || inactiveInherited);
             lastX = x + dim[0];
-            dim[0] += dimSubItem[0];
+            dim[0] += dimSubItem[0] + signWidth / 2;
             dim[1] = Math.max(dim[1], subY + dimSubItem[1]);
         });
+        dim[0] -= signWidth / 2;
         appendLine(canvas, root, inactiveInherited, x + signWidth / 2, y + subY, lastX + signWidth / 2, y + subY);
     }
 
