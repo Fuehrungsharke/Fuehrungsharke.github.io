@@ -18,6 +18,10 @@
         "type": "placeholder"
     },
     {
+        "name": "menu_layouts",
+        "type": "placeholder"
+    },
+    {
         "name": "Spezialisierung",
         "type": "string",
         "key": "spez"

@@ -1,0 +1,17 @@
+{
+    "name": "Layout",
+    "type": "submenu",
+    "key": "layout",
+    "values": [
+        {
+            "name": "Layout A",
+            "type": "radio",
+            "key": "A"
+        },
+        {
+            "name": "Layout B",
+            "type": "radio",
+            "key": "B"
+        }
+    ]
+}
