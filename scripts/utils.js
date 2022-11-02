@@ -148,6 +148,17 @@ function getTransform(element) {
     };
 }
 
+function getElementDimensions(element) {
+    var maxWidth = 0;
+    var maxHeight = 0;
+    var svgs = element.getElementsByTagName('svg');
+    for (let i = 0; i < svgs.length; i++) {
+        maxWidth = Math.max(maxWidth, svgs[i].width.baseVal.value);
+        maxHeight = Math.max(maxHeight, svgs[i].height.baseVal.value);
+    }
+    return [maxWidth, maxHeight];
+}
+
 function getSelectedElements() {
     var selectedElements = [];
     var selectedSigns = outputSvg.getElementsByClassName('selected');

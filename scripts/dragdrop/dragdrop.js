@@ -36,11 +36,12 @@ function drag(evt) {
     var mode = getEventMode(evt);
     if (!element.classList.contains('selected') || mode == 'remove') {
         var transform = getTransform(element);
+        var elementDimensions = getElementDimensions(element);
         updateSelection({
             'minX': fromCanvasCoords(transform.x),
             'minY': fromCanvasCoords(transform.y),
-            'maxX': fromCanvasCoords(transform.x + signWidth),
-            'maxY': fromCanvasCoords(transform.y + signHeight),
+            'maxX': fromCanvasCoords(transform.x + elementDimensions[0]),
+            'maxY': fromCanvasCoords(transform.y + elementDimensions[1]),
         }, mode);
         clearSelectionRect();
     }
@@ -166,10 +167,11 @@ function updateSelection(markedArea, mode) {
     var selectables = outputSvg.getElementsByClassName('selectable');
     for (let i = 0; i < selectables.length; i++) {
         var transform = getTransform(selectables[i]);
-        if (parseInt(transform.x) + 0.2 * signWidth >= toCanvasCoords(markedArea.minX)
-            && parseInt(transform.y) + 0.2 * signHeight >= toCanvasCoords(markedArea.minY)
-            && parseInt(transform.x) + 0.8 * signWidth <= toCanvasCoords(markedArea.maxX)
-            && parseInt(transform.y) + 0.8 * signHeight <= toCanvasCoords(markedArea.maxY)) {
+        var elementDimensions = getElementDimensions(selectables[i]);
+        if (parseInt(transform.x) + 0.2 * elementDimensions[0] >= toCanvasCoords(markedArea.minX)
+            && parseInt(transform.y) + 0.2 * elementDimensions[1] >= toCanvasCoords(markedArea.minY)
+            && parseInt(transform.x) + 0.8 * elementDimensions[0] <= toCanvasCoords(markedArea.maxX)
+            && parseInt(transform.y) + 0.8 * elementDimensions[1] <= toCanvasCoords(markedArea.maxY)) {
             if (mode == 'remove')
                 selectables[i].classList.remove('selected');
             else
