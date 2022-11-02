@@ -2,6 +2,7 @@ var Layout = {
     ListRight: "list-right",
     ListRightBelow: "list-right-below",
     RowRight: "row-right",
+    RowRightBelow: "row-right-below",
 }
 
 function getSign(root) {
@@ -230,76 +231,97 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var signHeight = 256
-        var leafs = root.sub.filter(item =>
-            (item.sub == null || !Array.isArray(item.sub) || item.sub.length <= 0)
-            && (item.with == null || !Array.isArray(item.with) || item.with.length <= 0)
-        );
-        var subTrees = root.sub.filter(item =>
-            (item.sub != null && Array.isArray(item.sub) && item.sub.length > 0)
-            || (item.with != null && Array.isArray(item.with) && item.with.length > 0)
-        );
-
-        if (subTrees.length > 0) {
-            var line = getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2);
-            if (root.inactive || inactiveInherited)
-                line.setAttribute('opacity', 0.25);
-            canvas.appendChild(line);
-            usedWidth += GAP;
-            var line = getLine(x + usedWidth, y + signHeight / 2, x + usedWidth + GAP, y + signHeight / 2);
-            if (root.inactive || inactiveInherited)
-                line.setAttribute('opacity', 0.25);
-            canvas.appendChild(line);
-            usedWidth += GAP;
-        }
 
         var leafsTotalWidth = 0;
-        if (leafs.length > 0) {
-            var leafsTotalRowHeight = signDimensions[1];
-            var leafRowWidth = 0;
-            var leafFirstRowWidth = 0;
-            var leafGap = 0;
-            var cntLeafs = 0;
-            for (let leaf in leafs) {
-                cntLeafs += 1;
-                var leafDimensions = drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight, root.inactive || inactiveInherited);
-                leafRowWidth += leafDimensions[0];
-                leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
-                leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions[1]);
-                var breakAt = 4
-                if (cntLeafs % breakAt == 0 && leafs.length > cntLeafs + 1) {
-                    usedHeight += leafsTotalRowHeight;
-                    if (leafFirstRowWidth == 0)
-                        leafFirstRowWidth = leafRowWidth
-                    leafRowWidth = leafFirstRowWidth / (2 * breakAt);
-                    leafsTotalRowHeight = 0;
-                }
+        var leafsTotalRowHeight = signDimensions[1];
+        var leafRowWidth = 0;
+        var leafFirstRowWidth = 0;
+        var leafGap = 0;
+        var cntLeafs = 0;
+        var leafs = root.sub;
+        for (let leaf in leafs) {
+            cntLeafs += 1;
+            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight, root.inactive || inactiveInherited);
+            leafRowWidth += leafDimensions[0];
+            leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
+            leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions[1]);
+            var breakAt = 4
+            if (cntLeafs % breakAt == 0 && leafs.length > cntLeafs + 1) {
+                usedHeight += leafsTotalRowHeight;
+                if (leafFirstRowWidth == 0)
+                    leafFirstRowWidth = leafRowWidth
+                leafRowWidth = leafFirstRowWidth / (2 * breakAt);
+                leafsTotalRowHeight = 0;
             }
-            usedHeight += leafsTotalRowHeight;
         }
-
-        var subTotalWidth = 0;
-        if (subTrees.length > 0) {
-            var lastSubY = usedHeight;
-            for (let subTree in subTrees) {
-                lastSubY = usedHeight;
-                line = getLine(x + usedWidth - GAP, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
-                if (root.inactive || inactiveInherited)
-                    line.setAttribute('opacity', 0.25);
-                canvas.appendChild(line);
-                var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth, y + usedHeight, root.inactive || inactiveInherited);
-                subTotalWidth = Math.max(subTotalWidth, subSize[0]);
-                usedHeight += subSize[1];
-            }
-            line = getLine(x + usedWidth - GAP, y + signHeight / 2, x + usedWidth - GAP, y + lastSubY + signHeight / 2);
-            if (root.inactive || inactiveInherited)
-                line.setAttribute('opacity', 0.25);
-            canvas.appendChild(line);
-        }
-
-        usedWidth += Math.max(leafsTotalWidth, subTotalWidth);
+        usedHeight += leafsTotalRowHeight;
+        usedWidth += leafsTotalWidth;
     }
     else
         usedHeight += Math.max(signDimensions[1], maxWithHeight);
+    return [usedWidth, usedHeight];
+}
+
+function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
+    var usedWidth = 0;
+    var usedHeight = 0;
+    var maxWithHeight = 0;
+
+    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += signDimensions[0];
+    if (root.sign == 'Collapsed')
+        return signDimensions;
+
+    // With
+    if (root.with != null && Array.isArray(root.with)) {
+        root.with.forEach(item => {
+            var withDimensions = drawSign(canvas, item, x + usedWidth, y, root.inactive || inactiveInherited);
+            usedWidth += withDimensions[0];
+            maxWithHeight = Math.max(maxWithHeight, withDimensions[1]);
+        });
+    }
+
+    usedHeight += Math.max(signDimensions[1], maxWithHeight);
+
+    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
+        var signHeight = 256
+
+        var leafsTotalWidth = 0;
+        var leafsTotalRowHeight = signDimensions[1];
+        var leafRowWidth = 0;
+        var leafFirstRowWidth = 0;
+        var leafGap = 0;
+        var cntLeafs = 0;
+
+        line = getLine(x + signDimensions[0] / 2, y + signDimensions[1], x + signDimensions[0] / 2, y + signDimensions[1] + signHeight / 2);
+        if (root.inactive || inactiveInherited)
+            line.setAttribute('opacity', 0.25);
+        canvas.appendChild(line);
+        line = getLine(x + signDimensions[0] / 2, y + signDimensions[1] + signHeight / 2, x + usedWidth, y + signDimensions[1] + signHeight / 2);
+        if (root.inactive || inactiveInherited)
+            line.setAttribute('opacity', 0.25);
+        canvas.appendChild(line);
+
+        var leafs = root.sub;
+        for (let leaf in leafs) {
+            cntLeafs += 1;
+            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + usedWidth + leafGap + leafRowWidth, y + usedHeight, root.inactive || inactiveInherited);
+            leafRowWidth += leafDimensions[0];
+            leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
+            leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions[1]);
+            var breakAt = 4
+            if (cntLeafs % breakAt == 0 && leafs.length > cntLeafs + 1) {
+                usedHeight += leafsTotalRowHeight;
+                if (leafFirstRowWidth == 0)
+                    leafFirstRowWidth = leafRowWidth
+                leafRowWidth = leafFirstRowWidth / (2 * breakAt);
+                leafsTotalRowHeight = 0;
+            }
+        }
+        usedHeight += leafsTotalRowHeight;
+        usedWidth += leafsTotalWidth;
+    }
+
     return [usedWidth, usedHeight];
 }
 
@@ -309,6 +331,8 @@ function drawLayout(canvas, root, x, y, inactiveInherited) {
             return drawListRightBelow(canvas, root, x, y, inactiveInherited);
         case Layout.RowRight:
             return drawRowRight(canvas, root, x, y, inactiveInherited);
+        case Layout.RowRightBelow:
+            return drawRowRightBelow(canvas, root, x, y, inactiveInherited);
         case Layout.ListRight:
         default:
             return drawListRight(canvas, root, x, y, inactiveInherited);

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="768" height="512">
+	<defs>
+		<clipPath id="Unit">
+			<rect x="10" y="64" width="236" height="128"/>
+		</clipPath>
+	</defs>
+	<g transform="translate(0, 0) scale(1 1)">
+		<rect x="10" y="64" width="236" height="128" fill="#FFc" stroke="#000" stroke-width="30" clip-path="url(#Unit)"/>
+	</g>
+
+	<path stroke-width="9" stroke="black" d="M128 256 L128 384" />
+	<path stroke-width="9" stroke="black" d="M128 384 L256 384" />
+	<g transform="translate(256, 256) scale(1 1)">
+		<rect x="10" y="64" width="236" height="128" fill="#ccc" stroke="#000" stroke-width="30" clip-path="url(#Unit)"/>
+	</g>
+	<g transform="translate(512, 256) scale(1 1)">
+		<rect x="10" y="64" width="236" height="128" fill="#ccc" stroke="#000" stroke-width="30" clip-path="url(#Unit)"/>
+	</g>
+</svg>

@@ -7,7 +7,7 @@
             "name": "Liste, rechts",
             "type": "radio",
             "key": "list-right",
-            "icon": "/icons/layouts/LayoutA.svg",
+            "icon": "/icons/layouts/ListRight.svg",
             "styles": [
                 "layoutsIcon612"
             ]
@@ -16,7 +16,7 @@
             "name": "Liste, rechts, unterhalb",
             "type": "radio",
             "key": "list-right-below",
-            "icon": "/icons/layouts/LayoutB.svg",
+            "icon": "/icons/layouts/ListRightBelow.svg",
             "styles": [
                 "layoutsIcon612"
             ]
@@ -25,7 +25,16 @@
             "name": "Reihe, rechts",
             "type": "radio",
             "key": "row-right",
-            "icon": "/icons/layouts/LayoutC.svg",
+            "icon": "/icons/layouts/RowRight.svg",
+            "styles": [
+                "layoutsIcon612"
+            ]
+        },
+        {
+            "name": "Reihe, rechts, unterhalb",
+            "type": "radio",
+            "key": "row-right-below",
+            "icon": "/icons/layouts/RowRightBelow.svg",
             "styles": [
                 "layoutsIcon612"
             ]
