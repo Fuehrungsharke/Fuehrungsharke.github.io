@@ -176,7 +176,6 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
         return dimSign;
 
     var dimWith = drawWithHorizontally(canvas, root, x + dimSign[0], y, inactiveInherited);
-    usedWidth += dimWith[0];
     usedHeight += Math.max(dimSign[1], dimWith[1]);
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
@@ -195,8 +194,10 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
             appendLine(canvas, root, inactiveInherited, x + dimSign[0] / 2, y + dimSign[1], x + dimSign[0] / 2, y + lastSubY + signHeight / 2);
             usedWidth += GAP;
         }
-        usedWidth += subTotalWidth;
+        usedWidth += Math.max(dimWith[0], subTotalWidth);
     }
+    else
+        usedWidth += dimWith[0];
     return [usedWidth, usedHeight];
 }
 
@@ -210,7 +211,7 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
 
     var dimWith = drawWithHorizontally(canvas, root, x + dimSign[0], y, inactiveInherited);
     usedWidth += dimWith[0];
-    
+
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var signHeight = 256
 
@@ -256,7 +257,6 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
         return dimSign;
 
     var dimWith = drawWithHorizontally(canvas, root, x + dimSign[0], y, inactiveInherited);
-    usedWidth += dimWith[0];
     usedHeight += Math.max(dimSign[1], dimWith[1]);
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
@@ -289,9 +289,10 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
             }
         }
         usedHeight += leafsTotalRowHeight;
-        usedWidth += leafsTotalWidth;
+        usedWidth += Math.max(dimWith[0], leafsTotalWidth);
     }
-
+    else
+        usedWidth += dimWith[0];
     return [usedWidth, usedHeight];
 }
 
