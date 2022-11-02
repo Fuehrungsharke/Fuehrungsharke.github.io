@@ -61,7 +61,7 @@ function getSign(root) {
 
 function getSignSvg(root, uuid, x, y, inactiveInherited) {
     var signSvg = document.createElement('g');
-    signSvg.setAttribute('transform', `translate(${x}, ${y}) scale(1 1)`)
+    signSvg.setAttribute('transform', `translate(${parseInt(x, 10)}, ${parseInt(y, 10)}) scale(1 1)`)
     signSvg.setAttribute('uuid', uuid);
     if (root.inactive || inactiveInherited)
         signSvg.setAttribute('opacity', 0.25);
@@ -213,16 +213,15 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
         var subTrees = root.sub;
         var subTotalWidth = 0;
         if (subTrees.length > 0) {
-            var signHeight = 256
-            var lastSubY = dim.height;
+            var dimLastSub = null;
             for (let subTree in subTrees) {
-                lastSubY = dim.height;
-                appendLine(canvas, root, inactiveInherited, x + dimSign.width / 2, y + dim.height + signHeight / 2, x + dim.width - GAP, y + dim.height + signHeight / 2);
-                var subSize = drawRecursive(canvas, subTrees[subTree], x + dim.width, y + dim.height, root.inactive || inactiveInherited);
-                subTotalWidth = Math.max(subTotalWidth, subSize.width);
-                dim.height += subSize.height;
+                var dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width, y + dim.height, root.inactive || inactiveInherited);
+                appendLine(canvas, root, inactiveInherited, x + dimSign.anchorX, y + dim.height + dimSubItem.anchorY, x + dim.width - GAP, y + dim.height + dimSubItem.anchorY);
+                subTotalWidth = Math.max(subTotalWidth, dimSubItem.width);
+                dim.height += dimSubItem.height;
+                dimLastSub = dimSubItem;
             }
-            appendLine(canvas, root, inactiveInherited, x + dimSign.width / 2, y + dimSign.height, x + dimSign.height / 2, y + lastSubY + signHeight / 2);
+            appendLine(canvas, root, inactiveInherited, x + dimSign.anchorX, y + dimSign.height, x + dimSign.anchorX, dimLastSub.y + dimLastSub.anchorY);
             dim.width += GAP;
         }
         dim.width += Math.max(dimWith.width, subTotalWidth);
@@ -325,9 +324,9 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
 function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
     var dim = new Dim(x, y);
     var dimSign = drawSign(null, root, 0, 0, false); // just measure dimensions
+    var dimWith = drawWithHorizontally(null, root, 0, 0, false);
     dim.anchorX = dimSign.anchorX;
     dim.anchorY = dimSign.anchorY;
-    var dimWith = drawWithHorizontally(null, root, 0, 0, false);
     dim.height = Math.max(dimSign.height, dimWith.height) + GAP;
     var subY = dim.height;
     var dimSubs = [];
@@ -347,12 +346,9 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
         appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY);
         appendLine(canvas, root, inactiveInherited, x + dim.anchorX, y + subY - GAP, x + dim.anchorX, y + subY);
     }
-
     drawSign(canvas, root, x + dim.anchorX - dimSign.anchorX, y, inactiveInherited);
     drawWithHorizontally(canvas, root, x + dim.anchorX + dimSign.anchorX, y, inactiveInherited);
-
     dim.width = Math.max(dim.width, dimSign.width + dimWith.width);
-
     return dim;
 }
 
