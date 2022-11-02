@@ -4,39 +4,47 @@
     "key": "layout",
     "values": [
         {
-            "name": "Liste, rechts",
+            "name": "Nebenstehend, rechts",
+            "type": "header"
+        },
+        {
+            "name": "Liste",
             "type": "radio",
             "key": "list-right",
             "icon": "/icons/layouts/ListRight.svg",
             "styles": [
-                "layoutsIcon612"
+                "layoutListRight"
             ]
         },
         {
-            "name": "Liste, rechts, unterhalb",
-            "type": "radio",
-            "key": "list-right-below",
-            "icon": "/icons/layouts/ListRightBelow.svg",
-            "styles": [
-                "layoutsIcon612"
-            ]
-        },
-        {
-            "name": "Reihe, rechts",
+            "name": "Reihe",
             "type": "radio",
             "key": "row-right",
             "icon": "/icons/layouts/RowRight.svg",
             "styles": [
-                "layoutsIcon612"
+                "layoutRowRight"
             ]
         },
         {
-            "name": "Reihe, rechts, unterhalb",
+            "name": "Unterhalb, rechts",
+            "type": "header"
+        },
+        {
+            "name": "Liste",
+            "type": "radio",
+            "key": "list-right-below",
+            "icon": "/icons/layouts/ListRightBelow.svg",
+            "styles": [
+                "layoutListRightBelow"
+            ]
+        },
+        {
+            "name": "Reihe",
             "type": "radio",
             "key": "row-right-below",
             "icon": "/icons/layouts/RowRightBelow.svg",
             "styles": [
-                "layoutsIcon612"
+                "layoutRowRightBelow"
             ]
         }
     ]

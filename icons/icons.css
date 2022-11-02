@@ -11,6 +11,20 @@ img {
     width: 40.4px;
 }
 
-.layoutsIcon612 > img {
+.layoutListRight > img {
     width: 40.4px;
+    margin-right: 26.9px;
+}
+
+.layoutListRightBelow > img {
+    width: 33.8px;
+    margin-right: 26.9px;
+}
+
+.layoutRowRight > img {
+    width: 57.3px;
+}
+
+.layoutRowRightBelow > img {
+    width: 50.7px;
 }

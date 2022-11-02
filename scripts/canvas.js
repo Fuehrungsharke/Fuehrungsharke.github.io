@@ -224,6 +224,9 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var signHeight = 256
 
+        appendLine(canvas, root, inactiveInherited, x + usedWidth, y + signHeight / 2, x + usedWidth + 2*GAP, y + signHeight / 2);
+        usedWidth += 2*GAP;
+
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = signDimensions[1];
         var leafRowWidth = 0;
