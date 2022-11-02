@@ -130,12 +130,12 @@ function drawWithHorizontally(canvas, root, x, y, inactiveInherited) {
 function drawListRight(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
-    usedWidth += signDimensions[0];
+    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += dimSign[0];
     if (root.sign == 'Collapsed')
-        return signDimensions;
+        return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    var dimWith = drawWithHorizontally(canvas, root, x + dimSign[0], y, inactiveInherited);
     usedWidth += dimWith[0];
     var maxWithHeight = dimWith[1];
 
@@ -153,7 +153,7 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
             var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
             subTotalWidth = Math.max(subTotalWidth, subSize[0]);
             if (prevSubHeight == null)
-                usedHeight += Math.max(signDimensions[1], subSize[1]);
+                usedHeight += Math.max(dimSign[1], subSize[1]);
             else
                 usedHeight += subSize[1];
             prevSubHeight = subSize[1];
@@ -163,21 +163,21 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
         usedWidth += subTotalWidth;
     }
     else
-        usedHeight += Math.max(signDimensions[1], maxWithHeight);
+        usedHeight += Math.max(dimSign[1], maxWithHeight);
     return [usedWidth, usedHeight];
 }
 
 function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
-    usedWidth += signDimensions[0];
+    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += dimSign[0];
     if (root.sign == 'Collapsed')
-        return signDimensions;
+        return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    var dimWith = drawWithHorizontally(canvas, root, x + dimSign[0], y, inactiveInherited);
     usedWidth += dimWith[0];
-    usedHeight += Math.max(signDimensions[1], dimWith[1]);
+    usedHeight += Math.max(dimSign[1], dimWith[1]);
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var subTrees = root.sub;
@@ -187,12 +187,12 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
             var lastSubY = usedHeight;
             for (let subTree in subTrees) {
                 lastSubY = usedHeight;
-                appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
+                appendLine(canvas, root, inactiveInherited, x + dimSign[0] / 2, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
                 var subSize = drawRecursive(canvas, subTrees[subTree], x + usedWidth + GAP, y + usedHeight, root.inactive || inactiveInherited);
                 subTotalWidth = Math.max(subTotalWidth, subSize[0]);
                 usedHeight += subSize[1];
             }
-            appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + signDimensions[1], x + signDimensions[0] / 2, y + lastSubY + signHeight / 2);
+            appendLine(canvas, root, inactiveInherited, x + dimSign[0] / 2, y + dimSign[1], x + dimSign[0] / 2, y + lastSubY + signHeight / 2);
             usedWidth += GAP;
         }
         usedWidth += subTotalWidth;
@@ -203,12 +203,12 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
 function drawRowRight(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
-    usedWidth += signDimensions[0];
+    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += dimSign[0];
     if (root.sign == 'Collapsed')
-        return signDimensions;
+        return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    var dimWith = drawWithHorizontally(canvas, root, x + dimSign[0], y, inactiveInherited);
     usedWidth += dimWith[0];
     
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
@@ -218,7 +218,7 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         usedWidth += 2 * GAP;
 
         var leafsTotalWidth = 0;
-        var leafsTotalRowHeight = signDimensions[1];
+        var leafsTotalRowHeight = dimSign[1];
         var leafRowWidth = 0;
         var leafFirstRowWidth = 0;
         var leafGap = 0;
@@ -243,34 +243,34 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         usedWidth += leafsTotalWidth;
     }
     else
-        usedHeight += Math.max(signDimensions[1], dimWith[1]);
+        usedHeight += Math.max(dimSign[1], dimWith[1]);
     return [usedWidth, usedHeight];
 }
 
 function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
-    var signDimensions = drawSign(canvas, root, x, y, inactiveInherited);
-    usedWidth += signDimensions[0];
+    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    usedWidth += dimSign[0];
     if (root.sign == 'Collapsed')
-        return signDimensions;
+        return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + signDimensions[0], y, inactiveInherited);
+    var dimWith = drawWithHorizontally(canvas, root, x + dimSign[0], y, inactiveInherited);
     usedWidth += dimWith[0];
-    usedHeight += Math.max(signDimensions[1], dimWith[1]);
+    usedHeight += Math.max(dimSign[1], dimWith[1]);
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var signHeight = 256
 
         var leafsTotalWidth = 0;
-        var leafsTotalRowHeight = signDimensions[1];
+        var leafsTotalRowHeight = dimSign[1];
         var leafRowWidth = 0;
         var leafFirstRowWidth = 0;
         var leafGap = 0;
         var cntLeafs = 0;
 
-        appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + signDimensions[1], x + signDimensions[0] / 2, y + usedHeight + signHeight / 2);
-        appendLine(canvas, root, inactiveInherited, x + signDimensions[0] / 2, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
+        appendLine(canvas, root, inactiveInherited, x + dimSign[0] / 2, y + dimSign[1], x + dimSign[0] / 2, y + usedHeight + signHeight / 2);
+        appendLine(canvas, root, inactiveInherited, x + dimSign[0] / 2, y + usedHeight + signHeight / 2, x + usedWidth, y + usedHeight + signHeight / 2);
 
         var leafs = root.sub;
         for (let leaf in leafs) {
