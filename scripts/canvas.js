@@ -6,12 +6,18 @@ var Layout = {
     CenteredBelow: "row-center-below",
 }
 
+Dim.prototype.x = 0;
+Dim.prototype.y = 0;
 Dim.prototype.width = 0;
 Dim.prototype.height = 0;
 Dim.prototype.anchorX = 0;
 Dim.prototype.anchorY = 0;
 
-function Dim(width, height, anchorX, anchorY) {
+function Dim(x, y, width, height, anchorX, anchorY) {
+    if (x != null)
+        this.x = x;
+    if (y != null)
+        this.y = y;
     if (width != null)
         this.width = width;
     if (height != null)
@@ -101,7 +107,7 @@ function getText(uuid, text, x, y) {
 }
 
 function drawSign(canvas, root, x, y, inactiveInherited) {
-    var dimSign = new Dim();
+    var dimSign = new Dim(x, y);
     if (root == null)
         return dimSign;
     var uuid = createUUID();
@@ -139,7 +145,7 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawWithHorizontally(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim();
+    var dim = new Dim(x, y);
     if (root.with == null || !Array.isArray(root.with) || root.with.length <= 0)
         return dim;
     root.with.forEach(item => {
@@ -151,8 +157,10 @@ function drawWithHorizontally(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawListRight(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim();
+    var dim = new Dim(x, y);
     var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    dim.anchorX = dimSign.anchorX;
+    dim.anchorY = dimSign.anchorY;
     dim.width += dimSign.width;
     if (root.sign == 'Collapsed')
         return dimSign;
@@ -190,8 +198,10 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim();
+    var dim = new Dim(x, y);
     var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    dim.anchorX = dimSign.anchorX;
+    dim.anchorY = dimSign.anchorY;
     dim.width += dimSign.width;
     if (root.sign == 'Collapsed')
         return dimSign;
@@ -223,8 +233,10 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawRowRight(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim();
+    var dim = new Dim(x, y);
     var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    dim.anchorX = dimSign.anchorX;
+    dim.anchorY = dimSign.anchorY;
     dim.width += dimSign.width;
     if (root.sign == 'Collapsed')
         return dimSign;
@@ -266,8 +278,10 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim();
+    var dim = new Dim(x, y);
     var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    dim.anchorX = dimSign.anchorX;
+    dim.anchorY = dimSign.anchorY;
     dim.width += dimSign.width;
     if (root.sign == 'Collapsed')
         return dimSign;
@@ -309,32 +323,35 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim();
-    var signWidth = 256;
+    var dim = new Dim(x, y);
     var dimSign = drawSign(null, root, 0, 0, false); // just measure dimensions
+    dim.anchorX = dimSign.anchorX;
+    dim.anchorY = dimSign.anchorY;
     var dimWith = drawWithHorizontally(null, root, 0, 0, false);
     dim.height = Math.max(dimSign.height, dimWith.height) + GAP;
     var subY = dim.height;
-    var lastX = 0;
+    var dimSubs = [];
+    var center = dimSign.anchorX;
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         root.sub.forEach(subItem => {
-            appendLine(canvas, root, inactiveInherited, x + dim.width + signWidth / 2, y + subY, x + dim.width + signWidth / 2, y + subY + GAP);
             var dimSubItem = drawRecursive(canvas, subItem, x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
-            lastX = x + dim.width;
-            dim.width += dimSubItem.width + signWidth / 2;
+            dimSubs.push(dimSubItem);
+            appendLine(canvas, root, inactiveInherited, x + dim.width + dimSubItem.anchorX, y + subY, x + dim.width + dimSubItem.anchorX, y + subY + GAP);
+            dim.width += dimSubItem.width + GAP;
             dim.height = Math.max(dim.height, subY + dimSubItem.height);
         });
-        dim.width -= signWidth / 2;
-        appendLine(canvas, root, inactiveInherited, x + signWidth / 2, y + subY, lastX + signWidth / 2, y + subY);
+        dim.width -= GAP;
+        var anchorSub1 = dimSubs[0].x + dimSubs[0].anchorX;
+        var anchorSubN = dimSubs[dimSubs.length - 1].x + dimSubs[dimSubs.length - 1].anchorX;
+        dim.anchorX = dimSubs[0].anchorX + (anchorSubN - anchorSub1) / 2;
+        appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY);
+        appendLine(canvas, root, inactiveInherited, x + dim.anchorX, y + subY - GAP, x + dim.anchorX, y + subY);
     }
 
+    drawSign(canvas, root, x + dim.anchorX - dimSign.anchorX, y, inactiveInherited);
+    drawWithHorizontally(canvas, root, x + dim.anchorX + dimSign.anchorX, y, inactiveInherited);
 
-    var tmpX = x + (lastX - x) / 2;
-    appendLine(canvas, root, inactiveInherited, tmpX + signWidth / 2, y + subY - GAP, tmpX + signWidth / 2, y + subY);
-    drawSign(canvas, root, tmpX, y, inactiveInherited);
-    drawWithHorizontally(canvas, root, tmpX + dimSign.width, y, inactiveInherited);
-
-    dim.width = Math.max(dim.width, tmpX - x + dimSign.width + dimWith.width);
+    dim.width = Math.max(dim.width, dimSign.width + dimWith.width);
 
     return dim;
 }
@@ -357,7 +374,7 @@ function drawLayout(canvas, root, x, y, inactiveInherited) {
 
 function drawRecursive(canvas, root, x, y, inactiveInherited) {
     if (Array.isArray(root) && root.length > 0) {
-        var dim = new Dim();
+        var dim = new Dim(x, y);
         for (let idx in root) {
             var itemSize = drawLayout(canvas, root[idx], x, y + dim.height, inactiveInherited);
             dim.width = Math.max(dim.width, itemSize.width);

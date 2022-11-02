@@ -6,7 +6,7 @@ var ZTr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "list-right-below",
+    "layout": "row-center-below",
     "with": [
         {
             "sign": "Person",
