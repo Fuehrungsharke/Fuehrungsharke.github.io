@@ -6,7 +6,7 @@ var ZTr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "B",
+    "layout": "row-right",
     "with": [
         {
             "sign": "Person",
@@ -53,7 +53,7 @@ var BGr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "C",
+    "layout": "row-right",
     "with": [
         {
             "txt": "B",
@@ -136,7 +136,7 @@ var FGrR = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "C",
+    "layout": "row-right",
     "with": [
         {
             "name": "Der Gruppenführer, der Fachgruppe, Räumen",
@@ -218,7 +218,7 @@ var TZ = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "B",
+    "layout": "list-right",
     "sub": [
         ZTr,
         BGr,
@@ -232,7 +232,6 @@ var EAL_West = {
     "colorAccent": "#000",
     "txt": "EAL",
     "name": "West",
-    "layout": "B",
     "with": [
         {
             "sign": "Measure",
@@ -362,7 +361,6 @@ var EL = {
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
     "txt": "EL",
-    "layout": "A",
     "sub": [
         EAL_West,
         EAL_East,

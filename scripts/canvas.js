@@ -1,7 +1,7 @@
 var Layout = {
-    A: "A",
-    B: "B",
-    C: "C",
+    ListRight: "list-right",
+    ListRightBelow: "list-right-below",
+    RowRight: "row-right",
 }
 
 function getSign(root) {
@@ -107,7 +107,7 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
     return signDimensions;
 }
 
-function drawLayoutA(canvas, root, x, y, inactiveInherited) {
+function drawListRight(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
     var maxWithHeight = 0;
@@ -161,7 +161,7 @@ function drawLayoutA(canvas, root, x, y, inactiveInherited) {
     return [usedWidth, usedHeight];
 }
 
-function drawLayoutB(canvas, root, x, y, inactiveInherited) {
+function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
     var maxWithHeight = 0;
@@ -209,7 +209,7 @@ function drawLayoutB(canvas, root, x, y, inactiveInherited) {
     return [usedWidth, usedHeight];
 }
 
-function drawLayoutC(canvas, root, x, y, inactiveInherited) {
+function drawRowRight(canvas, root, x, y, inactiveInherited) {
     var usedWidth = 0;
     var usedHeight = 0;
     var maxWithHeight = 0;
@@ -305,13 +305,13 @@ function drawLayoutC(canvas, root, x, y, inactiveInherited) {
 
 function drawLayout(canvas, root, x, y, inactiveInherited) {
     switch (root.layout) {
-        case Layout.B:
-            return drawLayoutB(canvas, root, x, y, inactiveInherited);
-        case Layout.C:
-            return drawLayoutC(canvas, root, x, y, inactiveInherited);
-        case Layout.A:
+        case Layout.ListRightBelow:
+            return drawListRightBelow(canvas, root, x, y, inactiveInherited);
+        case Layout.RowRight:
+            return drawRowRight(canvas, root, x, y, inactiveInherited);
+        case Layout.ListRight:
         default:
-            return drawLayoutA(canvas, root, x, y, inactiveInherited);
+            return drawListRight(canvas, root, x, y, inactiveInherited);
     }
 }
 
