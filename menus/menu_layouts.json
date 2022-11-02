@@ -6,12 +6,20 @@
         {
             "name": "Layout A",
             "type": "radio",
-            "key": "A"
+            "key": "A",
+            "icon": "/icons/layouts/LayoutA.svg",
+            "styles": [
+                "layoutsIcon612"
+            ]
         },
         {
             "name": "Layout B",
             "type": "radio",
-            "key": "B"
+            "key": "B",
+            "icon": "/icons/layouts/LayoutB.svg",
+            "styles": [
+                "layoutsIcon612"
+            ]
         }
     ]
 }

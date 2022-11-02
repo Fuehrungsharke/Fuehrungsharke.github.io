@@ -24,6 +24,10 @@
         "icon": "/icons/ui/decollapse.svg"
     },
     {
+        "name": "menu_layouts",
+        "type": "placeholder"
+    },
+    {
         "name": "",
         "type": "header"
     },
