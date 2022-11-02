@@ -2,6 +2,7 @@
     "name": "Organisation",
     "type": "submenu",
     "key": "org",
+    "icon": "/icons/ui/organisation.svg",
     "values": [
         {
             "name": "Feuerwehr",
@@ -160,12 +161,14 @@
         {
             "name": "Neue Organisation",
             "type": "cmd",
-            "cmd": "new_org"
+            "cmd": "new_org",
+            "icon": "/icons/ui/add.svg"
         },
         {
             "name": "Zurücksetzen",
             "type": "cmd",
             "cmd": "resetOrg",
+            "icon": "/icons/ui/reset.svg",
             "implicitAttritbues": {
                 "org": ""
             }

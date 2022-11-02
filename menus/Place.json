@@ -12,7 +12,8 @@
     {
         "name": "Ortsgebunden",
         "type": "bool",
-        "key": "stationary"
+        "key": "stationary",
+        "icon": "/icons/stationary.svg"
     },
     {
         "name": "Symbols",
