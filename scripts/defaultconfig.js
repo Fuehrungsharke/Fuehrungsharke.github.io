@@ -10,7 +10,7 @@ var ZTr = {
     "with": [
         {
             "sign": "Person",
-            "name": "Der Zugführer",
+            "name": "Der Zugführer, 2, 3, 4, 5, 6, 7, 8, 9",
             "txt": "TZ",
             "leading": true,
             "platoon": true,

@@ -313,23 +313,15 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
         return dimSign;
 
     var dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
-    dim.height += Math.max(dimSign.height, dimWith.height);
+    var maxSignWithHeight = Math.max(dimSign.height, dimWith.height);
+    dim.height += maxSignWithHeight;
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        var signHeight = 256
-
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = dimSign.height;
         var leafRowWidth = 0;
         var leafGap = 0;
         var cntLeafs = 0;
-
-        appendLine(canvas, root, inactiveInherited,
-            x + dimSign.width / 2,
-            y + dimSign.height,
-            x + dimSign.width / 2,
-            y + dim.height + signHeight / 2
-        );
 
         var leafs = root.sub;
         var dimFirstSub = null;
@@ -350,9 +342,15 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
 
         appendLine(canvas, root, inactiveInherited,
             x + dimSign.width / 2,
-            y + dim.height + signHeight / 2,
-            x + dim.width + dimFirstSub.anchorLeftX - GAP,
-            y + dim.height + signHeight / 2
+            y + dimSign.height,
+            x + dimSign.width / 2,
+            y + maxSignWithHeight + dimFirstSub.anchorLeftY
+        );
+        appendLine(canvas, root, inactiveInherited,
+            x + dimSign.width / 2,
+            y + maxSignWithHeight + dimFirstSub.anchorLeftY,
+            x + dimSign.width + dimFirstSub.anchorLeftX - GAP,
+            y + maxSignWithHeight + dimFirstSub.anchorLeftY
         );
 
         dim.height += leafsTotalRowHeight;
@@ -384,8 +382,8 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
         var anchorSub1 = dimSubs[0].x + dimSubs[0].anchorTopX;
         var anchorSubN = dimSubs[dimSubs.length - 1].x + dimSubs[dimSubs.length - 1].anchorTopX;
         dim.anchorTopX = dimSubs[0].anchorTopX + (anchorSubN - anchorSub1) / 2;
-        appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY);
-        appendLine(canvas, root, inactiveInherited, x + dim.anchorTopX, y + subY - GAP, x + dim.anchorTopX, y + subY);
+        appendLine(canvas, root, inactiveInherited, x + dim.anchorTopX, y + subY - GAP, x + dim.anchorTopX, y + subY); // root line
+        appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY); // group line
     }
     drawSign(canvas, root, x + dim.anchorTopX - dimSign.anchorTopX, y, inactiveInherited);
     drawWithHorizontally(canvas, root, x + dim.anchorTopX + dimSign.anchorTopX, y, inactiveInherited);
