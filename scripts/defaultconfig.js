@@ -6,11 +6,11 @@ var ZTr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "row-center-below",
+    "layout": "row-right",
     "with": [
         {
             "sign": "Person",
-            "name": "Der Zugführer, 2, 3, 4, 5, 6, 7, 8, 9",
+            "name": "Der Zugführer",
             "txt": "TZ",
             "leading": true,
             "platoon": true,
@@ -53,7 +53,7 @@ var BGr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "row-right-below",
+    "layout": "row-right",
     "with": [
         {
             "txt": "B",
@@ -136,7 +136,7 @@ var FGrR = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "list-right-below",
+    "layout": "row-right",
     "with": [
         {
             "name": "Der Gruppenführer, der Fachgruppe, Räumen",
@@ -218,7 +218,7 @@ var TZ = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
-    "layout": "row-center-below",
+    "layout": "list-right",
     "sub": [
         ZTr,
         BGr,
