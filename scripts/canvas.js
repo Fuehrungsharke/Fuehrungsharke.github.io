@@ -3,6 +3,7 @@ var Layout = {
     ListRightBelow: "list-right-below",
     RowRight: "row-right",
     RowRightBelow: "row-right-below",
+    CenteredRight: "center-right",
     CenteredBelow: "center-below",
 }
 
@@ -180,7 +181,6 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
         dim.width += GAP;
         appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width + GAP, y + signHeight / 2); // root line
         dim.width += GAP;
-        var prevSubHeight = null;
         var lastSubY = dim.height;
         for (let subTree in subTrees) {
             lastSubY = dim.height;
@@ -193,7 +193,6 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
             );
             subTotalWidth = Math.max(subTotalWidth, subSize.width + GAP);
             dim.height += subSize.height;
-            prevSubHeight = subSize.height;
         }
         dim.height = Math.max(dimSign.height, dimWith.height, dim.height);
         appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width, y + lastSubY + signHeight / 2); // group line
@@ -366,6 +365,55 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
     return dim;
 }
 
+function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
+    var dim = new Dim(x, y);
+    var dimSign = drawSign(null, root, x, y, inactiveInherited);
+    dim.anchorTopX = dimSign.anchorTopX;
+    dim.anchorTopY = dimSign.anchorTopY;
+    dim.anchorLeftX = dimSign.anchorLeftX;
+    dim.anchorLeftY = dimSign.anchorLeftY;
+    dim.width += dimSign.width;
+    if (root.sign == 'Collapsed')
+        return dimSign;
+
+    var dimWith = drawWithHorizontally(null, root, x + dimSign.width, y, inactiveInherited);
+    dim.width += dimWith.width;
+
+    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
+        var subTrees = root.sub;
+        var subTotalWidth = 0;
+        dim.width += 2*GAP;
+        var dimSubs = [];
+        for (let subTree in subTrees) {
+            var dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
+            dimSubs.push(dimSubItem);
+            appendLine(canvas, root, inactiveInherited,
+                x + dim.width,
+                y + dim.height + dimSubItem.anchorLeftY,
+                x + dim.width + GAP + dimSubItem.anchorLeftX,
+                y + dim.height + dimSubItem.anchorLeftY
+            );
+            subTotalWidth = Math.max(subTotalWidth, dimSubItem.width + GAP);
+            dim.height += dimSubItem.height;
+        }
+        dim.height = Math.max(dimSign.height, dimWith.height, dim.height);
+        var anchorSub1 = dimSubs[0].y + dimSubs[0].anchorLeftY;
+        var anchorSubN = dimSubs[dimSubs.length - 1].y + dimSubs[dimSubs.length - 1].anchorLeftY;
+        dim.anchorLeftY = dimSubs[0].anchorLeftY + (anchorSubN - anchorSub1) / 2;
+        appendLine(canvas, root, inactiveInherited, x + dim.width - GAP, y + dim.anchorLeftY, x + dim.width, y + dim.anchorLeftY); // root line
+        appendLine(canvas, root, inactiveInherited, x + dim.width, anchorSub1, x + dim.width, anchorSubN); // group line
+        dim.width += GAP;
+        dim.width += subTotalWidth;
+    }
+    else
+        dim.height += Math.max(dimSign.height, dimWith.height);
+
+    drawSign(canvas, root, x, y + dim.anchorLeftY - dimSign.height / 2, inactiveInherited);
+    drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
+
+    return dim;
+}
+
 function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
     var dim = new Dim(x, y);
     var dimSign = drawSign(null, root, 0, 0, false); // just measure dimensions
@@ -408,6 +456,8 @@ function drawLayout(canvas, root, x, y, inactiveInherited) {
             return drawRowRight(canvas, root, x, y, inactiveInherited);
         case Layout.RowRightBelow:
             return drawRowRightBelow(canvas, root, x, y, inactiveInherited);
+        case Layout.CenteredRight:
+            return drawCenteredRight(canvas, root, x, y, inactiveInherited);
         case Layout.CenteredBelow:
             return drawCenteredBelow(canvas, root, x, y, inactiveInherited);
         case Layout.ListRight:

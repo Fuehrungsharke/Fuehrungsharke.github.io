@@ -26,6 +26,15 @@
             ]
         },
         {
+            "name": "Zentriert",
+            "type": "radio",
+            "key": "center-right",
+            "icon": "/icons/layouts/CenteredRight.svg",
+            "styles": [
+                "layoutCenteredRight"
+            ]
+        },
+        {
             "name": "Unterhalb",
             "type": "header"
         },

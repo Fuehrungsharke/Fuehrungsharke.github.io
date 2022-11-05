@@ -29,6 +29,11 @@ img {
     width: 50.7px;
 }
 
+.layoutCenteredRight > img {
+    width: 40.4px;
+    margin-right: 26.9px;
+}
+
 .layoutCenteredBelow > img {
     width: 50.7px;
 }
