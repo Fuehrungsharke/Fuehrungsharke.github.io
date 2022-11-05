@@ -50,7 +50,11 @@
         {
             "name": "Zentriert",
             "type": "radio",
-            "key": "row-center-below"
+            "key": "center-below",
+            "icon": "/icons/layouts/CenteredBelow.svg",
+            "styles": [
+                "layoutCenteredBelow"
+            ]
         }
     ]
 }

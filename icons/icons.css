@@ -28,3 +28,7 @@ img {
 .layoutRowRightBelow > img {
     width: 50.7px;
 }
+
+.layoutCenteredBelow > img {
+    width: 50.7px;
+}

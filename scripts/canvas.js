@@ -3,7 +3,7 @@ var Layout = {
     ListRightBelow: "list-right-below",
     RowRight: "row-right",
     RowRightBelow: "row-right-below",
-    CenteredBelow: "row-center-below",
+    CenteredBelow: "center-below",
 }
 
 Dim.prototype.x = 0;
