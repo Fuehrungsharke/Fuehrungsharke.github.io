@@ -392,11 +392,11 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
         appendLine(canvas, root, inactiveInherited, x + dim.anchorTopX, y + dimSign.height, x + dim.anchorTopX, y + subY); // root line
         appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY); // group line
     }
-    drawSign(canvas, root, x + dim.anchorTopX - dimSign.anchorTopX, y, inactiveInherited);
-    drawWithHorizontally(canvas, root, x + dim.anchorTopX + dimSign.anchorTopX, y, inactiveInherited);
     dim.anchorLeftX = dim.anchorTopX - dimSign.anchorTopX;
     dim.anchorLeftY = dimSign.anchorLeftY;
-    dim.width = Math.max(dim.width, dimSign.width + dimWith.width);
+    drawSign(canvas, root, x + dim.anchorLeftX, y, inactiveInherited);
+    drawWithHorizontally(canvas, root, x + dim.anchorTopX + dimSign.anchorTopX, y, inactiveInherited);
+    dim.width = Math.max(dim.width, dim.anchorLeftX + dimSign.width + dimWith.width + GAP);
     return dim;
 }
 
