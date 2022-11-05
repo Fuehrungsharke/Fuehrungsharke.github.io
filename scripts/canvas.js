@@ -171,7 +171,7 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
         var subTotalWidth = 0;
         var signHeight = 256
         dim.width += GAP;
-        appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width + GAP, y + signHeight / 2);
+        appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width + GAP, y + signHeight / 2); // root line
         dim.width += GAP;
         var prevSubHeight = null;
         var lastSubY = dim.height;
@@ -185,13 +185,11 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
                 y + dim.height + subSize.anchorLeftY
             );
             subTotalWidth = Math.max(subTotalWidth, subSize.width + GAP);
-            if (prevSubHeight == null)
-                dim.height += Math.max(dimSign.height, dimWith.height, subSize.height);
-            else
-                dim.height += subSize.height;
+            dim.height += subSize.height;
             prevSubHeight = subSize.height;
         }
-        appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width, y + lastSubY + signHeight / 2);
+        dim.height = Math.max(dimSign.height, dimWith.height, dim.height);
+        appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width, y + lastSubY + signHeight / 2); // group line
         dim.width += GAP;
         dim.width += subTotalWidth;
     }
@@ -382,7 +380,7 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
         var anchorSub1 = dimSubs[0].x + dimSubs[0].anchorTopX;
         var anchorSubN = dimSubs[dimSubs.length - 1].x + dimSubs[dimSubs.length - 1].anchorTopX;
         dim.anchorTopX = dimSubs[0].anchorTopX + (anchorSubN - anchorSub1) / 2;
-        appendLine(canvas, root, inactiveInherited, x + dim.anchorTopX, y + subY - GAP, x + dim.anchorTopX, y + subY); // root line
+        appendLine(canvas, root, inactiveInherited, x + dim.anchorTopX, y + dimSign.height, x + dim.anchorTopX, y + subY); // root line
         appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY); // group line
     }
     drawSign(canvas, root, x + dim.anchorTopX - dimSign.anchorTopX, y, inactiveInherited);
