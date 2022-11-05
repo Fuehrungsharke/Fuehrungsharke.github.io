@@ -79,10 +79,12 @@ function getLine(ax, ay, bx, by) {
     return line;
 }
 
-function appendLine(canvas, root, inactiveInherited, ax, ay, bx, by) {
+function appendLine(canvas, root, inactiveInherited, ax, ay, bx, by, color) {
     var line = getLine(ax, ay, bx, by);
-    if (root.inactive || inactiveInherited)
+    if (root != null && (root.inactive || inactiveInherited))
         line.setAttribute('opacity', 0.25);
+    if (color != null)
+        line.setAttribute('stroke', color);
     canvas.appendChild(line);
 }
 
@@ -134,8 +136,13 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
                 dimSign.height += 24;
             }
         }
-        if (canvas != null)
+        if (canvas != null) {
             canvas.appendChild(itemBox);
+            // Debug: Print Coords
+            // var txt = getText(uuid, `(${x}, ${y})`, x, y + 24);
+            // txt.setAttribute('text-anchor', 'left');
+            // canvas.appendChild(txt);
+        }
     }
     return dimSign;
 }
@@ -369,12 +376,14 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
     var subY = dim.height;
     var dimSubs = [];
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
+        if (root.sub[0].sign == 'Collapsed')
+            subY = dimSign.height;
         root.sub.forEach(subItem => {
             var dimSubItem = drawRecursive(canvas, subItem, x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
             appendLine(canvas, root, inactiveInherited, x + dim.width + dimSubItem.anchorTopX, y + subY, x + dim.width + dimSubItem.anchorTopX, y + subY + GAP);
             dim.width += dimSubItem.width + GAP;
-            dim.height = Math.max(dim.height, subY + dimSubItem.height);
+            dim.height = Math.max(dim.height, subY + dimSubItem.height + GAP);
         });
         dim.width -= GAP;
         var anchorSub1 = dimSubs[0].x + dimSubs[0].anchorTopX;
