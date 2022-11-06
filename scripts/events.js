@@ -9,6 +9,15 @@ function onKeyUp(evt) {
         undo();
     else if (evt.keyCode == KeyCode.Y && evt.ctrlKey)
         redo();
+    else if (evt.keyCode == KeyCode.A && evt.ctrlKey) {
+        updateSelection({
+            'minX': 0,
+            'minY': 0,
+            'maxX': size.width,
+            'maxY': size.height,
+        }, 'normal');
+        clearSelectionRect();
+    }
     else if (evt.keyCode == KeyCode.C && evt.ctrlKey) {
         var cutCmd = new CopyCmd();
         cutCmd.selectedElements = getSelectedElements();
