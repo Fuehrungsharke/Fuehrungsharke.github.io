@@ -264,10 +264,7 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
     dim.width += dimWith.width;
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        var signHeight = 256
-
         dim.width += 4 * GAP;
-
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = Math.max(dimSign.height, dimWith.height);
         var leafRowWidth = 0;
@@ -292,9 +289,9 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
 
         appendLine(canvas, root, inactiveInherited,
             x + dim.width - 3 * GAP,
-            y + signHeight / 2,
+            y + dim.anchorLeftY,
             x + dim.width + dimFirstSub.anchorLeftX - GAP,
-            y + signHeight / 2);
+            y + dim.anchorLeftY);
 
         dim.height += leafsTotalRowHeight;
         dim.width += leafsTotalWidth;
