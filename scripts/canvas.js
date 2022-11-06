@@ -268,13 +268,12 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = 0;
         var leafRowWidth = 0;
-        var leafGap = 0;
         var cntLeafs = 0;
         var leafs = root.sub;
         var dimFirstSub = null;
         for (let leaf in leafs) {
             cntLeafs += 1;
-            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafGap + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
+            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
             if (dimFirstSub == null)
                 dimFirstSub = leafDimensions;
             leafRowWidth += leafDimensions.width;
@@ -333,14 +332,12 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
         var leafsTotalWidth = 0;
         var leafsTotalRowHeight = dimSign.height;
         var leafRowWidth = 0;
-        var leafGap = 0;
         var cntLeafs = 0;
-
         var leafs = root.sub;
         var dimFirstSub = null;
         for (let leaf in leafs) {
             cntLeafs += 1;
-            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafGap + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
+            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
             if (dimFirstSub == null)
                 dimFirstSub = leafDimensions;
             leafRowWidth += leafDimensions.width;
