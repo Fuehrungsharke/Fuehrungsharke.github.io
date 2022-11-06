@@ -72,7 +72,6 @@ var BGr = {
             "txt": "B",
             "leading": true,
             "troop": true,
-            "sub": null,
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
