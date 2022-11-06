@@ -95,7 +95,7 @@ function drop(evt) {
     if (hoveringUuid != null && draggedElements != null) {
         var target = getByUuid(config, hoveringUuid);
         var selectedElements = getSelectedElements();
-        if (!selectedElements.some(selectedElement => selectedElement.uuid == target.uuid)) {
+        if (selectedElements != null && !selectedElements.some(selectedElement => selectedElement.uuid == target.uuid)) {
             var targetParent = getParentByUuid(config, hoveringUuid);
             for (let i = 0; i < draggedElements.length; i++) {
                 var source = getParentByUuid(config, draggedElements[i].draggingInfo.uuid);
@@ -155,6 +155,14 @@ function clearSelection() {
     for (let idx in selectables)
         if (selectables[idx].classList != null)
             selectables[idx].classList.remove('selected');
+}
+
+function clearDragged() {
+    var dragged = outputSvg.getElementsByClassName('draggedElement');
+    for (let i = 0; i < dragged.length; i++)
+        dragged[i].classList.remove('draggedElement');
+    draggingElements = null;
+    dragButton = null;
 }
 
 function updateSelection(markedArea, mode) {

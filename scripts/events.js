@@ -2,6 +2,8 @@ function onKeyUp(evt) {
     if (evt.keyCode === KeyCode.ESC) {
         closeSignContextMenu();
         clearSelection();
+        clearDragged();
+        draw();
     }
     else if (evt.keyCode == KeyCode.Z && evt.ctrlKey)
         undo();
