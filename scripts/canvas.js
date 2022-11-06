@@ -177,13 +177,11 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var subTrees = root.sub;
         var subTotalWidth = 0;
-        var signHeight = 256
         dim.width += GAP;
-        appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width + GAP, y + signHeight / 2); // root line
+        appendLine(canvas, root, inactiveInherited, x + dim.width, y + dimSign.anchorLeftY, x + dim.width + GAP, y + dimSign.anchorLeftY); // root line
         dim.width += GAP;
-        var lastSubY = dim.height;
+        var dimLastSub = null;
         for (let subTree in subTrees) {
-            lastSubY = dim.height;
             var subSize = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
@@ -193,9 +191,10 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
             );
             subTotalWidth = Math.max(subTotalWidth, subSize.width + GAP);
             dim.height += subSize.height;
+            dimLastSub = subSize;
         }
         dim.height = Math.max(dimSign.height, dimWith.height, dim.height);
-        appendLine(canvas, root, inactiveInherited, x + dim.width, y + signHeight / 2, x + dim.width, y + lastSubY + signHeight / 2); // group line
+        appendLine(canvas, root, inactiveInherited, x + dim.width, y + dimSign.anchorLeftY, x + dim.width, dimLastSub.y + dimLastSub.anchorLeftY); // group line
         dim.width += GAP;
         dim.width += subTotalWidth;
     }
@@ -369,7 +368,7 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
     var dim = new Dim(x, y);
     var dimSign = drawSign(null, root, x, y, inactiveInherited);
     dim.anchorTopX = dimSign.anchorTopX;
-    dim.anchorTopY = dimSign.anchorTopY;
+
     dim.anchorLeftX = dimSign.anchorLeftX;
     dim.anchorLeftY = dimSign.anchorLeftY;
     dim.width += dimSign.width;
@@ -382,7 +381,7 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         var subTrees = root.sub;
         var subTotalWidth = 0;
-        dim.width += 2*GAP;
+        dim.width += 2 * GAP;
         var dimSubs = [];
         for (let subTree in subTrees) {
             var dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
@@ -397,19 +396,20 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
             dim.height += dimSubItem.height;
         }
         dim.height = Math.max(dimSign.height, dimWith.height, dim.height);
-        var anchorSub1 = dimSubs[0].y + dimSubs[0].anchorLeftY;
-        var anchorSubN = dimSubs[dimSubs.length - 1].y + dimSubs[dimSubs.length - 1].anchorLeftY;
-        dim.anchorLeftY = dimSubs[0].anchorLeftY + (anchorSubN - anchorSub1) / 2;
+        var sub1 = dimSubs[0];
+        var subN = dimSubs[dimSubs.length - 1];
+        dim.anchorLeftY = sub1.anchorLeftY + ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
+        dim.anchorTopY = ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
         appendLine(canvas, root, inactiveInherited, x + dim.width - GAP, y + dim.anchorLeftY, x + dim.width, y + dim.anchorLeftY); // root line
-        appendLine(canvas, root, inactiveInherited, x + dim.width, anchorSub1, x + dim.width, anchorSubN); // group line
+        appendLine(canvas, root, inactiveInherited, x + dim.width, sub1.y + sub1.anchorLeftY, x + dim.width, subN.y + subN.anchorLeftY); // group line
         dim.width += GAP;
         dim.width += subTotalWidth;
     }
     else
         dim.height += Math.max(dimSign.height, dimWith.height);
 
-    drawSign(canvas, root, x, y + dim.anchorLeftY - dimSign.height / 2, inactiveInherited);
-    drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
+    drawSign(canvas, root, x, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
+    drawWithHorizontally(canvas, root, x + dimSign.width, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
 
     return dim;
 }
@@ -429,7 +429,7 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
         root.sub.forEach(subItem => {
             var dimSubItem = drawRecursive(canvas, subItem, x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
-            appendLine(canvas, root, inactiveInherited, x + dim.width + dimSubItem.anchorTopX, y + subY, x + dim.width + dimSubItem.anchorTopX, y + subY + GAP);
+            appendLine(canvas, root, inactiveInherited, x + dim.width + dimSubItem.anchorTopX, y + subY, x + dim.width + dimSubItem.anchorTopX, y + subY + dimSubItem.anchorTopY + GAP);
             dim.width += dimSubItem.width + GAP;
             dim.height = Math.max(dim.height, subY + dimSubItem.height + GAP);
         });
