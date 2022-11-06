@@ -122,6 +122,7 @@
             "name": "Zurücksetzen",
             "type": "cmd",
             "cmd": "resetTacticalSize",
+            "icon": "/icons/ui/reset.svg",
             "implicitAttritbues": {
                 "formation": false,
                 "platoon": false,

@@ -1,0 +1,69 @@
+{
+    "name": "Layout",
+    "type": "submenu",
+    "key": "layout",
+    "values": [
+        {
+            "name": "Seitlich",
+            "type": "header"
+        },
+        {
+            "name": "Liste",
+            "type": "radio",
+            "key": "list-right",
+            "icon": "/icons/layouts/ListRight.svg",
+            "styles": [
+                "layoutListRight"
+            ]
+        },
+        {
+            "name": "Reihe",
+            "type": "radio",
+            "key": "row-right",
+            "icon": "/icons/layouts/RowRight.svg",
+            "styles": [
+                "layoutRowRight"
+            ]
+        },
+        {
+            "name": "Zentriert",
+            "type": "radio",
+            "key": "center-right",
+            "icon": "/icons/layouts/CenteredRight.svg",
+            "styles": [
+                "layoutCenteredRight"
+            ]
+        },
+        {
+            "name": "Unterhalb",
+            "type": "header"
+        },
+        {
+            "name": "Liste",
+            "type": "radio",
+            "key": "list-right-below",
+            "icon": "/icons/layouts/ListRightBelow.svg",
+            "styles": [
+                "layoutListRightBelow"
+            ]
+        },
+        {
+            "name": "Reihe",
+            "type": "radio",
+            "key": "row-right-below",
+            "icon": "/icons/layouts/RowRightBelow.svg",
+            "styles": [
+                "layoutRowRightBelow"
+            ]
+        },
+        {
+            "name": "Zentriert",
+            "type": "radio",
+            "key": "center-below",
+            "icon": "/icons/layouts/CenteredBelow.svg",
+            "styles": [
+                "layoutCenteredBelow"
+            ]
+        }
+    ]
+}

@@ -4,7 +4,27 @@
         "type": "placeholder"
     },
     {
-        "name": "menu_visibility",
+        "name": "Deaktivieren",
+        "nameInverted": "Aktivieren",
+        "type": "bool",
+        "key": "inactive",
+        "icon": "/icons/ui/toggle_off.svg",
+        "iconInverted": "/icons/ui/toggle_on.svg"
+    },
+    {
+        "name": "Einklappen",
+        "type": "cmd",
+        "cmd": "collapse",
+        "icon": "/icons/ui/collapse.svg"
+    },
+    {
+        "name": "Ausklappen",
+        "type": "cmd",
+        "cmd": "decollapse",
+        "icon": "/icons/ui/decollapse.svg"
+    },
+    {
+        "name": "menu_layouts",
         "type": "placeholder"
     },
     {
@@ -14,6 +34,7 @@
     {
         "name": "Hinzufügen",
         "type": "submenu",
+        "icon": "/icons/ui/add.svg",
         "values": [
             {
                 "name": "Nebenstehend",
@@ -72,7 +93,7 @@
     {
         "name": "Ausschneiden",
         "type": "submenu",
-        "cmd": "cut",
+        "icon": "/icons/ui/cut.svg",
         "values": [
             {
                 "name": "Untergeordnete Elemente behalten",
@@ -97,16 +118,17 @@
     {
         "name": "Kopieren",
         "type": "cmd",
-        "cmd": "copy"
+        "cmd": "copy",
+        "icon": "/icons/ui/copy.svg"
     },
     {
         "name": "Einfügen",
         "type": "submenu",
+        "icon": "/icons/ui/paste.svg",
         "values": [
             {
                 "name": "Ohne untergeordnete Elemente",
                 "type": "submenu",
-                "cmd": "paste_single",
                 "icon": "/icons/relations/paste_single.svg",
                 "styles": [
                     "relationsIcon612"
@@ -115,7 +137,7 @@
                     {
                         "name": "Nebenstehend",
                         "type": "cmd",
-                        "cmd": "paste_with",
+                        "cmd": "paste_with_single",
                         "icon": "/icons/relations/with.svg",
                         "styles": [
                             "relationsIcon868"
@@ -124,7 +146,7 @@
                     {
                         "name": "Auf gleicher Ebene",
                         "type": "cmd",
-                        "cmd": "paste_sibling",
+                        "cmd": "paste_sibling_single",
                         "icon": "/icons/relations/sibling.svg",
                         "styles": [
                             "relationsIcon612"
@@ -133,7 +155,7 @@
                     {
                         "name": "Übergeordnet",
                         "type": "cmd",
-                        "cmd": "paste_parent",
+                        "cmd": "paste_parent_single",
                         "icon": "/icons/relations/parent.svg",
                         "styles": [
                             "relationsIcon612"
@@ -142,7 +164,7 @@
                     {
                         "name": "Untergeordnet",
                         "type": "cmd",
-                        "cmd": "paste_sub",
+                        "cmd": "paste_sub_single",
                         "icon": "/icons/relations/sub.svg",
                         "styles": [
                             "relationsIcon612"
@@ -153,7 +175,6 @@
             {
                 "name": "Mit untergeordnete Elemente",
                 "type": "submenu",
-                "cmd": "paste_tree",
                 "icon": "/icons/relations/paste_tree.svg",
                 "styles": [
                     "relationsIcon612"
@@ -162,7 +183,7 @@
                     {
                         "name": "Auf gleicher Ebene",
                         "type": "cmd",
-                        "cmd": "paste_sibling",
+                        "cmd": "paste_sibling_tree",
                         "icon": "/icons/relations/sibling.svg",
                         "styles": [
                             "relationsIcon612"
@@ -171,7 +192,7 @@
                     {
                         "name": "Untergeordnet",
                         "type": "cmd",
-                        "cmd": "paste_sub",
+                        "cmd": "paste_sub_tree",
                         "icon": "/icons/relations/sub.svg",
                         "styles": [
                             "relationsIcon612"
@@ -184,6 +205,7 @@
     {
         "name": "Entfernen",
         "type": "submenu",
+        "icon": "/icons/ui/delete.svg",
         "values": [
             {
                 "name": "Untergeordnete Elemente behalten",

@@ -6,6 +6,7 @@ var ZTr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
+    "layout": "row-right",
     "with": [
         {
             "sign": "Person",
@@ -52,6 +53,7 @@ var BGr = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
+    "layout": "row-right",
     "with": [
         {
             "txt": "B",
@@ -70,7 +72,6 @@ var BGr = {
             "txt": "B",
             "leading": true,
             "troop": true,
-            "sub": null,
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
         },
@@ -134,6 +135,7 @@ var FGrR = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
+    "layout": "row-right",
     "with": [
         {
             "name": "Der Gruppenführer, der Fachgruppe, Räumen",
@@ -215,6 +217,7 @@ var TZ = {
     "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
+    "layout": "list-right",
     "sub": [
         ZTr,
         BGr,
@@ -336,6 +339,7 @@ var EAL_BR = {
     "colorAccent": "#000",
     "txt": "EAL",
     "name": "BR",
+    "layout": "list-right-below",
     "with": [
         {
             "sign": "Place",

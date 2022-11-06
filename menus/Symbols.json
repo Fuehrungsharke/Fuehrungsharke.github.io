@@ -1,5 +1,5 @@
 {
-    "name": "Symbole",
+    "name": "Symbol",
     "type": "submenu",
     "values": [
         {
@@ -55,10 +55,12 @@
             "name": "Zurücksetzen",
             "type": "cmd",
             "cmd": "resetSymbol",
+            "icon": "/icons/ui/reset.svg",
             "implicitAttritbues": {
                 "extinguish": false,
                 "medical": false,
                 "clear": false,
+                "bridge": false,
                 "transport": false
             }
         }

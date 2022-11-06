@@ -15,18 +15,18 @@
     <label for="iptConfig">Select a config:</label>
     <input type="file" id="iptConfig" name="iptConfig" accept="Config/json"><br />
     <div class="slidercontainer">
-        <input id="zoomslider" type="range" min="1" max="100" value="50" class="slider">
+        <input id="zoomslider" type="range" min="1" max="100" value="25" class="slider">
     </div>
     <svg id="displaySvg" class="noContextMenu">
         <g id="zoomcontainer">
             <svg id="outputSvg" class="noContextMenu" width="512" height="256" />
         </g>
+        <rect id="selectionRect" x="0" y="0" width="0" height="0" fill="#b9d5f1" fill-opacity="0.25" stroke="#9ac5ec" stroke-width="1" opacity="0" />
     </svg>
     <div class="context-menu">
         <ul class="menu">
         </ul>
     </div>
-    <br />
     <br />
     <button id="btnDownloadConfig">Download Config</button>
     <button id="btnDownloadSvg">Download Vector Image (*.svg)</button>
@@ -35,6 +35,27 @@
     <script src="scripts/history.js"></script>
     <script src="scripts/events.js"></script>
     <script src="scripts/staff/staff.js"></script>
+    <script src="scripts/commands/cmd_base.js"></script>
+    <script src="scripts/commands/add.js"></script>
+    <script src="scripts/commands/add_parent.js"></script>
+    <script src="scripts/commands/add_sib.js"></script>
+    <script src="scripts/commands/add_sub.js"></script>
+    <script src="scripts/commands/add_with.js"></script>
+    <script src="scripts/commands/copy.js"></script>
+    <script src="scripts/commands/remove.js"></script>
+    <script src="scripts/commands/cut_single.js"></script>
+    <script src="scripts/commands/cut_tree.js"></script>
+    <script src="scripts/commands/delete_single.js"></script>
+    <script src="scripts/commands/delete_tree.js"></script>
+    <script src="scripts/commands/paste_parent.js"></script>
+    <script src="scripts/commands/paste_sib.js"></script>
+    <script src="scripts/commands/paste_sub.js"></script>
+    <script src="scripts/commands/paste_with.js"></script>
+    <script src="scripts/commands/new_org.js"></script>
+    <script src="scripts/commands/set_staff.js"></script>
+    <script src="scripts/commands/reset_staff.js"></script>
+    <script src="scripts/commands/collapse.js"></script>
+    <script src="scripts/commands/decollapse.js"></script>
     <script src="scripts/dragdrop/dragdrop.js"></script>
     <script src="scripts/contextmenu/contextmenu.js"></script>
     <script src="scripts/canvas.js"></script>

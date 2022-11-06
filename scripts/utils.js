@@ -128,3 +128,41 @@ function getParentByUuid(root, uuid) {
         }
     return null;
 }
+
+function toCanvasCoords(value) {
+    return value * (1 / zoomFactor);
+}
+
+function fromCanvasCoords(value) {
+    return value * zoomFactor;
+}
+
+function getTransform(element) {
+    var transform = element.getAttributeNS(null, 'transform');
+    var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
+    return {
+        'x': parseInt(match[1]),
+        'y': parseInt(match[2]),
+        'scaleX': parseInt(match[3]),
+        'scaleY': parseInt(match[4]),
+    };
+}
+
+function getElementDimensions(element) {
+    var maxWidth = 0;
+    var maxHeight = 0;
+    var svgs = element.getElementsByTagName('svg');
+    for (let i = 0; i < svgs.length; i++) {
+        maxWidth = Math.max(maxWidth, svgs[i].width.baseVal.value);
+        maxHeight = Math.max(maxHeight, svgs[i].height.baseVal.value);
+    }
+    return [maxWidth, maxHeight];
+}
+
+function getSelectedElements() {
+    var selectedElements = [];
+    var selectedSigns = outputSvg.getElementsByClassName('selected');
+    for (let i = 0; i < selectedSigns.length; i++)
+        selectedElements.push(getByUuid(config, selectedSigns[i].getAttributeNS(null, 'uuid')));
+    return selectedElements;
+}

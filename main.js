@@ -1,18 +1,17 @@
 const maxColumns = 10
 const subColumns = 5
-const signWidth = 256
-const signHeight = 256
 const GAP = 50
 const LINESIZE = 26
-
 const WITH = 'with';
 const SUB = 'sub';
 
-var draggingElement = null;
-var hoveringUuid = null;
-
 var KeyCode = {
     ESC: 27,
+    DEL: 46,
+    A: 65,
+    C: 67,
+    V: 86,
+    X: 88,
     Y: 89,
     Z: 90,
 }
@@ -103,13 +102,6 @@ document.addEventListener('contextmenu', function (evt) {
         evt.preventDefault();
 });
 
-window.onkeyup = function (e) {
-    if (e.keyCode === KeyCode.ESC)
-        closeSignContextMenu();
-    else if (e.keyCode === KeyCode.Z && e.ctrlKey)
-        undo();
-    else if (e.keyCode === KeyCode.Y && e.ctrlKey)
-        redo();
-}
+window.onkeyup = onKeyUp;
 
 draw();
