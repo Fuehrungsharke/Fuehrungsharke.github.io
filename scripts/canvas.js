@@ -406,7 +406,9 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
         var subN = dimSubs[dimSubs.length - 1];
         dim.anchorLeftY = sub1.anchorLeftY + ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
         dim.anchorTopY = ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
-        dim.height = Math.max(dim.anchorLeftY + dimSign.height - dimSign.anchorLeftY, dimWith.height, dim.height);
+        dim.height = Math.max(dim.height,
+            dim.anchorLeftY + dimSign.height - dimSign.anchorLeftY,
+            dim.anchorLeftY + dimWith.height - dimSign.anchorLeftY);
         appendLine(canvas, root, inactiveInherited, x + dim.width - GAP, y + dim.anchorLeftY, x + dim.width, y + dim.anchorLeftY); // root line
         appendLine(canvas, root, inactiveInherited, x + dim.width, sub1.y + sub1.anchorLeftY, x + dim.width, subN.y + subN.anchorLeftY); // group line
         dim.width += GAP;
