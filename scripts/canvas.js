@@ -266,7 +266,7 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         dim.width += 4 * GAP;
         var leafsTotalWidth = 0;
-        var leafsTotalRowHeight = Math.max(dimSign.height, dimWith.height);
+        var leafsTotalRowHeight = 0;
         var leafRowWidth = 0;
         var leafGap = 0;
         var cntLeafs = 0;
@@ -286,6 +286,7 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
                 leafsTotalRowHeight = 0;
             }
         }
+        dim.height += leafsTotalRowHeight;
 
         appendLine(canvas, root, inactiveInherited,
             x + dim.width - 3 * GAP,
@@ -305,7 +306,7 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
             x + dim.width - 2 * GAP,
             y + dimFirstSub.anchorLeftY); // group line
 
-        dim.height += leafsTotalRowHeight;
+        dim.height = Math.max(dim.height, dimSign.height, dimWith.height);
         dim.width += leafsTotalWidth;
     }
     else
