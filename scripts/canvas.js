@@ -290,8 +290,20 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         appendLine(canvas, root, inactiveInherited,
             x + dim.width - 3 * GAP,
             y + dim.anchorLeftY,
+            x + dim.width - 2 * GAP,
+            y + dim.anchorLeftY); // root line
+
+        appendLine(canvas, root, inactiveInherited,
+            x + dim.width - 2 * GAP,
+            y + dimFirstSub.anchorLeftY,
             x + dim.width + dimFirstSub.anchorLeftX - GAP,
-            y + dim.anchorLeftY);
+            y + dimFirstSub.anchorLeftY); // 1st item line
+
+        appendLine(canvas, root, inactiveInherited,
+            x + dim.width - 2 * GAP,
+            y + dim.anchorLeftY,
+            x + dim.width - 2 * GAP,
+            y + dimFirstSub.anchorLeftY); // group line
 
         dim.height += leafsTotalRowHeight;
         dim.width += leafsTotalWidth;
