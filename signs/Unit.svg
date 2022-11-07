@@ -51,29 +51,7 @@
 	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
 	troop}}
 
-	{{extinguish
-	<path d="M11 128 L245 128 M156 128 L241 69 M156 128 L241 187" stroke="{{colorAccent}}" stroke-width="10" />
-	extinguish}}
-
-	{{medical
-	<path d="M128,65 l0,126 M11,128 l234,0" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
-	medical}}
-
-	{{clear
-	<g transform="translate(-118, -175) scale(1.85 1.85)">
-		<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
-	</g>
-	clear}}
-
-	{{bridge
-	<path d="M88,113 l10,10 l60,0 l10,-10 M88,143 l10,-10 l60,0 l10,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
-	bridge}}
-
-	{{transport
-	<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="5" stroke="{{colorAccent}}" />
-	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" />
-	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" transform="rotate(45,128,128)" />
-	transport}}
+	{{symbols:cx=128,cy=128}}
 
 	{{leading
 	<rect x="11" y="65" width="234" height="25" fill="{{colorAccent}}" />

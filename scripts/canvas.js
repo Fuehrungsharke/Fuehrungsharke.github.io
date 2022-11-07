@@ -32,16 +32,30 @@ function getSign(root) {
     else
         svg = getResource(`/signs/${root.sign}.svg`);
 
-    var matches = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
-    while (matches != null && matches.length == 4) {
-        if (matches[1] in root)
-            svg = svg.replace(matches[0], matches[2]);
+    var matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+    while (matchesConditional != null && matchesConditional.length == 4) {
+        if (matchesConditional[1] in root)
+            svg = svg.replace(matchesConditional[0], matchesConditional[2]);
         else
-            svg = svg.replace(matches[0], matches[3]);
-        matches = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+            svg = svg.replace(matchesConditional[0], matchesConditional[3]);
+        matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
     }
 
     for (var key in root) {
+        var matchesGroup = /(\w+)\:(\w+)/g.exec(key);
+        if (matchesGroup != null && matchesGroup.length == 3) {
+            var innerSvg = new DOMParser().parseFromString(getResource(`/icons/${matchesGroup[1]}/${matchesGroup[2]}.svg`), "text/xml").getElementsByTagName("svg")[0];
+            var innerG = document.createElement('g');
+            innerG.setAttribute('transform', `translate(${0}, ${0}) scale(1 1)`)
+            innerG.innerHTML = innerSvg.outerHTML;
+
+            var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d]+)\\}\\}`, 'g');
+            var matchesSymbol = reSymbol.exec(svg);
+            if(matchesSymbol != null && matchesSymbol.length > 1) {
+
+            }
+            svg = svg.replace(`{{${matchesGroup[1]}}}`, innerG.outerHTML);
+        }
         var re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
         svg = svg
             .replaceAll(`{{${key}}}`, root[key])

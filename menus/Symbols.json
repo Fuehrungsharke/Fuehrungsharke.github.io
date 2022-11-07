@@ -5,7 +5,7 @@
         {
             "name": "Löschen",
             "type": "radio",
-            "key": "extinguish",
+            "key": "symbols:extinguish",
             "icon": "/icons/symbols/extinguish.svg",
             "implicitAttritbues": {
                 "txt": ""
@@ -14,7 +14,7 @@
         {
             "name": "Sanitätswesen",
             "type": "radio",
-            "key": "medical",
+            "key": "symbols:medical",
             "icon": "/icons/symbols/medical.svg",
             "implicitAttritbues": {
                 "txt": ""
@@ -23,7 +23,7 @@
         {
             "name": "Räumen",
             "type": "radio",
-            "key": "clear",
+            "key": "symbols:clear",
             "icon": "/icons/symbols/clear.svg",
             "implicitAttritbues": {
                 "txt": ""
@@ -32,7 +32,7 @@
         {
             "name": "Brücke",
             "type": "radio",
-            "key": "bridge",
+            "key": "symbols:bridge",
             "icon": "/icons/symbols/bridge.svg",
             "implicitAttritbues": {
                 "txt": ""
@@ -41,7 +41,7 @@
         {
             "name": "Transport",
             "type": "radio",
-            "key": "transport",
+            "key": "symbols:transport",
             "icon": "/icons/symbols/transport.svg",
             "implicitAttritbues": {
                 "txt": ""
