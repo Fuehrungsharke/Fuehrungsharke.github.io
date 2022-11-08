@@ -151,6 +151,10 @@ function parsePerson(columns, units) {
         person.leading = true;
         person.troop = true;
     }
+    else if (func == 'Sachgebietsleiter') {
+        person.leading = true;
+        person.txt = 'SGL';
+    }
     else if (func == 'Helferanwärter') {
         person.txt = 'HeAnw';
     }
