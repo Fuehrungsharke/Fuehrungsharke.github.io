@@ -176,16 +176,24 @@ function parseConfig(data) {
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
             "org": "THW",
-            "txt": "OMST"
+            "txt": "OMST",
+            "layout": "center-below"
         };
         var units = parseUnits([...new Set(rows.map(r => r[4]))]);
+        units.forEach(unit => {
+            if (units.some(child => child.parent == unit.fullName))
+                unit.layout = "list-right-below";
+            else
+                unit.layout = "row-right";
+        });
         units.push({
             'fullName': undefined,
             'sign': 'Unit',
             'txt': '?',
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
-            "org": "THW"
+            "org": "THW",
+            "layout": "row-right"
         });
         ov.sub = units.filter(u => u.parent == null);
         for (let idx in rows) {
