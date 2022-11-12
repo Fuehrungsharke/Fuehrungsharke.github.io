@@ -49,7 +49,7 @@ function getSign(root) {
             innerG.setAttribute('transform', `translate(${0}, ${0}) scale(1 1)`)
             innerG.innerHTML = innerSvg.outerHTML;
 
-            var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d]+)\\}\\}`, 'g');
+            var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
             var matchesSymbol = reSymbol.exec(svg);
             if(matchesSymbol != null && matchesSymbol.length > 1) {
 

@@ -383,9 +383,17 @@ var config = [
     EL
 ];
 
-config = {
-    'sign': 'Unit',
-    'symbols:extinguish': true,
-    'colorPrimary': '#FFF',
-    'colorAccent': '#000',
-}
+config = [
+    {
+        'sign': 'Unit',
+        'symbols:medical': true,
+        'colorPrimary': '#FFF',
+        'colorAccent': '#000',
+    },
+    {
+        'sign': 'Person',
+        'symbols:medical': true,
+        'colorPrimary': '#FFF',
+        'colorAccent': '#000',
+    }
+]

@@ -51,7 +51,7 @@
 	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
 	troop}}
 
-	{{symbols:cx=128,cy=128}}
+	{{symbols:cx=128, cy=128, width=236, height=128}}
 
 	{{leading
 	<rect x="11" y="65" width="234" height="25" fill="{{colorAccent}}" />
