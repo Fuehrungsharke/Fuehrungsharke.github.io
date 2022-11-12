@@ -497,11 +497,15 @@ function draw() {
     var canvas = document.createElement('svg');
     size = drawRecursive(canvas, config, 0, 0, false);
 
-    // Draw Border
-    canvas.appendChild(getLine(0, 0, size.width, 0));
-    canvas.appendChild(getLine(size.width, 0, size.width, size.height + LINESIZE));
-    canvas.appendChild(getLine(size.width, size.height + LINESIZE, 0, size.height + LINESIZE));
-    canvas.appendChild(getLine(0, size.height + LINESIZE, 0, 0));
+    var background = document.createElement('rect');
+    background.setAttribute('stroke-width', 3);
+    background.setAttribute('stroke', '#000');
+    background.setAttribute('fill', '#FFF');
+    background.setAttribute('x', 0);
+    background.setAttribute('y', 0);
+    background.setAttribute('width', size.width);
+    background.setAttribute('height', size.height);
+    canvas.prepend(background);
 
     canvasWidth = size.width;
     canvasHeight = size.height;
