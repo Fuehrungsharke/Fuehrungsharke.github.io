@@ -48,10 +48,16 @@ function getSign(root) {
             .replaceAll(re, '');
     }
 
-    return svg
-        .replace(/\{\{\w+\}\}/g, '')
-        .replace(/{{\w+\s/g, '<!--')
-        .replace(/\s\w+}}/g, '-->');
+    svg = svg.replace(/\{\{\w+\}\}/g, '');
+
+    var idxStart = svg.search(/{{\w+\s/g);
+    var idxEnd = svg.indexOf('}}', svg.search(/\s\w+}}/g)) + 2;
+    while (idxStart >= 0 && idxEnd >= 0 && idxStart < idxEnd) {
+        svg = svg.slice(0, idxStart) + svg.slice(idxEnd);
+        idxStart = svg.search(/{{\w+\s/g);
+        idxEnd = svg.indexOf('}}', svg.search(/\s\w+}}/g)) + 2;
+    }
+    return svg.replace(/((\r\n|\n|\r)\s)*(\r\n|\n|\r)/gm, '\r\n');
 }
 
 function getSignSvg(root, uuid, x, y, inactiveInherited) {
