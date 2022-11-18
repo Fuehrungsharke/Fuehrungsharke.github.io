@@ -52,7 +52,9 @@ function getSign(root) {
             var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
             var matchesSymbol = reSymbol.exec(svg);
             if(matchesSymbol != null && matchesSymbol.length > 1) {
-
+                svg = svg.slice(0, matchesSymbol.index)
+                    + innerG.outerHTML
+                    + svg.slice(matchesSymbol.index + matchesSymbol[0].length);
             }
             svg = svg.replace(`{{${matchesGroup[1]}}}`, innerG.outerHTML);
         }
