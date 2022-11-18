@@ -386,7 +386,7 @@ var config = [
 config = [
     {
         'sign': 'Unit',
-        'symbols:medical': true,
+        'symbols:transport': true,
         'colorPrimary': '#FFF',
         'colorAccent': '#000',
     }

@@ -43,21 +43,28 @@ function getSign(root) {
 
     for (var key in root) {
         var matchesGroup = /(\w+)\:(\w+)/g.exec(key);
-        if (matchesGroup != null && matchesGroup.length == 3) {
-            var innerSvg = new DOMParser().parseFromString(getResource(`/icons/${matchesGroup[1]}/${matchesGroup[2]}.svg`), "text/xml").getElementsByTagName("svg")[0];
-            var innerG = document.createElement('g');
-            innerG.setAttribute('transform', `translate(${0}, ${0}) scale(1 1)`)
-            innerG.innerHTML = innerSvg.outerHTML;
+        if (matchesGroup == null || matchesGroup.length != 3)
+            continue;
+        var innerG = document.createElement('g');
+        var para = JSON.parse(getResource(`/${matchesGroup[1]}/${matchesGroup[2]}.json`));
+        if (para.mode == 'scale') {
 
-            var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
-            var matchesSymbol = reSymbol.exec(svg);
-            if(matchesSymbol != null && matchesSymbol.length > 1) {
-                svg = svg.slice(0, matchesSymbol.index)
-                    + innerG.outerHTML
-                    + svg.slice(matchesSymbol.index + matchesSymbol[0].length);
-            }
-            svg = svg.replace(`{{${matchesGroup[1]}}}`, innerG.outerHTML);
+            innerG.setAttribute('transform', `translate(${0}, ${0}) scale(1 1)`)
         }
+
+        var innerSvg = new DOMParser().parseFromString(getResource(`/${matchesGroup[1]}/${matchesGroup[2]}.svg`), "text/xml").getElementsByTagName("svg")[0];
+        innerG.innerHTML = innerSvg.outerHTML;
+
+        var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
+        var matchesSymbol = reSymbol.exec(svg);
+        if (matchesSymbol != null && matchesSymbol.length > 1) {
+            svg = svg.slice(0, matchesSymbol.index)
+                + innerG.outerHTML
+                + svg.slice(matchesSymbol.index + matchesSymbol[0].length);
+        }
+        svg = svg.replace(`{{${matchesGroup[1]}}}`, innerG.outerHTML);
+    }
+    for (var key in root) {
         var re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
         svg = svg
             .replaceAll(`{{${key}}}`, root[key])
