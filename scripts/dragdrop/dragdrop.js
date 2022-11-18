@@ -140,9 +140,8 @@ function drop(evt) {
     } else if (selectionStartPos != null) {
         if (evt.button == 0
             && selectionStartPos.clientX == droppos.clientX
-            && selectionStartPos.clientY == droppos.clientY) {
+            && selectionStartPos.clientY == droppos.clientY)
             clearSelection();
-        }
         selectionStartPos = null;
         clearSelectionRect();
     }
