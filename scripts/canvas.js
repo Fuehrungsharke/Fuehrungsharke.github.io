@@ -53,8 +53,10 @@ function getSign(root) {
         var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
         var matchesSymbol = reSymbol.exec(svg);
         if (matchesSymbol != null && matchesSymbol.length > 1) {
-            var para = JSON.parse(getResource(`/${matchesGroup[1]}/${matchesGroup[2]}.json`));
-            if (para.mode == 'scale') {
+            var para = {};
+            var reScaleable = /scale\:(\d+)/g;
+            if (reScaleable.test(innerG.innerHTML)) {
+                reScaleable.lastIndex = 0;
                 var rePlaceholderAttributes = /([\w\_\d]+)\s*\=\s*([\w\_\d]+)/g;
                 var symbolPlaceholderAttributes = rePlaceholderAttributes.exec(matchesSymbol[1]);
                 while (symbolPlaceholderAttributes) {
@@ -70,6 +72,15 @@ function getSign(root) {
                 else
                     pos = para.cy - para.height / 2;
                 innerG.setAttribute('transform', `translate(${pos}, ${pos}) scale(${scale} ${scale})`)
+
+
+                var scaleable = reScaleable.exec(innerG.innerHTML);
+                while (scaleable) {
+                    innerG.innerHTML = innerG.innerHTML.slice(0, scaleable.index)
+                        + `${(parseInt(scaleable[1]) / scale)}`
+                        + innerG.innerHTML.slice(scaleable.index + scaleable[0].length);
+                    scaleable = reScaleable.exec(innerG.innerHTML);
+                }
             }
             svg = svg.slice(0, matchesSymbol.index)
                 + innerG.outerHTML
