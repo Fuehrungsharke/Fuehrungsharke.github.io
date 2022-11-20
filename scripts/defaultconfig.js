@@ -386,14 +386,14 @@ var config = [
 config = [
     {
         'sign': 'Unit',
-        'symbols:transport': true,
+        'symbols:extinguish': true,
         'colorPrimary': '#FFF',
         'colorAccent': '#000',
     }
-    // , {
-    //     'sign': 'Person',
-    //     'symbols:medical': true,
-    //     'colorPrimary': '#FFF',
-    //     'colorAccent': '#000',
-    // }
+    , {
+        'sign': 'Person',
+        'symbols:medical': true,
+        'colorPrimary': '#FFF',
+        'colorAccent': '#000',
+    }
 ]
