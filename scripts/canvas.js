@@ -15,7 +15,6 @@ var scaleMap = {
         'Hazard': 'scale',
         'Measure': 'scale',
     },
-    'medical': 'fill',
     'transport': 'scale',
 }
 
