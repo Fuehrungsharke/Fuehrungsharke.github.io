@@ -66,12 +66,12 @@ function getSign(root) {
                 var scaleX = para.width / 256;
                 var scaleY = para.height / 256;
                 var scale = Math.min(scaleX, scaleY);
-                var pos = 0;
+                var posOffset = 0;
                 if (scaleX <= scaleY)
-                    pos = para.cx - para.width / 2;
+                    posOffset = para.width / 2;
                 else
-                    pos = para.cy - para.height / 2;
-                innerG.setAttribute('transform', `translate(${pos}, ${pos}) scale(${scale} ${scale})`)
+                    posOffset = para.height / 2;
+                innerG.setAttribute('transform', `translate(${para.cx - posOffset}, ${para.cy - posOffset}) scale(${scale} ${scale})`)
 
 
                 var scaleable = reScaleable.exec(innerG.innerHTML);
