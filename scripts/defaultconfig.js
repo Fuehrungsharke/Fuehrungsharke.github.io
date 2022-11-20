@@ -386,14 +386,60 @@ var config = [
 config = [
     {
         'sign': 'Unit',
-        'symbols:extinguish': true,
+        'symbols:bridge': true,
         'colorPrimary': '#FFF',
         'colorAccent': '#000',
+        'with': [
+            {
+                'sign': 'Flag',
+                'symbols:bridge': true,
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000',
+            },
+            {
+                'sign': 'Building',
+                'symbols:bridge': true,
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000',
+            },
+            {
+                'sign': 'Vehicle',
+                'symbols:bridge': true,
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000',
+            }
+        ]
     }
     , {
         'sign': 'Person',
-        'symbols:medical': true,
+        'symbols:bridge': true,
         'colorPrimary': '#FFF',
         'colorAccent': '#000',
+        'with': [
+            {
+                'sign': 'Boat',
+                'symbols:bridge': true,
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000',
+            },
+            {
+                'sign': 'Hazard',
+                'symbols:bridge': true,
+                'colorPrimary': '#FFF',
+                'colorAccent': '#F00',
+            },
+            {
+                'sign': 'Measure',
+                'symbols:bridge': true,
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000',
+            },
+            {
+                'sign': 'Place',
+                'symbols:bridge': true,
+                'colorPrimary': '#FFF',
+                'colorAccent': '#000',
+            }
+        ]
     }
 ]
