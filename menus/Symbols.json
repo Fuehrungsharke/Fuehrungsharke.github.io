@@ -48,6 +48,15 @@
             }
         },
         {
+            "name": "Verpflegung",
+            "type": "radio",
+            "key": "symbols:food",
+            "icon": "/icons/symbols/food.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "",
             "type": "header"
         },
