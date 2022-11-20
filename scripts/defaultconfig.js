@@ -386,25 +386,25 @@ var config = [
 config = [
     {
         'sign': 'Unit',
-        'symbols:bridge': true,
+        'symbols:clear': true,
         'colorPrimary': '#FFF',
         'colorAccent': '#000',
         'with': [
             {
                 'sign': 'Flag',
-                'symbols:bridge': true,
+                'symbols:clear': true,
                 'colorPrimary': '#FFF',
                 'colorAccent': '#000',
             },
             {
                 'sign': 'Building',
-                'symbols:bridge': true,
+                'symbols:clear': true,
                 'colorPrimary': '#FFF',
                 'colorAccent': '#000',
             },
             {
                 'sign': 'Vehicle',
-                'symbols:bridge': true,
+                'symbols:clear': true,
                 'colorPrimary': '#FFF',
                 'colorAccent': '#000',
             }
@@ -412,31 +412,31 @@ config = [
     }
     , {
         'sign': 'Person',
-        'symbols:bridge': true,
+        'symbols:clear': true,
         'colorPrimary': '#FFF',
         'colorAccent': '#000',
         'with': [
             {
                 'sign': 'Boat',
-                'symbols:bridge': true,
+                'symbols:clear': true,
                 'colorPrimary': '#FFF',
                 'colorAccent': '#000',
             },
             {
                 'sign': 'Hazard',
-                'symbols:bridge': true,
+                'symbols:clear': true,
                 'colorPrimary': '#FFF',
                 'colorAccent': '#F00',
             },
             {
                 'sign': 'Measure',
-                'symbols:bridge': true,
+                'symbols:clear': true,
                 'colorPrimary': '#FFF',
                 'colorAccent': '#000',
             },
             {
                 'sign': 'Place',
-                'symbols:bridge': true,
+                'symbols:clear': true,
                 'colorPrimary': '#FFF',
                 'colorAccent': '#000',
             }

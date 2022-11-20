@@ -16,7 +16,7 @@
 	guessed}}
 
 	<g clip-path='url(#Hazard)'>
-	{{symbols:cx=128, cy=98, width=236, height=78}}
+	{{symbols:cx=128, cy=108, width=236, height=65}}
 	</g>
 
 	<text x="128" y="112" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="#FF0000">{{txt}}</text>
