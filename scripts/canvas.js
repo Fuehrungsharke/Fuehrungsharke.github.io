@@ -45,19 +45,32 @@ function getSign(root) {
         var matchesGroup = /(\w+)\:(\w+)/g.exec(key);
         if (matchesGroup == null || matchesGroup.length != 3)
             continue;
-        var innerG = document.createElement('g');
-        var para = JSON.parse(getResource(`/${matchesGroup[1]}/${matchesGroup[2]}.json`));
-        if (para.mode == 'scale') {
-
-            innerG.setAttribute('transform', `translate(${0}, ${0}) scale(1 1)`)
-        }
 
         var innerSvg = new DOMParser().parseFromString(getResource(`/${matchesGroup[1]}/${matchesGroup[2]}.svg`), "text/xml").getElementsByTagName("svg")[0];
+        var innerG = document.createElement('g');
         innerG.innerHTML = innerSvg.outerHTML;
 
         var reSymbol = new RegExp(`\\{\\{${matchesGroup[1]}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
         var matchesSymbol = reSymbol.exec(svg);
         if (matchesSymbol != null && matchesSymbol.length > 1) {
+            var para = JSON.parse(getResource(`/${matchesGroup[1]}/${matchesGroup[2]}.json`));
+            if (para.mode == 'scale') {
+                var rePlaceholderAttributes = /([\w\_\d]+)\s*\=\s*([\w\_\d]+)/g;
+                var symbolPlaceholderAttributes = rePlaceholderAttributes.exec(matchesSymbol[1]);
+                while (symbolPlaceholderAttributes) {
+                    para[symbolPlaceholderAttributes[1]] = symbolPlaceholderAttributes[2];
+                    symbolPlaceholderAttributes = rePlaceholderAttributes.exec(matchesSymbol[1]);
+                }
+                var scaleX = para.width / 256;
+                var scaleY = para.height / 256;
+                var scale = Math.min(scaleX, scaleY);
+                var pos = 0;
+                if (scaleX <= scaleY)
+                    pos = para.cx - para.width / 2;
+                else
+                    pos = para.cy - para.height / 2;
+                innerG.setAttribute('transform', `translate(${pos}, ${pos}) scale(${scale} ${scale})`)
+            }
             svg = svg.slice(0, matchesSymbol.index)
                 + innerG.outerHTML
                 + svg.slice(matchesSymbol.index + matchesSymbol[0].length);
