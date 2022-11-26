@@ -48,10 +48,16 @@ function getSign(root) {
             .replaceAll(re, '');
     }
 
-    return svg
-        .replace(/\{\{\w+\}\}/g, '')
-        .replace(/{{\w+\s/g, '<!--')
-        .replace(/\s\w+}}/g, '-->');
+    svg = svg.replace(/\{\{\w+\}\}/g, '');
+
+    var idxStart = svg.search(/{{\w+\s/g);
+    var idxEnd = svg.indexOf('}}', svg.search(/\s\w+}}/g)) + 2;
+    while (idxStart >= 0 && idxEnd >= 0 && idxStart < idxEnd) {
+        svg = svg.slice(0, idxStart) + svg.slice(idxEnd);
+        idxStart = svg.search(/{{\w+\s/g);
+        idxEnd = svg.indexOf('}}', svg.search(/\s\w+}}/g)) + 2;
+    }
+    return svg.replace(/((\r\n|\n|\r)\s)*(\r\n|\n|\r)/gm, '\r\n');
 }
 
 function getSignSvg(root, uuid, x, y, inactiveInherited) {
@@ -120,13 +126,13 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
         if (root.show_staff) {
             var staff = getStaff(root);
             var staffText = document.createElement('text');
-            staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan>${staff[3]}</tspan>`;
-            staffText.classList.add('staff');
+            staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan text-decoration='underline'>${staff[3]}</tspan>`;
             staffText.setAttribute('x', dimSign.width / 2);
             staffText.setAttribute('y', dimSign.height);
-            staffText.setAttribute('font-size', 22);
             staffText.setAttribute('font-family', 'Verdana');
+            staffText.setAttribute('font-size', 22);
             staffText.setAttribute('text-anchor', 'middle');
+            staffText.setAttribute('font-weight', 'bold');
             itemBox.appendChild(staffText);
             dimSign.height += 32;
         }
@@ -497,11 +503,15 @@ function draw() {
     var canvas = document.createElement('svg');
     size = drawRecursive(canvas, config, 0, 0, false);
 
-    // Draw Border
-    canvas.appendChild(getLine(0, 0, size.width, 0));
-    canvas.appendChild(getLine(size.width, 0, size.width, size.height + LINESIZE));
-    canvas.appendChild(getLine(size.width, size.height + LINESIZE, 0, size.height + LINESIZE));
-    canvas.appendChild(getLine(0, size.height + LINESIZE, 0, 0));
+    var background = document.createElement('rect');
+    background.setAttribute('stroke-width', 3);
+    background.setAttribute('stroke', '#000');
+    background.setAttribute('fill', '#FFF');
+    background.setAttribute('x', 0);
+    background.setAttribute('y', 0);
+    background.setAttribute('width', size.width);
+    background.setAttribute('height', size.height);
+    canvas.prepend(background);
 
     canvasWidth = size.width;
     canvasHeight = size.height;

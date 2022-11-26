@@ -129,8 +129,8 @@ function drop(evt) {
             }
         }
     }
+    var droppos = getEvtPos(evt);
     if (draggedElements != null) {
-        var droppos = getEvtPos(evt);
         for (let i = 0; i < draggedElements.length; i++) {
             draggedElements[i].classList.remove('draggedElement');
         }
@@ -138,6 +138,10 @@ function drop(evt) {
             || Math.abs(draggedElements[0].draggingInfo.originY - droppos.clientY) > 20)
             draw();
     } else if (selectionStartPos != null) {
+        if (evt.button == 0
+            && selectionStartPos.clientX == droppos.clientX
+            && selectionStartPos.clientY == droppos.clientY)
+            clearSelection();
         selectionStartPos = null;
         clearSelectionRect();
     }

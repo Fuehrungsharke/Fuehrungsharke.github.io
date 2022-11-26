@@ -1,3 +1,15 @@
+document.getElementById('btnDownloadConfig').addEventListener('click', evt => {
+    download(JSON.stringify(removeUuid(config), null, 2), 'text/json', 'FüHarke.json');
+});
+
+document.getElementById('btnDownloadSvg').addEventListener('click', evt => {
+    download(outputSvg.outerHTML, 'image/svg', 'FüHarke.svg');
+});
+
+document.getElementById('btnDownloadPng').addEventListener('click', evt => {
+    downloadPng(outputSvg, 'FüHarke.png');
+});
+
 function onKeyUp(evt) {
     if (evt.keyCode === KeyCode.ESC) {
         closeSignContextMenu();
