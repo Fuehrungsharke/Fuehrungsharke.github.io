@@ -285,7 +285,7 @@ var BR_ZTr = {
 
 var BR_Log = {
     "sign": "Place",
-    "symbols:food": true,
+    "symbols:consumable": true,
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
     "layout": "list-right",
