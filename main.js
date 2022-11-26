@@ -62,14 +62,6 @@ function configSelected(evt) {
     reader.readAsDataURL(evt.target.files[0]);
 }
 
-document.getElementById('btnDownloadConfig').onclick = function () {
-    download(JSON.stringify(removeUuid(config), null, 2), 'text/json', 'FüHarke.json');
-}
-
-document.getElementById('btnDownloadSvg').onclick = function () {
-    download(outputSvg.outerHTML, 'image/svg', 'FüHarke.svg');
-}
-
 function editName(uuid) {
     var item = getByUuid(config, uuid);
     let newName = prompt('Edit Name:', item['name']);
