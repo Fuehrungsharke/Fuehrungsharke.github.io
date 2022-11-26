@@ -17,6 +17,7 @@ var scaleMap = {
     },
     'transport': 'scale',
     'food': 'scale',
+    'consumable': 'scale',
 }
 
 Dim.prototype.x = 0;
