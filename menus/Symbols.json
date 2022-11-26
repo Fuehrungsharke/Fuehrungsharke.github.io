@@ -66,6 +66,15 @@
             }
         },
         {
+            "name": "Dekontaminierung",
+            "type": "radio",
+            "key": "symbols:decon",
+            "icon": "/icons/symbols/decon.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "",
             "type": "header"
         },
@@ -80,7 +89,8 @@
                 "symbols:clear": false,
                 "symbols:bridge": false,
                 "symbols:transport": false,
-                "symbols:consumable": false
+                "symbols:consumable": false,
+                "symbols:decon": false
             }
         }
     ]
