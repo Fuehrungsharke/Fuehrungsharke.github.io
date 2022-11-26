@@ -15,30 +15,9 @@
 	<text style="font-family: 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 56px;" fill="#FF0000" x="64" y="180">?</text>
 	guessed}}
 
-	{{extinguish
-	<g transform="translate(89, 65) scale(0.3 0.3)">
-		<path d="M11 128 L245 128 M156 128 L241 69 M156 128 L241 187" stroke="#F00" stroke-width="15" fill="none" />
+	<g clip-path='url(#Hazard)'>
+	{{symbols:cx=128, cy=105, width=66, height=60}}
 	</g>
-	extinguish}}
-
-	{{medical
-	<path d="M64,116 l128,0 M128,64 l0,128" stroke="#F00" stroke-width="5" fill="none" clip-path="url(#Hazard)" />
-	medical}}
-
-	{{clear
-	<g transform="translate(-10, -64) scale(1 1)">
-		<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="#F00" fill="none" />
-	</g>
-	clear}}
-
-	{{bridge
-	<path d="M88,76 l10,10 l60,0 l10,-10 M88,106 l10,-10 l60,0 l10,10" stroke-width="5" stroke="#F00" fill="none" />
-	bridge}}
-
-	{{transport
-	<ellipse cx="128" cy="110" rx="30" ry="30" stroke-width="5" stroke="#F00" fill="none" />
-	<path d="M128,110 l-30,0 l60,0 m-30,0 l0,-30 l0,60 m0,-30 l21,21 M128,110 l-21,-21 M128,110 l21,-21 M128,110 l-21,21" stroke-width="5" stroke="#F00" />
-	transport}}
 
 	<text x="128" y="112" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="#FF0000">{{txt}}</text>
 </svg>

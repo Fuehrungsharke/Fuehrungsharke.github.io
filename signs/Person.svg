@@ -50,32 +50,10 @@
 	<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000" />
 	troop}}
 
-	{{extinguish
-	<path d="M67,128 l123,0 M144,128 l23,-23 M144,128 l23,23" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
-	extinguish}}
-
-	{{medical
-	<path d="M64,128 l128,0 M128,64 l0,128" stroke="{{colorAccent}}" stroke-width="5" fill="none" clip-path="url(#Person)" />
-	medical}}
-
-	{{clear
-	<g transform="translate(-10, -32) scale(1 1)">
-		<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	<g clip-path='url(#Person)'>
+	{{symbols:cx=128, cy={{platoontroop?131:128}}, width=64, height={{platoontroop?48:56}}}}
 	</g>
-	clear}}
-
-	{{bridge
-	<path d="M88,113 l10,10 l60,0 l10,-10 M88,143 l10,-10 l60,0 l10,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
-	bridge}}
-
-	{{transport
-	<g transform="translate(32, 32) scale(0.75 0.75)">
-		<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="6.25" stroke="{{colorAccent}}" />
-		<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="6.25" stroke="{{colorAccent}}" />
-		<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="6.25" stroke="{{colorAccent}}" transform="rotate(45,128,128)" />
-	</g>
-	transport}}
-
+	
 	{{leading
 	<rect x="64" y="64" width="128" height="24" fill="{{colorAccent}}" clip-path="url(#Person)" />
 	leading}}

@@ -7,6 +7,17 @@ var Layout = {
     CenteredBelow: "center-below",
 }
 
+var scaleMap = {
+    'bridge': 'scale',
+    'clear': 'scale',
+    'extinguish': {
+        'Boat': 'scale',
+        'Hazard': 'scale',
+        'Measure': 'scale',
+    },
+    'transport': 'scale',
+}
+
 Dim.prototype.x = 0;
 Dim.prototype.y = 0;
 Dim.prototype.width = 0;
@@ -32,15 +43,68 @@ function getSign(root) {
     else
         svg = getResource(`/signs/${root.sign}.svg`);
 
-    var matches = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
-    while (matches != null && matches.length == 4) {
-        if (matches[1] in root)
-            svg = svg.replace(matches[0], matches[2]);
+    var matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+    while (matchesConditional != null && matchesConditional.length == 4) {
+        if (matchesConditional[1] in root)
+            svg = svg.replace(matchesConditional[0], matchesConditional[2]);
         else
-            svg = svg.replace(matches[0], matches[3]);
-        matches = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+            svg = svg.replace(matchesConditional[0], matchesConditional[3]);
+        matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
     }
 
+    for (var key in root) {
+        var matchesGroup = /(\w+)\:(\w+)/g.exec(key);
+        if (matchesGroup == null || matchesGroup.length != 3)
+            continue;
+
+        var keyName = matchesGroup[1];
+        var symbolName = matchesGroup[2];
+
+        var innerSvg = new DOMParser().parseFromString(getResource(`/${keyName}/${symbolName}.svg`), "text/xml").getElementsByTagName("svg")[0];
+        var innerG = document.createElement('g');
+        innerG.innerHTML = innerSvg.outerHTML;
+
+        var reSymbol = new RegExp(`\\{\\{${keyName}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
+        var matchesSymbol = reSymbol.exec(svg);
+        if (matchesSymbol != null && matchesSymbol.length > 1) {
+            var para = {};
+
+            if (symbolName in scaleMap) {
+                if (scaleMap[symbolName] == 'scale')
+                    para.scale = true;
+                else if (root.sign in scaleMap[symbolName])
+                    para.scale = scaleMap[symbolName][root.sign] == 'scale';
+            }
+
+            var reParaAttrs = /([\w\_\d]+)\s*\=\s*([\w\_\d]+)/g;
+            var paraAttr = reParaAttrs.exec(matchesSymbol[1]);
+            while (paraAttr) {
+                para[paraAttr[1]] = paraAttr[2];
+                paraAttr = reParaAttrs.exec(matchesSymbol[1]);
+            }
+            if (para.scale) {
+                var symbolWidth = parseInt(innerSvg.getAttribute('width'));
+                var symbolHeight = parseInt(innerSvg.getAttribute('height'));
+                var scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
+                var posOffsetX = symbolWidth * scale / 2;
+                var posOffsetY = symbolHeight * scale / 2;
+                innerG.setAttribute('transform', `translate(${para.cx - posOffsetX}, ${para.cy - posOffsetY}) scale(${scale} ${scale})`)
+            }
+
+            var reScaleable = /scale\:(\d+)/g;
+            var scaleable = reScaleable.exec(innerG.innerHTML);
+            while (scaleable) {
+                innerG.innerHTML = innerG.innerHTML.slice(0, scaleable.index)
+                    + (para.scale ? (parseInt(scaleable[1]) / scale).toString() : scaleable[1])
+                    + innerG.innerHTML.slice(scaleable.index + scaleable[0].length);
+                scaleable = reScaleable.exec(innerG.innerHTML);
+            }
+            svg = svg.slice(0, matchesSymbol.index)
+                + innerG.outerHTML
+                + svg.slice(matchesSymbol.index + matchesSymbol[0].length);
+        }
+        svg = svg.replace(`{{${keyName}}}`, innerG.outerHTML);
+    }
     for (var key in root) {
         var re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
         svg = svg

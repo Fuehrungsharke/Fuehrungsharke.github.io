@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256">
+    <ellipse cx="128" cy="128" rx="113" ry="113" fill="none" stroke-width="scale:5" stroke="{{colorAccent}}" />
+    <path d="M128,128 l113,0 l-226,0 m113,0 l0,113 l0,-226" stroke-width="scale:5" stroke="{{colorAccent}}" />
+    <path d="M128,128 l113,0 l-226,0 m113,0 l0,113 l0,-226" stroke-width="scale:5" stroke="{{colorAccent}}" transform="rotate(45,128,128)" />
+</svg>

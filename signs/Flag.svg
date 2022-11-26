@@ -9,29 +9,9 @@
 	<rect x="10" y="64" width="236" height="128" fill="{{colorPrimary}}" stroke="{{colorAccent}}" stroke-width="10" clip-path="url(#Flag)" />
 	<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1" />
 
-	{{extinguish
-	<path d="M11 128 L245 128 M156 128 L241 69 M156 128 L241 187" stroke="{{colorAccent}}" stroke-width="10" />
-	extinguish}}
-
-	{{medical
-	<path d="M128,65 l0,126 M11,128 l234,0" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
-	medical}}
-
-	{{clear
-	<g transform="translate(-118, -175) scale(1.85 1.85)">
-		<path d="M96,160 L150,160 l0,-15 l0,25 l20,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	<g clip-path='url(#Flag)'>
+	{{symbols:cx=128, cy=128, width=236, height=74}}
 	</g>
-	clear}}
-
-	{{bridge
-	<path d="M88,113 l10,10 l60,0 l10,-10 M88,143 l10,-10 l60,0 l10,10" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
-	bridge}}
-
-	{{transport
-	<ellipse cx="128" cy="128" rx="32" ry="32" fill="none" stroke-width="5" stroke="{{colorAccent}}" />
-	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" />
-	<path d="M128,128 l32,0 l-64,0 m32,0 l0,32 l0,-64" stroke-width="5" stroke="{{colorAccent}}" transform="rotate(45,128,128)" />
-	transport}}
 	
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; font-size: 56px; text-anchor: middle;" fill="{{colorAccent}}" x="128" y="150">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="{{colorAccent}}" x="20" y="{{support?155:180}}">{{spez}}</text>

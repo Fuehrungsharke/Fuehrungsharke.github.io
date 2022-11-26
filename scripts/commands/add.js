@@ -12,6 +12,9 @@ AddCmd.prototype.presets = {
     },
     "Vehicle": {
         "automotive": true
+    },
+    "Hazard": {
+        "colorAccent": "#F00"
     }
 };
 
