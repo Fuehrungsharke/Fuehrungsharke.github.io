@@ -229,12 +229,15 @@ var EAL_West = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
+    "layout": "list-right",
     "txt": "EAL",
     "name": "West",
     "with": [
         {
             "sign": "Measure",
-            "extinguish": true
+            "symbols:extinguish": true,
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
         }
     ],
     "sub": [
@@ -242,7 +245,8 @@ var EAL_West = {
             "sign": "Unit",
             "colorPrimary": "#F00",
             "colorAccent": "#FFF",
-            "extinguish": true,
+            "layout": "list-right",
+            "symbols:extinguish": true,
             "platoon": true
         }
     ]
@@ -252,12 +256,15 @@ var EAL_East = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
+    "layout": "list-right",
     "txt": "EAL",
     "name": "Ost",
     "with": [
         {
             "sign": "Measure",
-            "clear": true
+            "symbols:clear": true,
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
         }
     ],
     "sub": [
@@ -278,8 +285,10 @@ var BR_ZTr = {
 
 var BR_Log = {
     "sign": "Place",
+    "symbols:food": true,
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
+    "layout": "list-right",
     "support": true,
     "sub": [
         {
@@ -288,6 +297,7 @@ var BR_Log = {
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
             "troop": true,
+            "layout": "list-right",
             "support": true,
             "show_staff": true,
             "staff": [0, 1, 5, 6]
@@ -300,6 +310,7 @@ var BR_FGrN = {
     "txt": "N",
     "org": "THW",
     "group": true,
+    "layout": "list-right",
     "show_staff": true,
     "staff": [0, 2, 7, 9],
     "colorPrimary": "#003399",
@@ -311,6 +322,7 @@ var BR_FGrE = {
     "txt": "E",
     "colorPrimary": "#039",
     "colorAccent": "#FFF",
+    "layout": "list-right",
     "group": true,
     "org": "THW",
     "with": [
@@ -341,12 +353,6 @@ var EAL_BR = {
     "name": "BR",
     "layout": "list-right-below",
     "with": [
-        {
-            "sign": "Place",
-            "colorPrimary": "#FF0",
-            "colorAccent": "#000",
-            "support": true
-        },
         BR_ZTr
     ],
     "sub": [
@@ -360,6 +366,7 @@ var EL = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
+    "layout": "list-right",
     "txt": "EL",
     "sub": [
         EAL_West,
