@@ -22,7 +22,7 @@
 	stationary}}
 
 	<g clip-path='url(#Place)'>
-	{{symbols:cx=128, cy=128, width=86, height=86}}
+	{{symbols:cx=128, cy=128, width=86, height=64}}
 	</g>
 
 	<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="{{colorAccent}}">{{txt}}</text>
