@@ -126,13 +126,13 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
         if (root.show_staff) {
             var staff = getStaff(root);
             var staffText = document.createElement('text');
-            staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan>${staff[3]}</tspan>`;
-            staffText.classList.add('staff');
+            staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan text-decoration='underline'>${staff[3]}</tspan>`;
             staffText.setAttribute('x', dimSign.width / 2);
             staffText.setAttribute('y', dimSign.height);
-            staffText.setAttribute('font-size', 22);
             staffText.setAttribute('font-family', 'Verdana');
+            staffText.setAttribute('font-size', 22);
             staffText.setAttribute('text-anchor', 'middle');
+            staffText.setAttribute('font-weight', 'bold');
             itemBox.appendChild(staffText);
             dimSign.height += 32;
         }
