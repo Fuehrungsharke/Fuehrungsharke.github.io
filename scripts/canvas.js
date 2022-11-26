@@ -83,15 +83,12 @@ function getSign(root) {
                 paraAttr = reParaAttrs.exec(matchesSymbol[1]);
             }
             if (para.scale) {
-                var scaleX = para.width / 256;
-                var scaleY = para.height / 256;
-                var scale = Math.min(scaleX, scaleY);
-                var posOffset = 0;
-                if (scaleX <= scaleY)
-                    posOffset = para.width / 2;
-                else
-                    posOffset = para.height / 2;
-                innerG.setAttribute('transform', `translate(${para.cx - posOffset}, ${para.cy - posOffset}) scale(${scale} ${scale})`)
+                var symbolWidth = parseInt(innerSvg.getAttribute('width'));
+                var symbolHeight = parseInt(innerSvg.getAttribute('height'));
+                var scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
+                var posOffsetX = symbolWidth * scale / 2;
+                var posOffsetY = symbolHeight * scale / 2;
+                innerG.setAttribute('transform', `translate(${para.cx - posOffsetX}, ${para.cy - posOffsetY}) scale(${scale} ${scale})`)
             }
 
             var reScaleable = /scale\:(\d+)/g;

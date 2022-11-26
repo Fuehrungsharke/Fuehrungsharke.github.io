@@ -51,9 +51,9 @@
 	troop}}
 
 	<g clip-path='url(#Person)'>
-	{{symbols:cx=128, cy=128, width=78, height=78}}
+	{{symbols:cx=128, cy={{platoontroop?131:128}}, width=64, height={{platoontroop?48:56}}}}
 	</g>
-
+	
 	{{leading
 	<rect x="64" y="64" width="128" height="24" fill="{{colorAccent}}" clip-path="url(#Person)" />
 	leading}}
