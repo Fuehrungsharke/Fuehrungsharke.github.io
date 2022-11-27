@@ -1,5 +1,33 @@
 [
     {
+        "name": "Linien",
+        "type": "header"
+    },
+    {
+        "name": "Links",
+        "type": "bool",
+        "key": "left",
+        "icon": "/icons/lines/Left.svg"
+    },
+    {
+        "name": "Oben",
+        "type": "bool",
+        "key": "top",
+        "icon": "/icons/lines/Top.svg"
+    },
+    {
+        "name": "Rechts",
+        "type": "bool",
+        "key": "right",
+        "icon": "/icons/lines/Right.svg"
+    },
+    {
+        "name": "Unten",
+        "type": "bool",
+        "key": "bottom",
+        "icon": "/icons/lines/Bottom.svg"
+    },
+    {
         "name": "",
         "type": "header"
     }
