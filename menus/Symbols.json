@@ -21,6 +21,15 @@
             }
         },
         {
+            "name": "Beleuchtung",
+            "type": "radio",
+            "key": "symbols:lamp",
+            "icon": "/icons/symbols/lamp.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Räumen",
             "type": "radio",
             "key": "symbols:clear",
@@ -86,6 +95,7 @@
             "implicitAttritbues": {
                 "symbols:extinguish": false,
                 "symbols:medical": false,
+                "symbols:lamp": false,
                 "symbols:clear": false,
                 "symbols:bridge": false,
                 "symbols:transport": false,

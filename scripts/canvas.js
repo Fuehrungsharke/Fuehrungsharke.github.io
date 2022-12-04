@@ -9,6 +9,7 @@ var Layout = {
 
 var scaleMap = {
     'bridge': 'scale',
+    'lamp': 'scale',
     'clear': 'scale',
     'extinguish': {
         'Boat': 'scale',
