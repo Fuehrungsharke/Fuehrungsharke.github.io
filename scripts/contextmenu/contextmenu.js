@@ -53,9 +53,6 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     var attrItems = [];
 
-    var svgIcon = null;
-    if (attrItem.icon == null)
-        attrItem.icon = '/signs/Empty.svg';
     var link = false;
     var iconPath = attrItem.icon;
     if (typeof iconPath == "object") {
@@ -63,8 +60,12 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         if (iconPath.link != null)
             link = iconPath.link;
     }
+    if (iconPath == null)
+        iconPath = '/signs/Empty.svg';
     if (link) {
-
+        var iconImg = document.createElement('img');;
+        menuItem.appendChild(iconImg);
+        iconImg.setAttribute('src', iconPath);
     }
     else if (iconPath.endsWith('.svg')) {
         var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -72,21 +73,11 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             'width': 25,
             'height': 25
         };
-        if (iconPath != attrItem.icon) {
-            if (attrItem.icon.width != null) {
-                para.width = attrItem.icon.width;
-                iconSvg.setAttribute('style', `width: ${para.width}px`);
-            }
-            if (attrItem.icon.height != null) {
-                para.width = attrItem.icon.height;
-                iconSvg.setAttribute('style', `height: ${para.height}px`);
-            }
-        }
-        svgIcon = getSign({
+        var iconSvgText = getSign({
             'sign': iconPath,
             'colorAccent': '#000'
         });
-        var icon = new DOMParser().parseFromString(svgIcon, "text/xml").getElementsByTagName("svg")[0];
+        var icon = new DOMParser().parseFromString(iconSvgText, "text/xml").getElementsByTagName("svg")[0];
         var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
         var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
         var scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;

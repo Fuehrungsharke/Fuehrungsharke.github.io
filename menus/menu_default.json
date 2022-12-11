@@ -55,7 +55,7 @@
                 "cmd": "add_sibling",
                 "icon": {
                     "src": "/icons/relations/sibling.svg",
-                    "width": 40.4
+                    "link": true
                 },
                 "values": {
                     "name": "menu_signs",
@@ -68,7 +68,7 @@
                 "cmd": "add_parent",
                 "icon": {
                     "src": "/icons/relations/parent.svg",
-                    "width": 40.4
+                    "link": true
                 },
                 "values": {
                     "name": "menu_signs",
@@ -81,7 +81,7 @@
                 "cmd": "add_sub",
                 "icon": {
                     "src": "/icons/relations/sub.svg",
-                    "width": 40.4
+                    "link": true
                 },
                 "values": {
                     "name": "menu_signs",
