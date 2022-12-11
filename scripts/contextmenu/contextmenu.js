@@ -63,32 +63,30 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         });
         var para = {
             'width': 25,
-            'height': 25,
-            'cx': 12.5,
-            'cy': 12.5,
+            'height': 25
         };
         var icon = new DOMParser().parseFromString(svgIcon, "text/xml").getElementsByTagName("svg")[0];
         var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
         var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
-        var scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
+        var scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;
         var posOffsetX = symbolWidth * scale / 2;
         var posOffsetY = symbolHeight * scale / 2;
-        var outerSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        var innerG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        innerG.setAttribute('transform', `translate(${para.cx - posOffsetX}, ${para.cy - posOffsetY}) scale(${scale} ${scale})`)
-        innerG.innerHTML = icon.outerHTML;
+        var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        var iconG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        iconG.setAttribute('transform', `translate(${para.width / 2 - posOffsetX}, ${para.height / 2 - posOffsetY}) scale(${scale} ${scale})`);
+        iconG.innerHTML = icon.outerHTML;
 
         var reScaleable = /scale\:(\d+)/g;
-        var scaleable = reScaleable.exec(innerG.innerHTML);
+        var scaleable = reScaleable.exec(iconG.innerHTML);
         while (scaleable) {
-            innerG.innerHTML = innerG.innerHTML.slice(0, scaleable.index)
-                + (parseInt(scaleable[1]) * 1).toString()
-                + innerG.innerHTML.slice(scaleable.index + scaleable[0].length);
-            scaleable = reScaleable.exec(innerG.innerHTML);
+            iconG.innerHTML = iconG.innerHTML.slice(0, scaleable.index)
+                + (parseInt(scaleable[1]) / scale / 3).toString()
+                + iconG.innerHTML.slice(scaleable.index + scaleable[0].length);
+            scaleable = reScaleable.exec(iconG.innerHTML);
         }
 
-        outerSvg.innerHTML = innerG.outerHTML;
-        menuItem.appendChild(outerSvg);
+        iconSvg.innerHTML = iconG.outerHTML;
+        menuItem.appendChild(iconSvg);
     }
 
     if (attrItem.styles != null)
