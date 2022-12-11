@@ -44,6 +44,9 @@
                     "src": "/icons/relations/with.svg",
                     "link": true
                 },
+                "styles": [
+                    "relationsIcon868"
+                ],
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -57,6 +60,9 @@
                     "src": "/icons/relations/sibling.svg",
                     "link": true
                 },
+                "styles": [
+                    "relationsIcon612"
+                ],
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -70,6 +76,9 @@
                     "src": "/icons/relations/parent.svg",
                     "link": true
                 },
+                "styles": [
+                    "relationsIcon612"
+                ],
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -83,6 +92,9 @@
                     "src": "/icons/relations/sub.svg",
                     "link": true
                 },
+                "styles": [
+                    "relationsIcon612"
+                ],
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
