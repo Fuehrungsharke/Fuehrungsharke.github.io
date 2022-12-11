@@ -11,6 +11,7 @@
     width: 24px;
     height: 24px;
     margin: 0px 10px 0px 0px;
+    min-width: 24px;
 }
 
 .context-menu-active {
@@ -35,9 +36,7 @@
     list-style: none;
     font-size: 16px;
     font-family: 'Lubalin Graph', 'Roboto Slab';
-    height: auto;
     display: flex;
-    width: 200px;
     cursor: pointer;
     align-items: center;
     border-radius: 5px;
@@ -68,9 +67,8 @@
 .context-menu .sub-menu {
     position: absolute;
     background: #fff;
-    width: 220px;
-    right: -220px;
     padding: 5px 0px;
+    left: 100%;
     opacity: 0;
     pointer-events: none;
     border-radius: 10px;
@@ -91,8 +89,7 @@
 .context-menu .sub-sub-menu {
     position: absolute;
     background: #fff;
-    width: 220px;
-    right: -220px;
+    left: 100%;
     padding: 5px 0px;
     opacity: 0;
     pointer-events: none;
