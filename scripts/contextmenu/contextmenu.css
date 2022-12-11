@@ -7,6 +7,12 @@
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
 
+.context-menu-item > svg {
+    width: 24px;
+    height: 24px;
+    margin: 0px 10px 0px 0px;
+}
+
 .context-menu-active {
     visibility: visible;
 }
@@ -47,8 +53,8 @@
     color: #ccc;
 }
 
-.menu-item-inactive img {
-    opacity: 0.2;
+.menu-item-inactive svg {
+    opacity: 0.33;
 }
 
 .context-menu .context-menu-item:hover {

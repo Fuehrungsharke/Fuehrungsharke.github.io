@@ -53,12 +53,43 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     var attrItems = [];
 
-    var icon = document.createElement('img');;
-    menuItem.appendChild(icon);
-    if (attrItem.icon != null)
-        icon.setAttribute('src', attrItem.icon);
-    else
-        icon.setAttribute('src', '/signs/Empty.svg');
+    var svgIcon = null;
+    if (attrItem.icon == null)
+        attrItem.icon = '/signs/Empty.svg';
+    if (attrItem.icon.endsWith('.svg')) {
+        svgIcon = getSign({
+            'sign': attrItem.icon,
+            'colorAccent': '#000'
+        });
+        var para = {
+            'width': 25,
+            'height': 25,
+            'cx': 12.5,
+            'cy': 12.5,
+        };
+        var icon = new DOMParser().parseFromString(svgIcon, "text/xml").getElementsByTagName("svg")[0];
+        var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
+        var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
+        var scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
+        var posOffsetX = symbolWidth * scale / 2;
+        var posOffsetY = symbolHeight * scale / 2;
+        var outerSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        var innerG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        innerG.setAttribute('transform', `translate(${para.cx - posOffsetX}, ${para.cy - posOffsetY}) scale(${scale} ${scale})`)
+        innerG.innerHTML = icon.outerHTML;
+
+        var reScaleable = /scale\:(\d+)/g;
+        var scaleable = reScaleable.exec(innerG.innerHTML);
+        while (scaleable) {
+            innerG.innerHTML = innerG.innerHTML.slice(0, scaleable.index)
+                + (parseInt(scaleable[1]) * 1).toString()
+                + innerG.innerHTML.slice(scaleable.index + scaleable[0].length);
+            scaleable = reScaleable.exec(innerG.innerHTML);
+        }
+
+        outerSvg.innerHTML = innerG.outerHTML;
+        menuItem.appendChild(outerSvg);
+    }
 
     if (attrItem.styles != null)
         for (let idx in attrItem.styles)

@@ -6,7 +6,7 @@
             "name": "Löschen",
             "type": "radio",
             "key": "symbols:extinguish",
-            "icon": "/icons/symbols/extinguish.svg",
+            "icon": "/symbols/extinguish.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -15,7 +15,7 @@
             "name": "Sanitätswesen",
             "type": "radio",
             "key": "symbols:medical",
-            "icon": "/icons/symbols/medical.svg",
+            "icon": "/symbols/medical.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -24,7 +24,7 @@
             "name": "Beleuchtung",
             "type": "radio",
             "key": "symbols:lamp",
-            "icon": "/icons/symbols/lamp.svg",
+            "icon": "/symbols/lamp.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -33,7 +33,7 @@
             "name": "Räumen",
             "type": "radio",
             "key": "symbols:clear",
-            "icon": "/icons/symbols/clear.svg",
+            "icon": "/symbols/clear.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -42,7 +42,7 @@
             "name": "Brücke",
             "type": "radio",
             "key": "symbols:bridge",
-            "icon": "/icons/symbols/bridge.svg",
+            "icon": "/symbols/bridge.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -51,7 +51,7 @@
             "name": "Transport",
             "type": "radio",
             "key": "symbols:transport",
-            "icon": "/icons/symbols/transport.svg",
+            "icon": "/symbols/transport.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -60,7 +60,7 @@
             "name": "Verpflegung",
             "type": "radio",
             "key": "symbols:food",
-            "icon": "/icons/symbols/food.svg",
+            "icon": "/symbols/food.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -69,7 +69,7 @@
             "name": "Verbrauchsgüter",
             "type": "radio",
             "key": "symbols:consumable",
-            "icon": "/icons/symbols/consumable.svg",
+            "icon": "/symbols/consumable.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -78,7 +78,7 @@
             "name": "Dekontaminierung",
             "type": "radio",
             "key": "symbols:decon",
-            "icon": "/icons/symbols/decon.svg",
+            "icon": "/symbols/decon.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
