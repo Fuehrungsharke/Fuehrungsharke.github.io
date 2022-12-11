@@ -40,10 +40,10 @@
                 "name": "Nebenstehend",
                 "type": "submenu",
                 "cmd": "add_with",
-                "icon": "/icons/relations/with.svg",
-                "styles": [
-                    "relationsIcon868"
-                ],
+                "icon": {
+                    "src": "/icons/relations/with.svg",
+                    "width": 57.3
+                },
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -53,10 +53,10 @@
                 "name": "Auf gleicher Ebene",
                 "type": "submenu",
                 "cmd": "add_sibling",
-                "icon": "/icons/relations/sibling.svg",
-                "styles": [
-                    "relationsIcon612"
-                ],
+                "icon": {
+                    "src": "/icons/relations/sibling.svg",
+                    "width": 40.4
+                },
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -66,10 +66,10 @@
                 "name": "Übergeordnet",
                 "type": "submenu",
                 "cmd": "add_parent",
-                "icon": "/icons/relations/parent.svg",
-                "styles": [
-                    "relationsIcon612"
-                ],
+                "icon": {
+                    "src": "/icons/relations/parent.svg",
+                    "width": 40.4
+                },
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -79,10 +79,10 @@
                 "name": "Untergeordnet",
                 "type": "submenu",
                 "cmd": "add_sub",
-                "icon": "/icons/relations/sub.svg",
-                "styles": [
-                    "relationsIcon612"
-                ],
+                "icon": {
+                    "src": "/icons/relations/sub.svg",
+                    "width": 40.4
+                },
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"

@@ -3,37 +3,37 @@ img {
     margin: 0px 10px 0px 0px;
 }
 
-.relationsIcon868 > img {
+.relationsIcon868 > svg {
     width: 57.3px;
 }
 
-.relationsIcon612 > img {
+.relationsIcon612 > svg {
     width: 40.4px;
 }
 
-.layoutListRight > img {
+.layoutListRight > svg {
     width: 40.4px;
     margin-right: 26.9px;
 }
 
-.layoutListRightBelow > img {
+.layoutListRightBelow > svg {
     width: 33.8px;
     margin-right: 26.9px;
 }
 
-.layoutRowRight > img {
+.layoutRowRight > svg {
     width: 57.3px;
 }
 
-.layoutRowRightBelow > img {
+.layoutRowRightBelow > svg {
     width: 50.7px;
 }
 
-.layoutCenteredRight > img {
+.layoutCenteredRight > svg {
     width: 40.4px;
     margin-right: 26.9px;
 }
 
-.layoutCenteredBelow > img {
+.layoutCenteredBelow > svg {
     width: 50.7px;
 }

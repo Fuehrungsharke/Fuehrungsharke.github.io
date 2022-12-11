@@ -56,22 +56,35 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     var svgIcon = null;
     if (attrItem.icon == null)
         attrItem.icon = '/signs/Empty.svg';
-    if (attrItem.icon.endsWith('.svg')) {
-        svgIcon = getSign({
-            'sign': attrItem.icon,
-            'colorAccent': '#000'
-        });
+    var iconPath = attrItem.icon;
+    if (typeof iconPath == "object")
+        iconPath = iconPath.src;
+    if (iconPath.endsWith('.svg')) {
+        var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         var para = {
             'width': 25,
             'height': 25
         };
+        if (iconPath != attrItem.icon) {
+            if (attrItem.icon.width != null) {
+                para.width = attrItem.icon.width;
+                iconSvg.setAttribute('style', `width: ${para.width}px`);
+            }
+            if (attrItem.icon.height != null) {
+                para.width = attrItem.icon.height;
+                iconSvg.setAttribute('style', `height: ${para.height}px`);
+            }
+        }
+        svgIcon = getSign({
+            'sign': iconPath,
+            'colorAccent': '#000'
+        });
         var icon = new DOMParser().parseFromString(svgIcon, "text/xml").getElementsByTagName("svg")[0];
         var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
         var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
         var scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;
         var posOffsetX = symbolWidth * scale / 2;
         var posOffsetY = symbolHeight * scale / 2;
-        var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         var iconG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         iconG.setAttribute('transform', `translate(${para.width / 2 - posOffsetX}, ${para.height / 2 - posOffsetY}) scale(${scale} ${scale})`);
         iconG.innerHTML = icon.outerHTML;
