@@ -42,7 +42,7 @@
                 "cmd": "add_with",
                 "icon": {
                     "src": "/icons/relations/with.svg",
-                    "width": 57.3
+                    "link": true
                 },
                 "values": {
                     "name": "menu_signs",

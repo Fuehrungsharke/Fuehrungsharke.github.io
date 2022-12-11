@@ -56,10 +56,17 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     var svgIcon = null;
     if (attrItem.icon == null)
         attrItem.icon = '/signs/Empty.svg';
+    var link = false;
     var iconPath = attrItem.icon;
-    if (typeof iconPath == "object")
+    if (typeof iconPath == "object") {
         iconPath = iconPath.src;
-    if (iconPath.endsWith('.svg')) {
+        if (iconPath.link != null)
+            link = iconPath.link;
+    }
+    if (link) {
+
+    }
+    else if (iconPath.endsWith('.svg')) {
         var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         var para = {
             'width': 25,
