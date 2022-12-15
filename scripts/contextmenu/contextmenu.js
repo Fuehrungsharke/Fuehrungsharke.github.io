@@ -39,6 +39,57 @@ function getPlaceholder(name) {
         return JSON.parse(getResource(`/menus/${name}.json`))
 }
 
+function getIcon(iconPath) {
+    var link = false;
+    if (typeof iconPath == "object") {
+        iconPath = iconPath.src;
+        if (iconPath.link != null)
+            link = iconPath.link;
+    }
+    if (iconPath == null)
+        iconPath = '/signs/Empty.svg';
+    if (!iconPath.endsWith('.svg'))
+        link = true;
+    if (link) {
+        var iconImg = document.createElement('img');;
+        iconImg.setAttribute('src', iconPath);
+        return iconImg;
+    }
+    else if (iconPath.endsWith('.svg')) {
+        var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        var para = {
+            'width': 25,
+            'height': 25
+        };
+        var iconSvgText = getSign({
+            'sign': iconPath,
+            'colorAccent': '#000'
+        });
+        var icon = new DOMParser().parseFromString(iconSvgText, "text/xml").getElementsByTagName("svg")[0];
+        var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
+        var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
+        var scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;
+        var posOffsetX = symbolWidth * scale / 2;
+        var posOffsetY = symbolHeight * scale / 2;
+        var iconG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        iconG.setAttribute('transform', `translate(${para.width / 2 - posOffsetX}, ${para.height / 2 - posOffsetY}) scale(${scale} ${scale})`);
+        iconG.innerHTML = icon.outerHTML;
+
+        var reScaleable = /scale\:(\d+)/g;
+        var scaleable = reScaleable.exec(iconG.innerHTML);
+        while (scaleable) {
+            iconG.innerHTML = iconG.innerHTML.slice(0, scaleable.index)
+                + (parseInt(scaleable[1]) / scale / 3).toString()
+                + iconG.innerHTML.slice(scaleable.index + scaleable[0].length);
+            scaleable = reScaleable.exec(iconG.innerHTML);
+        }
+
+        iconSvg.innerHTML = iconG.outerHTML;
+        return iconSvg;
+    }
+    return null;
+}
+
 function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
         attrItem = getPlaceholder(attrItem.name);
@@ -53,12 +104,9 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     var attrItems = [];
 
-    var icon = document.createElement('img');;
-    menuItem.appendChild(icon);
-    if (attrItem.icon != null)
-        icon.setAttribute('src', attrItem.icon);
-    else
-        icon.setAttribute('src', '/signs/Empty.svg');
+    var icon = getIcon(attrItem.icon);
+    if (icon != null)
+        menuItem.appendChild(icon);
 
     if (attrItem.styles != null)
         for (let idx in attrItem.styles)
@@ -100,8 +148,11 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 menuItem.classList.add('menu-item-inactive');
             if (Array.isArray(attrItem.values)) {
                 var selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
-                if (selectedItem != null)
-                    icon.setAttribute('src', selectedItem.icon);
+                if (selectedItem != null) {
+                    var newIcon = getIcon(selectedItem.icon);
+                    if (newIcon != null)
+                        menuItem.replaceChild(newIcon, icon);
+                }
             }
             subMenu.replaceChildren(...subMenuItems);
             menuItem.appendChild(subMenu);
@@ -119,8 +170,9 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 }
                 else {
                     menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
-                    if (attrItem.iconInverted != null)
-                        icon.setAttribute('src', attrItem.iconInverted);
+                    var newIcon = getIcon(attrItem.iconInverted);
+                    if (newIcon != null)
+                        menuItem.replaceChild(newIcon, icon);
                 }
             }
             else
@@ -239,6 +291,33 @@ function getParentAttribute(attrMenu, parent, child) {
     return null;
 }
 
+function handleImplicitAttributes(root, attr) {
+    for (let idx in attr.implicitAttritbues)
+        if (!attr.implicitAttritbues[idx]) {
+            if (idx.endsWith('*'))
+                for (let prop in root) {
+                    if (prop.startsWith(idx.slice(0, idx.length - 2)))
+                        delete root[prop];
+                }
+            else
+                delete root[idx];
+        }
+        else
+            root[idx] = attr.implicitAttritbues[idx];
+}
+
+function handleConditionalAttributes(root, attr) {
+    var match = true;
+    for (let idx in attr.conditionalAttritbues.condition)
+        match &= root[idx] == attr.conditionalAttritbues.condition[idx];
+    if (match)
+        for (let idx in attr.conditionalAttritbues.values)
+            if (!attr.conditionalAttritbues.values[idx])
+                delete root[idx];
+            else
+                root[idx] = attr.conditionalAttritbues.values[idx];
+}
+
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
@@ -263,7 +342,7 @@ function clickContextMenuItem(menuItem) {
         var attr = null;
         if (key != null && key != "undefined")
             attr = getAttribute(currentSignMenu, 'key', key);
-        else
+        else if (cmd != null)
             attr = getAttribute(currentSignMenu, 'cmd', cmd);
         if (attr == null)
             return false;
@@ -304,23 +383,11 @@ function clickContextMenuItem(menuItem) {
                         break;
                 }
             if (attr.implicitAttritbues != null) {
-                for (let idx in attr.implicitAttritbues)
-                    if (!attr.implicitAttritbues[idx])
-                        delete root[idx];
-                    else
-                        root[idx] = attr.implicitAttritbues[idx];
+                handleImplicitAttributes(root, attr);
                 close = true;
             }
             if (attr.conditionalAttritbues != null) {
-                var match = true;
-                for (let idx in attr.conditionalAttritbues.condition)
-                    match &= root[idx] == attr.conditionalAttritbues.condition[idx];
-                if (match)
-                    for (let idx in attr.conditionalAttritbues.values)
-                        if (!attr.conditionalAttritbues.values[idx])
-                            delete root[idx];
-                        else
-                            root[idx] = attr.conditionalAttritbues.values[idx];
+                handleConditionalAttributes(root, attr);
                 close = true;
             }
         }

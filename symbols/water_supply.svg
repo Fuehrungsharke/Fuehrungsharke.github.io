@@ -1,0 +1,4 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80" height="48" viewbox="88 136 80 48">
+	<path d="M90,160 l43,0 l30,-20 l-30,20 l33,0 l-33,0 l30,20" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+	<path d="M90,150 a5,5 180 0 0 5,-5 a5,5 180 1 1 10,0 a5,5 180 1 0 10,0 a5,5 180 1 1 10,0 a5,5 180 0 0 5,5" stroke="{{colorAccent}}" stroke-width="5" fill="none" />
+</svg>

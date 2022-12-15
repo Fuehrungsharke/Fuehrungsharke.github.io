@@ -17,4 +17,6 @@
     {{bottom
     <path d="M128 128 L128 256" stroke="{{colorAccent}}" stroke-width="3"/>
     bottom}}
+
+    {{symbols:cx=128, cy=128, width=256, height=256}}
 </svg>

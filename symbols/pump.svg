@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewbox="0 0 84 84">
+	<ellipse cx="42" cy="42" rx="20" ry="20" stroke-width="scale:5" stroke="{{colorAccent}}" fill="none" />
+	<path d="M22,42 l-8,0 a8,8 0 0 1 -8,-8" stroke-width="scale:5" stroke="{{colorAccent}}" fill="none" />
+    <path d="M22,42 l-8,0 a8,8 0 0 1 -8,-8" stroke-width="scale:5" stroke="{{colorAccent}}" fill="none"  transform="rotate(72,42,42)"/>
+    <path d="M22,42 l-8,0 a8,8 0 0 1 -8,-8" stroke-width="scale:5" stroke="{{colorAccent}}" fill="none"  transform="rotate(144,42,42)"/>
+    <path d="M22,42 l-8,0 a8,8 0 0 1 -8,-8" stroke-width="scale:5" stroke="{{colorAccent}}" fill="none"  transform="rotate(216,42,42)"/>
+    <path d="M22,42 l-8,0 a8,8 0 0 1 -8,-8" stroke-width="scale:5" stroke="{{colorAccent}}" fill="none"  transform="rotate(288,42,42)"/>
+</svg>

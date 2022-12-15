@@ -1,13 +1,11 @@
 [
     {
-        "name": "Text",
-        "type": "string",
-        "key": "txt"
+        "name": "menu_text",
+        "type": "placeholder"
     },
     {
-        "name": "Name",
-        "type": "string",
-        "key": "name"
+        "name": "menu_name",
+        "type": "placeholder"
     },
     {
         "name": "Antrieb",
