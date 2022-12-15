@@ -13,7 +13,7 @@
 	<path d="M10 64 L10 192 L246 192 L246 64 L128 16 L10 64" stroke="#000000" stroke-width="1" fill="none" />
 
 	<g clip-path='url(#BuildingBody)'>
-	{{symbols:cx=128, cy=128, width=236, height=74}}
+	{{symbols:cx=128, cy=128, width=226, height=74}}
 	</g>
 
 	<text style="font-family: 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 72px;" fill="{{colorAccent}}" x="128" y="155">{{txt}}</text>

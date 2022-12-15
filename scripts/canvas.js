@@ -7,18 +7,16 @@ var Layout = {
     CenteredBelow: "center-below",
 }
 
-var scaleMap = {
-    'bridge': 'scale',
-    'clear': 'scale',
+var noneScalables = {
     'extinguish': {
-        'Boat': 'scale',
-        'Hazard': 'scale',
-        'Measure': 'scale',
+        'Building': true,
+        'Flag': true,
+        'Person': true,
+        'Place': true,
+        'Unit': true,
+        'Vehicle': true
     },
-    'transport': 'scale',
-    'food': 'scale',
-    'consumable': 'scale',
-    'decon': 'scale',
+    'medical': true
 }
 
 Dim.prototype.x = 0;
@@ -72,11 +70,12 @@ function getSign(root) {
         if (matchesSymbol != null && matchesSymbol.length > 1) {
             var para = {};
 
-            if (symbolName in scaleMap) {
-                if (scaleMap[symbolName] == 'scale')
-                    para.scale = true;
-                else if (root.sign in scaleMap[symbolName])
-                    para.scale = scaleMap[symbolName][root.sign] == 'scale';
+            para.scale = true;
+            if (symbolName in noneScalables) {
+                if (typeof noneScalables[symbolName] == 'boolean')
+                    para.scale = !noneScalables[symbolName];
+                else if (root.sign in noneScalables[symbolName])
+                    para.scale = !noneScalables[symbolName][root.sign];
             }
 
             var reParaAttrs = /([\w\_\d]+)\s*\=\s*([\w\_\d]+)/g;

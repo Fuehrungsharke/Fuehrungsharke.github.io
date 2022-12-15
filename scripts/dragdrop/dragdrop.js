@@ -55,15 +55,14 @@ function drag(evt) {
     outputSvg.childNodes = canvasChildren;
 
     for (let i = 0; i < draggingElements.length; i++) {
-        var transform = draggingElements[i].getAttributeNS(null, 'transform');
-        var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
+        var transform = getTransform(draggingElements[i]);
         draggingElements[i].draggingInfo = {
             originX: touchpos.clientX,
             originY: touchpos.clientY,
-            offsetX: match[1] - touchpos.clientX * (1 / zoomFactor),
-            offsetY: match[2] - touchpos.clientY * (1 / zoomFactor),
-            scaleX: match[3],
-            scaleY: match[4],
+            offsetX: transform.x - touchpos.clientX * (1 / zoomFactor),
+            offsetY: transform.y - touchpos.clientY * (1 / zoomFactor),
+            scaleX: transform.scaleX,
+            scaleY: transform.scaleY,
             uuid: draggingElements[i].getAttributeNS(null, 'uuid'),
         };
     }

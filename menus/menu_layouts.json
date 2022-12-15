@@ -11,28 +11,19 @@
             "name": "Liste",
             "type": "radio",
             "key": "list-right",
-            "icon": "/icons/layouts/ListRight.svg",
-            "styles": [
-                "layoutListRight"
-            ]
+            "icon": "/icons/layouts/ListRight.svg"
         },
         {
             "name": "Reihe",
             "type": "radio",
             "key": "row-right",
-            "icon": "/icons/layouts/RowRight.svg",
-            "styles": [
-                "layoutRowRight"
-            ]
+            "icon": "/icons/layouts/RowRight.svg"
         },
         {
             "name": "Zentriert",
             "type": "radio",
             "key": "center-right",
-            "icon": "/icons/layouts/CenteredRight.svg",
-            "styles": [
-                "layoutCenteredRight"
-            ]
+            "icon": "/icons/layouts/CenteredRight.svg"
         },
         {
             "name": "Unterhalb",
@@ -42,28 +33,19 @@
             "name": "Liste",
             "type": "radio",
             "key": "list-right-below",
-            "icon": "/icons/layouts/ListRightBelow.svg",
-            "styles": [
-                "layoutListRightBelow"
-            ]
+            "icon": "/icons/layouts/ListRightBelow.svg"
         },
         {
             "name": "Reihe",
             "type": "radio",
             "key": "row-right-below",
-            "icon": "/icons/layouts/RowRightBelow.svg",
-            "styles": [
-                "layoutRowRightBelow"
-            ]
+            "icon": "/icons/layouts/RowRightBelow.svg"
         },
         {
             "name": "Zentriert",
             "type": "radio",
             "key": "center-below",
-            "icon": "/icons/layouts/CenteredBelow.svg",
-            "styles": [
-                "layoutCenteredBelow"
-            ]
+            "icon": "/icons/layouts/CenteredBelow.svg"
         }
     ]
 }

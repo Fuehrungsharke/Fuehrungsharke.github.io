@@ -7,6 +7,14 @@
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
 
+.context-menu-item > svg {
+    width: 24px;
+    height: 24px;
+    margin: 0px 10px 0px 0px;
+    min-width: 24px;
+    align-self: center;
+}
+
 .context-menu-active {
     visibility: visible;
 }
@@ -29,11 +37,9 @@
     list-style: none;
     font-size: 16px;
     font-family: 'Lubalin Graph', 'Roboto Slab';
-    height: auto;
     display: flex;
-    width: 200px;
     cursor: pointer;
-    align-items: center;
+    align-items: flex-start;
     border-radius: 5px;
     margin-bottom: 2px;
     padding: 5px 10px;
@@ -47,24 +53,20 @@
     color: #ccc;
 }
 
-.menu-item-inactive img {
-    opacity: 0.2;
+.menu-item-inactive svg {
+    opacity: 0.33;
 }
 
 .context-menu .context-menu-item:hover {
     background: #f2f2f2;
 }
 
-.context-menu .context-menu-item .with-submenu {
-    position: relative;
-}
-
 .context-menu .sub-menu {
     position: absolute;
     background: #fff;
-    width: 220px;
-    right: -220px;
     padding: 5px 0px;
+    margin-top: -10px;
+    left: 100%;
     opacity: 0;
     pointer-events: none;
     border-radius: 10px;
@@ -85,8 +87,7 @@
 .context-menu .sub-sub-menu {
     position: absolute;
     background: #fff;
-    width: 220px;
-    right: -220px;
+    left: 100%;
     padding: 5px 0px;
     opacity: 0;
     pointer-events: none;

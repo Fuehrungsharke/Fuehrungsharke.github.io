@@ -1,39 +1,5 @@
 img {
     width: 24px;
     margin: 0px 10px 0px 0px;
-}
-
-.relationsIcon868 > img {
-    width: 57.3px;
-}
-
-.relationsIcon612 > img {
-    width: 40.4px;
-}
-
-.layoutListRight > img {
-    width: 40.4px;
-    margin-right: 26.9px;
-}
-
-.layoutListRightBelow > img {
-    width: 33.8px;
-    margin-right: 26.9px;
-}
-
-.layoutRowRight > img {
-    width: 57.3px;
-}
-
-.layoutRowRightBelow > img {
-    width: 50.7px;
-}
-
-.layoutCenteredRight > img {
-    width: 40.4px;
-    margin-right: 26.9px;
-}
-
-.layoutCenteredBelow > img {
-    width: 50.7px;
+    align-self: center;
 }

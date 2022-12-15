@@ -139,12 +139,12 @@ function fromCanvasCoords(value) {
 
 function getTransform(element) {
     var transform = element.getAttributeNS(null, 'transform');
-    var match = /translate\((\d+), (\d+)\) scale\((\d+) (\d+)\)/gi.exec(transform);
+    var match = /translate\((\d+(.\d+)?), (\d+(.\d+)?)\) scale\((\d+(.\d+)?) (\d+(.\d+)?)\)/gi.exec(transform);
     return {
         'x': parseInt(match[1]),
-        'y': parseInt(match[2]),
-        'scaleX': parseInt(match[3]),
-        'scaleY': parseInt(match[4]),
+        'y': parseInt(match[3]),
+        'scaleX': parseInt(match[5]),
+        'scaleY': parseInt(match[7]),
     };
 }
 

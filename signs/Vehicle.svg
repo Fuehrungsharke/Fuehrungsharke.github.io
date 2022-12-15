@@ -33,7 +33,7 @@
 	rail}}
 
 	<g clip-path='url(#Vehicle)'>
-	{{symbols:cx=128, cy=128, width=236, height=74}}
+	{{symbols:cx=128, cy=128, width=226, height=74}}
 	</g>
 
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145">{{txt}}</text>

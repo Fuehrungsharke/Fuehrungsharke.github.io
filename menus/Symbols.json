@@ -3,28 +3,19 @@
     "type": "submenu",
     "values": [
         {
-            "name": "Löschen",
+            "name": "Beleuchtung",
             "type": "radio",
-            "key": "symbols:extinguish",
-            "icon": "/icons/symbols/extinguish.svg",
+            "key": "symbols:lamp",
+            "icon": "/symbols/lamp.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
         },
         {
-            "name": "Sanitätswesen",
+            "name": "Bergen",
             "type": "radio",
-            "key": "symbols:medical",
-            "icon": "/icons/symbols/medical.svg",
-            "implicitAttritbues": {
-                "txt": ""
-            }
-        },
-        {
-            "name": "Räumen",
-            "type": "radio",
-            "key": "symbols:clear",
-            "icon": "/icons/symbols/clear.svg",
+            "key": "symbols:salvage",
+            "icon": "/symbols/salvage.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -33,34 +24,16 @@
             "name": "Brücke",
             "type": "radio",
             "key": "symbols:bridge",
-            "icon": "/icons/symbols/bridge.svg",
+            "icon": "/symbols/bridge.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
         },
         {
-            "name": "Transport",
+            "name": "Deichverteidigung",
             "type": "radio",
-            "key": "symbols:transport",
-            "icon": "/icons/symbols/transport.svg",
-            "implicitAttritbues": {
-                "txt": ""
-            }
-        },
-        {
-            "name": "Verpflegung",
-            "type": "radio",
-            "key": "symbols:food",
-            "icon": "/icons/symbols/food.svg",
-            "implicitAttritbues": {
-                "txt": ""
-            }
-        },
-        {
-            "name": "Verbrauchsgüter",
-            "type": "radio",
-            "key": "symbols:consumable",
-            "icon": "/icons/symbols/consumable.svg",
+            "key": "symbols:dike",
+            "icon": "/symbols/dike.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -69,7 +42,133 @@
             "name": "Dekontaminierung",
             "type": "radio",
             "key": "symbols:decon",
-            "icon": "/icons/symbols/decon.svg",
+            "icon": "/symbols/decon.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Heben",
+            "type": "radio",
+            "key": "symbols:lift",
+            "icon": "/symbols/lift.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Kampfmittelbeseitigung",
+            "type": "radio",
+            "key": "symbols:bomb_disposal",
+            "icon": "/symbols/bomb_disposal.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Löschen",
+            "type": "radio",
+            "key": "symbols:extinguish",
+            "icon": "/symbols/extinguish.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Ortung",
+            "type": "radio",
+            "key": "symbols:dog",
+            "icon": "/symbols/dog.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Räumen",
+            "type": "radio",
+            "key": "symbols:clear",
+            "icon": "/symbols/clear.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Sandsackbefüllung",
+            "type": "radio",
+            "key": "symbols:hopper",
+            "icon": "/symbols/hopper.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Sanitätswesen",
+            "type": "radio",
+            "key": "symbols:medical",
+            "icon": "/symbols/medical.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Technische Hilfe",
+            "type": "radio",
+            "key": "symbols:technical_aid",
+            "icon": "/symbols/technical_aid.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Transport",
+            "type": "radio",
+            "key": "symbols:transport",
+            "icon": "/symbols/transport.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Verbrauchsgüter",
+            "type": "radio",
+            "key": "symbols:consumable",
+            "icon": "/symbols/consumable.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Verpflegung",
+            "type": "radio",
+            "key": "symbols:food",
+            "icon": "/symbols/food.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Wasserförderung",
+            "type": "radio",
+            "key": "symbols:pump",
+            "icon": "/symbols/pump.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Wasserrettung",
+            "type": "radio",
+            "key": "symbols:water_rescue",
+            "icon": "/symbols/water_rescue.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Wasserversorgung",
+            "type": "radio",
+            "key": "symbols:water_supply",
+            "icon": "/symbols/water_supply.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -84,13 +183,7 @@
             "cmd": "resetSymbol",
             "icon": "/icons/ui/reset.svg",
             "implicitAttritbues": {
-                "symbols:extinguish": false,
-                "symbols:medical": false,
-                "symbols:clear": false,
-                "symbols:bridge": false,
-                "symbols:transport": false,
-                "symbols:consumable": false,
-                "symbols:decon": false
+                "symbols:*": false
             }
         }
     ]
