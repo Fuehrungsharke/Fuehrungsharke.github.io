@@ -48,6 +48,8 @@ function getIcon(iconPath) {
     }
     if (iconPath == null)
         iconPath = '/signs/Empty.svg';
+    if (!iconPath.endsWith('.svg'))
+        link = true;
     if (link) {
         var iconImg = document.createElement('img');;
         iconImg.setAttribute('src', iconPath);

@@ -40,13 +40,7 @@
                 "name": "Nebenstehend",
                 "type": "submenu",
                 "cmd": "add_with",
-                "icon": {
-                    "src": "/icons/relations/with.svg",
-                    "link": true
-                },
-                "styles": [
-                    "relationsIcon868"
-                ],
+                "icon": "/icons/relations/with.svg",
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -56,13 +50,7 @@
                 "name": "Auf gleicher Ebene",
                 "type": "submenu",
                 "cmd": "add_sibling",
-                "icon": {
-                    "src": "/icons/relations/sibling.svg",
-                    "link": true
-                },
-                "styles": [
-                    "relationsIcon612"
-                ],
+                "icon": "/icons/relations/sibling.svg",
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -72,13 +60,7 @@
                 "name": "Übergeordnet",
                 "type": "submenu",
                 "cmd": "add_parent",
-                "icon": {
-                    "src": "/icons/relations/parent.svg",
-                    "link": true
-                },
-                "styles": [
-                    "relationsIcon612"
-                ],
+                "icon": "/icons/relations/parent.svg",
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -88,13 +70,7 @@
                 "name": "Untergeordnet",
                 "type": "submenu",
                 "cmd": "add_sub",
-                "icon": {
-                    "src": "/icons/relations/sub.svg",
-                    "link": true
-                },
-                "styles": [
-                    "relationsIcon612"
-                ],
+                "icon": "/icons/relations/sub.svg",
                 "values": {
                     "name": "menu_signs",
                     "type": "placeholder"
@@ -111,19 +87,13 @@
                 "name": "Untergeordnete Elemente behalten",
                 "type": "cmd",
                 "cmd": "cut_single",
-                "icon": "/icons/relations/delete_single.svg",
-                "styles": [
-                    "relationsIcon612"
-                ]
+                "icon": "/icons/relations/delete_single.svg"
             },
             {
                 "name": "Auch untergeordnete Elemente",
                 "type": "cmd",
                 "cmd": "cut_tree",
-                "icon": "/icons/relations/delete_tree.svg",
-                "styles": [
-                    "relationsIcon612"
-                ]
+                "icon": "/icons/relations/delete_tree.svg"
             }
         ]
     },
@@ -142,45 +112,30 @@
                 "name": "Ohne untergeordnete Elemente",
                 "type": "submenu",
                 "icon": "/icons/relations/paste_single.svg",
-                "styles": [
-                    "relationsIcon612"
-                ],
                 "values": [
                     {
                         "name": "Nebenstehend",
                         "type": "cmd",
                         "cmd": "paste_with_single",
-                        "icon": "/icons/relations/with.svg",
-                        "styles": [
-                            "relationsIcon868"
-                        ]
+                        "icon": "/icons/relations/with.svg"
                     },
                     {
                         "name": "Auf gleicher Ebene",
                         "type": "cmd",
                         "cmd": "paste_sibling_single",
-                        "icon": "/icons/relations/sibling.svg",
-                        "styles": [
-                            "relationsIcon612"
-                        ]
+                        "icon": "/icons/relations/sibling.svg"
                     },
                     {
                         "name": "Übergeordnet",
                         "type": "cmd",
                         "cmd": "paste_parent_single",
-                        "icon": "/icons/relations/parent.svg",
-                        "styles": [
-                            "relationsIcon612"
-                        ]
+                        "icon": "/icons/relations/parent.svg"
                     },
                     {
                         "name": "Untergeordnet",
                         "type": "cmd",
                         "cmd": "paste_sub_single",
-                        "icon": "/icons/relations/sub.svg",
-                        "styles": [
-                            "relationsIcon612"
-                        ]
+                        "icon": "/icons/relations/sub.svg"
                     }
                 ]
             },
@@ -188,27 +143,18 @@
                 "name": "Mit untergeordnete Elemente",
                 "type": "submenu",
                 "icon": "/icons/relations/paste_tree.svg",
-                "styles": [
-                    "relationsIcon612"
-                ],
                 "values": [
                     {
                         "name": "Auf gleicher Ebene",
                         "type": "cmd",
                         "cmd": "paste_sibling_tree",
-                        "icon": "/icons/relations/sibling.svg",
-                        "styles": [
-                            "relationsIcon612"
-                        ]
+                        "icon": "/icons/relations/sibling.svg"
                     },
                     {
                         "name": "Untergeordnet",
                         "type": "cmd",
                         "cmd": "paste_sub_tree",
-                        "icon": "/icons/relations/sub.svg",
-                        "styles": [
-                            "relationsIcon612"
-                        ]
+                        "icon": "/icons/relations/sub.svg"
                     }
                 ]
             }
@@ -223,19 +169,13 @@
                 "name": "Untergeordnete Elemente behalten",
                 "type": "cmd",
                 "cmd": "delete_single",
-                "icon": "/icons/relations/delete_single.svg",
-                "styles": [
-                    "relationsIcon612"
-                ]
+                "icon": "/icons/relations/delete_single.svg"
             },
             {
                 "name": "Auch untergeordnete Elemente",
                 "type": "cmd",
                 "cmd": "delete_tree",
-                "icon": "/icons/relations/delete_tree.svg",
-                "styles": [
-                    "relationsIcon612"
-                ]
+                "icon": "/icons/relations/delete_tree.svg"
             }
         ]
     }

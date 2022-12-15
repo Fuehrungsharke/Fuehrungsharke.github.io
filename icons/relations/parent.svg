@@ -11,7 +11,7 @@
 	<path stroke-width="9" stroke="black" d="M256 128 L306 128"/>
 	<path stroke-width="9" stroke="black" d="M306 128 L356 128"/>
 	<g transform="translate(356, 0) scale(1 1)">
-		<rect x="10" y="64" width="236" height="128" fill="#ccc" stroke="#000" stroke-width="30" clip-path="url(#Unit)"/>
+		<rect x="10" y="64" width="236" height="128" fill="#ccc" stroke="#000" stroke-width="30" clip-path="url(#Unit)" opacity="0.2"/>
 	</g>
 	<path stroke-width="9" stroke="black" d="M306 384 L356 384"/>
 	<g transform="translate(356, 256) scale(1 1)">

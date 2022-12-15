@@ -70,10 +70,7 @@
             "name": "Deutsches Rotes Kreuz",
             "type": "radio",
             "key": "DRK",
-            "icon": {
-                "src": "/icons/orgs/DeutschesRotesKreuz.png",
-                "link": true
-            },
+            "icon": "/icons/orgs/DeutschesRotesKreuz.png",
             "implicitAttritbues": {
                 "colorPrimary": "#FFFFFF",
                 "colorAccent": "#000000"
