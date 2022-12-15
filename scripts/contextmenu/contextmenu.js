@@ -39,22 +39,8 @@ function getPlaceholder(name) {
         return JSON.parse(getResource(`/menus/${name}.json`))
 }
 
-function buildMenuItem(root, parentMenuItem, attrItem) {
-    if (attrItem.type == PLACEHOLDER) {
-        attrItem = getPlaceholder(attrItem.name);
-        if (Array.isArray(attrItem))
-            if (attrItem.length > 0)
-                return buildMenu(root, parentMenuItem, attrItem);
-            else
-                return null;
-    }
-    var key = attrItem.key;
-    var menuItem = document.createElement('li');
-    menuItem.classList.add('context-menu-item');
-    var attrItems = [];
-
+function getIcon(iconPath) {
     var link = false;
-    var iconPath = attrItem.icon;
     if (typeof iconPath == "object") {
         iconPath = iconPath.src;
         if (iconPath.link != null)
@@ -64,8 +50,8 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         iconPath = '/signs/Empty.svg';
     if (link) {
         var iconImg = document.createElement('img');;
-        menuItem.appendChild(iconImg);
         iconImg.setAttribute('src', iconPath);
+        return iconImg;
     }
     else if (iconPath.endsWith('.svg')) {
         var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -97,8 +83,28 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         }
 
         iconSvg.innerHTML = iconG.outerHTML;
-        menuItem.appendChild(iconSvg);
+        return iconSvg;
     }
+    return null;
+}
+
+function buildMenuItem(root, parentMenuItem, attrItem) {
+    if (attrItem.type == PLACEHOLDER) {
+        attrItem = getPlaceholder(attrItem.name);
+        if (Array.isArray(attrItem))
+            if (attrItem.length > 0)
+                return buildMenu(root, parentMenuItem, attrItem);
+            else
+                return null;
+    }
+    var key = attrItem.key;
+    var menuItem = document.createElement('li');
+    menuItem.classList.add('context-menu-item');
+    var attrItems = [];
+
+    var icon = getIcon(attrItem.icon);
+    if (icon != null)
+        menuItem.appendChild(icon);
 
     if (attrItem.styles != null)
         for (let idx in attrItem.styles)
@@ -140,8 +146,11 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 menuItem.classList.add('menu-item-inactive');
             if (Array.isArray(attrItem.values)) {
                 var selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
-                if (selectedItem != null)
-                    icon.setAttribute('src', selectedItem.icon);
+                if (selectedItem != null) {
+                    var newIcon = getIcon(selectedItem.icon);
+                    if (newIcon != null)
+                        menuItem.replaceChild(newIcon, icon);
+                }
             }
             subMenu.replaceChildren(...subMenuItems);
             menuItem.appendChild(subMenu);
@@ -159,8 +168,9 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 }
                 else {
                     menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
-                    if (attrItem.iconInverted != null)
-                        icon.setAttribute('src', attrItem.iconInverted);
+                    var newIcon = getIcon(attrItem.iconInverted);
+                    if (newIcon != null)
+                        menuItem.replaceChild(newIcon, icon);
                 }
             }
             else
