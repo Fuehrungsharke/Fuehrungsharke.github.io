@@ -190,6 +190,7 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
         dimSign.anchorLeftX = 0;
         dimSign.anchorLeftY = 128;
         if (root.show_staff) {
+            dimSign.height += 20;
             var staff = getStaff(root);
             var staffText = document.createElement('text');
             staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan text-decoration='underline'>${staff[3]}</tspan>`;
@@ -200,13 +201,14 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
             staffText.setAttribute('text-anchor', 'middle');
             staffText.setAttribute('font-weight', 'bold');
             itemBox.appendChild(staffText);
-            dimSign.height += 32;
+            dimSign.height += 5;
         }
         if (root.name != null) {
             var nameParts = root['name'].split(', ');
             for (let namePart in nameParts) {
-                itemBox.appendChild(getText(uuid, nameParts[namePart], dimSign.width / 2, dimSign.height));
                 dimSign.height += 24;
+                itemBox.appendChild(getText(uuid, nameParts[namePart], dimSign.width / 2, dimSign.height));
+                dimSign.height += 5;
             }
         }
         if (canvas != null) {

@@ -378,7 +378,10 @@ function clickContextMenuItem(menuItem) {
                         close = true;
                         break;
                     case STRING:
-                        root[key] = newString;
+                        if (newString == '')
+                            delete root[key];
+                        else
+                            root[key] = newString;
                         close = true;
                         break;
                 }
