@@ -1,0 +1,6 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="60" height="68" viewbox="98 112 60 68">
+    <ellipse cx="128" cy="150" rx="26" ry="26" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+    <ellipse cx="128" cy="150" rx="12" ry="12" stroke-width="none" fill="{{colorAccent}}" />
+    <path d="M112,128 l-6,-12" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+    <path d="M144,128 l6,-12" stroke-width="5" stroke="{{colorAccent}}" fill="none" />
+</svg>

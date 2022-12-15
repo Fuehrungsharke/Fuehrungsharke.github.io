@@ -48,6 +48,15 @@
             }
         },
         {
+            "name": "Kampfmittelbeseitigung",
+            "type": "radio",
+            "key": "symbols:bomb_disposal",
+            "icon": "/symbols/bomb_disposal.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Löschen",
             "type": "radio",
             "key": "symbols:extinguish",
