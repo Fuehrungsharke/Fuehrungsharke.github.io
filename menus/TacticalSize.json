@@ -129,8 +129,15 @@
                 "platoontroop": false,
                 "group": false,
                 "echelon": false,
-                "troop": false,
-                "leading": false
+                "troop": false
+            },
+            "conditionalAttritbues": {
+                "condition": {
+                    "sign": "Person"
+                },
+                "values": {
+                    "leading": false
+                }
             }
         }
     ]

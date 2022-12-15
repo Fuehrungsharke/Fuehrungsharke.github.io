@@ -1,7 +1,6 @@
 [
     {
-        "name": "Text",
-        "type": "string",
-        "key": "txt"
+        "name": "menu_text",
+        "type": "placeholder"
     }
 ]

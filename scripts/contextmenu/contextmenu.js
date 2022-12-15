@@ -291,6 +291,33 @@ function getParentAttribute(attrMenu, parent, child) {
     return null;
 }
 
+function handleImplicitAttributes(root, attr) {
+    for (let idx in attr.implicitAttritbues)
+        if (!attr.implicitAttritbues[idx]) {
+            if (idx.endsWith('*'))
+                for (let prop in root) {
+                    if (prop.startsWith(idx.slice(0, idx.length - 2)))
+                        delete root[prop];
+                }
+            else
+                delete root[idx];
+        }
+        else
+            root[idx] = attr.implicitAttritbues[idx];
+}
+
+function handleConditionalAttributes(root, attr) {
+    var match = true;
+    for (let idx in attr.conditionalAttritbues.condition)
+        match &= root[idx] == attr.conditionalAttritbues.condition[idx];
+    if (match)
+        for (let idx in attr.conditionalAttritbues.values)
+            if (!attr.conditionalAttritbues.values[idx])
+                delete root[idx];
+            else
+                root[idx] = attr.conditionalAttritbues.values[idx];
+}
+
 function clickContextMenuItem(menuItem) {
     var close = false;
     var cmd = menuItem.getAttributeNS(null, 'cmd');
@@ -356,23 +383,11 @@ function clickContextMenuItem(menuItem) {
                         break;
                 }
             if (attr.implicitAttritbues != null) {
-                for (let idx in attr.implicitAttritbues)
-                    if (!attr.implicitAttritbues[idx])
-                        delete root[idx];
-                    else
-                        root[idx] = attr.implicitAttritbues[idx];
+                handleImplicitAttributes(root, attr);
                 close = true;
             }
             if (attr.conditionalAttritbues != null) {
-                var match = true;
-                for (let idx in attr.conditionalAttritbues.condition)
-                    match &= root[idx] == attr.conditionalAttritbues.condition[idx];
-                if (match)
-                    for (let idx in attr.conditionalAttritbues.values)
-                        if (!attr.conditionalAttritbues.values[idx])
-                            delete root[idx];
-                        else
-                            root[idx] = attr.conditionalAttritbues.values[idx];
+                handleConditionalAttributes(root, attr);
                 close = true;
             }
         }

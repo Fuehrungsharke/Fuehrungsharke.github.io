@@ -102,15 +102,7 @@
             "cmd": "resetSymbol",
             "icon": "/icons/ui/reset.svg",
             "implicitAttritbues": {
-                "symbols:extinguish": false,
-                "symbols:medical": false,
-                "symbols:lamp": false,
-                "symbols:clear": false,
-                "symbols:bridge": false,
-                "symbols:transport": false,
-                "symbols:consumable": false,
-                "symbols:pump": false,
-                "symbols:decon": false
+                "symbols:*": false
             }
         }
     ]

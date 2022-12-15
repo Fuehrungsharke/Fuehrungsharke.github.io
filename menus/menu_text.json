@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Text",
+        "type": "string",
+        "key": "txt",
+        "implicitAttritbues": {
+            "symbols:*": false
+        }
+    }
+]
