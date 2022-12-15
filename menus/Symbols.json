@@ -147,6 +147,15 @@
             }
         },
         {
+            "name": "Wasserversorgung",
+            "type": "radio",
+            "key": "symbols:water_supply",
+            "icon": "/symbols/water_supply.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "",
             "type": "header"
         },
