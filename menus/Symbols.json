@@ -75,6 +75,15 @@
             }
         },
         {
+            "name": "Sandsackbefüllung",
+            "type": "radio",
+            "key": "symbols:hopper",
+            "icon": "/symbols/hopper.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Sanitätswesen",
             "type": "radio",
             "key": "symbols:medical",
@@ -97,15 +106,6 @@
             "type": "radio",
             "key": "symbols:transport",
             "icon": "/symbols/transport.svg",
-            "implicitAttritbues": {
-                "txt": ""
-            }
-        },
-        {
-            "name": "Trichter",
-            "type": "radio",
-            "key": "symbols:hopper",
-            "icon": "/symbols/hopper.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
