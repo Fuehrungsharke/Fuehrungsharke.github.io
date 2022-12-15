@@ -12,6 +12,15 @@
             }
         },
         {
+            "name": "Bergen",
+            "type": "radio",
+            "key": "symbols:salvage",
+            "icon": "/symbols/salvage.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Brücke",
             "type": "radio",
             "key": "symbols:bridge",
