@@ -1,5 +1,21 @@
 [
     {
+        "name": "",
+        "type": "header"
+    },
+    {
+        "name": "menu_text",
+        "type": "placeholder"
+    },
+    {
+        "name": "menu_name",
+        "type": "placeholder"
+    },
+    {
+        "name": "Symbols",
+        "type": "placeholder"
+    },
+    {
         "name": "Linien",
         "type": "header"
     },
@@ -26,13 +42,5 @@
         "type": "bool",
         "key": "bottom",
         "icon": "/icons/lines/Bottom.svg"
-    },
-    {
-        "name": "",
-        "type": "header"
-    },
-    {
-        "name": "Symbols",
-        "type": "placeholder"
     }
 ]

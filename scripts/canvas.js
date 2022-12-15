@@ -312,7 +312,7 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
             }
             appendLine(canvas, root, inactiveInherited,
                 x + dimSign.anchorTopX,
-                y + dimSign.height + (root.bottom ? -GAP : 0),
+                y + dimSign.height,
                 x + dimSign.anchorTopX,
                 dimLastSub.y + dimLastSub.anchorLeftY
             );
@@ -422,7 +422,7 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
 
         appendLine(canvas, root, inactiveInherited,
             x + dimSign.width / 2,
-            y + dimSign.height + (root.bottom ? -GAP : 0),
+            y + dimSign.height,
             x + dimSign.width / 2,
             y + maxSignWithHeight + dimFirstSub.anchorLeftY
         ); // root line
@@ -526,7 +526,7 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
         dim.anchorTopX = dimSubs[0].anchorTopX + (anchorSubN - anchorSub1) / 2;
         appendLine(canvas, root, inactiveInherited,
             x + dim.anchorTopX,
-            y + dimSign.height + (root.bottom ? -GAP : 0),
+            y + dimSign.height,
             x + dim.anchorTopX,
             y + subY); // root line
         appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY); // group line
