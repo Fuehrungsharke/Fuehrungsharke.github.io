@@ -75,6 +75,15 @@
             }
         },
         {
+            "name": "Ortung",
+            "type": "radio",
+            "key": "symbols:dog",
+            "icon": "/symbols/dog.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Räumen",
             "type": "radio",
             "key": "symbols:clear",
