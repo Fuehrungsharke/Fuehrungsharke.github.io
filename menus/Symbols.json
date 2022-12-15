@@ -66,6 +66,15 @@
             }
         },
         {
+            "name": "Trichter",
+            "type": "radio",
+            "key": "symbols:hopper",
+            "icon": "/symbols/hopper.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Verbrauchsgüter",
             "type": "radio",
             "key": "symbols:consumable",
