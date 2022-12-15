@@ -24,7 +24,8 @@ PasteSubCmd.prototype.execute = function () {
                 delete clonedElements[idx].sub;
                 delete clonedElements[idx].with;
             }
-            this.insertSub(this.selectedElements[i], clonedElements[idx]);
+            if (!this.insertSub(this.selectedElements[i], clonedElements[idx]))
+                return false;
         }
     }
     return true;

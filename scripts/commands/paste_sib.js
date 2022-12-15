@@ -24,7 +24,8 @@ PasteSibCmd.prototype.execute = function () {
                 delete clonedElements[idx].sub;
                 delete clonedElements[idx].with;
             }
-            this.insertSibling(this.selectedElements[i], clonedElements[idx]);
+            if (!this.insertSibling(this.selectedElements[i], clonedElements[idx]))
+                return false;
         }
     }
     return true;

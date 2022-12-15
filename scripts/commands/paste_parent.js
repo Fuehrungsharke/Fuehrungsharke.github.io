@@ -20,7 +20,8 @@ PasteParentCmd.prototype.execute = function () {
         for (let idx in clonedElements) {
             delete clonedElements[idx].sub;
             delete clonedElements[idx].with;
-            this.insertParent(this.selectedElements[i], clonedElements[idx]);
+            if (!this.insertParent(this.selectedElements[i], clonedElements[idx]))
+                return false;
         }
     }
     return true;

@@ -54,6 +54,8 @@ AddCmd.prototype.getParentLayer = function (root) {
 }
 
 AddCmd.prototype.insertParent = function (root, newObj) {
+    if (newObj?.sign == null)
+        return false;
     var parentLogical = getParentByUuid(config, root.uuid);
     var parentLayer = this.getParentLayer(root);
     if (parentLayer != null) {
@@ -76,9 +78,12 @@ AddCmd.prototype.insertParent = function (root, newObj) {
         newObj[SUB] = [config];
         config = newObj;
     }
+    return true;
 }
 
 AddCmd.prototype.insertSibling = function (root, newObj) {
+    if (newObj?.sign == null)
+        return false;
     var parentLayer = this.getParentLayer(root);
     if (parentLayer != null) {
         if (Array.isArray(parentLayer) && parentLayer.length > 0)
@@ -87,9 +92,12 @@ AddCmd.prototype.insertSibling = function (root, newObj) {
             parentLayer.sub.push(newObj);
     } else
         config = [config, newObj];
+    return true;
 }
 
 AddCmd.prototype.insertSub = function (root, newObj) {
+    if (newObj?.sign == null)
+        return false;
     if (this.parentLogical != null && this.parentLogical[WITH] != null && this.parentLogical[WITH].indexOf(root) >= 0) {
         if (this.parentLogical[SUB] == null)
             this.parentLogical[SUB] = [];
@@ -100,9 +108,12 @@ AddCmd.prototype.insertSub = function (root, newObj) {
             root[SUB] = [];
         root[SUB].push(newObj);
     }
+    return true;
 }
 
 AddCmd.prototype.insertWith = function (root, newObj) {
+    if (newObj?.sign == null)
+        return false;
     if (this.parentLogical != null && this.parentLogical[WITH] != null && this.parentLogical[WITH].indexOf(root) >= 0)
         this.parentLogical[WITH].push(newObj);
     else {
@@ -110,4 +121,5 @@ AddCmd.prototype.insertWith = function (root, newObj) {
             root[WITH] = [];
         root[WITH].push(newObj);
     }
+    return true;
 }

@@ -306,7 +306,7 @@ function clickContextMenuItem(menuItem) {
         cmdObj = Object.create(cmdObj);
         cmdObj.key = key;
         cmdObj.selectedElements = selectedElements;
-        if (key != null && cmdObj.isExecuteable())
+        if (cmdObj.isExecuteable())
             close = cmdObj.execute();
     }
     else if (currentSignMenu != null) {
