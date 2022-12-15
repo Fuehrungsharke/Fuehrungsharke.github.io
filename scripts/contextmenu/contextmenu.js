@@ -306,14 +306,14 @@ function clickContextMenuItem(menuItem) {
         cmdObj = Object.create(cmdObj);
         cmdObj.key = key;
         cmdObj.selectedElements = selectedElements;
-        if (cmdObj.isExecuteable())
+        if (key != null && cmdObj.isExecuteable())
             close = cmdObj.execute();
     }
     else if (currentSignMenu != null) {
         var attr = null;
         if (key != null && key != "undefined")
             attr = getAttribute(currentSignMenu, 'key', key);
-        else
+        else if (cmd != null)
             attr = getAttribute(currentSignMenu, 'cmd', cmd);
         if (attr == null)
             return false;
