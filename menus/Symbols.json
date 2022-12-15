@@ -138,6 +138,15 @@
             }
         },
         {
+            "name": "Wasserrettung",
+            "type": "radio",
+            "key": "symbols:water_rescue",
+            "icon": "/symbols/water_rescue.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "",
             "type": "header"
         },
