@@ -3,37 +3,10 @@
     "type": "submenu",
     "values": [
         {
-            "name": "Löschen",
-            "type": "radio",
-            "key": "symbols:extinguish",
-            "icon": "/symbols/extinguish.svg",
-            "implicitAttritbues": {
-                "txt": ""
-            }
-        },
-        {
-            "name": "Sanitätswesen",
-            "type": "radio",
-            "key": "symbols:medical",
-            "icon": "/symbols/medical.svg",
-            "implicitAttritbues": {
-                "txt": ""
-            }
-        },
-        {
             "name": "Beleuchtung",
             "type": "radio",
             "key": "symbols:lamp",
             "icon": "/symbols/lamp.svg",
-            "implicitAttritbues": {
-                "txt": ""
-            }
-        },
-        {
-            "name": "Räumen",
-            "type": "radio",
-            "key": "symbols:clear",
-            "icon": "/symbols/clear.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -48,19 +21,46 @@
             }
         },
         {
-            "name": "Transport",
+            "name": "Dekontaminierung",
             "type": "radio",
-            "key": "symbols:transport",
-            "icon": "/symbols/transport.svg",
+            "key": "symbols:decon",
+            "icon": "/symbols/decon.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
         },
         {
-            "name": "Verpflegung",
+            "name": "Löschen",
             "type": "radio",
-            "key": "symbols:food",
-            "icon": "/symbols/food.svg",
+            "key": "symbols:extinguish",
+            "icon": "/symbols/extinguish.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Räumen",
+            "type": "radio",
+            "key": "symbols:clear",
+            "icon": "/symbols/clear.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Sanitätswesen",
+            "type": "radio",
+            "key": "symbols:medical",
+            "icon": "/symbols/medical.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
+            "name": "Transport",
+            "type": "radio",
+            "key": "symbols:transport",
+            "icon": "/symbols/transport.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
@@ -75,19 +75,19 @@
             }
         },
         {
-            "name": "Wasserförderung",
+            "name": "Verpflegung",
             "type": "radio",
-            "key": "symbols:pump",
-            "icon": "/symbols/pump.svg",
+            "key": "symbols:food",
+            "icon": "/symbols/food.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
         },
         {
-            "name": "Dekontaminierung",
+            "name": "Wasserförderung",
             "type": "radio",
-            "key": "symbols:decon",
-            "icon": "/symbols/decon.svg",
+            "key": "symbols:pump",
+            "icon": "/symbols/pump.svg",
             "implicitAttritbues": {
                 "txt": ""
             }
