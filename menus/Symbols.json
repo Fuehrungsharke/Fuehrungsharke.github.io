@@ -57,6 +57,15 @@
             }
         },
         {
+            "name": "Technische Hilfe",
+            "type": "radio",
+            "key": "symbols:technical_aid",
+            "icon": "/symbols/technical_aid.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Transport",
             "type": "radio",
             "key": "symbols:transport",
