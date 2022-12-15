@@ -39,6 +39,15 @@
             }
         },
         {
+            "name": "Heben",
+            "type": "radio",
+            "key": "symbols:lift",
+            "icon": "/symbols/lift.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Löschen",
             "type": "radio",
             "key": "symbols:extinguish",
