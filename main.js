@@ -64,10 +64,13 @@ function configSelected(evt) {
 
 function editName(uuid) {
     var item = getByUuid(config, uuid);
-    let newName = prompt('Edit Name:', item['name']);
+    let newName = prompt('Name', item['name']);
     if (newName == undefined)
         return;
-    item['name'] = newName;
+    if (newName == '')
+        delete item['name'];
+    else
+        item['name'] = newName;
     draw();
 }
 
