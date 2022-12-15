@@ -75,6 +75,15 @@
             }
         },
         {
+            "name": "Wasserförderung",
+            "type": "radio",
+            "key": "symbols:pump",
+            "icon": "/symbols/pump.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Dekontaminierung",
             "type": "radio",
             "key": "symbols:decon",
@@ -100,6 +109,7 @@
                 "symbols:bridge": false,
                 "symbols:transport": false,
                 "symbols:consumable": false,
+                "symbols:pump": false,
                 "symbols:decon": false
             }
         }

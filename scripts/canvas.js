@@ -19,6 +19,7 @@ var scaleMap = {
     'transport': 'scale',
     'food': 'scale',
     'consumable': 'scale',
+    'pump': 'scale',
     'decon': 'scale',
 }
 
