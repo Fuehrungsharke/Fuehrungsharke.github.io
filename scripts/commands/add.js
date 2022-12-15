@@ -15,7 +15,10 @@ AddCmd.prototype.presets = {
     },
     "Hazard": {
         "colorAccent": "#F00"
-    }
+    },
+    "Empty": {
+        "colorAccent": "#000"
+    },
 };
 
 AddCmd.prototype.getNewSign = function (sourceSign, key) {

@@ -1,0 +1,7 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+    <path d="M0 128 L128 128" stroke="#ccc" stroke-width="15"/>
+    <path d="M128 0 L128 128" stroke="#ccc" stroke-width="15"/>
+    <path d="M128 128 L256 128" stroke="#000" stroke-width="15"/>
+    <path d="M128 128 L128 256" stroke="#ccc" stroke-width="15"/>
+</svg>

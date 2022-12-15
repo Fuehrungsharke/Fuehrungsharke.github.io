@@ -2,5 +2,21 @@
     xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewbox="0 0 256 256">
     <rect x="0" y="0" width="256" height="256" fill="transparent" />
 
+    {{left
+    <path d="M0 128 L128 128" stroke="{{colorAccent}}" stroke-width="3"/>
+    left}}
+
+    {{top
+    <path d="M128 0 L128 128" stroke="{{colorAccent}}" stroke-width="3"/>
+    top}}
+
+    {{right
+    <path d="M128 128 L256 128" stroke="{{colorAccent}}" stroke-width="3"/>
+    right}}
+
+    {{bottom
+    <path d="M128 128 L128 256" stroke="{{colorAccent}}" stroke-width="3"/>
+    bottom}}
+
     {{symbols:cx=128, cy=128, width=256, height=256}}
 </svg>

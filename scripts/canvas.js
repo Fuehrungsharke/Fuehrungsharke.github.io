@@ -250,7 +250,11 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
         var subTrees = root.sub;
         var subTotalWidth = 0;
         dim.width += GAP;
-        appendLine(canvas, root, inactiveInherited, x + dim.width, y + dimSign.anchorLeftY, x + dim.width + GAP, y + dimSign.anchorLeftY); // root line
+        appendLine(canvas, root, inactiveInherited,
+            x + dim.width + (root.right ? -GAP : 0),
+            y + dimSign.anchorLeftY,
+            x + dim.width + GAP,
+            y + dimSign.anchorLeftY); // root line
         dim.width += GAP;
         var dimLastSub = null;
         for (let subTree in subTrees) {
@@ -258,7 +262,7 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
                 y + dim.height + subSize.anchorLeftY,
-                x + dim.width + GAP + subSize.anchorLeftX,
+                x + dim.width + GAP + subSize.anchorLeftX + (subTrees[subTree].left ? GAP : 0),
                 y + dim.height + subSize.anchorLeftY
             );
             subTotalWidth = Math.max(subTotalWidth, subSize.width + GAP);
@@ -299,7 +303,7 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
                 appendLine(canvas, root, inactiveInherited,
                     x + dimSign.anchorTopX,
                     y + dim.height + dimSubItem.anchorLeftY,
-                    x + dim.width + dimSubItem.anchorLeftX - GAP,
+                    x + dim.width + dimSubItem.anchorLeftX - GAP + (subTrees[subTree].left ? GAP : 0),
                     y + dim.height + dimSubItem.anchorLeftY
                 );
                 subTotalWidth = Math.max(subTotalWidth, dimSubItem.width);
@@ -308,7 +312,7 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
             }
             appendLine(canvas, root, inactiveInherited,
                 x + dimSign.anchorTopX,
-                y + dimSign.height,
+                y + dimSign.height + (root.bottom ? -GAP : 0),
                 x + dimSign.anchorTopX,
                 dimLastSub.y + dimLastSub.anchorLeftY
             );
@@ -360,7 +364,7 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         dim.height += leafsTotalRowHeight;
 
         appendLine(canvas, root, inactiveInherited,
-            x + dim.width - 3 * GAP,
+            x + dim.width - 3 * GAP + (root.right ? -GAP : 0),
             y + dim.anchorLeftY,
             x + dim.width - 2 * GAP,
             y + dim.anchorLeftY); // root line
@@ -368,14 +372,8 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
         appendLine(canvas, root, inactiveInherited,
             x + dim.width - 2 * GAP,
             y + dimFirstSub.anchorLeftY,
-            x + dim.width + dimFirstSub.anchorLeftX - GAP,
+            x + dim.width + dimFirstSub.anchorLeftX - GAP + (root.sub[0].left ? GAP : 0),
             y + dimFirstSub.anchorLeftY); // 1st item line
-
-        appendLine(canvas, root, inactiveInherited,
-            x + dim.width - 2 * GAP,
-            y + dim.anchorLeftY,
-            x + dim.width - 2 * GAP,
-            y + dimFirstSub.anchorLeftY); // group line
 
         dim.height = Math.max(dim.height, dimSign.height, dimWith.height);
         dim.width += leafsTotalWidth;
@@ -424,16 +422,16 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
 
         appendLine(canvas, root, inactiveInherited,
             x + dimSign.width / 2,
-            y + dimSign.height,
+            y + dimSign.height + (root.bottom ? -GAP : 0),
             x + dimSign.width / 2,
             y + maxSignWithHeight + dimFirstSub.anchorLeftY
-        );
+        ); // root line
         appendLine(canvas, root, inactiveInherited,
             x + dimSign.width / 2,
             y + maxSignWithHeight + dimFirstSub.anchorLeftY,
-            x + dimSign.width + dimFirstSub.anchorLeftX - GAP,
+            x + dimSign.width + dimFirstSub.anchorLeftX - GAP + (root.sub[0].left ? GAP : 0),
             y + maxSignWithHeight + dimFirstSub.anchorLeftY
-        );
+        ); // group line
 
         dim.height += leafsTotalRowHeight;
         dim.width += Math.max(dimWith.width, leafsTotalWidth);
@@ -468,7 +466,7 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
                 y + dim.height + dimSubItem.anchorLeftY,
-                x + dim.width + GAP + dimSubItem.anchorLeftX,
+                x + dim.width + GAP + dimSubItem.anchorLeftX + (subTrees[subTree].left ? GAP : 0),
                 y + dim.height + dimSubItem.anchorLeftY
             );
             subTotalWidth = Math.max(subTotalWidth, dimSubItem.width + GAP);
@@ -481,8 +479,16 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
         dim.height = Math.max(dim.height,
             dim.anchorLeftY + dimSign.height - dimSign.anchorLeftY,
             dim.anchorLeftY + dimWith.height - dimSign.anchorLeftY);
-        appendLine(canvas, root, inactiveInherited, x + dim.width - GAP, y + dim.anchorLeftY, x + dim.width, y + dim.anchorLeftY); // root line
-        appendLine(canvas, root, inactiveInherited, x + dim.width, sub1.y + sub1.anchorLeftY, x + dim.width, subN.y + subN.anchorLeftY); // group line
+        appendLine(canvas, root, inactiveInherited,
+            x + dim.width - GAP + (root.right ? -GAP : 0),
+            y + dim.anchorLeftY,
+            x + dim.width,
+            y + dim.anchorLeftY); // root line
+        appendLine(canvas, root, inactiveInherited,
+            x + dim.width,
+            sub1.y + sub1.anchorLeftY,
+            x + dim.width,
+            subN.y + subN.anchorLeftY); // group line
         dim.width += GAP;
         dim.width += subTotalWidth;
     }
@@ -518,7 +524,11 @@ function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
         var anchorSub1 = dimSubs[0].x + dimSubs[0].anchorTopX;
         var anchorSubN = dimSubs[dimSubs.length - 1].x + dimSubs[dimSubs.length - 1].anchorTopX;
         dim.anchorTopX = dimSubs[0].anchorTopX + (anchorSubN - anchorSub1) / 2;
-        appendLine(canvas, root, inactiveInherited, x + dim.anchorTopX, y + dimSign.height, x + dim.anchorTopX, y + subY); // root line
+        appendLine(canvas, root, inactiveInherited,
+            x + dim.anchorTopX,
+            y + dimSign.height + (root.bottom ? -GAP : 0),
+            x + dim.anchorTopX,
+            y + subY); // root line
         appendLine(canvas, root, inactiveInherited, anchorSub1, y + subY, anchorSubN, y + subY); // group line
     }
     dim.anchorLeftX = dim.anchorTopX - dimSign.anchorTopX;
