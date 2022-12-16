@@ -44,13 +44,13 @@ function getSign(root) {
     else
         svg = getResource(`/signs/${root.sign}.svg`);
 
-    let matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+    let matchesConditional = /\{\{(\w+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
     while (matchesConditional != null && matchesConditional.length == 4) {
         if (matchesConditional[1] in root)
             svg = svg.replace(matchesConditional[0], matchesConditional[2]);
         else
             svg = svg.replace(matchesConditional[0], matchesConditional[3]);
-        matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+        matchesConditional = /\{\{(\w+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
     }
 
     for (let key in root) {
