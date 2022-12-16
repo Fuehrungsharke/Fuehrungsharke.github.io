@@ -1,5 +1,5 @@
-var configHistory = [];
-var undoHistory = [];
+let configHistory = [];
+let undoHistory = [];
 
 function undo() {
     if (configHistory.length <= 1)
