@@ -48,7 +48,7 @@ function buildParentUnit(fullName, text, ordinal) {
 }
 
 function parseUnit(units, idx) {
-    let matches = /(((\d+). )?([\wäöüÄÖÜ\ \+\-]+))(\/([\wäöüÄÖÜ\+\-]+)(\ ([\wäöüÄÖÜ\+]+([\-\ ]([\wäöüÄÖÜ\+]+))?))?(\ \(([\w]+)\))?)?/g.exec(unitNames[idx]);
+    let matches = /(((\d+). )?([\wäöüÄÖÜ\ \+\-]+))(\/([\wäöüÄÖÜ\+\-]+)(\ ([\wäöüÄÖÜ\+]+([\-\ ]([\wäöüÄÖÜ\+]+))?))?(\ \((\w+)\))?)?/g.exec(unitNames[idx]);
     let unit = {
         'fullName': matches[0],
         'sign': 'Unit',
