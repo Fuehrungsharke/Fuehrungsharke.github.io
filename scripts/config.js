@@ -42,13 +42,13 @@ function buildParentUnit(fullName, text, ordinal) {
         parent.leading = true;
     if (ordinal != null)
         parent.ordinal = ordinal;
-    if (text == 'TZ' || text.startsWith('FZ'))
+    if (text != null && (text == 'TZ' || text.startsWith('FZ')))
         parent.platoon = true;
     return parent;
 }
 
-function parseUnit(units, idx) {
-    let matches = /(((\d+). )?([\wäöüÄÖÜ\ \+\-]+))(\/([\wäöüÄÖÜ\+\-]+)(\ ([\wäöüÄÖÜ\+]+([\-\ ]([\wäöüÄÖÜ\+]+))?))?(\ \((\w+)\))?)?/g.exec(unitNames[idx]);
+function parseUnit(units, unitName) {
+    let matches = /(((\d+). )?([\wäöüÄÖÜ\ \+\-]+))(\/([\wäöüÄÖÜ\+\-]+)(\ ([\wäöüÄÖÜ\+]+([\-\ ]([\wäöüÄÖÜ\+]+))?))?(\ \((\w+)\))?)?/g.exec(unitName);
     let unit = {
         'fullName': matches[0],
         'sign': 'Unit',
@@ -61,7 +61,7 @@ function parseUnit(units, idx) {
     if (matches[1] != null) {
         let parent = units.find(u => u.fullName == matches[1]);
         if (parent == null) {
-            parent = buildParentUnit(matches[1], matches[3], matches[4]);
+            parent = buildParentUnit(matches[1], matches[4], matches[3]);
             units.push(parent);
         }
         else
@@ -97,7 +97,7 @@ function parseUnits(unitNames) {
     for (let idx in unitNames) {
         if (unitNames[idx] == null)
             continue;
-        parseUnit(units, idx);
+        parseUnit(units, unitNames[idx]);
     }
     return units;
 }
