@@ -579,7 +579,7 @@ function draw() {
     });
 
     let canvas = document.createElement('svg');
-    size = drawRecursive(canvas, config, 0, 0, false);
+    let size = drawRecursive(canvas, config, 0, 0, false);
 
     let background = document.createElement('rect');
     background.setAttribute('stroke-width', 3);
@@ -591,17 +591,14 @@ function draw() {
     background.setAttribute('height', size.height);
     canvas.prepend(background);
 
-    canvasWidth = size.width;
-    canvasHeight = size.height;
-
     // Output
     outputSvg.innerHTML = canvas.innerHTML;
-    outputSvg.setAttribute('width', canvasWidth);
-    outputSvg.setAttribute('height', canvasHeight + LINESIZE);
+    outputSvg.setAttribute('width', size.width);
+    outputSvg.setAttribute('height', size.height + LINESIZE);
 
     zoomcontainer.setAttribute('transform', `scale(${zoomFactor} ${zoomFactor})`)
 
     // Display
-    displaySvg.setAttribute('width', canvasWidth * zoomFactor);
-    displaySvg.setAttribute('height', canvasHeight * zoomFactor + LINESIZE);
+    displaySvg.setAttribute('width', size.width * zoomFactor);
+    displaySvg.setAttribute('height', size.height * zoomFactor + LINESIZE);
 }
