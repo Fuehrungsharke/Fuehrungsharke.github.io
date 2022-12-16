@@ -354,8 +354,8 @@ function clickContextMenuItem(menuItem) {
                 return true;
         }
 
-        for (let i = 0; i < selectedElements.length; i++) {
-            root = selectedElements[i];
+        for (const selectedElement of selectedElements) {
+            root = selectedElement;
             if (key != null && key != "undefined")
                 switch (attr.type) {
                     case BOOL:

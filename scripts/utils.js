@@ -3,7 +3,7 @@ function isAncestorOf(item, presumedDescendant) {
         for (let idx in presumedDescendant.sub) {
             if (presumedDescendant.sub[idx] == item)
                 return true;
-            var subResult = isAncestorOf(item, presumedDescendant.sub[idx]);
+            let subResult = isAncestorOf(item, presumedDescendant.sub[idx]);
             if (subResult)
                 return subResult;
         }
@@ -12,7 +12,7 @@ function isAncestorOf(item, presumedDescendant) {
         for (let idx in presumedDescendant.with) {
             if (presumedDescendant.with[idx] == item)
                 return true;
-            var subResult = isAncestorOf(item, presumedDescendant.with[idx]);
+            let subResult = isAncestorOf(item, presumedDescendant.with[idx]);
             if (subResult)
                 return subResult;
         }
@@ -23,7 +23,7 @@ function isAncestorOf(item, presumedDescendant) {
 function getByUuid(root, uuid) {
     if (Array.isArray(root) && root.length > 0)
         for (let idx in root) {
-            var subResult = getByUuid(root[idx], uuid);
+            let subResult = getByUuid(root[idx], uuid);
             if (subResult != undefined)
                 return subResult;
         }
@@ -31,13 +31,13 @@ function getByUuid(root, uuid) {
         return root;
     if (root.hasOwnProperty(SUB) && Array.isArray(root[SUB]))
         for (let idx in root[SUB]) {
-            var subResult = getByUuid(root[SUB][idx], uuid);
+            let subResult = getByUuid(root[SUB][idx], uuid);
             if (subResult != undefined)
                 return subResult;
         }
     if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]))
         for (let idx in root[WITH]) {
-            var subResult = getByUuid(root[WITH][idx], uuid);
+            let subResult = getByUuid(root[WITH][idx], uuid);
             if (subResult != undefined)
                 return subResult;
         }
@@ -49,7 +49,7 @@ function getParentByUuid(root, uuid) {
         for (let idx in root) {
             if (root[idx].hasOwnProperty('uuid') && root[idx].uuid == uuid)
                 return root;
-            var subResult = getParentByUuid(root[idx], uuid);
+            let subResult = getParentByUuid(root[idx], uuid);
             if (subResult != null)
                 return subResult;
         }
@@ -57,7 +57,7 @@ function getParentByUuid(root, uuid) {
         for (let idx in root[SUB]) {
             if (root[SUB][idx].hasOwnProperty('uuid') && root[SUB][idx].uuid == uuid)
                 return root;
-            var subResult = getParentByUuid(root[SUB][idx], uuid);
+            let subResult = getParentByUuid(root[SUB][idx], uuid);
             if (subResult != null)
                 return subResult;
         }
@@ -65,7 +65,7 @@ function getParentByUuid(root, uuid) {
         for (let idx in root[WITH]) {
             if (root[WITH][idx].hasOwnProperty('uuid') && root[WITH][idx].uuid == uuid)
                 return root;
-            var subResult = getParentByUuid(root[WITH][idx], uuid);
+            let subResult = getParentByUuid(root[WITH][idx], uuid);
             if (subResult != null)
                 return subResult;
         }
@@ -81,8 +81,8 @@ function fromCanvasCoords(value) {
 }
 
 function getTransform(element) {
-    var transform = element.getAttributeNS(null, 'transform');
-    var match = /translate\((\d+(.\d+)?), (\d+(.\d+)?)\) scale\((\d+(.\d+)?) (\d+(.\d+)?)\)/gi.exec(transform);
+    let transform = element.getAttributeNS(null, 'transform');
+    let match = /translate\((\d+(.\d+)?), (\d+(.\d+)?)\) scale\((\d+(.\d+)?) (\d+(.\d+)?)\)/gi.exec(transform);
     return {
         'x': parseInt(match[1]),
         'y': parseInt(match[3]),
@@ -92,20 +92,20 @@ function getTransform(element) {
 }
 
 function getElementDimensions(element) {
-    var maxWidth = 0;
-    var maxHeight = 0;
-    var svgs = element.getElementsByTagName('svg');
-    for (let i = 0; i < svgs.length; i++) {
-        maxWidth = Math.max(maxWidth, svgs[i].width.baseVal.value);
-        maxHeight = Math.max(maxHeight, svgs[i].height.baseVal.value);
+    let maxWidth = 0;
+    let maxHeight = 0;
+    let svgs = element.getElementsByTagName('svg');
+    for (const svg of svgs) {
+        maxWidth = Math.max(maxWidth, svg.width.baseVal.value);
+        maxHeight = Math.max(maxHeight, svg.height.baseVal.value);
     }
     return [maxWidth, maxHeight];
 }
 
 function getSelectedElements() {
-    var selectedElements = [];
-    var selectedSigns = outputSvg.getElementsByClassName('selected');
-    for (let i = 0; i < selectedSigns.length; i++)
-        selectedElements.push(getByUuid(config, selectedSigns[i].getAttributeNS(null, 'uuid')));
+    let selectedElements = [];
+    let selectedSigns = outputSvg.getElementsByClassName('selected');
+    for (const selectedSign of selectedSigns)
+        selectedElements.push(getByUuid(config, selectedSign.getAttributeNS(null, 'uuid')));
     return selectedElements;
 }
