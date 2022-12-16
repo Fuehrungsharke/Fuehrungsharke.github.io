@@ -22,7 +22,7 @@ AddCmd.prototype.presets = {
 };
 
 AddCmd.prototype.getNewSign = function (sourceSign, key) {
-    var newObj = {
+    let newObj = {
         'sign': key,
         'colorPrimary': '#FFF',
         'colorAccent': '#000'
@@ -44,8 +44,8 @@ AddCmd.prototype.cloneCachedElements = function () {
 }
 
 AddCmd.prototype.getParentLayer = function (root) {
-    var parentLogical = getParentByUuid(config, root.uuid);
-    var parentLayer = parentLogical;
+    let parentLogical = getParentByUuid(config, root.uuid);
+    let parentLayer = parentLogical;
     if (parentLayer != null && parentLayer.hasOwnProperty(WITH) && Array.isArray(parentLayer[WITH])) {
         for (let idx in parentLayer[WITH])
             if (parentLayer[WITH][idx].hasOwnProperty('uuid') && parentLayer[WITH][idx].uuid == root.uuid) {
@@ -59,20 +59,20 @@ AddCmd.prototype.getParentLayer = function (root) {
 AddCmd.prototype.insertParent = function (root, newObj) {
     if (newObj?.sign == null)
         return false;
-    var parentLogical = getParentByUuid(config, root.uuid);
-    var parentLayer = this.getParentLayer(root);
+    let parentLogical = getParentByUuid(config, root.uuid);
+    let parentLayer = this.getParentLayer(root);
     if (parentLayer != null) {
         if (Array.isArray(parentLayer) && parentLayer.length > 0) {
             newObj[SUB] = parentLayer;
             config = newObj;
         }
         else if (parentLayer[SUB] != null) {
-            var oldObj = null;
+            let oldObj = null;
             if (parentLayer == parentLogical)
                 oldObj = root;
             else
                 oldObj = parentLogical;
-            var idx = parentLayer[SUB].indexOf(root);
+            let idx = parentLayer[SUB].indexOf(root);
             newObj[SUB] = [oldObj];
             parentLayer[SUB][idx] = newObj;
         }
@@ -87,7 +87,7 @@ AddCmd.prototype.insertParent = function (root, newObj) {
 AddCmd.prototype.insertSibling = function (root, newObj) {
     if (newObj?.sign == null)
         return false;
-    var parentLayer = this.getParentLayer(root);
+    let parentLayer = this.getParentLayer(root);
     if (parentLayer != null) {
         if (Array.isArray(parentLayer) && parentLayer.length > 0)
             parentLayer.push(newObj);

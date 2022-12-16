@@ -1,15 +1,15 @@
-var customOrgs = [];
+let customOrgs = [];
 
 function NewOrgCmd() { }
 
 NewOrgCmd.prototype.__proto__ = new CmdBase();
 
 NewOrgCmd.prototype.execute = function () {
-    var newOrgName = prompt('Name', 'Benutzerdefiniert');
-    var newOrgKey = prompt('Kürzel', 'XXX');
-    var newOrgColorPrimary = prompt('Farbe', 'purple');
-    var newOrgColorAccent = prompt('Kontrastfarbe', 'white');
-    var newOrg = {
+    let newOrgName = prompt('Name', 'Benutzerdefiniert');
+    let newOrgKey = prompt('Kürzel', 'XXX');
+    let newOrgColorPrimary = prompt('Farbe', 'purple');
+    let newOrgColorAccent = prompt('Kontrastfarbe', 'white');
+    let newOrg = {
         "name": newOrgName,
         "type": "radio",
         "key": newOrgKey,
