@@ -14,9 +14,9 @@ SetStaffCmd.prototype.execute = function () {
         return false;
     }
 
-    for (let i = 0; i < this.selectedElements.length; i++) {
-        this.selectedElements[i].staff = newStaff;
-        this.selectedElements[i].show_staff = true;
+    for (const selectedElement of this.selectedElements) {
+        selectedElement.staff = newStaff;
+        selectedElement.show_staff = true;
     }
     return true;
 }

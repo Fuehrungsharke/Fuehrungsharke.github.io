@@ -13,8 +13,8 @@ CollapseCmd.prototype.isExecuteable = function () {
 }
 
 CollapseCmd.prototype.execute = function () {
-    for (let i = 0; i < this.selectedElements.length; i++) {
-        let root = this.selectedElements[i];
+    for (const selectedElement of this.selectedElements) {
+        let root = selectedElement;
         if (root.sub == null)
             continue;
         let collapseSign = root.sub.find(item => item.sign == 'Collapsed');

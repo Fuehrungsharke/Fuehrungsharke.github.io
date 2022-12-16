@@ -25,10 +25,10 @@ NewOrgCmd.prototype.execute = function () {
         }
     };
     customOrgs.push(newOrg);
-    for (let i = 0; i < this.selectedElements.length; i++) {
-        this.selectedElements[i].org = newOrgKey;
-        this.selectedElements[i].colorPrimary = newOrgColorPrimary;
-        this.selectedElements[i].colorAccent = newOrgColorAccent;
+    for (const selectedElement of this.selectedElements) {
+        selectedElement.org = newOrgKey;
+        selectedElement.colorPrimary = newOrgColorPrimary;
+        selectedElement.colorAccent = newOrgColorAccent;
     }
     return true;
 }

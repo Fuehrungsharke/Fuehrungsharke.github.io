@@ -9,7 +9,7 @@ ResetStaffCmd.prototype.isExecuteable = function () {
 }
 
 ResetStaffCmd.prototype.execute = function () {
-    for (let i = 0; i < this.selectedElements.length; i++)
-        delete this.selectedElements[i].staff;
+    for (const selectedElement of this.selectedElements)
+        delete selectedElement.staff;
     return true;
 }

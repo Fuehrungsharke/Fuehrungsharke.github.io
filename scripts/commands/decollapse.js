@@ -9,19 +9,18 @@ DecollapseCmd.prototype.isExecuteable = function () {
 }
 
 DecollapseCmd.prototype.execute = function () {
-    for (let i = 0; i < this.selectedElements.length; i++) {
-        let root = this.selectedElements[i];
-        if (root.sign == 'Collapsed') {
-            let parent = getParentByUuid(config, root.uuid);
+    for (const selectedElement of this.selectedElements) {
+        if (selectedElement.sign == 'Collapsed') {
+            let parent = getParentByUuid(config, selectedElement.uuid);
             if (parent == null)
                 continue;
-            parent.sub = root.sub;
+            parent.sub = selectedElement.sub;
         }
-        else if (root.sub != null) {
-            let collapseSign = root.sub.find(item => item.sign == 'Collapsed');
+        else if (selectedElement.sub != null) {
+            let collapseSign = selectedElement.sub.find(item => item.sign == 'Collapsed');
             if (collapseSign == null)
                 continue;
-            root.sub = collapseSign.sub;
+            selectedElement.sub = collapseSign.sub;
         }
     }
     return true;
