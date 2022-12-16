@@ -84,10 +84,11 @@ function getSign(root) {
                 para[paraAttr[1]] = paraAttr[2];
                 paraAttr = reParaAttrs.exec(matchesSymbol[1]);
             }
+            let scale = 1;
             if (para.scale) {
                 let symbolWidth = parseInt(innerSvg.getAttribute('width'));
                 let symbolHeight = parseInt(innerSvg.getAttribute('height'));
-                let scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
+                scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
                 let posOffsetX = symbolWidth * scale / 2;
                 let posOffsetY = symbolHeight * scale / 2;
                 innerG.setAttribute('transform', `translate(${para.cx - posOffsetX}, ${para.cy - posOffsetY}) scale(${scale} ${scale})`)
@@ -579,7 +580,7 @@ function draw() {
     });
 
     let canvas = document.createElement('svg');
-    let size = drawRecursive(canvas, config, 0, 0, false);
+    canvasDim = drawRecursive(canvas, config, 0, 0, false);
 
     let background = document.createElement('rect');
     background.setAttribute('stroke-width', 3);
@@ -587,18 +588,18 @@ function draw() {
     background.setAttribute('fill', '#FFF');
     background.setAttribute('x', 0);
     background.setAttribute('y', 0);
-    background.setAttribute('width', size.width);
-    background.setAttribute('height', size.height);
+    background.setAttribute('width', canvasDim.width);
+    background.setAttribute('height', canvasDim.height);
     canvas.prepend(background);
 
     // Output
     outputSvg.innerHTML = canvas.innerHTML;
-    outputSvg.setAttribute('width', size.width);
-    outputSvg.setAttribute('height', size.height + LINESIZE);
+    outputSvg.setAttribute('width', canvasDim.width);
+    outputSvg.setAttribute('height', canvasDim.height + LINESIZE);
 
     zoomcontainer.setAttribute('transform', `scale(${zoomFactor} ${zoomFactor})`)
 
     // Display
-    displaySvg.setAttribute('width', size.width * zoomFactor);
-    displaySvg.setAttribute('height', size.height * zoomFactor + LINESIZE);
+    displaySvg.setAttribute('width', canvasDim.width * zoomFactor);
+    displaySvg.setAttribute('height', canvasDim.height * zoomFactor + LINESIZE);
 }
