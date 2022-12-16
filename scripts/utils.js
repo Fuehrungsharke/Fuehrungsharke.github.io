@@ -1,25 +1,3 @@
-var resCache = {};
-function getResource(path) {
-    if (path in resCache)
-        return resCache[path];
-
-    var req = new XMLHttpRequest();
-    req.open('GET', path, false);
-    req.send();
-    resCache[path] = req.responseText;
-    return resCache[path];
-}
-
-function download(content, type, filename) {
-    var dataStr = `data:${type};charset=utf-8,` + encodeURIComponent(content);
-    var downloadJsonAnchorNode = document.createElement('a');
-    downloadJsonAnchorNode.setAttribute("href", dataStr);
-    downloadJsonAnchorNode.setAttribute("download", filename);
-    document.body.appendChild(downloadJsonAnchorNode);
-    downloadJsonAnchorNode.click();
-    downloadJsonAnchorNode.remove();
-}
-
 function isAncestorOf(item, presumedDescendant) {
     if (presumedDescendant.sub != null && Array.isArray(presumedDescendant.sub)) {
         for (let idx in presumedDescendant.sub) {
