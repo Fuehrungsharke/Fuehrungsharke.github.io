@@ -58,8 +58,9 @@ function parseUnit(units, unitName) {
         "show_staff": true,
         "layout": "row-right"
     };
+    let parent = null;
     if (matches[1] != null) {
-        let parent = units.find(u => u.fullName == matches[1]);
+        parent = units.find(u => u.fullName == matches[1]);
         if (parent == null) {
             parent = buildParentUnit(matches[1], matches[4], matches[3]);
             units.push(parent);
@@ -86,9 +87,11 @@ function parseUnit(units, unitName) {
     if (matches[12] != null)
         unit.spez = matches[12];
 
-    if (parent.sub == null)
-        parent.sub = []
-    parent.sub.push(unit);
+    if (parent != null) {
+        if (parent.sub == null)
+            parent.sub = []
+        parent.sub.push(unit);
+    }
     units.push(unit);
 }
 
