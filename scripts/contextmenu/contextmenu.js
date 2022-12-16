@@ -184,7 +184,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             attrItems.push(attrItem);
             break;
         case HEADER:
-            let menuItem = document.createElement('li');
+            menuItem = document.createElement('li');
             menuItem.classList.add('context-menu-header');
             menuItem.appendChild(document.createTextNode(attrItem.name));
             attrItems.push(attrItem);
