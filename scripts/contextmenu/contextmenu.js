@@ -66,6 +66,9 @@ function getIcon(iconPath, root) {
         delete iconPara.txt;
         delete iconPara.org;
         delete iconPara.spez;
+        for (const key in iconPara)
+            if (key.startsWith('symbols'))
+                delete iconPara[key];
         iconPara.colorPrimary = '#FFF';
         iconPara.colorAccent = '#000';
         var iconSvgText = getSign(iconPara);
