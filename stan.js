@@ -1725,7 +1725,7 @@ let StAN_TZ_Sp = {
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
-            "name": "Mannschafts-, transportwagen FGr",
+            "name": "Mannschafts-, transportwagen, FGr",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -2177,7 +2177,7 @@ let StAN_TZ_I = {
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
-            "name": "Mannschafts-, transportwagen FGr",
+            "name": "Mannschafts-, transportwagen, FGr",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -3836,6 +3836,7 @@ let StAN_Log_V = {
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw",
+            "name": "Lastkraftwagen, mit Ladebordwand",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -3843,7 +3844,8 @@ let StAN_Log_V = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "12t"
+                    "txt": "12t",
+                    "name": "Anhänger 12t,, Koffer,, ohne Flurförderzeug, be- und entladbar"
                 }
             ]
         },
@@ -3854,6 +3856,7 @@ let StAN_Log_V = {
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
+            "name": "Mannschafts-, transportwagen, FGr",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -3861,7 +3864,8 @@ let StAN_Log_V = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "Kühl"
+                    "txt": "Kühl",
+                    "name": "Anhänger, mit Spezialaufbau, für FGr Log-V,, Kühl"
                 }
             ]
         }
@@ -3927,6 +3931,7 @@ let StAN_Log_M = {
             "colorAccent": "#FFF",
             "org": "THW",
             "txt": "LKW-Lkr",
+            "name": "LKW (gf),, Ladekran, (9 t Zuladung,, Hublast 0,6 t, in 10 m Entfernung, zum Kranfahrzeug)",
             "offroad": true,
             "automotive": true,
             "sub": [
@@ -3937,14 +3942,16 @@ let StAN_Log_M = {
                     "org": "THW",
                     "trailer": true,
                     "txt": "PF",
+                    "name": "Anhänger Plattform",
                     "with": [
                         {
                             "sign": "Vehicle",
                             "colorPrimary": "#039",
                             "colorAccent": "#FFF",
                             "org": "THW",
+                            "swapbody": true,
                             "txt": "Wks",
-                            "trailer": true
+                            "name": "Werkstatt-, container"
                         }
                     ]
                 },
@@ -3954,6 +3961,7 @@ let StAN_Log_M = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "2t",
+                    "name": "Anhänger, mit Spezialaufbau, für FGr Log-MW, (2 t Nutzlast)",
                     "trailer": true
                 }
             ]
@@ -3965,7 +3973,8 @@ let StAN_Log_M = {
             "org": "THW",
             "offroad": true,
             "automotive": true,
-            "txt": "PKW"
+            "txt": "PKW",
+            "name": "PKW (gl)"
         }
     ]
 };
@@ -4034,6 +4043,7 @@ let StAN_Log_VG = {
             "colorAccent": "#FFF",
             "org": "THW",
             "txt": "MLW IV",
+            "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
             "offroad": true,
             "automotive": true,
             "with": [
@@ -4043,7 +4053,8 @@ let StAN_Log_VG = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "5t"
+                    "txt": "5t",
+                    "name": "Anh. Tandem, (5 t Zuladung)"
                 }
             ]
         },
@@ -4053,7 +4064,8 @@ let StAN_Log_VG = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "Stapler 3t"
+            "txt": "Stapler 3t",
+            "name": "Gabelstapler"
         }
     ]
 };
@@ -4495,6 +4507,7 @@ let StAN_FK_K_A = {
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
+            "name": "Mannschafts-, transportwagen, FGr",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -4638,6 +4651,7 @@ let StAN_FK_K_B = {
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
+            "name": "Mannschafts-, transportwagen, FGr",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -4753,7 +4767,7 @@ let StAN_OV = {
                 //     "layout": "list-right-below",
                 //     "bottom": true
                 // },
-                StAN_TZ,
+                // StAN_TZ,
                 StAN_Log,
                 StAN_FK
             ],
