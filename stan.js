@@ -1,71 +1,71 @@
 let StAN_OV_Stab = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "OV Stab",
     "leading": true,
     "sub": [
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "txt": "stv OB",
             "leading": true,
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "AB",
                     "FuncPattern": "Ausbildungsbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "OJB",
                     "FuncPattern": "Ortsjugendbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "stv OJB",
                     "FuncPattern": "stv\\. Ortsjugendbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "SM",
                     "FuncPattern": "Schirrmeister\/in"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "BÖH",
                     "FuncPattern": "Beauftragte\/r für Öffentlichkeitsarbeit"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "Vw",
                     "FuncPattern": "Verwaltungsbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "Ko",
                     "FuncPattern": "Koch\/Köchin OV"
@@ -76,16 +76,16 @@ let StAN_OV_Stab = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "0,5t",
                     "trailer": true
@@ -94,16 +94,16 @@ let StAN_OV_Stab = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "PKW"
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "Stapler"
@@ -117,8 +117,8 @@ let StAN_TZ_ZTr = {
     "txt": "TZ",
     "org": "THW",
     "platoontroop": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         {
@@ -126,30 +126,30 @@ let StAN_TZ_ZTr = {
             "txt": "TZ",
             "leading": true,
             "platoon": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "TZ",
                     "leading": true,
                     "platoontroop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Zugtruppführer\/in"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -160,8 +160,8 @@ let StAN_TZ_ZTr = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "FüKW"
@@ -175,8 +175,8 @@ let StAN_TZ_B = {
     "txt": "B",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         {
@@ -184,65 +184,65 @@ let StAN_TZ_B = {
             "sign": "Person",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "B",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Truppführer\/in Bergung"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -253,16 +253,16 @@ let StAN_TZ_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "GKW",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "7t"
@@ -279,8 +279,8 @@ let StAN_TZ_B_ASH = {
     "spez": "ASH",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         {
@@ -289,58 +289,58 @@ let StAN_TZ_B_ASH = {
             "sign": "Person",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "B",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -349,24 +349,24 @@ let StAN_TZ_B_ASH = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "GKW",
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "7t"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Ru 12t"
@@ -381,8 +381,8 @@ let StAN_TZ_N = {
     "txt": "N",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         {
@@ -391,58 +391,58 @@ let StAN_TZ_N = {
             "txt": "N",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "N",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -451,40 +451,40 @@ let StAN_TZ_N = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MzGW",
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "NEA 50kVA LiMa"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "PF 12t"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "kl Boot",
                     "with": [
                         {
                             "sign": "Boat",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "kl Boot"
                         }
@@ -494,8 +494,8 @@ let StAN_TZ_N = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "Stapler 3t"
@@ -506,8 +506,8 @@ let StAN_TZ_N = {
 
 let StAN_TZ_R_A = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "R",
     "spez": "A",
@@ -518,58 +518,58 @@ let StAN_TZ_R_A = {
             "txt": "R",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "R",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -578,59 +578,72 @@ let StAN_TZ_R_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-K 9t",
+            "name": "Lastkraftwagen, Kipper, (ca. 9 t Zuladung)",
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Tiefl 18t",
+                    "name": "Anhänger Tieflader, mit Aufnahmen, für Container, (18 t Zuladung)",
                     "sub": [
                         {
                             "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "automotive": true,
-                            "txt": "Bagger"
-                        },
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
                             "txt": "Bagger",
-                            "chain": true
+                            "name": "Baumaschine, Radbagger",
+                            "with": [
+                                {
+                                    'sign': 'Empty',
+                                    'txt': 'oder'
+                                },
+                                {
+                                    "sign": "Vehicle",
+                                    "colorPrimary": "#039",
+                                    "colorAccent": "#FFF",
+                                    "org": "THW",
+                                    "txt": "Bagger",
+                                    "chain": true,
+                                    "name": "Baumaschine, Kettenbagger"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "DLE"
+                    "txt": "DLE",
+                    "name": "Anhänger, Drucklufterzeuger"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#FFFFFF",
-                    "colorAccent": "#000000",
-                    "trailer": true,
-                    "name": "Geräte-Container (FB)"
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "swapbody": true,
+                    "name": "Geräte-Container (FB)",
+                    "org": "THW"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#FFFFFF",
-                    "colorAccent": "#000000",
-                    "trailer": true,
-                    "name": "Material-Container (FB)"
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "swapbody": true,
+                    "name": "Material-Container (FB)",
+                    "org": "THW"
                 }
             ]
         }
@@ -640,8 +653,8 @@ let StAN_TZ_R_A = {
 
 let StAN_TZ_R_B = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "R",
     "spez": "B",
@@ -652,58 +665,58 @@ let StAN_TZ_R_B = {
             "txt": "R",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "R",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -712,51 +725,57 @@ let StAN_TZ_R_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-K 9t",
+            "name": "Lastkraftwagen, Kipper, (ca. 9 t Zuladung)",
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Tiefl 18t",
+                    "name": "Anhänger Tieflader, mit Aufnahmen, für Container, (18 t Zuladung)",
                     "with": [
                         {
                             "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "automotive": true,
-                            "txt": "Radlader"
+                            "txt": "Radlader",
+                            "name": "Baumaschine, Radlader"
                         }
                     ]
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "DLE"
+                    "txt": "DLE",
+                    "name": "Anhänger, Drucklufterzeuger"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#FFFFFF",
-                    "colorAccent": "#000000",
-                    "trailer": true,
-                    "name": "Geräte-Container (FB)"
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "swapbody": true,
+                    "name": "Geräte-Container (FB)",
+                    "org": "THW"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#FFFFFF",
-                    "colorAccent": "#000000",
-                    "trailer": true,
-                    "name": "Material-Container (FB)"
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "swapbody": true,
+                    "name": "Material-Container (FB)",
+                    "org": "THW"
                 }
             ]
         }
@@ -766,8 +785,8 @@ let StAN_TZ_R_B = {
 
 let StAN_TZ_R_C = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "R",
     "spez": "C",
@@ -778,58 +797,58 @@ let StAN_TZ_R_C = {
             "txt": "R",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "R",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -838,51 +857,57 @@ let StAN_TZ_R_C = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-K 9t",
+            "name": "Lastkraftwagen, Kipper, (ca. 9 t Zuladung)",
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Tiefl 18t",
+                    "name": "Anhänger Tieflader, mit Aufnahmen, für Container, (18 t Zuladung)",
                     "with": [
                         {
                             "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "automotive": true,
-                            "txt": "Telelader"
+                            "txt": "Telelader",
+                            "name": "Baumaschine, Teleskoplader"
                         }
                     ]
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "DLE"
+                    "txt": "DLE",
+                    "name": "Anhänger, Drucklufterzeuger"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#FFFFFF",
-                    "colorAccent": "#000000",
-                    "trailer": true,
-                    "name": "Geräte-Container (FB)"
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "swapbody": true,
+                    "name": "Geräte-Container (FB)",
+                    "org": "THW"
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#FFFFFF",
-                    "colorAccent": "#000000",
-                    "trailer": true,
-                    "name": "Material-Container (FB)"
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "swapbody": true,
+                    "name": "Material-Container (FB)",
+                    "org": "THW"
                 }
             ]
         }
@@ -892,8 +917,8 @@ let StAN_TZ_R_C = {
 
 let StAN_TZ_W_A = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "W",
     "spez": "A",
@@ -904,16 +929,16 @@ let StAN_TZ_W_A = {
             "txt": "W",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "W",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -921,62 +946,62 @@ let StAN_TZ_W_A = {
                     "txt": "W",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -985,8 +1010,8 @@ let StAN_TZ_W_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lkr 7t",
@@ -994,16 +1019,16 @@ let StAN_TZ_W_A = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "MzAB",
                     "with": [
                         {
                             "sign": "Boat",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "MzAB",
                             "name": "Mehrzweck-, arbeitsboot"
@@ -1013,16 +1038,16 @@ let StAN_TZ_W_A = {
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "MzAB",
                     "with": [
                         {
                             "sign": "Boat",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "MzAB",
                             "name": "Mehrzweck-, arbeitsboot"
@@ -1034,8 +1059,8 @@ let StAN_TZ_W_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "trailer": true,
             "name": "Material-Container",
             "org": "THW"
@@ -1046,8 +1071,8 @@ let StAN_TZ_W_A = {
 
 let StAN_TZ_W_B = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "W",
     "spez": "B",
@@ -1058,16 +1083,16 @@ let StAN_TZ_W_B = {
             "txt": "W",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "W",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -1075,62 +1100,62 @@ let StAN_TZ_W_B = {
                     "txt": "W",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1139,8 +1164,8 @@ let StAN_TZ_W_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lkr 7t",
@@ -1148,8 +1173,8 @@ let StAN_TZ_W_B = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "PF 12t",
@@ -1157,32 +1182,32 @@ let StAN_TZ_W_B = {
                     "sub": [
                         {
                             "sign": "Boat",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "MzPt",
                             "name": "Halbponton"
                         },
                         {
                             "sign": "Boat",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "MzPt",
                             "name": "Halbponton"
                         },
                         {
                             "sign": "Boat",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "MzPt",
                             "name": "Halbponton"
                         },
                         {
                             "sign": "Boat",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "MzPt",
                             "name": "Halbponton"
@@ -1194,8 +1219,8 @@ let StAN_TZ_W_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "trailer": true,
             "name": "Material-Container",
             "org": "THW"
@@ -1206,8 +1231,8 @@ let StAN_TZ_W_B = {
 
 let StAN_TZ_BrB = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "BrB",
     "group": true,
@@ -1218,16 +1243,16 @@ let StAN_TZ_BrB = {
             "txt": "BrB",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "BrB",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -1235,8 +1260,8 @@ let StAN_TZ_BrB = {
                     "txt": "BrB",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -1244,92 +1269,92 @@ let StAN_TZ_BrB = {
                     "txt": "BrB",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1338,8 +1363,8 @@ let StAN_TZ_BrB = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MzGW",
@@ -1347,8 +1372,8 @@ let StAN_TZ_BrB = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lkr 1,5t",
@@ -1356,8 +1381,8 @@ let StAN_TZ_BrB = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "PF 12t",
@@ -1370,8 +1395,8 @@ let StAN_TZ_BrB = {
 
 let StAN_TZ_O_A = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "group": true,
     "txt": "O",
@@ -1383,58 +1408,58 @@ let StAN_TZ_O_A = {
             "txt": "O",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "O",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1443,8 +1468,8 @@ let StAN_TZ_O_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW TZ",
@@ -1452,8 +1477,8 @@ let StAN_TZ_O_A = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "O (A) 2t",
@@ -1466,8 +1491,8 @@ let StAN_TZ_O_A = {
 
 let StAN_TZ_O_B = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "group": true,
     "txt": "O",
@@ -1479,58 +1504,58 @@ let StAN_TZ_O_B = {
             "txt": "O",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "O",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1539,8 +1564,8 @@ let StAN_TZ_O_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW TZ",
@@ -1548,8 +1573,8 @@ let StAN_TZ_O_B = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "O (B) 2t",
@@ -1562,8 +1587,8 @@ let StAN_TZ_O_B = {
 
 let StAN_TZ_O_C = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "group": true,
     "txt": "O",
@@ -1575,40 +1600,40 @@ let StAN_TZ_O_C = {
             "txt": "O",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "O",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1617,8 +1642,8 @@ let StAN_TZ_O_C = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW TZ",
@@ -1629,8 +1654,8 @@ let StAN_TZ_O_C = {
 
 let StAN_TZ_Sp = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "group": true,
     "txt": "Sp",
@@ -1641,40 +1666,40 @@ let StAN_TZ_Sp = {
             "txt": "Sp",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "Sp",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1683,8 +1708,8 @@ let StAN_TZ_Sp = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
@@ -1692,8 +1717,8 @@ let StAN_TZ_Sp = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Sp 2t",
@@ -1706,8 +1731,8 @@ let StAN_TZ_Sp = {
 
 let StAN_TZ_SB_A = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "SB",
     "group": true,
@@ -1718,16 +1743,16 @@ let StAN_TZ_SB_A = {
             "txt": "SB",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "SB",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -1735,62 +1760,62 @@ let StAN_TZ_SB_A = {
                     "txt": "SB",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1799,8 +1824,8 @@ let StAN_TZ_SB_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MzGW",
@@ -1812,8 +1837,8 @@ let StAN_TZ_SB_A = {
 
 let StAN_TZ_SB_B = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "SB",
     "group": true,
@@ -1824,16 +1849,16 @@ let StAN_TZ_SB_B = {
             "txt": "SB",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "SB",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -1841,62 +1866,62 @@ let StAN_TZ_SB_B = {
                     "txt": "SB",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -1905,8 +1930,8 @@ let StAN_TZ_SB_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MzGW",
@@ -1914,8 +1939,8 @@ let StAN_TZ_SB_B = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "automotive": true,
                     "txt": "PF 12t",
@@ -1925,8 +1950,8 @@ let StAN_TZ_SB_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "ERS",
@@ -1938,8 +1963,8 @@ let StAN_TZ_SB_B = {
 
 let StAN_TZ_BT = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "BT",
     "group": true,
@@ -1950,58 +1975,58 @@ let StAN_TZ_BT = {
             "txt": "BT",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "BT",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -2010,8 +2035,8 @@ let StAN_TZ_BT = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MLW IV",
@@ -2019,8 +2044,8 @@ let StAN_TZ_BT = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "BT 2t",
@@ -2033,8 +2058,8 @@ let StAN_TZ_BT = {
 
 let StAN_TZ_I = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "I",
     "group": true,
@@ -2045,16 +2070,16 @@ let StAN_TZ_I = {
             "txt": "I",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "I",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -2062,62 +2087,62 @@ let StAN_TZ_I = {
                     "txt": "I",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -2126,8 +2151,8 @@ let StAN_TZ_I = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MLW IV",
@@ -2135,8 +2160,8 @@ let StAN_TZ_I = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
@@ -2144,8 +2169,8 @@ let StAN_TZ_I = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "I 2t",
                     "name": "Anhänger, mit Spezialaufbau, für FGr I, (2 t Nutzlast)",
@@ -2158,8 +2183,8 @@ let StAN_TZ_I = {
 
 let StAN_TZ_E = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "E",
     "group": true,
@@ -2170,58 +2195,58 @@ let StAN_TZ_E = {
             "txt": "E",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "E",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -2230,8 +2255,8 @@ let StAN_TZ_E = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw 7t",
@@ -2239,8 +2264,8 @@ let StAN_TZ_E = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "NEA 200 kVA",
                     "name": "Anhänger, Netzersatzanlage, (ca. 200 kVA)",
@@ -2248,8 +2273,8 @@ let StAN_TZ_E = {
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "NEA 650 kVA",
                     "name": "Anhänger, Netzersatzanlage, (ca. 650 kVA)",
@@ -2262,8 +2287,8 @@ let StAN_TZ_E = {
 
 let StAN_TZ_TW = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "TW",
     "group": true,
@@ -2274,16 +2299,16 @@ let StAN_TZ_TW = {
             "txt": "TW",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "TW",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -2291,98 +2316,98 @@ let StAN_TZ_TW = {
                     "txt": "TW",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -2391,8 +2416,8 @@ let StAN_TZ_TW = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw 7t",
@@ -2400,8 +2425,8 @@ let StAN_TZ_TW = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "TWAA",
                     "name": "Anhänger, Trinkwasser-, aufbereitungs-, anlage",
@@ -2409,8 +2434,8 @@ let StAN_TZ_TW = {
                 },
                 {
                     "sign": "Equipment",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "TWAA, 15m³/h",
@@ -2420,8 +2445,8 @@ let StAN_TZ_TW = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw 7t",
@@ -2429,8 +2454,8 @@ let StAN_TZ_TW = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "BDF Lafette",
                     "name": "Anhänger, BDF Lafette",
@@ -2439,8 +2464,8 @@ let StAN_TZ_TW = {
                     "sub": [
                         {
                             "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "swapbody": true,
                             "txt": "TW-Labor",
@@ -2448,8 +2473,8 @@ let StAN_TZ_TW = {
                         },
                         {
                             "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "swapbody": true,
                             "txt": "TW-Tank",
@@ -2461,8 +2486,8 @@ let StAN_TZ_TW = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "Stapler 2t",
@@ -2473,8 +2498,8 @@ let StAN_TZ_TW = {
 
 let StAN_TZ_WP_A = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "WP",
     "group": true,
@@ -2485,16 +2510,16 @@ let StAN_TZ_WP_A = {
             "txt": "WP",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "WP",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -2502,62 +2527,62 @@ let StAN_TZ_WP_A = {
                     "txt": "WP",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -2566,8 +2591,8 @@ let StAN_TZ_WP_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw 7t",
@@ -2575,8 +2600,8 @@ let StAN_TZ_WP_A = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "SwPu 5.000l/min",
                     "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (5.000 l/min)",
@@ -2586,8 +2611,8 @@ let StAN_TZ_WP_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MLW IV",
@@ -2595,8 +2620,8 @@ let StAN_TZ_WP_A = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "7t",
                     "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
@@ -2610,8 +2635,8 @@ let StAN_TZ_WP_A = {
 
 let StAN_TZ_WP_B = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "WP",
     "group": true,
@@ -2622,16 +2647,16 @@ let StAN_TZ_WP_B = {
             "txt": "WP",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "WP",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -2639,62 +2664,62 @@ let StAN_TZ_WP_B = {
                     "txt": "WP",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -2703,8 +2728,8 @@ let StAN_TZ_WP_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw 7t",
@@ -2712,8 +2737,8 @@ let StAN_TZ_WP_B = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "SwPu 15.000l/min",
                     "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (15.000 l/min)",
@@ -2723,8 +2748,8 @@ let StAN_TZ_WP_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MLW IV",
@@ -2732,8 +2757,8 @@ let StAN_TZ_WP_B = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "7t",
                     "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
@@ -2747,8 +2772,8 @@ let StAN_TZ_WP_B = {
 
 let StAN_TZ_WP_C = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "WP",
     "group": true,
@@ -2759,16 +2784,16 @@ let StAN_TZ_WP_C = {
             "txt": "WP",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "WP",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -2776,62 +2801,62 @@ let StAN_TZ_WP_C = {
                     "txt": "WP",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -2840,8 +2865,8 @@ let StAN_TZ_WP_C = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw 7t",
@@ -2849,8 +2874,8 @@ let StAN_TZ_WP_C = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "SwPu 25.000l/min",
                     "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (25.000 l/min)",
@@ -2860,8 +2885,8 @@ let StAN_TZ_WP_C = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MLW IV",
@@ -2869,8 +2894,8 @@ let StAN_TZ_WP_C = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "7t",
                     "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
@@ -2884,8 +2909,8 @@ let StAN_TZ_WP_C = {
 
 let StAN_TZ_OEL_A = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "Öl",
     "group": true,
@@ -2896,16 +2921,16 @@ let StAN_TZ_OEL_A = {
             "txt": "Öl",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -2913,8 +2938,8 @@ let StAN_TZ_OEL_A = {
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -2922,92 +2947,92 @@ let StAN_TZ_OEL_A = {
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -3016,8 +3041,8 @@ let StAN_TZ_OEL_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "swapable": true,
@@ -3026,16 +3051,16 @@ let StAN_TZ_OEL_A = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "name": "Materialcontainer",
                     "swapbody": true
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "name": "Abrollbehälter, Separationsanlage, (160 m³/h)",
                     "swapbody": true,
@@ -3045,8 +3070,8 @@ let StAN_TZ_OEL_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lkr 7t",
@@ -3054,8 +3079,8 @@ let StAN_TZ_OEL_A = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "PF 12t",
                     "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
@@ -3069,8 +3094,8 @@ let StAN_TZ_OEL_A = {
 
 let StAN_TZ_OEL_B = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "Öl",
     "group": true,
@@ -3081,16 +3106,16 @@ let StAN_TZ_OEL_B = {
             "txt": "Öl",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -3098,8 +3123,8 @@ let StAN_TZ_OEL_B = {
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -3107,92 +3132,92 @@ let StAN_TZ_OEL_B = {
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -3201,8 +3226,8 @@ let StAN_TZ_OEL_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "swapable": true,
@@ -3211,8 +3236,8 @@ let StAN_TZ_OEL_B = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "name": "Materialcontainer",
                     "swapbody": true
@@ -3221,8 +3246,8 @@ let StAN_TZ_OEL_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lkr 9t",
@@ -3230,8 +3255,8 @@ let StAN_TZ_OEL_B = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "PF 12t",
                     "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
@@ -3245,8 +3270,8 @@ let StAN_TZ_OEL_B = {
 
 let StAN_TZ_OEL_C = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "Öl",
     "group": true,
@@ -3257,16 +3282,16 @@ let StAN_TZ_OEL_C = {
             "txt": "Öl",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -3274,8 +3299,8 @@ let StAN_TZ_OEL_C = {
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
@@ -3283,92 +3308,92 @@ let StAN_TZ_OEL_C = {
                     "txt": "Öl",
                     "leading": true,
                     "troop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -3377,8 +3402,8 @@ let StAN_TZ_OEL_C = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "swapable": true,
@@ -3387,8 +3412,8 @@ let StAN_TZ_OEL_C = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "PF 12t",
                     "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
@@ -3396,8 +3421,8 @@ let StAN_TZ_OEL_C = {
                     "with": [
                         {
                             "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "name": "Materialcontainer",
                             "swapbody": true
@@ -3408,8 +3433,8 @@ let StAN_TZ_OEL_C = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "name": "Abrollbehälter, Separationsanlage, (40 m³/h)",
                     "swapbody": true,
@@ -3419,8 +3444,8 @@ let StAN_TZ_OEL_C = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "Stapler 3t",
@@ -3432,8 +3457,8 @@ let StAN_TZ_OEL_C = {
 
 let StAN_TZ_ESS = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "troop": true,
     "txt": "ESS",
@@ -3443,25 +3468,25 @@ let StAN_TZ_ESS = {
             "sign": "Person",
             "txt": "ESS",
             "leading": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -3471,8 +3496,8 @@ let StAN_TZ_ESS = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW TZ",
@@ -3483,8 +3508,8 @@ let StAN_TZ_ESS = {
 
 let StAN_TZ_MHP = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "troop": true,
     "txt": "MHP",
@@ -3494,25 +3519,25 @@ let StAN_TZ_MHP = {
             "sign": "Person",
             "txt": "MHP",
             "leading": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -3522,8 +3547,8 @@ let StAN_TZ_MHP = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "txt": "MTW",
             "name": "Mannschafts-, transportwagen, (geländegängig)",
@@ -3535,8 +3560,8 @@ let StAN_TZ_MHP = {
 
 let StAN_TZ_UL = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "troop": true,
     "txt": "UL",
@@ -3546,25 +3571,25 @@ let StAN_TZ_UL = {
             "sign": "Person",
             "txt": "UL",
             "leading": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -3574,8 +3599,8 @@ let StAN_TZ_UL = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW TZ",
@@ -3589,38 +3614,38 @@ let StAN_TZ = {
     "txt": "TZ",
     "org": "THW",
     "platoon": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
-        // StAN_TZ_ZTr,
-        // StAN_TZ_B,
-        // StAN_TZ_B_ASH,
-        // StAN_TZ_N,
-        // StAN_TZ_R_A,
-        // StAN_TZ_R_B,
-        // StAN_TZ_R_C,
-        // StAN_TZ_W_A,
-        // StAN_TZ_W_B,
-        // StAN_TZ_BrB,
-        // StAN_TZ_O_A,
-        // StAN_TZ_O_B,
-        // StAN_TZ_O_C,
-        // StAN_TZ_Sp,
-        // StAN_TZ_SB_A,
-        // StAN_TZ_SB_B,
-        // StAN_TZ_BT,
-        // StAN_TZ_I,
-        // StAN_TZ_E,
-        // StAN_TZ_TW,
-        // StAN_TZ_WP_A,
-        // StAN_TZ_WP_B,
-        // StAN_TZ_WP_C,
+        StAN_TZ_ZTr,
+        StAN_TZ_B,
+        StAN_TZ_B_ASH,
+        StAN_TZ_N,
+        StAN_TZ_R_A,
+        StAN_TZ_R_B,
+        StAN_TZ_R_C,
+        StAN_TZ_W_A,
+        StAN_TZ_W_B,
+        StAN_TZ_BrB,
+        StAN_TZ_O_A,
+        StAN_TZ_O_B,
+        StAN_TZ_O_C,
+        StAN_TZ_Sp,
+        StAN_TZ_SB_A,
+        StAN_TZ_SB_B,
+        StAN_TZ_BT,
+        StAN_TZ_I,
+        StAN_TZ_E,
+        StAN_TZ_TW,
+        StAN_TZ_WP_A,
+        StAN_TZ_WP_B,
+        StAN_TZ_WP_C,
         StAN_TZ_OEL_A,
         StAN_TZ_OEL_B,
         StAN_TZ_OEL_C,
-        // StAN_TZ_ESS,
-        // StAN_TZ_MHP,
+        StAN_TZ_ESS,
+        StAN_TZ_MHP,
         StAN_TZ_UL
     ],
     "UnitPattern": "(\\d+)\\. TZ\/.*",
@@ -3631,8 +3656,8 @@ let StAN_Log_ZTr = {
     "txt": "FZ Log",
     "org": "THW",
     "platoontroop": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         {
@@ -3640,30 +3665,30 @@ let StAN_Log_ZTr = {
             "txt": "Log",
             "leading": true,
             "platoon": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "Log",
                     "leading": true,
                     "platoontroop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Zugtruppführer\/in Fachzug Logistik"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -3674,8 +3699,8 @@ let StAN_Log_ZTr = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "FüKW"
@@ -3689,8 +3714,8 @@ let StAN_Log_V = {
     "txt": "Log-V",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "name": "",
     "support": true,
@@ -3700,15 +3725,15 @@ let StAN_Log_V = {
             "sign": "Person",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "txt": "Log-V",
                     "sign": "Person",
                     "leading": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "troop": true,
                     "org": "THW",
                     "FuncPattern": "Truppführer\/in Logistik\-Verpflegung"
@@ -3717,72 +3742,72 @@ let StAN_Log_V = {
                     "txt": "Log-V",
                     "sign": "Person",
                     "leading": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "troop": true,
                     "org": "THW",
                     "FuncPattern": "Truppführer\/in Logistik\-Verpflegung"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -3793,16 +3818,16 @@ let StAN_Log_V = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "LKW-Lbw",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "12t"
@@ -3811,16 +3836,16 @@ let StAN_Log_V = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Kühl"
@@ -3835,8 +3860,8 @@ let StAN_Log_M = {
     "sign": "Unit",
     "txt": "Log-M",
     "org": "THW",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "troop": true,
     "support": true,
@@ -3846,35 +3871,35 @@ let StAN_Log_M = {
             "txt": "Log-M",
             "sign": "Person",
             "leading": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "troop": true,
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -3885,8 +3910,8 @@ let StAN_Log_M = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "txt": "LKW-Lkr",
             "offroad": true,
@@ -3894,16 +3919,16 @@ let StAN_Log_M = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "PF",
                     "with": [
                         {
                             "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
+                            "colorPrimary": "#039",
+                            "colorAccent": "#FFF",
                             "org": "THW",
                             "txt": "Wks",
                             "trailer": true
@@ -3912,8 +3937,8 @@ let StAN_Log_M = {
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "2t",
                     "trailer": true
@@ -3922,8 +3947,8 @@ let StAN_Log_M = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "offroad": true,
             "automotive": true,
@@ -3936,8 +3961,8 @@ let StAN_Log_VG = {
     "sign": "Unit",
     "txt": "Log-VG",
     "org": "THW",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "troop": true,
     "support": true,
@@ -3947,42 +3972,42 @@ let StAN_Log_VG = {
             "txt": "Log-VG",
             "sign": "Person",
             "leading": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "troop": true,
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -3992,8 +4017,8 @@ let StAN_Log_VG = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "txt": "MLW IV",
             "offroad": true,
@@ -4001,8 +4026,8 @@ let StAN_Log_VG = {
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "5t"
@@ -4011,8 +4036,8 @@ let StAN_Log_VG = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "Stapler 3t"
@@ -4025,8 +4050,8 @@ let StAN_Log_MW = {
     "txt": "Log-MW",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right-below",
     "support": true,
     "sub": [
@@ -4040,8 +4065,8 @@ let StAN_Log_MW = {
             "sign": "Person",
             "leading": true,
             "group": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "FuncPattern": "Gruppenführer\/in Logistik\-Materialwirtschaft"
         }
@@ -4051,8 +4076,8 @@ let StAN_Log_MW = {
 
 let StAN_Log_TS = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "troop": true,
     "support": true,
@@ -4060,8 +4085,8 @@ let StAN_Log_TS = {
     "sub": [
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "txt": "TS",
             "troop": true,
@@ -4069,22 +4094,22 @@ let StAN_Log_TS = {
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -4093,8 +4118,8 @@ let StAN_Log_TS = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "SZM",
@@ -4102,8 +4127,8 @@ let StAN_Log_TS = {
             "sub": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Aufl",
@@ -4111,8 +4136,8 @@ let StAN_Log_TS = {
                 },
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "Aufl Pr-Lbw",
@@ -4128,8 +4153,8 @@ let StAN_Log = {
     "txt": "Log",
     "org": "THW",
     "platoon": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         StAN_Log_ZTr,
@@ -4146,8 +4171,8 @@ let StAN_FK_ZTr = {
     "txt": "FZ FK",
     "org": "THW",
     "platoontroop": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         {
@@ -4155,28 +4180,28 @@ let StAN_FK_ZTr = {
             "txt": "FK",
             "leading": true,
             "platoon": true,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "sub": [
                 {
                     "sign": "Person",
                     "txt": "FK",
                     "leading": true,
                     "platoontroop": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -4186,8 +4211,8 @@ let StAN_FK_ZTr = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "FüKW"
@@ -4200,16 +4225,16 @@ let StAN_FK_Stab = {
     "sign": "Unit",
     "txt": "Stab",
     "org": "THW",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "row-right",
     "name": "",
     "leading": true,
     "sub": [
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "txt": "SGL",
             "leading": true,
             "org": "THW",
@@ -4217,8 +4242,8 @@ let StAN_FK_Stab = {
         },
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "txt": "SGL",
             "leading": true,
             "org": "THW",
@@ -4226,8 +4251,8 @@ let StAN_FK_Stab = {
         },
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "txt": "SGL",
             "leading": true,
             "org": "THW",
@@ -4235,8 +4260,8 @@ let StAN_FK_Stab = {
         },
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "txt": "SGL",
             "leading": true,
             "org": "THW",
@@ -4244,8 +4269,8 @@ let StAN_FK_Stab = {
         },
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "txt": "SGL",
             "leading": true,
             "org": "THW",
@@ -4253,8 +4278,8 @@ let StAN_FK_Stab = {
         },
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "txt": "S6",
             "leading": true,
             "org": "THW",
@@ -4268,16 +4293,16 @@ let StAN_FK_F = {
     "txt": "F",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "name": "",
     "leading": true,
     "sub": [
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "group": true,
             "leading": true,
@@ -4285,8 +4310,8 @@ let StAN_FK_F = {
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "leading": true,
                     "troop": true,
@@ -4294,8 +4319,8 @@ let StAN_FK_F = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "leading": true,
                     "troop": true,
@@ -4303,29 +4328,29 @@ let StAN_FK_F = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
@@ -4335,16 +4360,16 @@ let StAN_FK_F = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "FüKomKW",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "FüLa"
@@ -4360,15 +4385,15 @@ let StAN_FK_K_A = {
     "txt": "K",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "name": "",
     "sub": [
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "group": true,
             "leading": true,
@@ -4376,8 +4401,8 @@ let StAN_FK_K_A = {
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "leading": true,
                     "troop": true,
@@ -4385,8 +4410,8 @@ let StAN_FK_K_A = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "leading": true,
                     "troop": true,
@@ -4394,38 +4419,38 @@ let StAN_FK_K_A = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -4433,16 +4458,16 @@ let StAN_FK_K_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "FmKW",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "K"
@@ -4451,16 +4476,16 @@ let StAN_FK_K_A = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "2t"
@@ -4476,15 +4501,15 @@ let StAN_FK_K_B = {
     "txt": "K",
     "org": "THW",
     "group": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "name": "",
     "sub": [
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "group": true,
             "leading": true,
@@ -4492,8 +4517,8 @@ let StAN_FK_K_B = {
             "sub": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "leading": true,
                     "troop": true,
@@ -4501,8 +4526,8 @@ let StAN_FK_K_B = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "leading": true,
                     "troop": true,
@@ -4510,8 +4535,8 @@ let StAN_FK_K_B = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "troop": true,
                     "leading": true,
@@ -4519,56 +4544,56 @@ let StAN_FK_K_B = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW"
                 }
             ],
@@ -4576,16 +4601,16 @@ let StAN_FK_K_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "FmKW",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "K"
@@ -4594,16 +4619,16 @@ let StAN_FK_K_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "2t"
@@ -4612,24 +4637,24 @@ let StAN_FK_K_B = {
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MTW FGr"
         },
         {
             "sign": "Vehicle",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
             "txt": "MastKW",
             "with": [
                 {
                     "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
                     "txt": "RiFu"
@@ -4645,8 +4670,8 @@ let StAN_FK = {
     "txt": "FK",
     "org": "THW",
     "platoon": true,
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "layout": "list-right",
     "sub": [
         StAN_FK_ZTr,
@@ -4661,8 +4686,8 @@ let StAN_FK = {
 
 let StAN_GAGr = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "GAGr",
     "UnitPattern": "(\\d+)\\. GAGr"
@@ -4670,16 +4695,16 @@ let StAN_GAGr = {
 
 let StAN_JuGr = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "JuGr"
 };
 
 let StAN_AEGr = {
     "sign": "Unit",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "AEGr",
     "UnitPattern": ""
@@ -4687,21 +4712,21 @@ let StAN_AEGr = {
 
 let StAN_OV = {
     "sign": "Building",
-    "colorPrimary": "#003399",
-    "colorAccent": "#FFFFFF",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
     "org": "THW",
     "txt": "OV",
     "name": "OV Musterstadt",
     "sub": [
         {
             "sign": "Empty",
-            "colorPrimary": "#003399",
+            "colorPrimary": "#039",
             "colorAccent": "#000",
             "org": "THW",
             "sub": [
                 // {
                 //     "sign": "Empty",
-                //     "colorPrimary": "#003399",
+                //     "colorPrimary": "#039",
                 //     "colorAccent": "#000",
                 //     "org": "THW",
                 //     "sub": [
@@ -4725,8 +4750,8 @@ let StAN_OV = {
             "with": [
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "THW",
                     "specialist": true,
@@ -4734,8 +4759,8 @@ let StAN_OV = {
                 },
                 {
                     "sign": "Person",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "THW",
                     "specialist": true,
@@ -4748,8 +4773,8 @@ let StAN_OV = {
     "with": [
         {
             "sign": "Person",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
             "org": "THW",
             "txt": "OB",
             "leading": true,
