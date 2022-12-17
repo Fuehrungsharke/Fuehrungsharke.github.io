@@ -15,8 +15,12 @@
 	<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1" />
 	trailer}}
 
-	{{swappable
+	{{swapbody
 	<ellipse cx="8" cy="80" rx="5" ry="5" stroke="#000" fill="none" stroke-width="5" clip-path="url(#Hook)" />
+	swapbody}}
+
+	{{swappable
+	<path d="M3,63 L3,199 L247,199" fill="none" stroke-width="5" stroke="#000000" />
 	swappable}}
 
 	{{automotive
