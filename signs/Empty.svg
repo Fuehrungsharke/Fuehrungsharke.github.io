@@ -1,5 +1,11 @@
 <svg version="1.1"
     xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewbox="0 0 256 256">
+    <defs>
+		<clipPath id="EmptyClipTxt">
+			<rect x="5" y="5" width="246" height="246" />
+		</clipPath>
+	</defs>
+
     <rect x="0" y="0" width="256" height="256" fill="transparent" />
 
     {{left
@@ -20,5 +26,5 @@
 
     {{symbols:cx=128, cy=128, width=256, height=256}}
 
-    <text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145">{{txt}}</text>
+    <text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#EmptyClipTxt)" fill="{{colorAccent}}" x="128" y="128">{{txt}}</text>
 </svg>

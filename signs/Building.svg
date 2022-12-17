@@ -7,6 +7,9 @@
 		<clipPath id="BuildingBody">
 			<rect x="10" y="64" width="236" height="128" />
 		</clipPath>
+		<clipPath id="BuildingClipTxt">
+			<rect x="20" y="95" width="216" height="66" />
+		</clipPath>
 	</defs>
 	<rect x="10" y="64" width="236" height="128" fill="{{colorPrimary}}" stroke="{{colorAccent}}" stroke-width="10" clip-path="url(#Building)" />
 	<path d="M10 64 L128 16 L246 64" stroke="{{colorAccent}}" stroke-width="10" fill="{{colorPrimary}}" clip-path="url(#Building)" />
@@ -16,7 +19,7 @@
 	{{symbols:cx=128, cy=128, width=226, height=74}}
 	</g>
 
-	<text style="font-family: 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 72px;" fill="{{colorAccent}}" x="128" y="155">{{txt}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="{{colorAccent}}" x="128" y="128" clip-path="url(#BuildingClipTxt)">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="{{colorAccent}}" x="20" y="{{support?155:180}}">{{spez}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="{{extinguish?200:236}}" y="{{support?155:180}}">{{org}}</text>
 </svg>
