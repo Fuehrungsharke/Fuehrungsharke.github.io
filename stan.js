@@ -164,7 +164,8 @@ let StAN_TZ_ZTr = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "FüKW"
+            "txt": "FüKW",
+            "name": "Führungskraftwagen"
         }
     ],
     "UnitPattern": "(\\d+)\\. TZ\/ZTr TZ",
@@ -3714,7 +3715,8 @@ let StAN_Log_ZTr = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "FüKW"
+            "txt": "FüKW",
+            "name": "Führungskraftwagen"
         }
     ],
     "UnitPattern": "FZ Log/ZTr FZ Log"
@@ -4226,7 +4228,8 @@ let StAN_FK_ZTr = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "FüKW"
+            "txt": "FüKW",
+            "name": "Führungskraftwagen"
         }
     ],
     "name": ""
