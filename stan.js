@@ -456,6 +456,7 @@ let StAN_TZ_N = {
             "org": "THW",
             "automotive": true,
             "txt": "MzGW",
+            "name": "Mehrzweck-, gerätewagen, Plane/Spriegel, mit Ladebordwand",
             "sub": [
                 {
                     "sign": "Vehicle",
@@ -463,7 +464,8 @@ let StAN_TZ_N = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "NEA 50kVA LiMa"
+                    "txt": "NEA 50kVA LiMa",
+                    "name": "Anhänger, Netzersatzanlage, mit Lichtmastanlage, (50 – 75 kVA)"
                 },
                 {
                     "sign": "Vehicle",
@@ -471,7 +473,8 @@ let StAN_TZ_N = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "PF 12t"
+                    "txt": "PF 12t",
+                    "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)"
                 },
                 {
                     "sign": "Vehicle",
@@ -480,13 +483,15 @@ let StAN_TZ_N = {
                     "org": "THW",
                     "trailer": true,
                     "txt": "kl Boot",
+                    "name": "Anhänger, kleines Boot",
                     "with": [
                         {
                             "sign": "Boat",
                             "colorPrimary": "#039",
                             "colorAccent": "#FFF",
                             "org": "THW",
-                            "txt": "kl Boot"
+                            "txt": "kl Boot",
+                            "name": "Kleines Boot"
                         }
                     ]
                 }
@@ -498,7 +503,8 @@ let StAN_TZ_N = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "Stapler 3t"
+            "txt": "Stapler 3t",
+            "name": "Gabelstapler, (mind. 3 t Hubkraft)"
         }
     ],
     "UnitPattern": "(\\d+)\\. TZ\/FGr N",
@@ -1935,7 +1941,7 @@ let StAN_TZ_SB_B = {
             "org": "THW",
             "automotive": true,
             "txt": "MzGW",
-            "name": "Mehrzweckgerätewagen, Plane/Spriegel, mit Ladebordwand",
+            "name": "Mehrzweck-, gerätewagen, Plane/Spriegel, mit Ladebordwand",
             "with": [
                 {
                     "sign": "Vehicle",
