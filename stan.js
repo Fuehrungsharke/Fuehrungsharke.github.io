@@ -2408,12 +2408,12 @@ let StAN_TZ_TW = {
                     "trailer": true
                 },
                 {
-                    "sign": "Vehicle",
+                    "sign": "Equipment",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "TWAA 15m³/h",
+                    "txt": "TWAA, 15m³/h",
                     "name": "Trinkwasser-, aufbereitungs-, anlage, (15 m³/h)"
                 }
             ]
@@ -2435,13 +2435,14 @@ let StAN_TZ_TW = {
                     "txt": "BDF Lafette",
                     "name": "Anhänger, BDF Lafette",
                     "trailer": true,
+                    "swapable": true,
                     "sub": [
                         {
                             "sign": "Vehicle",
                             "colorPrimary": "#003399",
                             "colorAccent": "#FFFFFF",
                             "org": "THW",
-                            "trailer": true,
+                            "swapbody": true,
                             "txt": "TW-Labor",
                             "name": "Trinkwasserlabor-, Container"
                         },
@@ -2450,7 +2451,7 @@ let StAN_TZ_TW = {
                             "colorPrimary": "#003399",
                             "colorAccent": "#FFFFFF",
                             "org": "THW",
-                            "trailer": true,
+                            "swapbody": true,
                             "txt": "TW-Tank",
                             "name": "Tankcontainer, für Trinkwasser"
                         }
@@ -3585,34 +3586,34 @@ let StAN_TZ = {
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
     "sub": [
-        StAN_TZ_ZTr,
-        StAN_TZ_B,
-        StAN_TZ_B_ASH,
-        StAN_TZ_N,
-        StAN_TZ_R_A,
-        StAN_TZ_R_B,
-        StAN_TZ_R_C,
-        StAN_TZ_W_A,
-        StAN_TZ_W_B,
-        StAN_TZ_BrB,
-        StAN_TZ_O_A,
-        StAN_TZ_O_B,
-        StAN_TZ_O_C,
-        StAN_TZ_Sp,
-        StAN_TZ_SB_A,
-        StAN_TZ_SB_B,
-        StAN_TZ_BT,
-        StAN_TZ_I,
-        StAN_TZ_E,
+        // StAN_TZ_ZTr,
+        // StAN_TZ_B,
+        // StAN_TZ_B_ASH,
+        // StAN_TZ_N,
+        // StAN_TZ_R_A,
+        // StAN_TZ_R_B,
+        // StAN_TZ_R_C,
+        // StAN_TZ_W_A,
+        // StAN_TZ_W_B,
+        // StAN_TZ_BrB,
+        // StAN_TZ_O_A,
+        // StAN_TZ_O_B,
+        // StAN_TZ_O_C,
+        // StAN_TZ_Sp,
+        // StAN_TZ_SB_A,
+        // StAN_TZ_SB_B,
+        // StAN_TZ_BT,
+        // StAN_TZ_I,
+        // StAN_TZ_E,
         StAN_TZ_TW,
-        StAN_TZ_WP_A,
-        StAN_TZ_WP_B,
-        StAN_TZ_WP_C,
-        StAN_TZ_OEL_A,
-        StAN_TZ_OEL_B,
-        StAN_TZ_OEL_C,
-        StAN_TZ_ESS,
-        StAN_TZ_MHP,
+        // StAN_TZ_WP_A,
+        // StAN_TZ_WP_B,
+        // StAN_TZ_WP_C,
+        // StAN_TZ_OEL_A,
+        // StAN_TZ_OEL_B,
+        // StAN_TZ_OEL_C,
+        // StAN_TZ_ESS,
+        // StAN_TZ_MHP,
         StAN_TZ_UL
     ],
     "UnitPattern": "(\\d+)\\. TZ\/.*",
@@ -4691,21 +4692,21 @@ let StAN_OV = {
             "colorAccent": "#000",
             "org": "THW",
             "sub": [
-                {
-                    "sign": "Empty",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#000",
-                    "org": "THW",
-                    "sub": [
-                        StAN_OV_Stab,
-                        StAN_GAGr,
-                        StAN_JuGr,
-                        // StAN_AEGr
-                    ],
-                    "top": true,
-                    "layout": "list-right-below",
-                    "bottom": true
-                },
+                // {
+                //     "sign": "Empty",
+                //     "colorPrimary": "#003399",
+                //     "colorAccent": "#000",
+                //     "org": "THW",
+                //     "sub": [
+                //         StAN_OV_Stab,
+                //         StAN_GAGr,
+                //         StAN_JuGr,
+                //         // StAN_AEGr
+                //     ],
+                //     "top": true,
+                //     "layout": "list-right-below",
+                //     "bottom": true
+                // },
                 StAN_TZ,
                 StAN_Log,
                 StAN_FK
@@ -4752,4 +4753,4 @@ let StAN_OV = {
     "UnitPattern": "OB\\+FaBe"
 };
 
-// config = StAN_OV;
+config = StAN_OV;
