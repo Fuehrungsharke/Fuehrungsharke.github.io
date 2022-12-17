@@ -81,6 +81,7 @@ let StAN_OV_Stab = {
             "org": "THW",
             "automotive": true,
             "txt": "MTW",
+            "name": "Mannschafts-, transportwagen",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -88,6 +89,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "0,5t",
+                    "name": "Anhänger, 0,5 t Nutzlast, (Ergänzungsausstattung)",
                     "trailer": true
                 }
             ]
@@ -98,7 +100,8 @@ let StAN_OV_Stab = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "PKW"
+            "txt": "PKW",
+            "name": "Personenkraftwagen OV, (Ergänzungsausstattung)"
         },
         {
             "sign": "Vehicle",
@@ -106,7 +109,8 @@ let StAN_OV_Stab = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "Stapler"
+            "txt": "Stapler",
+            "name": "Gabelstapler, (Ergänzungsausstattung)"
         }
     ],
     "UnitPattern": "OV\\-Stab"
@@ -4763,23 +4767,23 @@ let StAN_OV = {
             "colorAccent": "#000",
             "org": "THW",
             "sub": [
-                // {
-                //     "sign": "Empty",
-                //     "colorPrimary": "#039",
-                //     "colorAccent": "#000",
-                //     "org": "THW",
-                //     "sub": [
-                //         StAN_OV_Stab,
-                //         StAN_GAGr,
-                //         StAN_JuGr,
-                //         // StAN_AEGr
-                //     ],
-                //     "top": true,
-                //     "layout": "list-right-below",
-                //     "bottom": true
-                // },
-                // StAN_TZ,
-                // StAN_Log,
+                {
+                    "sign": "Empty",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#000",
+                    "org": "THW",
+                    "sub": [
+                        StAN_OV_Stab,
+                        StAN_GAGr,
+                        StAN_JuGr,
+                        StAN_AEGr
+                    ],
+                    "top": true,
+                    "layout": "list-right-below",
+                    "bottom": true
+                },
+                StAN_TZ,
+                StAN_Log,
                 StAN_FK
             ],
             "top": true,
