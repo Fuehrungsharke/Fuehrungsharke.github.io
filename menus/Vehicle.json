@@ -27,6 +27,18 @@
                 }
             },
             {
+                "name": "Anhänger",
+                "type": "radio",
+                "key": "trailer",
+                "icon": "/icons/engine/trailer.svg"
+            },
+            {
+                "name": "Wechselcontainer",
+                "type": "radio",
+                "key": "swappable",
+                "icon": "/icons/engine/swapable.svg"
+            },
+            {
                 "name": "Kettenfahrzeug",
                 "type": "radio",
                 "key": "chain",
@@ -37,12 +49,6 @@
                 "type": "radio",
                 "key": "rail",
                 "icon": "/icons/engine/rail.svg"
-            },
-            {
-                "name": "Anhänger",
-                "type": "radio",
-                "key": "trailer",
-                "icon": "/icons/engine/trailer.svg"
             },
             {
                 "name": "",
