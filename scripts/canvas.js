@@ -143,7 +143,7 @@ function adjustTextSize(sign, item) {
     let fontsize = fontsizePattern.exec(style);
     if (fontsize.length != 3)
         return;
-    for (let i = 0; i < 1000 && (bbox.width >= clipBBox.width || bbox.height >= clipBBox.height); i++) {
+    for (let i = 0; i < 1000 && fontsize[1] > 1 && (bbox.width >= clipBBox.width || bbox.height >= clipBBox.height); i++) {
         style = style.replace(fontsizePattern, `font-size: ${--fontsize[1]}${fontsize[2]}`);
         item.setAttribute('style', style);
         bbox = item.getBBox();
@@ -165,6 +165,23 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
     sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
     sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
 
+    for (const item of sign.getElementsByTagName('text')) {
+        let textParts = item.textContent.split(', ');
+        if (textParts.length <= 1)
+        continue;
+        let textLines = [];
+        for (let textPart of textParts) {
+            let clone = item.cloneNode();
+            clone.textContent = textPart;
+            textLines.push(clone);
+        }
+        let idx = Array.prototype.indexOf.call(sign.childNodes, item);
+        let newArr = Array.prototype.splice(idx, 1, textLines);
+        // TODO
+        // for (const line of textLines) {
+        //     sign.appendChild(line);
+        // }
+    }
     for (const item of sign.getElementsByTagName('text'))
         adjustTextSize(sign, item);
 
