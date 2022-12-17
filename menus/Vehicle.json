@@ -8,53 +8,103 @@
         "type": "placeholder"
     },
     {
-        "name": "Antrieb",
+        "name": "Fahrzeugtyp",
         "type": "submenu",
+        "icon": "/signs/Vehicle.svg",
         "values": [
             {
                 "name": "Selbstfahrend",
-                "type": "radio",
+                "type": "bool",
                 "key": "automotive",
-                "icon": "/icons/engine/automotive_vehicle.svg"
+                "icon": "/icons/engine/automotive_vehicle.svg",
+                "implicitAttritbues": {
+                    "offroad": false,
+                    "trailer": false,
+                    "swapbody": false,
+                    "rail": false,
+                    "chain": false
+                }
             },
             {
                 "name": "Geländegängig",
-                "type": "radio",
+                "type": "bool",
                 "key": "offroad",
                 "icon": "/icons/engine/offroad.svg",
                 "implicitAttritbues": {
-                    "automotive": true
+                    "automotive": true,
+                    "trailer": false,
+                    "swapbody": false,
+                    "rail": false,
+                    "chain": false
                 }
             },
             {
                 "name": "Anhänger",
-                "type": "radio",
+                "type": "bool",
                 "key": "trailer",
-                "icon": "/icons/engine/trailer.svg"
+                "icon": "/icons/engine/trailer.svg",
+                "implicitAttritbues": {
+                    "automotive": false,
+                    "offroad": false,
+                    "swapable": false,
+                    "swapbody": false,
+                    "rail": false,
+                    "chain": false
+                }
             },
             {
                 "name": "Wechselladerfahrzeug",
                 "type": "bool",
-                "key": "swappable",
-                "icon": "/icons/engine/swapable.svg"
+                "key": "swapable",
+                "icon": "/icons/engine/swapable.svg",
+                "implicitAttritbues": {
+                    "trailer": false,
+                    "swapbody": false,
+                    "rail": false,
+                    "chain": false
+                }
             },
             {
                 "name": "Wechselcontainer",
-                "type": "radio",
+                "type": "bool",
                 "key": "swapbody",
-                "icon": "/icons/engine/swapbody.svg"
+                "icon": "/icons/engine/swapbody.svg",
+                "implicitAttritbues": {
+                    "automotive": false,
+                    "offroad": false,
+                    "trailer": false,
+                    "swapable": false,
+                    "rail": false,
+                    "chain": false
+                }
             },
             {
                 "name": "Kettenfahrzeug",
-                "type": "radio",
+                "type": "bool",
                 "key": "chain",
-                "icon": "/icons/engine/chain.svg"
+                "icon": "/icons/engine/chain.svg",
+                "implicitAttritbues": {
+                    "automotive": false,
+                    "offroad": false,
+                    "trailer": false,
+                    "swapable": false,
+                    "swapbody": false,
+                    "rail": false
+                }
             },
             {
                 "name": "Schienengebunden",
-                "type": "radio",
+                "type": "bool",
                 "key": "rail",
-                "icon": "/icons/engine/rail.svg"
+                "icon": "/icons/engine/rail.svg",
+                "implicitAttritbues": {
+                    "automotive": false,
+                    "offroad": false,
+                    "trailer": false,
+                    "swapable": false,
+                    "swapbody": false,
+                    "chain": false
+                }
             },
             {
                 "name": "",
