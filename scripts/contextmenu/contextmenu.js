@@ -63,6 +63,9 @@ function getIcon(iconPath, root) {
         };
         let iconPara = JSON.parse(JSON.stringify(root));
         iconPara.sign = iconPath;
+        delete iconPara.txt;
+        delete iconPara.org;
+        delete iconPara.spez;
         iconPara.colorPrimary = '#FFF';
         iconPara.colorAccent = '#000';
         var iconSvgText = getSign(iconPara);
