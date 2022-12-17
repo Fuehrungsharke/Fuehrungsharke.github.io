@@ -1061,7 +1061,7 @@ let StAN_TZ_W_A = {
             "sign": "Vehicle",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
-            "trailer": true,
+            "swapbody": true,
             "name": "Material-Container",
             "org": "THW"
         }
@@ -1221,7 +1221,7 @@ let StAN_TZ_W_B = {
             "sign": "Vehicle",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
-            "trailer": true,
+            "swapbody": true,
             "name": "Material-Container",
             "org": "THW"
         }
