@@ -3020,6 +3020,7 @@ let StAN_TZ_OEL_A = {
             "colorAccent": "#FFFFFF",
             "org": "THW",
             "automotive": true,
+            "swapable": true,
             "txt": "LKW",
             "name": "Lastkraftwagen, Wechsellader",
             "sub": [
@@ -3029,7 +3030,7 @@ let StAN_TZ_OEL_A = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "name": "Materialcontainer",
-                    "trailer": true
+                    "swapbody": true
                 },
                 {
                     "sign": "Vehicle",
@@ -3037,8 +3038,8 @@ let StAN_TZ_OEL_A = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "name": "Abrollbehälter, Separationsanlage, (160 m³/h)",
-                    "trailer": true,
-                    "txt": "SepCon 160m³/h"
+                    "swapbody": true,
+                    "txt": "SepCon, 160m³/h"
                 }
             ]
         },
@@ -3204,6 +3205,7 @@ let StAN_TZ_OEL_B = {
             "colorAccent": "#FFFFFF",
             "org": "THW",
             "automotive": true,
+            "swapable": true,
             "txt": "LKW",
             "name": "Lastkraftwagen, Wechsellader",
             "with": [
@@ -3213,7 +3215,7 @@ let StAN_TZ_OEL_B = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "name": "Materialcontainer",
-                    "trailer": true
+                    "swapbody": true
                 }
             ]
         },
@@ -3379,6 +3381,7 @@ let StAN_TZ_OEL_C = {
             "colorAccent": "#FFFFFF",
             "org": "THW",
             "automotive": true,
+            "swapable": true,
             "txt": "LKW",
             "name": "Lastkraftwagen, Wechsellader",
             "sub": [
@@ -3387,26 +3390,30 @@ let StAN_TZ_OEL_C = {
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "name": "Materialcontainer",
-                    "trailer": true
-                },
+                    "txt": "PF 12t",
+                    "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
+                    "trailer": true,
+                    "with": [
+                        {
+                            "sign": "Vehicle",
+                            "colorPrimary": "#003399",
+                            "colorAccent": "#FFFFFF",
+                            "org": "THW",
+                            "name": "Materialcontainer",
+                            "swapbody": true
+                        }
+                    ]
+                }
+            ],
+            "with": [
                 {
                     "sign": "Vehicle",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "name": "Abrollbehälter, Separationsanlage, (40 m³/h)",
-                    "trailer": true,
-                    "txt": "SepCon 40m³/h"
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "txt": "PF 12t",
-                    "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
-                    "trailer": true
+                    "swapbody": true,
+                    "txt": "SepCon, 40m³/h"
                 }
             ]
         },
@@ -3605,13 +3612,13 @@ let StAN_TZ = {
         // StAN_TZ_BT,
         // StAN_TZ_I,
         // StAN_TZ_E,
-        StAN_TZ_TW,
+        // StAN_TZ_TW,
         // StAN_TZ_WP_A,
         // StAN_TZ_WP_B,
         // StAN_TZ_WP_C,
-        // StAN_TZ_OEL_A,
-        // StAN_TZ_OEL_B,
-        // StAN_TZ_OEL_C,
+        StAN_TZ_OEL_A,
+        StAN_TZ_OEL_B,
+        StAN_TZ_OEL_C,
         // StAN_TZ_ESS,
         // StAN_TZ_MHP,
         StAN_TZ_UL
