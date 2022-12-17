@@ -127,6 +127,29 @@ function getSign(root) {
     return svg.replace(/((\r\n|\n|\r)\s)*(\r\n|\n|\r)/gm, '\r\n');
 }
 
+function adjustTextSize(sign, item) {
+    let clipPathName = item.getAttribute('clip-path');
+    if (clipPathName == null)
+        return;
+    let res = /url\(\#(\w+)\)/.exec(clipPathName);
+    if (res.length != 2)
+        return;
+    let clipBBox = sign.getElementById(res[1])?.firstElementChild?.getBBox();
+    let bbox = item.getBBox();
+    let style = item.getAttribute('style');
+    if (style == null)
+        return;
+    let fontsizePattern = /font\-size\:\s*(\d+)(\w+)/g;
+    let fontsize = fontsizePattern.exec(style);
+    if (fontsize.length != 3)
+        return;
+    for (let i = 0; i < 1000 && (bbox.width >= clipBBox.width || bbox.height >= clipBBox.height); i++) {
+        style = style.replace(fontsizePattern, `font-size: ${--fontsize[1]}${fontsize[2]}`);
+        item.setAttribute('style', style);
+        bbox = item.getBBox();
+    }
+}
+
 function getSignSvg(root, uuid, x, y, inactiveInherited) {
     let signSvg = document.createElement('g');
     signSvg.setAttribute('transform', `translate(${parseInt(x, 10)}, ${parseInt(y, 10)}) scale(1 1)`)
@@ -141,6 +164,10 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
     sign.setAttribute('touch-action', 'none');
     sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
     sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
+
+    for (const item of sign.getElementsByTagName('text'))
+        adjustTextSize(sign, item);
+
     signSvg.innerHTML = sign.outerHTML;
     return signSvg;
 }
