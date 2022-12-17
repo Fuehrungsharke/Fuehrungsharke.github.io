@@ -258,6 +258,7 @@ let StAN_TZ_B = {
             "org": "THW",
             "automotive": true,
             "txt": "GKW",
+            "name": "Gerätekraftwagen, (7 t Nutzlast)",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -265,7 +266,8 @@ let StAN_TZ_B = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "7t"
+                    "txt": "7t",
+                    "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)"
                 }
             ]
         }
@@ -354,6 +356,7 @@ let StAN_TZ_B_ASH = {
             "org": "THW",
             "automotive": true,
             "txt": "GKW",
+            "name": "Gerätekraftwagen, (7 t Nutzlast)",
             "sub": [
                 {
                     "sign": "Vehicle",
@@ -361,7 +364,8 @@ let StAN_TZ_B_ASH = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "7t"
+                    "txt": "7t",
+                    "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)"
                 },
                 {
                     "sign": "Vehicle",
@@ -369,7 +373,8 @@ let StAN_TZ_B_ASH = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "Ru 12t"
+                    "txt": "Ru 12t",
+                    "name": "Anhänger Plattform, Runge, (12 t Zuladung)"
                 }
             ]
         }
