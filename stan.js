@@ -1774,6 +1774,1893 @@ let StAN_TZ_Sp = {
     ]
 };
 
+let StAN_TZ_SB_A = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "SB",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "SB",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "SB",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "SB",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MzGW",
+            "name": "Mehrzweckgerätewagen, Plane/Spriegel, mit Ladebordwand"
+        }
+    ],
+    "spez": "A"
+};
+
+let StAN_TZ_SB_B = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "SB",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "SB",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "SB",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "SB",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MzGW",
+            "name": "Mehrzweckgerätewagen, Plane/Spriegel, mit Ladebordwand",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "automotive": true,
+                    "txt": "PF 12t",
+                    "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)"
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "ERS",
+            "name": "Rettungsspinne"
+        }
+    ],
+    "spez": "B"
+};
+
+let StAN_TZ_BT = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "BT",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "BT",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "BT",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MLW IV",
+            "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "BT 2t",
+                    "name": "Anhänger"
+                }
+            ]
+        }
+    ]
+};
+
+let StAN_TZ_I = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "I",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "I",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "I",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "I",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MLW IV",
+            "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MTW FGr",
+            "name": "Mannschafts-, transportwagen FGr",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "I 2t",
+                    "name": "Anhänger, mit Spezialaufbau, für FGr I, (2 t Nutzlast)",
+                    "trailer": true
+                }
+            ]
+        }
+    ]
+};
+
+let StAN_TZ_E = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "E",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "E",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "E",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lbw 7t",
+            "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
+            "sub": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "NEA 200 kVA",
+                    "name": "Anhänger, Netzersatzanlage, (ca. 200 kVA)",
+                    "trailer": true
+                },
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "NEA 650 kVA",
+                    "name": "Anhänger, Netzersatzanlage, (ca. 650 kVA)",
+                    "trailer": true
+                }
+            ]
+        }
+    ]
+};
+
+let StAN_TZ_TW = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "TW",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "TW",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "TW",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "TW",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lbw 7t",
+            "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "TWAA",
+                    "name": "Anhänger, Trinkwasser-, aufbereitungs-, anlage",
+                    "trailer": true
+                },
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "TWAA 15m³/h",
+                    "name": "Trinkwasser-, aufbereitungs-, anlage, (15 m³/h)"
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lbw 7t",
+            "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
+            "sub": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "BDF Lafette",
+                    "name": "Anhänger, BDF Lafette",
+                    "trailer": true,
+                    "sub": [
+                        {
+                            "sign": "Vehicle",
+                            "colorPrimary": "#003399",
+                            "colorAccent": "#FFFFFF",
+                            "org": "THW",
+                            "trailer": true,
+                            "txt": "TW-Labor",
+                            "name": "Trinkwasserlabor-, Container"
+                        },
+                        {
+                            "sign": "Vehicle",
+                            "colorPrimary": "#003399",
+                            "colorAccent": "#FFFFFF",
+                            "org": "THW",
+                            "trailer": true,
+                            "txt": "TW-Tank",
+                            "name": "Tankcontainer, für Trinkwasser"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "Stapler 2t",
+            "name": "Stapler, (2 t Hubkraft,, geländefähig)"
+        }
+    ]
+};
+
+let StAN_TZ_WP_A = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "WP",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "WP",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "WP",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "WP",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lbw 7t",
+            "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "SwPu 5.000l/min",
+                    "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (5.000 l/min)",
+                    "trailer": true
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MLW IV",
+            "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "7t",
+                    "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
+                    "trailer": true
+                }
+            ]
+        }
+    ],
+    "spez": "A"
+};
+
+let StAN_TZ_WP_B = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "WP",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "WP",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "WP",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "WP",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lbw 7t",
+            "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "SwPu 15.000l/min",
+                    "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (15.000 l/min)",
+                    "trailer": true
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MLW IV",
+            "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "7t",
+                    "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
+                    "trailer": true
+                }
+            ]
+        }
+    ],
+    "spez": "B"
+};
+
+let StAN_TZ_WP_C = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "WP",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "WP",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "WP",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "WP",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lbw 7t",
+            "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "SwPu 25.000l/min",
+                    "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (25.000 l/min)",
+                    "trailer": true
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MLW IV",
+            "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "7t",
+                    "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
+                    "trailer": true
+                }
+            ]
+        }
+    ],
+    "spez": "C"
+};
+
+let StAN_TZ_OEL_A = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "Öl",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "Öl",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW",
+            "name": "Lastkraftwagen, Wechsellader",
+            "sub": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "name": "Materialcontainer",
+                    "trailer": true
+                },
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "name": "Abrollbehälter, Separationsanlage, (160 m³/h)",
+                    "trailer": true,
+                    "txt": "SepCon 160m³/h"
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lkr 7t",
+            "name": "Lastkraftwagen, (7 t Nutzlast), mit Ladekran, (410 kNm)",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "PF 12t",
+                    "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
+                    "trailer": true
+                }
+            ]
+        }
+    ],
+    "spez": "A"
+};
+
+let StAN_TZ_OEL_B = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "Öl",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "Öl",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW",
+            "name": "Lastkraftwagen, Wechsellader",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "name": "Materialcontainer",
+                    "trailer": true
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW-Lkr 9t",
+            "name": "Lastkraftwagen, (9 t Nutzlast), mit Ladekran, (180 kNm)",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "PF 12t",
+                    "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
+                    "trailer": true
+                }
+            ]
+        }
+    ],
+    "spez": "B"
+};
+
+let StAN_TZ_OEL_C = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "txt": "Öl",
+    "group": true,
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "Öl",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "txt": "Öl",
+                    "leading": true,
+                    "troop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "LKW",
+            "name": "Lastkraftwagen, Wechsellader",
+            "sub": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "name": "Materialcontainer",
+                    "trailer": true
+                },
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "name": "Abrollbehälter, Separationsanlage, (40 m³/h)",
+                    "trailer": true,
+                    "txt": "SepCon 40m³/h"
+                },
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "PF 12t",
+                    "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
+                    "trailer": true
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "Stapler 3t",
+            "name": "Stapler, (3 t Hubkraft,, geländefähig)"
+        }
+    ],
+    "spez": "C"
+};
+
+let StAN_TZ_ESS = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "troop": true,
+    "txt": "ESS",
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "ESS",
+            "leading": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW",
+            "troop": true
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MTW TZ",
+            "name": "Mannschafts-, transportwagen TZ"
+        }
+    ]
+};
+
+let StAN_TZ_MHP = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "troop": true,
+    "txt": "MHP",
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "MHP",
+            "leading": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW",
+            "troop": true
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "txt": "MTW",
+            "name": "Mannschafts-, transportwagen, (geländegängig)",
+            "offroad": true,
+            "automotive": true
+        }
+    ]
+};
+
+let StAN_TZ_UL = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "troop": true,
+    "txt": "UL",
+    "sub": [
+        {
+            "name": "",
+            "sign": "Person",
+            "txt": "UL",
+            "leading": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW",
+            "troop": true
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MTW TZ",
+            "name": "Mannschafts-, transportwagen TZ"
+        }
+    ]
+};
+
 let StAN_TZ = {
     "sign": "Unit",
     "txt": "TZ",
@@ -1798,1883 +3685,1027 @@ let StAN_TZ = {
         StAN_TZ_O_B,
         StAN_TZ_O_C,
         StAN_TZ_Sp,
+        StAN_TZ_SB_A,
+        StAN_TZ_SB_B,
+        StAN_TZ_BT,
+        StAN_TZ_I,
+        StAN_TZ_E,
+        StAN_TZ_TW,
+        StAN_TZ_WP_A,
+        StAN_TZ_WP_B,
+        StAN_TZ_WP_C,
+        StAN_TZ_OEL_A,
+        StAN_TZ_OEL_B,
+        StAN_TZ_OEL_C,
+        StAN_TZ_ESS,
+        StAN_TZ_MHP,
+        StAN_TZ_UL
+    ]
+};
+
+let StAN_Log_ZTr = {
+    "sign": "Unit",
+    "txt": "FZ Log",
+    "org": "THW",
+    "platoontroop": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "sub": [
         {
-            "sign": "Unit",
+            "sign": "Person",
+            "name": "",
+            "txt": "Log",
+            "leading": true,
+            "platoon": true,
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "SB",
-            "group": true,
             "sub": [
                 {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "SB",
+                    "txt": "Log",
                     "leading": true,
-                    "group": true,
+                    "platoontroop": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "SB",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "SB",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MzGW",
-                    "name": "Mehrzweckgerätewagen, Plane/Spriegel, mit Ladebordwand"
-                }
-            ],
-            "spez": "A"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "SB",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "SB",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "SB",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "SB",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
+                    "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MzGW",
-                    "name": "Mehrzweckgerätewagen, Plane/Spriegel, mit Ladebordwand",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "automotive": true,
-                            "txt": "PF 12t",
-                            "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)"
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "ERS",
-                    "name": "Rettungsspinne"
+                    "org": "THW"
                 }
             ],
-            "spez": "B"
+            "layout": "row-right",
+            "org": "THW"
         },
         {
-            "sign": "Unit",
+            "sign": "Vehicle",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
             "org": "THW",
-            "show_staff": true,
-            "txt": "BT",
+            "automotive": true,
+            "txt": "FüKW"
+        }
+    ],
+    "name": ""
+};
+
+let StAN_Log_V = {
+    "sign": "Unit",
+    "txt": "Log-V",
+    "org": "THW",
+    "group": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "name": "",
+    "support": true,
+    "sub": [
+        {
+            "txt": "Log-V",
+            "name": "",
+            "sign": "Person",
+            "leading": true,
             "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
             "sub": [
                 {
-                    "name": "",
+                    "txt": "Log-V",
                     "sign": "Person",
-                    "txt": "BT",
                     "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "BT",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
+                    "troop": true,
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MLW IV",
-                    "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "trailer": true,
-                            "txt": "BT 2t",
-                            "name": "Anhänger"
-                        }
-                    ]
-                }
-            ],
-            "spez": "A"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "I",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
+                    "txt": "Log-V",
                     "sign": "Person",
-                    "txt": "I",
                     "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "I",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "I",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
+                    "troop": true,
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MLW IV",
-                    "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand"
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MTW FGr",
-                    "name": "Mannschafts-, transportwagen FGr",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "I 2t",
-                            "name": "Anhänger, mit Spezialaufbau, für FGr I, (2 t Nutzlast)",
-                            "trailer": true
-                        }
-                    ]
-                }
-            ],
-            "spez": "B"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "E",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "E",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "E",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lbw 7t",
-                    "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
-                    "sub": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "NEA 200 kVA",
-                            "name": "Anhänger, Netzersatzanlage, (ca. 200 kVA)",
-                            "trailer": true
-                        },
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "NEA 650 kVA",
-                            "name": "Anhänger, Netzersatzanlage, (ca. 650 kVA)",
-                            "trailer": true
-                        }
-                    ]
-                }
-            ],
-            "spez": "B"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "TW",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "TW",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "TW",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "TW",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lbw 7t",
-                    "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "TWAA",
-                            "name": "Anhänger, Trinkwasser-, aufbereitungs-, anlage",
-                            "trailer": true
-                        },
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "trailer": true,
-                            "txt": "TWAA 15m³/h",
-                            "name": "Trinkwasser-, aufbereitungs-, anlage, (15 m³/h)"
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lbw 7t",
-                    "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
-                    "sub": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "BDF Lafette",
-                            "name": "Anhänger, BDF Lafette",
-                            "trailer": true,
-                            "sub": [
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "trailer": true,
-                                    "txt": "TW-Labor",
-                                    "name": "Trinkwasserlabor-, Container"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "trailer": true,
-                                    "txt": "TW-Tank",
-                                    "name": "Tankcontainer, für Trinkwasser"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "Stapler 2t",
-                    "name": "Stapler, (2 t Hubkraft,, geländefähig)"
-                }
-            ],
-            "spez": "B"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "WP",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "WP",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "WP",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "WP",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lbw 7t",
-                    "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "SwPu 5.000l/min",
-                            "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (5.000 l/min)",
-                            "trailer": true
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MLW IV",
-                    "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "7t",
-                            "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
-                            "trailer": true
-                        }
-                    ]
-                }
-            ],
-            "spez": "A"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "WP",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "WP",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "WP",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "WP",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lbw 7t",
-                    "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "SwPu 15.000l/min",
-                            "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (15.000 l/min)",
-                            "trailer": true
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MLW IV",
-                    "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "7t",
-                            "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
-                            "trailer": true
-                        }
-                    ]
-                }
-            ],
-            "spez": "B"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "WP",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "WP",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "WP",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "WP",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lbw 7t",
-                    "name": "Lastkraftwagen, Plane/Spriegel, mit Ladebordwand, (7 t Nutzlast)",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "SwPu 25.000l/min",
-                            "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (25.000 l/min)",
-                            "trailer": true
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MLW IV",
-                    "name": "Mannschafts-, lastwagen IV, Plane/Spriegel, mit Ladebordwand",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "7t",
-                            "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)",
-                            "trailer": true
-                        }
-                    ]
-                }
-            ],
-            "spez": "C"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "Öl",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "Öl",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW",
-                    "name": "Lastkraftwagen, Wechsellader",
-                    "sub": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "name": "Materialcontainer",
-                            "trailer": true
-                        },
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "name": "Abrollbehälter, Separationsanlage, (160 m³/h)",
-                            "trailer": true,
-                            "txt": "SepCon 160m³/h"
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lkr 7t",
-                    "name": "Lastkraftwagen, (7 t Nutzlast), mit Ladekran, (410 kNm)",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "PF 12t",
-                            "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
-                            "trailer": true
-                        }
-                    ]
-                }
-            ],
-            "spez": "A"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "Öl",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "Öl",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW",
-                    "name": "Lastkraftwagen, Wechsellader",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "name": "Materialcontainer",
-                            "trailer": true
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW-Lkr 9t",
-                    "name": "Lastkraftwagen, (9 t Nutzlast), mit Ladekran, (180 kNm)",
-                    "with": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "PF 12t",
-                            "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
-                            "trailer": true
-                        }
-                    ]
-                }
-            ],
-            "spez": "B"
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "txt": "Öl",
-            "group": true,
-            "sub": [
-                {
-                    "name": "",
                     "sign": "Person",
-                    "txt": "Öl",
-                    "leading": true,
-                    "group": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "txt": "Öl",
-                            "leading": true,
-                            "troop": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
                     "org": "THW"
                 },
                 {
-                    "sign": "Vehicle",
+                    "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "LKW",
-                    "name": "Lastkraftwagen, Wechsellader",
-                    "sub": [
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "name": "Materialcontainer",
-                            "trailer": true
-                        },
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "name": "Abrollbehälter, Separationsanlage, (40 m³/h)",
-                            "trailer": true,
-                            "txt": "SepCon 40m³/h"
-                        },
-                        {
-                            "sign": "Vehicle",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "txt": "PF 12t",
-                            "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)",
-                            "trailer": true
-                        }
-                    ]
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "Stapler 3t",
-                    "name": "Stapler, (3 t Hubkraft,, geländefähig)"
+                    "org": "THW"
                 }
             ],
-            "spez": "C"
+            "layout": "row-right",
+            "org": "THW"
         },
         {
-            "sign": "Unit",
+            "sign": "Vehicle",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
             "org": "THW",
-            "show_staff": true,
-            "troop": true,
-            "txt": "ESS",
-            "sub": [
-                {
-                    "name": "",
-                    "sign": "Person",
-                    "txt": "ESS",
-                    "leading": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
-                    "org": "THW",
-                    "troop": true
-                },
+            "automotive": true,
+            "txt": "LKW-Lbw",
+            "with": [
                 {
                     "sign": "Vehicle",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "automotive": true,
-                    "txt": "MTW TZ",
-                    "name": "Mannschafts-, transportwagen TZ"
+                    "trailer": true,
+                    "txt": "12t"
                 }
             ]
         },
         {
-            "sign": "Unit",
+            "sign": "Vehicle",
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
             "org": "THW",
-            "show_staff": true,
-            "troop": true,
-            "txt": "MHP",
-            "sub": [
-                {
-                    "name": "",
-                    "sign": "Person",
-                    "txt": "MHP",
-                    "leading": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
-                    "org": "THW",
-                    "troop": true
-                },
+            "automotive": true,
+            "txt": "MTW FGr",
+            "with": [
                 {
                     "sign": "Vehicle",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "txt": "MTW",
-                    "name": "Mannschafts-, transportwagen, (geländegängig)",
-                    "offroad": true,
-                    "automotive": true
-                }
-            ]
-        },
-        {
-            "sign": "Unit",
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "show_staff": true,
-            "troop": true,
-            "txt": "UL",
-            "sub": [
-                {
-                    "name": "",
-                    "sign": "Person",
-                    "txt": "UL",
-                    "leading": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "sub": [
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        },
-                        {
-                            "sign": "Person",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW"
-                        }
-                    ],
-                    "layout": "row-right",
-                    "org": "THW",
-                    "troop": true
-                },
-                {
-                    "sign": "Vehicle",
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "org": "THW",
-                    "automotive": true,
-                    "txt": "MTW TZ",
-                    "name": "Mannschafts-, transportwagen TZ"
+                    "trailer": true,
+                    "txt": "Kühl"
                 }
             ]
         }
     ]
+};
+
+let StAN_Log_M = {
+    "sign": "Unit",
+    "txt": "Log-M",
+    "org": "THW",
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "troop": true,
+    "support": true,
+    "name": "",
+    "sub": [
+        {
+            "txt": "Log-M",
+            "sign": "Person",
+            "leading": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "troop": true,
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "txt": "LKW-Lkr",
+            "offroad": true,
+            "automotive": true,
+            "sub": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "PF",
+                    "with": [
+                        {
+                            "sign": "Vehicle",
+                            "colorPrimary": "#003399",
+                            "colorAccent": "#FFFFFF",
+                            "org": "THW",
+                            "txt": "Wks",
+                            "trailer": true
+                        }
+                    ]
+                },
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "txt": "2t",
+                    "trailer": true
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "offroad": true,
+            "automotive": true,
+            "txt": "PKW"
+        }
+    ]
+};
+
+let StAN_Log_VG = {
+    "sign": "Unit",
+    "txt": "Log-VG",
+    "org": "THW",
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "troop": true,
+    "support": true,
+    "name": "",
+    "sub": [
+        {
+            "txt": "Log-VG",
+            "sign": "Person",
+            "leading": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "troop": true,
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "txt": "MLW IV",
+            "offroad": true,
+            "automotive": true,
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "5t"
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "Stapler 3t"
+        }
+    ]
+};
+
+let StAN_Log_MW = {
+    "sign": "Unit",
+    "txt": "Log-MW",
+    "org": "THW",
+    "group": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right-below",
+    "support": true,
+    "sub": [
+        StAN_Log_M,
+        StAN_Log_VG
+    ],
+    "name": "",
+    "with": [
+        {
+            "txt": "Log-MW",
+            "name": "",
+            "sign": "Person",
+            "leading": true,
+            "group": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW"
+        }
+    ]
+};
+
+let StAN_Log_TS = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "show_staff": true,
+    "troop": true,
+    "support": true,
+    "txt": "TS",
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "txt": "TS",
+            "troop": true,
+            "leading": true,
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "SZM",
+            "name": "Sattelzugmaschine, (zugelassen, für Gefahrgut)",
+            "sub": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "Aufl",
+                    "name": "Auflieger Container"
+                },
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "Aufl Pr-Lbw",
+                    "name": "Auflieger Pritsche, Plane/Spriegel, mit Ladebordwand"
+                }
+            ]
+        }
+    ]
+};
+
+let StAN_Log = {
+    "sign": "Unit",
+    "txt": "Log",
+    "org": "THW",
+    "platoon": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "sub": [
+        StAN_Log_ZTr,
+        StAN_Log_V,
+        StAN_Log_MW,
+        StAN_Log_TS
+    ],
+    "support": true,
+    "name": ""
+};
+
+let StAN_FK_ZTr = {
+    "sign": "Unit",
+    "txt": "FZ FK",
+    "org": "THW",
+    "platoontroop": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "sub": [
+        {
+            "sign": "Person",
+            "name": "",
+            "txt": "FK",
+            "leading": true,
+            "platoon": true,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "txt": "FK",
+                    "leading": true,
+                    "platoontroop": true,
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "FüKW"
+        }
+    ],
+    "name": ""
+};
+
+let StAN_FK_Stab = {
+    "sign": "Unit",
+    "txt": "Stab",
+    "org": "THW",
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "row-right",
+    "name": "",
+    "leading": true,
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "txt": "SGL",
+            "leading": true,
+            "org": "THW"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "txt": "SGL",
+            "leading": true,
+            "org": "THW"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "txt": "SGL",
+            "leading": true,
+            "org": "THW"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "txt": "SGL",
+            "leading": true,
+            "org": "THW"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "txt": "SGL",
+            "leading": true,
+            "org": "THW"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "txt": "SGL",
+            "leading": true,
+            "org": "THW"
+        }
+    ]
+};
+
+let StAN_FK_F = {
+    "sign": "Unit",
+    "txt": "F",
+    "org": "THW",
+    "group": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "name": "",
+    "leading": true,
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "group": true,
+            "leading": true,
+            "txt": "F",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "leading": true,
+                    "troop": true,
+                    "txt": "F"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "leading": true,
+                    "troop": true,
+                    "txt": "F"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "FüKomKW",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "FüLa"
+                }
+            ]
+        }
+    ]
+};
+
+let StAN_FK_K_A = {
+    "sign": "Unit",
+    "txt": "K",
+    "org": "THW",
+    "group": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "name": "",
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "group": true,
+            "leading": true,
+            "txt": "K",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "leading": true,
+                    "troop": true,
+                    "txt": "K"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "leading": true,
+                    "troop": true,
+                    "txt": "K"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "FmKW",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "K"
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MTW FGr",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "2t"
+                }
+            ]
+        }
+    ],
+    "spez": "A"
+};
+
+let StAN_FK_K_B = {
+    "sign": "Unit",
+    "txt": "K",
+    "org": "THW",
+    "group": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "name": "",
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "group": true,
+            "leading": true,
+            "txt": "K",
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "leading": true,
+                    "troop": true,
+                    "txt": "K"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "leading": true,
+                    "troop": true,
+                    "txt": "K"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "troop": true,
+                    "leading": true,
+                    "txt": "K"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW"
+                }
+            ],
+            "layout": "row-right"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "FmKW",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "K"
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MTW FGr",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "2t"
+                }
+            ]
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MTW FGr"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "automotive": true,
+            "txt": "MastKW",
+            "with": [
+                {
+                    "sign": "Vehicle",
+                    "colorPrimary": "#003399",
+                    "colorAccent": "#FFFFFF",
+                    "org": "THW",
+                    "trailer": true,
+                    "txt": "RiFu"
+                }
+            ]
+        }
+    ],
+    "spez": "B"
+};
+
+let StAN_FK = {
+    "sign": "Unit",
+    "txt": "FK",
+    "org": "THW",
+    "platoon": true,
+    "show_staff": true,
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "layout": "list-right",
+    "sub": [
+        StAN_FK_ZTr,
+        StAN_FK_Stab,
+        StAN_FK_F,
+        StAN_FK_K_A,
+        StAN_FK_K_B
+    ],
+    "leading": true,
+    "name": ""
 };
 
 let StAN_OV = {
@@ -3732,987 +4763,8 @@ let StAN_OV = {
                     "bottom": true
                 },
                 StAN_TZ,
-                {
-                    "sign": "Unit",
-                    "txt": "Log",
-                    "org": "THW",
-                    "platoon": true,
-                    "show_staff": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "layout": "list-right",
-                    "sub": [
-                        {
-                            "sign": "Unit",
-                            "txt": "FZ Log",
-                            "org": "THW",
-                            "platoontroop": true,
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "list-right",
-                            "sub": [
-                                {
-                                    "sign": "Person",
-                                    "name": "",
-                                    "txt": "Log",
-                                    "leading": true,
-                                    "platoon": true,
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "sub": [
-                                        {
-                                            "sign": "Person",
-                                            "txt": "Log",
-                                            "leading": true,
-                                            "platoontroop": true,
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        }
-                                    ],
-                                    "layout": "row-right",
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "FüKW"
-                                }
-                            ],
-                            "name": ""
-                        },
-                        {
-                            "sign": "Unit",
-                            "txt": "Log-V",
-                            "org": "THW",
-                            "group": true,
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "list-right",
-                            "name": "",
-                            "support": true,
-                            "sub": [
-                                {
-                                    "txt": "Log-V",
-                                    "name": "",
-                                    "sign": "Person",
-                                    "leading": true,
-                                    "group": true,
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "sub": [
-                                        {
-                                            "txt": "Log-V",
-                                            "sign": "Person",
-                                            "leading": true,
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "troop": true,
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "txt": "Log-V",
-                                            "sign": "Person",
-                                            "leading": true,
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "troop": true,
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        }
-                                    ],
-                                    "layout": "row-right",
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "LKW-Lbw",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "12t"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "MTW FGr",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "Kühl"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "sign": "Unit",
-                            "txt": "Log-MW",
-                            "org": "THW",
-                            "group": true,
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "list-right-below",
-                            "support": true,
-                            "sub": [
-                                {
-                                    "sign": "Unit",
-                                    "txt": "Log-M",
-                                    "org": "THW",
-                                    "show_staff": true,
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "layout": "list-right",
-                                    "troop": true,
-                                    "support": true,
-                                    "name": "",
-                                    "sub": [
-                                        {
-                                            "txt": "Log-M",
-                                            "sign": "Person",
-                                            "leading": true,
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "troop": true,
-                                            "sub": [
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                },
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                },
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                },
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                }
-                                            ],
-                                            "layout": "row-right",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "txt": "LKW-Lkr",
-                                            "offroad": true,
-                                            "automotive": true,
-                                            "sub": [
-                                                {
-                                                    "sign": "Vehicle",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW",
-                                                    "trailer": true,
-                                                    "txt": "PF",
-                                                    "with": [
-                                                        {
-                                                            "sign": "Vehicle",
-                                                            "colorPrimary": "#003399",
-                                                            "colorAccent": "#FFFFFF",
-                                                            "org": "THW",
-                                                            "txt": "Wks",
-                                                            "trailer": true
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "sign": "Vehicle",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW",
-                                                    "txt": "2t",
-                                                    "trailer": true
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "offroad": true,
-                                            "automotive": true,
-                                            "txt": "PKW"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "sign": "Unit",
-                                    "txt": "Log-VG",
-                                    "org": "THW",
-                                    "show_staff": true,
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "layout": "list-right",
-                                    "troop": true,
-                                    "support": true,
-                                    "name": "",
-                                    "sub": [
-                                        {
-                                            "txt": "Log-VG",
-                                            "sign": "Person",
-                                            "leading": true,
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "troop": true,
-                                            "sub": [
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                },
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                },
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                },
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                },
-                                                {
-                                                    "sign": "Person",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW"
-                                                }
-                                            ],
-                                            "layout": "row-right",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "txt": "MLW IV",
-                                            "offroad": true,
-                                            "automotive": true,
-                                            "with": [
-                                                {
-                                                    "sign": "Vehicle",
-                                                    "colorPrimary": "#003399",
-                                                    "colorAccent": "#FFFFFF",
-                                                    "org": "THW",
-                                                    "trailer": true,
-                                                    "txt": "5t"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "automotive": true,
-                                            "txt": "Stapler 3t"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "name": "",
-                            "with": [
-                                {
-                                    "txt": "Log-MW",
-                                    "name": "",
-                                    "sign": "Person",
-                                    "leading": true,
-                                    "group": true,
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW"
-                                }
-                            ]
-                        },
-                        {
-                            "sign": "Unit",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "show_staff": true,
-                            "troop": true,
-                            "support": true,
-                            "txt": "TS",
-                            "sub": [
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "txt": "TS",
-                                    "troop": true,
-                                    "leading": true,
-                                    "sub": [
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        }
-                                    ],
-                                    "layout": "row-right"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "SZM",
-                                    "name": "Sattelzugmaschine, (zugelassen, für Gefahrgut)",
-                                    "sub": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "Aufl",
-                                            "name": "Auflieger Container"
-                                        },
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "Aufl Pr-Lbw",
-                                            "name": "Auflieger Pritsche, Plane/Spriegel, mit Ladebordwand"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "support": true,
-                    "name": ""
-                },
-                {
-                    "sign": "Unit",
-                    "txt": "FK",
-                    "org": "THW",
-                    "platoon": true,
-                    "show_staff": true,
-                    "colorPrimary": "#003399",
-                    "colorAccent": "#FFFFFF",
-                    "layout": "list-right",
-                    "sub": [
-                        {
-                            "sign": "Unit",
-                            "txt": "FZ FK",
-                            "org": "THW",
-                            "platoontroop": true,
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "list-right",
-                            "sub": [
-                                {
-                                    "sign": "Person",
-                                    "name": "",
-                                    "txt": "FK",
-                                    "leading": true,
-                                    "platoon": true,
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "sub": [
-                                        {
-                                            "sign": "Person",
-                                            "txt": "FK",
-                                            "leading": true,
-                                            "platoontroop": true,
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        }
-                                    ],
-                                    "layout": "row-right",
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "FüKW"
-                                }
-                            ],
-                            "name": ""
-                        },
-                        {
-                            "sign": "Unit",
-                            "txt": "Stab",
-                            "org": "THW",
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "row-right",
-                            "name": "",
-                            "leading": true,
-                            "sub": [
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "txt": "SGL",
-                                    "leading": true,
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "txt": "SGL",
-                                    "leading": true,
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "txt": "SGL",
-                                    "leading": true,
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "txt": "SGL",
-                                    "leading": true,
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "txt": "SGL",
-                                    "leading": true,
-                                    "org": "THW"
-                                },
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "txt": "SGL",
-                                    "leading": true,
-                                    "org": "THW"
-                                }
-                            ]
-                        },
-                        {
-                            "sign": "Unit",
-                            "txt": "F",
-                            "org": "THW",
-                            "group": true,
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "list-right",
-                            "name": "",
-                            "leading": true,
-                            "sub": [
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "group": true,
-                                    "leading": true,
-                                    "txt": "F",
-                                    "sub": [
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "leading": true,
-                                            "troop": true,
-                                            "txt": "F"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "leading": true,
-                                            "troop": true,
-                                            "txt": "F"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        }
-                                    ],
-                                    "layout": "row-right"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "FüKomKW",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "FüLa"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "sign": "Unit",
-                            "txt": "K",
-                            "org": "THW",
-                            "group": true,
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "list-right",
-                            "name": "",
-                            "sub": [
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "group": true,
-                                    "leading": true,
-                                    "txt": "K",
-                                    "sub": [
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "leading": true,
-                                            "troop": true,
-                                            "txt": "K"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "leading": true,
-                                            "troop": true,
-                                            "txt": "K"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        }
-                                    ],
-                                    "layout": "row-right"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "FmKW",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "K"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "MTW FGr",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "2t"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "spez": "A"
-                        },
-                        {
-                            "sign": "Unit",
-                            "txt": "K",
-                            "org": "THW",
-                            "group": true,
-                            "show_staff": true,
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "layout": "list-right",
-                            "name": "",
-                            "sub": [
-                                {
-                                    "sign": "Person",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "group": true,
-                                    "leading": true,
-                                    "txt": "K",
-                                    "sub": [
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "leading": true,
-                                            "troop": true,
-                                            "txt": "K"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "leading": true,
-                                            "troop": true,
-                                            "txt": "K"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "troop": true,
-                                            "leading": true,
-                                            "txt": "K"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        },
-                                        {
-                                            "sign": "Person",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW"
-                                        }
-                                    ],
-                                    "layout": "row-right"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "FmKW",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "K"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "MTW FGr",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "2t"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "MTW FGr"
-                                },
-                                {
-                                    "sign": "Vehicle",
-                                    "colorPrimary": "#003399",
-                                    "colorAccent": "#FFFFFF",
-                                    "org": "THW",
-                                    "automotive": true,
-                                    "txt": "MastKW",
-                                    "with": [
-                                        {
-                                            "sign": "Vehicle",
-                                            "colorPrimary": "#003399",
-                                            "colorAccent": "#FFFFFF",
-                                            "org": "THW",
-                                            "trailer": true,
-                                            "txt": "RiFu"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "spez": "B"
-                        }
-                    ],
-                    "leading": true,
-                    "name": ""
-                }
+                StAN_Log,
+                StAN_FK
             ],
             "top": true,
             "right": true,
@@ -4764,4 +4816,4 @@ let StAN_OV = {
     "show_staff": true
 };
 
-// config = StAN_OV;
+config = StAN_OV;
