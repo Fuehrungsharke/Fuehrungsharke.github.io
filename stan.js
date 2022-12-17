@@ -3,7 +3,6 @@ let StAN_OV_Stab = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "OV Stab",
     "leading": true,
     "sub": [
@@ -21,10 +20,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "txt": "AB",
-                    "THWin": {
-                        "Einheit": "OB-Stab",
-                        "Position": "Ausbildungsbeauftragte/r"
-                    }
+                    "FuncPattern": "Ausbildungsbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
@@ -32,10 +28,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "txt": "OJB",
-                    "THWin": {
-                        "Einheit": "OB-Stab",
-                        "Position": "Ortsjugendbeauftragte/r"
-                    }
+                    "FuncPattern": "Ortsjugendbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
@@ -43,10 +36,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "txt": "stv OJB",
-                    "THWin": {
-                        "Einheit": "OB-Stab",
-                        "Position": "stv. Ortsjugendbeauftragte/r"
-                    }
+                    "FuncPattern": "stv\\. Ortsjugendbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
@@ -54,10 +44,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "txt": "SM",
-                    "THWin": {
-                        "Einheit": "OB-Stab",
-                        "Position": "Schirrmeister/in"
-                    }
+                    "FuncPattern": "Schirrmeister\/in"
                 },
                 {
                     "sign": "Person",
@@ -65,10 +52,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "txt": "BÖH",
-                    "THWin": {
-                        "Einheit": "OB-Stab",
-                        "Position": "Beauftragte/r für Öffentlichkeitsarbeit"
-                    }
+                    "FuncPattern": "Beauftragte\/r für Öffentlichkeitsarbeit"
                 },
                 {
                     "sign": "Person",
@@ -76,10 +60,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "txt": "Vw",
-                    "THWin": {
-                        "Einheit": "OB-Stab",
-                        "Position": "Verwaltungsbeauftragte/r"
-                    }
+                    "FuncPattern": "Verwaltungsbeauftragte\/r"
                 },
                 {
                     "sign": "Person",
@@ -87,13 +68,11 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
                     "txt": "Ko",
-                    "THWin": {
-                        "Einheit": "OB-Stab",
-                        "Position": "Koch/Köchin OV"
-                    }
+                    "FuncPattern": "Koch\/Köchin OV"
                 }
             ],
-            "layout": "row-right"
+            "layout": "row-right",
+            "FuncPattern": "stv\\. Ortsbeauftragte\/r"
         },
         {
             "sign": "Vehicle",
@@ -129,7 +108,8 @@ let StAN_OV_Stab = {
             "automotive": true,
             "txt": "Stapler"
         }
-    ]
+    ],
+    "UnitPattern": "OV\\-Stab"
 };
 
 let StAN_TZ_ZTr = {
@@ -137,7 +117,6 @@ let StAN_TZ_ZTr = {
     "txt": "TZ",
     "org": "THW",
     "platoontroop": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -158,38 +137,26 @@ let StAN_TZ_ZTr = {
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/ZTr TZ",
-                        "Position": "Zugtruppführer/in"
-                    }
+                    "FuncPattern": "Zugtruppführer\/in"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/ZTr TZ",
-                        "Position": "Fachhelfer/in"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/ZTr TZ",
-                        "Position": "Fachhelfer/in (Reserve)"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
             "org": "THW",
-            "THWin": {
-                "Einheit": "#. TZ/ZTr TZ",
-                "Position": "Zugführer/in"
-            }
+            "FuncPattern": "Zugführer\/in"
         },
         {
             "sign": "Vehicle",
@@ -199,7 +166,8 @@ let StAN_TZ_ZTr = {
             "automotive": true,
             "txt": "FüKW"
         }
-    ]
+    ],
+    "UnitPattern": "(\\d+)\\. TZ\/ZTr TZ",
 };
 
 let StAN_TZ_B = {
@@ -207,7 +175,6 @@ let StAN_TZ_B = {
     "txt": "B",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -228,84 +195,61 @@ let StAN_TZ_B = {
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Truppführer/in Bergung"
-                    }
+                    "FuncPattern": "Truppführer\/in Bergung"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Fachhelfer/in"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Fachhelfer/in"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Fachhelfer/in"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Fachhelfer/in"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Fachhelfer/in"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Fachhelfer/in"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "org": "THW",
-                    "THWin": {
-                        "Einheit": "#. TZ/B",
-                        "Position": "Fachhelfer/in (Reserve)"
-                    }
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Gruppenführer\/in"
         },
         {
             "sign": "Vehicle",
@@ -326,10 +270,7 @@ let StAN_TZ_B = {
             ]
         }
     ],
-    "THWin": {
-        "Einheit": "#. TZ/B",
-        "Position": "Gruppenführer/in Bergung"
-    }
+    "UnitPattern": "(\\d+)\\. TZ\/B",
 };
 
 let StAN_TZ_B_ASH = {
@@ -338,7 +279,6 @@ let StAN_TZ_B_ASH = {
     "spez": "ASH",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -441,7 +381,6 @@ let StAN_TZ_N = {
     "txt": "N",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -561,7 +500,8 @@ let StAN_TZ_N = {
             "automotive": true,
             "txt": "Stapler 3t"
         }
-    ]
+    ],
+    "UnitPattern": "(\\d+)\\. TZ\/FGr N",
 };
 
 let StAN_TZ_R_A = {
@@ -569,7 +509,6 @@ let StAN_TZ_R_A = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "R",
     "spez": "A",
     "sub": [
@@ -704,7 +643,6 @@ let StAN_TZ_R_B = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "R",
     "spez": "B",
     "sub": [
@@ -831,7 +769,6 @@ let StAN_TZ_R_C = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "R",
     "spez": "C",
     "sub": [
@@ -958,7 +895,6 @@ let StAN_TZ_W_A = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "W",
     "spez": "A",
     "sub": [
@@ -1113,7 +1049,6 @@ let StAN_TZ_W_B = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "W",
     "spez": "B",
     "sub": [
@@ -1274,7 +1209,6 @@ let StAN_TZ_BrB = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "BrB",
     "group": true,
     "sub": [
@@ -1439,7 +1373,6 @@ let StAN_TZ_O_A = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "group": true,
     "txt": "O",
     "spez": "A",
@@ -1536,7 +1469,6 @@ let StAN_TZ_O_B = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "group": true,
     "txt": "O",
     "spez": "B",
@@ -1633,7 +1565,6 @@ let StAN_TZ_O_C = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "group": true,
     "txt": "O",
     "spez": "C",
@@ -1701,7 +1632,6 @@ let StAN_TZ_Sp = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "group": true,
     "txt": "Sp",
     "sub": [
@@ -1779,7 +1709,6 @@ let StAN_TZ_SB_A = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "SB",
     "group": true,
     "sub": [
@@ -1886,7 +1815,6 @@ let StAN_TZ_SB_B = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "SB",
     "group": true,
     "sub": [
@@ -2013,7 +1941,6 @@ let StAN_TZ_BT = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "BT",
     "group": true,
     "sub": [
@@ -2109,7 +2036,6 @@ let StAN_TZ_I = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "I",
     "group": true,
     "sub": [
@@ -2235,7 +2161,6 @@ let StAN_TZ_E = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "E",
     "group": true,
     "sub": [
@@ -2340,7 +2265,6 @@ let StAN_TZ_TW = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "TW",
     "group": true,
     "sub": [
@@ -2551,7 +2475,6 @@ let StAN_TZ_WP_A = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "WP",
     "group": true,
     "sub": [
@@ -2689,7 +2612,6 @@ let StAN_TZ_WP_B = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "WP",
     "group": true,
     "sub": [
@@ -2827,7 +2749,6 @@ let StAN_TZ_WP_C = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "WP",
     "group": true,
     "sub": [
@@ -2965,7 +2886,6 @@ let StAN_TZ_OEL_A = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "Öl",
     "group": true,
     "sub": [
@@ -3150,7 +3070,6 @@ let StAN_TZ_OEL_B = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "Öl",
     "group": true,
     "sub": [
@@ -3326,7 +3245,6 @@ let StAN_TZ_OEL_C = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "txt": "Öl",
     "group": true,
     "sub": [
@@ -3509,7 +3427,6 @@ let StAN_TZ_ESS = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "troop": true,
     "txt": "ESS",
     "sub": [
@@ -3561,7 +3478,6 @@ let StAN_TZ_MHP = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "troop": true,
     "txt": "MHP",
     "sub": [
@@ -3614,7 +3530,6 @@ let StAN_TZ_UL = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "troop": true,
     "txt": "UL",
     "sub": [
@@ -3666,7 +3581,6 @@ let StAN_TZ = {
     "txt": "TZ",
     "org": "THW",
     "platoon": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -3700,7 +3614,8 @@ let StAN_TZ = {
         StAN_TZ_ESS,
         StAN_TZ_MHP,
         StAN_TZ_UL
-    ]
+    ],
+    "UnitPattern": "(\\d+)\\. TZ\/.*",
 };
 
 let StAN_Log_ZTr = {
@@ -3708,14 +3623,12 @@ let StAN_Log_ZTr = {
     "txt": "FZ Log",
     "org": "THW",
     "platoontroop": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
     "sub": [
         {
             "sign": "Person",
-            "name": "",
             "txt": "Log",
             "leading": true,
             "platoon": true,
@@ -3729,23 +3642,27 @@ let StAN_Log_ZTr = {
                     "platoontroop": true,
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Zugtruppführer\/in Fachzug Logistik"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Zugführer\/in Fachzug Logistik"
         },
         {
             "sign": "Vehicle",
@@ -3756,7 +3673,7 @@ let StAN_Log_ZTr = {
             "txt": "FüKW"
         }
     ],
-    "name": ""
+    "UnitPattern": "FZ Log/ZTr FZ Log"
 };
 
 let StAN_Log_V = {
@@ -3764,7 +3681,6 @@ let StAN_Log_V = {
     "txt": "Log-V",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -3773,7 +3689,6 @@ let StAN_Log_V = {
     "sub": [
         {
             "txt": "Log-V",
-            "name": "",
             "sign": "Person",
             "leading": true,
             "group": true,
@@ -3787,7 +3702,8 @@ let StAN_Log_V = {
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "troop": true,
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Truppführer\/in Logistik\-Verpflegung"
                 },
                 {
                     "txt": "Log-V",
@@ -3796,65 +3712,76 @@ let StAN_Log_V = {
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
                     "troop": true,
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Truppführer\/in Logistik\-Verpflegung"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Gruppenführer\/in Logistik\-Verpflegung"
         },
         {
             "sign": "Vehicle",
@@ -3892,14 +3819,14 @@ let StAN_Log_V = {
                 }
             ]
         }
-    ]
+    ],
+    "UnitPattern": "FZ Log\/FGr Log\-V"
 };
 
 let StAN_Log_M = {
     "sign": "Unit",
     "txt": "Log-M",
     "org": "THW",
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -3996,7 +3923,6 @@ let StAN_Log_VG = {
     "sign": "Unit",
     "txt": "Log-VG",
     "org": "THW",
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -4081,7 +4007,6 @@ let StAN_Log_MW = {
     "txt": "Log-MW",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right-below",
@@ -4110,7 +4035,6 @@ let StAN_Log_TS = {
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "org": "THW",
-    "show_staff": true,
     "troop": true,
     "support": true,
     "txt": "TS",
@@ -4182,7 +4106,6 @@ let StAN_Log = {
     "txt": "Log",
     "org": "THW",
     "platoon": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -4193,7 +4116,7 @@ let StAN_Log = {
         StAN_Log_TS
     ],
     "support": true,
-    "name": ""
+    "UnitPattern": "FZ Log\/.*"
 };
 
 let StAN_FK_ZTr = {
@@ -4201,7 +4124,6 @@ let StAN_FK_ZTr = {
     "txt": "FZ FK",
     "org": "THW",
     "platoontroop": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -4256,7 +4178,6 @@ let StAN_FK_Stab = {
     "sign": "Unit",
     "txt": "Stab",
     "org": "THW",
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "row-right",
@@ -4319,7 +4240,6 @@ let StAN_FK_F = {
     "txt": "F",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -4406,7 +4326,6 @@ let StAN_FK_K_A = {
     "txt": "K",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -4523,7 +4442,6 @@ let StAN_FK_K_B = {
     "txt": "K",
     "org": "THW",
     "group": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -4693,7 +4611,6 @@ let StAN_FK = {
     "txt": "FK",
     "org": "THW",
     "platoon": true,
-    "show_staff": true,
     "colorPrimary": "#003399",
     "colorAccent": "#FFFFFF",
     "layout": "list-right",
@@ -4706,6 +4623,32 @@ let StAN_FK = {
     ],
     "leading": true,
     "name": ""
+};
+
+let StAN_GAGr = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "txt": "GAGr",
+    "UnitPattern": "(\\d+)\\. GAGr"
+};
+
+let StAN_JuGr = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "txt": "JuGr"
+};
+
+let StAN_AEGr = {
+    "sign": "Unit",
+    "colorPrimary": "#003399",
+    "colorAccent": "#FFFFFF",
+    "org": "THW",
+    "txt": "AEGr",
+    "UnitPattern": ""
 };
 
 let StAN_OV = {
@@ -4729,34 +4672,9 @@ let StAN_OV = {
                     "org": "THW",
                     "sub": [
                         StAN_OV_Stab,
-                        {
-                            "sign": "Unit",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "show_staff": true,
-                            "txt": "GAGr"
-                        },
-                        {
-                            "sign": "Unit",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "show_staff": true,
-                            "txt": "JuGr"
-                        },
-                        {
-                            "sign": "Unit",
-                            "colorPrimary": "#003399",
-                            "colorAccent": "#FFFFFF",
-                            "org": "THW",
-                            "show_staff": true,
-                            "txt": "AEGr",
-                            "THWin": {
-                                "Einheit": "",
-                                "Position": ""
-                            }
-                        }
+                        StAN_GAGr,
+                        StAN_JuGr,
+                        // StAN_AEGr
                     ],
                     "top": true,
                     "layout": "list-right-below",
@@ -4778,10 +4696,7 @@ let StAN_OV = {
                     "org": "THW",
                     "txt": "THW",
                     "specialist": true,
-                    "THWin": {
-                        "Einheit": "OB+FaBe",
-                        "Position": "Fachberater/in Stufe 1 und 2"
-                    }
+                    "FuncPattern": "Fachberater\/in Stufe \\d+ und \\d+"
                 },
                 {
                     "sign": "Person",
@@ -4790,10 +4705,7 @@ let StAN_OV = {
                     "org": "THW",
                     "txt": "THW",
                     "specialist": true,
-                    "THWin": {
-                        "Einheit": "OB+FaBe",
-                        "Position": "Fachberater/in Stufe 3 und 4"
-                    }
+                    "FuncPattern": "Fachberater\/in Stufe \\d+ und \\d+"
                 }
             ]
         }
@@ -4807,13 +4719,11 @@ let StAN_OV = {
             "org": "THW",
             "txt": "OB",
             "leading": true,
-            "THWin": {
-                "Einheit": "OB+FaBe",
-                "Position": "Ortsbeauftragte/r"
-            }
+            "FuncPattern": "Ortsbeauftragte\/r"
         }
     ],
-    "show_staff": true
+    "show_staff": true,
+    "UnitPattern": "OB\\+FaBe"
 };
 
-config = StAN_OV;
+// config = StAN_OV;
