@@ -1,27 +1,27 @@
 [
     {
+        "name": "Befehlsstelle",
+        "type": "cmd",
+        "key": "Flag",
+        "icon": "/icons/signs/flag.svg"
+    },
+    {
+        "name": "Boot",
+        "type": "cmd",
+        "key": "Boat",
+        "icon": "/icons/signs/boat.svg"
+    },
+    {
         "name": "Einheit",
         "type": "cmd",
         "key": "Unit",
         "icon": "/icons/signs/unit.svg"
     },
     {
-        "name": "Person",
-        "type": "cmd",
-        "key": "Person",
-        "icon": "/icons/signs/person.svg"
-    },
-    {
         "name": "Fahrzeug",
         "type": "cmd",
         "key": "Vehicle",
         "icon": "/icons/signs/vehicle.svg"
-    },
-    {
-        "name": "Befehlsstelle",
-        "type": "cmd",
-        "key": "Flag",
-        "icon": "/icons/signs/flag.svg"
     },
     {
         "name": "Gebäude",
@@ -36,10 +36,28 @@
         "icon": "/icons/signs/hazard.svg"
     },
     {
+        "name": "Gerät",
+        "type": "cmd",
+        "key": "Equipment",
+        "icon": "/icons/signs/equipment.svg"
+    },
+    {
         "name": "Maßnahme",
         "type": "cmd",
         "key": "Measure",
         "icon": "/icons/signs/measure.svg"
+    },
+    {
+        "name": "Person",
+        "type": "cmd",
+        "key": "Person",
+        "icon": "/icons/signs/person.svg"
+    },
+    {
+        "name": "Platzhalter",
+        "type": "cmd",
+        "key": "Empty",
+        "icon": "/signs/Empty.svg"
     },
     {
         "name": "Stelle",
@@ -52,17 +70,5 @@
         "type": "cmd",
         "key": "Bike",
         "icon": "/icons/signs/bike.svg"
-    },
-    {
-        "name": "Boot",
-        "type": "cmd",
-        "key": "Boat",
-        "icon": "/icons/signs/boat.svg"
-    },
-    {
-        "name": "Platzhalter",
-        "type": "cmd",
-        "key": "Empty",
-        "icon": "/signs/Empty.svg"
     }
 ]
