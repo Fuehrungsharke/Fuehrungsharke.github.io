@@ -3846,29 +3846,34 @@ let StAN_Log_M = {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Truppführer\/in Logistik\-Materialwirtschaft"
         },
         {
             "sign": "Vehicle",
@@ -3942,31 +3947,36 @@ let StAN_Log_VG = {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
@@ -4019,15 +4029,16 @@ let StAN_Log_MW = {
     "with": [
         {
             "txt": "Log-MW",
-            "name": "",
             "sign": "Person",
             "leading": true,
             "group": true,
             "colorPrimary": "#003399",
             "colorAccent": "#FFFFFF",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Gruppenführer\/in Logistik\-Materialwirtschaft"
         }
-    ]
+    ],
+    "UnitPattern": "FZ Log\/FGr Log\-MW"
 };
 
 let StAN_Log_TS = {
@@ -4052,19 +4063,22 @@ let StAN_Log_TS = {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#003399",
                     "colorAccent": "#FFFFFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right"
