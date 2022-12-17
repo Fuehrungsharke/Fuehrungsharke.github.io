@@ -4391,6 +4391,7 @@ let StAN_FK_F = {
             "org": "THW",
             "automotive": true,
             "txt": "FüKomKW",
+            "name": "Führungs- und, Kommunikations-, kraftwagen",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -4398,7 +4399,8 @@ let StAN_FK_F = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "FüLa"
+                    "txt": "FüLa",
+                    "name": "Anhänger, Führung und Lage"
                 }
             ]
         }
@@ -4489,6 +4491,7 @@ let StAN_FK_K_A = {
             "org": "THW",
             "automotive": true,
             "txt": "FmKW",
+            "name": "Fernmeldekraftwagen",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -4496,7 +4499,8 @@ let StAN_FK_K_A = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "K"
+                    "txt": "K",
+                    "name": "Anhänger, mit Spezialaufbau, für FGr K, (1 t Nutzlast)"
                 }
             ]
         },
@@ -4515,7 +4519,8 @@ let StAN_FK_K_A = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "2t"
+                    "txt": "2t",
+                    "name": "Anhänger, (2 t Nutzlast)"
                 }
             ]
         }
@@ -4633,6 +4638,7 @@ let StAN_FK_K_B = {
             "org": "THW",
             "automotive": true,
             "txt": "FmKW",
+            "name": "Fernmeldekraftwagen",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -4640,7 +4646,8 @@ let StAN_FK_K_B = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "K"
+                    "txt": "K",
+                    "name": "Anhänger, mit Spezialaufbau, für FGr K, (1 t Nutzlast)"
                 }
             ]
         },
@@ -4659,7 +4666,8 @@ let StAN_FK_K_B = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "2t"
+                    "txt": "2t",
+                    "name": "Anhänger, (2 t Nutzlast)"
                 }
             ]
         },
@@ -4669,7 +4677,8 @@ let StAN_FK_K_B = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
-            "txt": "MTW FGr"
+            "txt": "MTW FGr",
+            "name": "Mannschafts-, transportwagen, FGr",
         },
         {
             "sign": "Vehicle",
@@ -4678,6 +4687,7 @@ let StAN_FK_K_B = {
             "org": "THW",
             "automotive": true,
             "txt": "MastKW",
+            "name": "Mastkraftwagen",
             "with": [
                 {
                     "sign": "Vehicle",
@@ -4685,7 +4695,8 @@ let StAN_FK_K_B = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "trailer": true,
-                    "txt": "RiFu"
+                    "txt": "RiFu",
+                    "name": "Anhänger, Richtfunktechnik, (2 t Nutzlast)"
                 }
             ]
         }
@@ -4768,7 +4779,7 @@ let StAN_OV = {
                 //     "bottom": true
                 // },
                 // StAN_TZ,
-                StAN_Log,
+                // StAN_Log,
                 StAN_FK
             ],
             "top": true,
