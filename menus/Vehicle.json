@@ -34,7 +34,7 @@
             },
             {
                 "name": "Wechselladerfahrzeug",
-                "type": "radio",
+                "type": "bool",
                 "key": "swappable",
                 "icon": "/icons/engine/swapable.svg"
             },
