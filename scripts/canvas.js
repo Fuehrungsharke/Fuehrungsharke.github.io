@@ -145,7 +145,6 @@ function splitText(sign, element) {
     let orgRect = clipPath?.firstElementChild;
     let orgHeight = parseInt(orgRect.getAttribute('height'));
     let orgRectY = parseInt(orgRect.getAttribute('y'));
-    // let orgTextY = element.getAttribute('y');
     let textLines = '';
     for (let i = 0; i < textParts.length; i++) {
         let partHeight = orgHeight / textParts.length;
@@ -199,10 +198,10 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
     sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
     sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
 
-    for (const element of sign.getElementsByTagName('text')) {
+    for (const element of sign.getElementsByTagName('text'))
         splitText(sign, element);
+    for (const element of sign.getElementsByTagName('text'))
         adjustTextSize(sign, element);
-    }
 
     signSvg.innerHTML = sign.outerHTML;
     return signSvg;
