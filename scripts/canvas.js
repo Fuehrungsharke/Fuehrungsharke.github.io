@@ -143,20 +143,24 @@ function splitText(sign, element) {
         return;
     let clipPath = getClipPathOfElement(sign, element);
     let orgRect = clipPath?.firstElementChild;
+    let orgHeight = parseInt(orgRect.getAttribute('height'));
+    let orgRectY = parseInt(orgRect.getAttribute('y'));
+    // let orgTextY = element.getAttribute('y');
     let textLines = '';
     for (let i = 0; i < textParts.length; i++) {
+        let partHeight = orgHeight / textParts.length;
+        let top = orgRectY + i * partHeight;
         let clonedClipPath = clipPath.cloneNode();
         let clipPathId = `${clonedClipPath.getAttribute('id')}${i + 1}`;
         clonedClipPath.setAttribute('id', clipPathId);
         let clonedText = element.cloneNode();
         clonedText.setAttribute('clip-path', `url(#${clipPathId})`);
+        clonedText.setAttribute('y', top + partHeight / 2);
         clonedText.textContent = textParts[i];
         textLines = textLines.concat(clonedText.outerHTML);
         let clonedRect = orgRect.cloneNode();
-        let orgHeight = parseInt(orgRect.getAttribute('height'));
-        let orgY = parseInt(orgRect.getAttribute('y'));
         clonedRect.setAttribute('height', orgHeight / textParts.length);
-        clonedRect.setAttribute('y', orgY + i * (orgHeight / textParts.length));
+        clonedRect.setAttribute('y', top);
         clonedClipPath.appendChild(clonedRect);
         clipPath.parentElement.appendChild(clonedClipPath);
     }

@@ -396,72 +396,72 @@ config = [
       "colorPrimary": "#039",
       "colorAccent": "#FFF",
       "txt": "SwPu, 25.000 l/min",
-    //   "with": [
-    //     {
-    //       "sign": "Flag",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#FFF",
-    //       "txt": "SwPu, 25.000 l/min"
-    //     },
-    //     {
-    //       "sign": "Vehicle",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#FFF",
-    //       "automotive": true,
-    //       "txt": "SwPu, 25.000 l/min"
-    //     },
-    //     {
-    //       "sign": "Building",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#FFF",
-    //       "txt": "SwPu, 25.000 l/min"
-    //     }
-    //   ]
+      "with": [
+        {
+          "sign": "Flag",
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "txt": "SwPu, 25.000 l/min"
+        },
+        {
+          "sign": "Vehicle",
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "automotive": true,
+          "txt": "SwPu, 25.000 l/min"
+        },
+        {
+          "sign": "Building",
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "txt": "SwPu, 25.000 l/min"
+        }
+      ]
     },
-    // {
-    //   "sign": "Boat",
-    //   "colorPrimary": "#039",
-    //   "colorAccent": "#FFF",
-    //   "with": [
-    //     {
-    //       "sign": "Hazard",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#F00",
-    //       "txt": "SwPu, 25.000 l/min"
-    //     },
-    //     {
-    //       "sign": "Equipment",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#FFF",
-    //       "txt": "SwPu, 25.000 l/min"
-    //     },
-    //     {
-    //       "sign": "Measure",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#FFF",
-    //       "txt": "SwPu, 25.000 l/min"
-    //     }
-    //   ],
-    //   "txt": "SwPu, 25.000 l/min"
-    // },
-    // {
-    //   "sign": "Person",
-    //   "colorPrimary": "#039",
-    //   "colorAccent": "#FFF",
-    //   "with": [
-    //     {
-    //       "sign": "Empty",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#000",
-    //       "txt": "SwPu, 25.000 l/min"
-    //     },
-    //     {
-    //       "sign": "Place",
-    //       "colorPrimary": "#039",
-    //       "colorAccent": "#FFF",
-    //       "txt": "SwPu, 25.000 l/min"
-    //     }
-    //   ],
-    //   "txt": "SwPu, 25.000 l/min"
-    // }
+    {
+      "sign": "Boat",
+      "colorPrimary": "#039",
+      "colorAccent": "#FFF",
+      "with": [
+        {
+          "sign": "Hazard",
+          "colorPrimary": "#039",
+          "colorAccent": "#F00",
+          "txt": "SwPu, 25.000 l/min"
+        },
+        {
+          "sign": "Equipment",
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "txt": "SwPu, 25.000 l/min"
+        },
+        {
+          "sign": "Measure",
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "txt": "SwPu, 25.000 l/min"
+        }
+      ],
+      "txt": "SwPu, 25.000 l/min"
+    },
+    {
+      "sign": "Person",
+      "colorPrimary": "#039",
+      "colorAccent": "#FFF",
+      "with": [
+        {
+          "sign": "Empty",
+          "colorPrimary": "#039",
+          "colorAccent": "#000",
+          "txt": "SwPu, 25.000 l/min"
+        },
+        {
+          "sign": "Place",
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "txt": "SwPu, 25.000 l/min"
+        }
+      ],
+      "txt": "SwPu, 25.000 l/min"
+    }
   ];
