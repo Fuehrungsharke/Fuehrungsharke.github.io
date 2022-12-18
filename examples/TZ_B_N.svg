@@ -1,0 +1,731 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="2392" height="3364">
+	<rect stroke-width="3" stroke="#000" fill="#FFF" opacity="0.1" x="0" y="0" width="2392" height="3338"/>
+	<g transform="translate(0, 0) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Unit">
+					<rect x="10" y="64" width="236" height="128"/>
+				</clipPath>
+				<clipPath id="UnitClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+			</defs>
+			<rect x="10" y="64" width="236" height="128" fill="#039" stroke="#FFF" stroke-width="10" clip-path="url(#Unit)"/>
+			<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1"/>
+			<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">TZ</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">1 / 5 / 16 / <tspan text-decoration="underline">22</tspan>
+		</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M306 128 L356 128"/>
+	<g transform="translate(456, 0) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Unit">
+					<rect x="10" y="64" width="236" height="128"/>
+				</clipPath>
+				<clipPath id="UnitClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+			</defs>
+			<rect x="10" y="64" width="236" height="128" fill="#039" stroke="#FFF" stroke-width="10" clip-path="url(#Unit)"/>
+			<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1"/>
+			<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="64" cy="86" rx="10" ry="10" fill="#FFF"/>
+			<ellipse cx="128" cy="86" rx="10" ry="10" fill="#FFF"/>
+			<ellipse cx="192" cy="86" rx="10" ry="10" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">TZ</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">1 / 1 / 2 / <tspan text-decoration="underline">4</tspan>
+		</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M762 128 L812 128"/>
+	<g transform="translate(912, 0) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<ellipse cx="100" cy="44" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="156" cy="44" rx="10" ry="10" fill="#000000"/>
+			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 47px;" clip-path="url(#PersonClipTxt)" fill="#FFF">TZ</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1368, 0) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="107" width="64" height="48"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="114" cy="100" rx="5" ry="5" fill="#FFF"/>
+			<ellipse cx="128" cy="100" rx="5" ry="5" fill="#FFF"/>
+			<ellipse cx="142" cy="100" rx="5" ry="5" fill="#FFF"/>
+			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 43px;" clip-path="url(#PersonClipTxt)" fill="#FFF">TZ</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1624, 0) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1880, 0) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<path stroke-width="3" stroke="black" d="M1218 128 L1268 128"/>
+	<path stroke-width="3" stroke="black" d="M1268 128 L1318 128"/>
+	<path stroke-width="3" stroke="black" d="M812 128 L862 128"/>
+	<g transform="translate(912, 256) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">FüKW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Führungskraftwagen</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M812 384 L862 384"/>
+	<path stroke-width="3" stroke="black" d="M812 128 L812 384"/>
+	<path stroke-width="3" stroke="black" d="M356 128 L406 128"/>
+	<g transform="translate(456, 541) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Unit">
+					<rect x="10" y="64" width="236" height="128"/>
+				</clipPath>
+				<clipPath id="UnitClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+			</defs>
+			<rect x="10" y="64" width="236" height="128" fill="#039" stroke="#FFF" stroke-width="10" clip-path="url(#Unit)"/>
+			<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1"/>
+			<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">B</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">0 / 2 / 7 / <tspan text-decoration="underline">9</tspan>
+		</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M762 669 L812 669"/>
+	<g transform="translate(912, 541) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<ellipse cx="100" cy="44" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="156" cy="44" rx="10" ry="10" fill="#000000"/>
+			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">B</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1368, 541) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000"/>
+			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">B</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1624, 541) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1880, 541) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(2136, 541) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1368, 797) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1624, 797) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1880, 797) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(2136, 797) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<path stroke-width="3" stroke="black" d="M1218 669 L1268 669"/>
+	<path stroke-width="3" stroke="black" d="M1268 669 L1318 669"/>
+	<path stroke-width="3" stroke="black" d="M812 669 L862 669"/>
+	<g transform="translate(912, 1053) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">GKW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Gerätekraftwagen</text>
+		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">(7 t Nutzlast)</text>
+	</g>
+	<g transform="translate(1168, 1053) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
+			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">7t</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger</text>
+		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Plane/Spriegel</text>
+		<text x="128" y="338" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">mit Aufnahmen</text>
+		<text x="128" y="367" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">für Container</text>
+		<text x="128" y="396" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">(7 t Zuladung)</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M812 1181 L862 1181"/>
+	<path stroke-width="3" stroke="black" d="M812 669 L812 1181"/>
+	<path stroke-width="3" stroke="black" d="M356 669 L406 669"/>
+	<g transform="translate(456, 1454) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Unit">
+					<rect x="10" y="64" width="236" height="128"/>
+				</clipPath>
+				<clipPath id="UnitClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+			</defs>
+			<rect x="10" y="64" width="236" height="128" fill="#039" stroke="#FFF" stroke-width="10" clip-path="url(#Unit)"/>
+			<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1"/>
+			<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">N</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">0 / 2 / 7 / <tspan text-decoration="underline">9</tspan>
+		</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M762 1582 L812 1582"/>
+	<g transform="translate(912, 1454) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<ellipse cx="100" cy="44" rx="10" ry="10" fill="#000000"/>
+			<ellipse cx="156" cy="44" rx="10" ry="10" fill="#000000"/>
+			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">N</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black"/>
+	</g>
+	<g transform="translate(1368, 1454) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000"/>
+			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">N</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1624, 1454) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1880, 1454) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(2136, 1454) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1368, 1710) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1624, 1710) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(1880, 1710) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<g transform="translate(2136, 1710) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Person">
+					<path d="M64,128 L128,64 L192,128 L128,192 Z"/>
+				</clipPath>
+				<clipPath id="PersonClipTxt">
+					<rect x="96" y="100" width="64" height="56"/>
+				</clipPath>
+			</defs>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
+			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+		</svg>
+	</g>
+	<path stroke-width="3" stroke="black" d="M1218 1582 L1268 1582"/>
+	<path stroke-width="3" stroke="black" d="M1268 1582 L1318 1582"/>
+	<path stroke-width="3" stroke="black" d="M812 1582 L862 1582"/>
+	<g transform="translate(912, 1966) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">MzGW</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Mehrzweck-</text>
+		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">gerätewagen</text>
+		<text x="128" y="338" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Plane/Spriegel</text>
+		<text x="128" y="367" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">mit Ladebordwand</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M1218 2094 L1268 2094"/>
+	<g transform="translate(1368, 1966) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
+			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 27px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">NEA 50kVA LiMa</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger</text>
+		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Netzersatzanlage</text>
+		<text x="128" y="338" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">mit Lichtmastanlage</text>
+		<text x="128" y="367" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">(50 – 75 kVA)</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M1268 2094 L1318 2094"/>
+	<g transform="translate(1368, 2338) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
+			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">PF 12t</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger Plattform</text>
+		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">mit Aufnahmen</text>
+		<text x="128" y="338" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">für Container</text>
+		<text x="128" y="367" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">(12 t Zuladung)</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M1268 2466 L1318 2466"/>
+	<g transform="translate(1368, 2710) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
+			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">kl Boot</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger</text>
+		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">kleines Boot</text>
+	</g>
+	<g transform="translate(1624, 2710) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+			<defs>
+				<clipPath id="Boat">
+					<path d="M10,64 l236,0 A118,118 180 0 1 10,64 Z"/>
+				</clipPath>
+				<clipPath id="BoatClipTxt">
+					<rect x="65" y="81" width="126" height="74"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 l236,0 A118,118 180 0 1 10,64 Z" stroke="#FFF" fill="#039" stroke-width="10" clip-path="url(#Boat)"/>
+			<path d="M10,64 l236,0 A118,118 180 0 1 10,64 Z" stroke="#000000" fill="none" stroke-width="1" clip-path="url(#Boat)"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 40px;" fill="#FFF" x="128" y="118" clip-path="url(#BoatClipTxt)">kl Boot</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Kleines Boot</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M1268 2838 L1318 2838"/>
+	<path stroke-width="3" stroke="black" d="M1268 2094 L1268 2838"/>
+	<path stroke-width="3" stroke="black" d="M812 2094 L862 2094"/>
+	<g transform="translate(912, 3024) scale(1 1)">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+			<defs>
+				<clipPath id="Vehicle">
+					<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"/>
+				</clipPath>
+				<clipPath id="VehicleClipTxt">
+					<rect x="20" y="95" width="216" height="66"/>
+				</clipPath>
+				<clipPath id="Hook">
+					<rect x="0" y="44" width="10" height="148"/>
+				</clipPath>
+			</defs>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#039" stroke-width="10" stroke="#FFF" clip-path="url(#Vehicle)"/>
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
+			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">Stapler 3t</text>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+		</svg>
+		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Gabelstapler</text>
+		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">(mind. 3 t Hubkraft)</text>
+	</g>
+	<path stroke-width="3" stroke="black" d="M812 3152 L862 3152"/>
+	<path stroke-width="3" stroke="black" d="M812 1582 L812 3152"/>
+	<path stroke-width="3" stroke="black" d="M356 1582 L406 1582"/>
+	<path stroke-width="3" stroke="black" d="M356 128 L356 1582"/>
+</svg>
