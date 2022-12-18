@@ -1,6 +1,12 @@
 # Führungsharke
 Unter [fuehrungsharke.github.io](https://fuehrungsharke.github.io/) kann eine eigene Führungsharke erstellt werden. Diese kann als Vektorgrafik (`*.svg`) heruntergeladen werden.
 
+## Beispiele
+
+### Technischer Zug mit Bergungsgruppe und Fachgruppe Notversorgung / Notinstandsetzung
+![Technischer Zug mit Bergungsgruppe und Fachgruppe Notversorgung / Notinstandsetzung](./examples/TZ_B_N.svg)
+[Konfigurationsdatei](./examples/TZ_B_N.json)
+
 ## Konfiguration
 Die Struktur der Führungsharke kann als `*.json`-Datei gespeichert und auch wieder geladen werden.
 

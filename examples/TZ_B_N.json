@@ -1,0 +1,296 @@
+[
+    {
+      "sign": "Unit",
+      "txt": "TZ",
+      "org": "THW",
+      "platoon": true,
+      "colorPrimary": "#039",
+      "colorAccent": "#FFF",
+      "layout": "list-right",
+      "sub": [
+        {
+          "sign": "Unit",
+          "txt": "TZ",
+          "org": "THW",
+          "platoontroop": true,
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "layout": "list-right",
+          "sub": [
+            {
+              "sign": "Person",
+              "txt": "TZ",
+              "leading": true,
+              "platoon": true,
+              "colorPrimary": "#039",
+              "colorAccent": "#FFF",
+              "sub": [
+                {
+                  "sign": "Person",
+                  "txt": "TZ",
+                  "leading": true,
+                  "platoontroop": true,
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                }
+              ],
+              "layout": "row-right",
+              "org": "THW"
+            },
+            {
+              "sign": "Vehicle",
+              "colorPrimary": "#039",
+              "colorAccent": "#FFF",
+              "org": "THW",
+              "automotive": true,
+              "txt": "FüKW",
+              "name": "Führungskraftwagen"
+            }
+          ],
+          "show_staff": true
+        },
+        {
+          "sign": "Unit",
+          "txt": "B",
+          "org": "THW",
+          "group": true,
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "layout": "list-right",
+          "sub": [
+            {
+              "txt": "B",
+              "sign": "Person",
+              "leading": true,
+              "group": true,
+              "colorPrimary": "#039",
+              "colorAccent": "#FFF",
+              "sub": [
+                {
+                  "sign": "Person",
+                  "txt": "B",
+                  "leading": true,
+                  "troop": true,
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                }
+              ],
+              "layout": "row-right",
+              "org": "THW"
+            },
+            {
+              "sign": "Vehicle",
+              "colorPrimary": "#039",
+              "colorAccent": "#FFF",
+              "org": "THW",
+              "automotive": true,
+              "txt": "GKW",
+              "name": "Gerätekraftwagen, (7 t Nutzlast)",
+              "with": [
+                {
+                  "sign": "Vehicle",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW",
+                  "trailer": true,
+                  "txt": "7t",
+                  "name": "Anhänger, Plane/Spriegel, mit Aufnahmen, für Container, (7 t Zuladung)"
+                }
+              ]
+            }
+          ],
+          "show_staff": true
+        },
+        {
+          "sign": "Unit",
+          "txt": "N",
+          "org": "THW",
+          "group": true,
+          "colorPrimary": "#039",
+          "colorAccent": "#FFF",
+          "layout": "list-right",
+          "sub": [
+            {
+              "name": "",
+              "sign": "Person",
+              "txt": "N",
+              "leading": true,
+              "group": true,
+              "colorPrimary": "#039",
+              "colorAccent": "#FFF",
+              "sub": [
+                {
+                  "sign": "Person",
+                  "txt": "N",
+                  "leading": true,
+                  "troop": true,
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                },
+                {
+                  "sign": "Person",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW"
+                }
+              ],
+              "layout": "row-right",
+              "org": "THW"
+            },
+            {
+              "sign": "Vehicle",
+              "colorPrimary": "#039",
+              "colorAccent": "#FFF",
+              "org": "THW",
+              "automotive": true,
+              "txt": "MzGW",
+              "name": "Mehrzweck-, gerätewagen, Plane/Spriegel, mit Ladebordwand",
+              "sub": [
+                {
+                  "sign": "Vehicle",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW",
+                  "trailer": true,
+                  "txt": "NEA 50kVA LiMa",
+                  "name": "Anhänger, Netzersatzanlage, mit Lichtmastanlage, (50 – 75 kVA)"
+                },
+                {
+                  "sign": "Vehicle",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW",
+                  "trailer": true,
+                  "txt": "PF 12t",
+                  "name": "Anhänger Plattform, mit Aufnahmen, für Container, (12 t Zuladung)"
+                },
+                {
+                  "sign": "Vehicle",
+                  "colorPrimary": "#039",
+                  "colorAccent": "#FFF",
+                  "org": "THW",
+                  "trailer": true,
+                  "txt": "kl Boot",
+                  "name": "Anhänger, kleines Boot",
+                  "with": [
+                    {
+                      "sign": "Boat",
+                      "colorPrimary": "#039",
+                      "colorAccent": "#FFF",
+                      "org": "THW",
+                      "txt": "kl Boot",
+                      "name": "Kleines Boot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "sign": "Vehicle",
+              "colorPrimary": "#039",
+              "colorAccent": "#FFF",
+              "org": "THW",
+              "automotive": true,
+              "txt": "Stapler 3t",
+              "name": "Gabelstapler, (mind. 3 t Hubkraft)"
+            }
+          ],
+          "show_staff": true
+        }
+      ],
+      "show_staff": true
+    }
+  ]
