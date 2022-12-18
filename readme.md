@@ -5,7 +5,7 @@ Unter [fuehrungsharke.github.io](https://fuehrungsharke.github.io/) kann eine ei
 
 ### Technischer Zug mit Bergungsgruppe und Fachgruppe Notversorgung / Notinstandsetzung
 ![Technischer Zug mit Bergungsgruppe und Fachgruppe Notversorgung / Notinstandsetzung](./examples/TZ_B_N.svg)
-<a href="./examples/TZ_B_N.json">Konfigurationsdatei</a>
+[Konfigurationsdatei](./examples/TZ_B_N.json)
 
 ## Konfiguration
 Die Struktur der Führungsharke kann als `*.json`-Datei gespeichert und auch wieder geladen werden.
