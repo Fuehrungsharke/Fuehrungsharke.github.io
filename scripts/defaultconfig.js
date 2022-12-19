@@ -389,3 +389,11 @@ var EL = {
 var config = [
     EL
 ];
+
+config = {
+    "sign": "Vehicle",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
+    "org": "THW",
+    "swapbody": true
+};

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256">
+	<defs>
+		<clipPath id="Vehicle">
+			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z"></path>
+		</clipPath>
+		<clipPath id="Hook">
+			<rect x="0" y="44" width="10" height="148"></rect>
+		</clipPath>
+	</defs>
+	<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="#FFFFFF" stroke-width="10" stroke="#000000" clip-path="url(#Vehicle)" />
+	<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000" />
+
+	<path d="M3,63 L3,199 L247,199" fill="none" stroke-width="5" stroke="#000000" />
+</svg>
