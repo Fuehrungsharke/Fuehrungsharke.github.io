@@ -21,7 +21,7 @@
 	swapbody}}
 
 	{{swapable
-	<path d="M3,63 L3,199 L247,199" fill="none" stroke-width="5" stroke="#000000" />
+	<path d="M5.5,63 l0,133.5 l240.5,0 l0,-3 l-237.5,0 L8.5,63 Z" fill="#000" stroke-width="1" stroke="#000" />
 	swapable}}
 
 	{{automotive
