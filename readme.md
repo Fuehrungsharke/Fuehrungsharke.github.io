@@ -39,3 +39,14 @@ Für die lokale Entwicklung kann auf Docker zurückgegriffen werden. Dazu muss D
 Wenn Docker auf dem Host installiert ist, genügt es folgende Dockerbefehle auszuführen:
 <p><code>docker build . -t fuehrungsharke</code> - Baut das Docker Image lokal unter dem Namen "fuehrungsharke"</p>
 <p><code>docker run --name fuehark --rm -p 8080:3000 fuehrungsharke</code> - Erstellt den Container, führt ihn aus und ermöglicht den Zugriff auf die Applikation auf "localhost:8080". Durch STRG+C kann die Ausführung gestoptt und der Container gelöscht werden.</p>
+
+## Deployment
+Die Anwendung muss auf einem Webserver betrieben werden. Ein lokales Betreiben im Dateisystem und Öffnen der Datei `index.html' reicht nicht aus, da dies die "Same Origin Policy" des Browsers verletzt.
+Da es nicht weise wäre diese für den Browser Schutzmaßnahme abzuschalten ist der bessere Weg einen kleinen Webserver zu betreiben. Mögliche freie Software ist hier Apache, nginx, lighttpd. Die einzelnen Projekte liefern gute Erklärungen wie man einen einfachen Server installiert,
+
+
+1. Sobald der Webserver läuft und du dessen Testseite sehen kannst, lade die folgende Datei herunter: `https://github.com/Fuehrungsharke/Fuehrungsharke.github.io/archive/refs/heads/main.zip` das ist die von Github erstellte Zusammenfassung dieser Codesammlung zum aktuellen Stand.
+2. Kopiere diese Datei in das Verzeichnis in dem der Webserver seine Webseiten anbietet und entpacke die Datei
+3. Die Daten werden nun in den Ordner `Fuehrungsharke.github.io-main` entpackt, verschiebe diese Daten in das Wurzelverzeichnis deines webservers. Den Ordner `Fuehrungsharke.github.io-main` und die Datei `main.zip` kannst du danach löschen.
+4. Rufe in deinem Browser die Adresse deines Webservers auf. Du solltest nun die Anwendung sehen.
+
