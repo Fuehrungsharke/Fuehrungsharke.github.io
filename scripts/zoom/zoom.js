@@ -1,12 +1,14 @@
-var canvasWidth = 512;
-var canvasHeight = 256;
+let canvasDim = {
+    width: 512,
+    height: 256
+};
 
-var slider = document.getElementById("zoomslider");
-var zoomFactor = slider.value / 100;
+let slider = document.getElementById("zoomslider");
+let zoomFactor = slider.value / 100;
 
 slider.oninput = function () {
     zoomFactor = this.value / 100;
     zoomcontainer.setAttribute('transform', `scale(${zoomFactor} ${zoomFactor})`)
-    displaySvg.setAttribute('width', canvasWidth * zoomFactor);
-    displaySvg.setAttribute('height', canvasHeight * zoomFactor + LINESIZE);
+    displaySvg.setAttribute('width', canvasDim.width * zoomFactor);
+    displaySvg.setAttribute('height', canvasDim.height * zoomFactor + LINESIZE);
 }

@@ -3,6 +3,9 @@
 		<clipPath id="Vehicle">
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" />
 		</clipPath>
+		<clipPath id="VehicleClipTxt">
+			<rect x="20" y="95" width="216" height="66" />
+		</clipPath>
 		<clipPath id="Hook">
 			<rect x="0" y="44" width="10.5" height="148" />
 		</clipPath>
@@ -48,7 +51,7 @@
 	{{symbols:cx=128, cy=128, width=226, height=74}}
 	</g>
 
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145">{{txt}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="{{colorAccent}}" x="128" y="128" clip-path="url(#VehicleClipTxt)">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="{{colorAccent}}" x="20" y="{{support?155:180}}">{{spez}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="{{extinguish?200:236}}" y="{{support?155:180}}">{{org}}</text>
 </svg>

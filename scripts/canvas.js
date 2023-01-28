@@ -1,4 +1,4 @@
-var Layout = {
+let Layout = {
     ListRight: "list-right",
     ListRightBelow: "list-right-below",
     RowRight: "row-right",
@@ -7,7 +7,7 @@ var Layout = {
     CenteredBelow: "center-below",
 }
 
-var noneScalables = {
+let noneScalables = {
     'extinguish': {
         'Building': true,
         'Flag': true,
@@ -36,7 +36,7 @@ function Dim(x, y) {
 }
 
 function getSign(root) {
-    var svg = null;
+    let svg = null;
     if (root.sign == null)
         return null;
     if (root.sign.includes('/'))
@@ -44,31 +44,31 @@ function getSign(root) {
     else
         svg = getResource(`/signs/${root.sign}.svg`);
 
-    var matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+    let matchesConditional = /\{\{(\w+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
     while (matchesConditional != null && matchesConditional.length == 4) {
         if (matchesConditional[1] in root)
             svg = svg.replace(matchesConditional[0], matchesConditional[2]);
         else
             svg = svg.replace(matchesConditional[0], matchesConditional[3]);
-        matchesConditional = /\{\{([\w]+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
+        matchesConditional = /\{\{(\w+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
     }
 
-    for (var key in root) {
-        var matchesGroup = /(\w+)\:(\w+)/g.exec(key);
+    for (let key in root) {
+        let matchesGroup = /(\w+)\:(\w+)/g.exec(key);
         if (matchesGroup == null || matchesGroup.length != 3)
             continue;
 
-        var keyName = matchesGroup[1];
-        var symbolName = matchesGroup[2];
+        let keyName = matchesGroup[1];
+        let symbolName = matchesGroup[2];
 
-        var innerSvg = new DOMParser().parseFromString(getResource(`/${keyName}/${symbolName}.svg`), "text/xml").getElementsByTagName("svg")[0];
-        var innerG = document.createElement('g');
+        let innerSvg = new DOMParser().parseFromString(getResource(`/${keyName}/${symbolName}.svg`), "text/xml").getElementsByTagName("svg")[0];
+        let innerG = document.createElement('g');
         innerG.innerHTML = innerSvg.outerHTML;
 
-        var reSymbol = new RegExp(`\\{\\{${keyName}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
-        var matchesSymbol = reSymbol.exec(svg);
+        let reSymbol = new RegExp(`\\{\\{${keyName}\\:([\\,\\w\\=\\d\\s]+)\\}\\}`, 'g');
+        let matchesSymbol = reSymbol.exec(svg);
         if (matchesSymbol != null && matchesSymbol.length > 1) {
-            var para = {};
+            let para = {};
 
             para.scale = true;
             if (symbolName in noneScalables) {
@@ -78,23 +78,24 @@ function getSign(root) {
                     para.scale = !noneScalables[symbolName][root.sign];
             }
 
-            var reParaAttrs = /([\w\_\d]+)\s*\=\s*([\w\_\d]+)/g;
-            var paraAttr = reParaAttrs.exec(matchesSymbol[1]);
+            let reParaAttrs = /([\w\_\d]+)\s*\=\s*([\w\_\d]+)/g;
+            let paraAttr = reParaAttrs.exec(matchesSymbol[1]);
             while (paraAttr) {
                 para[paraAttr[1]] = paraAttr[2];
                 paraAttr = reParaAttrs.exec(matchesSymbol[1]);
             }
+            let scale = 1;
             if (para.scale) {
-                var symbolWidth = parseInt(innerSvg.getAttribute('width'));
-                var symbolHeight = parseInt(innerSvg.getAttribute('height'));
-                var scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
-                var posOffsetX = symbolWidth * scale / 2;
-                var posOffsetY = symbolHeight * scale / 2;
+                let symbolWidth = parseInt(innerSvg.getAttribute('width'));
+                let symbolHeight = parseInt(innerSvg.getAttribute('height'));
+                scale = Math.min(para.width / symbolWidth, para.height / symbolHeight);
+                let posOffsetX = symbolWidth * scale / 2;
+                let posOffsetY = symbolHeight * scale / 2;
                 innerG.setAttribute('transform', `translate(${para.cx - posOffsetX}, ${para.cy - posOffsetY}) scale(${scale} ${scale})`)
             }
 
-            var reScaleable = /scale\:(\d+)/g;
-            var scaleable = reScaleable.exec(innerG.innerHTML);
+            let reScaleable = /scale\:(\d+)/g;
+            let scaleable = reScaleable.exec(innerG.innerHTML);
             while (scaleable) {
                 innerG.innerHTML = innerG.innerHTML.slice(0, scaleable.index)
                     + (para.scale ? (parseInt(scaleable[1]) / scale).toString() : scaleable[1])
@@ -107,8 +108,8 @@ function getSign(root) {
         }
         svg = svg.replace(`{{${keyName}}}`, innerG.outerHTML);
     }
-    for (var key in root) {
-        var re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
+    for (let key in root) {
+        let re = new RegExp(`(\{\{${key}\\s+)|(\\s+${key}\}\})`, 'g');
         svg = svg
             .replaceAll(`{{${key}}}`, root[key])
             .replaceAll(re, '');
@@ -116,8 +117,8 @@ function getSign(root) {
 
     svg = svg.replace(/\{\{\w+\}\}/g, '');
 
-    var idxStart = svg.search(/{{\w+\s/g);
-    var idxEnd = svg.indexOf('}}', svg.search(/\s\w+}}/g)) + 2;
+    let idxStart = svg.search(/{{\w+\s/g);
+    let idxEnd = svg.indexOf('}}', svg.search(/\s\w+}}/g)) + 2;
     while (idxStart >= 0 && idxEnd >= 0 && idxStart < idxEnd) {
         svg = svg.slice(0, idxStart) + svg.slice(idxEnd);
         idxStart = svg.search(/{{\w+\s/g);
@@ -126,8 +127,31 @@ function getSign(root) {
     return svg.replace(/((\r\n|\n|\r)\s)*(\r\n|\n|\r)/gm, '\r\n');
 }
 
+function adjustTextSize(sign, item) {
+    let clipPathName = item.getAttribute('clip-path');
+    if (clipPathName == null)
+        return;
+    let res = /url\(\#(\w+)\)/.exec(clipPathName);
+    if (res.length != 2)
+        return;
+    let clipBBox = sign.getElementById(res[1])?.firstElementChild?.getBBox();
+    let bbox = item.getBBox();
+    let style = item.getAttribute('style');
+    if (style == null)
+        return;
+    let fontsizePattern = /font\-size\:\s*(\d+)(\w+)/g;
+    let fontsize = fontsizePattern.exec(style);
+    if (fontsize.length != 3)
+        return;
+    for (let i = 0; i < 1000 && fontsize[1] > 1 && (bbox.width >= clipBBox.width || bbox.height >= clipBBox.height); i++) {
+        style = style.replace(fontsizePattern, `font-size: ${--fontsize[1]}${fontsize[2]}`);
+        item.setAttribute('style', style);
+        bbox = item.getBBox();
+    }
+}
+
 function getSignSvg(root, uuid, x, y, inactiveInherited) {
-    var signSvg = document.createElement('g');
+    let signSvg = document.createElement('g');
     signSvg.setAttribute('transform', `translate(${parseInt(x, 10)}, ${parseInt(y, 10)}) scale(1 1)`)
     signSvg.setAttribute('uuid', uuid);
     if (root.inactive || inactiveInherited)
@@ -136,16 +160,37 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
     signSvg.classList.add('editable');
     signSvg.classList.add('selectable');
 
-    var sign = new DOMParser().parseFromString(getSign(root), "text/xml").getElementsByTagName("svg")[0];
+    let sign = new DOMParser().parseFromString(getSign(root), "text/xml").getElementsByTagName("svg")[0];
     sign.setAttribute('touch-action', 'none');
     sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
     sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
+
+    for (const item of sign.getElementsByTagName('text')) {
+        let textParts = item.textContent.split(', ');
+        if (textParts.length <= 1)
+        continue;
+        let textLines = [];
+        for (let textPart of textParts) {
+            let clone = item.cloneNode();
+            clone.textContent = textPart;
+            textLines.push(clone);
+        }
+        let idx = Array.prototype.indexOf.call(sign.childNodes, item);
+        let newArr = Array.prototype.splice(idx, 1, textLines);
+        // TODO
+        // for (const line of textLines) {
+        //     sign.appendChild(line);
+        // }
+    }
+    for (const item of sign.getElementsByTagName('text'))
+        adjustTextSize(sign, item);
+
     signSvg.innerHTML = sign.outerHTML;
     return signSvg;
 }
 
 function getLine(ax, ay, bx, by) {
-    var line = document.createElement('path');
+    let line = document.createElement('path');
     line.setAttribute('stroke-width', 3);
     line.setAttribute('stroke', 'black');
     line.setAttribute('d', `M${ax} ${ay} L${bx} ${by}`);
@@ -153,7 +198,7 @@ function getLine(ax, ay, bx, by) {
 }
 
 function appendLine(canvas, root, inactiveInherited, ax, ay, bx, by, color) {
-    var line = getLine(ax, ay, bx, by);
+    let line = getLine(ax, ay, bx, by);
     if (root != null && (root.inactive || inactiveInherited))
         line.setAttribute('opacity', 0.25);
     if (color != null)
@@ -162,7 +207,7 @@ function appendLine(canvas, root, inactiveInherited, ax, ay, bx, by, color) {
 }
 
 function getText(uuid, text, x, y) {
-    var txt = document.createElement('text');
+    let txt = document.createElement('text');
     txt.setAttribute('x', x);
     txt.setAttribute('y', y);
     txt.setAttribute('font-size', 24);
@@ -176,13 +221,13 @@ function getText(uuid, text, x, y) {
 }
 
 function drawSign(canvas, root, x, y, inactiveInherited) {
-    var dimSign = new Dim(x, y);
+    let dimSign = new Dim(x, y);
     if (root == null)
         return dimSign;
-    var uuid = createUUID();
+    let uuid = createUUID();
     root.uuid = uuid;
     if (root.sign != null) {
-        var itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
+        let itemBox = getSignSvg(root, uuid, x, y, inactiveInherited);
         dimSign.width = 256;
         dimSign.height = 256;
         dimSign.anchorTopX = 128;
@@ -191,8 +236,8 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
         dimSign.anchorLeftY = 128;
         if (root.show_staff) {
             dimSign.height += 20;
-            var staff = getStaff(root);
-            var staffText = document.createElement('text');
+            let staff = getStaff(root);
+            let staffText = document.createElement('text');
             staffText.innerHTML = `${staff[0]} / ${staff[1]} / ${staff[2]} / <tspan text-decoration='underline'>${staff[3]}</tspan>`;
             staffText.setAttribute('x', dimSign.width / 2);
             staffText.setAttribute('y', dimSign.height);
@@ -204,7 +249,7 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
             dimSign.height += 5;
         }
         if (root.name != null) {
-            var nameParts = root['name'].split(', ');
+            let nameParts = root['name'].split(', ');
             for (let namePart in nameParts) {
                 dimSign.height += 24;
                 itemBox.appendChild(getText(uuid, nameParts[namePart], dimSign.width / 2, dimSign.height));
@@ -214,7 +259,7 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
         if (canvas != null) {
             canvas.appendChild(itemBox);
             // Debug: Print Coords
-            // var txt = getText(uuid, `(${x}, ${y})`, x, y + 24);
+            // let txt = getText(uuid, `(${x}, ${y})`, x, y + 24);
             // txt.setAttribute('text-anchor', 'left');
             // canvas.appendChild(txt);
         }
@@ -223,11 +268,11 @@ function drawSign(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawWithHorizontally(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim(x, y);
+    let dim = new Dim(x, y);
     if (root.with == null || !Array.isArray(root.with) || root.with.length <= 0)
         return dim;
     root.with.forEach(item => {
-        var signDim = drawSign(canvas, item, x + dim.width, y, root.inactive || inactiveInherited);
+        let signDim = drawSign(canvas, item, x + dim.width, y, root.inactive || inactiveInherited);
         dim.width += signDim.width;
         dim.height = Math.max(dim.height, signDim.height);
     });
@@ -235,8 +280,8 @@ function drawWithHorizontally(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawListRight(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim(x, y);
-    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    let dim = new Dim(x, y);
+    let dimSign = drawSign(canvas, root, x, y, inactiveInherited);
     dim.anchorTopX = dimSign.anchorTopX;
     dim.anchorTopY = dimSign.anchorTopY;
     dim.anchorLeftX = dimSign.anchorLeftX;
@@ -245,12 +290,12 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
     if (root.sign == 'Collapsed')
         return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
+    let dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
     dim.width += dimWith.width;
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        var subTrees = root.sub;
-        var subTotalWidth = 0;
+        let subTrees = root.sub;
+        let subTotalWidth = 0;
         dim.width += GAP;
         appendLine(canvas, root, inactiveInherited,
             x + dim.width + (root.right ? -GAP : 0),
@@ -258,9 +303,9 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
             x + dim.width + GAP,
             y + dimSign.anchorLeftY); // root line
         dim.width += GAP;
-        var dimLastSub = null;
+        let dimLastSub = null;
         for (let subTree in subTrees) {
-            var subSize = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
+            let subSize = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
                 y + dim.height + subSize.anchorLeftY,
@@ -282,8 +327,8 @@ function drawListRight(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim(x, y);
-    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    let dim = new Dim(x, y);
+    let dimSign = drawSign(canvas, root, x, y, inactiveInherited);
     dim.anchorTopX = dimSign.anchorTopX;
     dim.anchorTopY = dimSign.anchorTopY;
     dim.anchorLeftX = dimSign.anchorLeftX;
@@ -292,16 +337,16 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
     if (root.sign == 'Collapsed')
         return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
+    let dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
     dim.height += Math.max(dimSign.height, dimWith.height);
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        var subTrees = root.sub;
-        var subTotalWidth = 0;
+        let subTrees = root.sub;
+        let subTotalWidth = 0;
         if (subTrees.length > 0) {
-            var dimLastSub = null;
+            let dimLastSub = null;
             for (let subTree in subTrees) {
-                var dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width, y + dim.height, root.inactive || inactiveInherited);
+                let dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width, y + dim.height, root.inactive || inactiveInherited);
                 appendLine(canvas, root, inactiveInherited,
                     x + dimSign.anchorTopX,
                     y + dim.height + dimSubItem.anchorLeftY,
@@ -328,8 +373,8 @@ function drawListRightBelow(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawRowRight(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim(x, y);
-    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    let dim = new Dim(x, y);
+    let dimSign = drawSign(canvas, root, x, y, inactiveInherited);
     dim.anchorTopX = dimSign.anchorTopX;
     dim.anchorTopY = dimSign.anchorTopY;
     dim.anchorLeftX = dimSign.anchorLeftX;
@@ -338,20 +383,20 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
     if (root.sign == 'Collapsed')
         return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
+    let dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
     dim.width += dimWith.width;
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         dim.width += 4 * GAP;
-        var leafsTotalWidth = 0;
-        var leafsTotalRowHeight = 0;
-        var leafRowWidth = 0;
-        var cntLeafs = 0;
-        var leafs = root.sub;
-        var dimFirstSub = null;
+        let leafsTotalWidth = 0;
+        let leafsTotalRowHeight = 0;
+        let leafRowWidth = 0;
+        let cntLeafs = 0;
+        let leafs = root.sub;
+        let dimFirstSub = null;
         for (let leaf in leafs) {
             cntLeafs += 1;
-            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
+            let leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
             if (dimFirstSub == null)
                 dimFirstSub = leafDimensions;
             leafRowWidth += leafDimensions.width;
@@ -386,8 +431,8 @@ function drawRowRight(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim(x, y);
-    var dimSign = drawSign(canvas, root, x, y, inactiveInherited);
+    let dim = new Dim(x, y);
+    let dimSign = drawSign(canvas, root, x, y, inactiveInherited);
     dim.anchorTopX = dimSign.anchorTopX;
     dim.anchorTopY = dimSign.anchorTopY;
     dim.anchorLeftX = dimSign.anchorLeftX;
@@ -396,20 +441,20 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
     if (root.sign == 'Collapsed')
         return dimSign;
 
-    var dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
-    var maxSignWithHeight = Math.max(dimSign.height, dimWith.height);
+    let dimWith = drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
+    let maxSignWithHeight = Math.max(dimSign.height, dimWith.height);
     dim.height += maxSignWithHeight;
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        var leafsTotalWidth = 0;
-        var leafsTotalRowHeight = dimSign.height;
-        var leafRowWidth = 0;
-        var cntLeafs = 0;
-        var leafs = root.sub;
-        var dimFirstSub = null;
+        let leafsTotalWidth = 0;
+        let leafsTotalRowHeight = dimSign.height;
+        let leafRowWidth = 0;
+        let cntLeafs = 0;
+        let leafs = root.sub;
+        let dimFirstSub = null;
         for (let leaf in leafs) {
             cntLeafs += 1;
-            var leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
+            let leafDimensions = drawRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
             if (dimFirstSub == null)
                 dimFirstSub = leafDimensions;
             leafRowWidth += leafDimensions.width;
@@ -444,8 +489,8 @@ function drawRowRightBelow(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim(x, y);
-    var dimSign = drawSign(null, root, x, y, inactiveInherited);
+    let dim = new Dim(x, y);
+    let dimSign = drawSign(null, root, x, y, inactiveInherited);
     dim.anchorTopX = dimSign.anchorTopX;
 
     dim.anchorLeftX = dimSign.anchorLeftX;
@@ -454,16 +499,16 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
     if (root.sign == 'Collapsed')
         return dimSign;
 
-    var dimWith = drawWithHorizontally(null, root, x + dimSign.width, y, inactiveInherited);
+    let dimWith = drawWithHorizontally(null, root, x + dimSign.width, y, inactiveInherited);
     dim.width += dimWith.width;
 
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        var subTrees = root.sub;
-        var subTotalWidth = 0;
+        let subTrees = root.sub;
+        let subTotalWidth = 0;
         dim.width += 2 * GAP;
-        var dimSubs = [];
+        let dimSubs = [];
         for (let subTree in subTrees) {
-            var dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
+            let dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
@@ -474,8 +519,8 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
             subTotalWidth = Math.max(subTotalWidth, dimSubItem.width + GAP);
             dim.height += dimSubItem.height;
         }
-        var sub1 = dimSubs[0];
-        var subN = dimSubs[dimSubs.length - 1];
+        let sub1 = dimSubs[0];
+        let subN = dimSubs[dimSubs.length - 1];
         dim.anchorLeftY = sub1.anchorLeftY + ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
         dim.anchorTopY = sub1.anchorTopY + ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
         dim.height = Math.max(dim.height,
@@ -504,27 +549,27 @@ function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
 }
 
 function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
-    var dim = new Dim(x, y);
-    var dimSign = drawSign(null, root, 0, 0, false); // just measure dimensions
-    var dimWith = drawWithHorizontally(null, root, 0, 0, false);
+    let dim = new Dim(x, y);
+    let dimSign = drawSign(null, root, 0, 0, false); // just measure dimensions
+    let dimWith = drawWithHorizontally(null, root, 0, 0, false);
     dim.anchorTopX = dimSign.anchorTopX;
     dim.anchorTopY = dimSign.anchorTopY;
     dim.height = Math.max(dimSign.height, dimWith.height) + GAP;
-    var subY = dim.height;
-    var dimSubs = [];
+    let subY = dim.height;
+    let dimSubs = [];
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         if (root.sub[0].sign == 'Collapsed')
             subY = dimSign.height;
         root.sub.forEach(subItem => {
-            var dimSubItem = drawRecursive(canvas, subItem, x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
+            let dimSubItem = drawRecursive(canvas, subItem, x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
             appendLine(canvas, root, inactiveInherited, x + dim.width + dimSubItem.anchorTopX, y + subY, x + dim.width + dimSubItem.anchorTopX, y + subY + dimSubItem.anchorTopY + GAP);
             dim.width += dimSubItem.width + GAP;
             dim.height = Math.max(dim.height, subY + dimSubItem.height + GAP);
         });
         dim.width -= GAP;
-        var anchorSub1 = dimSubs[0].x + dimSubs[0].anchorTopX;
-        var anchorSubN = dimSubs[dimSubs.length - 1].x + dimSubs[dimSubs.length - 1].anchorTopX;
+        let anchorSub1 = dimSubs[0].x + dimSubs[0].anchorTopX;
+        let anchorSubN = dimSubs[dimSubs.length - 1].x + dimSubs[dimSubs.length - 1].anchorTopX;
         dim.anchorTopX = dimSubs[0].anchorTopX + (anchorSubN - anchorSub1) / 2;
         appendLine(canvas, root, inactiveInherited,
             x + dim.anchorTopX,
@@ -561,9 +606,9 @@ function drawLayout(canvas, root, x, y, inactiveInherited) {
 
 function drawRecursive(canvas, root, x, y, inactiveInherited) {
     if (Array.isArray(root) && root.length > 0) {
-        var dim = new Dim(x, y);
+        let dim = new Dim(x, y);
         for (let idx in root) {
-            var itemSize = drawLayout(canvas, root[idx], x, y + dim.height, inactiveInherited);
+            let itemSize = drawLayout(canvas, root[idx], x, y + dim.height, inactiveInherited);
             dim.width = Math.max(dim.width, itemSize.width);
             dim.height += itemSize.height;
         }
@@ -578,30 +623,27 @@ function draw() {
         "config": JSON.parse(JSON.stringify(config))
     });
 
-    var canvas = document.createElement('svg');
-    size = drawRecursive(canvas, config, 0, 0, false);
+    let canvas = document.createElement('svg');
+    canvasDim = drawRecursive(canvas, config, 0, 0, false);
 
-    var background = document.createElement('rect');
+    let background = document.createElement('rect');
     background.setAttribute('stroke-width', 3);
     background.setAttribute('stroke', '#000');
     background.setAttribute('fill', '#FFF');
     background.setAttribute('x', 0);
     background.setAttribute('y', 0);
-    background.setAttribute('width', size.width);
-    background.setAttribute('height', size.height);
+    background.setAttribute('width', canvasDim.width);
+    background.setAttribute('height', canvasDim.height);
     canvas.prepend(background);
-
-    canvasWidth = size.width;
-    canvasHeight = size.height;
 
     // Output
     outputSvg.innerHTML = canvas.innerHTML;
-    outputSvg.setAttribute('width', canvasWidth);
-    outputSvg.setAttribute('height', canvasHeight + LINESIZE);
+    outputSvg.setAttribute('width', canvasDim.width);
+    outputSvg.setAttribute('height', canvasDim.height + LINESIZE);
 
     zoomcontainer.setAttribute('transform', `scale(${zoomFactor} ${zoomFactor})`)
 
     // Display
-    displaySvg.setAttribute('width', canvasWidth * zoomFactor);
-    displaySvg.setAttribute('height', canvasHeight * zoomFactor + LINESIZE);
+    displaySvg.setAttribute('width', canvasDim.width * zoomFactor);
+    displaySvg.setAttribute('height', canvasDim.height * zoomFactor + LINESIZE);
 }

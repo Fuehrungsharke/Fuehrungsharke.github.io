@@ -1,4 +1,4 @@
-var ZTr = {
+let ZTr = {
     "sign": "Unit",
     "txt": "TZ",
     "org": "THW",
@@ -45,7 +45,7 @@ var ZTr = {
     ]
 };
 
-var BGr = {
+let BGr = {
     "sign": "Unit",
     "txt": "B",
     "org": "THW",
@@ -127,7 +127,7 @@ var BGr = {
     ]
 };
 
-var FGrR = {
+let FGrR = {
     "sign": "Unit",
     "txt": "R",
     "org": "THW",
@@ -209,7 +209,7 @@ var FGrR = {
     ]
 };
 
-var TZ = {
+let TZ = {
     "sign": "Unit",
     "txt": "TZ",
     "org": "THW",
@@ -225,7 +225,7 @@ var TZ = {
     ],
 };
 
-var EAL_West = {
+let EAL_West = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
@@ -252,7 +252,7 @@ var EAL_West = {
     ]
 }
 
-var EAL_East = {
+let EAL_East = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
@@ -272,7 +272,7 @@ var EAL_East = {
     ]
 }
 
-var BR_ZTr = {
+let BR_ZTr = {
     "sign": "Unit",
     "txt": "TZ",
     "org": "THW",
@@ -283,7 +283,7 @@ var BR_ZTr = {
     "colorAccent": "#FFFFFF"
 };
 
-var BR_Log = {
+let BR_Log = {
     "sign": "Place",
     "symbols:consumable": true,
     "colorPrimary": "#FF0",
@@ -305,7 +305,7 @@ var BR_Log = {
     ]
 }
 
-var BR_FGrN = {
+let BR_FGrN = {
     "sign": "Unit",
     "txt": "N",
     "org": "THW",
@@ -317,7 +317,7 @@ var BR_FGrN = {
     "colorAccent": "#FFFFFF"
 };
 
-var BR_FGrE = {
+let BR_FGrE = {
     "sign": "Unit",
     "txt": "E",
     "colorPrimary": "#039",
@@ -345,7 +345,7 @@ var BR_FGrE = {
     ]
 };
 
-var EAL_BR = {
+let EAL_BR = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
@@ -362,7 +362,7 @@ var EAL_BR = {
     ]
 }
 
-var EL = {
+let EL = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
@@ -386,14 +386,6 @@ var EL = {
     ]
 }
 
-var config = [
+let config = [
     EL
 ];
-
-config = {
-    "sign": "Vehicle",
-    "colorPrimary": "#039",
-    "colorAccent": "#FFF",
-    "org": "THW",
-    "swapbody": true
-};

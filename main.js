@@ -5,7 +5,7 @@ const LINESIZE = 26
 const WITH = 'with';
 const SUB = 'sub';
 
-var KeyCode = {
+let KeyCode = {
     ESC: 27,
     DEL: 46,
     A: 65,
@@ -16,22 +16,22 @@ var KeyCode = {
     Z: 90,
 }
 
-var iptConfig = document.getElementById('iptConfig');
-var zoomcontainer = document.getElementById('zoomcontainer');
-var displaySvg = document.getElementById("displaySvg");
-var outputSvg = document.getElementById("outputSvg");
-var btnUndo = document.getElementById("btnUndo");
-var btnRedo = document.getElementById("btnRedo");
+let iptConfig = document.getElementById('iptConfig');
+let zoomcontainer = document.getElementById('zoomcontainer');
+let displaySvg = document.getElementById("displaySvg");
+let outputSvg = document.getElementById("outputSvg");
+let btnUndo = document.getElementById("btnUndo");
+let btnRedo = document.getElementById("btnRedo");
 
 function getEvtPos(evt) {
-    var touchpos = evt;
+    let touchpos = evt;
     if (touchpos.clientX == undefined)
         touchpos = evt.targetTouches[0];
     return touchpos;
 }
 
 function getClickedElement(evt, className) {
-    var evtElement = evt.srcElement || evt.target;
+    let evtElement = evt.srcElement || evt.target;
     if (evtElement.classList.contains(className))
         return evtElement;
     else
@@ -53,9 +53,9 @@ function onDomContentLoaded() {
 }
 
 function configSelected(evt) {
-    var reader = new FileReader();
+    let reader = new FileReader();
     reader.onload = function (e) {
-        var data = e.target.result;
+        let data = e.target.result;
         config = parseConfig(data);
         draw();
     }
@@ -63,7 +63,7 @@ function configSelected(evt) {
 }
 
 function editName(uuid) {
-    var item = getByUuid(config, uuid);
+    let item = getByUuid(config, uuid);
     let newName = prompt('Name', item['name']);
     if (newName == undefined)
         return;
@@ -76,8 +76,8 @@ function editName(uuid) {
 
 document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
-    var close = false;
-    var menuItem = getClickedElement(evt, 'context-menu-item');
+    let close = false;
+    let menuItem = getClickedElement(evt, 'context-menu-item');
     if (menuItem) {
         evt.preventDefault();
         close = clickContextMenuItem(menuItem);
@@ -88,7 +88,7 @@ document.addEventListener('click', function (evt) {
         closeSignContextMenu();
 });
 document.addEventListener('contextmenu', function (evt) {
-    var sign = getClickedElement(evt, 'editable');
+    let sign = getClickedElement(evt, 'editable');
     if (sign) {
         evt.preventDefault();
         openSignContextMenu(evt, sign);

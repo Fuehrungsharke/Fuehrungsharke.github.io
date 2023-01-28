@@ -5,7 +5,7 @@ RemoveCmd.prototype.__proto__ = new CmdBase();
 RemoveCmd.prototype.removeSingle = function (root) {
     if (root == config) {
         if (root.with != null && Array.isArray(root.with) && root.with.length > 0) {
-            var firstWith = root.with[0];
+            let firstWith = root.with[0];
             firstWith.sub = root.sub;
             firstWith.with = root.with.filter(item => item != firstWith);
             if (firstWith.with.length == 0)
@@ -16,12 +16,12 @@ RemoveCmd.prototype.removeSingle = function (root) {
             config = root.sub;
         return;
     }
-    var source = getParentByUuid(config, root.uuid);
+    let source = getParentByUuid(config, root.uuid);
     if (source != null) {
         if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
-            var idx = source.sub.indexOf(root);
+            let idx = source.sub.indexOf(root);
             if (root.hasOwnProperty(WITH) && Array.isArray(root[WITH]) && root.with.length > 0) {
-                var firstWith = root.with[0];
+                let firstWith = root.with[0];
                 firstWith.sub = root.sub;
                 firstWith.with = root.with.filter(item => item != firstWith);
                 if (firstWith.sub.length == 0)
@@ -61,7 +61,7 @@ RemoveCmd.prototype.removeTree = function (root) {
         };
         return;
     }
-    var source = getParentByUuid(config, root.uuid);
+    let source = getParentByUuid(config, root.uuid);
     if (source != null) {
         if (source.hasOwnProperty(SUB) && Array.isArray(source[SUB])) {
             source.sub = source.sub.filter(item => item != root);
