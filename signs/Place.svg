@@ -4,6 +4,9 @@
 		<clipPath id="Place">
 			<ellipse cx="128" cy="128" rx="64" ry="64" />
 		</clipPath>
+		<clipPath id="PlaceClipTxt">
+			<rect x="85" y="96" width="86" height="64" />
+		</clipPath>
 	</defs>
 
 	<circle fill="{{colorPrimary}}" stroke="{{colorAccent}}" stroke-width="10" cx="128" cy="128" r="64" clip-path="url(#Place)" />
@@ -25,7 +28,7 @@
 	{{symbols:cx=128, cy=128, width=86, height=64}}
 	</g>
 
-	<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; dominant-baseline: central; text-anchor: middle; font-size: 32px;" fill="{{colorAccent}}">{{txt}}</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PlaceClipTxt)" fill="{{colorAccent}}" x="128" y="128">{{txt}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">{{org}}</text>
 	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200">{{spez}}</text>
 </svg>

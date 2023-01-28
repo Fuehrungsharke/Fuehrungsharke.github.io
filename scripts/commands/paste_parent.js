@@ -9,18 +9,16 @@ PasteParentCmd.prototype.isExecuteable = function () {
         return false;
     if (cachedElements == null || (Array.isArray(cachedElements) && cachedElements.length <= 0))
         return false;
-    if (Array.isArray(cachedElements) && cachedElements.length > 1)
-        return false;
-    return true;
+    return !Array.isArray(cachedElements) || cachedElements.length <= 1;
 }
 
 PasteParentCmd.prototype.execute = function () {
-    for (let i = 0; i < this.selectedElements.length; i++) {
-        var clonedElements = this.cloneCachedElements();
+    for (const selectedElement of this.selectedElements) {
+        let clonedElements = this.cloneCachedElements();
         for (let idx in clonedElements) {
             delete clonedElements[idx].sub;
             delete clonedElements[idx].with;
-            if (!this.insertParent(this.selectedElements[i], clonedElements[idx]))
+            if (!this.insertParent(selectedElement, clonedElements[idx]))
                 return false;
         }
     }

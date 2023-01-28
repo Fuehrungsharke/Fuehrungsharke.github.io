@@ -1,4 +1,4 @@
-var cachedElements = [];
+let cachedElements = [];
 
 function CopyCmd() { }
 

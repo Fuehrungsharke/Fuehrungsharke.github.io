@@ -3,9 +3,9 @@ function AddWithCmd() { }
 AddWithCmd.prototype.__proto__ = new AddCmd();
 
 AddWithCmd.prototype.execute = function () {
-    for (let i = 0; i < this.selectedElements.length; i++) {
-        var newSign = this.getNewSign(this.selectedElements[i], this.key);
-        if (!this.insertWith(this.selectedElements[i], newSign))
+    for (const selectedElement of this.selectedElements) {
+        let newSign = this.getNewSign(selectedElement, this.key);
+        if (!this.insertWith(selectedElement, newSign))
             return false;
     }
     return true;

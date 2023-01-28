@@ -13,17 +13,18 @@ Die Struktur der Führungsharke kann als `*.json`-Datei gespeichert und auch wie
 Folgende Grundzeichen können in der Führungsharke konfiguriert und über das Kontextmenü modifiziert werden:
 | Bedeutung | Zeichen |
 | --- | --- |
-| Einheit | ![Einheit](./icons/signs/unit.svg) |
-| Person | ![Person](./icons/signs/person.svg) |
-| Fahrzeug | ![Fahrzeug](./icons/signs/vehicle.svg) |
-| Befehlsstelle | ![Führungsstelle](./icons/signs/flag.svg) |
-| Gebäude | ![Gebäude](./icons/signs/building.svg) |
-| Gefahr | ![Gebäude](./icons/signs/hazard.svg) |
-| Maßnahme | ![Gebäude](./icons/signs/measure.svg) |
-| Stelle | ![Gebäude](./icons/signs/place.svg) |
-| Zweirad | ![Fahrrad](./icons/signs/bike.svg) |
+| Befehlsstelle | ![Befehlsstelle](./icons/signs/flag.svg) |
 | Boot | ![Boot](./icons/signs/boat.svg) |
+| Einheit | ![Einheit](./icons/signs/unit.svg) |
+| Fahrzeug | ![Fahrzeug](./icons/signs/vehicle.svg) |
+| Gebäude | ![Gebäude](./icons/signs/building.svg) |
+| Gefahr | ![Gefahr](./icons/signs/hazard.svg) |
+| Gerät | ![Gerät](./icons/signs/equipment.svg) |
+| Maßnahme | ![Maßnahme](./icons/signs/measure.svg) |
+| Person | ![Person](./icons/signs/person.svg) |
 | Platzhalter | ![Platzhalter](./signs/Empty.svg)<br>\[Platzhalter\] |
+| Stelle | ![Stelle](./icons/signs/place.svg) |
+| Zweirad | ![Zweirad](./icons/signs/bike.svg) |
 
 ## Bildnachweise
 | Bild | Quelle | Lizenz |

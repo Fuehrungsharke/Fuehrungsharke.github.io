@@ -6,8 +6,8 @@ const CMD = 'cmd';
 const STRING = 'string';
 const HEADER = 'header';
 
-var cachedElement = null;
-var commmands = {
+let cachedElement = null;
+let commmands = {
     'copy': new CopyCmd(),
     'add_parent': new AddParentCmd(),
     'add_sibling': new AddSibCmd(),
@@ -30,7 +30,7 @@ var commmands = {
     'decollapse': new DecollapseCmd(),
 };
 
-var currentSignMenu = null;
+let currentSignMenu = null;
 
 function getPlaceholder(name) {
     if (name == 'CustomOrgs')
@@ -39,8 +39,8 @@ function getPlaceholder(name) {
         return JSON.parse(getResource(`/menus/${name}.json`))
 }
 
-function getIcon(iconPath) {
-    var link = false;
+function getIcon(iconPath, root) {
+    let link = false;
     if (typeof iconPath == "object") {
         iconPath = iconPath.src;
         if (iconPath.link != null)
@@ -51,13 +51,13 @@ function getIcon(iconPath) {
     if (!iconPath.endsWith('.svg'))
         link = true;
     if (link) {
-        var iconImg = document.createElement('img');;
+        let iconImg = document.createElement('img');;
         iconImg.setAttribute('src', iconPath);
         return iconImg;
     }
     else if (iconPath.endsWith('.svg')) {
-        var iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        var para = {
+        let iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        let para = {
             'width': 25,
             'height': 25
         };
@@ -75,8 +75,8 @@ function getIcon(iconPath) {
         iconG.setAttribute('transform', `translate(${para.width / 2 - posOffsetX}, ${para.height / 2 - posOffsetY}) scale(${scale} ${scale})`);
         iconG.innerHTML = icon.outerHTML;
 
-        var reScaleable = /scale\:(\d+)/g;
-        var scaleable = reScaleable.exec(iconG.innerHTML);
+        let reScaleable = /scale\:(\d+)/g;
+        let scaleable = reScaleable.exec(iconG.innerHTML);
         while (scaleable) {
             iconG.innerHTML = iconG.innerHTML.slice(0, scaleable.index)
                 + (parseInt(scaleable[1]) / scale / 3).toString()
@@ -99,10 +99,10 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             else
                 return null;
     }
-    var key = attrItem.key;
-    var menuItem = document.createElement('li');
+    let key = attrItem.key;
+    let menuItem = document.createElement('li');
     menuItem.classList.add('context-menu-item');
-    var attrItems = [];
+    let attrItems = [];
 
     var icon = getIcon(attrItem.icon);
     if (icon != null)
@@ -115,7 +115,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.cmd != null) {
         menuItem.setAttribute('cmd', attrItem.cmd);
         if (attrItem.cmd in commmands) {
-            var cmdObj = commmands[attrItem.cmd];
+            let cmdObj = commmands[attrItem.cmd];
             cmdObj = Object.create(cmdObj);
             cmdObj.key = key;
             cmdObj.selectedElements = [root];
@@ -130,24 +130,24 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
         menuItem.setAttribute('key', key);
     if (parentMenuItem != null && parentMenuItem.key != null)
         key = parentMenuItem.key;
-    var content = '';
+    let content = '';
     if (root != null && root[key] != null)
         content = root[key];
     switch (attrItem.type) {
         case SUBMENU:
             menuItem.classList.add('with-submenu');
             menuItem.appendChild(document.createTextNode(`${attrItem.name}`));
-            var subMenu = document.createElement('ul');
+            let subMenu = document.createElement('ul');
             if (parentMenuItem != null && parentMenuItem.type == SUBMENU)
                 subMenu.classList.add('sub-sub-menu');
             else
                 subMenu.classList.add('sub-menu');
-            var subMenuResult = buildMenu(root, attrItem, attrItem.values);
-            var subMenuItems = subMenuResult.menuItems;
+            let subMenuResult = buildMenu(root, attrItem, attrItem.values);
+            let subMenuItems = subMenuResult.menuItems;
             if (subMenuItems.every(item => item.classList.contains('menu-item-inactive')))
                 menuItem.classList.add('menu-item-inactive');
             if (Array.isArray(attrItem.values)) {
-                var selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
+                let selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
                 if (selectedItem != null) {
                     var newIcon = getIcon(selectedItem.icon);
                     if (newIcon != null)
@@ -156,7 +156,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             }
             subMenu.replaceChildren(...subMenuItems);
             menuItem.appendChild(subMenu);
-            var clonedAttrItem = JSON.parse(JSON.stringify(attrItem));
+            let clonedAttrItem = JSON.parse(JSON.stringify(attrItem));
             clonedAttrItem.attrItems = subMenuResult.attrItems;
             attrItems.push(clonedAttrItem);
             break;
@@ -184,7 +184,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             attrItems.push(attrItem);
             break;
         case HEADER:
-            var menuItem = document.createElement('li');
+            menuItem = document.createElement('li');
             menuItem.classList.add('context-menu-header');
             menuItem.appendChild(document.createTextNode(attrItem.name));
             attrItems.push(attrItem);
@@ -197,14 +197,14 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
 }
 
 function buildMenu(root, parentMenuItem, attrMenu) {
-    var menuItems = [];
-    var attrItems = [];
+    let menuItems = [];
+    let attrItems = [];
     if (Array.isArray(attrMenu) && attrMenu.length > 0)
         for (let idx in attrMenu) {
-            var menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
+            let menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
             if (menuItemResult == null)
                 continue;
-            var menuItem = menuItemResult.menuItems;
+            let menuItem = menuItemResult.menuItems;
             if (Array.isArray(menuItem) && menuItem.length > 0)
                 menuItems = menuItems.concat(menuItem);
             else if (menuItem != null)
@@ -212,9 +212,9 @@ function buildMenu(root, parentMenuItem, attrMenu) {
             attrItems = attrItems.concat(menuItemResult.attrItems);
         }
     else {
-        var menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu);
+        let menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu);
         if (menuItemResult != null) {
-            var menuItem = menuItemResult.menuItems;
+            let menuItem = menuItemResult.menuItems;
             if (Array.isArray(menuItem) && menuItem.length > 0)
                 menuItems = menuItems.concat(menuItem);
             else
@@ -229,28 +229,28 @@ function buildMenu(root, parentMenuItem, attrMenu) {
 }
 
 function openSignContextMenu(evt, sign) {
-    var uuid = sign.getAttributeNS(null, 'uuid');
-    var root = getByUuid(config, uuid);
+    let uuid = sign.getAttributeNS(null, 'uuid');
+    let root = getByUuid(config, uuid);
 
-    var attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`))
+    let attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`))
         .concat(JSON.parse(getResource('/menus/menu_default.json')));
-    var menuResult = buildMenu(root, null, attrMenu);
+    let menuResult = buildMenu(root, null, attrMenu);
 
     currentSignMenu = menuResult.attrItems;
 
-    var menuItems = document.querySelector('.context-menu .menu');
+    let menuItems = document.querySelector('.context-menu .menu');
     menuItems.setAttribute('uuid', uuid);
     menuItems.replaceChildren(...menuResult.menuItems);
 
-    var touchpos = getEvtPos(evt);
-    var menu = document.querySelector('.context-menu');
+    let touchpos = getEvtPos(evt);
+    let menu = document.querySelector('.context-menu');
     menu.style.left = touchpos.pageX + "px";
     menu.style.top = touchpos.pageY + "px";
     menu.classList.add('context-menu-active');
 }
 
 function closeSignContextMenu() {
-    var menu = document.querySelector('.context-menu');
+    let menu = document.querySelector('.context-menu');
     menu.classList.remove('context-menu-active');
     currentSignMenu = null;
 }
@@ -263,14 +263,14 @@ function getUuidOfContextMenu(menuItem) {
 }
 
 function getAttribute(attrMenu, key, value) {
-    var attrItem = attrMenu.find(item => item[key] == value);
+    let attrItem = attrMenu.find(item => item[key] == value);
     if (attrItem != null)
         return attrItem;
 
     for (let idx in attrMenu) {
         if (attrMenu[idx].attrItems == null)
             continue;
-        var subResult = getAttribute(attrMenu[idx].attrItems, key, value);
+        let subResult = getAttribute(attrMenu[idx].attrItems, key, value);
         if (subResult != null)
             return subResult;
     }
@@ -284,7 +284,7 @@ function getParentAttribute(attrMenu, parent, child) {
 
         if (attrMenu[idx].attrItems == null)
             continue;
-        var subResult = getParentAttribute(attrMenu[idx].attrItems, attrMenu[idx], child);
+        let subResult = getParentAttribute(attrMenu[idx].attrItems, attrMenu[idx], child);
         if (subResult != null)
             return subResult;
     }
@@ -307,7 +307,7 @@ function handleImplicitAttributes(root, attr) {
 }
 
 function handleConditionalAttributes(root, attr) {
-    var match = true;
+    let match = true;
     for (let idx in attr.conditionalAttritbues.condition)
         match &= root[idx] == attr.conditionalAttritbues.condition[idx];
     if (match)
@@ -319,19 +319,19 @@ function handleConditionalAttributes(root, attr) {
 }
 
 function clickContextMenuItem(menuItem) {
-    var close = false;
-    var cmd = menuItem.getAttributeNS(null, 'cmd');
+    let close = false;
+    let cmd = menuItem.getAttributeNS(null, 'cmd');
     if (cmd == null)
         cmd = menuItem.parentElement.parentElement.getAttributeNS(null, 'cmd');
-    var key = menuItem.getAttributeNS(null, 'key');
-    var uuid = getUuidOfContextMenu(menuItem);
-    var root = getByUuid(config, uuid);
-    var selectedElements = getSelectedElements();
+    let key = menuItem.getAttributeNS(null, 'key');
+    let uuid = getUuidOfContextMenu(menuItem);
+    let root = getByUuid(config, uuid);
+    let selectedElements = getSelectedElements();
     if (selectedElements.length <= 0)
         selectedElements = [root];
 
     if (cmd in commmands) {
-        var cmdObj = commmands[cmd];
+        let cmdObj = commmands[cmd];
         cmdObj = Object.create(cmdObj);
         cmdObj.key = key;
         cmdObj.selectedElements = selectedElements;
@@ -339,7 +339,7 @@ function clickContextMenuItem(menuItem) {
             close = cmdObj.execute();
     }
     else if (currentSignMenu != null) {
-        var attr = null;
+        let attr = null;
         if (key != null && key != "undefined")
             attr = getAttribute(currentSignMenu, 'key', key);
         else if (cmd != null)
@@ -347,15 +347,15 @@ function clickContextMenuItem(menuItem) {
         if (attr == null)
             return false;
 
-        var newString = null;
+        let newString = null;
         if (attr.type == STRING) {
             newString = prompt(attr['name'], root[key]);
             if (newString == undefined)
                 return true;
         }
 
-        for (let i = 0; i < selectedElements.length; i++) {
-            root = selectedElements[i];
+        for (const selectedElement of selectedElements) {
+            root = selectedElement;
             if (key != null && key != "undefined")
                 switch (attr.type) {
                     case BOOL:
@@ -366,7 +366,7 @@ function clickContextMenuItem(menuItem) {
                         close = true;
                         break;
                     case RADIO:
-                        var parentAttr = getParentAttribute(currentSignMenu, null, attr);
+                        let parentAttr = getParentAttribute(currentSignMenu, null, attr);
                         if (parentAttr.key != null)
                             root[parentAttr.key] = attr.key;
                         else

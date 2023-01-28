@@ -3,9 +3,9 @@ function AddSibCmd() { }
 AddSibCmd.prototype.__proto__ = new AddCmd();
 
 AddSibCmd.prototype.execute = function () {
-    for (let i = 0; i < this.selectedElements.length; i++) {
-        var newSign = this.getNewSign(this.selectedElements[i], this.key);
-        if (!this.insertSibling(this.selectedElements[i], newSign))
+    for (const selectedElement of this.selectedElements) {
+        let newSign = this.getNewSign(selectedElement, this.key);
+        if (!this.insertSibling(selectedElement, newSign))
             return false;
     }
     return true;
