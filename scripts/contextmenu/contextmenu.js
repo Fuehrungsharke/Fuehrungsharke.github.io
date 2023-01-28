@@ -39,7 +39,7 @@ function getPlaceholder(name) {
         return JSON.parse(getResource(`/menus/${name}.json`))
 }
 
-function getIcon(iconPath) {
+function getIcon(iconPath, root) {
     var link = false;
     if (typeof iconPath == "object") {
         iconPath = iconPath.src;
@@ -61,10 +61,17 @@ function getIcon(iconPath) {
             'width': 25,
             'height': 25
         };
-        var iconSvgText = getSign({
-            'sign': iconPath,
-            'colorAccent': '#000'
-        });
+        let iconPara = JSON.parse(JSON.stringify(root));
+        iconPara.sign = iconPath;
+        delete iconPara.txt;
+        delete iconPara.org;
+        delete iconPara.spez;
+        for (const key in iconPara)
+            if (key.startsWith('symbols'))
+                delete iconPara[key];
+        iconPara.colorPrimary = '#FFF';
+        iconPara.colorAccent = '#000';
+        var iconSvgText = getSign(iconPara);
         var icon = new DOMParser().parseFromString(iconSvgText, "text/xml").getElementsByTagName("svg")[0];
         var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
         var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
@@ -104,7 +111,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     var attrItems = [];
 
-    var icon = getIcon(attrItem.icon);
+    var icon = getIcon(attrItem.icon, root);
     if (icon != null)
         menuItem.appendChild(icon);
 
@@ -149,7 +156,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             if (Array.isArray(attrItem.values)) {
                 var selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
                 if (selectedItem != null) {
-                    var newIcon = getIcon(selectedItem.icon);
+                    var newIcon = getIcon(selectedItem.icon, root);
                     if (newIcon != null)
                         menuItem.replaceChild(newIcon, icon);
                 }
@@ -170,7 +177,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 }
                 else {
                     menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
-                    var newIcon = getIcon(attrItem.iconInverted);
+                    var newIcon = getIcon(attrItem.iconInverted, root);
                     if (newIcon != null)
                         menuItem.replaceChild(newIcon, icon);
                 }
