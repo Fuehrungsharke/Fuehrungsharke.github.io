@@ -1,9 +1,10 @@
 let resCache = {};
 
 async function getResourceAsync(path) {
-    return new Promise(function (resolve, reject) {
-        if (path in resCache)
-            return resolve(resCache[path]);
+    if (path in resCache)
+        return resCache[path];
+    resCache[path] = new Promise((resolve, reject) => {
+        console.log(path);
         let req = new XMLHttpRequest();
         req.onload = () => {
             resCache[path] = req.responseText;
@@ -13,6 +14,7 @@ async function getResourceAsync(path) {
         req.open('GET', path);
         req.send();
     });
+    return resCache[path];
 }
 
 function download(content, type, filename) {
