@@ -389,3 +389,11 @@ let EL = {
 let config = [
     EL
 ];
+
+config = {
+    "name": "Dummy",
+    "sign": "Person",
+    "txt": "X",
+    "colorPrimary": "#FFF",
+    "colorAccent": "#000",
+};
