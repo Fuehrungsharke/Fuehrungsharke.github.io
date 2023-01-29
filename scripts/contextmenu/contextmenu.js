@@ -32,14 +32,14 @@ let commmands = {
 
 let currentSignMenu = null;
 
-function getPlaceholder(name) {
+async function getPlaceholder(name) {
     if (name == 'CustomOrgs')
         return customOrgs;
     else
-        return JSON.parse(getResource(`/menus/${name}.json`))
+        return JSON.parse(await getResourceAsync(`/menus/${name}.json`))
 }
 
-function getIcon(iconPath, root) {
+async function getIcon(iconPath, root) {
     let link = false;
     if (typeof iconPath == "object") {
         iconPath = iconPath.src;
@@ -61,17 +61,17 @@ function getIcon(iconPath, root) {
             'width': 25,
             'height': 25
         };
-        var iconSvgText = getSign({
+        let iconSvgText = await getSign({
             'sign': iconPath,
             'colorAccent': '#000'
         });
-        var icon = new DOMParser().parseFromString(iconSvgText, "text/xml").getElementsByTagName("svg")[0];
-        var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
-        var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
-        var scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;
-        var posOffsetX = symbolWidth * scale / 2;
-        var posOffsetY = symbolHeight * scale / 2;
-        var iconG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        let icon = new DOMParser().parseFromString(iconSvgText, "text/xml").getElementsByTagName("svg")[0];
+        let symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
+        let symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
+        let scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;
+        let posOffsetX = symbolWidth * scale / 2;
+        let posOffsetY = symbolHeight * scale / 2;
+        let iconG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         iconG.setAttribute('transform', `translate(${para.width / 2 - posOffsetX}, ${para.height / 2 - posOffsetY}) scale(${scale} ${scale})`);
         iconG.innerHTML = icon.outerHTML;
 
@@ -90,23 +90,20 @@ function getIcon(iconPath, root) {
     return null;
 }
 
-function buildMenuItem(root, parentMenuItem, attrItem) {
+async function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
-        attrItem = getPlaceholder(attrItem.name);
+        attrItem = await getPlaceholder(attrItem.name);
         if (Array.isArray(attrItem))
             if (attrItem.length > 0)
                 return buildMenu(root, parentMenuItem, attrItem);
             else
                 return null;
     }
+    let menuItemChildrenPromises = [getIcon(attrItem.icon)];
     let key = attrItem.key;
     let menuItem = document.createElement('li');
     menuItem.classList.add('context-menu-item');
     let attrItems = [];
-
-    var icon = getIcon(attrItem.icon);
-    if (icon != null)
-        menuItem.appendChild(icon);
 
     if (attrItem.styles != null)
         for (let idx in attrItem.styles)
@@ -136,26 +133,25 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     switch (attrItem.type) {
         case SUBMENU:
             menuItem.classList.add('with-submenu');
-            menuItem.appendChild(document.createTextNode(`${attrItem.name}`));
+            menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(`${attrItem.name}`)));
             let subMenu = document.createElement('ul');
             if (parentMenuItem != null && parentMenuItem.type == SUBMENU)
                 subMenu.classList.add('sub-sub-menu');
             else
                 subMenu.classList.add('sub-menu');
-            let subMenuResult = buildMenu(root, attrItem, attrItem.values);
+            let subMenuResult = await buildMenu(root, attrItem, attrItem.values);
             let subMenuItems = subMenuResult.menuItems;
             if (subMenuItems.every(item => item.classList.contains('menu-item-inactive')))
                 menuItem.classList.add('menu-item-inactive');
             if (Array.isArray(attrItem.values)) {
                 let selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
                 if (selectedItem != null) {
-                    var newIcon = getIcon(selectedItem.icon);
-                    if (newIcon != null)
-                        menuItem.replaceChild(newIcon, icon);
+                    let newIcon = getIcon(selectedItem.icon);
+                    menuItemChildrenPromises[0] = newIcon;
                 }
             }
             subMenu.replaceChildren(...subMenuItems);
-            menuItem.appendChild(subMenu);
+            menuItemChildrenPromises.push(Promise.resolve(subMenu));
             let clonedAttrItem = JSON.parse(JSON.stringify(attrItem));
             clonedAttrItem.attrItems = subMenuResult.attrItems;
             attrItems.push(clonedAttrItem);
@@ -166,53 +162,59 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             if (content == true || content == attrItem.key) {
                 if (attrItem.nameInverted == null) {
                     menuItem.classList.add('menu-item-selected');
-                    menuItem.appendChild(document.createTextNode(attrItem.name));
+                    menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(attrItem.name)));
                 }
                 else {
-                    menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
-                    var newIcon = getIcon(attrItem.iconInverted);
-                    if (newIcon != null)
-                        menuItem.replaceChild(newIcon, icon);
+                    menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(attrItem.nameInverted)));
+                    let newIcon = getIcon(attrItem.iconInverted);
+                    menuItemChildrenPromises[0] = newIcon;
                 }
             }
             else
-                menuItem.appendChild(document.createTextNode(attrItem.name));
+                menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(attrItem.name)));
             attrItems.push(attrItem);
             break;
         case STRING:
-            menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
+            menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(`\t${attrItem.name}: ${content}`)));
             attrItems.push(attrItem);
             break;
         case HEADER:
             menuItem = document.createElement('li');
             menuItem.classList.add('context-menu-header');
-            menuItem.appendChild(document.createTextNode(attrItem.name));
+            menuItemChildrenPromises = [Promise.resolve(document.createTextNode(attrItem.name))];
             attrItems.push(attrItem);
             break;
     }
+
+    let menuItemChildren = await Promise.all(menuItemChildrenPromises);
+    for (let idx in menuItemChildren)
+        menuItem.appendChild(menuItemChildren[idx]);
+
     return {
         'menuItems': menuItem,
         'attrItems': attrItems,
     };
 }
 
-function buildMenu(root, parentMenuItem, attrMenu) {
+async function buildMenu(root, parentMenuItem, attrMenu) {
     let menuItems = [];
     let attrItems = [];
-    if (Array.isArray(attrMenu) && attrMenu.length > 0)
-        for (let idx in attrMenu) {
-            let menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
-            if (menuItemResult == null)
+    if (Array.isArray(attrMenu) && attrMenu.length > 0) {
+        let menuPromises = attrMenu.map(item => buildMenuItem(root, parentMenuItem, item));
+        let menuItemResults = await Promise.all(menuPromises);
+        for (let idx in menuItemResults) {
+            if (menuItemResults[idx] == null)
                 continue;
-            let menuItem = menuItemResult.menuItems;
+            let menuItem = menuItemResults[idx].menuItems;
             if (Array.isArray(menuItem) && menuItem.length > 0)
                 menuItems = menuItems.concat(menuItem);
             else if (menuItem != null)
                 menuItems.push(menuItem);
-            attrItems = attrItems.concat(menuItemResult.attrItems);
+            attrItems = attrItems.concat(menuItemResults[idx].attrItems);
         }
+    }
     else {
-        let menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu);
+        let menuItemResult = await buildMenuItem(root, parentMenuItem, attrMenu);
         if (menuItemResult != null) {
             let menuItem = menuItemResult.menuItems;
             if (Array.isArray(menuItem) && menuItem.length > 0)
@@ -228,13 +230,13 @@ function buildMenu(root, parentMenuItem, attrMenu) {
     };
 }
 
-function openSignContextMenu(evt, sign) {
+async function openSignContextMenu(evt, sign) {
     let uuid = sign.getAttributeNS(null, 'uuid');
     let root = getByUuid(config, uuid);
 
-    let attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`))
-        .concat(JSON.parse(getResource('/menus/menu_default.json')));
-    let menuResult = buildMenu(root, null, attrMenu);
+    let attrMenu = JSON.parse(await getResourceAsync(`/menus/${root.sign}.json`))
+        .concat(JSON.parse(await getResourceAsync('/menus/menu_default.json')));
+    let menuResult = await buildMenu(root, null, attrMenu);
 
     currentSignMenu = menuResult.attrItems;
 

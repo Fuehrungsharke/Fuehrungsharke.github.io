@@ -27,220 +27,104 @@ function parseCsv(strData, strDelimiter) {
     return (arrData);
 }
 
-function buildParentUnit(fullName, text, ordinal) {
-    let parent = {
-        'fullName': fullName,
-        'sign': 'Unit',
-        "colorPrimary": "#039",
-        "colorAccent": "#FFF",
-        "org": "THW",
-        'txt': text,
-        "show_staff": true,
-        "layout": "row-right-below"
-    };
-    if (parent.fullName == 'OV-Stab')
-        parent.leading = true;
-    if (ordinal != null)
-        parent.ordinal = ordinal;
-    if (text != null && (text == 'TZ' || text.startsWith('FZ')))
-        parent.platoon = true;
-    return parent;
-}
-
-function parseUnit(units, unitName) {
-    let matches = /(((\d+). )?([\wäöüÄÖÜ\ \+\-]+))(\/([\wäöüÄÖÜ\+\-]+)(\ ([\wäöüÄÖÜ\+]+([\-\ ]([\wäöüÄÖÜ\+]+))?))?(\ \((\w+)\))?)?/g.exec(unitName);
-    let unit = {
-        'fullName': matches[0],
-        'sign': 'Unit',
-        "colorPrimary": "#039",
-        "colorAccent": "#FFF",
-        "org": "THW",
-        "show_staff": true,
-        "layout": "row-right"
-    };
-    let parent = null;
-    if (matches[1] != null) {
-        parent = units.find(u => u.fullName == matches[1]);
-        if (parent == null) {
-            parent = buildParentUnit(matches[1], matches[4], matches[3]);
-            units.push(parent);
+function visitArray(unitPattern, root, prop, req) {
+    if (!Array.isArray(root[prop]))
+        return null;
+    let presetResult = null;
+    for (const item of root[prop]) {
+        let nodeResult = visitNode(unitPattern, item, req);
+        if (nodeResult != null) {
+            if (nodeResult.name == null)
+                return nodeResult;
+            presetResult = nodeResult;
         }
-        else
-            parent.layout = "list-right-below";
-        unit.parent = parent.fullName;
     }
-    if (matches[5] == null)
+    if (presetResult != null) {
+        let reserve = JSON.parse(JSON.stringify(presetResult));
+        delete reserve.name;
+        root[prop].push(reserve);
+        return reserve;
+    }
+    return null;
+}
+
+function visitNode(unitPattern, root, req) {
+    if (unitPattern != null && root.FuncPattern != null) {
+        let rgxUnit = new RegExp(unitPattern);
+        let rgxFunc = new RegExp(root.FuncPattern);
+        if (rgxUnit.test(req.unitName)
+            && rgxFunc.test(req.funcName))
+            return root;
+    }
+    unitPattern = root.UnitPattern ?? unitPattern;
+    let subResult = visitArray(unitPattern, root, 'sub', req);
+    if (subResult != null)
+        return subResult;
+    let withResult = visitArray(unitPattern, root, 'with', req);
+    if (withResult != null)
+        return withResult;
+    return null;
+}
+
+function parseRow(ov, row) {
+    let unitName = row[4] ?? '';
+    let funcName = row[5] ?? '';
+    let res = visitNode(null, ov, {
+        "unitName": unitName,
+        "funcName": funcName
+    });
+    if (res == null)
+        return;
+    let lastName = row[0];
+    let firstName = row[1];
+    res.name = `${lastName}, ${firstName}`;
+    res.inactive = row[3] != 'J';
+    return res;
+}
+
+function setUnassignedInactive(root) {
+    if (root.sign == 'Person') {
+        if (root.name == null || root.name == '')
+            root.inactive = true;
+    }
+
+    if (Array.isArray(root.sub))
+        for (const item of root.sub)
+            setUnassignedInactive(item);
+    if (Array.isArray(root.with))
+        for (const item of root.with)
+            setUnassignedInactive(item);
+}
+
+function removeEmptyUnits(parent, prop, root) {
+    if (root == null)
         return;
 
-    if (matches[6] != null && matches[6] != 'FGr')
-        unit.txt = matches[6];
-    else if (matches[8] != null)
-        unit.txt = matches[8];
-    if (matches[6] == 'ZTr')
-        unit.platoontroop = true;
-    else if (matches[6] == 'FGr' || matches[6] == 'B')
-        unit.group = true;
-    else if (matches[6].endsWith('Tr'))
-        unit.troop = true;
-    if (matches[10] != null)
-        unit.short = matches[10];
-    if (matches[12] != null)
-        unit.spez = matches[12];
-
-    if (parent != null) {
-        if (parent.sub == null)
-            parent.sub = []
-        parent.sub.push(unit);
+    if (root.sign == 'Unit') {
+        if (!root.show_staff && parent[prop] != null)
+            parent[prop] = parent[prop].filter(item => item != root);
     }
-    units.push(unit);
+
+    if (Array.isArray(root.sub))
+        for (const item of root.sub)
+            removeEmptyUnits(root, 'sub', item);
+    if (Array.isArray(root.with))
+        for (const item of root.with)
+            removeEmptyUnits(root, 'with', item);
 }
 
-function parseUnits(unitNames) {
-    let units = [];
-    for (let idx in unitNames) {
-        if (unitNames[idx] == null)
-            continue;
-        parseUnit(units, unitNames[idx]);
-    }
-    return units;
-}
-
-function setFuncAttributes(person, func) {
-    if (func == null)
-        return person;
-
-    if (func.includes('stv. Ortsbeauftragte')) {
-        person.specialist = true;
-        person.txt = 'stv. OB';
-        return person;
-    }
-
-    if (func.includes('Ortsbeauftragte')) {
-        person.leading = true;
-        person.txt = 'OB';
-        return person;
-    }
-
-    if (func.includes('Ausbildungsbeauftragte')) {
-        person.specialist = true;
-        person.txt = 'AB';
-        return person;
-    }
-
-    if (func.includes('Fachberater')) {
-        person.specialist = true;
-        person.txt = 'FaBe';
-        return person;
-    }
-
-    if (func.includes('Schirrmeister')) {
-        person.specialist = true;
-        person.txt = 'SM';
-        return person;
-    }
-
-    if (func.includes('stv. Ortsjugendbeauftragte')) {
-        person.specialist = true;
-        person.txt = 'stv. OJB';
-        return person;
-    }
-
-    if (func.includes('Ortsjugendbeauftragte')) {
-        person.specialist = true;
-        person.txt = 'OJB';
-        return person;
-    }
-
-    if (func.includes('Verwaltungsbeauftragte')) {
-        person.specialist = true;
-        person.txt = 'VwBe';
-        return person;
-    }
-
-    if (func.includes('Beauftragte/r für Öffentlichkeitsarbeit')) {
-        person.specialist = true;
-        person.txt = 'BÖ';
-        return person;
-    }
-
-    if (func.includes('Koch')) {
-        person.specialist = true;
-        person.txt = 'Koch';
-        return person;
-    }
-
-    if (func.includes('Zugführer')) {
-        person.leading = true;
-        person.platoon = true;
-        return person;
-    }
-
-    if (func.includes('Zugtruppführer')) {
-        person.leading = true;
-        person.platoontroop = true;
-        return person;
-    }
-
-    if (func.includes('Gruppenführer')) {
-        person.leading = true;
-        person.group = true;
-        return person;
-    }
-
-    if (func.includes('Truppführer')) {
-        person.leading = true;
-        person.troop = true;
-        return person;
-    }
-
-    if (func.includes('Sachgebietsleiter')) {
-        person.leading = true;
-        person.txt = 'SGL';
-        return person;
-    }
-
-    if (func.includes('Helferanwärter')) {
-        person.txt = 'HeAnw';
-        return person;
-    }
-
-    return person;
-}
-
-function parsePerson(columns, units) {
-    let isQualified = columns[3] == 'J'
-    let func = columns[5];
-    let unit = units.find(u => u.fullName == columns[4]);
-    return setFuncAttributes({
-        'sign': 'Person',
-        'colorPrimary': '#039',
-        'colorAccent': '#FFF',
-        'org': 'THW',
-        'txt': unit.short != null ? unit.short : unit.txt,
-        'name': `${columns[0]}, ${columns[1]}`,
-        'inactive': !isQualified
-    }, func);
-}
-
-function parseRow(units, row) {
-    let userUnit = units.find(u => u.fullName == row[4]);
-    if (userUnit == null || !Array.isArray(row) || row.length <= 5)
-        return;
-
-    let person = parsePerson(row, units);
-    if (person.platoon || person.group) {
-        if (userUnit.with == null)
-            userUnit.with = [];
-        userUnit.with.push(person);
-        return;
-    }
-
-    if (userUnit.sub == null)
-        userUnit.sub = [];
-    if (person.platoontroop || person.troop)
-        userUnit.sub.splice(0, 0, person);
-    else
-        userUnit.sub.push(person);
+function initUnitWithPerson(root, UnitName, FuncPattern, txt) {
+    let GAGr = findFuncInSubOrWith(root, UnitName, null);
+    GAGr.sub = [
+        {
+            "sign": "Person",
+            "txt": txt,
+            "colorPrimary": "#003399",
+            "colorAccent": "#FFFFFF",
+            "org": "THW",
+            "FuncPattern": FuncPattern
+        }
+    ];
 }
 
 function parseConfig(data) {
@@ -260,27 +144,15 @@ function parseConfig(data) {
     let rows = parseCsv(dataCsv, ';').splice(1);
     if (!Array.isArray(rows[0]))
         return null;
-    let ov = {
-        "sign": "Building",
-        "colorPrimary": "#039",
-        "colorAccent": "#FFF",
-        "org": "THW",
-        "txt": "OMST",
-        "show_staff": true,
-        "layout": "center-below"
-    };
-    let units = parseUnits([...new Set(rows.map(r => r[4]))]);
-    units.push({
-        'fullName': undefined,
-        'sign': 'Unit',
-        'txt': '?',
-        "colorPrimary": "#039",
-        "colorAccent": "#FFF",
-        "org": "THW",
-        "layout": "row-right-below"
-    });
-    ov.sub = units.filter(u => u.parent == null);
-    for (let idx in rows)
-        parseRow(units, rows[idx]);
-    return ov;
+
+    let OV = JSON.parse(JSON.stringify(StAN_OV));
+    // initUnitWithPerson(OV, '0. GAGr', 'Helferanwärter\/in', 'HeAnw');
+    // initUnitWithPerson(OV, '', '', '');
+    for (const row of rows)
+        parseRow(OV, row);
+
+    setUnassignedInactive(OV);
+    // removeEmptyUnits(null, null, OV);
+
+    return OV;
 }
