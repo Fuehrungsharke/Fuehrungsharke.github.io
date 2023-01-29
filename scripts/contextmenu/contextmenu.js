@@ -61,17 +61,17 @@ function getIcon(iconPath, root) {
             'width': 25,
             'height': 25
         };
-        var iconSvgText = getSign({
+        let iconSvgText = getSign({
             'sign': iconPath,
             'colorAccent': '#000'
         });
-        var icon = new DOMParser().parseFromString(iconSvgText, "text/xml").getElementsByTagName("svg")[0];
-        var symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
-        var symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
-        var scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;
-        var posOffsetX = symbolWidth * scale / 2;
-        var posOffsetY = symbolHeight * scale / 2;
-        var iconG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        let icon = new DOMParser().parseFromString(iconSvgText, "text/xml").getElementsByTagName("svg")[0];
+        let symbolWidth = parseInt(icon.getAttributeNS(null, 'width'));
+        let symbolHeight = parseInt(icon.getAttributeNS(null, 'height'));
+        let scale = Math.floor(Math.min(para.width / symbolWidth, para.height / symbolHeight) * 100) / 100;
+        let posOffsetX = symbolWidth * scale / 2;
+        let posOffsetY = symbolHeight * scale / 2;
+        let iconG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         iconG.setAttribute('transform', `translate(${para.width / 2 - posOffsetX}, ${para.height / 2 - posOffsetY}) scale(${scale} ${scale})`);
         iconG.innerHTML = icon.outerHTML;
 
@@ -104,7 +104,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     let attrItems = [];
 
-    var icon = getIcon(attrItem.icon);
+    let icon = getIcon(attrItem.icon);
     if (icon != null)
         menuItem.appendChild(icon);
 

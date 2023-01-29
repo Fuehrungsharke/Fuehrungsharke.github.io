@@ -1,4 +1,5 @@
 let resCache = {};
+
 function getResource(path) {
     if (path in resCache)
         return resCache[path];
@@ -7,6 +8,21 @@ function getResource(path) {
     req.send();
     resCache[path] = req.responseText;
     return resCache[path];
+}
+
+async function getResourceAsync(path) {
+    return new Promise(function (resolve, reject) {
+        if (path in resCache)
+            return resolve(resCache[path]);
+        let req = new XMLHttpRequest();
+        req.onload = () => {
+            resCache[path] = req.responseText;
+            resolve(resCache[path]);
+        };
+        req.onerror = () => reject(req.response);
+        req.open('GET', path);
+        req.send();
+    });
 }
 
 function download(content, type, filename) {
