@@ -99,14 +99,11 @@ async function buildMenuItem(root, parentMenuItem, attrItem) {
             else
                 return null;
     }
+    let menuItemChildrenPromises = [getIcon(attrItem.icon)];
     let key = attrItem.key;
     let menuItem = document.createElement('li');
     menuItem.classList.add('context-menu-item');
     let attrItems = [];
-
-    let icon = await getIcon(attrItem.icon);
-    if (icon != null)
-        menuItem.appendChild(icon);
 
     if (attrItem.styles != null)
         for (let idx in attrItem.styles)
@@ -136,7 +133,7 @@ async function buildMenuItem(root, parentMenuItem, attrItem) {
     switch (attrItem.type) {
         case SUBMENU:
             menuItem.classList.add('with-submenu');
-            menuItem.appendChild(document.createTextNode(`${attrItem.name}`));
+            menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(`${attrItem.name}`)));
             let subMenu = document.createElement('ul');
             if (parentMenuItem != null && parentMenuItem.type == SUBMENU)
                 subMenu.classList.add('sub-sub-menu');
@@ -149,13 +146,12 @@ async function buildMenuItem(root, parentMenuItem, attrItem) {
             if (Array.isArray(attrItem.values)) {
                 let selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
                 if (selectedItem != null) {
-                    let newIcon = await getIcon(selectedItem.icon);
-                    if (newIcon != null)
-                        menuItem.replaceChild(newIcon, icon);
+                    let newIcon = getIcon(selectedItem.icon);
+                    menuItemChildrenPromises[0] = newIcon;
                 }
             }
             subMenu.replaceChildren(...subMenuItems);
-            menuItem.appendChild(subMenu);
+            menuItemChildrenPromises.push(Promise.resolve(subMenu));
             let clonedAttrItem = JSON.parse(JSON.stringify(attrItem));
             clonedAttrItem.attrItems = subMenuResult.attrItems;
             attrItems.push(clonedAttrItem);
@@ -166,30 +162,34 @@ async function buildMenuItem(root, parentMenuItem, attrItem) {
             if (content == true || content == attrItem.key) {
                 if (attrItem.nameInverted == null) {
                     menuItem.classList.add('menu-item-selected');
-                    menuItem.appendChild(document.createTextNode(attrItem.name));
+                    menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(attrItem.name)));
                 }
                 else {
-                    menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
-                    let newIcon = await getIcon(attrItem.iconInverted);
-                    if (newIcon != null)
-                        menuItem.replaceChild(newIcon, icon);
+                    menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(attrItem.nameInverted)));
+                    let newIcon = getIcon(attrItem.iconInverted);
+                    menuItemChildrenPromises[0] = newIcon;
                 }
             }
             else
-                menuItem.appendChild(document.createTextNode(attrItem.name));
+                menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(attrItem.name)));
             attrItems.push(attrItem);
             break;
         case STRING:
-            menuItem.appendChild(document.createTextNode(`\t${attrItem.name}: ${content}`));
+            menuItemChildrenPromises.push(Promise.resolve(document.createTextNode(`\t${attrItem.name}: ${content}`)));
             attrItems.push(attrItem);
             break;
         case HEADER:
             menuItem = document.createElement('li');
             menuItem.classList.add('context-menu-header');
-            menuItem.appendChild(document.createTextNode(attrItem.name));
+            menuItemChildrenPromises = [Promise.resolve(document.createTextNode(attrItem.name))];
             attrItems.push(attrItem);
             break;
     }
+
+    let menuItemChildren = await Promise.all(menuItemChildrenPromises);
+    for (let idx in menuItemChildren)
+        menuItem.appendChild(menuItemChildren[idx]);
+
     return {
         'menuItems': menuItem,
         'attrItems': attrItems,
