@@ -149,7 +149,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
             if (Array.isArray(attrItem.values)) {
                 let selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
                 if (selectedItem != null) {
-                    var newIcon = getIcon(selectedItem.icon);
+                    let newIcon = getIcon(selectedItem.icon);
                     if (newIcon != null)
                         menuItem.replaceChild(newIcon, icon);
                 }
@@ -170,7 +170,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 }
                 else {
                     menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
-                    var newIcon = getIcon(attrItem.iconInverted);
+                    let newIcon = getIcon(attrItem.iconInverted);
                     if (newIcon != null)
                         menuItem.replaceChild(newIcon, icon);
                 }
