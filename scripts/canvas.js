@@ -127,26 +127,59 @@ function getSign(root) {
     return svg.replace(/((\r\n|\n|\r)\s)*(\r\n|\n|\r)/gm, '\r\n');
 }
 
-function adjustTextSize(sign, item) {
-    let clipPathName = item.getAttribute('clip-path');
+function getClipPathOfElement(sign, element) {
+    let clipPathName = element.getAttribute('clip-path');
     if (clipPathName == null)
-        return;
+        return null;
     let res = /url\(\#(\w+)\)/.exec(clipPathName);
     if (res.length != 2)
+        return null;
+    return sign.getElementById(res[1]);
+}
+
+function splitText(sign, element) {
+    let textParts = element.textContent.split(', ');
+    if (textParts.length <= 1)
         return;
-    let clipBBox = sign.getElementById(res[1])?.firstElementChild?.getBBox();
-    let bbox = item.getBBox();
-    let style = item.getAttribute('style');
+    let clipPath = getClipPathOfElement(sign, element);
+    let orgRect = clipPath?.firstElementChild;
+    let orgHeight = parseInt(orgRect.getAttribute('height'));
+    let orgRectY = parseInt(orgRect.getAttribute('y'));
+    let textLines = '';
+    for (let i = 0; i < textParts.length; i++) {
+        let partHeight = orgHeight / textParts.length;
+        let top = orgRectY + i * partHeight;
+        let clonedClipPath = clipPath.cloneNode();
+        let clipPathId = `${clonedClipPath.getAttribute('id')}${i + 1}`;
+        clonedClipPath.setAttribute('id', clipPathId);
+        let clonedText = element.cloneNode();
+        clonedText.setAttribute('clip-path', `url(#${clipPathId})`);
+        clonedText.setAttribute('y', top + partHeight / 2);
+        clonedText.textContent = textParts[i];
+        textLines = textLines.concat(clonedText.outerHTML);
+        let clonedRect = orgRect.cloneNode();
+        clonedRect.setAttribute('height', orgHeight / textParts.length);
+        clonedRect.setAttribute('y', top);
+        clonedClipPath.appendChild(clonedRect);
+        clipPath.parentElement.appendChild(clonedClipPath);
+    }
+    sign.innerHTML = sign.innerHTML.replace(element.outerHTML, textLines);
+}
+
+function adjustTextSize(sign, element) {
+    let clipBBox = getClipPathOfElement(sign, element)?.firstElementChild?.getBBox();
+    let bbox = element.getBBox();
+    let style = element.getAttribute('style');
     if (style == null)
         return;
     let fontsizePattern = /font\-size\:\s*(\d+)(\w+)/g;
     let fontsize = fontsizePattern.exec(style);
-    if (fontsize.length != 3)
+    if (fontsize?.length != 3)
         return;
     for (let i = 0; i < 1000 && fontsize[1] > 1 && (bbox.width >= clipBBox.width || bbox.height >= clipBBox.height); i++) {
         style = style.replace(fontsizePattern, `font-size: ${--fontsize[1]}${fontsize[2]}`);
-        item.setAttribute('style', style);
-        bbox = item.getBBox();
+        element.setAttribute('style', style);
+        bbox = element.getBBox();
     }
 }
 
@@ -165,25 +198,10 @@ function getSignSvg(root, uuid, x, y, inactiveInherited) {
     sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
     sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
 
-    for (const item of sign.getElementsByTagName('text')) {
-        let textParts = item.textContent.split(', ');
-        if (textParts.length <= 1)
-        continue;
-        let textLines = [];
-        for (let textPart of textParts) {
-            let clone = item.cloneNode();
-            clone.textContent = textPart;
-            textLines.push(clone);
-        }
-        let idx = Array.prototype.indexOf.call(sign.childNodes, item);
-        let newArr = Array.prototype.splice(idx, 1, textLines);
-        // TODO
-        // for (const line of textLines) {
-        //     sign.appendChild(line);
-        // }
-    }
-    for (const item of sign.getElementsByTagName('text'))
-        adjustTextSize(sign, item);
+    for (const element of sign.getElementsByTagName('text'))
+        splitText(sign, element);
+    for (const element of sign.getElementsByTagName('text'))
+        adjustTextSize(sign, element);
 
     signSvg.innerHTML = sign.outerHTML;
     return signSvg;

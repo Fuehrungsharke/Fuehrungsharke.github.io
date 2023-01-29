@@ -2619,7 +2619,7 @@ let StAN_TZ_WP_A = {
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
                     "org": "THW",
-                    "txt": "SwPu 5.000l/min",
+                    "txt": "SwPu, 5.000 l/min",
                     "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (5.000 l/min)",
                     "trailer": true
                 }
@@ -2756,7 +2756,7 @@ let StAN_TZ_WP_B = {
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
                     "org": "THW",
-                    "txt": "SwPu 15.000l/min",
+                    "txt": "SwPu, 15.000 l/min",
                     "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (15.000 l/min)",
                     "trailer": true
                 }
@@ -2893,7 +2893,7 @@ let StAN_TZ_WP_C = {
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
                     "org": "THW",
-                    "txt": "SwPu 25.000l/min",
+                    "txt": "SwPu, 25.000 l/min",
                     "name": "Anhänger, mit Schmutzwasser-, Kreiselpumpe, (25.000 l/min)",
                     "trailer": true
                 }
@@ -3080,7 +3080,7 @@ let StAN_TZ_OEL_A = {
                     "org": "THW",
                     "name": "Abrollbehälter, Separationsanlage, (160 m³/h)",
                     "swapbody": true,
-                    "txt": "SepCon, 160m³/h"
+                    "txt": "SepCon, 160 m³/h"
                 }
             ]
         },
@@ -3454,7 +3454,7 @@ let StAN_TZ_OEL_C = {
                     "org": "THW",
                     "name": "Abrollbehälter, Separationsanlage, (40 m³/h)",
                     "swapbody": true,
-                    "txt": "SepCon, 40m³/h"
+                    "txt": "SepCon, 40 m³/h"
                 }
             ]
         },
