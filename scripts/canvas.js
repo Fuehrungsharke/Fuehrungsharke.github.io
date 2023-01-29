@@ -61,7 +61,7 @@ async function getSign(root) {
         let keyName = matchesGroup[1];
         let symbolName = matchesGroup[2];
 
-        let innerSvg = new DOMParser().parseFromString(getResource(`/${keyName}/${symbolName}.svg`), "text/xml").getElementsByTagName("svg")[0];
+        let innerSvg = new DOMParser().parseFromString(await getResourceAsync(`/${keyName}/${symbolName}.svg`), "text/xml").getElementsByTagName("svg")[0];
         let innerG = document.createElement('g');
         innerG.innerHTML = innerSvg.outerHTML;
 

@@ -1,15 +1,5 @@
 let resCache = {};
 
-function getResource(path) {
-    if (path in resCache)
-        return resCache[path];
-    let req = new XMLHttpRequest();
-    req.open('GET', path, false);
-    req.send();
-    resCache[path] = req.responseText;
-    return resCache[path];
-}
-
 async function getResourceAsync(path) {
     return new Promise(function (resolve, reject) {
         if (path in resCache)

@@ -32,11 +32,11 @@ let commmands = {
 
 let currentSignMenu = null;
 
-function getPlaceholder(name) {
+async function getPlaceholder(name) {
     if (name == 'CustomOrgs')
         return customOrgs;
     else
-        return JSON.parse(getResource(`/menus/${name}.json`))
+        return JSON.parse(await getResourceAsync(`/menus/${name}.json`))
 }
 
 async function getIcon(iconPath, root) {
@@ -92,7 +92,7 @@ async function getIcon(iconPath, root) {
 
 async function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
-        attrItem = getPlaceholder(attrItem.name);
+        attrItem = await getPlaceholder(attrItem.name);
         if (Array.isArray(attrItem))
             if (attrItem.length > 0)
                 return buildMenu(root, parentMenuItem, attrItem);
@@ -232,8 +232,8 @@ async function openSignContextMenu(evt, sign) {
     let uuid = sign.getAttributeNS(null, 'uuid');
     let root = getByUuid(config, uuid);
 
-    let attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`))
-        .concat(JSON.parse(getResource('/menus/menu_default.json')));
+    let attrMenu = JSON.parse(await getResourceAsync(`/menus/${root.sign}.json`))
+        .concat(JSON.parse(await getResourceAsync('/menus/menu_default.json')));
     let menuResult = await buildMenu(root, null, attrMenu);
 
     currentSignMenu = menuResult.attrItems;
