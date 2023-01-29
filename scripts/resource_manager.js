@@ -6,10 +6,7 @@ async function getResourceAsync(path) {
     resCache[path] = new Promise((resolve, reject) => {
         console.log(path);
         let req = new XMLHttpRequest();
-        req.onload = () => {
-            resCache[path] = req.responseText;
-            resolve(resCache[path]);
-        };
+        req.onload = () => resolve(req.responseText);
         req.onerror = () => reject(req.response);
         req.open('GET', path);
         req.send();
