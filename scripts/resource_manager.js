@@ -4,7 +4,6 @@ async function getResourceAsync(path) {
     if (path in resCache)
         return resCache[path];
     resCache[path] = new Promise((resolve, reject) => {
-        console.log(path);
         let req = new XMLHttpRequest();
         req.onload = () => resolve(req.responseText);
         req.onerror = () => reject(req.response);
