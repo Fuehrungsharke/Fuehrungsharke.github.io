@@ -39,7 +39,7 @@ function getPlaceholder(name) {
         return JSON.parse(getResource(`/menus/${name}.json`))
 }
 
-function getIcon(iconPath, root) {
+async function getIcon(iconPath, root) {
     let link = false;
     if (typeof iconPath == "object") {
         iconPath = iconPath.src;
@@ -61,7 +61,7 @@ function getIcon(iconPath, root) {
             'width': 25,
             'height': 25
         };
-        let iconSvgText = getSign({
+        let iconSvgText = await getSign({
             'sign': iconPath,
             'colorAccent': '#000'
         });
@@ -90,7 +90,7 @@ function getIcon(iconPath, root) {
     return null;
 }
 
-function buildMenuItem(root, parentMenuItem, attrItem) {
+async function buildMenuItem(root, parentMenuItem, attrItem) {
     if (attrItem.type == PLACEHOLDER) {
         attrItem = getPlaceholder(attrItem.name);
         if (Array.isArray(attrItem))
@@ -104,7 +104,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     menuItem.classList.add('context-menu-item');
     let attrItems = [];
 
-    let icon = getIcon(attrItem.icon);
+    let icon = await getIcon(attrItem.icon);
     if (icon != null)
         menuItem.appendChild(icon);
 
@@ -142,14 +142,14 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 subMenu.classList.add('sub-sub-menu');
             else
                 subMenu.classList.add('sub-menu');
-            let subMenuResult = buildMenu(root, attrItem, attrItem.values);
+            let subMenuResult = await buildMenu(root, attrItem, attrItem.values);
             let subMenuItems = subMenuResult.menuItems;
             if (subMenuItems.every(item => item.classList.contains('menu-item-inactive')))
                 menuItem.classList.add('menu-item-inactive');
             if (Array.isArray(attrItem.values)) {
                 let selectedItem = attrItem.values.find(item => item.type == 'radio' && (root[item.key] || root[attrItem.key] == item.key));
                 if (selectedItem != null) {
-                    let newIcon = getIcon(selectedItem.icon);
+                    let newIcon = await getIcon(selectedItem.icon);
                     if (newIcon != null)
                         menuItem.replaceChild(newIcon, icon);
                 }
@@ -170,7 +170,7 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
                 }
                 else {
                     menuItem.appendChild(document.createTextNode(attrItem.nameInverted));
-                    let newIcon = getIcon(attrItem.iconInverted);
+                    let newIcon = await getIcon(attrItem.iconInverted);
                     if (newIcon != null)
                         menuItem.replaceChild(newIcon, icon);
                 }
@@ -196,12 +196,12 @@ function buildMenuItem(root, parentMenuItem, attrItem) {
     };
 }
 
-function buildMenu(root, parentMenuItem, attrMenu) {
+async function buildMenu(root, parentMenuItem, attrMenu) {
     let menuItems = [];
     let attrItems = [];
     if (Array.isArray(attrMenu) && attrMenu.length > 0)
         for (let idx in attrMenu) {
-            let menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu[idx]);
+            let menuItemResult = await buildMenuItem(root, parentMenuItem, attrMenu[idx]);
             if (menuItemResult == null)
                 continue;
             let menuItem = menuItemResult.menuItems;
@@ -212,7 +212,7 @@ function buildMenu(root, parentMenuItem, attrMenu) {
             attrItems = attrItems.concat(menuItemResult.attrItems);
         }
     else {
-        let menuItemResult = buildMenuItem(root, parentMenuItem, attrMenu);
+        let menuItemResult = await buildMenuItem(root, parentMenuItem, attrMenu);
         if (menuItemResult != null) {
             let menuItem = menuItemResult.menuItems;
             if (Array.isArray(menuItem) && menuItem.length > 0)
@@ -228,13 +228,13 @@ function buildMenu(root, parentMenuItem, attrMenu) {
     };
 }
 
-function openSignContextMenu(evt, sign) {
+async function openSignContextMenu(evt, sign) {
     let uuid = sign.getAttributeNS(null, 'uuid');
     let root = getByUuid(config, uuid);
 
     let attrMenu = JSON.parse(getResource(`/menus/${root.sign}.json`))
         .concat(JSON.parse(getResource('/menus/menu_default.json')));
-    let menuResult = buildMenu(root, null, attrMenu);
+    let menuResult = await buildMenu(root, null, attrMenu);
 
     currentSignMenu = menuResult.attrItems;
 
