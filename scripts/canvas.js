@@ -526,7 +526,7 @@ async function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
         dim.width += 2 * GAP;
         let dimSubs = [];
         for (let subTree in subTrees) {
-            let dimSubItem = drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
+            let dimSubItem = await drawRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
@@ -560,8 +560,8 @@ async function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
     else
         dim.height += Math.max(dimSign.height, dimWith.height);
 
-    drawSign(canvas, root, x, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
-    drawWithHorizontally(canvas, root, x + dimSign.width, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
+    await drawSign(canvas, root, x, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
+    await drawWithHorizontally(canvas, root, x + dimSign.width, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
 
     return dim;
 }
@@ -569,7 +569,7 @@ async function drawCenteredRight(canvas, root, x, y, inactiveInherited) {
 async function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
     let dim = new Dim(x, y);
     let dimSign = await drawSign(null, root, 0, 0, false); // just measure dimensions
-    let dimWith = drawWithHorizontally(null, root, 0, 0, false);
+    let dimWith = await drawWithHorizontally(null, root, 0, 0, false);
     dim.anchorTopX = dimSign.anchorTopX;
     dim.anchorTopY = dimSign.anchorTopY;
     dim.height = Math.max(dimSign.height, dimWith.height) + GAP;
@@ -578,13 +578,13 @@ async function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
     if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
         if (root.sub[0].sign == 'Collapsed')
             subY = dimSign.height;
-        root.sub.forEach(async subItem => {
-            let dimSubItem = await drawRecursive(canvas, subItem, x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
+        for (let idx in root.sub) {
+            let dimSubItem = await drawRecursive(canvas, root.sub[idx], x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
             appendLine(canvas, root, inactiveInherited, x + dim.width + dimSubItem.anchorTopX, y + subY, x + dim.width + dimSubItem.anchorTopX, y + subY + dimSubItem.anchorTopY + GAP);
             dim.width += dimSubItem.width + GAP;
             dim.height = Math.max(dim.height, subY + dimSubItem.height + GAP);
-        });
+        }
         dim.width -= GAP;
         let anchorSub1 = dimSubs[0].x + dimSubs[0].anchorTopX;
         let anchorSubN = dimSubs[dimSubs.length - 1].x + dimSubs[dimSubs.length - 1].anchorTopX;
@@ -598,8 +598,8 @@ async function drawCenteredBelow(canvas, root, x, y, inactiveInherited) {
     }
     dim.anchorLeftX = dim.anchorTopX - dimSign.anchorTopX;
     dim.anchorLeftY = dimSign.anchorLeftY;
-    drawSign(canvas, root, x + dim.anchorLeftX, y, inactiveInherited);
-    drawWithHorizontally(canvas, root, x + dim.anchorTopX + dimSign.anchorTopX, y, inactiveInherited);
+    await drawSign(canvas, root, x + dim.anchorLeftX, y, inactiveInherited);
+    await drawWithHorizontally(canvas, root, x + dim.anchorTopX + dimSign.anchorTopX, y, inactiveInherited);
     dim.width = Math.max(dim.width, dim.anchorLeftX + dimSign.width + dimWith.width + GAP);
     return dim;
 }
