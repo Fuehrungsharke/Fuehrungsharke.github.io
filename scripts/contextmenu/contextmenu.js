@@ -199,18 +199,20 @@ async function buildMenuItem(root, parentMenuItem, attrItem) {
 async function buildMenu(root, parentMenuItem, attrMenu) {
     let menuItems = [];
     let attrItems = [];
-    if (Array.isArray(attrMenu) && attrMenu.length > 0)
-        for (let idx in attrMenu) {
-            let menuItemResult = await buildMenuItem(root, parentMenuItem, attrMenu[idx]);
-            if (menuItemResult == null)
+    if (Array.isArray(attrMenu) && attrMenu.length > 0) {
+        let menuPromises = attrMenu.map(item => buildMenuItem(root, parentMenuItem, item));
+        let menuItemResults = await Promise.all(menuPromises);
+        for (let idx in menuItemResults) {
+            if (menuItemResults[idx] == null)
                 continue;
-            let menuItem = menuItemResult.menuItems;
+            let menuItem = menuItemResults[idx].menuItems;
             if (Array.isArray(menuItem) && menuItem.length > 0)
                 menuItems = menuItems.concat(menuItem);
             else if (menuItem != null)
                 menuItems.push(menuItem);
-            attrItems = attrItems.concat(menuItemResult.attrItems);
+            attrItems = attrItems.concat(menuItemResults[idx].attrItems);
         }
+    }
     else {
         let menuItemResult = await buildMenuItem(root, parentMenuItem, attrMenu);
         if (menuItemResult != null) {
