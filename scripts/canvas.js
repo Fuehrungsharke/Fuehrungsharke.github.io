@@ -311,7 +311,7 @@ async function drawListRight(canvas, dim, dimSign, promiseSub) {
         );
         canvas.appendChild(await itemLine);
 
-        dim.width = Math.max(dim.width, orgWidth + 2 * GAP + drawable.dim.width);
+        dim.width = Math.max(dim.width, orgWidth + 4 * GAP + drawable.dim.width);
         dim.height += drawable.dim.height;
         if (firstAnchorY == null)
             firstAnchorY = drawable.dim.anchorLeftY;
