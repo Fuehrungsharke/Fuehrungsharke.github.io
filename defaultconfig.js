@@ -401,14 +401,14 @@ let config = [
 
 config = {
     "name": "Root 1",
-    "sign": "Person",
+    "sign": "Flag",
     "txt": "R",
     "colorPrimary": "#FFF",
     "colorAccent": "#000",
-    "layout": "row-right-below",
+    "layout": "center-right",
     "with": [
         {
-            "sign": "Place",
+            "sign": "Building",
             "txt": "W",
             "name": "With 1",
             "colorPrimary": "#FFF",
@@ -422,7 +422,7 @@ config = {
             "colorAccent": "#000",
         },
         {
-            "sign": "Place",
+            "sign": "Vehicle",
             "txt": "W",
             "name": "With 3",
             "colorPrimary": "#FFF",
@@ -431,7 +431,7 @@ config = {
     ],
     "sub": [
         {
-            "sign": "Place",
+            "sign": "Building",
             "txt": "S",
             "name": "Sub 1",
             "colorPrimary": "#FFF",

@@ -320,7 +320,7 @@ async function drawListRight(canvas, dim, dimSign, promiseSub) {
 
     let groupLine = getLine(
         orgWidth + 2 * GAP,
-        firstAnchorY,
+        Math.min(dim.anchorLeftY, firstAnchorY),
         orgWidth + 2 * GAP,
         lastAnchorY,
         false,
@@ -441,64 +441,60 @@ async function drawRowRightBelow(canvas, dim, dimSign, promiseSub) {
     canvas.appendChild(await mainLine);
 }
 
-async function drawCenteredRight(root, inactiveInherited) {
-    let dim = new Dim(x, y);
-    let dimSign = await drawSign(null, root, x, y, inactiveInherited);
-    dim.anchorTopX = dimSign.anchorTopX;
+async function drawCenteredRight(canvas, dim, dimSign, dimWith, promiseSub) {
+    if (promiseSub == null)
+        return;
 
-    dim.anchorLeftX = dimSign.anchorLeftX;
-    dim.anchorLeftY = dimSign.anchorLeftY;
-    dim.width += dimSign.width;
-    if (root.sign == 'Collapsed')
-        return dimSign;
+    let signAndWithWidth = dimSign.width;
+    if (dimWith != null)
+        signAndWithWidth += dimWith.width;
 
-    let dimWith = await drawWithHorizontally(null, root, x + dimSign.width, y, inactiveInherited);
-    dim.width += dimWith.width;
+    let firstAnchorY = null;
+    let lastAnchorY = 0;
+    let drawableSub = await promiseSub;
+    for (let idx in drawableSub) {
+        let drawable = drawableSub[idx];
+        addToCanvas(canvas, drawable, signAndWithWidth + 4 * GAP, dim.height);
+        if (firstAnchorY == null)
+            firstAnchorY = drawable.dim.anchorLeftY;
+        lastAnchorY = dim.height + drawable.dim.anchorLeftY;
 
-    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        let subTrees = root.sub;
-        let subTotalWidth = 0;
-        dim.width += 2 * GAP;
-        let dimSubs = [];
-        for (let subTree in subTrees) {
-            let dimSubItem = await drawVerticalList(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
-            dimSubs.push(dimSubItem);
-            appendLine(canvas, root, inactiveInherited,
-                x + dim.width,
-                y + dim.height + dimSubItem.anchorLeftY,
-                x + dim.width + GAP + dimSubItem.anchorLeftX + (subTrees[subTree].left ? GAP : 0),
-                y + dim.height + dimSubItem.anchorLeftY
-            );
-            subTotalWidth = Math.max(subTotalWidth, dimSubItem.width + GAP);
-            dim.height += dimSubItem.height;
-        }
-        let sub1 = dimSubs[0];
-        let subN = dimSubs[dimSubs.length - 1];
-        dim.anchorLeftY = sub1.anchorLeftY + ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
-        dim.anchorTopY = sub1.anchorTopY + ((subN.y + subN.anchorLeftY) - (sub1.y + sub1.anchorLeftY)) / 2;
-        dim.height = Math.max(dim.height,
-            dim.anchorLeftY + dimSign.height - dimSign.anchorLeftY,
-            dim.anchorLeftY + dimWith.height - dimSign.anchorLeftY);
-        appendLine(canvas, root, inactiveInherited,
-            x + dim.width - GAP + (root.right ? -GAP : 0),
-            y + dim.anchorLeftY,
-            x + dim.width,
-            y + dim.anchorLeftY); // root line
-        appendLine(canvas, root, inactiveInherited,
-            x + dim.width,
-            sub1.y + sub1.anchorLeftY,
-            x + dim.width,
-            subN.y + subN.anchorLeftY); // group line
-        dim.width += GAP;
-        dim.width += subTotalWidth;
+        let itemLine = getLine(
+            signAndWithWidth + 2 * GAP,
+            dim.height + drawable.dim.anchorLeftY,
+            signAndWithWidth + 3 * GAP,
+            dim.height + drawable.dim.anchorLeftY,
+            false,
+            null
+        );
+        canvas.appendChild(await itemLine);
+
+        dim.width = Math.max(dim.width, dimSign.width + 4 * GAP + drawable.dim.width);
+        dim.height += drawable.dim.height;
     }
-    else
-        dim.height += Math.max(dimSign.height, dimWith.height);
 
-    await drawSign(canvas, root, x, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
-    await drawWithHorizontally(canvas, root, x + dimSign.width, y + dim.anchorLeftY - dimSign.anchorLeftY, inactiveInherited);
+    let groupLine = getLine(
+        signAndWithWidth + 2 * GAP,
+        firstAnchorY,
+        signAndWithWidth + 2 * GAP,
+        lastAnchorY,
+        false,
+        null
+    );
+    canvas.appendChild(await groupLine);
 
-    return dim;
+    dimSign.y = dim.height / 2 - dimSign.height / 2;
+    dimSign.anchorLeftY += dimSign.y;
+
+    let mainLine = getLine(
+        signAndWithWidth + GAP,
+        dimSign.anchorLeftY,
+        signAndWithWidth + 2 * GAP,
+        dimSign.anchorLeftY,
+        false,
+        null
+    );
+    canvas.appendChild(await mainLine);
 }
 
 async function drawCenteredBelow(root, inactiveInherited) {
@@ -554,45 +550,49 @@ async function drawLayout(root, inactiveInherited) {
     let dim = new Dim(0, 0);
     let canvas = document.createElement('g');
     let drawableSign = await promiseSign;
-    canvas.appendChild(drawableSign.item);
+
+    let drawableWith = null;
+    if (promiseSub != null) {
+        if (root.layout == Layout.CenteredRight) {
+            if (promiseWith != null)
+                drawableWith = await promiseWith;
+            await drawCenteredRight(canvas, dim, drawableSign.dim, drawableWith?.dim, promiseSub);
+        }
+    }
+
+    addToCanvas(canvas, drawableSign, drawableSign.dim.x, drawableSign.dim.y);
     dim.anchorTopX = drawableSign.dim.anchorTopX;
     dim.anchorTopY = drawableSign.dim.anchorTopY;
     dim.anchorLeftX = drawableSign.dim.anchorLeftX;
     dim.anchorLeftY = drawableSign.dim.anchorLeftY;
-    dim.width = drawableSign.dim.width;
-    dim.height = drawableSign.dim.height;
+    if (dim.width == 0 && dim.height == 0) {
+        dim.width = drawableSign.dim.width;
+        dim.height = drawableSign.dim.height;
+    }
 
-    if (promiseWith != null) {
-        let drawableWith = await promiseWith;
-        addToCanvas(canvas, drawableWith, dim.width, 0);
+    if (drawableWith == null && promiseWith != null)
+        drawableWith = await promiseWith;
+    if (drawableWith != null) {
+        addToCanvas(canvas, drawableWith, drawableSign.dim.width, drawableSign.dim.y);
         dim.width += drawableWith.dim.width;
         dim.height = Math.max(dim.height, drawableWith.dim.height);
     }
 
     if (promiseSub != null) {
-        let layoutFunc = null;
         switch (root.layout) {
             case Layout.ListRightBelow:
-                layoutFunc = drawListRightBelow;
+                await drawListRightBelow(canvas, dim, drawableSign.dim, promiseSub);
                 break;
             case Layout.RowRight:
-                layoutFunc = drawRowRight;
+                await drawRowRight(canvas, dim, drawableSign.dim, promiseSub);
                 break;
             case Layout.RowRightBelow:
-                layoutFunc = drawRowRightBelow;
-                break;
-            case Layout.CenteredRight:
-                layoutFunc = drawCenteredRight;
-                break;
-            case Layout.CenteredBelow:
-                layoutFunc = drawCenteredBelow;
+                await drawRowRightBelow(canvas, dim, drawableSign.dim, promiseSub);
                 break;
             case Layout.ListRight:
-            default:
-                layoutFunc = drawListRight;
+                await drawListRight(canvas, dim, drawableSign.dim, promiseSub);
                 break;
         }
-        await layoutFunc(canvas, dim, drawableSign.dim, promiseSub);
     }
 
     return new Drawable(canvas, dim);
