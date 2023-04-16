@@ -299,12 +299,12 @@ async function drawListRight(canvas, dim, dimSign, promiseSub) {
     dim.height = 0;
     for (let idx in drawables) {
         let drawable = drawables[idx];
-        addToCanvas(canvas, drawable, orgWidth + 2 * GAP, dim.height);
+        addToCanvas(canvas, drawable, orgWidth + 4 * GAP, dim.height);
 
         let itemLine = getLine(
-            orgWidth + GAP,
-            dim.height + drawable.dim.anchorLeftY,
             orgWidth + 2 * GAP,
+            dim.height + drawable.dim.anchorLeftY,
+            orgWidth + 3 * GAP,
             dim.height + drawable.dim.anchorLeftY,
             false,
             null
@@ -319,9 +319,9 @@ async function drawListRight(canvas, dim, dimSign, promiseSub) {
     }
 
     let groupLine = getLine(
-        orgWidth + GAP,
+        orgWidth + 2 * GAP,
         firstAnchorY,
-        orgWidth + GAP,
+        orgWidth + 2 * GAP,
         lastAnchorY,
         false,
         null
@@ -329,9 +329,9 @@ async function drawListRight(canvas, dim, dimSign, promiseSub) {
     canvas.appendChild(await groupLine);
 
     let mainLine = getLine(
-        orgWidth,
-        dim.anchorLeftY,
         orgWidth + GAP,
+        dim.anchorLeftY,
+        orgWidth + 2 * GAP,
         dim.anchorLeftY,
         false,
         null
@@ -350,7 +350,7 @@ async function drawListRightBelow(canvas, dim, dimSign, promiseSub) {
     let drawables = await promiseSub;
     for (let idx in drawables) {
         let drawable = drawables[idx];
-        addToCanvas(canvas, drawable, dim.anchorTopX + GAP, dim.height);
+        addToCanvas(canvas, drawable, dim.anchorTopX + 2 * GAP, dim.height);
 
         let itemLine = getLine(
             dim.anchorTopX,
