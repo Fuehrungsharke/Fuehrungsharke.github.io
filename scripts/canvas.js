@@ -368,9 +368,9 @@ async function drawListRightBelow(canvas, dim, dimSign, promiseSub) {
     }
 
     let groupLine = getLine(
-        dim.anchorTopX,
+        dimSign.anchorTopX,
         height,
-        dim.anchorTopX,
+        dimSign.anchorTopX,
         lastAnchorY,
         false,
         null
@@ -399,65 +399,46 @@ async function drawRowRight(canvas, dim, dimSign, promiseSub) {
         dim.width += drawable.dim.width;
         dim.height = Math.max(dim.height, drawable.dim.height);
     }
-    return new Drawable(canvas, dim);
 }
 
-async function drawRowRightBelow(root, inactiveInherited) {
-    let dim = new Dim(x, y);
-    let dimSign = await drawSign(root, inactiveInherited);
-    dim.anchorTopX = dimSign.anchorTopX;
-    dim.anchorTopY = dimSign.anchorTopY;
-    dim.anchorLeftX = dimSign.anchorLeftX;
-    dim.anchorLeftY = dimSign.anchorLeftY;
-    dim.width += dimSign.width;
-    if (root.sign == 'Collapsed')
-        return dimSign;
+async function drawRowRightBelow(canvas, dim, dimSign, promiseSub) {
+    if (promiseSub == null)
+        return;
 
-    let dimWith = await drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
-    let maxSignWithHeight = Math.max(dimSign.height, dimWith.height);
-    dim.height += maxSignWithHeight;
-
-    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-        let leafsTotalWidth = 0;
-        let leafsTotalRowHeight = dimSign.height;
-        let leafRowWidth = 0;
-        let cntLeafs = 0;
-        let leafs = root.sub;
-        let dimFirstSub = null;
-        for (let leaf in leafs) {
-            cntLeafs += 1;
-            let leafDimensions = await drawVerticalList(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
-            if (dimFirstSub == null)
-                dimFirstSub = leafDimensions;
-            leafRowWidth += leafDimensions.width;
-            leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
-            leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions.height);
-            if (cntLeafs % 4 == 0 && leafs.length > cntLeafs + 1) {
-                dim.height += leafsTotalRowHeight;
-                leafRowWidth = 0;
-                leafsTotalRowHeight = 0;
-            }
-        }
-
-        appendLine(canvas, root, inactiveInherited,
-            x + dimSign.width / 2,
-            y + dimSign.height,
-            x + dimSign.width / 2,
-            y + maxSignWithHeight + dimFirstSub.anchorLeftY
-        ); // root line
-        appendLine(canvas, root, inactiveInherited,
-            x + dimSign.width / 2,
-            y + maxSignWithHeight + dimFirstSub.anchorLeftY,
-            x + dimSign.width + dimFirstSub.anchorLeftX - GAP + (root.sub[0].left ? GAP : 0),
-            y + maxSignWithHeight + dimFirstSub.anchorLeftY
-        ); // group line
-
-        dim.height += leafsTotalRowHeight;
-        dim.width += Math.max(dimWith.width, leafsTotalWidth);
+    let orgWidth = dim.width;
+    let orgHeight = dim.height;
+    let subX = dim.anchorTopX + 2 * GAP;
+    let anchorSub1 = null;
+    let drawableSub = await promiseSub;
+    for (let idx in drawableSub) {
+        let drawable = drawableSub[idx];
+        addToCanvas(canvas, drawable, subX, orgHeight);
+        subX += drawable.dim.width;
+        dim.width = Math.max(orgWidth, subX);
+        dim.height = Math.max(dim.height, orgHeight + drawable.dim.height);
+        if (anchorSub1 == null)
+            anchorSub1 = drawable.dim.anchorLeftY;
     }
-    else
-        dim.width += dimWith.width;
-    return dim;
+
+    let groupLine = getLine(
+        dimSign.anchorTopX,
+        orgHeight + anchorSub1,
+        dimSign.anchorTopX + GAP,
+        orgHeight + anchorSub1,
+        false,
+        null
+    );
+    canvas.appendChild(await groupLine);
+
+    let mainLine = getLine(
+        dimSign.anchorTopX,
+        dimSign.height,
+        dimSign.anchorTopX,
+        orgHeight + anchorSub1,
+        false,
+        null
+    );
+    canvas.appendChild(await mainLine);
 }
 
 async function drawCenteredRight(root, inactiveInherited) {

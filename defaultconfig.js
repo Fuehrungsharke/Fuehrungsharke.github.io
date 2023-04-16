@@ -405,7 +405,7 @@ config = {
     "txt": "R",
     "colorPrimary": "#FFF",
     "colorAccent": "#000",
-    "layout": "row-right",
+    "layout": "row-right-below",
     "with": [
         {
             "sign": "Place",
