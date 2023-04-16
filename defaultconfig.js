@@ -391,9 +391,55 @@ let config = [
 ];
 
 config = {
-    "name": "Dummy",
+    "name": "Root 1",
     "sign": "Person",
-    "txt": "X",
+    "txt": "R",
     "colorPrimary": "#FFF",
     "colorAccent": "#000",
+    "with": [
+        {
+            "sign": "Place",
+            "txt": "W",
+            "name": "With 1",
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Place",
+            "txt": "W",
+            "name": "With 2",
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Place",
+            "txt": "W",
+            "name": "With 3",
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
+        },
+    ],
+    "sub": [
+        {
+            "sign": "Place",
+            "txt": "S",
+            "name": "Sub 1",
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Place",
+            "txt": "S",
+            "name": "Sub, 2",
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Place",
+            "txt": "S",
+            "name": "Sub 3",
+            "colorPrimary": "#FFF",
+            "colorAccent": "#000",
+        },
+    ],
 };

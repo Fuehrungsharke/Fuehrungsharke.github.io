@@ -216,21 +216,16 @@ async function getSignSvg(root, uuid, inactiveInherited) {
     return signSvg;
 }
 
-function getLine(ax, ay, bx, by) {
+async function getLine(ax, ay, bx, by, inactive, color) {
     let line = document.createElement('path');
     line.setAttribute('stroke-width', 3);
     line.setAttribute('stroke', 'black');
     line.setAttribute('d', `M${ax} ${ay} L${bx} ${by}`);
-    return line;
-}
-
-function appendLine(canvas, root, inactiveInherited, ax, ay, bx, by, color) {
-    let line = getLine(ax, ay, bx, by);
-    if (root != null && (root.inactive || inactiveInherited))
+    if (inactive)
         line.setAttribute('opacity', 0.25);
     if (color != null)
         line.setAttribute('stroke', color);
-    canvas.appendChild(line);
+    return line;
 }
 
 function getText(uuid, text, x, y) {
@@ -285,16 +280,30 @@ async function drawSign(root, inactiveInherited) {
     return new Drawable(await itemBoxPromise, dimSign);
 }
 
+async function addToCanvas(canvas, drawable, x, y) {
+    drawable.dim.x = x;
+    drawable.dim.y = y;
+    drawable.item.setAttribute('transform', `translate(${drawable.dim.x}, ${drawable.dim.y}) scale(1 1)`);
+    canvas.appendChild(drawable.item);
+}
+
 async function drawWithHorizontally(root, inactiveInherited) {
-    let dim = new Dim(x, y);
     if (root.with == null || !Array.isArray(root.with) || root.with.length <= 0)
-        return dim;
-    for (let idx in root.with) {
-        let signDim = await drawSign(canvas, root.with[idx], x + dim.width, y, root.inactive || inactiveInherited);
-        dim.width += signDim.width;
-        dim.height = Math.max(dim.height, signDim.height);
+        return null;
+
+    let dim = new Dim(0, 0);
+    let canvas = document.createElement('g');
+    let drawables = await Promise.all(root.with.map(item => drawSign(item, root.inactive || inactiveInherited)));
+    for (let idx in drawables) {
+        let drawable = drawables[idx];
+        drawable.dim.x = dim.width;
+        drawable.item.setAttribute('transform', `translate(${drawable.dim.x}, 0) scale(1 1)`);
+        canvas.appendChild(drawable.item);
+        dim.width += drawable.dim.width;
+        dim.height = Math.max(dim.height, drawable.dim.height);
     }
-    return dim;
+
+    return new Drawable(canvas, dim);
 }
 
 async function drawListRight(root, inactiveInherited) {
@@ -323,7 +332,7 @@ async function drawListRight(root, inactiveInherited) {
         dim.width += GAP;
         let dimLastSub = null;
         for (let subTree in subTrees) {
-            let subSize = await createDrawableRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
+            let subSize = await drawVerticalList(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
                 y + dim.height + subSize.anchorLeftY,
@@ -364,7 +373,7 @@ async function drawListRightBelow(root, inactiveInherited) {
         if (subTrees.length > 0) {
             let dimLastSub = null;
             for (let subTree in subTrees) {
-                let dimSubItem = await createDrawableRecursive(canvas, subTrees[subTree], x + dim.width, y + dim.height, root.inactive || inactiveInherited);
+                let dimSubItem = await drawVerticalList(canvas, subTrees[subTree], x + dim.width, y + dim.height, root.inactive || inactiveInherited);
                 appendLine(canvas, root, inactiveInherited,
                     x + dimSign.anchorTopX,
                     y + dim.height + dimSubItem.anchorLeftY,
@@ -391,62 +400,45 @@ async function drawListRightBelow(root, inactiveInherited) {
 }
 
 async function drawRowRight(root, inactiveInherited) {
-    let drawableSign = await drawSign(root, inactiveInherited);
+    let promiseSign = drawSign(root, inactiveInherited);
     if (root.sign == 'Collapsed')
-        return drawableSign;
+        return await promiseSign;
+
+    let promiseWith = null;
+    if (root.with != null && Array.isArray(root.with) && root.with.length > 0)
+        promiseWith = drawHorizontalList(root.with, inactiveInherited);
+    let promiseSub = null;
+    if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0)
+        promiseSub = drawHorizontalList(root.sub, inactiveInherited);
+
     let dim = new Dim(0, 0);
     let canvas = document.createElement('g');
+    let drawableSign = await promiseSign;
     canvas.appendChild(drawableSign.item);
     dim.anchorTopX = drawableSign.dim.anchorTopX;
     dim.anchorTopY = drawableSign.dim.anchorTopY;
     dim.anchorLeftX = drawableSign.dim.anchorLeftX;
     dim.anchorLeftY = drawableSign.dim.anchorLeftY;
     dim.width += drawableSign.dim.width;
+    dim.height = drawableSign.dim.height;
 
-    // let dimWith = await drawWithHorizontally(canvas, root, x + dimSign.width, y, inactiveInherited);
-    // dim.width += dimWith.width;
+    if (promiseWith != null) {
+        let drawableWith = await promiseWith;
+        addToCanvas(canvas, drawableWith, dim.width, 0);
+        dim.width += drawableWith.dim.width;
+        dim.height = Math.max(dim.height, drawableWith.dim.height);
+    }
 
-    // if (root.sub != null && Array.isArray(root.sub) && root.sub.length > 0) {
-    //     dim.width += 4 * GAP;
-    //     let leafsTotalWidth = 0;
-    //     let leafsTotalRowHeight = 0;
-    //     let leafRowWidth = 0;
-    //     let cntLeafs = 0;
-    //     let leafs = root.sub;
-    //     let dimFirstSub = null;
-    //     for (let leaf in leafs) {
-    //         cntLeafs += 1;
-    //         let leafDimensions = await createDrawableRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
-    //         if (dimFirstSub == null)
-    //             dimFirstSub = leafDimensions;
-    //         leafRowWidth += leafDimensions.width;
-    //         leafsTotalWidth = Math.max(leafsTotalWidth, leafRowWidth);
-    //         leafsTotalRowHeight = Math.max(leafsTotalRowHeight, leafDimensions.height);
-    //         if (cntLeafs % 4 == 0 && leafs.length > cntLeafs + 1) {
-    //             dim.height += leafsTotalRowHeight;
-    //             leafRowWidth = 0;
-    //             leafsTotalRowHeight = 0;
-    //         }
-    //     }
-    //     dim.height += leafsTotalRowHeight;
+    if (promiseSub != null) {
+        let line = await getLine(dim.width, drawableSign.dim.anchorLeftY, dim.width + 2 * GAP, drawableSign.dim.anchorLeftY, false, null);
+        canvas.appendChild(line);
+        dim.width += 2 * GAP;
+        let drawableSub = await promiseSub;
+        addToCanvas(canvas, drawableSub, dim.width, 0);
+        dim.width += drawableSub.dim.width;
+        dim.height = Math.max(dim.height, drawableSub.dim.height);
+    }
 
-    //     appendLine(canvas, root, inactiveInherited,
-    //         x + dim.width - 3 * GAP + (root.right ? -GAP : 0),
-    //         y + dim.anchorLeftY,
-    //         x + dim.width - 2 * GAP,
-    //         y + dim.anchorLeftY); // root line
-
-    //     appendLine(canvas, root, inactiveInherited,
-    //         x + dim.width - 2 * GAP,
-    //         y + dimFirstSub.anchorLeftY,
-    //         x + dim.width + dimFirstSub.anchorLeftX - GAP + (root.sub[0].left ? GAP : 0),
-    //         y + dimFirstSub.anchorLeftY); // 1st item line
-
-    //     dim.height = Math.max(dim.height, dimSign.height, dimWith.height);
-    //     dim.width += leafsTotalWidth;
-    // }
-    // else
-    //     dim.height += Math.max(drawableSign.dim.height, dimWith.height);
     return new Drawable(canvas, dim);
 }
 
@@ -474,7 +466,7 @@ async function drawRowRightBelow(root, inactiveInherited) {
         let dimFirstSub = null;
         for (let leaf in leafs) {
             cntLeafs += 1;
-            let leafDimensions = await createDrawableRecursive(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
+            let leafDimensions = await drawVerticalList(canvas, leafs[leaf], x + dim.width + leafRowWidth, y + dim.height, root.inactive || inactiveInherited);
             if (dimFirstSub == null)
                 dimFirstSub = leafDimensions;
             leafRowWidth += leafDimensions.width;
@@ -528,7 +520,7 @@ async function drawCenteredRight(root, inactiveInherited) {
         dim.width += 2 * GAP;
         let dimSubs = [];
         for (let subTree in subTrees) {
-            let dimSubItem = await createDrawableRecursive(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
+            let dimSubItem = await drawVerticalList(canvas, subTrees[subTree], x + dim.width + 2 * GAP, y + dim.height, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
             appendLine(canvas, root, inactiveInherited,
                 x + dim.width,
@@ -581,7 +573,7 @@ async function drawCenteredBelow(root, inactiveInherited) {
         if (root.sub[0].sign == 'Collapsed')
             subY = dimSign.height;
         for (let idx in root.sub) {
-            let dimSubItem = await createDrawableRecursive(canvas, root.sub[idx], x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
+            let dimSubItem = await drawVerticalList(canvas, root.sub[idx], x + dim.width, y + subY + GAP, root.inactive || inactiveInherited);
             dimSubs.push(dimSubItem);
             appendLine(canvas, root, inactiveInherited, x + dim.width + dimSubItem.anchorTopX, y + subY, x + dim.width + dimSubItem.anchorTopX, y + subY + dimSubItem.anchorTopY + GAP);
             dim.width += dimSubItem.width + GAP;
@@ -624,17 +616,41 @@ async function drawLayout(root, inactiveInherited) {
     }
 }
 
-async function createDrawableRecursive(root, inactiveInherited) {
+async function drawHorizontalList(root, inactiveInherited) {
+    if (root == null)
+        return null;
     if (Array.isArray(root) && root.length > 0) {
         let drawables = await Promise.all(root.map(item => drawLayout(item, inactiveInherited)));
-        let dim = new Dim(x, y);
+        let dim = new Dim(0, 0);
         let canvas = document.createElement('g');
-        for (let drawable in drawables) {
+        for (let idx in drawables) {
+            let drawable = drawables[idx];
+            dim.height = Math.max(dim.height, drawable.dim.height);
+            drawable.dim.x = dim.width;
+            drawable.item.setAttribute('transform', `translate(${drawable.dim.x}, 0) scale(1 1)`);
+            canvas.appendChild(drawable.item);
+            dim.width += drawable.dim.width;
+        }
+        return new Drawable(canvas, dim);
+    }
+    else
+        return drawLayout(root, inactiveInherited);
+}
+
+async function drawVerticalList(root, inactiveInherited) {
+    if (root == null)
+        return null;
+    if (Array.isArray(root) && root.length > 0) {
+        let drawables = await Promise.all(root.map(item => drawLayout(item, inactiveInherited)));
+        let dim = new Dim(0, 0);
+        let canvas = document.createElement('g');
+        for (let idx in drawables) {
+            let drawable = drawables[idx];
             dim.width = Math.max(dim.width, drawable.dim.width);
             drawable.dim.y = dim.height;
-            dim.height += drawable.dim.height;
             drawable.item.setAttribute('transform', `translate(0, ${drawable.dim.y}) scale(1 1)`);
             canvas.appendChild(drawable.item);
+            dim.height += drawable.dim.height;
         }
         return new Drawable(canvas, dim);
     }
@@ -647,7 +663,7 @@ async function draw() {
         "config": JSON.parse(JSON.stringify(config))
     });
 
-    let drawable = await createDrawableRecursive(config, false);
+    let drawable = await drawVerticalList(config, false);
 
     let background = document.createElement('rect');
     background.setAttribute('stroke-width', 3);
