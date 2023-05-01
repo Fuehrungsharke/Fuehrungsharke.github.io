@@ -405,7 +405,7 @@ config = {
     "txt": "R",
     "colorPrimary": "#FFF",
     "colorAccent": "#000",
-    "layout": "center-right",
+    "layout": "center-below",
     "with": [
         {
             "sign": "Building",
@@ -436,6 +436,15 @@ config = {
             "name": "Sub 1",
             "colorPrimary": "#FFF",
             "colorAccent": "#000",
+            "with": [
+                {
+                    "sign": "Equipment",
+                    "txt": "S1W",
+                    "name": "Sub 1 - With",
+                    "colorPrimary": "#FFF",
+                    "colorAccent": "#000",
+                }
+            ]
         },
         {
             "sign": "Unit",
