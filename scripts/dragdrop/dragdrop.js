@@ -177,7 +177,7 @@ function updateSelection(markedArea, mode) {
 
     let selectables = outputSvg.getElementsByClassName('selectable');
     for (const selectable of selectables) {
-        let transform = getTransform(selectable);
+        let transform = getAbsTransform(selectable);
         let elementDimensions = getElementDimensions(selectable);
         if (parseInt(transform.x) + 0.2 * elementDimensions[0] >= toCanvasCoords(markedArea.minX)
             && parseInt(transform.y) + 0.2 * elementDimensions[1] >= toCanvasCoords(markedArea.minY)

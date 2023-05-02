@@ -82,6 +82,13 @@ function fromCanvasCoords(value) {
 
 function getTransform(element) {
     let transform = element.getAttributeNS(null, 'transform');
+    if (transform == null)
+        return {
+            'x': 0,
+            'y': 0,
+            'scaleX': 1,
+            'scaleY': 1,
+        };
     let match = /translate\((\d+(.\d+)?), (\d+(.\d+)?)\) scale\((\d+(.\d+)?) (\d+(.\d+)?)\)/gi.exec(transform);
     return {
         'x': parseInt(match[1]),
@@ -89,6 +96,22 @@ function getTransform(element) {
         'scaleX': parseInt(match[5]),
         'scaleY': parseInt(match[7]),
     };
+}
+
+function getAbsTransform(element, transform) {
+    if (transform == null)
+        transform = {
+            'x': 0,
+            'y': 0,
+            'scaleX': 1,
+            'scaleY': 1,
+        };
+    if (element == null || element.getAttributeNS(null, 'id') == 'outputSvg')
+        return transform;
+    let elementTransform = getTransform(element);
+    transform.x += elementTransform.x;
+    transform.y += elementTransform.y;
+    return getAbsTransform(element.parentElement, transform);
 }
 
 function getElementDimensions(element) {
