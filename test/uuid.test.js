@@ -14,6 +14,16 @@ test('Remove UUID', () => {
             {
                 'name': 'obj1',
                 'uuid': uuid.createUUID(),
+                'subobjects': [
+                    {
+                        'name': 'obj1a',
+                        'uuid': uuid.createUUID(),
+                    },
+                    {
+                        'name': 'obj1b',
+                        'uuid': uuid.createUUID(),
+                    },
+                ]
             },
             {
                 'name': 'obj2',
@@ -24,6 +34,14 @@ test('Remove UUID', () => {
         [
             {
                 'name': 'obj1',
+                'subobjects': [
+                    {
+                        'name': 'obj1a',
+                    },
+                    {
+                        'name': 'obj1b',
+                    },
+                ]
             },
             {
                 'name': 'obj2',
