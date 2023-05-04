@@ -22,4 +22,4 @@ function removeUuid(root) {
     return newObj;
 }
 
-module.exports = { createUUID };
+module.exports = { createUUID, removeUuid };
