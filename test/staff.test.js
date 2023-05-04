@@ -11,17 +11,17 @@ test('Staff --> Text', () => {
 
 test('Text --> Staff', () => {
     expect(
-        staff.toStaff('1 / 71 / 232 / 304').toString()
-    ).toBe(
-        [1, 71, 232, 304].toString()
+        staff.toStaff('1 / 71 / 232 / 304')
+    ).toMatchObject(
+        [1, 71, 232, 304]
     );
 });
 
 test('Staff + Staff', () => {
     expect(
-        staff.sumStaff([3, 4, 1, 2], [5, 2, 3, 4]).toString()
-    ).toBe(
-        [8, 6, 4, 6].toString()
+        staff.sumStaff([3, 4, 1, 2], [5, 2, 3, 4])
+    ).toMatchObject(
+        [8, 6, 4, 6]
     );
 });
 
@@ -29,9 +29,9 @@ test('getStaff: single person', () => {
     expect(
         staff.getStaff({
             'sign': 'Person'
-        }).toString()
-    ).toBe(
-        [0, 0, 1, 1].toString()
+        })
+    ).toMatchObject(
+        [0, 0, 1, 1]
     );
 });
 
@@ -40,9 +40,9 @@ test('getStaff: single formation leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'formation': true
-        }).toString()
-    ).toBe(
-        [1, 0, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [1, 0, 0, 1]
     );
 });
 
@@ -51,9 +51,9 @@ test('getStaff: single brigade leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'brigade': true
-        }).toString()
-    ).toBe(
-        [1, 0, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [1, 0, 0, 1]
     );
 });
 
@@ -62,9 +62,9 @@ test('getStaff: single association leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'association': true
-        }).toString()
-    ).toBe(
-        [1, 0, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [1, 0, 0, 1]
     );
 });
 
@@ -73,9 +73,9 @@ test('getStaff: single platoon leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'platoon': true
-        }).toString()
-    ).toBe(
-        [1, 0, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [1, 0, 0, 1]
     );
 });
 
@@ -84,9 +84,9 @@ test('getStaff: single platoontroop leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'platoontroop': true
-        }).toString()
-    ).toBe(
-        [0, 1, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [0, 1, 0, 1]
     );
 });
 
@@ -95,9 +95,9 @@ test('getStaff: single group leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'group': true
-        }).toString()
-    ).toBe(
-        [0, 1, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [0, 1, 0, 1]
     );
 });
 
@@ -106,9 +106,9 @@ test('getStaff: single echelon leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'echelon': true
-        }).toString()
-    ).toBe(
-        [0, 1, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [0, 1, 0, 1]
     );
 });
 
@@ -117,40 +117,40 @@ test('getStaff: single troop leader', () => {
         staff.getStaff({
             'sign': 'Person',
             'troop': true
-        }).toString()
-    ).toBe(
-        [0, 1, 0, 1].toString()
+        })
+    ).toMatchObject(
+        [0, 1, 0, 1]
     );
 });
 
 test('getStaff: TZ-ZTr', () => {
     expect(
-        staff.getStaff(stan.StAN_TZ_ZTr).toString()
-    ).toBe(
-        [1, 1, 2, 4].toString()
+        staff.getStaff(stan.StAN_TZ_ZTr)
+    ).toMatchObject(
+        [1, 1, 2, 4]
     );
 });
 
 test('getStaff: TZ-B', () => {
     expect(
-        staff.getStaff(stan.StAN_TZ_B).toString()
-    ).toBe(
-        [0, 2, 7, 9].toString()
+        staff.getStaff(stan.StAN_TZ_B)
+    ).toMatchObject(
+        [0, 2, 7, 9]
     );
 });
 
 test('getStaff: TZ-B_ASH', () => {
     expect(
-        staff.getStaff(stan.StAN_TZ_B_ASH).toString()
-    ).toBe(
-        [0, 2, 7, 9].toString()
+        staff.getStaff(stan.StAN_TZ_B_ASH)
+    ).toMatchObject(
+        [0, 2, 7, 9]
     );
 });
 
 test('getStaff: TZ-N', () => {
     expect(
-        staff.getStaff(stan.StAN_TZ_N).toString()
-    ).toBe(
-        [0, 2, 7, 9].toString()
+        staff.getStaff(stan.StAN_TZ_N)
+    ).toMatchObject(
+        [0, 2, 7, 9]
     );
 });
