@@ -1,4 +1,5 @@
 const staff = require('../scripts/staff');
+const stan = require('../stan');
 
 test('Staff --> Text', () => {
     expect(
@@ -119,5 +120,37 @@ test('getStaff: single troop leader', () => {
         }).toString()
     ).toBe(
         [0, 1, 0, 1].toString()
+    );
+});
+
+test('getStaff: TZ-ZTr', () => {
+    expect(
+        staff.getStaff(stan.StAN_TZ_ZTr).toString()
+    ).toBe(
+        [1, 1, 2, 4].toString()
+    );
+});
+
+test('getStaff: TZ-B', () => {
+    expect(
+        staff.getStaff(stan.StAN_TZ_B).toString()
+    ).toBe(
+        [0, 2, 7, 9].toString()
+    );
+});
+
+test('getStaff: TZ-B_ASH', () => {
+    expect(
+        staff.getStaff(stan.StAN_TZ_B_ASH).toString()
+    ).toBe(
+        [0, 2, 7, 9].toString()
+    );
+});
+
+test('getStaff: TZ-N', () => {
+    expect(
+        staff.getStaff(stan.StAN_TZ_N).toString()
+    ).toBe(
+        [0, 2, 7, 9].toString()
     );
 });
