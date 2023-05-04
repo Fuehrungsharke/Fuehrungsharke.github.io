@@ -77,3 +77,5 @@ function toStaff(text) {
         return [parseInt(match[0]), parseInt(match[1]), parseInt(match[2]), parseInt(match[3])];
     return null;
 }
+
+module.exports = { sumStaff, getStaff, toText, toStaff };

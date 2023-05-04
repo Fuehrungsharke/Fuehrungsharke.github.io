@@ -694,3 +694,5 @@ async function draw() {
     displaySvg.setAttribute('width', drawable.dim.width * zoomFactor);
     displaySvg.setAttribute('height', drawable.dim.height * zoomFactor + LINESIZE);
 }
+
+exports.draw = draw;
