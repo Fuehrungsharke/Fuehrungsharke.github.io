@@ -15,3 +15,5 @@ function redo() {
     config = undoHistory.pop().config;
     draw();
 }
+
+module.exports = { configHistory, undo, redo };

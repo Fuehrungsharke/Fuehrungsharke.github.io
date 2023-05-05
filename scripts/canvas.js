@@ -1,3 +1,10 @@
+const m_history = require('../scripts/history');
+const m_uuid = require('../scripts/uuid');
+const m_resource_manager = require('../scripts/resource_manager');
+
+let outputSvg = {};
+let displaySvg = {};
+
 let Layout = {
     ListRight: "list-right",
     ListRightBelow: "list-right-below",
@@ -40,9 +47,9 @@ async function getSign(root) {
     if (root.sign == null)
         return null;
     if (root.sign.includes('/'))
-        svg = await getResourceAsync(root.sign);
+        svg = await m_resource_manager.getResourceAsync(root.sign);
     else
-        svg = await getResourceAsync(`/signs/${root.sign}.svg`);
+        svg = await m_resource_manager.getResourceAsync(`/signs/${root.sign}.svg`);
 
     let matchesConditional = /\{\{(\w+)\?([\w\d]+)\:([\w\d]+)\}\}/g.exec(svg);
     while (matchesConditional != null && matchesConditional.length == 4) {
@@ -61,7 +68,7 @@ async function getSign(root) {
         let keyName = matchesGroup[1];
         let symbolName = matchesGroup[2];
 
-        let innerSvg = new DOMParser().parseFromString(await getResourceAsync(`/${keyName}/${symbolName}.svg`), "text/xml").getElementsByTagName("svg")[0];
+        let innerSvg = new DOMParser().parseFromString(await m_resource_manager.getResourceAsync(`/${keyName}/${symbolName}.svg`), "text/xml").getElementsByTagName("svg")[0];
         let innerG = document.createElement('g');
         innerG.innerHTML = innerSvg.outerHTML;
 
@@ -242,7 +249,7 @@ async function drawSign(canvas, root, x, y, inactiveInherited) {
     let dimSign = new Dim(x, y);
     if (root == null)
         return dimSign;
-    let uuid = createUUID();
+    let uuid = m_uuid.createUUID();
     root.uuid = uuid;
     if (root.sign != null) {
         let itemBoxPromise = getSignSvg(root, uuid, x, y, inactiveInherited);
@@ -636,8 +643,8 @@ async function drawRecursive(canvas, root, x, y, inactiveInherited) {
         return drawLayout(canvas, root, x, y, inactiveInherited);
 }
 
-async function draw() {
-    configHistory.push({
+async function draw(config) {
+    m_history.configHistory.push({
         "config": JSON.parse(JSON.stringify(config))
     });
 
@@ -666,4 +673,4 @@ async function draw() {
     displaySvg.setAttribute('height', canvasDim.height * zoomFactor + LINESIZE);
 }
 
-exports.draw = draw;
+module.exports = { draw, outputSvg, displaySvg };
