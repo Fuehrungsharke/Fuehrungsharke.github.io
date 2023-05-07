@@ -1,0 +1,75 @@
+<svg id="outputSvg"
+     class="noContextMenu"
+     width="256"
+     height="282">
+	<rect stroke-width="3"
+	      stroke="#000"
+	      fill="#FFF"
+	      x="0"
+	      y="0"
+	      width="256"
+	      height="256"/>
+	<g transform="translate(0, 0) scale(1 1)"
+	   uuid="7cf3e6d8-6866-4cb2-83e6-c5feb2461d2d"
+	   class="draggable editable selectable">
+		<svg version="1.1"
+		     xmlns="http://www.w3.org/2000/svg"
+		     width="256"
+		     height="256"
+		     viewBox="0 0 256 256"
+		     touch-action="none"
+		     onpointerover="pointerOverSvg('7cf3e6d8-6866-4cb2-83e6-c5feb2461d2d')"
+		     onpointerout="pointerOutSvg('7cf3e6d8-6866-4cb2-83e6-c5feb2461d2d')">
+			<defs>
+				<clipPath id="Building">
+					<path d="M10 64 L10 192 L246 192 L246 64 L128 16 L10 64 Z"/>
+				</clipPath>
+				<clipPath id="BuildingBody">
+					<rect x="10"
+					      y="64"
+					      width="236"
+					      height="128"/>
+				</clipPath>
+				<clipPath id="BuildingClipTxt">
+					<rect x="20"
+					      y="95"
+					      width="216"
+					      height="66"/>
+				</clipPath>
+			</defs>
+			<rect x="10"
+			      y="64"
+			      width="236"
+			      height="128"
+			      fill="#039"
+			      stroke="#FFF"
+			      stroke-width="10"
+			      clip-path="url(#Building)"/>
+			<path d="M10 64 L128 16 L246 64"
+			      stroke="#FFF"
+			      stroke-width="10"
+			      fill="#039"
+			      clip-path="url(#Building)"/>
+			<path d="M10 64 L10 192 L246 192 L246 64 L128 16 L10 64"
+			      stroke="#000000"
+			      stroke-width="1"
+			      fill="none"/>
+			<g clip-path="url(#BuildingBody)">
+        {{symbols:cx=128, cy=128, width=226, height=74}}
+        </g>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 1px;"
+			      fill="#FFF"
+			      x="128"
+			      y="128"
+			      clip-path="url(#BuildingClipTxt)"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;"
+			      fill="#FFF"
+			      x="20"
+			      y="180"/>
+			<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;"
+			      fill="#FFF"
+			      x="236"
+			      y="180">THW</text>
+		</svg>
+	</g>
+</svg>
