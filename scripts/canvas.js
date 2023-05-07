@@ -1,9 +1,13 @@
+const m_const = require('../scripts/constants');
 const m_history = require('../scripts/history');
 const m_uuid = require('../scripts/uuid');
 const m_resource_manager = require('../scripts/resource_manager');
+const m_bbox = require('../scripts/bbox');
+const m_zoom = require('../scripts/zoom/zoom');
+m_bbox.addBBoxFuncToSVGGraphicsElement();
 
-let outputSvg = {};
-let displaySvg = {};
+let displaySvg = document.getElementById("displaySvg");
+let outputSvg = document.getElementById("outputSvg");
 
 let Layout = {
     ListRight: "list-right",
@@ -664,13 +668,13 @@ async function draw(config) {
     // Output
     outputSvg.innerHTML = canvas.innerHTML;
     outputSvg.setAttribute('width', canvasDim.width);
-    outputSvg.setAttribute('height', canvasDim.height + LINESIZE);
+    outputSvg.setAttribute('height', canvasDim.height + m_const.LINESIZE);
 
-    zoomcontainer.setAttribute('transform', `scale(${zoomFactor} ${zoomFactor})`)
+    zoomcontainer.setAttribute('transform', `scale(${m_zoom.zoomFactor} ${m_zoom.zoomFactor})`)
 
     // Display
-    displaySvg.setAttribute('width', canvasDim.width * zoomFactor);
-    displaySvg.setAttribute('height', canvasDim.height * zoomFactor + LINESIZE);
+    displaySvg.setAttribute('width', canvasDim.width * m_zoom.zoomFactor);
+    displaySvg.setAttribute('height', canvasDim.height * m_zoom.zoomFactor + m_const.LINESIZE);
 }
 
 module.exports = { draw, outputSvg, displaySvg };

@@ -12,3 +12,5 @@ slider.oninput = function () {
     displaySvg.setAttribute('width', canvasDim.width * zoomFactor);
     displaySvg.setAttribute('height', canvasDim.height * zoomFactor + LINESIZE);
 }
+
+module.exports = { zoomFactor };

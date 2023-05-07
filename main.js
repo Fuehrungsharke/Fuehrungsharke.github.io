@@ -1,9 +1,3 @@
-const maxColumns = 10
-const subColumns = 5
-const GAP = 50
-const LINESIZE = 26
-const WITH = 'with';
-const SUB = 'sub';
 
 let KeyCode = {
     ESC: 27,
@@ -18,8 +12,6 @@ let KeyCode = {
 
 let iptConfig = document.getElementById('iptConfig');
 let zoomcontainer = document.getElementById('zoomcontainer');
-let displaySvg = document.getElementById("displaySvg");
-let outputSvg = document.getElementById("outputSvg");
 let btnUndo = document.getElementById("btnUndo");
 let btnRedo = document.getElementById("btnRedo");
 
