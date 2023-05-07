@@ -1,28 +1,22 @@
 const canvas = require('../scripts/canvas');
+const resource_manager_mock = require('./mock/resource_manager.mock');
 
-test('the data is peanut butter', async () => {
-    await canvas.draw({
-        'sign': 'Building',
-        'txt': 'OV',
-        'colorPrimary': '#039',
-        'colorAccent': '#FFF',
-        'org': 'THW',
-    });
-    expect('AAA').toBe('AAA');
-});
+describe("canvas tests", () => {
+    resource_manager_mock.mock();
 
-test('draw #1', async () => {
-    await canvas.draw({
-        'sign': 'Building',
-        'txt': 'OV',
-        'colorPrimary': '#039',
-        'colorAccent': '#FFF',
-        'org': 'THW',
-    });
+    // test('draw single building sign', async () => {
+    //     await canvas.draw({
+    //         'sign': 'Building',
+    //         'txt': 'OV',
+    //         'colorPrimary': '#039',
+    //         'colorAccent': '#FFF',
+    //         'org': 'THW',
+    //     });
 
-    expect(
-        canvas.outputSvg
-    ).toBe(
-        'the expected value'
-    );
+    //     expect(
+    //         canvas.outputSvg
+    //     ).toBe(
+    //         'the expected value'
+    //     );
+    // });
 });

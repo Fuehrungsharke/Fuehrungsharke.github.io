@@ -23,4 +23,4 @@ function download(content, type, filename) {
     downloadJsonAnchorNode.remove();
 }
 
-module.exports = { getResourceAsync };
+module.exports = { getResourceAsync, resCache };
