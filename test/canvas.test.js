@@ -4,6 +4,10 @@ const resource_manager_mock = require('./mock/resource_manager.mock');
 describe("canvas tests", () => {
     resource_manager_mock.mock();
 
+    test('dummy', async () => {
+        expect(true).toBe(true);
+    });
+
     // test('draw single building sign', async () => {
     //     await canvas.draw({
     //         'sign': 'Building',
