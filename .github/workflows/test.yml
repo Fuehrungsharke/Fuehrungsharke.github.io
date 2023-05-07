@@ -6,8 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install modules
-        run: |
-          yarn add -dev jest
-          yarn add -dev jest-environment-jsdom
+        run: yarn install
       - name: Run tests
         run: yarn test
