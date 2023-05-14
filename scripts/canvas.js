@@ -187,10 +187,15 @@ function adjustTextSize(sign, element) {
     let fontsize = fontsizePattern.exec(style);
     if (fontsize?.length != 3)
         return;
-    for (let i = 0; i < 1000 && fontsize[1] > 1 && (bbox.width >= clipBBox.width || bbox.height >= clipBBox.height); i++) {
+    const orgFontSize = fontsize[1];
+    for (let i = 0; i < 1000 && fontsize[1] > 0 && (bbox.width >= clipBBox.width || bbox.height >= clipBBox.height); i++) {
         style = style.replace(fontsizePattern, `font-size: ${--fontsize[1]}${fontsize[2]}`);
         element.setAttribute('style', style);
         bbox = element.getBBox();
+    }
+    if (fontsize[1] == 0) {
+        style = style.replace(fontsizePattern, `font-size: ${orgFontSize}${fontsize[2]}`);
+        element.setAttribute('style', style);
     }
 }
 
