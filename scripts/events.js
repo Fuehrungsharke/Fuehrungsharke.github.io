@@ -37,6 +37,7 @@ document.getElementById('btnDownloadSvg').addEventListener('click', evt => {
         .replaceAll(/onclick\=\"editName\(\'([0-9a-f]{8}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{12})\'\)\"/ig, '')
         .replaceAll(/\{\{[\w\:\=\,\s]*\}\}/gi, '')
         .replaceAll(/class\=\"[\w\s]*\"/gi, '')
+        .replaceAll(/touch\-action\=\"none\"/gi, '')
         .replaceAll(/\ {2,}/gi, ' '),
         'image/svg', `${getDownloadFileName()}.svg`
     );
