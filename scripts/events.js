@@ -1,13 +1,40 @@
+const monthAbbreviations = [
+    'jan',
+    'feb',
+    'mar',
+    'apr',
+    'may',
+    'jun',
+    'jul',
+    'aug',
+    'sep',
+    'oct',
+    'nov',
+    'dec'
+];
+
+function pad(num, size) {
+    num = num.toString();
+    while (num.length < size)
+        num = '0' + num;
+    return num;
+}
+
+function getDownloadFileName() {
+    let now = new Date();
+    return `${pad(now.getDate(), 2)}${pad(now.getHours(), 2)}${pad(now.getMinutes(), 2)}${monthAbbreviations[now.getMonth()]}${now.getFullYear()}`;
+}
+
 document.getElementById('btnDownloadConfig').addEventListener('click', evt => {
-    download(JSON.stringify(removeUuid(config), null, 2), 'text/json', 'FüHarke.json');
+    download(JSON.stringify(removeUuid(config), null, 2), 'text/json', `${getDownloadFileName()}.json`);
 });
 
 document.getElementById('btnDownloadSvg').addEventListener('click', evt => {
-    download(outputSvg.outerHTML, 'image/svg', 'FüHarke.svg');
+    download(outputSvg.outerHTML, 'image/svg', `${getDownloadFileName()}.svg`);
 });
 
 document.getElementById('btnDownloadPng').addEventListener('click', evt => {
-    downloadPng(outputSvg, 'FüHarke.png');
+    downloadPng(outputSvg, `${getDownloadFileName()}.png`);
 });
 
 function markAll() {
