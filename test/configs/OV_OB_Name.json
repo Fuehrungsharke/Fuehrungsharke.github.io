@@ -1,0 +1,17 @@
+{
+  "sign": "Building",
+  "colorPrimary": "#039",
+  "colorAccent": "#FFF",
+  "org": "THW",
+  "with": [
+    {
+      "sign": "Person",
+      "colorPrimary": "#039",
+      "colorAccent": "#FFF",
+      "org": "THW",
+      "leading": true,
+      "name": "Ortsbeauftragte/r"
+    }
+  ],
+  "name": "OV Musterstadt"
+}

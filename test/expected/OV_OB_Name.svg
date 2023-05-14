@@ -1,0 +1,53 @@
+<svg id="outputSvg" class="noContextMenu" width="512" height="311"><rect stroke-width="3" stroke="#000" fill="#FFF" x="0" y="0" width="512" height="285"></rect><g transform="translate(0, 0) scale(1 1)" uuid="38878bd8-f918-4e0f-8d80-eb6153eafaf2" class="draggable editable selectable"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" touch-action="none" onpointerover="pointerOverSvg('38878bd8-f918-4e0f-8d80-eb6153eafaf2')" onpointerout="pointerOutSvg('38878bd8-f918-4e0f-8d80-eb6153eafaf2')">
+	<defs>
+		<clipPath id="Building">
+			<path d="M10 64 L10 192 L246 192 L246 64 L128 16 L10 64 Z"></path>
+		</clipPath>
+		<clipPath id="BuildingBody">
+			<rect x="10" y="64" width="236" height="128"></rect>
+		</clipPath>
+		<clipPath id="BuildingClipTxt">
+			<rect x="20" y="95" width="216" height="66"></rect>
+		</clipPath>
+	</defs>
+	<rect x="10" y="64" width="236" height="128" fill="#039" stroke="#FFF" stroke-width="10" clip-path="url(#Building)"></rect>
+	<path d="M10 64 L128 16 L246 64" stroke="#FFF" stroke-width="10" fill="#039" clip-path="url(#Building)"></path>
+	<path d="M10 64 L10 192 L246 192 L246 64 L128 16 L10 64" stroke="#000000" stroke-width="1" fill="none"></path>
+
+	<g clip-path="url(#BuildingBody)">
+	{{symbols:cx=128, cy=128, width=226, height=74}}
+	</g>
+
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#BuildingClipTxt)"></text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"></text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+</svg><text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black" onclick="editName('38878bd8-f918-4e0f-8d80-eb6153eafaf2')" uuid="38878bd8-f918-4e0f-8d80-eb6153eafaf2">OV Musterstadt</text></g><g transform="translate(256, 0) scale(1 1)" uuid="87930fab-3121-44dc-b88c-f7d41b3f80dc" class="draggable editable selectable"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" touch-action="none" onpointerover="pointerOverSvg('87930fab-3121-44dc-b88c-f7d41b3f80dc')" onpointerout="pointerOutSvg('87930fab-3121-44dc-b88c-f7d41b3f80dc')">
+	<defs>
+		<clipPath id="Person">
+			<path d="M64,128 L128,64 L192,128 L128,192 Z"></path>
+		</clipPath>
+		<clipPath id="PersonClipTxt">
+			<rect x="96" y="100" width="64" height="56"></rect>
+		</clipPath>
+	</defs>
+	<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"></path>
+
+
+
+
+
+
+
+
+	<g clip-path="url(#Person)">
+	{{symbols:cx=128, cy=128, width=64, height=56}}
+	</g>
+	<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"></rect>
+
+
+	<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"></path>
+
+	<text x="128" y="128" style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"></text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"></text>
+</svg><text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black" onclick="editName('87930fab-3121-44dc-b88c-f7d41b3f80dc')" uuid="87930fab-3121-44dc-b88c-f7d41b3f80dc">Ortsbeauftragte/r</text></g></svg>
