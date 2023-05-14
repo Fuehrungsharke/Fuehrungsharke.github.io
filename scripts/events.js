@@ -30,7 +30,16 @@ document.getElementById('btnDownloadConfig').addEventListener('click', evt => {
 });
 
 document.getElementById('btnDownloadSvg').addEventListener('click', evt => {
-    download(outputSvg.outerHTML, 'image/svg', `${getDownloadFileName()}.svg`);
+    download(outputSvg.outerHTML
+        .replaceAll(/uuid="([0-9a-f]{8}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{12})"/ig, '')
+        .replaceAll(/onpointerover\=\"pointerOverSvg\(\'([0-9a-f]{8}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{12})\'\)\"/ig, '')
+        .replaceAll(/onpointerout\=\"pointerOutSvg\(\'([0-9a-f]{8}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{12})\'\)\"/ig, '')
+        .replaceAll(/onclick\=\"editName\(\'([0-9a-f]{8}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{4}\b-[0-9a-f]{12})\'\)\"/ig, '')
+        .replaceAll(/\{\{[\w\:\=\,\s]*\}\}/gi, '')
+        .replaceAll(/class\=\"[\w\s]*\"/gi, '')
+        .replaceAll(/\ {2,}/gi, ' '),
+        'image/svg', `${getDownloadFileName()}.svg`
+    );
 });
 
 document.getElementById('btnDownloadPng').addEventListener('click', evt => {
