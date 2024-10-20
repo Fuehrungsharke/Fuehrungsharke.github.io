@@ -39,11 +39,11 @@
             }
         },
         {
-            "name": "Polizei",
+            "name": "Polizeilich",
             "type": "header"
         },
         {
-            "name": "Polizei",
+            "name": "Polizeilich",
             "type": "radio",
             "key": "POL",
             "icon": "/icons/orgs/Polizei.svg",
@@ -57,6 +57,35 @@
             "type": "radio",
             "key": "BPOL",
             "icon": "/icons/orgs/Bundespolizei.svg",
+            "implicitAttritbues": {
+                "colorPrimary": "#009900",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
+            "name": "Zoll",
+            "type": "radio",
+            "key": "ZOLL",
+            "icon": "/icons/orgs/Zoll.svg",
+            "implicitAttritbues": {
+                "colorPrimary": "#009900",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
+            "name": "Justiz",
+            "type": "radio",
+            "key": "JUSTIZ",
+            "implicitAttritbues": {
+                "colorPrimary": "#009900",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
+            "name": "Bundesamt für Logistik und Mobilität",
+            "type": "radio",
+            "key": "BALM",
+            "icon": "/icons/orgs/BALM.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#009900",
                 "colorAccent": "#FFFFFF"
@@ -135,6 +164,15 @@
             "type": "radio",
             "key": "KatS",
             "icon": "/icons/orgs/Zivilschutz.svg",
+            "implicitAttritbues": {
+                "colorPrimary": "#FF9900",
+                "colorAccent": "#000"
+            }
+        },
+        {
+            "name": "Kommunaler Ordnungsdienst (Ordnungsamt)",
+            "type": "radio",
+            "key": "KOD",
             "implicitAttritbues": {
                 "colorPrimary": "#FF9900",
                 "colorAccent": "#000"
