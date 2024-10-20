@@ -39,7 +39,7 @@
             }
         },
         {
-            "name": "Polizei",
+            "name": "Polizeilich",
             "type": "header"
         },
         {
@@ -66,6 +66,7 @@
             "name": "Zoll",
             "type": "radio",
             "key": "ZOLL",
+            "icon": "/icons/orgs/Zoll.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#009900",
                 "colorAccent": "#FFFFFF"
@@ -84,6 +85,7 @@
             "name": "Bundesamt für Logistik und Mobilität",
             "type": "radio",
             "key": "BALM",
+            "icon": "/icons/orgs/BALM.svg",
             "implicitAttritbues": {
                 "colorPrimary": "#009900",
                 "colorAccent": "#FFFFFF"
@@ -168,7 +170,7 @@
             }
         },
         {
-            "name": "Kommunaler Ordnungsdienst",
+            "name": "Kommunaler Ordnungsdienst (Ordnungsamt)",
             "type": "radio",
             "key": "KOD",
             "implicitAttritbues": {
