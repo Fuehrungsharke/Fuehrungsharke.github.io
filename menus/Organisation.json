@@ -168,6 +168,15 @@
             }
         },
         {
+            "name": "Kommunaler Ordnungsdienst",
+            "type": "radio",
+            "key": "KOD",
+            "implicitAttritbues": {
+                "colorPrimary": "#FF9900",
+                "colorAccent": "#000"
+            }
+        },
+        {
             "name": "CustomOrgs",
             "type": "placeholder"
         },
