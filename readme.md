@@ -32,6 +32,8 @@ Folgende Grundzeichen können in der Führungsharke konfiguriert und über das K
 | <img src="./icons/orgs/Bundespolizei.svg" alt="BPOL" width="35"/> | https://de.wikipedia.org/wiki/Datei:Bundespolizei-Logos.svg | Gemeinfrei |
 | <img src="./icons/orgs/Bundeswehr.svg" alt="BW" width="35"/> | https://de.wikipedia.org/wiki/Datei:Logo_of_the_Bundeswehr.svg | Gemeinfrei |
 | <img src="./icons/orgs/THW.svg" alt="THW" width="35"/> | https://de.wikipedia.org/wiki/Datei:THW.svg | Gemeinfrei |
+| <img src="./icons/orgs/Zoll.svg" alt="Zoll" width="35"/> | https://de.m.wikipedia.org/wiki/Datei:Zoll.svg | Gemeinfrei |
+| <img src="./icons/orgs/BALM.svg" alt="BALM" width="35"/> | https://de.m.wikipedia.org/wiki/Datei:BALM-Logo.svg | Gemeinfrei |
 | <img src="./icons/ui/add.svg" width="35"/><img src="./icons/ui/calc.svg" width="35"/><img src="./icons/ui/collapse.svg" width="35"/><img src="./icons/ui/copy.svg" width="35"/><img src="./icons/ui/cut.svg" width="35"/><img src="./icons/ui/decollapse.svg" width="35"/><img src="./icons/ui/delete.svg" width="35"/><img src="./icons/ui/edit.svg" width="35"/><img src="./icons/ui/eye_disabled.svg" width="35"/><img src="./icons/ui/eye.svg" width="35"/><img src="./icons/ui/organisation.svg" width="35"/><img src="./icons/ui/paste.svg" width="35"/><img src="./icons/ui/reset.svg" width="35"/><img src="./icons/ui/sum.svg" width="35"/><img src="./icons/ui/toggle_off.svg" width="35"/><img src="./icons/ui/toggle_on.svg" width="35"/> | https://fonts.google.com/icons | [Creative Commons](https://creativecommons.org/licenses/by-sa/4.0/) |
 
 # How to run
