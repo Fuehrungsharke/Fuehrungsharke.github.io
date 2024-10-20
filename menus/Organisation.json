@@ -136,6 +136,15 @@
             }
         },
         {
+            "name": "Deutsche Lebens-Rettungs-Gesellschaft",
+            "type": "radio",
+            "key": "DLRG",
+            "implicitAttritbues": {
+                "colorPrimary": "#FFFFFF",
+                "colorAccent": "#000000"
+            }
+        },
+        {
             "name": "Sonstige",
             "type": "header"
         },
