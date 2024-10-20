@@ -81,6 +81,15 @@
             }
         },
         {
+            "name": "Bundesamt für Logistik und Mobilität",
+            "type": "radio",
+            "key": "BALM",
+            "implicitAttritbues": {
+                "colorPrimary": "#0157A5",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
             "name": "Hilfsorganisationen",
             "type": "header"
         },
