@@ -72,6 +72,15 @@
             }
         },
         {
+            "name": "Justiz",
+            "type": "radio",
+            "key": "JUSTIZ",
+            "implicitAttritbues": {
+                "colorPrimary": "#009900",
+                "colorAccent": "#FFFFFF"
+            }
+        },
+        {
             "name": "Hilfsorganisationen",
             "type": "header"
         },
