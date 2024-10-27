@@ -22,6 +22,8 @@ let displaySvg = document.getElementById("displaySvg");
 let outputSvg = document.getElementById("outputSvg");
 let btnUndo = document.getElementById("btnUndo");
 let btnRedo = document.getElementById("btnRedo");
+let cbxBackground = document.getElementById('cbxBackground');
+let cbxBorder = document.getElementById('cbxBorder');
 
 function getEvtPos(evt) {
     let touchpos = evt;
