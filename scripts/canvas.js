@@ -645,9 +645,14 @@ async function draw() {
     let canvasDim = await drawRecursive(canvas, config, 0, 0, false);
 
     let background = document.createElement('rect');
-    background.setAttribute('stroke-width', 3);
-    background.setAttribute('stroke', '#000');
-    background.setAttribute('fill', '#FFF');
+    if (cbxBorder.checked) {
+        background.setAttribute('stroke-width', 3);
+        background.setAttribute('stroke', '#000');
+    }
+    if (cbxBackground.checked)
+        background.setAttribute('fill', '#FFF');
+    else
+        background.setAttribute('fill', 'transparent');
     background.setAttribute('x', 0);
     background.setAttribute('y', 0);
     background.setAttribute('width', canvasDim.width);
