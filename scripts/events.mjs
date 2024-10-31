@@ -93,7 +93,7 @@ function deleteSelection() {
         draw();
 }
 
-function onKeyUp(evt) {
+export function onKeyUp(evt) {
     if (evt.keyCode === KeyCode.ESC) {
         closeSignContextMenu();
         clearSelection();
@@ -116,7 +116,7 @@ function onKeyUp(evt) {
         deleteSelection();
 }
 
-function clickSign(evt) {
+export function clickSign(evt) {
     if (evt.detail != 2 || hoveringUuid == null)
         return;
     let root = getByUuid(config, hoveringUuid);

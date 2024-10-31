@@ -1,7 +1,7 @@
-let configHistory = [];
+export let configHistory = [];
 let undoHistory = [];
 
-function undo() {
+export function undo() {
     if (configHistory.length <= 1)
         return;
     undoHistory.push(configHistory.pop());
@@ -9,7 +9,7 @@ function undo() {
     draw();
 }
 
-function redo() {
+export function redo() {
     if (undoHistory.length <= 0)
         return;
     config = undoHistory.pop().config;

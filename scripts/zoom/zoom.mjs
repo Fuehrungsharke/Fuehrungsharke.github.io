@@ -1,5 +1,5 @@
 let slider = document.getElementById("zoomslider");
-let zoomFactor = slider.value / 100;
+export let zoomFactor = slider.value / 100;
 
 slider.oninput = function () {
     zoomFactor = this.value / 100;

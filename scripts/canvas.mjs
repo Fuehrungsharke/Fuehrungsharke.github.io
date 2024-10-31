@@ -1,3 +1,11 @@
+import { GAP, LINESIZE } from './ui_const.mjs';
+import { configHistory } from './history.mjs';
+import { config } from './config.mjs';
+import { createUUID } from './uuid.mjs';
+import { zoomFactor } from './zoom/zoom.mjs';
+import { getResourceAsync } from './resource_manager.mjs';
+import { getStaff } from './staff.mjs';
+
 let Layout = {
     ListRight: "list-right",
     ListRightBelow: "list-right-below",
@@ -636,7 +644,7 @@ async function drawRecursive(canvas, root, x, y, inactiveInherited) {
         return drawLayout(canvas, root, x, y, inactiveInherited);
 }
 
-async function draw() {
+export async function draw() {
     configHistory.push({
         "config": JSON.parse(JSON.stringify(config))
     });

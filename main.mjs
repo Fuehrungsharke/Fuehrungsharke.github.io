@@ -1,9 +1,7 @@
-const maxColumns = 10
-const subColumns = 5
-const GAP = 50
-const LINESIZE = 26
-const WITH = 'with';
-const SUB = 'sub';
+import { draw } from './scripts/canvas.mjs';
+import { onKeyUp, clickSign } from './scripts/events.mjs';
+import { drag, dragging, drop } from './scripts/dragdrop/dragdrop.mjs';
+import { undo, redo } from './scripts/history.mjs';
 
 let KeyCode = {
     ESC: 27,

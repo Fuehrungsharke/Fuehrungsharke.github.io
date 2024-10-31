@@ -362,7 +362,7 @@ let EAL_BR = {
     ]
 }
 
-let EL = {
+export let EL = {
     "sign": "Flag",
     "colorPrimary": "#FF0",
     "colorAccent": "#000",
@@ -385,7 +385,3 @@ let EL = {
         }
     ]
 }
-
-let config = [
-    EL
-];

@@ -54,7 +54,7 @@ function getStaff_HandleWith(root) {
     return staff;
 }
 
-function getStaff(root) {
+export function getStaff(root) {
     if (root.staff != null)
         return root.staff;
     let staff = getStaff_HandlePerson(root);

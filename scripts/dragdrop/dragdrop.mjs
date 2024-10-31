@@ -13,7 +13,7 @@ function pointerOutSvg(uuid) {
         hoveringUuid = null;
 }
 
-function drag(evt) {
+export function drag(evt) {
     if (evt.pointerType == 'mouse') {
         if (evt.button != 0 && evt.button != 2)
             return;
@@ -68,7 +68,7 @@ function drag(evt) {
     }
 }
 
-function dragging(evt) {
+export function dragging(evt) {
     if (evt.pointerType == 'mouse' && dragButton != 0)
         return;
     let touchpos = getEvtPos(evt);
@@ -87,7 +87,7 @@ function dragging(evt) {
     }
 }
 
-function drop(evt) {
+export function drop(evt) {
     let draggedElements = draggingElements;
     draggingElements = null;
     dragButton = null;

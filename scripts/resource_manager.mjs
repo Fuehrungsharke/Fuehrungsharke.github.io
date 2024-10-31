@@ -1,6 +1,6 @@
 let resCache = {};
 
-async function getResourceAsync(path) {
+export async function getResourceAsync(path) {
     if (path in resCache)
         return resCache[path];
     resCache[path] = new Promise((resolve, reject) => {

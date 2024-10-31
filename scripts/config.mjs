@@ -1,3 +1,7 @@
+import { EL } from '../defaultconfig.mjs';
+
+export let config = [ EL ];
+
 function parseCsv(strData, strDelimiter) {
     strDelimiter = (strDelimiter || ",");
     let objPattern = new RegExp(
