@@ -9,29 +9,33 @@
 </head>
 
 <body>
-    <button id="btnUndo" title="Rückgängig">&lt;</button>
-    <button id="btnRedo" title="Wiederholen">&gt;</button>
-    <label for="iptConfig">Select a config:</label>
-    <input type="file" id="iptConfig" name="iptConfig" accept="Config/json"><br />
-    <div class="slidercontainer">
-        <input id="zoomslider" type="range" min="1" max="100" value="25" class="slider">
+    <div id="root">
+        <button id="btnUndo" title="Rückgängig">&lt;</button>
+        <button id="btnRedo" title="Wiederholen">&gt;</button>
+        <label for="iptConfig">Select a config:</label>
+        <input type="file" id="iptConfig" name="iptConfig" accept="Config/json"><br />
+        <div class="slidercontainer">
+            <input id="zoomslider" type="range" min="1" max="100" value="25" class="slider">
+        </div>
+        <svg id="displaySvg" class="noContextMenu">
+            <g id="zoomcontainer">
+                <svg id="outputSvg" class="noContextMenu" width="512" height="256" />
+            </g>
+            <rect id="selectionRect" x="0" y="0" width="0" height="0" fill="#b9d5f1" fill-opacity="0.25"
+                stroke="#9ac5ec" stroke-width="1" opacity="0" />
+        </svg>
+        <div class="context-menu">
+            <ul class="menu">
+            </ul>
+        </div>
+        <br />
+        <button id="btnDownloadConfig">Download Config</button>
+        <input id="cbxBackground" type="checkbox" checked="true" onclick="draw()" /><label
+            for="cbxBackground">Background</label>
+        <input id="cbxBorder" type="checkbox" checked="true" onclick="draw()" /><label for="cbxBorder">Border</label>
+        <button id="btnDownloadSvg">Download Vector Image (*.svg)</button>
+        <button id="btnDownloadPng">Download Raster Image (*.png)</button>
     </div>
-    <svg id="displaySvg" class="noContextMenu">
-        <g id="zoomcontainer">
-            <svg id="outputSvg" class="noContextMenu" width="512" height="256" />
-        </g>
-        <rect id="selectionRect" x="0" y="0" width="0" height="0" fill="#b9d5f1" fill-opacity="0.25" stroke="#9ac5ec" stroke-width="1" opacity="0" />
-    </svg>
-    <div class="context-menu">
-        <ul class="menu">
-        </ul>
-    </div>
-    <br />
-    <button id="btnDownloadConfig">Download Config</button>
-    <input id="cbxBackground" type="checkbox" checked="true" onclick="draw()"/><label for="cbxBackground">Background</label>
-    <input id="cbxBorder" type="checkbox" checked="true" onclick="draw()"/><label for="cbxBorder">Border</label>
-    <button id="btnDownloadSvg">Download Vector Image (*.svg)</button>
-    <button id="btnDownloadPng">Download Raster Image (*.png)</button>
     <script src="defaultconfig.js"></script>
     <script src="stan.js"></script>
     <script src="scripts/base64.js"></script>

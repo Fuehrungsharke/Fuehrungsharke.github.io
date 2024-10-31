@@ -4829,5 +4829,3 @@ let StAN_OV = {
 };
 
 // config = StAN_OV;
-
-module.exports = { StAN_OV_Stab, StAN_TZ_ZTr, StAN_TZ_B, StAN_TZ_B_ASH, StAN_TZ_N };
