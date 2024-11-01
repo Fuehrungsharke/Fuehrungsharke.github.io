@@ -1,4 +1,7 @@
 import CmdBase from "./cmd_base.mjs";
+import { getParentByUuid } from '../utils.mjs';
+import { SUB, WITH } from '../ui_const.mjs';
+import { config, setConfig } from '../config.mjs';
 
 export default function RemoveCmd() { }
 
@@ -12,10 +15,10 @@ RemoveCmd.prototype.removeSingle = function (root) {
             firstWith.with = root.with.filter(item => item != firstWith);
             if (firstWith.with.length == 0)
                 delete firstWith.with;
-            config = firstWith;
+            setConfig(firstWith);
         }
         else if (root.sub != null && Array.isArray(root.sub))
-            config = root.sub;
+            setConfig(root.sub);
         return;
     }
     let source = getParentByUuid(config, root.uuid);
@@ -49,18 +52,18 @@ RemoveCmd.prototype.removeSingle = function (root) {
 
 RemoveCmd.prototype.removeTree = function (root) {
     if (Array.isArray(config)) {
-        config = config.filter(item => item != root);
+        setConfig(config.filter(item => item != root));
         if (config.length == 0)
-            config = null;
+            setConfig(null);
     }
     else if (root == config)
-        config = null;
+        setConfig(null);
     if (config == null) {
-        config = {
+        setConfig({
             'sign': "Unit",
             'colorPrimary': '#FFF',
             'colorAccent': '#000'
-        };
+        });
         return;
     }
     let source = getParentByUuid(config, root.uuid);
