@@ -1,5 +1,6 @@
 import { getEvtPos } from '../events.mjs';
 import { zoomFactor } from '../zoom/zoom.mjs';
+import { draw } from '../canvas.mjs';
 
 let selectionRect = document.getElementById("selectionRect");
 let selectionStartPos = null;
@@ -55,7 +56,7 @@ export function drag(evt) {
 
     let canvasChildren = Array.from(outputSvg.childNodes).filter(item => !(item in draggingElements));
     canvasChildren.unshift(draggingElements);
-    outputSvg.childNodes = canvasChildren;
+    outputSvg.replaceChildren(...canvasChildren);
 
     for (const draggingElement of draggingElements) {
         let transform = getTransform(draggingElement);
