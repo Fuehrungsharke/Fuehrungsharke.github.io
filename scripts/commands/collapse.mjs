@@ -1,4 +1,6 @@
-function CollapseCmd() { }
+import CmdBase from "./cmd_base.mjs";
+
+export default function CollapseCmd() { }
 
 CollapseCmd.prototype.__proto__ = new CmdBase();
 

@@ -1,3 +1,23 @@
+import { getEvtPos } from '../events.mjs';
+import CopyCmd from '../commands/copy.mjs';
+import AddParentCmd from '../commands/add_parent.mjs';
+import AddSibCmd from '../commands/add_sib.mjs';
+import AddSubCmd from '../commands/add_sub.mjs';
+import AddWithCmd from '../commands/add_with.mjs';
+import CutSingleCmd from '../commands/cut_single.mjs';
+import CutTreeCmd from '../commands/cut_tree.mjs';
+import DeleteSingleCmd from '../commands/delete_single.mjs';
+import DeleteTreeCmd from '../commands/delete_tree.mjs';
+import PasteParentCmd from '../commands/paste_parent.mjs';
+import PasteSibCmd from '../commands/paste_sib.mjs';
+import PasteSubCmd from '../commands/paste_sub.mjs';
+import PasteWithCmd from '../commands/paste_with.mjs';
+import NewOrgCmd from '../commands/new_org.mjs';
+import SetStaffCmd from '../commands/set_staff.mjs';
+import ResetStaffCmd from '../commands/reset_staff.mjs';
+import CollapseCmd from '../commands/collapse.mjs';
+import DecollapseCmd from '../commands/decollapse.mjs';
+
 const SUBMENU = 'submenu';
 const PLACEHOLDER = 'placeholder';
 const BOOL = 'bool';
@@ -251,7 +271,7 @@ async function openSignContextMenu(evt, sign) {
     menu.classList.add('context-menu-active');
 }
 
-function closeSignContextMenu() {
+export function closeSignContextMenu() {
     let menu = document.querySelector('.context-menu');
     menu.classList.remove('context-menu-active');
     currentSignMenu = null;

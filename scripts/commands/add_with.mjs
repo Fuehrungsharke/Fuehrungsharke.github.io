@@ -1,4 +1,6 @@
-function AddWithCmd() { }
+import AddCmd from "./add.mjs";
+
+export default function AddWithCmd() { }
 
 AddWithCmd.prototype.__proto__ = new AddCmd();
 

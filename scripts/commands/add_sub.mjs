@@ -1,4 +1,6 @@
-function AddSubCmd() { }
+import AddCmd from "./add.mjs";
+
+export default function AddSubCmd() { }
 
 AddSubCmd.prototype.__proto__ = new AddCmd();
 

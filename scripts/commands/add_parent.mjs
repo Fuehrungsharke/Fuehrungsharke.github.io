@@ -1,4 +1,6 @@
-function AddParentCmd() { }
+import AddCmd from "./add.mjs";
+
+export default function AddParentCmd() { }
 
 AddParentCmd.prototype.__proto__ = new AddCmd();
 

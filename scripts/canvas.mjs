@@ -5,6 +5,7 @@ import { createUUID } from './uuid.mjs';
 import { zoomFactor } from './zoom/zoom.mjs';
 import { getResourceAsync } from './resource_manager.mjs';
 import { getStaff } from './staff.mjs';
+import { pointerOverSvg, pointerOutSvg } from './dragdrop/dragdrop.mjs';
 
 let Layout = {
     ListRight: "list-right",
@@ -203,8 +204,8 @@ async function getSignSvg(root, uuid, x, y, inactiveInherited) {
 
     let sign = new DOMParser().parseFromString(await getSign(root), "text/xml").getElementsByTagName("svg")[0];
     sign.setAttribute('touch-action', 'none');
-    sign.setAttribute('onpointerover', `pointerOverSvg('${uuid}')`);
-    sign.setAttribute('onpointerout', `pointerOutSvg('${uuid}')`);
+    sign.setAttribute('onpointerover', evt => pointerOverSvg(uuid));
+    sign.setAttribute('onpointerout', evt => pointerOutSvg(uuid));
 
     for (const element of sign.getElementsByTagName('text'))
         splitText(sign, element);

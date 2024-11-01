@@ -1,4 +1,6 @@
-function CutTreeCmd() { }
+import RemoveCmd from "./remove.mjs";
+
+export default function CutTreeCmd() { }
 
 CutTreeCmd.prototype.__proto__ = new RemoveCmd();
 

@@ -1,4 +1,6 @@
-function PasteParentCmd() { }
+import AddCmd from './add.mjs';
+
+export default function PasteParentCmd() { }
 
 PasteParentCmd.prototype.__proto__ = new AddCmd();
 

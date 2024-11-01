@@ -1,3 +1,5 @@
+import { LINESIZE } from '../ui_const.mjs';
+
 let slider = document.getElementById("zoomslider");
 export let zoomFactor = slider.value / 100;
 

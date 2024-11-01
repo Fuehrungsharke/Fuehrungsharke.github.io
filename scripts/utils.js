@@ -72,36 +72,6 @@ function getParentByUuid(root, uuid) {
     return null;
 }
 
-function toCanvasCoords(value) {
-    return value * (1 / zoomFactor);
-}
-
-function fromCanvasCoords(value) {
-    return value * zoomFactor;
-}
-
-function getTransform(element) {
-    let transform = element.getAttributeNS(null, 'transform');
-    let match = /translate\((\d+(.\d+)?), (\d+(.\d+)?)\) scale\((\d+(.\d+)?) (\d+(.\d+)?)\)/gi.exec(transform);
-    return {
-        'x': parseInt(match[1]),
-        'y': parseInt(match[3]),
-        'scaleX': parseInt(match[5]),
-        'scaleY': parseInt(match[7]),
-    };
-}
-
-function getElementDimensions(element) {
-    let maxWidth = 0;
-    let maxHeight = 0;
-    let svgs = element.getElementsByTagName('svg');
-    for (const svg of svgs) {
-        maxWidth = Math.max(maxWidth, svg.width.baseVal.value);
-        maxHeight = Math.max(maxHeight, svg.height.baseVal.value);
-    }
-    return [maxWidth, maxHeight];
-}
-
 function getSelectedElements() {
     let selectedElements = [];
     let selectedSigns = outputSvg.getElementsByClassName('selected');

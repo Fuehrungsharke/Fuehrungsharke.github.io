@@ -1,4 +1,6 @@
-function SetStaffCmd() { }
+import CmdBase from "./cmd_base.mjs";
+
+export default function SetStaffCmd() { }
 
 SetStaffCmd.prototype.__proto__ = new CmdBase();
 

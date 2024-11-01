@@ -1,4 +1,6 @@
-function ResetStaffCmd() { }
+import CmdBase from "./cmd_base.mjs";
+
+export default function ResetStaffCmd() { }
 
 ResetStaffCmd.prototype.__proto__ = new CmdBase();
 

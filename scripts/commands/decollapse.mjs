@@ -1,4 +1,6 @@
-function DecollapseCmd() { }
+import CmdBase from "./cmd_base.mjs";
+
+export default function DecollapseCmd() { }
 
 DecollapseCmd.prototype.__proto__ = new CmdBase();
 

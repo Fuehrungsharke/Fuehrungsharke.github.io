@@ -1,6 +1,7 @@
 import { draw } from './scripts/canvas.mjs';
 import { onKeyUp, clickSign } from './scripts/events.mjs';
 import { drag, dragging, drop } from './scripts/dragdrop/dragdrop.mjs';
+import {  } from './scripts/contextmenu/contextmenu.mjs'
 import { undo, redo } from './scripts/history.mjs';
 
 let KeyCode = {
@@ -22,13 +23,6 @@ let btnUndo = document.getElementById("btnUndo");
 let btnRedo = document.getElementById("btnRedo");
 let cbxBackground = document.getElementById('cbxBackground');
 let cbxBorder = document.getElementById('cbxBorder');
-
-function getEvtPos(evt) {
-    let touchpos = evt;
-    if (touchpos.clientX == undefined)
-        touchpos = evt.targetTouches[0];
-    return touchpos;
-}
 
 function getClickedElement(evt, className) {
     let evtElement = evt.srcElement || evt.target;

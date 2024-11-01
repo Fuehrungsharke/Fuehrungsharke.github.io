@@ -1,4 +1,6 @@
-function AddSibCmd() { }
+import AddCmd from "./add.mjs";
+
+export default function AddSibCmd() { }
 
 AddSibCmd.prototype.__proto__ = new AddCmd();
 

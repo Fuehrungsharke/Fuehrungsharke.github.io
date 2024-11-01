@@ -1,4 +1,6 @@
-function AddCmd() { }
+import CmdBase from "./cmd_base.mjs";
+
+export default function AddCmd() { }
 
 AddCmd.prototype.__proto__ = new CmdBase();
 

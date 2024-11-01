@@ -1,6 +1,8 @@
+import CmdBase from "./cmd_base.mjs";
+
 let customOrgs = [];
 
-function NewOrgCmd() { }
+export default function NewOrgCmd() { }
 
 NewOrgCmd.prototype.__proto__ = new CmdBase();
 

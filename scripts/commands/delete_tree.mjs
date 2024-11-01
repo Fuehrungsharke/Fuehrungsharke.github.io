@@ -1,4 +1,6 @@
-function DeleteTreeCmd() { }
+import RemoveCmd from './remove.mjs';
+
+export default function DeleteTreeCmd() { }
 
 DeleteTreeCmd.prototype.__proto__ = new RemoveCmd();
 

@@ -1,4 +1,6 @@
-function RemoveCmd() { }
+import CmdBase from "./cmd_base.mjs";
+
+export default function RemoveCmd() { }
 
 RemoveCmd.prototype.__proto__ = new CmdBase();
 

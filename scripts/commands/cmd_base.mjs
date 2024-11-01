@@ -1,4 +1,4 @@
-function CmdBase() { }
+export default function CmdBase() { }
 
 CmdBase.prototype.key = null;
 CmdBase.prototype.selectedElements = null;

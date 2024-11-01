@@ -1,4 +1,6 @@
-function CutSingleCmd() { }
+import RemoveCmd from "./remove.mjs";
+
+export default function CutSingleCmd() { }
 
 CutSingleCmd.prototype.__proto__ = new RemoveCmd();
 

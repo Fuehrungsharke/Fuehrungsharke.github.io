@@ -1,14 +1,17 @@
+import { getEvtPos } from '../events.mjs';
+import { zoomFactor } from '../zoom/zoom.mjs';
+
 let selectionRect = document.getElementById("selectionRect");
 let selectionStartPos = null;
 let dragButton = null;
 let draggingElements = null;
 let hoveringUuid = null;
 
-function pointerOverSvg(uuid) {
+export function pointerOverSvg(uuid) {
     hoveringUuid = uuid;
 }
 
-function pointerOutSvg(uuid) {
+export function pointerOutSvg(uuid) {
     if (hoveringUuid == uuid)
         hoveringUuid = null;
 }
@@ -191,6 +194,36 @@ function updateSelection(markedArea, mode) {
         else if (mode == 'normal' && selectable.classList.contains('selected'))
             selectable.classList.remove('selected');
     }
+}
+
+function fromCanvasCoords(value) {
+    return value * zoomFactor;
+}
+
+function toCanvasCoords(value) {
+    return value * (1 / zoomFactor);
+}
+
+function getTransform(element) {
+    let transform = element.getAttributeNS(null, 'transform');
+    let match = /translate\((\d+(.\d+)?), (\d+(.\d+)?)\) scale\((\d+(.\d+)?) (\d+(.\d+)?)\)/gi.exec(transform);
+    return {
+        'x': parseInt(match[1]),
+        'y': parseInt(match[3]),
+        'scaleX': parseInt(match[5]),
+        'scaleY': parseInt(match[7]),
+    };
+}
+
+function getElementDimensions(element) {
+    let maxWidth = 0;
+    let maxHeight = 0;
+    let svgs = element.getElementsByTagName('svg');
+    for (const svg of svgs) {
+        maxWidth = Math.max(maxWidth, svg.width.baseVal.value);
+        maxHeight = Math.max(maxHeight, svg.height.baseVal.value);
+    }
+    return [maxWidth, maxHeight];
 }
 
 function getEventMode(evt) {

@@ -1,3 +1,5 @@
+import { closeSignContextMenu } from './contextmenu/contextmenu.mjs';
+
 const monthAbbreviations = [
     'jan',
     'feb',
@@ -12,6 +14,13 @@ const monthAbbreviations = [
     'nov',
     'dec'
 ];
+
+export function getEvtPos(evt) {
+    let touchpos = evt;
+    if (touchpos.clientX == undefined)
+        touchpos = evt.targetTouches[0];
+    return touchpos;
+}
 
 function pad(num, size) {
     num = num.toString();

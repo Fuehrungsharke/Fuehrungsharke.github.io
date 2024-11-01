@@ -1,4 +1,6 @@
-function DeleteSingleCmd() { }
+import RemoveCmd from './remove.mjs';
+
+export default function DeleteSingleCmd() { }
 
 DeleteSingleCmd.prototype.__proto__ = new RemoveCmd();
 
