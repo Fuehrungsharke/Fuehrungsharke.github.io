@@ -155,7 +155,7 @@ function clearSelectionRect() {
     selectionRect.setAttributeNS(null, 'height', 0);
 }
 
-function clearSelection() {
+export function clearSelection() {
     clearSelectionRect();
     let selectables = outputSvg.getElementsByClassName('selectable');
     for (let idx in selectables)
@@ -163,7 +163,7 @@ function clearSelection() {
             selectables[idx].classList.remove('selected');
 }
 
-function clearDragged() {
+export function clearDragged() {
     let dragged = outputSvg.getElementsByClassName('draggedElement');
     for (const element of dragged)
         element.classList.remove('draggedElement');

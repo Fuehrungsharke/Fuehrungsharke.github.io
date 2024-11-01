@@ -4,17 +4,6 @@ import { drag, dragging, drop } from './scripts/dragdrop/dragdrop.mjs';
 import { undo, redo } from './scripts/history.mjs';
 import { openSignContextMenu, closeSignContextMenu } from './scripts/contextmenu/contextmenu.mjs';
 
-let KeyCode = {
-    ESC: 27,
-    DEL: 46,
-    A: 65,
-    C: 67,
-    V: 86,
-    X: 88,
-    Y: 89,
-    Z: 90,
-}
-
 let iptConfig = document.getElementById('iptConfig');
 let zoomcontainer = document.getElementById('zoomcontainer');
 let displaySvg = document.getElementById("displaySvg");
