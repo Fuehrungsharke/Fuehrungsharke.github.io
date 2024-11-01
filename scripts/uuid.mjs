@@ -8,7 +8,7 @@ export function createUUID() {
     return uuid;
 }
 
-function removeUuid(root) {
+export function removeUuid(root) {
     if (typeof root != 'object')
         return root;
     if (Array.isArray(root))

@@ -13,7 +13,7 @@ function triggerDownload(imgURI, fileName) {
     a.dispatchEvent(evt);
 }
 
-function downloadPng(svg, fileName) {
+export default function downloadPng(svg, fileName) {
     let copy = svg.cloneNode(true);
     let canvas = document.createElement("canvas");
     let bbox = svg.getBBox();

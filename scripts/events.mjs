@@ -2,6 +2,10 @@ import { closeSignContextMenu } from './contextmenu/contextmenu.mjs';
 import { KeyCode } from './ui_const.mjs';
 import { clearSelection, clearDragged } from './dragdrop/dragdrop.mjs';
 import { draw } from './canvas.mjs';
+import { config } from './config.mjs';
+import { download } from './resource_manager.mjs';
+import downloadPng from './rasterimage.mjs';
+import { removeUuid } from './uuid.mjs';
 
 const monthAbbreviations = [
     'jan',

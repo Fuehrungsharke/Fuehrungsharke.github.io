@@ -13,7 +13,7 @@ export async function getResourceAsync(path) {
     return resCache[path];
 }
 
-function download(content, type, filename) {
+export function download(content, type, filename) {
     let dataStr = `data:${type};charset=utf-8,` + encodeURIComponent(content);
     let downloadJsonAnchorNode = document.createElement('a');
     downloadJsonAnchorNode.setAttribute("href", dataStr);
