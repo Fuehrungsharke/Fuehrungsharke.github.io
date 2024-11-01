@@ -4,7 +4,7 @@ import { drag, dragging, drop, pointerOverSvg, pointerOutSvg } from './scripts/d
 import { undo, redo } from './scripts/history.mjs';
 import { openSignContextMenu, clickContextMenuItem, closeSignContextMenu } from './scripts/contextmenu/contextmenu.mjs';
 import setUpBBox from './scripts/bbox.mjs';
-import { editName } from './scripts/config.mjs';
+import { editName, parseConfig } from './scripts/config.mjs';
 
 let iptConfig = document.getElementById('iptConfig');
 let zoomcontainer = document.getElementById('zoomcontainer');
@@ -45,7 +45,7 @@ function configSelected(evt) {
     let reader = new FileReader();
     reader.onload = function (e) {
         let data = e.target.result;
-        config = parseConfig(data);
+        parseConfig(data);
         draw();
     }
     reader.readAsDataURL(evt.target.files[0]);

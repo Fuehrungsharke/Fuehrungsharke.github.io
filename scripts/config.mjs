@@ -1,6 +1,7 @@
 import { EL } from '../defaultconfig.mjs';
 import { getByUuid } from './utils.mjs';
 import { draw } from './canvas.mjs';
+import { b64DecodeUnicode } from './base64.mjs';
 
 export let config = [ EL ];
 
@@ -149,23 +150,24 @@ function initUnitWithPerson(root, UnitName, FuncPattern, txt) {
     ];
 }
 
-function parseConfig(data) {
+export function parseConfig(data) {
     let preambleJson = 'data:application/json;base64,';
     if (data.startsWith(preambleJson)) {
         data = data.substring(preambleJson.length);
         let dataJson = b64DecodeUnicode(data);
-        return JSON.parse(dataJson);
+        config = JSON.parse(dataJson);
+        return;
     }
 
     let preambleCSV = 'data:application/vnd.ms-excel;base64,';
     if (!data.startsWith(preambleCSV))
-        return null;
+        return;
 
     data = data.substring(preambleCSV.length);
     let dataCsv = atob(data);
     let rows = parseCsv(dataCsv, ';').splice(1);
     if (!Array.isArray(rows[0]))
-        return null;
+        return;
 
     let OV = JSON.parse(JSON.stringify(StAN_OV));
     // initUnitWithPerson(OV, '0. GAGr', 'Helferanwärter\/in', 'HeAnw');
@@ -176,5 +178,6 @@ function parseConfig(data) {
     setUnassignedInactive(OV);
     // removeEmptyUnits(null, null, OV);
 
-    return OV;
+    config = OV;
+    return;
 }
