@@ -1,4 +1,5 @@
 import CmdBase from "./cmd_base.mjs";
+import { getStaff, toText, toStaff } from '../staff.mjs';
 
 export default function SetStaffCmd() { }
 

@@ -65,11 +65,11 @@ export function getStaff(root) {
     return staff;
 }
 
-function toText(staff) {
+export function toText(staff) {
     return `${staff[0]} / ${staff[1]} / ${staff[2]} / ${staff[3]}`;
 }
 
-function toStaff(text) {
+export function toStaff(text) {
     let match = text.match(/\d+/g);
     if (match.length == 3)
         return [parseInt(match[0]), parseInt(match[1]), parseInt(match[2]), parseInt(match[0]) + parseInt(match[1]) + parseInt(match[2])];
