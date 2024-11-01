@@ -33,6 +33,12 @@ function onDomContentLoaded() {
     displaySvg.addEventListener('pointercancel', drop);
     btnUndo.addEventListener('click', undo);
     btnRedo.addEventListener('click', redo);
+
+    let cbxBackground = document.getElementById("cbxBackground");
+    cbxBackground.addEventListener('change', draw);
+
+    let cbxBorder = document.getElementById("cbxBorder");
+    cbxBorder.addEventListener('change', draw);
 }
 
 function configSelected(evt) {
