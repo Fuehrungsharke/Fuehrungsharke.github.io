@@ -1,9 +1,23 @@
 import { EL } from '../defaultconfig.mjs';
+import { getByUuid } from './utils.mjs';
+import { draw } from './canvas.mjs';
 
 export let config = [ EL ];
 
 export function setConfig(cfg) {
     config = cfg;
+}
+
+export function editName(uuid) {
+    let item = getByUuid(config, uuid);
+    let newName = prompt('Name', item['name']);
+    if (newName == undefined)
+        return;
+    if (newName == '')
+        delete item['name'];
+    else
+        item['name'] = newName;
+    draw();
 }
 
 function parseCsv(strData, strDelimiter) {

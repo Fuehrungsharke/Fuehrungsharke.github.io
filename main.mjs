@@ -4,6 +4,7 @@ import { drag, dragging, drop, pointerOverSvg, pointerOutSvg } from './scripts/d
 import { undo, redo } from './scripts/history.mjs';
 import { openSignContextMenu, clickContextMenuItem, closeSignContextMenu } from './scripts/contextmenu/contextmenu.mjs';
 import setUpBBox from './scripts/bbox.mjs';
+import { editName } from './scripts/config.mjs';
 
 let iptConfig = document.getElementById('iptConfig');
 let zoomcontainer = document.getElementById('zoomcontainer');
@@ -50,18 +51,6 @@ function configSelected(evt) {
     reader.readAsDataURL(evt.target.files[0]);
 }
 
-function editName(uuid) {
-    let item = getByUuid(config, uuid);
-    let newName = prompt('Name', item['name']);
-    if (newName == undefined)
-        return;
-    if (newName == '')
-        delete item['name'];
-    else
-        item['name'] = newName;
-    draw();
-}
-
 document.addEventListener('DOMContentLoaded', onDomContentLoaded);
 document.addEventListener('click', function (evt) {
     let close = false;
@@ -88,6 +77,7 @@ document.addEventListener('contextmenu', function (evt) {
 window.onkeyup = onKeyUp;
 window.pointerOverSvg = pointerOverSvg;
 window.pointerOutSvg = pointerOutSvg;
+window.editName = editName;
 
 setUpBBox();
 draw();
