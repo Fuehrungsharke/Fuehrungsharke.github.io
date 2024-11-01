@@ -3,6 +3,7 @@ import { onKeyUp, clickSign } from './scripts/events.mjs';
 import { drag, dragging, drop } from './scripts/dragdrop/dragdrop.mjs';
 import { undo, redo } from './scripts/history.mjs';
 import { openSignContextMenu, clickContextMenuItem, closeSignContextMenu } from './scripts/contextmenu/contextmenu.mjs';
+import setUpBBox from './scripts/bbox.mjs';
 
 let iptConfig = document.getElementById('iptConfig');
 let zoomcontainer = document.getElementById('zoomcontainer');
@@ -86,4 +87,5 @@ document.addEventListener('contextmenu', function (evt) {
 
 window.onkeyup = onKeyUp;
 
+setUpBBox();
 draw();
