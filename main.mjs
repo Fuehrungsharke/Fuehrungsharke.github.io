@@ -2,7 +2,7 @@ import { draw } from './scripts/canvas.mjs';
 import { onKeyUp, clickSign } from './scripts/events.mjs';
 import { drag, dragging, drop } from './scripts/dragdrop/dragdrop.mjs';
 import { undo, redo } from './scripts/history.mjs';
-import { openSignContextMenu, closeSignContextMenu } from './scripts/contextmenu/contextmenu.mjs';
+import { openSignContextMenu, clickContextMenuItem, closeSignContextMenu } from './scripts/contextmenu/contextmenu.mjs';
 
 let iptConfig = document.getElementById('iptConfig');
 let zoomcontainer = document.getElementById('zoomcontainer');

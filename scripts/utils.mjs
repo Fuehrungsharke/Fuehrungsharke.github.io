@@ -1,4 +1,5 @@
 import { SUB, WITH } from './ui_const.mjs';
+import { config } from './config.mjs';
 
 function isAncestorOf(item, presumedDescendant) {
     if (presumedDescendant.sub != null && Array.isArray(presumedDescendant.sub)) {
@@ -74,7 +75,7 @@ function getParentByUuid(root, uuid) {
     return null;
 }
 
-function getSelectedElements() {
+export function getSelectedElements() {
     let selectedElements = [];
     let selectedSigns = outputSvg.getElementsByClassName('selected');
     for (const selectedSign of selectedSigns)

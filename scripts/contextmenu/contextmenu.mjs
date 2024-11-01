@@ -1,8 +1,8 @@
 import { getEvtPos } from '../events.mjs';
-import { getByUuid } from '../utils.mjs';
+import { getByUuid, getSelectedElements } from '../utils.mjs';
 import { config } from '../config.mjs';
 import { getResourceAsync } from '../resource_manager.mjs';
-import { getSign } from '../canvas.mjs';
+import { getSign, draw } from '../canvas.mjs';
 
 import CopyCmd from '../commands/copy.mjs';
 import AddParentCmd from '../commands/add_parent.mjs';
@@ -345,7 +345,7 @@ function handleConditionalAttributes(root, attr) {
                 root[idx] = attr.conditionalAttritbues.values[idx];
 }
 
-function clickContextMenuItem(menuItem) {
+export function clickContextMenuItem(menuItem) {
     let close = false;
     let cmd = menuItem.getAttributeNS(null, 'cmd');
     if (cmd == null)
