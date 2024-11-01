@@ -47,7 +47,7 @@ export function getByUuid(root, uuid) {
     return null;
 }
 
-function getParentByUuid(root, uuid) {
+export function getParentByUuid(root, uuid) {
     if (Array.isArray(root) && root.length > 0)
         for (let idx in root) {
             if (root[idx].hasOwnProperty('uuid') && root[idx].uuid == uuid)

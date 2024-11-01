@@ -6,7 +6,7 @@ let selectionRect = document.getElementById("selectionRect");
 let selectionStartPos = null;
 let dragButton = null;
 let draggingElements = null;
-let hoveringUuid = null;
+export let hoveringUuid = null;
 
 export function pointerOverSvg(uuid) {
     hoveringUuid = uuid;

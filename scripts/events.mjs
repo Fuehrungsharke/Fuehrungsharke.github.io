@@ -6,6 +6,7 @@ import { config } from './config.mjs';
 import { download } from './resource_manager.mjs';
 import downloadPng from './rasterimage.mjs';
 import { removeUuid } from './uuid.mjs';
+import { hoveringUuid } from './dragdrop/dragdrop.mjs';
 
 const monthAbbreviations = [
     'jan',

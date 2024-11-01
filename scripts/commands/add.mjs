@@ -1,4 +1,7 @@
 import CmdBase from "./cmd_base.mjs";
+import { getParentByUuid } from '../utils.mjs';
+import { config } from '../config.mjs';
+import { SUB, WITH } from '../ui_const.mjs';
 
 export default function AddCmd() { }
 

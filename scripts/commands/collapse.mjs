@@ -1,4 +1,5 @@
 import CmdBase from "./cmd_base.mjs";
+import { getStaff } from '../staff.mjs';
 
 export default function CollapseCmd() { }
 
