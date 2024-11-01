@@ -1,6 +1,8 @@
 import { getEvtPos } from '../events.mjs';
 import { zoomFactor } from '../zoom/zoom.mjs';
 import { draw } from '../canvas.mjs';
+import { getByUuid, getSelectedElements, getParentByUuid, isAncestorOf } from '../utils.mjs';
+import { config } from '../config.mjs';
 
 let selectionRect = document.getElementById("selectionRect");
 let selectionStartPos = null;

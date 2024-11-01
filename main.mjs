@@ -1,6 +1,6 @@
 import { draw } from './scripts/canvas.mjs';
 import { onKeyUp, clickSign } from './scripts/events.mjs';
-import { drag, dragging, drop } from './scripts/dragdrop/dragdrop.mjs';
+import { drag, dragging, drop, pointerOverSvg, pointerOutSvg } from './scripts/dragdrop/dragdrop.mjs';
 import { undo, redo } from './scripts/history.mjs';
 import { openSignContextMenu, clickContextMenuItem, closeSignContextMenu } from './scripts/contextmenu/contextmenu.mjs';
 import setUpBBox from './scripts/bbox.mjs';
@@ -86,6 +86,8 @@ document.addEventListener('contextmenu', function (evt) {
 });
 
 window.onkeyup = onKeyUp;
+window.pointerOverSvg = pointerOverSvg;
+window.pointerOutSvg = pointerOutSvg;
 
 setUpBBox();
 draw();

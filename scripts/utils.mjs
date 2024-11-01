@@ -1,7 +1,7 @@
 import { SUB, WITH } from './ui_const.mjs';
 import { config } from './config.mjs';
 
-function isAncestorOf(item, presumedDescendant) {
+export function isAncestorOf(item, presumedDescendant) {
     if (presumedDescendant.sub != null && Array.isArray(presumedDescendant.sub)) {
         for (let idx in presumedDescendant.sub) {
             if (presumedDescendant.sub[idx] == item)
