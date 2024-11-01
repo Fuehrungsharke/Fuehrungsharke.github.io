@@ -1,3 +1,5 @@
+import { SUB, WITH } from './ui_const.mjs';
+
 function isAncestorOf(item, presumedDescendant) {
     if (presumedDescendant.sub != null && Array.isArray(presumedDescendant.sub)) {
         for (let idx in presumedDescendant.sub) {
@@ -20,7 +22,7 @@ function isAncestorOf(item, presumedDescendant) {
     return false;
 }
 
-function getByUuid(root, uuid) {
+export function getByUuid(root, uuid) {
     if (Array.isArray(root) && root.length > 0)
         for (let idx in root) {
             let subResult = getByUuid(root[idx], uuid);

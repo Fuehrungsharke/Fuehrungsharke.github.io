@@ -1,6 +1,6 @@
 import CmdBase from "./cmd_base.mjs";
 
-let cachedElements = [];
+export let cachedElements = [];
 
 export default function CopyCmd() { }
 

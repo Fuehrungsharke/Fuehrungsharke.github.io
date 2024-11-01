@@ -1,4 +1,9 @@
 import { getEvtPos } from '../events.mjs';
+import { getByUuid } from '../utils.mjs';
+import { config } from '../config.mjs';
+import { getResourceAsync } from '../resource_manager.mjs';
+import { getSign } from '../canvas.mjs';
+
 import CopyCmd from '../commands/copy.mjs';
 import AddParentCmd from '../commands/add_parent.mjs';
 import AddSibCmd from '../commands/add_sib.mjs';
@@ -12,7 +17,7 @@ import PasteParentCmd from '../commands/paste_parent.mjs';
 import PasteSibCmd from '../commands/paste_sib.mjs';
 import PasteSubCmd from '../commands/paste_sub.mjs';
 import PasteWithCmd from '../commands/paste_with.mjs';
-import NewOrgCmd from '../commands/new_org.mjs';
+import NewOrgCmd, { customOrgs } from '../commands/new_org.mjs';
 import SetStaffCmd from '../commands/set_staff.mjs';
 import ResetStaffCmd from '../commands/reset_staff.mjs';
 import CollapseCmd from '../commands/collapse.mjs';
@@ -250,7 +255,7 @@ async function buildMenu(root, parentMenuItem, attrMenu) {
     };
 }
 
-async function openSignContextMenu(evt, sign) {
+export async function openSignContextMenu(evt, sign) {
     let uuid = sign.getAttributeNS(null, 'uuid');
     let root = getByUuid(config, uuid);
 

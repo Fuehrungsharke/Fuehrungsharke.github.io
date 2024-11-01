@@ -1,4 +1,5 @@
 import AddCmd from './add.mjs';
+import { cachedElements } from './copy.mjs';
 
 export default function PasteSibCmd(single) {
     this.single = single;

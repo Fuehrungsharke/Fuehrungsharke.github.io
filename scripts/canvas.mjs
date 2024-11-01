@@ -44,7 +44,7 @@ function Dim(x, y) {
         this.y = y;
 }
 
-async function getSign(root) {
+export async function getSign(root) {
     let svg = null;
     if (root.sign == null)
         return null;
