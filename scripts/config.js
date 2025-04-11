@@ -34,7 +34,7 @@ function visitArray(unitPattern, root, prop, req) {
     for (const item of root[prop]) {
         let nodeResult = visitNode(unitPattern, item, req);
         if (nodeResult != null) {
-            if (nodeResult.name == null)
+            if (nodeResult.name == null || nodeResult.name == "")
                 return nodeResult;
             presetResult = nodeResult;
         }
