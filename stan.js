@@ -682,7 +682,8 @@ let StAN_TZ_R_A = {
             ]
         }
     ],
-    "group": true
+    "group": true,
+    "UnitPattern": "(\\d+)\\. TZ\/FGr R \\(A\\)",
 };
 
 let StAN_TZ_R_B = {

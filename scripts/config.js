@@ -66,8 +66,7 @@ function visitNode(unitPattern, root, req) {
     return null;
 }
 
-let knownUnitNames = [];
-function parseRow(ov, row) {
+function parseRow(ov, row, knownUnitNames) {
     let unitName = row[4] ?? '';
     let funcName = row[5] ?? '';
     knownUnitNames.push(unitName);
@@ -84,40 +83,27 @@ function parseRow(ov, row) {
     return res;
 }
 
-function setUnassignedInactive(root) {
-    if (root.sign == 'Person') {
-        if (root.name == null || root.name == '')
-            root.inactive = true;
-    }
-
-    if (Array.isArray(root.sub))
-        for (const item of root.sub)
-            setUnassignedInactive(item);
-    if (Array.isArray(root.with))
-        for (const item of root.with)
-            setUnassignedInactive(item);
-}
-
 function removeEmptyUnits(root) {
-    if (root == null)
+    if (root == null || root.sub == null || !Array.isArray(root.sub))
         return;
 
-    if (Array.isArray(root.sub))
-    {
-        let toRemove = [];
-        for (const item of root.sub)
-        {
-            if(item.sign == 'Unit' && item.UnitPattern != null) {
-                let reg = new RegExp(item.UnitPattern);
-                if(!knownUnitNames.some(unitName => reg.test(unitName))) {
-                    toRemove.push(item);
-                }
+    let toRemove = [];
+    for (const item of root.sub) {
+        if (item.sign == 'Unit') {
+            if (item.UnitPattern == null) {
+                toRemove.push(item);
+                continue;
             }
-            else
-                removeEmptyUnits(item);
+
+            let reg = new RegExp(item.UnitPattern);
+            if (!knownUnitNames.some(unitName => reg.test(unitName))) {
+                toRemove.push(item);
+                continue;
+            }
         }
-        root.sub = root.sub.filter(item => !(item in toRemove));
+        removeEmptyUnits(item);
     }
+    root.sub = root.sub.filter(item => !toRemove.includes(item));
 }
 
 function initUnitWithPerson(root, UnitName, FuncPattern, txt) {
@@ -148,14 +134,14 @@ function parseConfig(data) {
         data = data.substring(preambleCSV.length);
         valid = true;
     }
-    
+
     let preambleExcel = 'data:application/vnd.ms-excel;base64,';
-    if(data.startsWith(preambleExcel)) {
+    if (data.startsWith(preambleExcel)) {
         data = data.substring(preambleExcel.length);
         valid = true;
     }
 
-    if(!valid)
+    if (!valid)
         return null;
 
     let dataCsv = atob(data);
@@ -169,9 +155,9 @@ function parseConfig(data) {
     knownUnitNames = [];
 
     for (const row of rows)
-        parseRow(OV, row);
+        parseRow(OV, row, knownUnitNames);
 
-    setUnassignedInactive(OV);
+    knownUnitNames = [...new Set(knownUnitNames)];
     removeEmptyUnits(OV);
 
     return OV;
