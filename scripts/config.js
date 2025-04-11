@@ -66,9 +66,11 @@ function visitNode(unitPattern, root, req) {
     return null;
 }
 
+let knownUnitNames = [];
 function parseRow(ov, row) {
     let unitName = row[4] ?? '';
     let funcName = row[5] ?? '';
+    knownUnitNames.push(unitName);
     let res = visitNode(null, ov, {
         "unitName": unitName,
         "funcName": funcName
@@ -96,21 +98,26 @@ function setUnassignedInactive(root) {
             setUnassignedInactive(item);
 }
 
-function removeEmptyUnits(parent, prop, root) {
+function removeEmptyUnits(root) {
     if (root == null)
         return;
 
-    if (root.sign == 'Unit') {
-        if (!root.show_staff && parent[prop] != null)
-            parent[prop] = parent[prop].filter(item => item != root);
-    }
-
     if (Array.isArray(root.sub))
+    {
+        let toRemove = [];
         for (const item of root.sub)
-            removeEmptyUnits(root, 'sub', item);
-    if (Array.isArray(root.with))
-        for (const item of root.with)
-            removeEmptyUnits(root, 'with', item);
+        {
+            if(item.sign == 'Unit' && item.UnitPattern != null) {
+                let reg = new RegExp(item.UnitPattern);
+                if(!knownUnitNames.some(unitName => reg.test(unitName))) {
+                    toRemove.push(item);
+                }
+            }
+            else
+            removeEmptyUnits(item);
+        }
+        root.sub = root.sub.filter(item => !(item in toRemove));
+    }
 }
 
 function initUnitWithPerson(root, UnitName, FuncPattern, txt) {
@@ -149,11 +156,13 @@ function parseConfig(data) {
     let OV = JSON.parse(JSON.stringify(StAN_OV));
     // initUnitWithPerson(OV, '0. GAGr', 'Helferanwärter\/in', 'HeAnw');
     // initUnitWithPerson(OV, '', '', '');
+    knownUnitNames = [];
+
     for (const row of rows)
         parseRow(OV, row);
 
     setUnassignedInactive(OV);
-    // removeEmptyUnits(null, null, OV);
+    removeEmptyUnits(OV);
 
     return OV;
 }
