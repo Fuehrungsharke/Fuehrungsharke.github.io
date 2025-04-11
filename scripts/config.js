@@ -114,7 +114,7 @@ function removeEmptyUnits(root) {
                 }
             }
             else
-            removeEmptyUnits(item);
+                removeEmptyUnits(item);
         }
         root.sub = root.sub.filter(item => !(item in toRemove));
     }
@@ -142,12 +142,22 @@ function parseConfig(data) {
         return JSON.parse(dataJson);
     }
 
-    let preambleExcel = 'data:application/vnd.ms-excel;base64,';
+    let valid = false;
     let preambleCSV = 'data:text/csv;base64,';
-    if (!data.startsWith(preambleCSV) && !data.startsWith(preambleExcel))
+    if (data.startsWith(preambleCSV)) {
+        data = data.substring(preambleCSV.length);
+        valid = true;
+    }
+    
+    let preambleExcel = 'data:application/vnd.ms-excel;base64,';
+    if(data.startsWith(preambleExcel)) {
+        data = data.substring(preambleExcel.length);
+        valid = true;
+    }
+
+    if(!valid)
         return null;
 
-    data = data.substring(preambleCSV.length);
     let dataCsv = atob(data);
     let rows = parseCsv(dataCsv, ';').splice(1);
     if (!Array.isArray(rows[0]))
