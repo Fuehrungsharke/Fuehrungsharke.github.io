@@ -39,7 +39,7 @@ function visitArray(unitPattern, root, prop, req) {
             presetResult = nodeResult;
         }
     }
-    if (presetResult != null) {
+    if (req.duplicate && presetResult != null) {
         let reserve = JSON.parse(JSON.stringify(presetResult));
         delete reserve.name;
         root[prop].push(reserve);
@@ -53,7 +53,8 @@ function visitNode(unitPattern, root, req) {
         let rgxUnit = new RegExp(unitPattern);
         let rgxFunc = new RegExp(root.FuncPattern);
         if (rgxUnit.test(req.unitName)
-            && rgxFunc.test(req.funcName))
+            && rgxFunc.test(req.funcName)
+            && (req.duplicate || root.name == null))
             return root;
     }
     unitPattern = root.UnitPattern ?? unitPattern;
@@ -72,8 +73,15 @@ function parseRow(ov, row, knownUnitNames) {
     knownUnitNames.push(unitName);
     let res = visitNode(null, ov, {
         "unitName": unitName,
-        "funcName": funcName
+        "funcName": funcName,
+        "duplicate": false,
     });
+    if (res == null)
+        res = visitNode(null, ov, {
+            "unitName": unitName,
+            "funcName": funcName,
+            "duplicate": true,
+        });
     if (res == null)
         return;
     let lastName = row[0];

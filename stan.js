@@ -3946,7 +3946,7 @@ let StAN_Log_M = {
             ],
             "layout": "row-right",
             "org": "THW",
-            "FuncPattern": "Truppführer\/in Logistik\-Materialwirtschaft"
+            "FuncPattern": "Truppführer\/in Logistik\-Materialwirtschaft",
         },
         {
             "sign": "Vehicle",
@@ -3999,7 +3999,8 @@ let StAN_Log_M = {
             "txt": "PKW",
             "name": "PKW (gl)"
         }
-    ]
+    ],
+    "UnitPattern": "FZ Log\/FGr Log\-MW",
 };
 
 let StAN_Log_VG = {
@@ -4058,7 +4059,8 @@ let StAN_Log_VG = {
                 }
             ],
             "layout": "row-right",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Truppführer\/in Logistik\-Materialwirtschaft",
         },
         {
             "sign": "Vehicle",
@@ -4090,7 +4092,8 @@ let StAN_Log_VG = {
             "txt": "Stapler 3t",
             "name": "Gabelstapler"
         }
-    ]
+    ],
+    "UnitPattern": "FZ Log\/FGr Log\-MW",
 };
 
 let StAN_Log_MW = {
@@ -4119,7 +4122,7 @@ let StAN_Log_MW = {
             "FuncPattern": "Gruppenführer\/in Logistik\-Materialwirtschaft"
         }
     ],
-    "UnitPattern": "FZ Log\/FGr Log\-MW"
+    "UnitPattern": "FZ Log\/FGr Log\-MW",
 };
 
 let StAN_Log_TS = {
