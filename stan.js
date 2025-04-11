@@ -4845,7 +4845,3 @@ let StAN_OV = {
     "show_staff": true,
     "UnitPattern": "OB\\+FaBe"
 };
-
-// config = StAN_OV;
-
-module.exports = { StAN_OV_Stab, StAN_TZ_ZTr, StAN_TZ_B, StAN_TZ_B_ASH, StAN_TZ_N };

@@ -135,8 +135,9 @@ function parseConfig(data) {
         return JSON.parse(dataJson);
     }
 
-    let preambleCSV = 'data:application/vnd.ms-excel;base64,';
-    if (!data.startsWith(preambleCSV))
+    let preambleExcel = 'data:application/vnd.ms-excel;base64,';
+    let preambleCSV = 'data:text/csv;base64,';
+    if (!data.startsWith(preambleCSV) && !data.startsWith(preambleExcel))
         return null;
 
     data = data.substring(preambleCSV.length);
