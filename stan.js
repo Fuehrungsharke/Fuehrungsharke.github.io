@@ -207,7 +207,7 @@ let StAN_TZ_B = {
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
                     "org": "THW",
-                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
@@ -3742,7 +3742,7 @@ let StAN_Log_ZTr = {
             "name": "Führungskraftwagen"
         }
     ],
-    "UnitPattern": "FZ Log/ZTr FZ Log"
+    "UnitPattern": "FZ Log\/ZTr FZ Log",
 };
 
 let StAN_Log_V = {
@@ -4214,7 +4214,7 @@ let StAN_Log = {
         StAN_Log_TS
     ],
     "support": true,
-    "UnitPattern": "FZ Log\/.*"
+    "UnitPattern": "FZ Log\/.*",
 };
 
 let StAN_FK_ZTr = {
@@ -4241,24 +4241,27 @@ let StAN_FK_ZTr = {
                     "platoontroop": true,
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Zugtruppführer\/in Fachzug Führung\/Kommunikation",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 }
             ],
             "layout": "row-right",
             "org": "THW",
-            "FuncPattern": "Leiter/in Fachgruppe FK"
+            "FuncPattern": "Zugführer\/in Fachzug Führung\/Kommunikation",
         },
         {
             "sign": "Vehicle",
@@ -4270,7 +4273,8 @@ let StAN_FK_ZTr = {
             "name": "Führungskraftwagen"
         }
     ],
-    "name": ""
+    "name": "",
+    "UnitPattern": "FZ FK\/ZTr FZ FK",
 };
 
 let StAN_FK_Stab = {
@@ -4337,7 +4341,8 @@ let StAN_FK_Stab = {
             "org": "THW",
             "FuncPattern": "^Sachgebietsleiter\/in 6 \/ Fernmeldeführer\/in$"
         }
-    ]
+    ],
+    "UnitPattern": "FZ FK\/Stab \\(FK\\)",
 };
 
 let StAN_FK_F = {
@@ -4367,7 +4372,8 @@ let StAN_FK_F = {
                     "org": "THW",
                     "leading": true,
                     "troop": true,
-                    "txt": "F"
+                    "txt": "F",
+                    "FuncPattern": "Truppführer/in Führungsunterstützung",
                 },
                 {
                     "sign": "Person",
@@ -4376,7 +4382,8 @@ let StAN_FK_F = {
                     "org": "THW",
                     "leading": true,
                     "troop": true,
-                    "txt": "F"
+                    "txt": "F",
+                    "FuncPattern": "Truppführer/in Führungsunterstützung",
                 },
                 {
                     "sign": "Person",
@@ -4408,7 +4415,7 @@ let StAN_FK_F = {
                 }
             ],
             "layout": "row-right",
-            "FuncPattern": "Truppführer\/in\-Führungsgehilfe"
+            "FuncPattern": "Gruppenführer/in Führungsunterstützung",
         },
         {
             "sign": "Vehicle",
@@ -4431,7 +4438,7 @@ let StAN_FK_F = {
             ]
         }
     ],
-    "UnitPattern": "FGr FK/FüKomTr"
+    "UnitPattern": "FZ FK\/FGr F",
 };
 
 let StAN_FK_K_A = {
@@ -4551,7 +4558,8 @@ let StAN_FK_K_A = {
             ]
         }
     ],
-    "spez": "A"
+    "spez": "A",
+    "UnitPattern": "FZ FK\/FGr K \\(A\\)",
 };
 
 let StAN_FK_K_B = {
@@ -4580,7 +4588,8 @@ let StAN_FK_K_B = {
                     "org": "THW",
                     "leading": true,
                     "troop": true,
-                    "txt": "K"
+                    "txt": "K",
+                    "FuncPattern": "Truppführer\/in Kommunikation",
                 },
                 {
                     "sign": "Person",
@@ -4589,7 +4598,8 @@ let StAN_FK_K_B = {
                     "org": "THW",
                     "leading": true,
                     "troop": true,
-                    "txt": "K"
+                    "txt": "K",
+                    "FuncPattern": "Truppführer\/in Kommunikation",
                 },
                 {
                     "sign": "Person",
@@ -4598,64 +4608,75 @@ let StAN_FK_K_B = {
                     "org": "THW",
                     "troop": true,
                     "leading": true,
-                    "txt": "K"
+                    "txt": "K",
+                    "FuncPattern": "Truppführer\/in Kommunikation",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?",
                 }
             ],
-            "layout": "row-right"
+            "layout": "row-right",
+            "FuncPattern": "Gruppenführer\/in Kommunikation",
         },
         {
             "sign": "Vehicle",
@@ -4727,7 +4748,8 @@ let StAN_FK_K_B = {
             ]
         }
     ],
-    "spez": "B"
+    "spez": "B",
+    "UnitPattern": "FZ FK\/FGr K \\(B\\)",
 };
 
 let StAN_FK = {
@@ -4746,7 +4768,7 @@ let StAN_FK = {
         StAN_FK_K_B
     ],
     "leading": true,
-    "UnitPattern": "FGr FK"
+    "UnitPattern": "FZ FK\/.*",
 };
 
 let StAN_GAGr = {
