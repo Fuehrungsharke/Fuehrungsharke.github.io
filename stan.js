@@ -411,53 +411,62 @@ let StAN_TZ_N = {
                     "troop": true,
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Truppführer\/in Notversorgung und Notinstandsetzung"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Gruppenführer\/in Notversorgung u Notinstandsetzung"
         },
         {
             "sign": "Vehicle",
@@ -544,53 +553,62 @@ let StAN_TZ_R_A = {
                     "troop": true,
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Truppführer\/in Räumen"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 },
                 {
                     "sign": "Person",
                     "colorPrimary": "#039",
                     "colorAccent": "#FFF",
-                    "org": "THW"
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
                 }
             ],
             "layout": "row-right",
-            "org": "THW"
+            "org": "THW",
+            "FuncPattern": "Gruppenführer\/in Räumen"
         },
         {
             "sign": "Vehicle",
