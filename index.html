@@ -6,15 +6,23 @@
     <link rel="stylesheet" href="scripts/dragdrop/dragdrop.css">
     <link rel="stylesheet" href="scripts/contextmenu/contextmenu.css">
     <link rel="stylesheet" href="icons/icons.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <button id="btnUndo" title="Rückgängig">&lt;</button>
-    <button id="btnRedo" title="Wiederholen">&gt;</button>
-    <label for="iptConfig">Select a config:</label>
-    <input type="file" id="iptConfig" name="iptConfig" accept="Config/json">
-    <button id="btnStAN" title="StAN laden">StAN</button>
-    <br />
+    <div id="topMenu">
+        <div>
+            <button id="btnUndo" title="Rückgängig">&lt;</button>
+            <button id="btnRedo" title="Wiederholen">&gt;</button>
+            <label for="iptConfig">Select a config:</label>
+            <input type="file" id="iptConfig" name="iptConfig" accept="Config/json">
+            <button id="btnStAN" title="StAN laden">StAN</button>
+        </div>
+        <div>
+            <input type="checkbox" name="cbxInactiveNonEB" id="cbxInactiveNonEB" checked>
+            <label for="cbxInactiveNonEB">Inaktiv, wenn nicht EB</label>
+        </div>
+    </div>
     <div class="slidercontainer">
         <input id="zoomslider" type="range" min="1" max="100" value="25" class="slider">
     </div>

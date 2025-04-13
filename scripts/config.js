@@ -97,7 +97,7 @@ function parseRow(ov, row, knownUnitNames) {
     let lastName = row[0];
     let firstName = row[1];
     res.name = `${lastName}, ${firstName}`;
-    res.inactive = row[3] != 'J';
+    res.isEB = row[3] == 'J';
     return res;
 }
 
