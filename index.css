@@ -1,4 +1,14 @@
+:root {
+    font-family: sans-serif;
+}
+
 #topMenu {
     display: flex;
     justify-content: space-between;
+}
+
+#topMenu div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
