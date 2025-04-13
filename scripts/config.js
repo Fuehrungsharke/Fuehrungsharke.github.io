@@ -92,11 +92,14 @@ function parseRow(ov, row, knownUnitNames) {
         req.duplicate = true;
         res = visitNode(null, ov, req);
     }
-    if (res == null)
-        return;
     let lastName = row[0];
     let firstName = row[1];
-    res.name = `${lastName}, ${firstName}`;
+    let name = `${lastName}, ${firstName}`;
+    if (res == null){
+        console.warn(`${name} konnte nicht eingeordnet werden!`)
+        return;
+    }
+    res.name = name;
     res.isEB = row[3] == 'J';
     return res;
 }
