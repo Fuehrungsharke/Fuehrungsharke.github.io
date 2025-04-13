@@ -12,3 +12,7 @@
     align-items: center;
     gap: 5px;
 }
+
+#topMenu div p {
+    margin: 0px;
+}

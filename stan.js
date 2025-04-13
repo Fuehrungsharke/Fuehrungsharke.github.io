@@ -3744,6 +3744,24 @@ let StAN_TZ = {
     ]
 };
 
+let StAN_TZ_FGr = {
+    "sign": "Unit",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
+    "txt": "TZ",
+    "org": "THW",
+    "platoon": true,
+    "show_staff": true,
+    "layout": "list-right",
+    "UnitPattern": "(\\d+)\\. TZ\/.*",
+    "sub": [
+        StAN_TZ_ZTr,
+        StAN_TZ_B,
+        StAN_TZ_N,
+        StAN_TZ_R_A,
+    ]
+};
+
 let StAN_Log_ZTr = {
     "sign": "Unit",
     "colorPrimary": "#039",
