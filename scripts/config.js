@@ -34,12 +34,12 @@ function visitArray(unitPattern, root, prop, req) {
     for (const item of root[prop]) {
         let nodeResult = visitNode(unitPattern, item, req);
         if (nodeResult != null) {
-            if (nodeResult.name == null)
+            if (nodeResult.name == null || nodeResult.name == "")
                 return nodeResult;
             presetResult = nodeResult;
         }
     }
-    if (presetResult != null) {
+    if (req.duplicate && presetResult != null) {
         let reserve = JSON.parse(JSON.stringify(presetResult));
         delete reserve.name;
         root[prop].push(reserve);
@@ -53,7 +53,8 @@ function visitNode(unitPattern, root, req) {
         let rgxUnit = new RegExp(unitPattern);
         let rgxFunc = new RegExp(root.FuncPattern);
         if (rgxUnit.test(req.unitName)
-            && rgxFunc.test(req.funcName))
+            && rgxFunc.test(req.funcName)
+            && (req.duplicate || root.name == null))
             return root;
     }
     unitPattern = root.UnitPattern ?? unitPattern;
@@ -66,13 +67,21 @@ function visitNode(unitPattern, root, req) {
     return null;
 }
 
-function parseRow(ov, row) {
+function parseRow(ov, row, knownUnitNames) {
     let unitName = row[4] ?? '';
     let funcName = row[5] ?? '';
+    knownUnitNames.push(unitName);
     let res = visitNode(null, ov, {
         "unitName": unitName,
-        "funcName": funcName
+        "funcName": funcName,
+        "duplicate": false,
     });
+    if (res == null)
+        res = visitNode(null, ov, {
+            "unitName": unitName,
+            "funcName": funcName,
+            "duplicate": true,
+        });
     if (res == null)
         return;
     let lastName = row[0];
@@ -96,21 +105,27 @@ function setUnassignedInactive(root) {
             setUnassignedInactive(item);
 }
 
-function removeEmptyUnits(parent, prop, root) {
-    if (root == null)
+function removeEmptyUnits(root) {
+    if (root == null || root.sub == null || !Array.isArray(root.sub))
         return;
 
-    if (root.sign == 'Unit') {
-        if (!root.show_staff && parent[prop] != null)
-            parent[prop] = parent[prop].filter(item => item != root);
-    }
+    let toRemove = [];
+    for (const item of root.sub) {
+        if (item.sign == 'Unit') {
+            if (item.UnitPattern == null) {
+                toRemove.push(item);
+                continue;
+            }
 
-    if (Array.isArray(root.sub))
-        for (const item of root.sub)
-            removeEmptyUnits(root, 'sub', item);
-    if (Array.isArray(root.with))
-        for (const item of root.with)
-            removeEmptyUnits(root, 'with', item);
+            let reg = new RegExp(item.UnitPattern);
+            if (!knownUnitNames.some(unitName => reg.test(unitName))) {
+                toRemove.push(item);
+                continue;
+            }
+        }
+        removeEmptyUnits(item);
+    }
+    root.sub = root.sub.filter(item => !toRemove.includes(item));
 }
 
 function initUnitWithPerson(root, UnitName, FuncPattern, txt) {
@@ -135,11 +150,22 @@ function parseConfig(data) {
         return JSON.parse(dataJson);
     }
 
-    let preambleCSV = 'data:application/vnd.ms-excel;base64,';
-    if (!data.startsWith(preambleCSV))
+    let valid = false;
+    let preambleCSV = 'data:text/csv;base64,';
+    if (data.startsWith(preambleCSV)) {
+        data = data.substring(preambleCSV.length);
+        valid = true;
+    }
+
+    let preambleExcel = 'data:application/vnd.ms-excel;base64,';
+    if (data.startsWith(preambleExcel)) {
+        data = data.substring(preambleExcel.length);
+        valid = true;
+    }
+
+    if (!valid)
         return null;
 
-    data = data.substring(preambleCSV.length);
     let dataCsv = atob(data);
     let rows = parseCsv(dataCsv, ';').splice(1);
     if (!Array.isArray(rows[0]))
@@ -148,11 +174,14 @@ function parseConfig(data) {
     let OV = JSON.parse(JSON.stringify(StAN_OV));
     // initUnitWithPerson(OV, '0. GAGr', 'Helferanwärter\/in', 'HeAnw');
     // initUnitWithPerson(OV, '', '', '');
-    for (const row of rows)
-        parseRow(OV, row);
+    knownUnitNames = [];
 
+    for (const row of rows)
+        parseRow(OV, row, knownUnitNames);
+
+    knownUnitNames = [...new Set(knownUnitNames)];
+    removeEmptyUnits(OV);
     setUnassignedInactive(OV);
-    // removeEmptyUnits(null, null, OV);
 
     return OV;
 }

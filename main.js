@@ -22,6 +22,7 @@ let displaySvg = document.getElementById("displaySvg");
 let outputSvg = document.getElementById("outputSvg");
 let btnUndo = document.getElementById("btnUndo");
 let btnRedo = document.getElementById("btnRedo");
+let btnStAN = document.getElementById("btnStAN");
 let cbxBackground = document.getElementById('cbxBackground');
 let cbxBorder = document.getElementById('cbxBorder');
 
@@ -52,12 +53,20 @@ function onDomContentLoaded() {
     displaySvg.addEventListener('pointercancel', drop);
     btnUndo.addEventListener('click', undo);
     btnRedo.addEventListener('click', redo);
+    btnStAN.addEventListener('click', loadStAN);
+}
+
+function loadStAN(evt) {
+    config = StAN_OV;
+    draw();
 }
 
 function configSelected(evt) {
     let reader = new FileReader();
     reader.onload = function (e) {
         let data = e.target.result;
+        if(data == null)
+            return;
         config = parseConfig(data);
         draw();
     }
