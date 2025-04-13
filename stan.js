@@ -68,7 +68,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "Ko",
-                    "FuncPattern": "Koch\/Köchin OV"
+                    "FuncPattern": "OV\-Koch\/Köchin"
                 }
             ],
             "layout": "row-right",
