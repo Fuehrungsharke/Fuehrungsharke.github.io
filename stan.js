@@ -4785,7 +4785,19 @@ let StAN_JuGr = {
     "colorPrimary": "#039",
     "colorAccent": "#FFF",
     "org": "THW",
-    "txt": "JuGr"
+    "txt": "JuGr",
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "txt": "JHe",
+            "FuncPattern": "JHe"
+        }
+    ],
+    "UnitPattern": "",
+    "layout": "row-right",
 };
 
 let StAN_AEGr = {

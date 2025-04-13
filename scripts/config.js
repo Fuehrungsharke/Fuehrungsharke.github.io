@@ -53,7 +53,7 @@ function visitNode(unitPattern, root, req) {
         let rgxUnit = new RegExp(unitPattern);
         let rgxFunc = new RegExp(root.FuncPattern);
         if (rgxUnit.test(req.unitName)
-            && rgxFunc.test(req.funcName)
+            && (rgxFunc.test(req.funcName) || rgxFunc.test(req.stateName))
             && (req.duplicate || root.name == null))
             return root;
     }
@@ -70,16 +70,19 @@ function visitNode(unitPattern, root, req) {
 function parseRow(ov, row, knownUnitNames) {
     let unitName = row[4] ?? '';
     let funcName = row[5] ?? '';
+    let stateName = row[2] ?? '';
     knownUnitNames.push(unitName);
     let res = visitNode(null, ov, {
         "unitName": unitName,
         "funcName": funcName,
+        "stateName": stateName,
         "duplicate": false,
     });
     if (res == null)
         res = visitNode(null, ov, {
             "unitName": unitName,
             "funcName": funcName,
+            "stateName": stateName,
             "duplicate": true,
         });
     if (res == null)
