@@ -131,20 +131,6 @@ function removeEmptyUnits(root) {
     root.sub = root.sub.filter(item => !toRemove.includes(item));
 }
 
-function initUnitWithPerson(root, UnitName, FuncPattern, txt) {
-    let GAGr = findFuncInSubOrWith(root, UnitName, null);
-    GAGr.sub = [
-        {
-            "sign": "Person",
-            "txt": txt,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "FuncPattern": FuncPattern
-        }
-    ];
-}
-
 function parseConfig(data) {
     let preambleJson = 'data:application/json;base64,';
     if (data.startsWith(preambleJson)) {
@@ -175,8 +161,6 @@ function parseConfig(data) {
         return null;
 
     let OV = JSON.parse(JSON.stringify(StAN_OV));
-    // initUnitWithPerson(OV, '0. GAGr', 'Helferanwärter\/in', 'HeAnw');
-    // initUnitWithPerson(OV, '', '', '');
     knownUnitNames = [];
 
     for (const row of rows)
