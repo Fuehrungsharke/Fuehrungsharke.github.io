@@ -187,7 +187,7 @@ async function getSignSvg(root, uuid, x, y, inactiveInherited) {
     let signSvg = document.createElement('g');
     signSvg.setAttribute('transform', `translate(${parseInt(x, 10)}, ${parseInt(y, 10)}) scale(1 1)`)
     signSvg.setAttribute('uuid', uuid);
-    if (root.inactive || inactiveInherited)
+    if (root.inactive)
         signSvg.setAttribute('opacity', 0.25);
     signSvg.classList.add('draggable');
     signSvg.classList.add('editable');

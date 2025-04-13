@@ -91,6 +91,20 @@ function parseRow(ov, row, knownUnitNames) {
     return res;
 }
 
+function setUnassignedInactive(root) {
+    if (root.sign == 'Person') {
+        if (root.name == null || root.name == '')
+            root.inactive = true;
+    }
+
+    if (Array.isArray(root.sub))
+        for (const item of root.sub)
+            setUnassignedInactive(item);
+    if (Array.isArray(root.with))
+        for (const item of root.with)
+            setUnassignedInactive(item);
+}
+
 function removeEmptyUnits(root) {
     if (root == null || root.sub == null || !Array.isArray(root.sub))
         return;
@@ -167,6 +181,7 @@ function parseConfig(data) {
 
     knownUnitNames = [...new Set(knownUnitNames)];
     removeEmptyUnits(OV);
+    setUnassignedInactive(OV);
 
     return OV;
 }
