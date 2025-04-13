@@ -15,6 +15,7 @@ let StAN_OV_Stab = {
             "org": "THW",
             "txt": "stv OB",
             "leading": true,
+            "leader": true,
             "sub": [
                 {
                     "sign": "Person",
@@ -22,6 +23,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "AB",
+                    "subleader": true,
                     "FuncPattern": "Ausbildungsbeauftragte\/r"
                 },
                 {
@@ -30,6 +32,7 @@ let StAN_OV_Stab = {
                     "colorAccent": "#FFF",
                     "org": "THW",
                     "txt": "OJB",
+                    "subleader": true,
                     "FuncPattern": "Ortsjugendbeauftragte\/r"
                 },
                 {
@@ -4351,54 +4354,60 @@ let StAN_FK_Stab = {
             "sign": "Person",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
+            "org": "THW",
             "txt": "SGL",
             "leading": true,
-            "org": "THW",
+            "leader": true,
             "FuncPattern": "^Sachgebietsleiter\/in$"
         },
         {
             "sign": "Person",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
+            "org": "THW",
             "txt": "SGL",
             "leading": true,
-            "org": "THW",
+            "leader": true,
             "FuncPattern": "^Sachgebietsleiter\/in$"
         },
         {
             "sign": "Person",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
+            "org": "THW",
             "txt": "SGL",
             "leading": true,
-            "org": "THW",
+            "leader": true,
             "FuncPattern": "^Sachgebietsleiter\/in$"
         },
         {
             "sign": "Person",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
+            "org": "THW",
             "txt": "SGL",
             "leading": true,
-            "org": "THW",
+            "leader": true,
             "FuncPattern": "^Sachgebietsleiter\/in$"
         },
         {
             "sign": "Person",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
+            "org": "THW",
             "txt": "SGL",
             "leading": true,
-            "org": "THW",
+            "leader": true,
             "FuncPattern": "^Sachgebietsleiter\/in$"
         },
         {
             "sign": "Person",
             "colorPrimary": "#039",
             "colorAccent": "#FFF",
+            "org": "THW",
             "txt": "S6",
             "leading": true,
-            "org": "THW",
+            "leader": true,
             "FuncPattern": "^Sachgebietsleiter\/in 6 \/ Fernmeldeführer\/in$"
         },
         {
@@ -4970,6 +4979,7 @@ let StAN_OV = {
             "org": "THW",
             "txt": "OB",
             "leading": true,
+            "leader": true,
             "FuncPattern": "Ortsbeauftragte\/r"
         }
     ],

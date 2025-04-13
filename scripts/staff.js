@@ -15,9 +15,9 @@ function getStaff_HandlePerson(root) {
     if (root.sign == null || root.sign != 'Person' || root.inactive || (root.isEB == false && cbxInactiveNonEB.checked))
         return [0, 0, 0, 0];
     let staff = [0, 0, 0, 1];
-    if (root.formation || root.brigade || root.association || root.platoon)
+    if (root.formation || root.brigade || root.association || root.platoon || root.leader)
         staff[0]++;
-    else if (root.platoontroop || root.group || root.echelon || root.troop)
+    else if (root.platoontroop || root.group || root.echelon || root.troop || root.subleader)
         staff[1]++;
     else
         staff[2]++;
