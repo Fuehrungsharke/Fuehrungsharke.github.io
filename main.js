@@ -22,7 +22,11 @@ let displaySvg = document.getElementById("displaySvg");
 let outputSvg = document.getElementById("outputSvg");
 let btnUndo = document.getElementById("btnUndo");
 let btnRedo = document.getElementById("btnRedo");
-let btnStAN = document.getElementById("btnStAN");
+let btnOV = document.getElementById("btnOV");
+let btnTZ = document.getElementById("btnTZ");
+let btnTZFGr = document.getElementById("btnTZFGr");
+let btnLog = document.getElementById("btnLog");
+let btnFK = document.getElementById("btnFK");
 let cbxBackground = document.getElementById('cbxBackground');
 let cbxBorder = document.getElementById('cbxBorder');
 let cbxInactiveNonEB = document.getElementById('cbxInactiveNonEB');
@@ -54,13 +58,17 @@ function onDomContentLoaded() {
     displaySvg.addEventListener('pointercancel', drop);
     btnUndo.addEventListener('click', undo);
     btnRedo.addEventListener('click', redo);
-    btnStAN.addEventListener('click', loadStAN);
+    btnOV.addEventListener('click', evt => loadStAN(StAN_OV));
+    btnTZ.addEventListener('click', evt => loadStAN(StAN_TZ));
+    btnTZFGr.addEventListener('click', evt => loadStAN(StAN_TZ_FGr));
+    btnLog.addEventListener('click', evt => loadStAN(StAN_Log));
+    btnFK.addEventListener('click', evt => loadStAN(StAN_FK));
 }
 
-function loadStAN(evt) {
+function loadStAN(StAN) {
     if(!confirm('Aktuelle Konfiguration wird verworfen!'))
         return;
-    config = StAN_OV;
+    config = StAN;
     draw();
 }
 
