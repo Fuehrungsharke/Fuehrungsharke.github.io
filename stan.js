@@ -3705,6 +3705,7 @@ let StAN_TZ = {
     "txt": "TZ",
     "org": "THW",
     "platoon": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "(\\d+)\\. TZ\/.*",
     "sub": [
@@ -3747,6 +3748,7 @@ let StAN_Log_ZTr = {
     "txt": "FZ Log",
     "org": "THW",
     "platoontroop": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ Log\/ZTr FZ Log",
     "sub": [
@@ -3807,6 +3809,7 @@ let StAN_Log_V = {
     "org": "THW",
     "group": true,
     "support": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ Log\/FGr Log\-V",
     "sub": [
@@ -3957,6 +3960,7 @@ let StAN_Log_M = {
     "org": "THW",
     "troop": true,
     "support": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ Log\/FGr Log\-MW",
     "sub": [
@@ -4063,6 +4067,7 @@ let StAN_Log_VG = {
     "org": "THW",
     "troop": true,
     "support": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ Log\/FGr Log\-MW",
     "sub": [
@@ -4155,6 +4160,7 @@ let StAN_Log_MW = {
     "org": "THW",
     "group": true,
     "support": true,
+    "show_staff": true,
     "layout": "list-right-below",
     "UnitPattern": "FZ Log\/FGr Log\-MW",
     "with": [
@@ -4179,10 +4185,11 @@ let StAN_Log_TS = {
     "sign": "Unit",
     "colorPrimary": "#039",
     "colorAccent": "#FFF",
+    "txt": "TS",
     "org": "THW",
     "troop": true,
     "support": true,
-    "txt": "TS",
+    "show_staff": true,
     "UnitPattern": "FZ Log\/Tr TS",
     "sub": [
         {
@@ -4258,6 +4265,7 @@ let StAN_Log = {
     "org": "THW",
     "platoon": true,
     "support": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ Log\/.*",
     "sub": [
@@ -4275,6 +4283,7 @@ let StAN_FK_ZTr = {
     "txt": "FZ FK",
     "org": "THW",
     "platoontroop": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ FK\/ZTr FZ FK",
     "sub": [
@@ -4334,6 +4343,7 @@ let StAN_FK_Stab = {
     "txt": "Stab",
     "org": "THW",
     "leading": true,
+    "show_staff": true,
     "layout": "row-right",
     "UnitPattern": "FZ FK\/Stab \\(FK\\)",
     "sub": [
@@ -4402,6 +4412,7 @@ let StAN_FK_F = {
     "org": "THW",
     "group": true,
     "leading": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ FK\/FGr F",
     "sub": [
@@ -4497,6 +4508,7 @@ let StAN_FK_K_A = {
     "org": "THW",
     "group": true,
     "spez": "A",
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ FK\/FGr K \\(A\\)",
     "sub": [
@@ -4617,6 +4629,7 @@ let StAN_FK_K_B = {
     "org": "THW",
     "group": true,
     "spez": "B",
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ FK\/FGr K \\(B\\)",
     "sub": [
@@ -4806,6 +4819,7 @@ let StAN_FK = {
     "org": "THW",
     "platoon": true,
     "leading": true,
+    "show_staff": true,
     "layout": "list-right",
     "UnitPattern": "FZ FK\/.*",
     "sub": [
@@ -4823,7 +4837,19 @@ let StAN_GAGr = {
     "colorAccent": "#FFF",
     "org": "THW",
     "txt": "GAGr",
-    "UnitPattern": "(\\d+)\\. GAGr"
+    "show_staff": true,
+    "layout": "row-right",
+    "UnitPattern": "(\\d+)\\. GAGr",
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "txt": "HeAnw",
+            "FuncPattern": "Helferanwärter\/in"
+        }
+    ]
 };
 
 let StAN_JuGr = {
@@ -4832,6 +4858,7 @@ let StAN_JuGr = {
     "colorAccent": "#FFF",
     "org": "THW",
     "txt": "JuGr",
+    "show_staff": true,
     "layout": "row-right",
     "UnitPattern": "",
     "sub": [
