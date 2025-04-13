@@ -4882,6 +4882,28 @@ let StAN_AEGr = {
     "UnitPattern": ""
 };
 
+let StAN_Undisloziert = {
+    "sign": "Unit",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
+    "org": "THW",
+    "txt": "?",
+    "name": "Undisloziert",
+    "show_staff": true,
+    "layout": "row-right",
+    "UnitPattern": "",
+    "sub": [
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "txt": "He",
+            "FuncPattern": ""
+        }
+    ]
+}
+
 let StAN_OV = {
     "sign": "Building",
     "colorPrimary": "#039",
@@ -4946,7 +4968,8 @@ let StAN_OV = {
                         StAN_OV_Stab,
                         StAN_GAGr,
                         StAN_JuGr,
-                        StAN_AEGr
+                        StAN_AEGr,
+                        StAN_Undisloziert
                     ]
                 },
                 StAN_TZ,

@@ -50,12 +50,19 @@ function visitArray(unitPattern, root, prop, req) {
 
 function visitNode(unitPattern, root, req) {
     if (unitPattern != null && root.FuncPattern != null) {
-        let rgxUnit = new RegExp(unitPattern);
         let rgxFunc = new RegExp(root.FuncPattern);
-        if (rgxUnit.test(req.unitName)
-            && (rgxFunc.test(req.funcName) || rgxFunc.test(req.stateName))
-            && (req.duplicate || root.name == null))
-            return root;
+        if(unitPattern  == '') {
+            if(req.unitName == ''
+                && (rgxFunc.test(req.funcName) || rgxFunc.test(req.stateName))
+                && (req.duplicate || root.name == null))
+                return root;
+        } else {
+            let rgxUnit = new RegExp(unitPattern);
+            if (rgxUnit.test(req.unitName)
+                && (rgxFunc.test(req.funcName) || rgxFunc.test(req.stateName))
+                && (req.duplicate || root.name == null))
+                return root;
+        }
     }
     unitPattern = root.UnitPattern ?? unitPattern;
     let subResult = visitArray(unitPattern, root, 'sub', req);
@@ -68,23 +75,23 @@ function visitNode(unitPattern, root, req) {
 }
 
 function parseRow(ov, row, knownUnitNames) {
+    if(row.length <= 6)
+        return null;
     let unitName = row[4] ?? '';
     let funcName = row[5] ?? '';
     let stateName = row[2] ?? '';
     knownUnitNames.push(unitName);
-    let res = visitNode(null, ov, {
+    let req = {
         "unitName": unitName,
         "funcName": funcName,
         "stateName": stateName,
         "duplicate": false,
-    });
-    if (res == null)
-        res = visitNode(null, ov, {
-            "unitName": unitName,
-            "funcName": funcName,
-            "stateName": stateName,
-            "duplicate": true,
-        });
+    };
+    let res = visitNode(null, ov, req);
+    if (res == null) {
+        req.duplicate = true;
+        res = visitNode(null, ov, req);
+    }
     if (res == null)
         return;
     let lastName = row[0];
