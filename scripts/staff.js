@@ -12,7 +12,7 @@ function sumStaff(staffA, staffB) {
 }
 
 function getStaff_HandlePerson(root) {
-    if (root.sign == null || root.sign != 'Person' || root.inactive)
+    if (root.sign == null || root.sign != 'Person' || root.inactive || (root.isEB == false && cbxInactiveNonEB.checked))
         return [0, 0, 0, 0];
     let staff = [0, 0, 0, 1];
     if (root.formation || root.brigade || root.association || root.platoon)
