@@ -69,6 +69,7 @@ function loadStAN(StAN) {
     if(!confirm('Aktuelle Konfiguration wird verworfen!'))
         return;
     config = StAN;
+    config.layout = "center-below";
     draw();
 }
 
