@@ -25,6 +25,7 @@ let btnRedo = document.getElementById("btnRedo");
 let btnStAN = document.getElementById("btnStAN");
 let cbxBackground = document.getElementById('cbxBackground');
 let cbxBorder = document.getElementById('cbxBorder');
+let cbxInactiveNonEB = document.getElementById('cbxInactiveNonEB');
 
 function getEvtPos(evt) {
     let touchpos = evt;
@@ -57,6 +58,8 @@ function onDomContentLoaded() {
 }
 
 function loadStAN(evt) {
+    if(!confirm('Aktuelle Konfiguration wird verworfen!'))
+        return;
     config = StAN_OV;
     draw();
 }

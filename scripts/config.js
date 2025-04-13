@@ -50,12 +50,19 @@ function visitArray(unitPattern, root, prop, req) {
 
 function visitNode(unitPattern, root, req) {
     if (unitPattern != null && root.FuncPattern != null) {
-        let rgxUnit = new RegExp(unitPattern);
         let rgxFunc = new RegExp(root.FuncPattern);
-        if (rgxUnit.test(req.unitName)
-            && rgxFunc.test(req.funcName)
-            && (req.duplicate || root.name == null))
-            return root;
+        if(unitPattern  == '') {
+            if(req.unitName == ''
+                && (rgxFunc.test(req.funcName) || rgxFunc.test(req.stateName))
+                && (req.duplicate || root.name == null))
+                return root;
+        } else {
+            let rgxUnit = new RegExp(unitPattern);
+            if (rgxUnit.test(req.unitName)
+                && (rgxFunc.test(req.funcName) || rgxFunc.test(req.stateName))
+                && (req.duplicate || root.name == null))
+                return root;
+        }
     }
     unitPattern = root.UnitPattern ?? unitPattern;
     let subResult = visitArray(unitPattern, root, 'sub', req);
@@ -68,26 +75,32 @@ function visitNode(unitPattern, root, req) {
 }
 
 function parseRow(ov, row, knownUnitNames) {
+    if(row.length <= 6)
+        return null;
     let unitName = row[4] ?? '';
     let funcName = row[5] ?? '';
+    let stateName = row[2] ?? '';
     knownUnitNames.push(unitName);
-    let res = visitNode(null, ov, {
+    let req = {
         "unitName": unitName,
         "funcName": funcName,
+        "stateName": stateName,
         "duplicate": false,
-    });
-    if (res == null)
-        res = visitNode(null, ov, {
-            "unitName": unitName,
-            "funcName": funcName,
-            "duplicate": true,
-        });
-    if (res == null)
-        return;
+    };
+    let res = visitNode(null, ov, req);
+    if (res == null) {
+        req.duplicate = true;
+        res = visitNode(null, ov, req);
+    }
     let lastName = row[0];
     let firstName = row[1];
-    res.name = `${lastName}, ${firstName}`;
-    res.inactive = row[3] != 'J';
+    let name = `${lastName}, ${firstName}`;
+    if (res == null){
+        console.warn(`${name} konnte nicht eingeordnet werden!`)
+        return;
+    }
+    res.name = name;
+    res.isEB = row[3] == 'J';
     return res;
 }
 
@@ -128,20 +141,6 @@ function removeEmptyUnits(root) {
     root.sub = root.sub.filter(item => !toRemove.includes(item));
 }
 
-function initUnitWithPerson(root, UnitName, FuncPattern, txt) {
-    let GAGr = findFuncInSubOrWith(root, UnitName, null);
-    GAGr.sub = [
-        {
-            "sign": "Person",
-            "txt": txt,
-            "colorPrimary": "#003399",
-            "colorAccent": "#FFFFFF",
-            "org": "THW",
-            "FuncPattern": FuncPattern
-        }
-    ];
-}
-
 function parseConfig(data) {
     let preambleJson = 'data:application/json;base64,';
     if (data.startsWith(preambleJson)) {
@@ -172,8 +171,6 @@ function parseConfig(data) {
         return null;
 
     let OV = JSON.parse(JSON.stringify(StAN_OV));
-    // initUnitWithPerson(OV, '0. GAGr', 'Helferanwärter\/in', 'HeAnw');
-    // initUnitWithPerson(OV, '', '', '');
     knownUnitNames = [];
 
     for (const row of rows)
