@@ -4400,6 +4400,54 @@ let StAN_FK_Stab = {
             "leading": true,
             "org": "THW",
             "FuncPattern": "^Sachgebietsleiter\/in 6 \/ Fernmeldeführer\/in$"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "txt": "Stab",
+            "org": "THW",
+            "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "txt": "Stab",
+            "org": "THW",
+            "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "txt": "Stab",
+            "org": "THW",
+            "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "txt": "Stab",
+            "org": "THW",
+            "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "txt": "Stab",
+            "org": "THW",
+            "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "txt": "Stab",
+            "org": "THW",
+            "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
         }
     ]
 };
