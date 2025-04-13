@@ -12,7 +12,7 @@ function sumStaff(staffA, staffB) {
 }
 
 function getStaff_HandlePerson(root) {
-    if (root.sign == null || root.sign != 'Person')
+    if (root.sign == null || root.sign != 'Person' || root.inactive)
         return [0, 0, 0, 0];
     let staff = [0, 0, 0, 1];
     if (root.formation || root.brigade || root.association || root.platoon)
@@ -33,8 +33,6 @@ function getStaff_HandleSub(root) {
         return collapsedIndicator.staff;
 
     for (let idx in root.sub) {
-        if (root.sub[idx].inactive)
-            continue;
         let subStaff = getStaff(root.sub[idx]);
         staff = sumStaff(staff, subStaff);
     }
@@ -46,10 +44,8 @@ function getStaff_HandleWith(root) {
     if (!Array.isArray(root.with) || root.with.length <= 0)
         return staff;
     for (let idx in root.with) {
-        if (root.with[idx].inactive)
-            continue;
-        let subStaff = getStaff(root.with[idx]);
-        staff = sumStaff(staff, subStaff);
+        let withStaff = getStaff(root.with[idx]);
+        staff = sumStaff(staff, withStaff);
     }
     return staff;
 }
