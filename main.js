@@ -57,6 +57,8 @@ function onDomContentLoaded() {
 }
 
 function loadStAN(evt) {
+    if(!confirm('Aktuelle Konfiguration wird verworfen!'))
+        return;
     config = StAN_OV;
     draw();
 }
