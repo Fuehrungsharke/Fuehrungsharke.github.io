@@ -27,6 +27,7 @@ let btnTZ = document.getElementById("btnTZ");
 let btnTZFGr = document.getElementById("btnTZFGr");
 let btnLog = document.getElementById("btnLog");
 let btnFK = document.getElementById("btnFK");
+let btnUnit = document.getElementById("btnUnit");
 let cbxBackground = document.getElementById('cbxBackground');
 let cbxBorder = document.getElementById('cbxBorder');
 let cbxInactiveNonEB = document.getElementById('cbxInactiveNonEB');
@@ -63,6 +64,14 @@ function onDomContentLoaded() {
     btnTZFGr.addEventListener('click', evt => loadStAN(StAN_TZ_FGr));
     btnLog.addEventListener('click', evt => loadStAN(StAN_Log));
     btnFK.addEventListener('click', evt => loadStAN(StAN_FK));
+    btnUnit.addEventListener('click', evt => loadStAN([
+        {
+            "sign": "Unit",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW"
+        }
+    ]));
 }
 
 function loadStAN(StAN) {
