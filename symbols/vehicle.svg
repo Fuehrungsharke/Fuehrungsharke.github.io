@@ -10,6 +10,6 @@
 			<rect x="0" y="44" width="10.5" height="148" />
 		</clipPath>
 	</defs>
-	<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="10" stroke="#000000" clip-path="url(#Vehicle)" />
-	<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000" />
+	<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="10" stroke="{{colorAccent}}" clip-path="url(#Vehicle)" />
+	<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="{{colorAccent}}" />
 </svg>
