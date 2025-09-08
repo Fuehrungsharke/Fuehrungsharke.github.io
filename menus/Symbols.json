@@ -12,6 +12,15 @@
             }
         },
         {
+            "name": "Bereitstellungsraum",
+            "type": "radio",
+            "key": "symbols:vehicle",
+            "icon": "/symbols/vehicle.svg",
+            "implicitAttritbues": {
+                "txt": ""
+            }
+        },
+        {
             "name": "Bergen",
             "type": "radio",
             "key": "symbols:salvage",
