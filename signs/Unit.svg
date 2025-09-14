@@ -66,9 +66,9 @@
 	<rect x="11" y="166" width="234" height="25" fill="{{colorAccent}}" />
 	support}}
 
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="{{colorAccent}}" x="128" y="128" clip-path="url(#UnitClipTxt)">{{txt}}</text>
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="{{colorAccent}}" x="20" y="{{support?155:180}}">{{spez}}</text>
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="{{extinguish?200:236}}" y="{{support?155:180}}">{{org}}</text>
+	<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="{{colorAccent}}" x="128" y="128" clip-path="url(#UnitClipTxt)">{{txt}}</text>
+	<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="{{colorAccent}}" x="20" y="{{support?155:180}}">{{spez}}</text>
+	<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="{{colorAccent}}" x="{{extinguish?200:236}}" y="{{support?155:180}}">{{org}}</text>
 
 	<!-- <rect x="20" y="95" width="216" height="33" fill="none" stroke="red" /> -->
 	<!-- <rect x="20" y="128" width="216" height="33" fill="none" stroke="lime" /> -->

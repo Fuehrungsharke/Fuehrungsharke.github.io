@@ -26,5 +26,5 @@
 
     {{symbols:cx=128, cy=128, width=256, height=256}}
 
-    <text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#EmptyClipTxt)" fill="{{colorAccent}}" x="128" y="128">{{txt}}</text>
+    <text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#EmptyClipTxt)" fill="{{colorAccent}}" x="128" y="128">{{txt}}</text>
 </svg>
