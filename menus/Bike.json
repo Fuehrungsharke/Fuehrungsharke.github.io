@@ -5,6 +5,10 @@
         "key": "name"
     },
     {
+        "name": "menu_origin",
+        "type": "placeholder"
+    },
+    {
         "name": "Selbstfahrend",
         "type": "bool",
         "key": "automotive"

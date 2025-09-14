@@ -377,12 +377,80 @@ let EL = {
         {
             "sign": "Place",
             "txt": "LSt",
-            "name": "Musterstadt",
+            "origin": "Musterstadt",
             "colorPrimary": "#F00",
             "colorAccent": "#FFF",
             "stationary": true,
             "leading": true
         }
+    ]
+}
+
+let anySign =  {
+    "sign": "Bike",
+    "colorPrimary": "#ccc",
+    "colorAccent": "#000",
+    "with": [
+        {
+            "sign": "Boat",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Building",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Collapsed",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Empty",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Equipment",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Flag",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Hazard",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Measure",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Person",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Place",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Unit",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#ccc",
+            "colorAccent": "#000",
+        },
     ]
 }
 

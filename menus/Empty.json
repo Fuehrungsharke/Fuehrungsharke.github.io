@@ -8,6 +8,10 @@
         "type": "placeholder"
     },
     {
+        "name": "menu_origin",
+        "type": "placeholder"
+    },
+    {
         "name": "menu_name",
         "type": "placeholder"
     },
