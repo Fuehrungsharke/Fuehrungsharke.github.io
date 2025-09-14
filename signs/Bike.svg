@@ -3,5 +3,5 @@
 	{{automotive
 	<path d="M96,160 L160,160" stroke="#000000" stroke-width="5" fill="none" />
 	automotive}}
-	<text style="font-family: 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="220">{{org}}</text>
+	<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="220">{{org}}</text>
 </svg>
