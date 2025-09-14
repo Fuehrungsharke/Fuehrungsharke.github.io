@@ -4985,7 +4985,7 @@ let StAN_OV = {
     "colorAccent": "#FFF",
     "org": "THW",
     "txt": "OV",
-    "name": "OV Musterstadt",
+    "origin": "OV Musterstadt",
     "show_staff": true,
     "layout": "center-below",
     "UnitPattern": "OB\\+FaBe",

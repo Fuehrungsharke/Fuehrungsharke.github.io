@@ -224,15 +224,15 @@ function appendLine(canvas, root, inactiveInherited, ax, ay, bx, by, color) {
     canvas.appendChild(line);
 }
 
-function getText(uuid, text, x, y) {
+function getText(uuid, key, text, x, y, font) {
     let txt = document.createElement('text');
     txt.setAttribute('x', x);
     txt.setAttribute('y', y);
     txt.setAttribute('font-size', 24);
-    txt.setAttribute('font-family', 'Verdana');
+    txt.setAttribute('font-family', font ?? 'Verdana');
     txt.setAttribute('text-anchor', 'middle');
     txt.setAttribute('fill', 'black');
-    txt.setAttribute('onclick', `editName('${uuid}')`);
+    txt.setAttribute('onclick', `editText('${uuid}', '${key}')`);
     txt.setAttribute('uuid', uuid);
     txt.innerHTML = text;
     return txt;
@@ -252,6 +252,18 @@ async function drawSign(canvas, root, x, y, inactiveInherited) {
         dimSign.anchorTopY = 0;
         dimSign.anchorLeftX = 0;
         dimSign.anchorLeftY = 128;
+        if(root.origin != null) {
+            let parts = root['origin'].split(', ');
+            const inset = 64;
+            let localOffsetY = 0;
+            for (let part of parts) {
+                localOffsetY += 24;
+                (await itemBoxPromise).appendChild(getText(uuid, "origin", part, dimSign.width / 2, dimSign.height - inset + localOffsetY, "'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'"));
+                localOffsetY += 5;
+            }
+            if(localOffsetY > inset)
+                dimSign.height += localOffsetY - inset;
+        }
         if (root.show_staff) {
             dimSign.height += 20;
             let staff = getStaff(root);
@@ -270,14 +282,14 @@ async function drawSign(canvas, root, x, y, inactiveInherited) {
             let nameParts = root['name'].split(', ');
             for (let namePart in nameParts) {
                 dimSign.height += 24;
-                (await itemBoxPromise).appendChild(getText(uuid, nameParts[namePart], dimSign.width / 2, dimSign.height));
+                (await itemBoxPromise).appendChild(getText(uuid, "name", nameParts[namePart], dimSign.width / 2, dimSign.height));
                 dimSign.height += 5;
             }
         }
         if (canvas != null) {
             canvas.appendChild(await itemBoxPromise);
             // Debug: Print Coords
-            // let txt = getText(uuid, `(${x}, ${y})`, x, y + 24);
+            // let txt = getText(uuid, "", `(${x}, ${y})`, x, y + 24);
             // txt.setAttribute('text-anchor', 'left');
             // canvas.appendChild(txt);
         }

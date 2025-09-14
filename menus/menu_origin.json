@@ -1,0 +1,7 @@
+[
+    {
+        "name": "Herkunft",
+        "type": "string",
+        "key": "origin"
+    }
+]

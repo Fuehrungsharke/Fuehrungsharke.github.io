@@ -94,15 +94,15 @@ function configSelected(evt) {
     reader.readAsDataURL(evt.target.files[0]);
 }
 
-function editName(uuid) {
+function editText(uuid, key) {
     let item = getByUuid(config, uuid);
-    let newName = prompt('Name', item['name']);
+    let newName = prompt('Neuer Text', item[key]);
     if (newName == undefined)
         return;
     if (newName == '')
-        delete item['name'];
+        delete item[key];
     else
-        item['name'] = newName;
+        item[key] = newName;
     draw();
 }
 
