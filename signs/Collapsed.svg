@@ -8,5 +8,5 @@
 			<rect x="20" y="95" width="216" height="66" />
 		</clipPath>
 	</defs>
-	<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145" clip-path="url(#CollapsedClipTxt)">{{txt}}</text>
+	<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; font-size: 48px; " fill="{{colorAccent}}" x="128" y="145" clip-path="url(#CollapsedClipTxt)">{{txt}}</text>
 </svg>

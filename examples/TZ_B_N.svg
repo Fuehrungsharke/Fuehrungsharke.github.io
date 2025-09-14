@@ -16,9 +16,9 @@
 			<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000"/>
 			<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000"/>
 			<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">TZ</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">TZ</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">1 / 5 / 16 / <tspan text-decoration="underline">22</tspan>
 		</text>
@@ -40,9 +40,9 @@
 			<ellipse cx="64" cy="86" rx="10" ry="10" fill="#FFF"/>
 			<ellipse cx="128" cy="86" rx="10" ry="10" fill="#FFF"/>
 			<ellipse cx="192" cy="86" rx="10" ry="10" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">TZ</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">TZ</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">1 / 1 / 2 / <tspan text-decoration="underline">4</tspan>
 		</text>
@@ -64,9 +64,9 @@
 			<ellipse cx="156" cy="44" rx="10" ry="10" fill="#000000"/>
 			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 47px;" clip-path="url(#PersonClipTxt)" fill="#FFF">TZ</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 47px;" clip-path="url(#PersonClipTxt)" fill="#FFF">TZ</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1368, 0) scale(1 1)">
@@ -86,9 +86,9 @@
 			<ellipse cx="142" cy="100" rx="5" ry="5" fill="#FFF"/>
 			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 43px;" clip-path="url(#PersonClipTxt)" fill="#FFF">TZ</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 43px;" clip-path="url(#PersonClipTxt)" fill="#FFF">TZ</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1624, 0) scale(1 1)">
@@ -103,9 +103,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1880, 0) scale(1 1)">
@@ -120,9 +120,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<path stroke-width="3" stroke="black" d="M1218 128 L1268 128"/>
@@ -145,9 +145,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
 			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">FüKW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">FüKW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Führungskraftwagen</text>
 	</g>
@@ -168,9 +168,9 @@
 			<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1"/>
 			<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000"/>
 			<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">B</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">B</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">0 / 2 / 7 / <tspan text-decoration="underline">9</tspan>
 		</text>
@@ -191,9 +191,9 @@
 			<ellipse cx="156" cy="44" rx="10" ry="10" fill="#000000"/>
 			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">B</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">B</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1368, 541) scale(1 1)">
@@ -210,9 +210,9 @@
 			<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000"/>
 			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">B</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">B</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1624, 541) scale(1 1)">
@@ -227,9 +227,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1880, 541) scale(1 1)">
@@ -244,9 +244,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(2136, 541) scale(1 1)">
@@ -261,9 +261,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1368, 797) scale(1 1)">
@@ -278,9 +278,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1624, 797) scale(1 1)">
@@ -295,9 +295,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1880, 797) scale(1 1)">
@@ -312,9 +312,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(2136, 797) scale(1 1)">
@@ -329,9 +329,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<path stroke-width="3" stroke="black" d="M1218 669 L1268 669"/>
@@ -354,9 +354,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
 			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">GKW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">GKW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Gerätekraftwagen</text>
 		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">(7 t Nutzlast)</text>
@@ -378,9 +378,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
 			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">7t</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">7t</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger</text>
 		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Plane/Spriegel</text>
@@ -405,9 +405,9 @@
 			<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1"/>
 			<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000"/>
 			<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">N</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#UnitClipTxt)">N</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="276" font-family="Verdana" font-size="22" text-anchor="middle" font-weight="bold">0 / 2 / 7 / <tspan text-decoration="underline">9</tspan>
 		</text>
@@ -428,9 +428,9 @@
 			<ellipse cx="156" cy="44" rx="10" ry="10" fill="#000000"/>
 			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">N</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">N</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black"/>
 	</g>
@@ -448,9 +448,9 @@
 			<ellipse cx="128" cy="44" rx="10" ry="10" fill="#000000"/>
 			<rect x="64" y="64" width="128" height="24" fill="#FFF" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">N</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF">N</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1624, 1454) scale(1 1)">
@@ -465,9 +465,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1880, 1454) scale(1 1)">
@@ -482,9 +482,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(2136, 1454) scale(1 1)">
@@ -499,9 +499,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1368, 1710) scale(1 1)">
@@ -516,9 +516,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1624, 1710) scale(1 1)">
@@ -533,9 +533,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(1880, 1710) scale(1 1)">
@@ -550,9 +550,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<g transform="translate(2136, 1710) scale(1 1)">
@@ -567,9 +567,9 @@
 			</defs>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="10" stroke="#FFF" fill="#039" clip-path="url(#Person)"/>
 			<path d="M64,128 L128,64 L192,128 L128,192 Z" stroke-width="1" stroke="#000000" fill="none"/>
-			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
+			<text x="128" y="128" style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" clip-path="url(#PersonClipTxt)" fill="#FFF"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="222" y="200">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#000000" x="40" y="200"/>
 		</svg>
 	</g>
 	<path stroke-width="3" stroke="black" d="M1218 1582 L1268 1582"/>
@@ -592,9 +592,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
 			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">MzGW</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">MzGW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Mehrzweck-</text>
 		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">gerätewagen</text>
@@ -619,9 +619,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
 			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 27px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">NEA 50kVA LiMa</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 27px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">NEA 50kVA LiMa</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger</text>
 		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Netzersatzanlage</text>
@@ -646,9 +646,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
 			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">PF 12t</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">PF 12t</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger Plattform</text>
 		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">mit Aufnahmen</text>
@@ -673,9 +673,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<rect x="0" y="121.5" width="11" height="15" fill="#FFF"/>
 			<path d="M10,121 L10,121.5 L0,121.5 M0,136.5 L10,136.5 L10,137" stroke="#000000" stroke-width="1"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">kl Boot</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">kl Boot</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Anhänger</text>
 		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">kleines Boot</text>
@@ -692,8 +692,8 @@
 			</defs>
 			<path d="M10,64 l236,0 A118,118 180 0 1 10,64 Z" stroke="#FFF" fill="#039" stroke-width="10" clip-path="url(#Boat)"/>
 			<path d="M10,64 l236,0 A118,118 180 0 1 10,64 Z" stroke="#000000" fill="none" stroke-width="1" clip-path="url(#Boat)"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 40px;" fill="#FFF" x="128" y="118" clip-path="url(#BoatClipTxt)">kl Boot</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 40px;" fill="#FFF" x="128" y="118" clip-path="url(#BoatClipTxt)">kl Boot</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#000000" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Kleines Boot</text>
 	</g>
@@ -717,9 +717,9 @@
 			<path d="M10,64 L10,192 L246,192 L246,64 Q128,100 10,64 Z" fill="none" stroke-width="1" stroke="#000000"/>
 			<ellipse cx="40" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
 			<ellipse cx="216" cy="210" rx="10" ry="10" stroke="#000000" fill="none" stroke-width="5"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">Stapler 3t</text>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
-			<text style="font-family: 'Lubalin Graph ITC Turner', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: middle; dominant-baseline: central; font-size: 48px;" fill="#FFF" x="128" y="128" clip-path="url(#VehicleClipTxt)">Stapler 3t</text>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: start;" fill="#FFF" x="20" y="180"/>
+			<text style="font-family: 'Lubalin Graph ITC Turner Bold', 'Lubalin Graph', 'Roboto Slab'; font-weight: bold; text-anchor: end;" fill="#FFF" x="236" y="180">THW</text>
 		</svg>
 		<text x="128" y="280" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">Gabelstapler</text>
 		<text x="128" y="309" font-size="24" font-family="Verdana" text-anchor="middle" fill="black">(mind. 3 t Hubkraft)</text>
