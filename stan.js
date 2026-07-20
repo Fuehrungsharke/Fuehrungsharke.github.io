@@ -4173,6 +4173,84 @@ let StAN_Log_VG = {
     ]
 };
 
+let StAN_Log_TL = {
+    "sign": "Unit",
+    "colorPrimary": "#039",
+    "colorAccent": "#FFF",
+    "txt": "Log-TL",
+    "org": "THW",
+    "troop": true,
+    "support": true,
+    "show_staff": true,
+    "layout": "list-right",
+    "UnitPattern": "FZ Log\/FGr Log\-TL",
+    "sub": [
+        {
+            "txt": "Log-TL",
+            "sign": "Person",
+            "leading": true,
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "troop": true,
+            "sub": [
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+                },
+                {
+                    "sign": "Person",
+                    "colorPrimary": "#039",
+                    "colorAccent": "#FFF",
+                    "org": "THW",
+                    "FuncPattern": "Fachhelfer\/in( \(Reserve\))?"
+                }
+            ],
+            "layout": "row-right",
+            "org": "THW",
+            "FuncPattern": "Truppführer\/in Logistik\-Tanklogistik",
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "txt": "LKW",
+            "name": "Lastkraftwagen, Wechsellader (gf)",
+            "automotive": true,
+            "offroad": true,
+            "swapable": true
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "swapbody": true,
+            "txt": "ABK",
+            "name": "Abrollbehälter Kraftstoff, (ABK) ca. 9m³"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "swapbody": true,
+            "txt": "ABK",
+            "name": "Abrollbehälter Kraftstoff, (ABK) ca. 9m³"
+        }
+    ]
+}
+
 let StAN_Log_MW = {
     "sign": "Unit",
     "colorPrimary": "#039",
@@ -4198,7 +4276,8 @@ let StAN_Log_MW = {
     ],
     "sub": [
         StAN_Log_M,
-        StAN_Log_VG
+        StAN_Log_VG,
+        StAN_Log_TL
     ]
 };
 
