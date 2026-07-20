@@ -12,6 +12,10 @@
         "type": "placeholder"
     },
     {
+        "name": "TacticalSize",
+        "type": "placeholder"
+    },
+    {
         "name": "Symbols",
         "type": "placeholder"
     },
