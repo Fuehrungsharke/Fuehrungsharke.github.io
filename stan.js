@@ -4167,6 +4167,16 @@ let StAN_Log_VG = {
             "colorAccent": "#FFF",
             "org": "THW",
             "automotive": true,
+            "offroad": true,
+            "txt": "LKW Lkr",
+            "name": "Lastkraftwagen (gl), mit Ladekran"
+        },
+        {
+            "sign": "Vehicle",
+            "colorPrimary": "#039",
+            "colorAccent": "#FFF",
+            "org": "THW",
+            "automotive": true,
             "txt": "Stapler 3t",
             "name": "Gabelstapler"
         }
