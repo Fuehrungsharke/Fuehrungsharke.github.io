@@ -12,6 +12,49 @@
 	<rect x="10" y="64" width="236" height="128" fill="{{colorPrimary}}" stroke="{{colorAccent}}" stroke-width="10" clip-path="url(#Flag)" />
 	<rect x="10" y="64" width="236" height="128" fill="none" stroke="#000000" stroke-width="1" />
 
+	{{association
+	<line x1="128" y1="54" x2="128" y2="18" stroke="#000000" stroke-width="10" />
+	association}}
+
+	{{brigade
+	<line x1="120" y1="54" x2="120" y2="18" stroke="#000000" stroke-width="10" />
+	<line x1="136" y1="54" x2="136" y2="18" stroke="#000000" stroke-width="10" />
+	brigade}}
+
+	{{formation
+	<line x1="113" y1="54" x2="113" y2="18" stroke="#000000" stroke-width="10" />
+	<line x1="128" y1="54" x2="128" y2="18" stroke="#000000" stroke-width="10" />
+	<line x1="143" y1="54" x2="143" y2="18" stroke="#000000" stroke-width="10" />
+	formation}}
+
+	{{platoon
+	<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000" />
+	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
+	<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000" />
+	platoon}}
+
+	{{platoontroop
+	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
+
+	<ellipse cx="64" cy="86" rx="10" ry="10" fill="{{colorAccent}}" />
+	<ellipse cx="128" cy="86" rx="10" ry="10" fill="{{colorAccent}}" />
+	<ellipse cx="192" cy="86" rx="10" ry="10" fill="{{colorAccent}}" />
+	platoontroop}}
+
+	{{group
+	<ellipse cx="64" cy="48" rx="10" ry="10" fill="#000000" />
+	<ellipse cx="192" cy="48" rx="10" ry="10" fill="#000000" />
+	group}}
+
+	{{echelon
+	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
+	<ellipse cx="128" cy="24" rx="10" ry="10" fill="#000000" />
+	echelon}}
+
+	{{troop
+	<ellipse cx="128" cy="48" rx="10" ry="10" fill="#000000" />
+	troop}}
+
 	<g clip-path='url(#Flag)'>
 	{{symbols:cx=128, cy=128, width=226, height=74}}
 	</g>
